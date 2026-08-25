@@ -1,3 +1,3 @@
-# Paragraaf 2.1
+# Hoofdstuk 1
 
 Inhoud van paragraaf 2.1.

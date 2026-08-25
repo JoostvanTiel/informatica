@@ -4,13 +4,28 @@ Introductie van hoofdstuk 1.
 
 Spoorboekje:
 
-|                   |                                                                            |
-| ----------------- | -------------------------------------------------------------------------- |
-| Onderwerpen:      | Grondslagen                                                                |
-| Leerdoelen:       | Je kent de basisbegrippen van informatica<br>Je kunt werken met algoritmes |
-| Inhoud toets(en): | Grondslagen & inleiding programmeren in Python                             |
-| Waarde toetsen:   | 1x                                                                         |
-| Studieadvies:     | Houd je werk bij, zo maak je je de basisvaardigheden eigen                 |
+<table>
+  <tr>
+    <td>Onderwerpen:</td>
+    <td>Grondslagen<br>Inleiding programmeren (python)</td>
+  <tr>
+  <tr>
+    <td>Leerdoelen:</td>
+    <td>Je kent de basisbegrippen van informatica<br>Je kunt een algoritme ontwerpen<br>Je kunt eenvoudige programma's schrijven</td>
+  <tr>
+  <tr>
+    <td>Inhoud toets:</td>
+    <td>Grondslagen & inleiding programmeren in Python </td>
+  <tr>
+  <tr>
+    <td>Waarde toets:</td>
+    <td>1x</td>
+  <tr>
+  <tr>
+    <td>Studieadvies:</td>
+    <td>Houd je werk bij, zo maak je je de basisvaardigheden eigen </td>
+  <tr>
+</table>
 
 | week           | lesstof                                                          | huiswerkadvies                                                                                                                       |
 | -------------- | ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
