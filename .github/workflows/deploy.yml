@@ -23,7 +23,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Build the book
-        run: jupyter-book build book/ --verbose
+        run: jupyter-book build book
 
       - name: Check build output
         run: ls -la book/_build/html || echo "Build output directory not found!"
