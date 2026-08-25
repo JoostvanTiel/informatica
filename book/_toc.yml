@@ -4,20 +4,11 @@
 format: jb-book
 root: intro
 chapters:
-- file: 4ha blok 1: grondslagen & inleiding programmeren/index
-  sections:
-  - file: 4ha blok 1/paragraaf1
-  - file: 4ha blok 1/paragraaf2
-- file: 4ha blok 2: informatie digitaal & object-georiënteerd programmeren/index
-  sections:
-  - file: 4ha blok 2/paragraaf1
-  - file: 4ha blok 2/paragraaf2
-- file: 4ha blok 3: webdesign, databases & websecurity/index
-  sections:
-  - file: 4ha blok 3/paragraaf1
-  - file: 4ha blok 3/paragraaf2
-- file: 4ha blok 4: programmeren in php & relationele databases/index
-  sections:
-  - file: 4ha blok 4/paragraaf1
-  - file: 4ha blok 4/paragraaf2
-
+  - file: hoofdstuk1/index
+    sections:
+      - file: hoofdstuk1/paragraaf1
+      - file: hoofdstuk1/paragraaf2
+  - file: hoofdstuk2/index
+    sections:
+      - file: hoofdstuk2/paragraaf1
+      - file: hoofdstuk2/paragraaf2
