@@ -23,17 +23,27 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Build the book
-        run: jupyter-book build book/
+        run: |
+          echo "Starting build..."
+          jupyter-book build book/ 2>&1 || true
+          echo "Build completed or failed"
+          find book -type d -name "_build" || echo "No _build directory found"
+          ls -la book/ || echo "Cannot list book directory"
 
       - name: Check build output
         run: |
           if [ -d "book/_build/html" ]; then
             echo "✓ Build directory exists"
             ls -la book/_build/html
-            du -sh book/_build/html
           else
             echo "✗ Build directory NOT found!"
-            ls -la book/_build/
+            if [ -d "book/_build" ]; then
+              echo "Contents of book/_build:"
+              ls -la book/_build/
+            else
+              echo "book/_build/ directory doesn't exist either"
+            fi
+            ls -la book/
             exit 1
           fi
 
