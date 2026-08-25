@@ -1,24 +1,6 @@
-# Blok 1
+# Blok 1: grondslagen & inleiding programmeren
 
 Introductie van hoofdstuk 1.
-
-Spoorboekje:
-
-<table>
-  <tr>
-    <td></td>
-    <td></td>
-  <tr>
-    <tr>
-    <td></td>
-    <td></td>
-  <tr>
-    <tr>
-    <td></td>
-    <td></td>
-  <tr>
-  
-</table>
 
 |                   |                                                                                                                        |
 | ----------------- | ---------------------------------------------------------------------------------------------------------------------- |
@@ -27,6 +9,8 @@ Spoorboekje:
 | Inhoud toets(en): | Grondslagen & inleiding programmeren in Python                                                                         |
 | Waarde toetsen:   | 1x                                                                                                                     |
 | Studieadvies:     | Houd je werk bij, zo maak je je de basisvaardigheden eigen                                                             |
+
+## Spoorboekje
 
 | week           | lesstof                                                          | huiswerkadvies                                                                                                                       |
 | -------------- | ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
