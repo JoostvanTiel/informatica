@@ -12,52 +12,13 @@ Spoorboekje:
 | Waarde toetsen:   | 1x                                                                         |
 | Studieadvies:     | Houd je werk bij, zo maak je je de basisvaardigheden eigen                 |
 
-| week           | lesstof                                           | huiswerkadvies                                                                                       |
-| -------------- | ------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| 1.1:<br> 24-08 | Introductieweek / geen les                        | Introductieweek / geen les                                                                           |
-| 1.2:<br> 31-08 | Grondslagen:<br>Toestanden<br><br>Python Arcade 1 | Maak de vragen in OneNote van dit onderwerp<br><br>Maak de herhalingsvragen van H1 (onderaan pagina) |
-
-1.3:
-07-09 Grondslagen:
-Algoritmen & beslissingen
-
-Python Arcade 3 Maak de vragen in OneNote van dit onderwerp
-
-Maak de herhalingsvragen van H3 (onderaan pagina)
-1.4:
-14-09 Grondslagen:
-Datastructuren
-
-Python Arcade 4
-Maak de vragen in OneNote van dit onderwerp
-
-Maak de herhalingsvragen van H4 (onderaan pagina)
-1.5:
-21-09 Grondslagen:
-Lussen
-
-Python Arcade 6
-Maak de vragen in OneNote van dit onderwerp
-
-Maak de herhalingsvragen van H6 (onderaan pagina)
-1.6:
-28-09 Grondslagen:
-Grammatica’s
-
-Python Arcade 7
-Maak de vragen in OneNote van dit onderwerp
-
-Maak de herhalingsvragen van H7 (onderaan pagina)
-1.7:
-05-10 Grondslagen:
-Toeval & combineren
-
-Python Arcade 9
-Maak de vragen in OneNote van dit onderwerp
-
-Maak de herhalingsvragen van H9 (onderaan pagina)
-
-Maak de oefentoets
-TW1
-07-10 Toets T1:
-grondslagen + inleiding programmeren
+| week           | lesstof                                                    | huiswerkadvies                                                                                                                       |
+| -------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| 1.1:<br> 24-08 | Introductieweek / geen les                                 | Introductieweek / geen les                                                                                                           |
+| 1.2:<br> 31-08 | Grondslagen:<br>Toestanden<br><br>Python Arcade 1          | <br>Maak de vragen in OneNote van dit onderwerp<br><br>Maak de herhalingsvragen van H1 (onderaan pagina)                             |
+| 1.3:<br> 07-09 | Grondslagen:<br>Algoritmen & beslissingen<br><br>          | <br>Python Arcade 3 Maak de vragen in OneNote van dit onderwerp<br>Maak de herhalingsvragen van H3 (onderaan pagina)                 |
+| 1.4:<br> 14-09 | Grondslagen:<br>Datastructuren<br><br>Python Arcade 4      | <br>Maak de vragen in OneNote van dit onderwerp<br>Maak de herhalingsvragen van H4 (onderaan pagina)                                 |
+| 1.5:<br> 21-09 | Grondslagen:<br>Lussen<br><br>Python Arcade 6              | <br>Maak de vragen in OneNote van dit onderwerp<br><br>Maak de herhalingsvragen van H6 (onderaan pagina)                             |
+| 1.6:<br> 28-09 | Grondslagen:<br>Grammatica’s<br><br>Python Arcade 7        | <br>Maak de vragen in OneNote van dit onderwerp<br><br>Maak de herhalingsvragen van H7 (onderaan pagina)                             |
+| 1.7:<br> 05-10 | Grondslagen:<br>Toeval & combineren<br><br>Python Arcade 9 | <br>Maak de vragen in OneNote van dit onderwerp<br><br>Maak de herhalingsvragen van H9 (onderaan pagina) <br><br> Maak de oefentoets |
+| TW1 <br> 07-10 | Toets T1:<br>grondslagen + inleiding programmeren          |
