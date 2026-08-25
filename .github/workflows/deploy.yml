@@ -23,10 +23,19 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Build the book
-        run: jupyter-book build book
+        run: jupyter-book build book --verbose
 
       - name: Check build output
-        run: ls -la book/_build/html || echo "Build output directory not found!"
+        run: |
+          if [ -d "book/_build/html" ]; then
+            echo "✓ Build directory exists"
+            ls -la book/_build/html
+            du -sh book/_build/html
+          else
+            echo "✗ Build directory NOT found!"
+            ls -la book/_build/
+            exit 1
+          fi
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
