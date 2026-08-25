@@ -9,6 +9,10 @@ chapters:
     sections:
       - file: blok1/hoofdstuk1.md
       - file: blok1/hoofdstuk2.md
+      - file: blok1/hoofdstuk3.md
+      - file: blok1/hoofdstuk4.md
+      - file: blok1/hoofdstuk5.md
+      - file: blok1/hoofdstuk6.md
   - title: 4ha blok 2
     file: blok2/index.md
     sections:

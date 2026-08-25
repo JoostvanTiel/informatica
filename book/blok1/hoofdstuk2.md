@@ -1,3 +1,3 @@
-# Hoofdstuk 2
+# Hoofdstuk 2: Algoritmen & beslissingen
 
-Inhoud van paragraaf 1.2.
+Inhoud van hoofdstuk 2.

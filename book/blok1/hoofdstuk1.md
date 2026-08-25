@@ -1,3 +1,3 @@
-# Hoofdstuk 1
+# Hoofdstuk 1: Grondslagen & toestanden
 
-Inhoud van paragraaf 1.1.
+Inhoud van hoofdstuk 1.
