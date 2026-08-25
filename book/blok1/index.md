@@ -6,26 +6,27 @@ Spoorboekje:
 
 <table>
   <tr>
-    <td>Onderwerpen:</td>
-    <td>Grondslagen<br>Inleiding programmeren (python)</td>
+    <td></td>
+    <td></td>
   <tr>
+    <tr>
+    <td></td>
+    <td></td>
   <tr>
-    <td>Leerdoelen:</td>
-    <td>Je kent de basisbegrippen van informatica<br>Je kunt een algoritme ontwerpen<br>Je kunt eenvoudige programma's schrijven</td>
+    <tr>
+    <td></td>
+    <td></td>
   <tr>
-  <tr>
-    <td>Inhoud toets:</td>
-    <td>Grondslagen & inleiding programmeren in Python </td>
-  <tr>
-  <tr>
-    <td>Waarde toets:</td>
-    <td>1x</td>
-  <tr>
-  <tr>
-    <td>Studieadvies:</td>
-    <td>Houd je werk bij, zo maak je je de basisvaardigheden eigen </td>
-  <tr>
+  
 </table>
+
+|                   |                                                                                                                        |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| Onderwerpen:      | Grondslagen<br>Inleiding programmeren (python)                                                                         |
+| Leerdoelen:       | Je kent de basisbegrippen van informatica<br>Je kunt een algoritme ontwerpen<br>Je kunt een simpel programma schrijven |
+| Inhoud toets(en): | Grondslagen & inleiding programmeren in Python                                                                         |
+| Waarde toetsen:   | 1x                                                                                                                     |
+| Studieadvies:     | Houd je werk bij, zo maak je je de basisvaardigheden eigen                                                             |
 
 | week           | lesstof                                                          | huiswerkadvies                                                                                                                       |
 | -------------- | ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
