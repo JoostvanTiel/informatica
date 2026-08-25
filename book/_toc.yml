@@ -2,13 +2,13 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro
+root: intro.md
 chapters:
-  - file: hoofdstuk1/index
+  - file: hoofdstuk1/index.md
     sections:
-      - file: hoofdstuk1/paragraaf1
-      - file: hoofdstuk1/paragraaf2
-  - file: hoofdstuk2/index
+      - file: hoofdstuk1/paragraaf1.md
+      - file: hoofdstuk1/paragraaf2.md
+  - file: hoofdstuk2/index.md
     sections:
-      - file: hoofdstuk2/paragraaf1
-      - file: hoofdstuk2/paragraaf2
+      - file: hoofdstuk2/paragraaf1.md
+      - file: hoofdstuk2/paragraaf2.md

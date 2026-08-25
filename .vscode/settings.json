@@ -1,0 +1,8 @@
+{
+  "chat.tools.terminal.autoApprove": {
+    "/^cd \"c:\\\\Users\\\\JoostvanTiel\\\\OneDrive - voCampus\\\\_Lesmateriaal\\\\Informatica\\\\Eigen methode\\\\informatica\\\\book\"; jupyter-book build \\.$/": {
+      "approve": true,
+      "matchCommandLine": true
+    }
+  }
+}

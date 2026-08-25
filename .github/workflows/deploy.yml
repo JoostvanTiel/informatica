@@ -23,20 +23,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Build the book
-        run: |
-          jupyter-book build book/ || {
-            echo "Build failed!"
-            exit 1
-          }
-
-      - name: Check build output
-        run: |
-          echo "Listing book directory:"
-          ls -la book/
-          echo "Listing _build if it exists:"
-          ls -la book/_build/ 2>&1 || echo "No _build directory"
-          echo "Checking for html:"
-          ls -la book/_build/html 2>&1 || echo "No html directory"
+        run: jupyter-book build book/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
