@@ -1,6 +1,6 @@
 # Blok 1: grondslagen & inleiding programmeren
 
-Introductie van hoofdstuk 1.
+Introductie van blok 1.
 
 |                   |                                                                                                                        |
 | ----------------- | ---------------------------------------------------------------------------------------------------------------------- |

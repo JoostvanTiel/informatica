@@ -1,5 +1,5 @@
-# Hoofdstuk 2: informatie digitaal & object-georiënteerd programmeren
+# Blok 2: informatie digitaal & object-georiënteerd programmeren
 
-Introductie van hoofdstuk 2.
+Introductie van blok 2.
 
 ## Spoorboekje
