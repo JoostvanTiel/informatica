@@ -22,9 +22,11 @@ Aan het einde van het hoofdstuk kun je een eenvoudig systeem beschrijven als een
 
 ## Wat is een toestand?
 
-<div style="text-align: center;">
-  <img src="img/stoplicht.png" alt="Stoplicht">
-</div>
+```{image} img/stoplicht.png
+:alt: Stoplicht
+:width: 200px
+:align: right
+```
 
 Stel dat je naar een verkeerslicht kijkt.
 
