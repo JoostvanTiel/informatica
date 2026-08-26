@@ -216,8 +216,6 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">4ha blok 1</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Hoofdstuk 1: Toestanden en automaten</a></li>
-
-
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk2.html">Hoofdstuk 2: Algoritmen &amp; beslissingen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk3.html">Hoofdstuk 3: Datastructuren</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk4.html">Hoofdstuk 4: Lussen</a></li>
@@ -432,14 +430,11 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Hoofdstuk 1: Toestanden en automaten</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-een-toestand">Wat is een toestand?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toestanden-veranderen">Toestanden veranderen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toestandsdiagrammen">Toestandsdiagrammen</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-een-toestand">1. Wat is een toestand?</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#toestanden-veranderen">2. Toestanden veranderen</a></li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -468,16 +463,13 @@
 </ul>
 <p>Aan het einde van het hoofdstuk kun je een eenvoudig systeem beschrijven als een verzameling toestanden en overgangen. Je kunt ook een eenvoudig Python-programma schrijven dat zo’n systeem uitvoert.</p>
 </section>
-</section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="wat-is-een-toestand">
-<h1>1. Wat is een toestand?<a class="headerlink" href="#wat-is-een-toestand" title="Link to this heading">#</a></h1>
+<section id="wat-is-een-toestand">
+<h2>Wat is een toestand?<a class="headerlink" href="#wat-is-een-toestand" title="Link to this heading">#</a></h2>
 <p>Stel dat je naar een verkeerslicht kijkt.</p>
 <p>Op een bepaald moment staat het verkeerslicht bijvoorbeeld op:</p>
 <p><strong>rood</strong></p>
 <p>Een paar seconden later kan het op:</p>
-<p><strong>rood + oranje</strong></p>
-<p>Daarna:</p>
 <p><strong>groen</strong></p>
 <p>En daarna:</p>
 <p><strong>oranje</strong></p>
@@ -493,7 +485,7 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Verkeerslicht</p></td>
-<td><p>rood, rood+oranje, groen, oranje</p></td>
+<td><p>rood, groen, oranje</p></td>
 </tr>
 <tr class="row-odd"><td><p>Deur</p></td>
 <td><p>open, dicht</p></td>
@@ -519,11 +511,11 @@
 </div></blockquote>
 </section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="toestanden-veranderen">
-<h1>2. Toestanden veranderen<a class="headerlink" href="#toestanden-veranderen" title="Link to this heading">#</a></h1>
+<section id="toestanden-veranderen">
+<h2>Toestanden veranderen<a class="headerlink" href="#toestanden-veranderen" title="Link to this heading">#</a></h2>
 <p>Een systeem blijft niet altijd in dezelfde toestand.</p>
 <p>Er gebeurt iets waardoor het systeem naar een andere toestand gaat.</p>
-<p>Zo’n gebeurtenis noemen we een <strong>input</strong> of <strong>gebeurtenis</strong>.</p>
+<p>Zo’n gebeurtenis noemen we een <strong>input</strong>.</p>
 <p>Bij een deur kan dat bijvoorbeeld zijn:</p>
 <ul class="simple">
 <li><p>iemand opent de deur;</p></li>
@@ -532,15 +524,30 @@
 <p>We kunnen het gedrag dan zo beschrijven:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>DEUR DICHT
     |
-    | iemand opent de deur
+    | input: iemand opent de deur
     v
 DEUR OPEN
     |
-    | iemand sluit de deur
+    | input: iemand sluit de deur
     v
 DEUR DICHT
 </pre></div>
 </div>
+<p>De toestand verandert dus door een input.</p>
+<p>We noemen de verandering van de ene toestand naar een andere toestand een overgang.</p>
+<p>De belangrijkste begrippen zijn:</p>
+<p>toestand — de situatie waarin het systeem zich bevindt;
+input — iets waardoor het systeem kan reageren;
+overgang — de verandering van de ene toestand naar een andere toestand.</p>
+</section>
+<section id="toestandsdiagrammen">
+<h2>Toestandsdiagrammen<a class="headerlink" href="#toestandsdiagrammen" title="Link to this heading">#</a></h2>
+<p>We kunnen een systeem overzichtelijker tekenen met een toestandsdiagram.</p>
+<p>Een toestand tekenen we als een cirkel.</p>
+<p>Een overgang tekenen we als een pijl.</p>
+<p>Bijvoorbeeld een deur:</p>
+<p>[Afbeelding niet gevonden][img/toestandsdiagram1.svg]</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -609,14 +616,11 @@ DEUR DICHT
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Hoofdstuk 1: Toestanden en automaten</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-een-toestand">Wat is een toestand?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toestanden-veranderen">Toestanden veranderen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toestandsdiagrammen">Toestandsdiagrammen</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-een-toestand">1. Wat is een toestand?</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#toestanden-veranderen">2. Toestanden veranderen</a></li>
-</ul>
-
   </nav></div>
 
 </div></div>
