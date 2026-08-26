@@ -22,6 +22,10 @@ Aan het einde van het hoofdstuk kun je een eenvoudig systeem beschrijven als een
 
 ## Wat is een toestand?
 
+<div style="text-align: center;">
+  <img src="img/stoplicht.png" alt="Stoplicht">
+</div>
+
 Stel dat je naar een verkeerslicht kijkt.
 
 Op een bepaald moment staat het verkeerslicht bijvoorbeeld op:
