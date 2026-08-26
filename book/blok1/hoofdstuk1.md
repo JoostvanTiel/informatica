@@ -20,7 +20,7 @@ Aan het einde van het hoofdstuk kun je een eenvoudig systeem beschrijven als een
 
 ---
 
-# 1. Wat is een toestand?
+## Wat is een toestand?
 
 Stel dat je naar een verkeerslicht kijkt.
 
@@ -29,10 +29,6 @@ Op een bepaald moment staat het verkeerslicht bijvoorbeeld op:
 **rood**
 
 Een paar seconden later kan het op:
-
-**rood + oranje**
-
-Daarna:
 
 **groen**
 
@@ -50,7 +46,7 @@ Bijvoorbeeld:
 
 | Systeem       | Mogelijke toestanden                                |
 | ------------- | --------------------------------------------------- |
-| Verkeerslicht | rood, rood+oranje, groen, oranje                    |
+| Verkeerslicht | rood, groen, oranje                                 |
 | Deur          | open, dicht                                         |
 | Pinautomaat   | wacht op kaart, wacht op pincode, transactie, klaar |
 | Lift          | stil, omhoog, omlaag                                |
@@ -63,13 +59,13 @@ Een belangrijk idee is:
 
 ---
 
-# 2. Toestanden veranderen
+## Toestanden veranderen
 
 Een systeem blijft niet altijd in dezelfde toestand.
 
 Er gebeurt iets waardoor het systeem naar een andere toestand gaat.
 
-Zo'n gebeurtenis noemen we een **input** of **gebeurtenis**.
+Zo'n gebeurtenis noemen we een **input**.
 
 Bij een deur kan dat bijvoorbeeld zijn:
 
@@ -81,11 +77,33 @@ We kunnen het gedrag dan zo beschrijven:
 ```text
 DEUR DICHT
     |
-    | iemand opent de deur
+    | input: iemand opent de deur
     v
 DEUR OPEN
     |
-    | iemand sluit de deur
+    | input: iemand sluit de deur
     v
 DEUR DICHT
 ```
+
+De toestand verandert dus door een input.
+
+We noemen de verandering van de ene toestand naar een andere toestand een overgang.
+
+De belangrijkste begrippen zijn:
+
+toestand — de situatie waarin het systeem zich bevindt;
+input — iets waardoor het systeem kan reageren;
+overgang — de verandering van de ene toestand naar een andere toestand.
+
+## Toestandsdiagrammen
+
+We kunnen een systeem overzichtelijker tekenen met een toestandsdiagram.
+
+Een toestand tekenen we als een cirkel.
+
+Een overgang tekenen we als een pijl.
+
+Bijvoorbeeld een deur:
+
+[Afbeelding niet gevonden][img/toestandsdiagram1.svg]
