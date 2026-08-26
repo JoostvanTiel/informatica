@@ -112,4 +112,4 @@ Een overgang tekenen we als een pijl.
 
 Bijvoorbeeld een deur:
 
-[Afbeelding niet gevonden][img/toestandsdiagram1.svg]
+![Afbeelding niet gevonden][img/toestandsdiagram1.png]
