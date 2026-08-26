@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Hoofdstuk 1: Grondslagen &amp; toestanden &#8212; Informatica</title>
+    <title>Hoofdstuk 1: Toestanden en automaten &#8212; Informatica</title>
   
   
   
@@ -153,6 +153,10 @@
   
 
   
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
 </div>
 
     </header>
@@ -211,7 +215,9 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">4ha blok 1</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Hoofdstuk 1: Grondslagen &amp; toestanden</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Hoofdstuk 1: Toestanden en automaten</a></li>
+
+
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk2.html">Hoofdstuk 2: Algoritmen &amp; beslissingen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk3.html">Hoofdstuk 3: Datastructuren</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk4.html">Hoofdstuk 4: Lussen</a></li>
@@ -403,7 +409,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -414,11 +422,25 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Hoofdstuk 1: Grondslagen & toestanden</h1>
+    <h1>Hoofdstuk 1: Toestanden en automaten</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Hoofdstuk 1: Toestanden en automaten</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-een-toestand">1. Wat is een toestand?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#toestanden-veranderen">2. Toestanden veranderen</a></li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -428,9 +450,97 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="hoofdstuk-1-grondslagen-toestanden">
-<h1>Hoofdstuk 1: Grondslagen &amp; toestanden<a class="headerlink" href="#hoofdstuk-1-grondslagen-toestanden" title="Link to this heading">#</a></h1>
-<p>Inhoud van hoofdstuk 1.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="hoofdstuk-1-toestanden-en-automaten">
+<h1>Hoofdstuk 1: Toestanden en automaten<a class="headerlink" href="#hoofdstuk-1-toestanden-en-automaten" title="Link to this heading">#</a></h1>
+<section id="leerdoelen">
+<h2>Leerdoelen<a class="headerlink" href="#leerdoelen" title="Link to this heading">#</a></h2>
+<p>Computers en digitale systemen reageren voortdurend op wat er gebeurt. Een verkeerslicht reageert op tijd, een pinautomaat reageert op een ingevoerde pincode en een game reageert op de toetsen die je indrukt.</p>
+<p>Om zulke systemen te begrijpen, gebruiken informatici het begrip <strong>toestand</strong>.</p>
+<p>In dit hoofdstuk leer je:</p>
+<ul class="simple">
+<li><p>wat een toestand is;</p></li>
+<li><p>hoe je het gedrag van een systeem kunt beschrijven met toestanden;</p></li>
+<li><p>wat een <strong>toestandsdiagram</strong> is;</p></li>
+<li><p>wat een <strong>eindige automaat</strong> is;</p></li>
+<li><p>hoe gebeurtenissen ervoor zorgen dat een systeem van toestand verandert;</p></li>
+<li><p>hoe je een automaat kunt uitvoeren;</p></li>
+<li><p>hoe je een eenvoudige toestandmachine in Python maakt.</p></li>
+</ul>
+<p>Aan het einde van het hoofdstuk kun je een eenvoudig systeem beschrijven als een verzameling toestanden en overgangen. Je kunt ook een eenvoudig Python-programma schrijven dat zo’n systeem uitvoert.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="wat-is-een-toestand">
+<h1>1. Wat is een toestand?<a class="headerlink" href="#wat-is-een-toestand" title="Link to this heading">#</a></h1>
+<p>Stel dat je naar een verkeerslicht kijkt.</p>
+<p>Op een bepaald moment staat het verkeerslicht bijvoorbeeld op:</p>
+<p><strong>rood</strong></p>
+<p>Een paar seconden later kan het op:</p>
+<p><strong>rood + oranje</strong></p>
+<p>Daarna:</p>
+<p><strong>groen</strong></p>
+<p>En daarna:</p>
+<p><strong>oranje</strong></p>
+<p>Het verkeerslicht kan dus verschillende toestanden hebben.</p>
+<p>Een <strong>toestand</strong> beschrijft hoe een systeem er op een bepaald moment voor staat.</p>
+<p>Een toestand is dus geen actie. Het is een beschrijving van de situatie waarin het systeem zich bevindt.</p>
+<p>Bijvoorbeeld:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Systeem</p></th>
+<th class="head"><p>Mogelijke toestanden</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Verkeerslicht</p></td>
+<td><p>rood, rood+oranje, groen, oranje</p></td>
+</tr>
+<tr class="row-odd"><td><p>Deur</p></td>
+<td><p>open, dicht</p></td>
+</tr>
+<tr class="row-even"><td><p>Pinautomaat</p></td>
+<td><p>wacht op kaart, wacht op pincode, transactie, klaar</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lift</p></td>
+<td><p>stil, omhoog, omlaag</p></td>
+</tr>
+<tr class="row-even"><td><p>Gamepersonage</p></td>
+<td><p>normaal, geraakt, dood</p></td>
+</tr>
+<tr class="row-odd"><td><p>Telefoon</p></td>
+<td><p>vergrendeld, ontgrendeld</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Een belangrijk idee is:</p>
+<blockquote>
+<div><p>Een systeem bevindt zich op ieder moment in een bepaalde toestand.</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="toestanden-veranderen">
+<h1>2. Toestanden veranderen<a class="headerlink" href="#toestanden-veranderen" title="Link to this heading">#</a></h1>
+<p>Een systeem blijft niet altijd in dezelfde toestand.</p>
+<p>Er gebeurt iets waardoor het systeem naar een andere toestand gaat.</p>
+<p>Zo’n gebeurtenis noemen we een <strong>input</strong> of <strong>gebeurtenis</strong>.</p>
+<p>Bij een deur kan dat bijvoorbeeld zijn:</p>
+<ul class="simple">
+<li><p>iemand opent de deur;</p></li>
+<li><p>iemand sluit de deur.</p></li>
+</ul>
+<p>We kunnen het gedrag dan zo beschrijven:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>DEUR DICHT
+    |
+    | iemand opent de deur
+    v
+DEUR OPEN
+    |
+    | iemand sluit de deur
+    v
+DEUR DICHT
+</pre></div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -487,6 +597,29 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Hoofdstuk 1: Toestanden en automaten</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-een-toestand">1. Wat is een toestand?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#toestanden-veranderen">2. Toestanden veranderen</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
