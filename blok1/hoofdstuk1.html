@@ -216,6 +216,27 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">4ha blok 1</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Hoofdstuk 1: Toestanden en automaten</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk2.html">Hoofdstuk 2: Algoritmen &amp; beslissingen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk3.html">Hoofdstuk 3: Datastructuren</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk4.html">Hoofdstuk 4: Lussen</a></li>
@@ -430,11 +451,75 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Hoofdstuk 1: Toestanden en automaten</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-een-toestand">Wat is een toestand?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toestanden-veranderen">Toestanden veranderen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toestandsdiagrammen">Toestandsdiagrammen</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-de-deur">Oefening: de deur</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1">Opdracht 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2">Opdracht 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3">Opdracht 3</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#een-automaat">5. Een automaat</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#een-automaat-uitvoeren">6. Een automaat uitvoeren</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-een-toegangssysteem">7. Oefening: een toegangssysteem</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4">Opdracht 4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5">Opdracht 5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-6-denk-verder">Opdracht 6 — denk verder</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#toestanden-in-een-game">8. Toestanden in een game</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#van-toestand-naar-python">9. Van toestand naar Python</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#je-eerste-python-programma">10. Je eerste Python-programma</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-7">Opdracht 7</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#informatie-onthouden-variabelen">11. Informatie onthouden: variabelen</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#een-eerste-automaat-in-python">12. Een eerste automaat in Python</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#een-computer-laten-kiezen">13. Een computer laten kiezen</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#twee-mogelijke-situaties">14. Twee mogelijke situaties</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#van-beslissing-naar-overgang">15. Van beslissing naar overgang</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#de-eerste-echte-automaat">16. De eerste echte automaat</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-bouw-je-eigen-deurautomaat">17. Oefening: bouw je eigen deurautomaat</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-uitdaging">Extra uitdaging</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#een-automaat-met-meerdere-toestanden">18. Een automaat met meerdere toestanden</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-voorspel-de-uitvoer">19. Oefening: voorspel de uitvoer</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vraag">Vraag</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#een-belangrijk-idee-de-toestand-verandert-tijdens-het-uitvoeren">20. Een belangrijk idee: de toestand verandert tijdens het uitvoeren</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-teken-programmeer-test">21. Oefening: teken → programmeer → test</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-1-bedenk-de-toestanden">Stap 1 — Bedenk de toestanden</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-2-bedenk-de-gebeurtenissen">Stap 2 — Bedenk de gebeurtenissen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-3-teken-het-toestandsdiagram">Stap 3 — Teken het toestandsdiagram</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-4-schrijf-het-algoritme">Stap 4 — Schrijf het algoritme</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-5-programmeer">Stap 5 — Programmeer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-6-test">Stap 6 — Test</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-doen-we-dit">22. Waarom doen we dit?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eindopdracht-ontwerp-een-automaat">23. Eindopdracht — ontwerp een automaat</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#je-levert-in">Je levert in</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toestandsdiagram">1. Toestandsdiagram</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uitleg">2. Uitleg</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-programma">3. Python-programma</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test">4. Test</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#begrippen-die-je-moet-kennen">24. Begrippen die je moet kennen</a></li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -545,11 +630,782 @@ overgang — de verandering van de ene toestand naar een andere toestand.</p>
 <section id="toestandsdiagrammen">
 <h2>Toestandsdiagrammen<a class="headerlink" href="#toestandsdiagrammen" title="Link to this heading">#</a></h2>
 <p>We kunnen een systeem overzichtelijker tekenen met een toestandsdiagram.</p>
-<p>Een toestand tekenen we als een cirkel.</p>
-<p>Een overgang tekenen we als een pijl.</p>
+<p>Een toestand tekenen we als een cirkel.
+Een overgang tekenen we als een pijl.</p>
 <p>Bijvoorbeeld een deur:</p>
-<p>![Afbeelding niet gevonden][img/toestandsdiagram1.png]</p>
+<p>![Afbeelding niet gevonden][img/toestandsdiagram.png]</p>
+<p>Bij de pijl staat waardoor de overgang plaatsvindt.</p>
+<p>Een andere manier om hetzelfde weer te geven is:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>DICHT --openen--&gt; OPEN
+OPEN  --sluiten--&gt; DICHT
+</pre></div>
+</div>
+<p>Dat is vaak handig als je een systeem eerst op papier wilt ontwerpen.</p>
 </section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="oefening-de-deur">
+<h1>Oefening: de deur<a class="headerlink" href="#oefening-de-deur" title="Link to this heading">#</a></h1>
+<p>Een automatische deur heeft twee toestanden:</p>
+<ul class="simple">
+<li><p>DICHT</p></li>
+<li><p>OPEN</p></li>
+</ul>
+<p>De deur reageert op twee gebeurtenissen:</p>
+<ul class="simple">
+<li><p>iemand loopt naar de deur;</p></li>
+<li><p>niemand staat meer bij de deur.</p></li>
+</ul>
+<section id="opdracht-1">
+<h2>Opdracht 1<a class="headerlink" href="#opdracht-1" title="Link to this heading">#</a></h2>
+<p>Teken een toestandsdiagram voor de deur.</p>
+<p>Gebruik twee cirkels:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>DICHT
+
+OPEN
+</pre></div>
+</div>
+<p>Teken de pijlen en zet op iedere pijl de gebeurtenis waardoor de overgang plaatsvindt.</p>
+</section>
+<section id="opdracht-2">
+<h2>Opdracht 2<a class="headerlink" href="#opdracht-2" title="Link to this heading">#</a></h2>
+<p>Beantwoord de volgende vragen.</p>
+<ol class="arabic simple">
+<li><p>In welke toestand begint de deur?</p></li>
+<li><p>Wat gebeurt er als iemand naar de deur loopt?</p></li>
+<li><p>Wat gebeurt er als niemand meer bij de deur staat?</p></li>
+<li><p>Kan de deur vanuit OPEN direct naar OPEN gaan?</p></li>
+<li><p>Kan de deur vanuit DICHT direct naar DICHT gaan?</p></li>
+</ol>
+</section>
+<section id="opdracht-3">
+<h2>Opdracht 3<a class="headerlink" href="#opdracht-3" title="Link to this heading">#</a></h2>
+<p>Bedenk zelf een derde toestand voor de deur.</p>
+<p>Bijvoorbeeld:</p>
+<blockquote>
+<div><p>De deur is aan het openen.</p>
+</div></blockquote>
+<p>Pas je toestandsdiagram aan zodat deze toestand ook wordt gebruikt.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="een-automaat">
+<h1>5. Een automaat<a class="headerlink" href="#een-automaat" title="Link to this heading">#</a></h1>
+<p>Een systeem dat op basis van input van toestand kan veranderen, kunnen we modelleren als een <strong>toestandsmachine</strong>.</p>
+<p>Een veelgebruikte vorm hiervan is een <strong>eindige automaat</strong>.</p>
+<p>“Eindig” betekent hier dat de automaat een eindig aantal toestanden heeft.</p>
+<p>Een eenvoudige automaat bestaat uit:</p>
+<ol class="arabic simple">
+<li><p>een verzameling toestanden;</p></li>
+<li><p>input/gebeurtenissen;</p></li>
+<li><p>overgangen tussen toestanden;</p></li>
+<li><p>een begin-toestand.</p></li>
+</ol>
+<p>Bijvoorbeeld:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Toestanden:
+- DICHT
+- OPEN
+
+Begin:
+- DICHT
+
+Gebeurtenissen:
+- OPENEN
+- SLUITEN
+</pre></div>
+</div>
+<p>Met de overgangen:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>DICHT --OPENEN--&gt; OPEN
+OPEN  --SLUITEN--&gt; DICHT
+</pre></div>
+</div>
+<p>De automaat vertelt dus precies welk gedrag het systeem heeft.</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="een-automaat-uitvoeren">
+<h1>6. Een automaat uitvoeren<a class="headerlink" href="#een-automaat-uitvoeren" title="Link to this heading">#</a></h1>
+<p>Stel dat we de volgende gebeurtenissen krijgen:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>OPENEN
+SLUITEN
+OPENEN
+OPENEN
+SLUITEN
+</pre></div>
+</div>
+<p>We beginnen in toestand:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>DICHT
+</pre></div>
+</div>
+<p>Nu voeren we de gebeurtenissen één voor één uit.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Gebeurtenis</p></th>
+<th class="head"><p>Oude toestand</p></th>
+<th class="head"><p>Nieuwe toestand</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>OPENEN</p></td>
+<td><p>DICHT</p></td>
+<td><p>OPEN</p></td>
+</tr>
+<tr class="row-odd"><td><p>SLUITEN</p></td>
+<td><p>OPEN</p></td>
+<td><p>DICHT</p></td>
+</tr>
+<tr class="row-even"><td><p>OPENEN</p></td>
+<td><p>DICHT</p></td>
+<td><p>OPEN</p></td>
+</tr>
+<tr class="row-odd"><td><p>OPENEN</p></td>
+<td><p>OPEN</p></td>
+<td><p>OPEN</p></td>
+</tr>
+<tr class="row-even"><td><p>SLUITEN</p></td>
+<td><p>OPEN</p></td>
+<td><p>DICHT</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Let op de vierde regel.</p>
+<p>De deur is al OPEN en krijgt opnieuw de gebeurtenis OPENEN.</p>
+<p>Er verandert dan niets.</p>
+<p>Dit is belangrijk: <strong>een automaat moet voor iedere mogelijke situatie bepalen wat er gebeurt.</strong></p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="oefening-een-toegangssysteem">
+<h1>7. Oefening: een toegangssysteem<a class="headerlink" href="#oefening-een-toegangssysteem" title="Link to this heading">#</a></h1>
+<p>Een gebouw heeft een eenvoudig toegangssysteem.</p>
+<p>Het systeem heeft drie toestanden:</p>
+<ul class="simple">
+<li><p><strong>VERGRENDELD</strong></p></li>
+<li><p><strong>TOEGANG</strong></p></li>
+<li><p><strong>ALARM</strong></p></li>
+</ul>
+<p>De regels zijn:</p>
+<ul class="simple">
+<li><p>Bij een correcte code gaat het systeem van VERGRENDELD naar TOEGANG.</p></li>
+<li><p>Bij een verkeerde code blijft het systeem VERGRENDELD.</p></li>
+<li><p>Na drie verkeerde codes gaat het systeem naar ALARM.</p></li>
+<li><p>Vanuit TOEGANG kan de deur worden gesloten en gaat het systeem terug naar VERGRENDELD.</p></li>
+<li><p>Vanuit ALARM kan het systeem alleen door een beheerder worden gereset.</p></li>
+</ul>
+<section id="opdracht-4">
+<h2>Opdracht 4<a class="headerlink" href="#opdracht-4" title="Link to this heading">#</a></h2>
+<p>Teken een toestandsdiagram.</p>
+<p>Denk goed na over de gebeurtenissen.</p>
+<p>Je hebt bijvoorbeeld gebeurtenissen nodig zoals:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>correcte code
+verkeerde code
+deur sluiten
+reset
+</pre></div>
+</div>
+</section>
+<section id="opdracht-5">
+<h2>Opdracht 5<a class="headerlink" href="#opdracht-5" title="Link to this heading">#</a></h2>
+<p>Voer de volgende gebeurtenissen uit.</p>
+<p>Het systeem begint in:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>VERGRENDELD
+</pre></div>
+</div>
+<p>Gebeurtenissen:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>verkeerde code
+verkeerde code
+correcte code
+deur sluiten
+verkeerde code
+verkeerde code
+verkeerde code
+</pre></div>
+</div>
+<p>Maak een tabel waarin je na iedere gebeurtenis de toestand noteert.</p>
+</section>
+<section id="opdracht-6-denk-verder">
+<h2>Opdracht 6 — denk verder<a class="headerlink" href="#opdracht-6-denk-verder" title="Link to this heading">#</a></h2>
+<p>Waarom is <strong>“aantal verkeerde pogingen”</strong> eigenlijk ook informatie die het systeem moet onthouden?</p>
+<p>Is dat zelf een toestand?</p>
+<p>Of is het iets anders?</p>
+<p>Bespreek je antwoord met een klasgenoot.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="toestanden-in-een-game">
+<h1>8. Toestanden in een game<a class="headerlink" href="#toestanden-in-een-game" title="Link to this heading">#</a></h1>
+<p>Ook games zitten vol met toestanden.</p>
+<p>Stel dat je een eenvoudig ruimtespel maakt.</p>
+<p>Een ruimteschip kan bijvoorbeeld de volgende toestanden hebben:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>NORMAAL
+GERAAKT
+VERNIETIGD
+</pre></div>
+</div>
+<p>Bijvoorbeeld:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>              botsing
+      ┌─────────────────────┐
+      │                     v
+┌──────────┐            ┌─────────┐
+│ NORMAAL  │            │ GERAAKT │
+└──────────┘            └─────────┘
+      ^                     │
+      │                     │ nog een botsing
+      │                     v
+      │                ┌────────────┐
+      └────────────────│ VERNIETIGD │
+                       └────────────┘
+</pre></div>
+</div>
+<p>Je kunt nu al nadenken als een programmeur:</p>
+<blockquote>
+<div><p>Welke informatie moet mijn programma bijhouden om te weten wat het ruimteschip moet doen?</p>
+</div></blockquote>
+<p>Het antwoord kan bijvoorbeeld zijn:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>toestand = NORMAAL
+</pre></div>
+</div>
+<p>Als het schip wordt geraakt, verandert die toestand.</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="python">
+<h1>Python<a class="headerlink" href="#python" title="Link to this heading">#</a></h1>
+<section id="van-toestand-naar-python">
+<h2>9. Van toestand naar Python<a class="headerlink" href="#van-toestand-naar-python" title="Link to this heading">#</a></h2>
+<p>Tot nu toe hebben we systemen beschreven zonder te programmeren.</p>
+<p>Nu gaan we een computer vertellen hoe zo’n systeem moet werken.</p>
+<p>We gebruiken daarvoor <strong>Python</strong>.</p>
+<p>Python is een programmeertaal. Met Python kunnen we instructies schrijven die een computer kan uitvoeren.</p>
+<p>Je hoeft nog niets van Python te weten.</p>
+<p>We beginnen met één heel belangrijk idee:</p>
+<blockquote>
+<div><p>Een programma bestaat uit instructies die de computer één voor één uitvoert.</p>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="je-eerste-python-programma">
+<h1>10. Je eerste Python-programma<a class="headerlink" href="#je-eerste-python-programma" title="Link to this heading">#</a></h1>
+<p>Een computer kan tekst laten zien met <code class="docutils literal notranslate"><span class="pre">print()</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Hallo!"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">print</span></code> betekent ongeveer:</p>
+<blockquote>
+<div><p>laat iets zien op het scherm.</p>
+</div></blockquote>
+<p>De tekst tussen aanhalingstekens is de tekst die we willen laten zien.</p>
+<p>Probeer:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Ik leer Python"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Dit is mijn eerste programma"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>De computer voert de regels van boven naar beneden uit.</p>
+<p>De uitvoer is:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Ik leer Python
+Dit is mijn eerste programma
+</pre></div>
+</div>
+<section id="opdracht-7">
+<h2>Opdracht 7<a class="headerlink" href="#opdracht-7" title="Link to this heading">#</a></h2>
+<p>Schrijf een programma dat de volgende drie regels op het scherm laat zien:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Ik ben een programmeur.
+Ik werk met toestanden.
+Mijn computer kan een automaat uitvoeren.
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="informatie-onthouden-variabelen">
+<h1>11. Informatie onthouden: variabelen<a class="headerlink" href="#informatie-onthouden-variabelen" title="Link to this heading">#</a></h1>
+<p>Een automaat moet onthouden in welke toestand hij zich bevindt.</p>
+<p>In Python kunnen we informatie bewaren in een <strong>variabele</strong>.</p>
+<p>Bijvoorbeeld:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">toestand</span> <span class="o">=</span> <span class="s2">"DICHT"</span>
+</pre></div>
+</div>
+<p>Hiermee zeggen we:</p>
+<blockquote>
+<div><p>Bewaar de tekst <code class="docutils literal notranslate"><span class="pre">&quot;DICHT&quot;</span></code> in de variabele <code class="docutils literal notranslate"><span class="pre">toestand</span></code>.</p>
+</div></blockquote>
+<p>Je kunt daarna de waarde bekijken:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">toestand</span> <span class="o">=</span> <span class="s2">"DICHT"</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">toestand</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>De uitvoer is:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>DICHT
+</pre></div>
+</div>
+<p>Je kunt de toestand veranderen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">toestand</span> <span class="o">=</span> <span class="s2">"DICHT"</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">toestand</span><span class="p">)</span>
+
+<span class="n">toestand</span> <span class="o">=</span> <span class="s2">"OPEN"</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">toestand</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>De uitvoer:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>DICHT
+OPEN
+</pre></div>
+</div>
+<p>De variabele <code class="docutils literal notranslate"><span class="pre">toestand</span></code> werkt dus als het geheugen van onze eenvoudige automaat.</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="een-eerste-automaat-in-python">
+<h1>12. Een eerste automaat in Python<a class="headerlink" href="#een-eerste-automaat-in-python" title="Link to this heading">#</a></h1>
+<p>We kunnen nu onze deur maken.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">toestand</span> <span class="o">=</span> <span class="s2">"DICHT"</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">toestand</span><span class="p">)</span>
+
+<span class="n">toestand</span> <span class="o">=</span> <span class="s2">"OPEN"</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">toestand</span><span class="p">)</span>
+
+<span class="n">toestand</span> <span class="o">=</span> <span class="s2">"DICHT"</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">toestand</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>De computer voert dit uit als:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>DICHT
+OPEN
+DICHT
+</pre></div>
+</div>
+<p>We hebben zojuist een automaat gesimuleerd.</p>
+<p>Maar er is nog iets niet goed.</p>
+<p>De computer verandert de toestand nu omdat <strong>wij dat letterlijk in het programma hebben opgeschreven</strong>.</p>
+<p>We willen eigenlijk dat de computer zelf kan reageren op gebeurtenissen.</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="een-computer-laten-kiezen">
+<h1>13. Een computer laten kiezen<a class="headerlink" href="#een-computer-laten-kiezen" title="Link to this heading">#</a></h1>
+<p>Daarvoor gebruiken we <code class="docutils literal notranslate"><span class="pre">if</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">if</span></code> betekent:</p>
+<blockquote>
+<div><p>als dit waar is, doe dan dit.</p>
+</div></blockquote>
+<p>Bijvoorbeeld:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">toestand</span> <span class="o">=</span> <span class="s2">"DICHT"</span>
+
+<span class="k">if</span> <span class="n">toestand</span> <span class="o">==</span> <span class="s2">"DICHT"</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"De deur is dicht."</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Hier gebeurt iets nieuws.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">toestand</span> <span class="o">==</span> <span class="s2">"DICHT"</span>
+</pre></div>
+</div>
+<p>betekent:</p>
+<blockquote>
+<div><p>Is de toestand gelijk aan <code class="docutils literal notranslate"><span class="pre">&quot;DICHT&quot;</span></code>?</p>
+</div></blockquote>
+<p>Let goed op het verschil:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">toestand</span> <span class="o">=</span> <span class="s2">"DICHT"</span>
+</pre></div>
+</div>
+<p>betekent:</p>
+<blockquote>
+<div><p>geef de variabele <code class="docutils literal notranslate"><span class="pre">toestand</span></code> de waarde <code class="docutils literal notranslate"><span class="pre">&quot;DICHT&quot;</span></code>.</p>
+</div></blockquote>
+<p>Terwijl:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">toestand</span> <span class="o">==</span> <span class="s2">"DICHT"</span>
+</pre></div>
+</div>
+<p>betekent:</p>
+<blockquote>
+<div><p>controleer of <code class="docutils literal notranslate"><span class="pre">toestand</span></code> gelijk is aan <code class="docutils literal notranslate"><span class="pre">&quot;DICHT&quot;</span></code>.</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="twee-mogelijke-situaties">
+<h1>14. Twee mogelijke situaties<a class="headerlink" href="#twee-mogelijke-situaties" title="Link to this heading">#</a></h1>
+<p>Onze deur kan OPEN of DICHT zijn.</p>
+<p>We kunnen de computer laten reageren:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">toestand</span> <span class="o">=</span> <span class="s2">"DICHT"</span>
+
+<span class="k">if</span> <span class="n">toestand</span> <span class="o">==</span> <span class="s2">"DICHT"</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"De deur is dicht."</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"De deur is open."</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">else</span></code> betekent:</p>
+<blockquote>
+<div><p>anders.</p>
+</div></blockquote>
+<p>De computer kijkt dus:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Is toestand DICHT?
+       |
+      ja
+       |
+       v
+"De deur is dicht."
+
+       nee
+       |
+       v
+"De deur is open."
+</pre></div>
+</div>
+<p>Dit is een eerste voorbeeld van <strong>beslissen</strong> in een programma.</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="van-beslissing-naar-overgang">
+<h1>15. Van beslissing naar overgang<a class="headerlink" href="#van-beslissing-naar-overgang" title="Link to this heading">#</a></h1>
+<p>Nu kunnen we een overgang maken.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">toestand</span> <span class="o">=</span> <span class="s2">"DICHT"</span>
+
+<span class="n">gebeurtenis</span> <span class="o">=</span> <span class="s2">"openen"</span>
+
+<span class="k">if</span> <span class="n">gebeurtenis</span> <span class="o">==</span> <span class="s2">"openen"</span><span class="p">:</span>
+    <span class="n">toestand</span> <span class="o">=</span> <span class="s2">"OPEN"</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">toestand</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>De uitvoer is:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>OPEN
+</pre></div>
+</div>
+<p>De computer heeft nu hetzelfde gedaan als onze automaat:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>DICHT --openen--&gt; OPEN
+</pre></div>
+</div>
+<p>We hebben dus de stap gemaakt van:</p>
+<p><strong>toestandsdiagram</strong></p>
+<p>naar:</p>
+<p><strong>Python-programma</strong></p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="de-eerste-echte-automaat">
+<h1>16. De eerste echte automaat<a class="headerlink" href="#de-eerste-echte-automaat" title="Link to this heading">#</a></h1>
+<p>We kunnen het voorbeeld uitbreiden.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">toestand</span> <span class="o">=</span> <span class="s2">"DICHT"</span>
+<span class="n">gebeurtenis</span> <span class="o">=</span> <span class="s2">"openen"</span>
+
+<span class="k">if</span> <span class="n">toestand</span> <span class="o">==</span> <span class="s2">"DICHT"</span> <span class="ow">and</span> <span class="n">gebeurtenis</span> <span class="o">==</span> <span class="s2">"openen"</span><span class="p">:</span>
+    <span class="n">toestand</span> <span class="o">=</span> <span class="s2">"OPEN"</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">toestand</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Hier controleren we twee dingen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">toestand</span> <span class="o">==</span> <span class="s2">"DICHT"</span>
+</pre></div>
+</div>
+<p>en:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gebeurtenis</span> <span class="o">==</span> <span class="s2">"openen"</span>
+</pre></div>
+</div>
+<p>Allebei moeten waar zijn.</p>
+<p>Het woord <code class="docutils literal notranslate"><span class="pre">and</span></code> betekent:</p>
+<blockquote>
+<div><p>beide voorwaarden moeten waar zijn.</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="oefening-bouw-je-eigen-deurautomaat">
+<h1>17. Oefening: bouw je eigen deurautomaat<a class="headerlink" href="#oefening-bouw-je-eigen-deurautomaat" title="Link to this heading">#</a></h1>
+<p>Maak een Python-programma met:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">toestand</span> <span class="o">=</span> <span class="s2">"DICHT"</span>
+</pre></div>
+</div>
+<p>en:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gebeurtenis</span> <span class="o">=</span> <span class="s2">"openen"</span>
+</pre></div>
+</div>
+<p>Zorg ervoor dat de computer de toestand verandert naar <code class="docutils literal notranslate"><span class="pre">&quot;OPEN&quot;</span></code> als de gebeurtenis <code class="docutils literal notranslate"><span class="pre">&quot;openen&quot;</span></code> is.</p>
+<p>Laat daarna de toestand printen.</p>
+<p>Je programma moet bijvoorbeeld dit kunnen opleveren:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>OPEN
+</pre></div>
+</div>
+<section id="extra-uitdaging">
+<h2>Extra uitdaging<a class="headerlink" href="#extra-uitdaging" title="Link to this heading">#</a></h2>
+<p>Voeg ook de gebeurtenis <code class="docutils literal notranslate"><span class="pre">&quot;sluiten&quot;</span></code> toe.</p>
+<p>Je programma moet dan bijvoorbeeld deze overgang kunnen uitvoeren:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>OPEN --sluiten--&gt; DICHT
+</pre></div>
+</div>
+<p>Denk eerst na over het toestandsdiagram voordat je gaat programmeren.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="een-automaat-met-meerdere-toestanden">
+<h1>18. Een automaat met meerdere toestanden<a class="headerlink" href="#een-automaat-met-meerdere-toestanden" title="Link to this heading">#</a></h1>
+<p>Nu maken we een verkeerslicht.</p>
+<p>Het verkeerslicht heeft drie toestanden:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ROOD
+GROEN
+ORANJE
+</pre></div>
+</div>
+<p>We spreken af:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ROOD → GROEN
+GROEN → ORANJE
+ORANJE → ROOD
+</pre></div>
+</div>
+<p>In Python kunnen we bijvoorbeeld schrijven:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">toestand</span> <span class="o">=</span> <span class="s2">"ROOD"</span>
+<span class="n">gebeurtenis</span> <span class="o">=</span> <span class="s2">"volgende"</span>
+
+<span class="k">if</span> <span class="n">toestand</span> <span class="o">==</span> <span class="s2">"ROOD"</span><span class="p">:</span>
+    <span class="n">toestand</span> <span class="o">=</span> <span class="s2">"GROEN"</span>
+
+<span class="k">elif</span> <span class="n">toestand</span> <span class="o">==</span> <span class="s2">"GROEN"</span><span class="p">:</span>
+    <span class="n">toestand</span> <span class="o">=</span> <span class="s2">"ORANJE"</span>
+
+<span class="k">elif</span> <span class="n">toestand</span> <span class="o">==</span> <span class="s2">"ORANJE"</span><span class="p">:</span>
+    <span class="n">toestand</span> <span class="o">=</span> <span class="s2">"ROOD"</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">toestand</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">elif</span></code> betekent ongeveer:</p>
+<blockquote>
+<div><p>als het vorige niet waar was, controleer dan deze andere mogelijkheid.</p>
+</div></blockquote>
+<p>We hebben nu dus:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>if
+elif
+elif
+</pre></div>
+</div>
+<p>Dat correspondeert met verschillende mogelijke toestanden.</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="oefening-voorspel-de-uitvoer">
+<h1>19. Oefening: voorspel de uitvoer<a class="headerlink" href="#oefening-voorspel-de-uitvoer" title="Link to this heading">#</a></h1>
+<p>Zonder het programma uit te voeren: wat wordt er geprint?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">toestand</span> <span class="o">=</span> <span class="s2">"GROEN"</span>
+
+<span class="k">if</span> <span class="n">toestand</span> <span class="o">==</span> <span class="s2">"ROOD"</span><span class="p">:</span>
+    <span class="n">toestand</span> <span class="o">=</span> <span class="s2">"GROEN"</span>
+
+<span class="k">elif</span> <span class="n">toestand</span> <span class="o">==</span> <span class="s2">"GROEN"</span><span class="p">:</span>
+    <span class="n">toestand</span> <span class="o">=</span> <span class="s2">"ORANJE"</span>
+
+<span class="k">elif</span> <span class="n">toestand</span> <span class="o">==</span> <span class="s2">"ORANJE"</span><span class="p">:</span>
+    <span class="n">toestand</span> <span class="o">=</span> <span class="s2">"ROOD"</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">toestand</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Schrijf eerst je antwoord op.</p>
+<p>Voer daarna het programma uit.</p>
+<section id="vraag">
+<h2>Vraag<a class="headerlink" href="#vraag" title="Link to this heading">#</a></h2>
+<p>Waarom wordt er niet eerst <code class="docutils literal notranslate"><span class="pre">GROEN</span></code> en daarna <code class="docutils literal notranslate"><span class="pre">ORANJE</span></code> geprint?</p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="een-belangrijk-idee-de-toestand-verandert-tijdens-het-uitvoeren">
+<h1>20. Een belangrijk idee: de toestand verandert tijdens het uitvoeren<a class="headerlink" href="#een-belangrijk-idee-de-toestand-verandert-tijdens-het-uitvoeren" title="Link to this heading">#</a></h1>
+<p>Kijk nog eens naar:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">toestand</span> <span class="o">=</span> <span class="s2">"GROEN"</span>
+
+<span class="k">if</span> <span class="n">toestand</span> <span class="o">==</span> <span class="s2">"GROEN"</span><span class="p">:</span>
+    <span class="n">toestand</span> <span class="o">=</span> <span class="s2">"ORANJE"</span>
+</pre></div>
+</div>
+<p>Voor de <code class="docutils literal notranslate"><span class="pre">if</span></code> is de toestand:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>GROEN
+</pre></div>
+</div>
+<p>Na de opdracht:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">toestand</span> <span class="o">=</span> <span class="s2">"ORANJE"</span>
+</pre></div>
+</div>
+<p>is de toestand:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ORANJE
+</pre></div>
+</div>
+<p>De toestand is dus informatie die tijdens het uitvoeren van het programma kan veranderen.</p>
+<p>Dat is precies wat we met een toestandmachine bedoelen.</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="oefening-teken-programmeer-test">
+<h1>21. Oefening: teken → programmeer → test<a class="headerlink" href="#oefening-teken-programmeer-test" title="Link to this heading">#</a></h1>
+<p>Kies één van deze systemen:</p>
+<ul class="simple">
+<li><p>een verkeerslicht;</p></li>
+<li><p>een automatische deur;</p></li>
+<li><p>een lift;</p></li>
+<li><p>een pinautomaat;</p></li>
+<li><p>een gamepersonage;</p></li>
+<li><p>een fietsverhuurstation.</p></li>
+</ul>
+<p>Werk steeds in deze volgorde.</p>
+<section id="stap-1-bedenk-de-toestanden">
+<h2>Stap 1 — Bedenk de toestanden<a class="headerlink" href="#stap-1-bedenk-de-toestanden" title="Link to this heading">#</a></h2>
+<p>Welke verschillende situaties kunnen voorkomen?</p>
+</section>
+<section id="stap-2-bedenk-de-gebeurtenissen">
+<h2>Stap 2 — Bedenk de gebeurtenissen<a class="headerlink" href="#stap-2-bedenk-de-gebeurtenissen" title="Link to this heading">#</a></h2>
+<p>Waardoor kan de toestand veranderen?</p>
+</section>
+<section id="stap-3-teken-het-toestandsdiagram">
+<h2>Stap 3 — Teken het toestandsdiagram<a class="headerlink" href="#stap-3-teken-het-toestandsdiagram" title="Link to this heading">#</a></h2>
+<p>Teken alle toestanden en overgangen.</p>
+</section>
+<section id="stap-4-schrijf-het-algoritme">
+<h2>Stap 4 — Schrijf het algoritme<a class="headerlink" href="#stap-4-schrijf-het-algoritme" title="Link to this heading">#</a></h2>
+<p>Beschrijf in gewone taal wat de computer moet doen.</p>
+<p>Bijvoorbeeld:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Als de toestand DICHT is en iemand opent de deur,
+dan wordt de toestand OPEN.
+</pre></div>
+</div>
+</section>
+<section id="stap-5-programmeer">
+<h2>Stap 5 — Programmeer<a class="headerlink" href="#stap-5-programmeer" title="Link to this heading">#</a></h2>
+<p>Vertaal je algoritme naar Python.</p>
+</section>
+<section id="stap-6-test">
+<h2>Stap 6 — Test<a class="headerlink" href="#stap-6-test" title="Link to this heading">#</a></h2>
+<p>Probeer verschillende gebeurtenissen.</p>
+<p>Vraag jezelf af:</p>
+<blockquote>
+<div><p>Doet mijn programma altijd wat het toestandsdiagram zegt?</p>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="waarom-doen-we-dit">
+<h1>22. Waarom doen we dit?<a class="headerlink" href="#waarom-doen-we-dit" title="Link to this heading">#</a></h1>
+<p>Je zou kunnen denken:</p>
+<blockquote>
+<div><p>Waarom tekenen we eerst al die toestanden? We kunnen toch gewoon Python schrijven?</p>
+</div></blockquote>
+<p>Dat is precies de verkeerde volgorde.</p>
+<p>Als je direct begint te programmeren, kun je gemakkelijk code schrijven die toevallig werkt. Maar je weet dan niet altijd waarom.</p>
+<p>Bij informatica willen we eerst het probleem begrijpen.</p>
+<p>Daarom gebruiken we:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>probleem
+   ↓
+model
+   ↓
+toestanden
+   ↓
+toestandsdiagram
+   ↓
+algoritme
+   ↓
+programma
+   ↓
+testen
+</pre></div>
+</div>
+<p>Een toestandsdiagram is dus een <strong>model</strong> van het gedrag van een systeem.</p>
+<p>Python is vervolgens een manier om dat model door een computer te laten uitvoeren.</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="eindopdracht-ontwerp-een-automaat">
+<h1>23. Eindopdracht — ontwerp een automaat<a class="headerlink" href="#eindopdracht-ontwerp-een-automaat" title="Link to this heading">#</a></h1>
+<p>Ontwerp een eenvoudige automaat voor een systeem naar keuze.</p>
+<p>Je mag kiezen uit:</p>
+<ul class="simple">
+<li><p>een verkeerslicht;</p></li>
+<li><p>een deur;</p></li>
+<li><p>een lift;</p></li>
+<li><p>een pinautomaat;</p></li>
+<li><p>een gamepersonage;</p></li>
+<li><p>een wachtwoordbeveiliging;</p></li>
+<li><p>een eigen idee.</p></li>
+</ul>
+<p>Je ontwerp moet minimaal bevatten:</p>
+<ul class="simple">
+<li><p>3 toestanden;</p></li>
+<li><p>minimaal 4 mogelijke gebeurtenissen;</p></li>
+<li><p>een duidelijke begin-toestand;</p></li>
+<li><p>overgangen tussen de toestanden;</p></li>
+<li><p>minimaal één situatie waarin de toestand niet verandert;</p></li>
+<li><p>een toestandsdiagram;</p></li>
+<li><p>een Python-programma dat een deel van de automaat uitvoert.</p></li>
+</ul>
+<section id="je-levert-in">
+<h2>Je levert in<a class="headerlink" href="#je-levert-in" title="Link to this heading">#</a></h2>
+<section id="toestandsdiagram">
+<h3>1. Toestandsdiagram<a class="headerlink" href="#toestandsdiagram" title="Link to this heading">#</a></h3>
+<p>Het diagram moet duidelijk maken:</p>
+<ul class="simple">
+<li><p>welke toestanden bestaan;</p></li>
+<li><p>welke gebeurtenissen er zijn;</p></li>
+<li><p>welke overgang plaatsvindt.</p></li>
+</ul>
+</section>
+<section id="uitleg">
+<h3>2. Uitleg<a class="headerlink" href="#uitleg" title="Link to this heading">#</a></h3>
+<p>Leg in je eigen woorden uit hoe jouw automaat werkt.</p>
+</section>
+<section id="python-programma">
+<h3>3. Python-programma<a class="headerlink" href="#python-programma" title="Link to this heading">#</a></h3>
+<p>Je programma moet minimaal gebruikmaken van:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>een variabele voor de toestand:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">toestand</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>en beslissingen met:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span>
+</pre></div>
+</div>
+<p>en eventueel:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">elif</span>
+<span class="k">else</span>
+</pre></div>
+</div>
+</section>
+<section id="test">
+<h3>4. Test<a class="headerlink" href="#test" title="Link to this heading">#</a></h3>
+<p>Laat minimaal drie verschillende situaties zien.</p>
+<p>Bijvoorbeeld:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Begintoestand: DICHT
+Gebeurtenis: openen
+Nieuwe toestand: OPEN
+</pre></div>
+</div>
+<p>en:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Begintoestand: OPEN
+Gebeurtenis: sluiten
+Nieuwe toestand: DICHT
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="begrippen-die-je-moet-kennen">
+<h1>24. Begrippen die je moet kennen<a class="headerlink" href="#begrippen-die-je-moet-kennen" title="Link to this heading">#</a></h1>
+<p>Aan het einde van deze week moet je de volgende begrippen kunnen uitleggen:</p>
+<p><strong>Toestand</strong><br />
+Een beschrijving van de situatie waarin een systeem zich op een bepaald moment bevindt.</p>
+<p><strong>Gebeurtenis / input</strong><br />
+Iets waarop een systeem kan reageren.</p>
+<p><strong>Overgang</strong><br />
+Een verandering van de ene toestand naar een andere toestand.</p>
+<p><strong>Toestandsdiagram</strong><br />
+Een diagram waarmee je toestanden en overgangen van een systeem beschrijft.</p>
+<p><strong>Toestandsmachine</strong><br />
+Een model van een systeem dat bestaat uit toestanden en overgangen tussen die toestanden.</p>
+<p><strong>Eindige automaat</strong><br />
+Een toestandsmachine met een eindig aantal toestanden.</p>
+<p><strong>Variabele</strong><br />
+Een naam waarmee een programma informatie kan bewaren.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">if</span></code></strong><br />
+Een Python-constructie waarmee een programma afhankelijk van een voorwaarde een keuze kan maken.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">elif</span></code></strong><br />
+Een extra voorwaarde die wordt gecontroleerd als een eerdere <code class="docutils literal notranslate"><span class="pre">if</span></code> of <code class="docutils literal notranslate"><span class="pre">elif</span></code> niet waar was.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">else</span></code></strong><br />
+Geeft aan wat er gebeurt als de eerdere voorwaarden niet waar zijn.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -618,11 +1474,75 @@ overgang — de verandering van de ene toestand naar een andere toestand.</p>
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Hoofdstuk 1: Toestanden en automaten</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-een-toestand">Wat is een toestand?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toestanden-veranderen">Toestanden veranderen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toestandsdiagrammen">Toestandsdiagrammen</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-de-deur">Oefening: de deur</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1">Opdracht 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2">Opdracht 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3">Opdracht 3</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#een-automaat">5. Een automaat</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#een-automaat-uitvoeren">6. Een automaat uitvoeren</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-een-toegangssysteem">7. Oefening: een toegangssysteem</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4">Opdracht 4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5">Opdracht 5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-6-denk-verder">Opdracht 6 — denk verder</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#toestanden-in-een-game">8. Toestanden in een game</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#van-toestand-naar-python">9. Van toestand naar Python</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#je-eerste-python-programma">10. Je eerste Python-programma</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-7">Opdracht 7</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#informatie-onthouden-variabelen">11. Informatie onthouden: variabelen</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#een-eerste-automaat-in-python">12. Een eerste automaat in Python</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#een-computer-laten-kiezen">13. Een computer laten kiezen</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#twee-mogelijke-situaties">14. Twee mogelijke situaties</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#van-beslissing-naar-overgang">15. Van beslissing naar overgang</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#de-eerste-echte-automaat">16. De eerste echte automaat</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-bouw-je-eigen-deurautomaat">17. Oefening: bouw je eigen deurautomaat</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-uitdaging">Extra uitdaging</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#een-automaat-met-meerdere-toestanden">18. Een automaat met meerdere toestanden</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-voorspel-de-uitvoer">19. Oefening: voorspel de uitvoer</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vraag">Vraag</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#een-belangrijk-idee-de-toestand-verandert-tijdens-het-uitvoeren">20. Een belangrijk idee: de toestand verandert tijdens het uitvoeren</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-teken-programmeer-test">21. Oefening: teken → programmeer → test</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-1-bedenk-de-toestanden">Stap 1 — Bedenk de toestanden</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-2-bedenk-de-gebeurtenissen">Stap 2 — Bedenk de gebeurtenissen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-3-teken-het-toestandsdiagram">Stap 3 — Teken het toestandsdiagram</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-4-schrijf-het-algoritme">Stap 4 — Schrijf het algoritme</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-5-programmeer">Stap 5 — Programmeer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-6-test">Stap 6 — Test</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-doen-we-dit">22. Waarom doen we dit?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eindopdracht-ontwerp-een-automaat">23. Eindopdracht — ontwerp een automaat</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#je-levert-in">Je levert in</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toestandsdiagram">1. Toestandsdiagram</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uitleg">2. Uitleg</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-programma">3. Python-programma</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test">4. Test</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#begrippen-die-je-moet-kennen">24. Begrippen die je moet kennen</a></li>
+</ul>
+
   </nav></div>
 
 </div></div>
