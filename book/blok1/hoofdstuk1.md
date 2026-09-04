@@ -795,7 +795,7 @@ Geeft aan wat er gebeurt als de eerdere voorwaarden niet waar zijn.
 
 ---
 
-9. Eindopdracht — ontwerp een automaat
+7. Eindopdracht — ontwerp een automaat
 
    Ontwerp een eenvoudige automaat voor een systeem naar keuze.
 
