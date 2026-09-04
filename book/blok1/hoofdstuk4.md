@@ -67,7 +67,7 @@ Voorbeeld:
 
 ```python
 for i in range(5):
-		print("Welkom")
+        print("Welkom")
 ```
 
 Uitvoer:
@@ -94,7 +94,7 @@ Voor elke waarde wordt het blok met inspringing uitgevoerd.
 
 ```python
 for i in range(5):
-		print(i)
+        print(i)
 ```
 
 Uitvoer:
@@ -111,23 +111,23 @@ Uitvoer:
 
 ```text
 START
-	|
-	v
+    |
+    v
 Zet i op eerste waarde uit range
-	|
-	v
+    |
+    v
 Is er nog een volgende waarde?
-	| ja
-	v
+    | ja
+    v
 Voer lusblok uit
-	|
-	v
+    |
+    v
 Neem volgende waarde van i
-	|
-	+------ terug naar controle ------+
-	|
-	nee
-	v
+    |
+    +------ terug naar controle ------+
+    |
+    nee
+    v
 EINDE
 ```
 
@@ -141,7 +141,7 @@ Nu gebruiken we die in lussen:
 
 ```python
 for i in range(2, 7):
-		print(i)
+        print(i)
 ```
 
 Uitvoer:
@@ -158,7 +158,7 @@ Met stapgrootte:
 
 ```python
 for i in range(0, 11, 2):
-		print(i)
+        print(i)
 ```
 
 Uitvoer:
@@ -184,8 +184,8 @@ Voorbeeld:
 teller = 0
 
 while teller < 5:
-		print(teller)
-		teller = teller + 1
+        print(teller)
+        teller = teller + 1
 ```
 
 Uitvoer:
@@ -206,23 +206,23 @@ Als je `teller` niet verhoogt, blijft de voorwaarde waar en krijg je een oneindi
 
 ```text
 START
-	|
-	v
+    |
+    v
 Initialiseer variabele(n)
-	|
-	v
+    |
+    v
 Voorwaarde waar?
-	| ja
-	v
+    | ja
+    v
 Voer lusblok uit
-	|
-	v
+    |
+    v
 Pas variabele(n) aan
-	|
-	+------ terug naar controle ------+
-	|
-	nee
-	v
+    |
+    +------ terug naar controle ------+
+    |
+    nee
+    v
 EINDE
 ```
 
@@ -236,7 +236,7 @@ Voorbeeld met `for`:
 
 ```python
 for i in range(5):
-		print(i)
+        print(i)
 ```
 
 Zelfde idee met `while`:
@@ -244,8 +244,8 @@ Zelfde idee met `while`:
 ```python
 i = 0
 while i < 5:
-		print(i)
-		i = i + 1
+        print(i)
+        i = i + 1
 ```
 
 In de praktijk kies je meestal `for` bij een vaste reeks en `while` bij een voorwaarde.
@@ -262,7 +262,7 @@ Nu kun je door een lijst lopen met indexen:
 scores = [120, 85, 220, 40]
 
 for i in range(len(scores)):
-		print(scores[i])
+        print(scores[i])
 ```
 
 Uitvoer:
@@ -281,7 +281,7 @@ scores = [120, 85, 220, 40]
 totaal = 0
 
 for i in range(len(scores)):
-		totaal = totaal + scores[i]
+        totaal = totaal + scores[i]
 
 print(totaal)
 ```
@@ -304,8 +304,8 @@ Samen met lussen kun je meerdere willekeurige waarden maken.
 import random
 
 for i in range(5):
-		worp = random.randrange(1, 7)
-		print(worp)
+        worp = random.randrange(1, 7)
+        print(worp)
 ```
 
 Dit simuleert vijf dobbelsteenworpen.
@@ -318,9 +318,9 @@ import random
 aantal_zessen = 0
 
 for i in range(20):
-		worp = random.randrange(1, 7)
-		if worp == 6:
-				aantal_zessen = aantal_zessen + 1
+        worp = random.randrange(1, 7)
+        if worp == 6:
+                aantal_zessen = aantal_zessen + 1
 
 print(aantal_zessen)
 ```
@@ -337,9 +337,9 @@ Voorbeeld: 3 regels met 5 sterretjes.
 
 ```python
 for rij in range(3):
-		for kolom in range(5):
-				print("*", end=" ")
-		print()
+        for kolom in range(5):
+                print("*", end=" ")
+        print()
 ```
 
 Uitvoer:
@@ -354,28 +354,28 @@ Uitvoer:
 
 ```text
 START
-	|
-	v
+    |
+    v
 Start buitenste lus (rij)
-	|
-	v
+    |
+    v
 Start binnenste lus (kolom)
-	|
-	v
+    |
+    v
 Print element
-	|
-	v
+    |
+    v
 Binnenste lus klaar?
-	| nee -> terug naar print element
-	| ja
-	v
+    | nee -> terug naar print element
+    | ja
+    v
 Nieuwe regel
-	|
-	v
+    |
+    v
 Buitenste lus klaar?
-	| nee -> terug naar binnenste lus
-	| ja
-	v
+    | nee -> terug naar binnenste lus
+    | ja
+    v
 EINDE
 ```
 
@@ -428,7 +428,30 @@ Een lus die niet stopt.
 
 ---
 
+## Succescriteria
+
+Aan het einde van dit hoofdstuk kun je:
+
+- uitleggen wanneer je `for` of `while` kiest;
+- `range()` met juiste grenzen toepassen;
+- met lussen sommen, tellingen en patronen maken;
+- geneste lussen gebruiken voor eenvoudige tabellen en figuren.
+
+## Mini-rubric
+
+| Onderdeel | Startend                     | Voldoende                               | Sterk                                      |
+| --------- | ---------------------------- | --------------------------------------- | ------------------------------------------ |
+| Begrijpen | Kent termen `for` en `while` | Legt verschil en keuze correct uit      | Voorspelt gedrag van lussen foutloos       |
+| Toepassen | Schrijft eenvoudige lus      | Maakt werkende lusopgaven incl. patroon | Combineert lussen met lijsten en condities |
+| Testen    | Probeert enkele runs         | Controleert grenzen en stopcondities    | Onderbouwt en documenteert teststrategie   |
+| Uitleggen | Beschrijft uitkomst kort     | Legt stap-voor-stap werking uit         | Verklaart optimalisaties en fouten         |
+
+---
+
 # Opdrachten
+
+**Kernroute (verplicht, circa 60% van de opgavenlast):** opdracht 1, 2, 3, 4, 6, 8 en 10.  
+**Plusroute (verdieping):** opdracht 5, 7, 9, 11 en 12.
 
 1. Eerste `for`-lus
 
@@ -448,21 +471,21 @@ Een lus die niet stopt.
 
    ```python
    for i in range(5):
-   		 print(i)
+       print(i)
    ```
 
    b.
 
    ```python
    for i in range(2, 8):
-   		 print(i)
+       print(i)
    ```
 
    c.
 
    ```python
    for i in range(10, 0, -2):
-   		 print(i)
+       print(i)
    ```
 
    d. Leg uit waarom de stopwaarde niet wordt geprint.
@@ -649,4 +672,4 @@ Ook heb je eerdere kennis toegepast: variabelen, lijsten, beslissingen en operat
 
 Daardoor kun je nu niet alleen losse opdrachten oplossen, maar ook grotere patronen, tabellen en simulaties bouwen.
 
-In het volgende hoofdstuk ga je deze vaardigheden verder uitdiepen met uitdagende lusproblemen waarin nauwkeurig denken en stap-voor-stap ontwerpen centraal staan.
+In het volgende hoofdstuk gebruik je deze lusvaardigheden als opstap naar grammatica's: je leert formeel beschrijven welke invoer geldig is en hoe je dat denken koppelt aan code.

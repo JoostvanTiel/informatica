@@ -320,7 +320,7 @@ betekent:
 
 > controleer of `toestand` gelijk is aan `"DICHT"`.
 
-Hierboven wordt slechts één toestand gecontroleerdm namelijk of de toestand van de deur `"DICHT"` is.
+Hierboven wordt slechts één toestand gecontroleerd, namelijk of de toestand van de deur `"DICHT"` is.
 
 Maar onze deur kan natuurlijk OPEN of DICHT zijn.
 
@@ -567,7 +567,30 @@ Geeft aan wat er gebeurt als de eerdere voorwaarden niet waar zijn.
 
 ---
 
+## Succescriteria
+
+Aan het einde van dit hoofdstuk kun je:
+
+- een systeem beschrijven met toestanden, gebeurtenissen en overgangen;
+- een toestandsdiagram tekenen en uitleggen;
+- een eenvoudige overgang vertalen naar Python met variabelen en `if`/`else`;
+- minimaal drie testsituaties bedenken en uitvoeren.
+
+## Mini-rubric
+
+| Onderdeel | Startend                     | Voldoende                                          | Sterk                                      |
+| --------- | ---------------------------- | -------------------------------------------------- | ------------------------------------------ |
+| Begrijpen | Herkent losse begrippen      | Legt toestand, gebeurtenis en overgang correct uit | Vergelijkt systemen en onderbouwt keuzes   |
+| Toepassen | Tekent deels correct diagram | Maakt werkend diagram + eenvoudige code            | Bouwt uitgebreid model met extra toestand  |
+| Testen    | Test beperkt of zonder plan  | Test met meerdere situaties                        | Test systematisch met verwachte uitkomsten |
+| Uitleggen | Beschrijving is onduidelijk  | Legt stappen in eigen woorden uit                  | Verantwoordt ontwerpkeuzes helder          |
+
+---
+
 # Opdrachten
+
+**Kernroute (verplicht, circa 60% van de opgavenlast):** opdracht 1, 2, 4 en 6.  
+**Plusroute (verdieping):** opdracht 3, 5 en 7.
 
 1. De deur
 
@@ -876,20 +899,20 @@ Geeft aan wat er gebeurt als de eerdere voorwaarden niet waar zijn.
       Nieuwe toestand: DICHT
       ```
 
-   ***
+---
 
-   ## Afronding
+## Afronding
 
-   In dit hoofdstuk heb je geleerd dat veel systemen werken met toestanden.
+In dit hoofdstuk heb je geleerd dat veel systemen werken met toestanden.
 
-   Je hebt gezien dat een systeem op basis van gebeurtenissen kan veranderen van toestand, en dat je dit overzichtelijk kunt tekenen in een toestandsdiagram.
+Je hebt gezien dat een systeem op basis van gebeurtenissen kan veranderen van toestand, en dat je dit overzichtelijk kunt tekenen in een toestandsdiagram.
 
-   Ook heb je de eerste stap gezet naar programmeren in Python met variabelen en beslissingen zoals `if`, `elif` en `else`.
+Ook heb je de eerste stap gezet naar programmeren in Python met variabelen en beslissingen zoals `if`, `elif` en `else`.
 
-   Een belangrijke conclusie is:
+Een belangrijke conclusie is:
 
-   eerst nadenken over het model, daarna pas programmeren.
+eerst nadenken over het model, daarna pas programmeren.
 
-   Daarmee wordt je programma niet alleen werkend, maar ook logisch en uitlegbaar.
+Daarmee wordt je programma niet alleen werkend, maar ook logisch en uitlegbaar.
 
-   In het volgende hoofdstuk ga je deze manier van denken verder gebruiken bij het ontwerpen van algoritmen en het nemen van beslissingen.
+In het volgende hoofdstuk ga je deze manier van denken logisch vervolgen: je gebruikt dezelfde aanpak om algoritmen te ontwerpen en beslissingen systematisch te testen.
