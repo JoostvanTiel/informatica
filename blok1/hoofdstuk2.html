@@ -153,6 +153,10 @@
   
 
   
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
 </div>
 
     </header>
@@ -214,6 +218,35 @@
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk1.html">Hoofdstuk 1: Toestanden en automaten</a></li>
 
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Hoofdstuk 2: Algoritmen &amp; beslissingen</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk3.html">Hoofdstuk 3: Datastructuren</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk4.html">Hoofdstuk 4: Lussen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk5.html">Hoofdstuk 5: Grammatica’s</a></li>
@@ -404,7 +437,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -420,6 +455,110 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Hoofdstuk 2: Algoritmen &amp; beslissingen</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#van-toestandsautomaat-naar-algoritme">1. Van toestandsautomaat naar algoritme</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-een-algoritme">2. Wat is een algoritme?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#een-probleem-eerst-begrijpen">3. Een probleem eerst begrijpen</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#input-verwerking-en-output">4. Input, verwerking en output</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#beslissingen">5. Beslissingen</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#stroomdiagrammen">6. Stroomdiagrammen</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#toestandsdiagram-of-stroomdiagram">7. Toestandsdiagram of stroomdiagram?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#van-stroomdiagram-naar-python">8. Van stroomdiagram naar Python</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#een-algoritme-ontwerpen-eerst-in-gewone-taal">9. Een algoritme ontwerpen: eerst in gewone taal</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-temperatuur">10. Oefening — temperatuur</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1">Opdracht 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2">Opdracht 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3">Opdracht 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4">Opdracht 4</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#beslissingen-stapelen">11. Beslissingen stapelen</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-game-score">12. Oefening — game-score</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5">Opdracht 5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-6">Opdracht 6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-7">Opdracht 7</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-8">Opdracht 8</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#een-beslissing-kan-ook-een-berekening-bevatten">13. Een beslissing kan ook een berekening bevatten</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-voldoende-of-onvoldoende">14. Oefening — voldoende of onvoldoende?</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-9">Opdracht 9</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-10">Opdracht 10</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-11">Opdracht 11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-12">Opdracht 12</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#grenswaarden">15. Grenswaarden</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-waar-zit-de-fout">16. Oefening — waar zit de fout?</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-13">Opdracht 13</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-14">Opdracht 14</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-15">Opdracht 15</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-16">Opdracht 16</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#meerdere-voorwaarden">17. Meerdere voorwaarden</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-attractie">18. Oefening — attractie</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-17">Opdracht 17</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-18">Opdracht 18</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-19">Opdracht 19</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-20">Opdracht 20</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#van-algoritme-naar-programma">19. Van algoritme naar programma</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-wat-moet-de-computer-beslissen">20. Oefening — wat moet de computer beslissen?</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probleem-a-korting">Probleem A — korting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probleem-b-positief-of-negatief">Probleem B — positief of negatief</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probleem-c-even-of-oneven">Probleem C — even of oneven</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probleem-d-wachtwoord">Probleem D — wachtwoord</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">21. Van toestandsautomaat naar algoritme</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-verbeter-de-automaat">22. Oefening — verbeter de automaat</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-21">Opdracht 21</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-22">Opdracht 22</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-23">Opdracht 23</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-24">Opdracht 24</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-25-fout-zoeken">Opdracht 25 — fout zoeken</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritmen-testen">23. Algoritmen testen</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#testen-met-normale-gevallen-en-grensgevallen">24. Testen met normale gevallen en grensgevallen</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-test-een-algoritme">25. Oefening — test een algoritme</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-26">Opdracht 26</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-27">Opdracht 27</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-28">Opdracht 28</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-29">Opdracht 29</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#een-algoritme-kan-meerdere-correcte-oplossingen-hebben">26. Een algoritme kan meerdere correcte oplossingen hebben</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eindopdracht-ontwerp-je-eigen-beslisprogramma">27. Eindopdracht — ontwerp je eigen beslisprogramma</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eisen">Eisen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#je-werkt-in-deze-volgorde">Je werkt in deze volgorde</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-1-beschrijf-het-probleem">Stap 1 — Beschrijf het probleem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-2-bepaal-de-input">Stap 2 — Bepaal de input</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-3-bepaal-de-output">Stap 3 — Bepaal de output</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-4-ontwerp-het-algoritme">Stap 4 — Ontwerp het algoritme</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-5-maak-een-stroomdiagram">Stap 5 — Maak een stroomdiagram</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-6-schrijf-python">Stap 6 — Schrijf Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-7-test">Stap 7 — Test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-8-evalueer">Stap 8 — Evalueer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#begrippenlijst">28. Begrippenlijst</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">29. Samenvatting</a></li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -431,7 +570,1226 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="hoofdstuk-2-algoritmen-beslissingen">
 <h1>Hoofdstuk 2: Algoritmen &amp; beslissingen<a class="headerlink" href="#hoofdstuk-2-algoritmen-beslissingen" title="Link to this heading">#</a></h1>
-<p>Inhoud van hoofdstuk 2.</p>
+<section id="leerdoelen">
+<h2>Leerdoelen<a class="headerlink" href="#leerdoelen" title="Link to this heading">#</a></h2>
+<p>In het vorige hoofdstuk heb je geleerd hoe je een systeem kunt beschrijven met <strong>toestanden</strong>, <strong>inputs</strong> en <strong>overgangen</strong>. Je hebt gezien dat een toestandsdiagram een model kan zijn van het gedrag van een systeem.</p>
+<p>In dit hoofdstuk maken we de stap van zo’n model naar een <strong>algoritme</strong>.</p>
+<p>Je leert:</p>
+<ul class="simple">
+<li><p>wat een algoritme is;</p></li>
+<li><p>hoe je een probleem eerst analyseert voordat je gaat programmeren;</p></li>
+<li><p>hoe je beslissingen in een algoritme beschrijft;</p></li>
+<li><p>hoe je beslissingen weergeeft met een stroomdiagram;</p></li>
+<li><p>hoe je een algoritme vertaalt naar Python;</p></li>
+<li><p>hoe je met <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code> en <code class="docutils literal notranslate"><span class="pre">else</span></code> verschillende situaties kunt afhandelen;</p></li>
+<li><p>hoe je een algoritme systematisch kunt testen;</p></li>
+<li><p>hoe je fouten in een algoritme kunt vinden en verbeteren.</p></li>
+</ul>
+<p>Aan het einde van dit hoofdstuk kun je een eenvoudig probleem analyseren, een algoritme ontwerpen en dat algoritme vertalen naar Python.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="van-toestandsautomaat-naar-algoritme">
+<h1>1. Van toestandsautomaat naar algoritme<a class="headerlink" href="#van-toestandsautomaat-naar-algoritme" title="Link to this heading">#</a></h1>
+<p>In het vorige hoofdstuk gebruikten we toestandsautomaten om het gedrag van systemen te beschrijven.</p>
+<p>Bijvoorbeeld een automatische deur:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>DICHT --openen--&gt; OPEN
+OPEN  --sluiten--&gt; DICHT
+</pre></div>
+</div>
+<p>De automaat beschrijft <strong>wat er gebeurt wanneer een bepaalde input binnenkomt</strong>.</p>
+<p>Bij programmeren komen we hetzelfde idee voortdurend tegen.</p>
+<p>Een programma krijgt informatie binnen en moet vervolgens bepalen wat het moet doen.</p>
+<p>Bijvoorbeeld:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Temperatuur: 7 °C
+
+Is de temperatuur lager dan 10 °C?
+        |
+       ja
+        |
+        v
+"Neem een jas mee."
+</pre></div>
+</div>
+<p>De computer moet hier een <strong>beslissing</strong> nemen.</p>
+<p>Een algoritme beschrijft stap voor stap hoe die beslissing moet worden genomen.</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="wat-is-een-algoritme">
+<h1>2. Wat is een algoritme?<a class="headerlink" href="#wat-is-een-algoritme" title="Link to this heading">#</a></h1>
+<p>Een <strong>algoritme</strong> is een eindige, eenduidige reeks stappen waarmee je een probleem oplost of een taak uitvoert.</p>
+<p>Een algoritme lijkt dus op een recept.</p>
+<p>Bij een recept staan bijvoorbeeld:</p>
+<ol class="arabic simple">
+<li><p>Pak een kom.</p></li>
+<li><p>Doe bloem in de kom.</p></li>
+<li><p>Voeg melk toe.</p></li>
+<li><p>Roer het mengsel.</p></li>
+<li><p>Bak het beslag.</p></li>
+</ol>
+<p>Bij een computerprogramma werkt het hetzelfde.</p>
+<p>Een algoritme moet duidelijk zijn.</p>
+<p>Als er staat:</p>
+<blockquote>
+<div><p>Maak het getal groot.</p>
+</div></blockquote>
+<p>weet een computer niet wat hij moet doen.</p>
+<p>Maar:</p>
+<blockquote>
+<div><p>Vermenigvuldig het getal met 2.</p>
+</div></blockquote>
+<p>is wel een duidelijke instructie.</p>
+<p>Een goed algoritme heeft daarom onder andere:</p>
+<ul class="simple">
+<li><p>een duidelijk begin;</p></li>
+<li><p>duidelijke stappen;</p></li>
+<li><p>zo weinig mogelijk onduidelijkheid;</p></li>
+<li><p>een duidelijk resultaat;</p></li>
+<li><p>een eindpunt.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="een-probleem-eerst-begrijpen">
+<h1>3. Een probleem eerst begrijpen<a class="headerlink" href="#een-probleem-eerst-begrijpen" title="Link to this heading">#</a></h1>
+<p>Een veelgemaakte fout bij programmeren is meteen beginnen met typen.</p>
+<p>Een betere aanpak is:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>probleem
+   ↓
+begrijpen
+   ↓
+gegevens bepalen
+   ↓
+beslissingen bepalen
+   ↓
+algoritme ontwerpen
+   ↓
+algoritme testen
+   ↓
+programmeren
+   ↓
+programma testen
+</pre></div>
+</div>
+<p>Programmeren is dus niet hetzelfde als een algoritme ontwerpen.</p>
+<p>Python is slechts de taal waarin je het algoritme uiteindelijk opschrijft.</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="input-verwerking-en-output">
+<h1>4. Input, verwerking en output<a class="headerlink" href="#input-verwerking-en-output" title="Link to this heading">#</a></h1>
+<p>Een handig model bij het ontwerpen van algoritmen is:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>INPUT → VERWERKING → OUTPUT
+</pre></div>
+</div>
+<p>De <strong>input</strong> is de informatie die het algoritme binnenkrijgt.</p>
+<p>De <strong>verwerking</strong> is wat het algoritme met die informatie doet.</p>
+<p>De <strong>output</strong> is het resultaat.</p>
+<p>Bijvoorbeeld een programma dat bepaalt of iemand oud genoeg is om 16+ films te bekijken:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>INPUT
+leeftijd
+   ↓
+VERWERKING
+is leeftijd ≥ 16?
+   ↓
+OUTPUT
+"Je mag deze film bekijken."
+of
+"Je mag deze film niet bekijken."
+</pre></div>
+</div>
+<p>Hier zit een beslissing in het algoritme.</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="beslissingen">
+<h1>5. Beslissingen<a class="headerlink" href="#beslissingen" title="Link to this heading">#</a></h1>
+<p>Een beslissing heeft meestal de vorm:</p>
+<blockquote>
+<div><p>Als een voorwaarde waar is, doe dan iets.</p>
+</div></blockquote>
+<p>Bijvoorbeeld:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Als het regent:
+    neem een paraplu mee.
+</pre></div>
+</div>
+<p>Er zijn hier twee mogelijke situaties:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>regent
+  ↓
+ JA ─────→ neem paraplu mee
+  |
+ NEE
+  ↓
+doe niets
+</pre></div>
+</div>
+<p>In een algoritme noemen we <code class="docutils literal notranslate"><span class="pre">regent</span></code> een <strong>voorwaarde</strong>.</p>
+<p>Een voorwaarde heeft een uitkomst die waar of onwaar kan zijn.</p>
+<p>Bijvoorbeeld:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>temperatuur &lt; 10
+</pre></div>
+</div>
+<p>Deze voorwaarde kan waar zijn:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>7 &lt; 10 → WAAR
+</pre></div>
+</div>
+<p>maar ook onwaar:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>15 &lt; 10 → ONWAAR
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="stroomdiagrammen">
+<h1>6. Stroomdiagrammen<a class="headerlink" href="#stroomdiagrammen" title="Link to this heading">#</a></h1>
+<p>Een algoritme kun je beschrijven met tekst, maar je kunt het ook tekenen.</p>
+<p>Een veelgebruikte manier is een <strong>stroomdiagram</strong>.</p>
+<p>In een eenvoudig stroomdiagram gebruiken we onder andere:</p>
+<ul class="simple">
+<li><p>rechthoeken voor opdrachten;</p></li>
+<li><p>ruiten voor beslissingen;</p></li>
+<li><p>pijlen om de volgorde aan te geven.</p></li>
+</ul>
+<p>Bijvoorbeeld:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>          ┌─────────────┐
+          │   START     │
+          └──────┬──────┘
+                 │
+                 v
+        ┌─────────────────┐
+        │ Lees temperatuur│
+        └────────┬────────┘
+                 │
+                 v
+           ┌───────────┐
+           │ &lt; 10 °C ? │
+           └─────┬─────┘
+              ja │ nee
+                 │
+        ┌────────┘ └─────────┐
+        v                    v
+┌─────────────────┐   ┌──────────────┐
+│ Neem een jas    │   │ Geen jas     │
+│ mee             │   │ nodig        │
+└────────┬────────┘   └──────┬───────┘
+         │                   │
+         └─────────┬─────────┘
+                   v
+             ┌──────────┐
+             │   EINDE  │
+             └──────────┘
+</pre></div>
+</div>
+<p>De ruit stelt de beslissing voor.</p>
+<p>Er zijn twee uitgangen:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>JA
+</pre></div>
+</div>
+<p>en:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>NEE
+</pre></div>
+</div>
+<p>Dit is vergelijkbaar met een toestandsdiagram.</p>
+<p>Bij een toestandsdiagram beschrijven we:</p>
+<blockquote>
+<div><p>In welke toestand zit het systeem en naar welke toestand gaat het?</p>
+</div></blockquote>
+<p>Bij een stroomdiagram beschrijven we:</p>
+<blockquote>
+<div><p>Welke stap voert het algoritme nu uit en welke stap komt daarna?</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="toestandsdiagram-of-stroomdiagram">
+<h1>7. Toestandsdiagram of stroomdiagram?<a class="headerlink" href="#toestandsdiagram-of-stroomdiagram" title="Link to this heading">#</a></h1>
+<p>De twee diagrammen lijken op elkaar, maar hebben een ander doel.</p>
+<p>Een <strong>toestandsdiagram</strong> beschrijft het gedrag van een systeem dat tussen toestanden kan wisselen.</p>
+<p>Een <strong>stroomdiagram</strong> beschrijft de stappen en beslissingen van een algoritme.</p>
+<p>Bijvoorbeeld:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>TOESTANDSAUTOMAAT
+
+DICHT --openen--&gt; OPEN
+OPEN  --sluiten--&gt; DICHT
+</pre></div>
+</div>
+<p>Dit zegt vooral iets over de toestand van de deur.</p>
+<p>Een stroomdiagram kan vervolgens beschrijven hoe een programma beslist wat er met een deur moet gebeuren:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>              START
+                |
+                v
+        Is er iemand bij de deur?
+             /                  ja         nee
+           /                     v             v
+      Open deur     Sluit deur
+           \           /
+            \         /
+              v     v
+                EINDE
+</pre></div>
+</div>
+<p>Een goede programmeur kan beide manieren van denken gebruiken.</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="van-stroomdiagram-naar-python">
+<h1>8. Van stroomdiagram naar Python<a class="headerlink" href="#van-stroomdiagram-naar-python" title="Link to this heading">#</a></h1>
+<p>In het vorige hoofdstuk heb je <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code> en <code class="docutils literal notranslate"><span class="pre">else</span></code> al leren kennen.</p>
+<p>We herhalen ze hier kort.</p>
+<p>Een eenvoudige beslissing ziet er in Python zo uit:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">temperatuur</span> <span class="o">=</span> <span class="mi">7</span>
+
+<span class="k">if</span> <span class="n">temperatuur</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Neem een jas mee."</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Je hebt waarschijnlijk geen jas nodig."</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Het algoritme is:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Lees temperatuur.
+Als temperatuur kleiner is dan 10:
+    zeg "Neem een jas mee."
+Anders:
+    zeg "Je hebt waarschijnlijk geen jas nodig."
+</pre></div>
+</div>
+<p>De Python-code is dus een vertaling van het algoritme.</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="een-algoritme-ontwerpen-eerst-in-gewone-taal">
+<h1>9. Een algoritme ontwerpen: eerst in gewone taal<a class="headerlink" href="#een-algoritme-ontwerpen-eerst-in-gewone-taal" title="Link to this heading">#</a></h1>
+<p>Stel dat je een programma wilt maken dat controleert of iemand korting krijgt.</p>
+<p>De regel is:</p>
+<blockquote>
+<div><p>Mensen jonger dan 12 jaar krijgen korting.</p>
+</div></blockquote>
+<p>Begin dan niet met Python.</p>
+<p>Schrijf eerst het algoritme:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>1. Vraag de leeftijd.
+2. Controleer of de leeftijd kleiner is dan 12.
+3. Als dat zo is, geef aan dat er korting is.
+4. Anders geef aan dat er geen korting is.
+</pre></div>
+</div>
+<p>Daarna kun je een stroomdiagram maken:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>START
+  |
+  v
+Vraag leeftijd
+  |
+  v
+Is leeftijd &lt; 12?
+   /        ja         nee
+ |           |
+ v           v
+Korting    Geen korting
+ |           |
+ └─────┬─────┘
+       v
+     EINDE
+</pre></div>
+</div>
+<p>En pas daarna schrijf je Python:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">leeftijd</span> <span class="o">=</span> <span class="mi">15</span>
+
+<span class="k">if</span> <span class="n">leeftijd</span> <span class="o">&lt;</span> <span class="mi">12</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Je krijgt korting."</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Je krijgt geen korting."</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="oefening-temperatuur">
+<h1>10. Oefening — temperatuur<a class="headerlink" href="#oefening-temperatuur" title="Link to this heading">#</a></h1>
+<p>Ontwerp een algoritme dat een temperatuur beoordeelt.</p>
+<p>Gebruik deze regels:</p>
+<ul class="simple">
+<li><p>onder 0 °C: <code class="docutils literal notranslate"><span class="pre">Het</span> <span class="pre">vriest.</span></code></p></li>
+<li><p>van 0 °C tot en met 15 °C: <code class="docutils literal notranslate"><span class="pre">Het</span> <span class="pre">is</span> <span class="pre">koud.</span></code></p></li>
+<li><p>boven 15 °C: <code class="docutils literal notranslate"><span class="pre">Het</span> <span class="pre">is</span> <span class="pre">niet</span> <span class="pre">koud.</span></code></p></li>
+</ul>
+<section id="opdracht-1">
+<h2>Opdracht 1<a class="headerlink" href="#opdracht-1" title="Link to this heading">#</a></h2>
+<p>Schrijf het algoritme eerst in gewone taal.</p>
+<p>Gebruik nog geen Python.</p>
+</section>
+<section id="opdracht-2">
+<h2>Opdracht 2<a class="headerlink" href="#opdracht-2" title="Link to this heading">#</a></h2>
+<p>Teken een stroomdiagram.</p>
+<p>Je hebt meerdere beslissingen nodig.</p>
+</section>
+<section id="opdracht-3">
+<h2>Opdracht 3<a class="headerlink" href="#opdracht-3" title="Link to this heading">#</a></h2>
+<p>Schrijf daarna het algoritme in Python.</p>
+<p>Gebruik <code class="docutils literal notranslate"><span class="pre">if</span></code> en <code class="docutils literal notranslate"><span class="pre">elif</span></code>.</p>
+<p>Een mogelijke structuur is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">temperatuur</span> <span class="o">=</span> <span class="mi">8</span>
+
+<span class="k">if</span> <span class="o">...</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="k">elif</span> <span class="o">...</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Vul de voorwaarden en uitvoer zelf in.</p>
+</section>
+<section id="opdracht-4">
+<h2>Opdracht 4<a class="headerlink" href="#opdracht-4" title="Link to this heading">#</a></h2>
+<p>Test je programma met:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>-5
+0
+8
+15
+16
+30
+</pre></div>
+</div>
+<p>Maak een tabel:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p>Temperatuur</p></th>
+<th class="head"><p>Verwachte uitvoer</p></th>
+<th class="head"><p>Uitvoer programma</p></th>
+<th class="head"><p>Goed?</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p>-5</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>0</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>8</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>15</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>16</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>30</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="beslissingen-stapelen">
+<h1>11. Beslissingen stapelen<a class="headerlink" href="#beslissingen-stapelen" title="Link to this heading">#</a></h1>
+<p>Soms is één beslissing niet genoeg.</p>
+<p>Stel dat een game drie verschillende situaties kent:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>score &lt; 10
+score van 10 t/m 19
+score ≥ 20
+</pre></div>
+</div>
+<p>Een stroomdiagram kan er bijvoorbeeld zo uitzien:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>                START
+                  |
+                  v
+             Lees score
+                  |
+                  v
+            score &lt; 10?
+             /                  ja         nee
+           |           |
+           v           v
+        Beginner   score &lt; 20?
+                     /                         ja        nee
+                   |          |
+                   v          v
+               Gevorderd    Expert
+                   \          /
+                    \        /
+                      v    v
+                       EINDE
+</pre></div>
+</div>
+<p>In Python kan dit bijvoorbeeld:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">score</span> <span class="o">=</span> <span class="mi">17</span>
+
+<span class="k">if</span> <span class="n">score</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Beginner"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">score</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Gevorderd"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Expert"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Let op dat de tweede voorwaarde alleen wordt bekeken als de eerste voorwaarde niet waar was.</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="oefening-game-score">
+<h1>12. Oefening — game-score<a class="headerlink" href="#oefening-game-score" title="Link to this heading">#</a></h1>
+<p>Maak een programma dat een score van een speler beoordeelt.</p>
+<p>Gebruik:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>0 t/m 99       → Beginner
+100 t/m 499    → Gevorderd
+500 of hoger   → Expert
+</pre></div>
+</div>
+<section id="opdracht-5">
+<h2>Opdracht 5<a class="headerlink" href="#opdracht-5" title="Link to this heading">#</a></h2>
+<p>Maak eerst een stroomdiagram.</p>
+</section>
+<section id="opdracht-6">
+<h2>Opdracht 6<a class="headerlink" href="#opdracht-6" title="Link to this heading">#</a></h2>
+<p>Schrijf het algoritme in gewone taal.</p>
+</section>
+<section id="opdracht-7">
+<h2>Opdracht 7<a class="headerlink" href="#opdracht-7" title="Link to this heading">#</a></h2>
+<p>Schrijf het programma in Python.</p>
+</section>
+<section id="opdracht-8">
+<h2>Opdracht 8<a class="headerlink" href="#opdracht-8" title="Link to this heading">#</a></h2>
+<p>Test met:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>0
+50
+99
+100
+250
+499
+500
+1000
+</pre></div>
+</div>
+<p>Controleer of je programma voor alle waarden het juiste resultaat geeft.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="een-beslissing-kan-ook-een-berekening-bevatten">
+<h1>13. Een beslissing kan ook een berekening bevatten<a class="headerlink" href="#een-beslissing-kan-ook-een-berekening-bevatten" title="Link to this heading">#</a></h1>
+<p>Voorwaarden hoeven niet alleen vaste waarden te controleren.</p>
+<p>Je kunt eerst iets berekenen en daarna een beslissing nemen.</p>
+<p>Bijvoorbeeld:</p>
+<blockquote>
+<div><p>Een leerling heeft drie cijfers. Bereken het gemiddelde en bepaal daarna of de leerling gemiddeld een voldoende heeft.</p>
+</div></blockquote>
+<p>Het algoritme:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>1. Lees drie cijfers.
+2. Bereken het gemiddelde.
+3. Als het gemiddelde 5,5 of hoger is:
+       geef "voldoende".
+4. Anders:
+       geef "onvoldoende".
+</pre></div>
+</div>
+<p>In Python:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cijfer1</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">cijfer2</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">cijfer3</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="n">gemiddelde</span> <span class="o">=</span> <span class="p">(</span><span class="n">cijfer1</span> <span class="o">+</span> <span class="n">cijfer2</span> <span class="o">+</span> <span class="n">cijfer3</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span>
+
+<span class="k">if</span> <span class="n">gemiddelde</span> <span class="o">&gt;=</span> <span class="mf">5.5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Voldoende"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Onvoldoende"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Hier zie je iets belangrijks:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>input
+  ↓
+berekening
+  ↓
+beslissing
+  ↓
+output
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="oefening-voldoende-of-onvoldoende">
+<h1>14. Oefening — voldoende of onvoldoende?<a class="headerlink" href="#oefening-voldoende-of-onvoldoende" title="Link to this heading">#</a></h1>
+<p>Schrijf een programma dat drie cijfers krijgt en bepaalt of het gemiddelde voldoende is.</p>
+<p>Gebruik:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>gemiddelde ≥ 5,5 → voldoende
+gemiddelde &lt; 5,5 → onvoldoende
+</pre></div>
+</div>
+<section id="opdracht-9">
+<h2>Opdracht 9<a class="headerlink" href="#opdracht-9" title="Link to this heading">#</a></h2>
+<p>Schrijf eerst het algoritme in gewone taal.</p>
+</section>
+<section id="opdracht-10">
+<h2>Opdracht 10<a class="headerlink" href="#opdracht-10" title="Link to this heading">#</a></h2>
+<p>Maak een stroomdiagram.</p>
+</section>
+<section id="opdracht-11">
+<h2>Opdracht 11<a class="headerlink" href="#opdracht-11" title="Link to this heading">#</a></h2>
+<p>Schrijf de Python-code.</p>
+</section>
+<section id="opdracht-12">
+<h2>Opdracht 12<a class="headerlink" href="#opdracht-12" title="Link to this heading">#</a></h2>
+<p>Test met minstens vijf verschillende combinaties van cijfers.</p>
+<p>Let daarbij op grensgevallen.</p>
+<p>Test bijvoorbeeld ook:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>5.5
+</pre></div>
+</div>
+<p>Waarom is een grensgeval belangrijk?</p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="grenswaarden">
+<h1>15. Grenswaarden<a class="headerlink" href="#grenswaarden" title="Link to this heading">#</a></h1>
+<p>Een algoritme kan er op het eerste gezicht goed uitzien, maar toch fouten bevatten.</p>
+<p>Stel dat je schrijft:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">leeftijd</span> <span class="o">&gt;</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Volwassen"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Niet volwassen"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Wat gebeurt er bij:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>18
+</pre></div>
+</div>
+<p>Als je bedoelt dat iemand vanaf 18 jaar volwassen is, klopt het algoritme niet.</p>
+<p>Je had dan moeten schrijven:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">leeftijd</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Volwassen"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Niet volwassen"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Het verschil tussen:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt;
+</pre></div>
+</div>
+<p>en:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt;=
+</pre></div>
+</div>
+<p>kan dus belangrijk zijn.</p>
+<p>Andere vergelijkingsoperatoren zijn:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operator</p></th>
+<th class="head"><p>Betekenis</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">==</span></code></p></td>
+<td><p>gelijk aan</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">!=</span></code></p></td>
+<td><p>niet gelijk aan</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p></td>
+<td><p>kleiner dan</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></td>
+<td><p>groter dan</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></p></td>
+<td><p>kleiner dan of gelijk aan</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p></td>
+<td><p>groter dan of gelijk aan</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="oefening-waar-zit-de-fout">
+<h1>16. Oefening — waar zit de fout?<a class="headerlink" href="#oefening-waar-zit-de-fout" title="Link to this heading">#</a></h1>
+<p>Bekijk dit programma:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">leeftijd</span> <span class="o">=</span> <span class="mi">18</span>
+
+<span class="k">if</span> <span class="n">leeftijd</span> <span class="o">&gt;</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Je bent volwassen."</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Je bent niet volwassen."</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="opdracht-13">
+<h2>Opdracht 13<a class="headerlink" href="#opdracht-13" title="Link to this heading">#</a></h2>
+<p>Wat print het programma?</p>
+</section>
+<section id="opdracht-14">
+<h2>Opdracht 14<a class="headerlink" href="#opdracht-14" title="Link to this heading">#</a></h2>
+<p>Is dat volgens jou correct?</p>
+</section>
+<section id="opdracht-15">
+<h2>Opdracht 15<a class="headerlink" href="#opdracht-15" title="Link to this heading">#</a></h2>
+<p>Verbeter het programma.</p>
+</section>
+<section id="opdracht-16">
+<h2>Opdracht 16<a class="headerlink" href="#opdracht-16" title="Link to this heading">#</a></h2>
+<p>Bedenk zelf drie testwaarden waarmee je kunt controleren of je verbetering goed werkt.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="meerdere-voorwaarden">
+<h1>17. Meerdere voorwaarden<a class="headerlink" href="#meerdere-voorwaarden" title="Link to this heading">#</a></h1>
+<p>Soms moet een beslissing afhankelijk zijn van meerdere voorwaarden.</p>
+<p>Bijvoorbeeld:</p>
+<blockquote>
+<div><p>Je mag een bepaalde attractie in als je minimaal 140 cm lang bent én minimaal 10 jaar oud bent.</p>
+</div></blockquote>
+<p>In Python:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lengte</span> <span class="o">=</span> <span class="mi">145</span>
+<span class="n">leeftijd</span> <span class="o">=</span> <span class="mi">12</span>
+
+<span class="k">if</span> <span class="n">lengte</span> <span class="o">&gt;=</span> <span class="mi">140</span> <span class="ow">and</span> <span class="n">leeftijd</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Je mag in de attractie."</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Je mag niet in de attractie."</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Het woord <code class="docutils literal notranslate"><span class="pre">and</span></code> betekent:</p>
+<blockquote>
+<div><p>beide voorwaarden moeten waar zijn.</p>
+</div></blockquote>
+<p>Je kunt ook <code class="docutils literal notranslate"><span class="pre">or</span></code> gebruiken.</p>
+<p>Bijvoorbeeld:</p>
+<blockquote>
+<div><p>Je krijgt een melding als het hard regent of als er storm wordt verwacht.</p>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">regen</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">storm</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">if</span> <span class="n">regen</span> <span class="ow">or</span> <span class="n">storm</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Let op het weer."</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Bij <code class="docutils literal notranslate"><span class="pre">or</span></code> is het voldoende als één van de voorwaarden waar is.</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="oefening-attractie">
+<h1>18. Oefening — attractie<a class="headerlink" href="#oefening-attractie" title="Link to this heading">#</a></h1>
+<p>Ontwerp een programma voor een attractie.</p>
+<p>De voorwaarden zijn:</p>
+<ul class="simple">
+<li><p>minimaal 140 cm lang;</p></li>
+<li><p>én minimaal 10 jaar oud.</p></li>
+</ul>
+<section id="opdracht-17">
+<h2>Opdracht 17<a class="headerlink" href="#opdracht-17" title="Link to this heading">#</a></h2>
+<p>Maak eerst een stroomdiagram.</p>
+</section>
+<section id="opdracht-18">
+<h2>Opdracht 18<a class="headerlink" href="#opdracht-18" title="Link to this heading">#</a></h2>
+<p>Schrijf het algoritme in gewone taal.</p>
+</section>
+<section id="opdracht-19">
+<h2>Opdracht 19<a class="headerlink" href="#opdracht-19" title="Link to this heading">#</a></h2>
+<p>Schrijf de Python-code.</p>
+</section>
+<section id="opdracht-20">
+<h2>Opdracht 20<a class="headerlink" href="#opdracht-20" title="Link to this heading">#</a></h2>
+<p>Test alle combinaties van:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>lengte: 130 cm of 150 cm
+leeftijd: 8 jaar of 12 jaar
+</pre></div>
+</div>
+<p>Je krijgt dus vier situaties.</p>
+<p>Maak hiervan een tabel:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p>Lengte</p></th>
+<th class="head text-right"><p>Leeftijd</p></th>
+<th class="head"><p>Verwacht</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p>130</p></td>
+<td class="text-right"><p>8</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>130</p></td>
+<td class="text-right"><p>12</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>150</p></td>
+<td class="text-right"><p>8</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>150</p></td>
+<td class="text-right"><p>12</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="van-algoritme-naar-programma">
+<h1>19. Van algoritme naar programma<a class="headerlink" href="#van-algoritme-naar-programma" title="Link to this heading">#</a></h1>
+<p>We kunnen nu een vaste werkwijze gebruiken.</p>
+<p>Als je een programmeerprobleem krijgt, werk dan volgens deze stappen:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>1. Begrijp het probleem.
+        ↓
+2. Bepaal de input.
+        ↓
+3. Bepaal de output.
+        ↓
+4. Bepaal welke beslissingen nodig zijn.
+        ↓
+5. Schrijf het algoritme in gewone taal.
+        ↓
+6. Maak eventueel een stroomdiagram.
+        ↓
+7. Vertaal het algoritme naar Python.
+        ↓
+8. Test het programma.
+        ↓
+9. Verbeter fouten.
+</pre></div>
+</div>
+<p>Deze werkwijze voorkomt dat je zomaar code gaat schrijven zonder te weten wat je eigenlijk wilt programmeren.</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="oefening-wat-moet-de-computer-beslissen">
+<h1>20. Oefening — wat moet de computer beslissen?<a class="headerlink" href="#oefening-wat-moet-de-computer-beslissen" title="Link to this heading">#</a></h1>
+<p>Voor elk probleem hieronder bepaal je eerst:</p>
+<ol class="arabic simple">
+<li><p>Welke input is nodig?</p></li>
+<li><p>Welke output moet het programma geven?</p></li>
+<li><p>Welke beslissing(en) moet het programma nemen?</p></li>
+<li><p>Schrijf het algoritme in gewone taal.</p></li>
+<li><p>Teken een stroomdiagram.</p></li>
+</ol>
+<p>Je hoeft bij deze oefening nog geen Python te schrijven.</p>
+<section id="probleem-a-korting">
+<h2>Probleem A — korting<a class="headerlink" href="#probleem-a-korting" title="Link to this heading">#</a></h2>
+<p>Een bioscoop geeft korting aan bezoekers jonger dan 12 jaar.</p>
+<p>Bepaal of iemand korting krijgt.</p>
+</section>
+<section id="probleem-b-positief-of-negatief">
+<h2>Probleem B — positief of negatief<a class="headerlink" href="#probleem-b-positief-of-negatief" title="Link to this heading">#</a></h2>
+<p>Een gebruiker voert een getal in.</p>
+<p>Bepaal of het getal:</p>
+<ul class="simple">
+<li><p>positief;</p></li>
+<li><p>nul;</p></li>
+<li><p>negatief</p></li>
+</ul>
+<p>is.</p>
+</section>
+<section id="probleem-c-even-of-oneven">
+<h2>Probleem C — even of oneven<a class="headerlink" href="#probleem-c-even-of-oneven" title="Link to this heading">#</a></h2>
+<p>Een gebruiker voert een geheel getal in.</p>
+<p>Bepaal of het getal even of oneven is.</p>
+</section>
+<section id="probleem-d-wachtwoord">
+<h2>Probleem D — wachtwoord<a class="headerlink" href="#probleem-d-wachtwoord" title="Link to this heading">#</a></h2>
+<p>Een gebruiker voert een wachtwoord in.</p>
+<p>Als het wachtwoord correct is, geef:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Toegang toegestaan
+</pre></div>
+</div>
+<p>Anders:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Toegang geweigerd
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>21. Van toestandsautomaat naar algoritme<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>We gaan terug naar het vorige hoofdstuk.</p>
+<p>Stel dat een deurautomaat twee toestanden heeft:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>DICHT
+OPEN
+</pre></div>
+</div>
+<p>en twee inputs:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>openen
+sluiten
+</pre></div>
+</div>
+<p>Het toestandsdiagram:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>DICHT --openen--&gt; OPEN
+OPEN  --sluiten--&gt; DICHT
+</pre></div>
+</div>
+<p>Je kunt dit vertalen naar een algoritme:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Als de toestand DICHT is:
+    als de input openen is:
+        verander toestand naar OPEN
+
+Als de toestand OPEN is:
+    als de input sluiten is:
+        verander toestand naar DICHT
+</pre></div>
+</div>
+<p>En vervolgens naar Python:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">toestand</span> <span class="o">=</span> <span class="s2">"DICHT"</span>
+<span class="n">gebeurtenis</span> <span class="o">=</span> <span class="s2">"openen"</span>
+
+<span class="k">if</span> <span class="n">toestand</span> <span class="o">==</span> <span class="s2">"DICHT"</span> <span class="ow">and</span> <span class="n">gebeurtenis</span> <span class="o">==</span> <span class="s2">"openen"</span><span class="p">:</span>
+    <span class="n">toestand</span> <span class="o">=</span> <span class="s2">"OPEN"</span>
+
+<span class="k">elif</span> <span class="n">toestand</span> <span class="o">==</span> <span class="s2">"OPEN"</span> <span class="ow">and</span> <span class="n">gebeurtenis</span> <span class="o">==</span> <span class="s2">"sluiten"</span><span class="p">:</span>
+    <span class="n">toestand</span> <span class="o">=</span> <span class="s2">"DICHT"</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">toestand</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Je ziet hier een belangrijk verband:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>toestandsdiagram
+       ↓
+algoritme
+       ↓
+Python
+</pre></div>
+</div>
+<p>Het programmeren is dus niet het bedenken van de oplossing. Het is het <strong>vertalen van een oplossing naar een programmeertaal</strong>.</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="oefening-verbeter-de-automaat">
+<h1>22. Oefening — verbeter de automaat<a class="headerlink" href="#oefening-verbeter-de-automaat" title="Link to this heading">#</a></h1>
+<p>We breiden de deur uit.</p>
+<p>De deur heeft nu drie toestanden:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>DICHT
+OPENEN
+OPEN
+</pre></div>
+</div>
+<p>De inputs zijn:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>openen
+geopend
+sluiten
+</pre></div>
+</div>
+<p>De regels zijn:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>DICHT + openen → OPENEN
+OPENEN + geopend → OPEN
+OPEN + sluiten → DICHT
+</pre></div>
+</div>
+<section id="opdracht-21">
+<h2>Opdracht 21<a class="headerlink" href="#opdracht-21" title="Link to this heading">#</a></h2>
+<p>Teken het toestandsdiagram.</p>
+</section>
+<section id="opdracht-22">
+<h2>Opdracht 22<a class="headerlink" href="#opdracht-22" title="Link to this heading">#</a></h2>
+<p>Schrijf het algoritme in gewone taal.</p>
+</section>
+<section id="opdracht-23">
+<h2>Opdracht 23<a class="headerlink" href="#opdracht-23" title="Link to this heading">#</a></h2>
+<p>Vertaal het algoritme naar Python.</p>
+</section>
+<section id="opdracht-24">
+<h2>Opdracht 24<a class="headerlink" href="#opdracht-24" title="Link to this heading">#</a></h2>
+<p>Test de volgende reeks:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>openen
+geopend
+sluiten
+</pre></div>
+</div>
+<p>Noteer na iedere input de toestand.</p>
+</section>
+<section id="opdracht-25-fout-zoeken">
+<h2>Opdracht 25 — fout zoeken<a class="headerlink" href="#opdracht-25-fout-zoeken" title="Link to this heading">#</a></h2>
+<p>Wat zou er volgens jouw automaat moeten gebeuren als de deur in toestand <code class="docutils literal notranslate"><span class="pre">OPEN</span></code> de input <code class="docutils literal notranslate"><span class="pre">openen</span></code> krijgt?</p>
+<p>Bedenk een goede oplossing.</p>
+<p>Je kunt bijvoorbeeld:</p>
+<ul class="simple">
+<li><p>niets doen;</p></li>
+<li><p>een foutmelding geven;</p></li>
+<li><p>de toestand <code class="docutils literal notranslate"><span class="pre">OPEN</span></code> behouden.</p></li>
+</ul>
+<p>Leg uit waarom je voor jouw oplossing kiest.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="algoritmen-testen">
+<h1>23. Algoritmen testen<a class="headerlink" href="#algoritmen-testen" title="Link to this heading">#</a></h1>
+<p>Een programma dat zonder foutmelding draait, hoeft nog niet correct te zijn.</p>
+<p>Je moet controleren of het programma voor verschillende inputs het juiste resultaat geeft.</p>
+<p>Daarvoor gebruik je <strong>testgevallen</strong>.</p>
+<p>Een testgeval bestaat bijvoorbeeld uit:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>input → verwachte output
+</pre></div>
+</div>
+<p>Bij het programma:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">leeftijd</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Volwassen"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Niet volwassen"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>zijn goede testgevallen:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>17 → Niet volwassen
+18 → Volwassen
+19 → Volwassen
+</pre></div>
+</div>
+<p>Waarom is 18 belangrijk?</p>
+<p>Omdat 18 precies de grens is.</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="testen-met-normale-gevallen-en-grensgevallen">
+<h1>24. Testen met normale gevallen en grensgevallen<a class="headerlink" href="#testen-met-normale-gevallen-en-grensgevallen" title="Link to this heading">#</a></h1>
+<p>Bij het testen van een algoritme wil je niet alleen willekeurige waarden gebruiken.</p>
+<p>Gebruik bijvoorbeeld:</p>
+<p><strong>Normale waarden</strong></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>25
+40
+60
+</pre></div>
+</div>
+<p><strong>Grenswaarden</strong></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>17
+18
+19
+</pre></div>
+</div>
+<p><strong>Onverwachte waarden</strong></p>
+<p>Bijvoorbeeld:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>0
+-5
+1000
+</pre></div>
+</div>
+<p>Welke testgevallen je nodig hebt, hangt af van het probleem.</p>
+<p>Het doel is:</p>
+<blockquote>
+<div><p>zo veel mogelijk verschillende situaties controleren waarin het algoritme zich anders zou kunnen gedragen.</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="oefening-test-een-algoritme">
+<h1>25. Oefening — test een algoritme<a class="headerlink" href="#oefening-test-een-algoritme" title="Link to this heading">#</a></h1>
+<p>Het volgende programma bepaalt het niveau van een speler:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">score</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="k">if</span> <span class="n">score</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Beginner"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">score</span> <span class="o">&lt;</span> <span class="mi">500</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Gevorderd"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Expert"</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="opdracht-26">
+<h2>Opdracht 26<a class="headerlink" href="#opdracht-26" title="Link to this heading">#</a></h2>
+<p>Maak een testplan met minimaal zeven testgevallen.</p>
+<p>Gebruik in ieder geval:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>99
+100
+101
+499
+500
+501
+</pre></div>
+</div>
+<p>Voeg zelf nog één testgeval toe.</p>
+</section>
+<section id="opdracht-27">
+<h2>Opdracht 27<a class="headerlink" href="#opdracht-27" title="Link to this heading">#</a></h2>
+<p>Voorspel eerst de uitvoer.</p>
+</section>
+<section id="opdracht-28">
+<h2>Opdracht 28<a class="headerlink" href="#opdracht-28" title="Link to this heading">#</a></h2>
+<p>Voer daarna het programma uit.</p>
+</section>
+<section id="opdracht-29">
+<h2>Opdracht 29<a class="headerlink" href="#opdracht-29" title="Link to this heading">#</a></h2>
+<p>Kloppen alle uitkomsten met de bedoeling van het algoritme?</p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="een-algoritme-kan-meerdere-correcte-oplossingen-hebben">
+<h1>26. Een algoritme kan meerdere correcte oplossingen hebben<a class="headerlink" href="#een-algoritme-kan-meerdere-correcte-oplossingen-hebben" title="Link to this heading">#</a></h1>
+<p>Voor een probleem bestaat niet altijd maar één goed algoritme.</p>
+<p>Stel:</p>
+<blockquote>
+<div><p>Bepaal of een getal positief, nul of negatief is.</p>
+</div></blockquote>
+<p>Een oplossing kan zijn:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Als getal &gt; 0:
+    positief
+Anders als getal &lt; 0:
+    negatief
+Anders:
+    nul
+</pre></div>
+</div>
+<p>Maar je kunt de volgorde ook anders kiezen:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Als getal == 0:
+    nul
+Anders als getal &gt; 0:
+    positief
+Anders:
+    negatief
+</pre></div>
+</div>
+<p>Beide algoritmen kunnen correct zijn.</p>
+<p>Bij algoritmen is dus niet alleen belangrijk:</p>
+<blockquote>
+<div><p>Werkt het?</p>
+</div></blockquote>
+<p>Maar ook:</p>
+<blockquote>
+<div><p>Is het duidelijk, correct en goed te testen?</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="eindopdracht-ontwerp-je-eigen-beslisprogramma">
+<h1>27. Eindopdracht — ontwerp je eigen beslisprogramma<a class="headerlink" href="#eindopdracht-ontwerp-je-eigen-beslisprogramma" title="Link to this heading">#</a></h1>
+<p>Ontwerp een klein programma dat op basis van input één of meerdere beslissingen neemt.</p>
+<p>Kies bijvoorbeeld:</p>
+<ul class="simple">
+<li><p>een programma dat bepaalt of iemand een bepaalde film mag zien;</p></li>
+<li><p>een programma dat een game-score beoordeelt;</p></li>
+<li><p>een programma dat bepaalt welk kledingadvies iemand krijgt op basis van temperatuur;</p></li>
+<li><p>een programma dat bepaalt of iemand een attractie in mag;</p></li>
+<li><p>een programma dat een getal classificeert;</p></li>
+<li><p>een programma dat een cijfer omzet naar een beoordeling;</p></li>
+<li><p>een eigen idee.</p></li>
+</ul>
+<section id="eisen">
+<h2>Eisen<a class="headerlink" href="#eisen" title="Link to this heading">#</a></h2>
+<p>Je programma moet:</p>
+<ul class="simple">
+<li><p>minimaal twee verschillende invoergegevens gebruiken;</p></li>
+<li><p>minimaal drie mogelijke uitkomsten hebben;</p></li>
+<li><p>minimaal één <code class="docutils literal notranslate"><span class="pre">if</span></code> gebruiken;</p></li>
+<li><p>minimaal één <code class="docutils literal notranslate"><span class="pre">elif</span></code> of <code class="docutils literal notranslate"><span class="pre">else</span></code> gebruiken;</p></li>
+<li><p>minimaal één samengestelde voorwaarde met <code class="docutils literal notranslate"><span class="pre">and</span></code> of <code class="docutils literal notranslate"><span class="pre">or</span></code> bevatten;</p></li>
+<li><p>een duidelijk algoritme hebben;</p></li>
+<li><p>een stroomdiagram hebben;</p></li>
+<li><p>minimaal vijf testgevallen hebben;</p></li>
+<li><p>minimaal één grensgeval testen.</p></li>
+</ul>
+</section>
+<section id="je-werkt-in-deze-volgorde">
+<h2>Je werkt in deze volgorde<a class="headerlink" href="#je-werkt-in-deze-volgorde" title="Link to this heading">#</a></h2>
+<section id="stap-1-beschrijf-het-probleem">
+<h3>Stap 1 — Beschrijf het probleem<a class="headerlink" href="#stap-1-beschrijf-het-probleem" title="Link to this heading">#</a></h3>
+<p>Leg uit wat je programma moet doen.</p>
+</section>
+<section id="stap-2-bepaal-de-input">
+<h3>Stap 2 — Bepaal de input<a class="headerlink" href="#stap-2-bepaal-de-input" title="Link to this heading">#</a></h3>
+<p>Welke gegevens krijgt het programma?</p>
+</section>
+<section id="stap-3-bepaal-de-output">
+<h3>Stap 3 — Bepaal de output<a class="headerlink" href="#stap-3-bepaal-de-output" title="Link to this heading">#</a></h3>
+<p>Wat moet het programma uiteindelijk vertellen?</p>
+</section>
+<section id="stap-4-ontwerp-het-algoritme">
+<h3>Stap 4 — Ontwerp het algoritme<a class="headerlink" href="#stap-4-ontwerp-het-algoritme" title="Link to this heading">#</a></h3>
+<p>Schrijf de stappen in gewone taal.</p>
+</section>
+<section id="stap-5-maak-een-stroomdiagram">
+<h3>Stap 5 — Maak een stroomdiagram<a class="headerlink" href="#stap-5-maak-een-stroomdiagram" title="Link to this heading">#</a></h3>
+<p>Laat alle beslissingen en mogelijke routes zien.</p>
+</section>
+<section id="stap-6-schrijf-python">
+<h3>Stap 6 — Schrijf Python<a class="headerlink" href="#stap-6-schrijf-python" title="Link to this heading">#</a></h3>
+<p>Vertaal je algoritme naar Python.</p>
+</section>
+<section id="stap-7-test">
+<h3>Stap 7 — Test<a class="headerlink" href="#stap-7-test" title="Link to this heading">#</a></h3>
+<p>Maak minimaal vijf testgevallen.</p>
+<p>Zorg ervoor dat je ten minste één grenswaarde test.</p>
+</section>
+<section id="stap-8-evalueer">
+<h3>Stap 8 — Evalueer<a class="headerlink" href="#stap-8-evalueer" title="Link to this heading">#</a></h3>
+<p>Beantwoord:</p>
+<ol class="arabic simple">
+<li><p>Werkt het programma voor alle testgevallen?</p></li>
+<li><p>Zijn alle mogelijke situaties afgedekt?</p></li>
+<li><p>Is je algoritme duidelijk?</p></li>
+<li><p>Komt je Python-programma overeen met je algoritme?</p></li>
+<li><p>Kun je je keuzes uitleggen?</p></li>
+</ol>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="begrippenlijst">
+<h1>28. Begrippenlijst<a class="headerlink" href="#begrippenlijst" title="Link to this heading">#</a></h1>
+<p>Aan het einde van dit hoofdstuk moet je de volgende begrippen kunnen uitleggen.</p>
+<p><strong>Algoritme</strong><br />
+Een eindige, eenduidige reeks stappen waarmee je een probleem oplost of een taak uitvoert.</p>
+<p><strong>Input</strong><br />
+Gegevens die een algoritme of programma binnenkrijgt.</p>
+<p><strong>Output</strong><br />
+Het resultaat dat een algoritme of programma oplevert.</p>
+<p><strong>Voorwaarde</strong><br />
+Een uitspraak die waar of onwaar kan zijn en waarmee een algoritme een beslissing kan nemen.</p>
+<p><strong>Beslissing</strong><br />
+Een keuze die een algoritme maakt op basis van een of meer voorwaarden.</p>
+<p><strong>Stroomdiagram</strong><br />
+Een diagram waarmee je de stappen en beslissingen van een algoritme kunt weergeven.</p>
+<p><strong>Vergelijkingsoperator</strong><br />
+Een operator waarmee je waarden met elkaar vergelijkt, zoals <code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> en <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">if</span></code></strong><br />
+Een Python-constructie waarmee een programma iets uitvoert als een voorwaarde waar is.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">elif</span></code></strong><br />
+Een Python-constructie waarmee een volgende voorwaarde wordt gecontroleerd als eerdere voorwaarden niet waar waren.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">else</span></code></strong><br />
+Een Python-constructie waarmee je beschrijft wat er gebeurt als geen van de eerdere voorwaarden waar was.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">and</span></code></strong><br />
+Een logische operator waarbij beide voorwaarden waar moeten zijn.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">or</span></code></strong><br />
+Een logische operator waarbij minimaal één van de voorwaarden waar moet zijn.</p>
+<p><strong>Testgeval</strong><br />
+Een specifieke invoer waarmee je controleert of een algoritme of programma correct werkt.</p>
+<p><strong>Grensgeval</strong><br />
+Een testgeval op of vlak rond een grens waarbij het gedrag van het algoritme kan veranderen.</p>
+<p><strong>Toestandsdiagram</strong><br />
+Een diagram waarmee je de toestanden en overgangen van een systeem beschrijft.</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="samenvatting">
+<h1>29. Samenvatting<a class="headerlink" href="#samenvatting" title="Link to this heading">#</a></h1>
+<p>In dit hoofdstuk heb je geleerd dat programmeren begint vóórdat je Python schrijft.</p>
+<p>Een goede programmeur werkt eerst uit wat het probleem is.</p>
+<p>Daarna ontwerp je een algoritme.</p>
+<p>Bij problemen met beslissingen kun je dat algoritme bijvoorbeeld weergeven als een stroomdiagram.</p>
+<p>De belangrijkste structuur is:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>probleem
+   ↓
+input en output bepalen
+   ↓
+beslissingen bepalen
+   ↓
+algoritme ontwerpen
+   ↓
+stroomdiagram maken
+   ↓
+Python-programma schrijven
+   ↓
+testen
+   ↓
+verbeteren
+</pre></div>
+</div>
+<p>Je hebt ook gezien hoe dit aansluit op toestandsautomaten:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>TOESTANDSAUTOMAAT
+toestanden + inputs + overgangen
+            ↓
+         algoritme
+            ↓
+          Python
+</pre></div>
+</div>
+<p>Een toestandsdiagram en een stroomdiagram zijn niet hetzelfde, maar beide helpen je om vóór het programmeren na te denken over het gedrag van een systeem.</p>
+<p>De belangrijkste vraag die je jezelf vanaf nu bij ieder programmeerprobleem moet stellen is:</p>
+<blockquote>
+<div><p><strong>Wat moet de computer precies doen, voor iedere mogelijke situatie?</strong></p>
+</div></blockquote>
 </section>
 
     <script type="text/x-thebe-config">
@@ -488,6 +1846,119 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Hoofdstuk 2: Algoritmen &amp; beslissingen</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#van-toestandsautomaat-naar-algoritme">1. Van toestandsautomaat naar algoritme</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-een-algoritme">2. Wat is een algoritme?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#een-probleem-eerst-begrijpen">3. Een probleem eerst begrijpen</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#input-verwerking-en-output">4. Input, verwerking en output</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#beslissingen">5. Beslissingen</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#stroomdiagrammen">6. Stroomdiagrammen</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#toestandsdiagram-of-stroomdiagram">7. Toestandsdiagram of stroomdiagram?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#van-stroomdiagram-naar-python">8. Van stroomdiagram naar Python</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#een-algoritme-ontwerpen-eerst-in-gewone-taal">9. Een algoritme ontwerpen: eerst in gewone taal</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-temperatuur">10. Oefening — temperatuur</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1">Opdracht 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2">Opdracht 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3">Opdracht 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4">Opdracht 4</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#beslissingen-stapelen">11. Beslissingen stapelen</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-game-score">12. Oefening — game-score</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5">Opdracht 5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-6">Opdracht 6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-7">Opdracht 7</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-8">Opdracht 8</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#een-beslissing-kan-ook-een-berekening-bevatten">13. Een beslissing kan ook een berekening bevatten</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-voldoende-of-onvoldoende">14. Oefening — voldoende of onvoldoende?</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-9">Opdracht 9</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-10">Opdracht 10</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-11">Opdracht 11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-12">Opdracht 12</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#grenswaarden">15. Grenswaarden</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-waar-zit-de-fout">16. Oefening — waar zit de fout?</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-13">Opdracht 13</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-14">Opdracht 14</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-15">Opdracht 15</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-16">Opdracht 16</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#meerdere-voorwaarden">17. Meerdere voorwaarden</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-attractie">18. Oefening — attractie</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-17">Opdracht 17</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-18">Opdracht 18</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-19">Opdracht 19</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-20">Opdracht 20</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#van-algoritme-naar-programma">19. Van algoritme naar programma</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-wat-moet-de-computer-beslissen">20. Oefening — wat moet de computer beslissen?</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probleem-a-korting">Probleem A — korting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probleem-b-positief-of-negatief">Probleem B — positief of negatief</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probleem-c-even-of-oneven">Probleem C — even of oneven</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probleem-d-wachtwoord">Probleem D — wachtwoord</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">21. Van toestandsautomaat naar algoritme</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-verbeter-de-automaat">22. Oefening — verbeter de automaat</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-21">Opdracht 21</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-22">Opdracht 22</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-23">Opdracht 23</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-24">Opdracht 24</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-25-fout-zoeken">Opdracht 25 — fout zoeken</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritmen-testen">23. Algoritmen testen</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#testen-met-normale-gevallen-en-grensgevallen">24. Testen met normale gevallen en grensgevallen</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-test-een-algoritme">25. Oefening — test een algoritme</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-26">Opdracht 26</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-27">Opdracht 27</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-28">Opdracht 28</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-29">Opdracht 29</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#een-algoritme-kan-meerdere-correcte-oplossingen-hebben">26. Een algoritme kan meerdere correcte oplossingen hebben</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eindopdracht-ontwerp-je-eigen-beslisprogramma">27. Eindopdracht — ontwerp je eigen beslisprogramma</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eisen">Eisen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#je-werkt-in-deze-volgorde">Je werkt in deze volgorde</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-1-beschrijf-het-probleem">Stap 1 — Beschrijf het probleem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-2-bepaal-de-input">Stap 2 — Bepaal de input</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-3-bepaal-de-output">Stap 3 — Bepaal de output</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-4-ontwerp-het-algoritme">Stap 4 — Ontwerp het algoritme</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-5-maak-een-stroomdiagram">Stap 5 — Maak een stroomdiagram</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-6-schrijf-python">Stap 6 — Schrijf Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-7-test">Stap 7 — Test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-8-evalueer">Stap 8 — Evalueer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#begrippenlijst">28. Begrippenlijst</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">29. Samenvatting</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
