@@ -875,3 +875,21 @@ Geeft aan wat er gebeurt als de eerdere voorwaarden niet waar zijn.
       Gebeurtenis: sluiten
       Nieuwe toestand: DICHT
       ```
+
+   ***
+
+   ## Afronding
+
+   In dit hoofdstuk heb je geleerd dat veel systemen werken met toestanden.
+
+   Je hebt gezien dat een systeem op basis van gebeurtenissen kan veranderen van toestand, en dat je dit overzichtelijk kunt tekenen in een toestandsdiagram.
+
+   Ook heb je de eerste stap gezet naar programmeren in Python met variabelen en beslissingen zoals `if`, `elif` en `else`.
+
+   Een belangrijke conclusie is:
+
+   eerst nadenken over het model, daarna pas programmeren.
+
+   Daarmee wordt je programma niet alleen werkend, maar ook logisch en uitlegbaar.
+
+   In het volgende hoofdstuk ga je deze manier van denken verder gebruiken bij het ontwerpen van algoritmen en het nemen van beslissingen.
