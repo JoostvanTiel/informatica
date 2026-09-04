@@ -129,53 +129,7 @@ Hieronder zie je een voorbeeld van een toestandsdiagram van een snoepautomaat di
 Toestandsdiagrammen kunnen ook heel handig zijn als je een (computer)spel wil ontwerpen. Je kunt zo goed de verschillende toestanden (of levels) van het spel overzichtelijk weergeven. Kijk maar eens naar het diagram hieronder:
 ![Afbeelding niet gevonden][img/finite-state-game.png]
 
----
-
-# Opdrachten
-
-1.  de deur
-
-    Een automatische deur heeft twee toestanden:
-    - DICHT
-    - OPEN
-
-    De deur reageert op twee gebeurtenissen:
-    - iemand loopt naar de deur;
-    - niemand staat meer bij de deur.
-
-    a. Vraag 1
-
-        Teken een toestandsdiagram voor de deur.
-
-        Gebruik twee cirkels:
-
-        ```text
-        DICHT
-
-        OPEN
-        ```
-
-        Teken de pijlen en zet op iedere pijl de gebeurtenis waardoor de overgang plaatsvindt.
-
-    b. Vraag 2
-
-        Beantwoord de volgende vragen.
-
-        1. In welke toestand begint de deur?
-        2. Wat gebeurt er als iemand naar de deur loopt?
-        3. Wat gebeurt er als niemand meer bij de deur staat?
-        4. Kan de deur vanuit OPEN direct naar OPEN gaan?
-        5. Kan de deur vanuit DICHT direct naar DICHT gaan?
-
-    c. Vraag 3
-
-        Bedenk zelf een derde toestand voor de deur.
-
-        Pas je toestandsdiagram aan zodat deze toestand ook wordt gebruikt.
-
----
-
-2. Een automaat
+## Automaten
 
 Een systeem dat op basis van input van toestand kan veranderen, kunnen we modelleren als een **toestandsmachine**.
 
@@ -214,9 +168,7 @@ OPEN  --SLUITEN--> DICHT
 
 De automaat vertelt dus precies welk gedrag het systeem heeft.
 
----
-
-# 6. Een automaat uitvoeren
+### Een automaat uitvoeren
 
 Stel dat we de volgende gebeurtenissen krijgen:
 
@@ -250,135 +202,19 @@ De deur is al OPEN en krijgt opnieuw de gebeurtenis OPENEN.
 
 Er verandert dan niets.
 
+In het toestandsdiagram tekenen we dit als een pijl die naar dezelfde toestand wijst.
+
 Dit is belangrijk: **een automaat moet voor iedere mogelijke situatie bepalen wat er gebeurt.**
 
----
+## Programmeren in Python
 
-# 7. Oefening: een toegangssysteem
+Het schrijven van een computerprogramma, of kortweg **programma**, lijkt erg op het ontwerpen van een automaat.
 
-Een gebouw heeft een eenvoudig toegangssysteem.
+Een programma kan zich ook in meerdere toestanden bevinden en er vinden gebeurtenissen plaats die de toestand veranderen.
 
-Het systeem heeft drie toestanden:
+Het schrijven van een programma noemen we ook wel **programmeren**. Programmeren kan in heel veel programmeertalen. Wij beginnen met **Python**.
 
-- **VERGRENDELD**
-- **TOEGANG**
-- **ALARM**
-
-De regels zijn:
-
-- Bij een correcte code gaat het systeem van VERGRENDELD naar TOEGANG.
-- Bij een verkeerde code blijft het systeem VERGRENDELD.
-- Na drie verkeerde codes gaat het systeem naar ALARM.
-- Vanuit TOEGANG kan de deur worden gesloten en gaat het systeem terug naar VERGRENDELD.
-- Vanuit ALARM kan het systeem alleen door een beheerder worden gereset.
-
-## Opdracht 4
-
-Teken een toestandsdiagram.
-
-Denk goed na over de gebeurtenissen.
-
-Je hebt bijvoorbeeld gebeurtenissen nodig zoals:
-
-```text
-correcte code
-verkeerde code
-deur sluiten
-reset
-```
-
-## Opdracht 5
-
-Voer de volgende gebeurtenissen uit.
-
-Het systeem begint in:
-
-```text
-VERGRENDELD
-```
-
-Gebeurtenissen:
-
-```text
-verkeerde code
-verkeerde code
-correcte code
-deur sluiten
-verkeerde code
-verkeerde code
-verkeerde code
-```
-
-Maak een tabel waarin je na iedere gebeurtenis de toestand noteert.
-
-## Opdracht 6 — denk verder
-
-Waarom is **"aantal verkeerde pogingen"** eigenlijk ook informatie die het systeem moet onthouden?
-
-Is dat zelf een toestand?
-
-Of is het iets anders?
-
-Bespreek je antwoord met een klasgenoot.
-
----
-
-# 8. Toestanden in een game
-
-Ook games zitten vol met toestanden.
-
-Stel dat je een eenvoudig ruimtespel maakt.
-
-Een ruimteschip kan bijvoorbeeld de volgende toestanden hebben:
-
-```text
-NORMAAL
-GERAAKT
-VERNIETIGD
-```
-
-Bijvoorbeeld:
-
-```text
-              botsing
-      ┌─────────────────────┐
-      │                     v
-┌──────────┐            ┌─────────┐
-│ NORMAAL  │            │ GERAAKT │
-└──────────┘            └─────────┘
-      ^                     │
-      │                     │ nog een botsing
-      │                     v
-      │                ┌────────────┐
-      └────────────────│ VERNIETIGD │
-                       └────────────┘
-```
-
-Je kunt nu al nadenken als een programmeur:
-
-> Welke informatie moet mijn programma bijhouden om te weten wat het ruimteschip moet doen?
-
-Het antwoord kan bijvoorbeeld zijn:
-
-```text
-toestand = NORMAAL
-```
-
-Als het schip wordt geraakt, verandert die toestand.
-
----
-
-# Python
-
-## 9. Van toestand naar Python
-
-Tot nu toe hebben we systemen beschreven zonder te programmeren.
-
-Nu gaan we een computer vertellen hoe zo'n systeem moet werken.
-
-We gebruiken daarvoor **Python**.
-
-Python is een programmeertaal. Met Python kunnen we instructies schrijven die een computer kan uitvoeren.
+In de lessen gebruiken wij [het programma Thonny](https://thonny.org/). Zorg dat dit programma op jouw laptop staat.
 
 Je hoeft nog niets van Python te weten.
 
@@ -386,51 +222,7 @@ We beginnen met één heel belangrijk idee:
 
 > Een programma bestaat uit instructies die de computer één voor één uitvoert.
 
----
-
-# 10. Je eerste Python-programma
-
-Een computer kan tekst laten zien met `print()`.
-
-```python
-print("Hallo!")
-```
-
-`print` betekent ongeveer:
-
-> laat iets zien op het scherm.
-
-De tekst tussen aanhalingstekens is de tekst die we willen laten zien.
-
-Probeer:
-
-```python
-print("Ik leer Python")
-print("Dit is mijn eerste programma")
-```
-
-De computer voert de regels van boven naar beneden uit.
-
-De uitvoer is:
-
-```text
-Ik leer Python
-Dit is mijn eerste programma
-```
-
-## Opdracht 7
-
-Schrijf een programma dat de volgende drie regels op het scherm laat zien:
-
-```text
-Ik ben een programmeur.
-Ik werk met toestanden.
-Mijn computer kan een automaat uitvoeren.
-```
-
----
-
-# 11. Informatie onthouden: variabelen
+### Informatie onthouden
 
 Een automaat moet onthouden in welke toestand hij zich bevindt.
 
@@ -479,51 +271,15 @@ OPEN
 
 De variabele `toestand` werkt dus als het geheugen van onze eenvoudige automaat.
 
----
+### Beslissen
 
-# 12. Een eerste automaat in Python
-
-We kunnen nu onze deur maken.
-
-```python
-toestand = "DICHT"
-
-print(toestand)
-
-toestand = "OPEN"
-
-print(toestand)
-
-toestand = "DICHT"
-
-print(toestand)
-```
-
-De computer voert dit uit als:
-
-```text
-DICHT
-OPEN
-DICHT
-```
-
-We hebben zojuist een automaat gesimuleerd.
-
-Maar er is nog iets niet goed.
-
-De computer verandert de toestand nu omdat **wij dat letterlijk in het programma hebben opgeschreven**.
-
-We willen eigenlijk dat de computer zelf kan reageren op gebeurtenissen.
-
----
-
-# 13. Een computer laten kiezen
-
-Daarvoor gebruiken we `if`.
+Om beslissingen te maken binnen een programma gebruiken we `if`.
 
 `if` betekent:
 
 > als dit waar is, doe dan dit.
+
+Er moet dus altijd een controle uitgevoerd worden na het woordje `if`.
 
 Bijvoorbeeld:
 
@@ -544,7 +300,7 @@ betekent:
 
 > Is de toestand gelijk aan `"DICHT"`?
 
-Let goed op het verschil:
+Let goed op het verschil tussen een enkele `=` en een dubbel `==`.
 
 ```python
 toestand = "DICHT"
@@ -564,13 +320,11 @@ betekent:
 
 > controleer of `toestand` gelijk is aan `"DICHT"`.
 
----
+Hierboven wordt slechts één toestand gecontroleerdm namelijk of de toestand van de deur `"DICHT"` is.
 
-# 14. Twee mogelijke situaties
+Maar onze deur kan natuurlijk OPEN of DICHT zijn.
 
-Onze deur kan OPEN of DICHT zijn.
-
-We kunnen de computer laten reageren:
+We kunnen in ons programma ook gebruik maken van `else`.
 
 ```python
 toestand = "DICHT"
@@ -602,10 +356,6 @@ Is toestand DICHT?
 ```
 
 Dit is een eerste voorbeeld van **beslissen** in een programma.
-
----
-
-# 15. Van beslissing naar overgang
 
 Nu kunnen we een overgang maken.
 
@@ -640,9 +390,7 @@ naar:
 
 **Python-programma**
 
----
-
-# 16. De eerste echte automaat
+### Controles combineren
 
 We kunnen het voorbeeld uitbreiden.
 
@@ -674,47 +422,7 @@ Het woord `and` betekent:
 
 > beide voorwaarden moeten waar zijn.
 
----
-
-# 17. Oefening: bouw je eigen deurautomaat
-
-Maak een Python-programma met:
-
-```python
-toestand = "DICHT"
-```
-
-en:
-
-```python
-gebeurtenis = "openen"
-```
-
-Zorg ervoor dat de computer de toestand verandert naar `"OPEN"` als de gebeurtenis `"openen"` is.
-
-Laat daarna de toestand printen.
-
-Je programma moet bijvoorbeeld dit kunnen opleveren:
-
-```text
-OPEN
-```
-
-## Extra uitdaging
-
-Voeg ook de gebeurtenis `"sluiten"` toe.
-
-Je programma moet dan bijvoorbeeld deze overgang kunnen uitvoeren:
-
-```text
-OPEN --sluiten--> DICHT
-```
-
-Denk eerst na over het toestandsdiagram voordat je gaat programmeren.
-
----
-
-# 18. Een automaat met meerdere toestanden
+### Nog meer beslissingen
 
 Nu maken we een verkeerslicht.
 
@@ -766,11 +474,7 @@ elif
 
 Dat correspondeert met verschillende mogelijke toestanden.
 
----
-
-# 19. Oefening: voorspel de uitvoer
-
-Zonder het programma uit te voeren: wat wordt er geprint?
+Voorspel zonder het programma uit te voeren wat er wordt geprint.
 
 ```python
 toestand = "GROEN"
@@ -791,98 +495,9 @@ Schrijf eerst je antwoord op.
 
 Voer daarna het programma uit.
 
-## Vraag
-
 Waarom wordt er niet eerst `GROEN` en daarna `ORANJE` geprint?
 
----
-
-# 20. Een belangrijk idee: de toestand verandert tijdens het uitvoeren
-
-Kijk nog eens naar:
-
-```python
-toestand = "GROEN"
-
-if toestand == "GROEN":
-    toestand = "ORANJE"
-```
-
-Voor de `if` is de toestand:
-
-```text
-GROEN
-```
-
-Na de opdracht:
-
-```python
-toestand = "ORANJE"
-```
-
-is de toestand:
-
-```text
-ORANJE
-```
-
-De toestand is dus informatie die tijdens het uitvoeren van het programma kan veranderen.
-
-Dat is precies wat we met een toestandmachine bedoelen.
-
----
-
-# 21. Oefening: teken → programmeer → test
-
-Kies één van deze systemen:
-
-- een verkeerslicht;
-- een automatische deur;
-- een lift;
-- een pinautomaat;
-- een gamepersonage;
-- een fietsverhuurstation.
-
-Werk steeds in deze volgorde.
-
-### Stap 1 — Bedenk de toestanden
-
-Welke verschillende situaties kunnen voorkomen?
-
-### Stap 2 — Bedenk de gebeurtenissen
-
-Waardoor kan de toestand veranderen?
-
-### Stap 3 — Teken het toestandsdiagram
-
-Teken alle toestanden en overgangen.
-
-### Stap 4 — Schrijf het algoritme
-
-Beschrijf in gewone taal wat de computer moet doen.
-
-Bijvoorbeeld:
-
-```text
-Als de toestand DICHT is en iemand opent de deur,
-dan wordt de toestand OPEN.
-```
-
-### Stap 5 — Programmeer
-
-Vertaal je algoritme naar Python.
-
-### Stap 6 — Test
-
-Probeer verschillende gebeurtenissen.
-
-Vraag jezelf af:
-
-> Doet mijn programma altijd wat het toestandsdiagram zegt?
-
----
-
-# 22. Waarom doen we dit?
+### Programma's ontwerpen
 
 Je zou kunnen denken:
 
@@ -916,96 +531,7 @@ Een toestandsdiagram is dus een **model** van het gedrag van een systeem.
 
 Python is vervolgens een manier om dat model door een computer te laten uitvoeren.
 
----
-
-# 23. Eindopdracht — ontwerp een automaat
-
-Ontwerp een eenvoudige automaat voor een systeem naar keuze.
-
-Je mag kiezen uit:
-
-- een verkeerslicht;
-- een deur;
-- een lift;
-- een pinautomaat;
-- een gamepersonage;
-- een wachtwoordbeveiliging;
-- een eigen idee.
-
-Je ontwerp moet minimaal bevatten:
-
-- 3 toestanden;
-- minimaal 4 mogelijke gebeurtenissen;
-- een duidelijke begin-toestand;
-- overgangen tussen de toestanden;
-- minimaal één situatie waarin de toestand niet verandert;
-- een toestandsdiagram;
-- een Python-programma dat een deel van de automaat uitvoert.
-
-## Je levert in
-
-### 1. Toestandsdiagram
-
-Het diagram moet duidelijk maken:
-
-- welke toestanden bestaan;
-- welke gebeurtenissen er zijn;
-- welke overgang plaatsvindt.
-
-### 2. Uitleg
-
-Leg in je eigen woorden uit hoe jouw automaat werkt.
-
-### 3. Python-programma
-
-Je programma moet minimaal gebruikmaken van:
-
-```python
-print()
-```
-
-een variabele voor de toestand:
-
-```python
-toestand = ...
-```
-
-en beslissingen met:
-
-```python
-if
-```
-
-en eventueel:
-
-```python
-elif
-else
-```
-
-### 4. Test
-
-Laat minimaal drie verschillende situaties zien.
-
-Bijvoorbeeld:
-
-```text
-Begintoestand: DICHT
-Gebeurtenis: openen
-Nieuwe toestand: OPEN
-```
-
-en:
-
-```text
-Begintoestand: OPEN
-Gebeurtenis: sluiten
-Nieuwe toestand: DICHT
-```
-
----
-
-# 24. Begrippen die je moet kennen
+## Begrippenlijst
 
 Aan het einde van deze week moet je de volgende begrippen kunnen uitleggen:
 
@@ -1038,3 +564,314 @@ Een extra voorwaarde die wordt gecontroleerd als een eerdere `if` of `elif` niet
 
 **`else`**  
 Geeft aan wat er gebeurt als de eerdere voorwaarden niet waar zijn.
+
+---
+
+# Opdrachten
+
+1. De deur
+
+   Een automatische deur heeft twee toestanden:
+   - DICHT
+   - OPEN
+
+   De deur reageert op twee gebeurtenissen:
+   - iemand loopt naar de deur;
+   - niemand staat meer bij de deur.
+
+   a. Teken een toestandsdiagram voor de deur. Gebruik twee cirkels, 'DICHT' en 'OPEN'. Teken de pijlen en zet op iedere pijl de gebeurtenis waardoor de overgang plaatsvindt.
+
+   b. Beantwoord de volgende vragen.
+   1. In welke toestand begint de deur?
+   2. Wat gebeurt er als iemand naar de deur loopt?
+   3. Wat gebeurt er als niemand meer bij de deur staat?
+   4. Kan de deur vanuit OPEN direct naar OPEN gaan?
+   5. Kan de deur vanuit DICHT direct naar DICHT gaan?
+
+   c. Bedenk zelf een derde toestand voor de deur. Pas je toestandsdiagram aan zodat deze toestand ook wordt gebruikt.
+
+---
+
+2. Een toegangssysteem
+
+   Een gebouw heeft een eenvoudig toegangssysteem.
+
+   Het systeem heeft drie toestanden:
+   - **VERGRENDELD**
+   - **TOEGANG**
+   - **ALARM**
+
+   De regels zijn:
+   - Bij een correcte code gaat het systeem van VERGRENDELD naar TOEGANG.
+   - Bij een verkeerde code blijft het systeem VERGRENDELD.
+   - Na drie verkeerde codes gaat het systeem naar ALARM.
+   - Vanuit TOEGANG kan de deur worden gesloten en gaat het systeem terug naar VERGRENDELD.
+   - Vanuit ALARM kan het systeem alleen door een beheerder worden gereset.
+
+   a. Teken een toestandsdiagram. Denk goed na over de gebeurtenissen. Je hebt bijvoorbeeld gebeurtenissen nodig zoals:
+
+   ```text
+   correcte code
+   verkeerde code
+   deur sluiten
+   reset
+   ```
+
+   b. Voer de volgende gebeurtenissen uit. Het systeem begint in:
+
+   ```text
+   VERGRENDELD
+   ```
+
+   Gebeurtenissen:
+
+   ```text
+   verkeerde code
+   verkeerde code
+   correcte code
+   deur sluiten
+   verkeerde code
+   verkeerde code
+   verkeerde code
+   ```
+
+   Maak een tabel waarin je na iedere gebeurtenis de toestand noteert.
+
+   c. Waarom is **"aantal verkeerde pogingen"** eigenlijk ook informatie die het systeem moet onthouden? Is dat zelf een toestand? Of is het iets anders? Bespreek je antwoord met een klasgenoot.
+
+---
+
+3. Toestanden in een game
+
+   Ook games zitten vol met toestanden.
+
+   Stel dat je een eenvoudig ruimtespel maakt.
+
+   Een ruimteschip kan bijvoorbeeld de volgende toestanden hebben:
+
+   ```text
+   NORMAAL
+   GERAAKT
+   VERNIETIGD
+   ```
+
+   Bijvoorbeeld:
+
+   ```text
+               botsing
+       ┌─────────────────────┐
+       │                     v
+   ┌──────────┐            ┌─────────┐
+   │ NORMAAL  │            │ GERAAKT │
+   └──────────┘            └─────────┘
+       ^                     │
+       │                     │ nog een botsing
+       │                     v
+       │                ┌────────────┐
+       └────────────────│ VERNIETIGD │
+                       └────────────┘
+   ```
+
+   Je kunt nu al nadenken als een programmeur:
+
+   > Welke informatie moet mijn programma bijhouden om te weten wat het ruimteschip moet doen?
+
+   Het antwoord kan bijvoorbeeld zijn:
+
+   ```text
+   toestand = NORMAAL
+   ```
+
+   Als het schip wordt geraakt, verandert die toestand.
+
+---
+
+4. Je eerste Python-programma
+
+   Een computer kan tekst laten zien met `print()`.
+
+   ```python
+   print("Hallo!")
+   ```
+
+   `print` betekent ongeveer:
+
+   > laat iets zien op het scherm.
+
+   De tekst tussen aanhalingstekens is de tekst die we willen laten zien.
+
+   a. Probeer:
+
+   ```python
+   print("Ik leer Python")
+   print("Dit is mijn eerste programma")
+   ```
+
+   De computer voert de regels van boven naar beneden uit.
+
+   Noteer de uitvoer van dit programma
+
+   b. Schrijf een programma dat de volgende drie regels op het scherm laat zien:
+
+   ```text
+   Ik ben een programmeur.
+   Ik werk met toestanden.
+   Mijn computer kan een automaat uitvoeren.
+   ```
+
+---
+
+5. Een eerste automaat in Python
+
+   We kunnen nu onze deur maken.
+
+   ```python
+   toestand = "DICHT"
+
+   print(toestand)
+
+   toestand = "OPEN"
+
+   print(toestand)
+
+   toestand = "DICHT"
+
+   print(toestand)
+   ```
+
+   De computer voert dit uit als:
+
+   ```text
+   DICHT
+   OPEN
+   DICHT
+   ```
+
+   We hebben zojuist een automaat gesimuleerd.
+
+   Maar er is nog iets niet goed.
+
+   De computer verandert de toestand nu omdat **wij dat letterlijk in het programma hebben opgeschreven**.
+
+   We willen eigenlijk dat de computer zelf kan reageren op gebeurtenissen.
+
+---
+
+6. Bouw je eigen deurautomaat
+
+   Maak een Python-programma met:
+
+   ```python
+   toestand = "DICHT"
+   ```
+
+   en:
+
+   ```python
+   gebeurtenis = "openen"
+   ```
+
+   Zorg ervoor dat de computer de toestand verandert naar `"OPEN"` als de gebeurtenis `"openen"` is.
+
+   Laat daarna de toestand printen.
+
+   Je programma moet bijvoorbeeld dit kunnen opleveren:
+
+   ```text
+   OPEN
+   ```
+
+   ## Extra uitdaging
+
+   Voeg ook de gebeurtenis `"sluiten"` toe.
+
+   Je programma moet dan bijvoorbeeld deze overgang kunnen uitvoeren:
+
+   ```text
+   OPEN --sluiten--> DICHT
+   ```
+
+   Denk eerst na over het toestandsdiagram voordat je gaat programmeren.
+
+---
+
+9. Eindopdracht — ontwerp een automaat
+
+   Ontwerp een eenvoudige automaat voor een systeem naar keuze.
+
+   Je mag kiezen uit:
+   - een verkeerslicht;
+   - een deur;
+   - een lift;
+   - een pinautomaat;
+   - een gamepersonage;
+   - een wachtwoordbeveiliging;
+   - een eigen idee.
+
+   Je ontwerp moet minimaal bevatten:
+   - 3 toestanden;
+   - minimaal 4 mogelijke gebeurtenissen;
+   - een duidelijke begin-toestand;
+   - overgangen tussen de toestanden;
+   - minimaal één situatie waarin de toestand niet verandert;
+   - een toestandsdiagram;
+   - een Python-programma dat een deel van de automaat uitvoert.
+
+   Je levert in
+   1. Toestandsdiagram
+
+      Het diagram moet duidelijk maken:
+      - welke toestanden bestaan;
+      - welke gebeurtenissen er zijn;
+      - welke overgang plaatsvindt.
+
+   2. Uitleg
+
+      Leg in je eigen woorden uit hoe jouw automaat werkt.
+
+   3. Python-programma
+
+      Je programma moet minimaal gebruikmaken van:
+
+      ```python
+      print()
+      ```
+
+      een variabele voor de toestand:
+
+      ```python
+      toestand = ...
+      ```
+
+      en beslissingen met:
+
+      ```python
+      if
+      ```
+
+      en eventueel:
+
+      ```python
+      elif
+      else
+      ```
+
+   4. Test
+
+      Laat minimaal drie verschillende situaties zien.
+
+      Bijvoorbeeld:
+
+      ```text
+      Begintoestand: DICHT
+      Gebeurtenis: openen
+      Nieuwe toestand: OPEN
+      ```
+
+      en:
+
+      ```text
+      Begintoestand: OPEN
+      Gebeurtenis: sluiten
+      Nieuwe toestand: DICHT
+      ```
