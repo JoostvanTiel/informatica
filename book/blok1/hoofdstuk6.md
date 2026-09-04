@@ -287,19 +287,19 @@ EINDE
 
 1. `return` vergeten
 
-	 Dan krijg je geen bruikbare uitkomst terug.
+   Dan krijg je geen bruikbare uitkomst terug.
 
 2. Verkeerde inspringing
 
-	 Dan hoort code niet bij de functie of lus.
+   Dan hoort code niet bij de functie of lus.
 
 3. Variabele buiten bereik gebruiken
 
-	 Een variabele die in een functie staat, bestaat niet automatisch buiten die functie.
+   Een variabele die in een functie staat, bestaat niet automatisch buiten die functie.
 
 4. Functie en print door elkaar halen
 
-	 Soms wil je printen, soms wil je een waarde teruggeven.
+   Soms wil je printen, soms wil je een waarde teruggeven.
 
 ---
 
@@ -337,188 +337,182 @@ Een programma opdelen in losse, samenwerkende onderdelen.
 
 1. Eerste functies
 
-	 a. Schrijf een functie `begroet(naam)` die `Hallo <naam>` print.
+   a. Schrijf een functie `begroet(naam)` die `Hallo <naam>` print.
 
-	 b. Roep de functie aan met drie verschillende namen.
+   b. Roep de functie aan met drie verschillende namen.
 
-	 c. Schrijf een functie `toon_getal(getal)` die het getal en zijn kwadraat print.
+   c. Schrijf een functie `toon_getal(getal)` die het getal en zijn kwadraat print.
 
 ---
 
 2. Return oefenen
 
-	 a. Schrijf een functie `som(a, b)` die `a + b` teruggeeft.
+   a. Schrijf een functie `som(a, b)` die `a + b` teruggeeft.
 
-	 b. Schrijf een functie `verschil(a, b)` die `a - b` teruggeeft.
+   b. Schrijf een functie `verschil(a, b)` die `a - b` teruggeeft.
 
-	 c. Schrijf een functie `is_even(getal)` die `True` of `False` teruggeeft.
+   c. Schrijf een functie `is_even(getal)` die `True` of `False` teruggeeft.
 
-	 d. Test elke functie met minstens drie voorbeelden.
+   d. Test elke functie met minstens drie voorbeelden.
 
 ---
 
 3. Lijst verwerken met functies
 
-	 Gegeven:
+   Gegeven:
 
-	 ```python
-	 cijfers = [6.5, 7.0, 5.5, 8.0, 4.5]
-	 ```
+   ```python
+   cijfers = [6.5, 7.0, 5.5, 8.0, 4.5]
+   ```
 
-	 a. Schrijf `som_lijst(cijfers)`.
+   a. Schrijf `som_lijst(cijfers)`.
 
-	 b. Schrijf `gemiddelde_lijst(cijfers)` die `som_lijst` gebruikt.
+   b. Schrijf `gemiddelde_lijst(cijfers)` die `som_lijst` gebruikt.
 
-	 c. Schrijf `beoordeling(gemiddelde)` die `voldoende` of `onvoldoende` teruggeeft.
+   c. Schrijf `beoordeling(gemiddelde)` die `voldoende` of `onvoldoende` teruggeeft.
 
-	 d. Combineer alles in een hoofdprogramma.
+   d. Combineer alles in een hoofdprogramma.
 
 ---
 
 4. Toestand en gebeurtenissen opnieuw
 
-	 Gegeven:
+   Gegeven:
 
-	 ```python
-	 gebeurtenissen = ["openen", "sluiten", "openen", "openen", "sluiten"]
-	 ```
+   ```python
+   gebeurtenissen = ["openen", "sluiten", "openen", "openen", "sluiten"]
+   ```
 
-	 a. Schrijf een functie `volgende_toestand(toestand, gebeurtenis)`.
+   a. Schrijf een functie `volgende_toestand(toestand, gebeurtenis)`.
 
-	 b. Verwerk de hele lijst met een lus.
+   b. Verwerk de hele lijst met een lus.
 
-	 c. Print na elke stap de toestand.
+   c. Print na elke stap de toestand.
 
-	 d. Test met een tweede lijst gebeurtenissen.
+   d. Test met een tweede lijst gebeurtenissen.
 
 ---
 
 5. Dobbelsteenfuncties
 
-	 Gebruik `random.randrange()`.
+   Gebruik `random.randrange()`.
 
-	 a. Schrijf `worp_dobbelsteen()`.
+   a. Schrijf `worp_dobbelsteen()`.
 
-	 b. Schrijf `aantal_zessen(aantal_worpen)`.
+   b. Schrijf `aantal_zessen(aantal_worpen)`.
 
-	 c. Schrijf `aantal_even(aantal_worpen)`.
+   c. Schrijf `aantal_even(aantal_worpen)`.
 
-	 d. Vergelijk de resultaten van 20, 100 en 1000 worpen.
+   d. Vergelijk de resultaten van 20, 100 en 1000 worpen.
 
 ---
 
 6. Patroonfunctie 1
 
-	 a. Schrijf `print_sterren(aantal)`.
+   a. Schrijf `print_sterren(aantal)`.
 
-	 b. Schrijf `print_blok(rijen, kolommen)` die `print_sterren` gebruikt.
+   b. Schrijf `print_blok(rijen, kolommen)` die `print_sterren` gebruikt.
 
-	 c. Test met `(10, 10)`, `(5, 10)` en `(20, 5)`.
+   c. Test met `(10, 10)`, `(5, 10)` en `(20, 5)`.
 
 ---
 
 7. Patroonfunctie 2
 
-	 Schrijf een functie `print_getalrij(n)` die print:
+   Schrijf een functie `print_getalrij(n)` die print:
 
-	 ```text
-	 0 1 2 ... n
-	 ```
+   ```text
+   0 1 2 ... n
+   ```
 
-	 a. Gebruik een lus.
+   a. Gebruik een lus.
 
-	 b. Gebruik daarna deze functie om 10 regels te printen met telkens `0` t/m `9`.
+   b. Gebruik daarna deze functie om 10 regels te printen met telkens `0` t/m `9`.
 
 ---
 
 8. Driehoekfunctie
 
-	 Schrijf een functie `print_driehoek(hoogte)` die dit patroon maakt:
+   Schrijf een functie `print_driehoek(hoogte)` die dit patroon maakt:
 
-	 ```text
-	 0
-	 0 1
-	 0 1 2
-	 ...
-	 ```
+   ```text
+   0
+   0 1
+   0 1 2
+   ...
+   ```
 
-	 a. Gebruik geneste lussen.
+   a. Gebruik geneste lussen.
 
-	 b. Roep de functie aan met hoogte 10.
+   b. Roep de functie aan met hoogte 10.
 
-	 c. Extra: maak ook een omgekeerde variant.
+   c. Extra: maak ook een omgekeerde variant.
 
 ---
 
 9. Tafel van vermenigvuldiging
 
-	 a. Schrijf een functie `print_tafel_van(getal, max_factor)`.
+   a. Schrijf een functie `print_tafel_van(getal, max_factor)`.
 
-	 b. Schrijf een functie `print_tafels_1_tot_9()` die alle tafels 1 t/m 9 print.
+   b. Schrijf een functie `print_tafels_1_tot_9()` die alle tafels 1 t/m 9 print.
 
-	 c. Zorg dat de uitvoer leesbaar blijft met nette spaties.
+   c. Zorg dat de uitvoer leesbaar blijft met nette spaties.
 
 ---
 
 10. Grammatica-controlefunctie
 
-	 Een woord is geldig als:
+    Een woord is geldig als:
+    - het alleen `a` en `b` bevat;
+    - en eindigt op `b`.
 
-	 - het alleen `a` en `b` bevat;
-	 - en eindigt op `b`.
+    a. Schrijf `is_geldig_ab_woord(woord)`.
 
-	 a. Schrijf `is_geldig_ab_woord(woord)`.
+    b. Test met minstens 8 woorden.
 
-	 b. Test met minstens 8 woorden.
-
-	 c. Print per woord: woord + geldig/ongeldig.
+    c. Print per woord: woord + geldig/ongeldig.
 
 ---
 
 11. Mini-project combineren
 
-	 Ontwerp een programma dat een lijst met willekeurige scores maakt en daarna analyseert.
+    Ontwerp een programma dat een lijst met willekeurige scores maakt en daarna analyseert.
 
-	 Verplicht:
+    Verplicht:
+    - gebruik `random.randrange()`;
+    - zet de scores in een lijst;
+    - gebruik minimaal drie zelfgemaakte functies;
+    - gebruik `if` voor een beoordeling;
+    - toon minimum, maximum en gemiddelde.
 
-	 - gebruik `random.randrange()`;
-	 - zet de scores in een lijst;
-	 - gebruik minimaal drie zelfgemaakte functies;
-	 - gebruik `if` voor een beoordeling;
-	 - toon minimum, maximum en gemiddelde.
-
-	 Lever in:
-
-	 1. functielijst met korte uitleg;
-	 2. volledige code;
-	 3. testuitvoer van minstens drie runs.
+    Lever in:
+    1. functielijst met korte uitleg;
+    2. volledige code;
+    3. testuitvoer van minstens drie runs.
 
 ---
 
 12. Eindopdracht blok 1
 
-	 Maak een gecombineerd programma met:
+    Maak een gecombineerd programma met:
+    - toestanden of gebeurtenissen;
+    - beslissingen;
+    - lijsten;
+    - lussen;
+    - toeval;
+    - functies.
 
-	 - toestanden of gebeurtenissen;
-	 - beslissingen;
-	 - lijsten;
-	 - lussen;
-	 - toeval;
-	 - functies.
+    Voorbeelden:
+    - game-ronde simulatie;
+    - toegangscontrole met meerdere pogingen;
+    - patroongenerator met menu;
+    - binaire codegenerator en controle.
 
-	 Voorbeelden:
-
-	 - game-ronde simulatie;
-	 - toegangscontrole met meerdere pogingen;
-	 - patroongenerator met menu;
-	 - binaire codegenerator en controle.
-
-	 Je programma bevat minimaal:
-
-	 1. vier functies;
-	 2. een hoofdprogramma;
-	 3. duidelijke testgevallen;
-	 4. korte reflectie: wat ging goed, wat kan beter.
+    Je programma bevat minimaal:
+    1. vier functies;
+    2. een hoofdprogramma;
+    3. duidelijke testgevallen;
+    4. korte reflectie: wat ging goed, wat kan beter.
 
 ---
 
