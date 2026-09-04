@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Hoofdstuk 3: Datastructuren &#8212; Informatica</title>
+    <title>Hoofdstuk 3: Datastructuren en operatoren &#8212; Informatica</title>
   
   
   
@@ -153,6 +153,10 @@
   
 
   
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
 </div>
 
     </header>
@@ -215,10 +219,14 @@
 
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk2.html">Hoofdstuk 2: Algoritmen en beslissingen</a></li>
 
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Hoofdstuk 3: Datastructuren</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Hoofdstuk 3: Datastructuren en operatoren</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk4.html">Hoofdstuk 4: Lussen</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk5.html">Hoofdstuk 5: Grammatica’s</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk6.html">Hoofdstuk 6: Toeval &amp; combineren</a></li>
+
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../blok2/index.html">4ha blok 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -405,7 +413,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -416,11 +426,50 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Hoofdstuk 3: Datastructuren</h1>
+    <h1>Hoofdstuk 3: Datastructuren en operatoren</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Hoofdstuk 3: Datastructuren en operatoren</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-datastructuren">Waarom datastructuren?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variabeletypes">Variabeletypes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#int"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#float"><code class="docutils literal notranslate"><span class="pre">float</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string"><code class="docutils literal notranslate"><span class="pre">string</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean"><code class="docutils literal notranslate"><span class="pre">boolean</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#werken-met-lijsten">Werken met lijsten</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#een-waarde-opvragen">Een waarde opvragen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#een-waarde-aanpassen">Een waarde aanpassen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#een-waarde-toevoegen">Een waarde toevoegen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lengte-van-een-lijst">Lengte van een lijst</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operatoren">Operatoren</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wanneer-gebruik-je-en">Wanneer gebruik je <code class="docutils literal notranslate"><span class="pre">//</span></code> en <code class="docutils literal notranslate"><span class="pre">%</span></code>?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#van-losse-stappen-naar-herhaling">Van losse stappen naar herhaling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-functie-range">De functie <code class="docutils literal notranslate"><span class="pre">range()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#willekeurige-getallen-met-random-randrange">Willekeurige getallen met <code class="docutils literal notranslate"><span class="pre">random.randrange()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#begrippenlijst">Begrippenlijst</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#afronding">Afronding</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -430,9 +479,466 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="hoofdstuk-3-datastructuren">
-<h1>Hoofdstuk 3: Datastructuren<a class="headerlink" href="#hoofdstuk-3-datastructuren" title="Link to this heading">#</a></h1>
-<p>Inhoud van hoofdstuk 3.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="hoofdstuk-3-datastructuren-en-operatoren">
+<h1>Hoofdstuk 3: Datastructuren en operatoren<a class="headerlink" href="#hoofdstuk-3-datastructuren-en-operatoren" title="Link to this heading">#</a></h1>
+<section id="leerdoelen">
+<h2>Leerdoelen<a class="headerlink" href="#leerdoelen" title="Link to this heading">#</a></h2>
+<p>In hoofdstuk 1 en 2 heb je geleerd hoe je met variabelen informatie bewaart en hoe je met <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code> en <code class="docutils literal notranslate"><span class="pre">else</span></code> beslissingen maakt.</p>
+<p>In dit hoofdstuk ga je een stap verder: je leert hoe je meerdere gegevens netjes opslaat en hoe je met rekenoperatoren berekeningen maakt.</p>
+<p>Je leert:</p>
+<ul class="simple">
+<li><p>wat de variabeletypes <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">string</span></code> en <code class="docutils literal notranslate"><span class="pre">boolean</span></code> zijn;</p></li>
+<li><p>wanneer je welk type gebruikt;</p></li>
+<li><p>wat een lijst is en waarom lijsten handig zijn;</p></li>
+<li><p>hoe je waarden uit een lijst leest en aanpast;</p></li>
+<li><p>wat de functie <code class="docutils literal notranslate"><span class="pre">range()</span></code> doet en hoe je die gebruikt;</p></li>
+<li><p>hoe je met <code class="docutils literal notranslate"><span class="pre">random.randrange()</span></code> willekeurige gehele getallen kiest;</p></li>
+<li><p>hoe de operatoren <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">**</span></code>, <code class="docutils literal notranslate"><span class="pre">//</span></code> en <code class="docutils literal notranslate"><span class="pre">%</span></code> werken;</p></li>
+<li><p>hoe je met variabelen, lijsten en operatoren problemen oplost;</p></li>
+<li><p>waarom herhaling van stappen in code een opstap is naar <code class="docutils literal notranslate"><span class="pre">for</span></code> en <code class="docutils literal notranslate"><span class="pre">while</span></code>.</p></li>
+</ul>
+<p>Aan het einde van dit hoofdstuk kun je gegevens slim organiseren in variabelen en lijsten en kun je berekeningen uitvoeren met de belangrijkste rekenoperatoren.</p>
+</section>
+<hr class="docutils" />
+<section id="waarom-datastructuren">
+<h2>Waarom datastructuren?<a class="headerlink" href="#waarom-datastructuren" title="Link to this heading">#</a></h2>
+<p>Tot nu toe heb je vaak met losse variabelen gewerkt.</p>
+<p>Bijvoorbeeld:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cijfer1</span> <span class="o">=</span> <span class="mf">6.5</span>
+<span class="n">cijfer2</span> <span class="o">=</span> <span class="mf">7.0</span>
+<span class="n">cijfer3</span> <span class="o">=</span> <span class="mf">5.5</span>
+</pre></div>
+</div>
+<p>Dat kan, maar het wordt snel onhandig als je veel waarden hebt.</p>
+<p>Met een <strong>datastructuur</strong> kun je gegevens geordend bewaren.</p>
+<p>De eerste datastructuur die je leert is de <strong>lijst</strong>.</p>
+<p>Daarmee kun je meerdere waarden in één variabele zetten.</p>
+</section>
+<hr class="docutils" />
+<section id="variabeletypes">
+<h2>Variabeletypes<a class="headerlink" href="#variabeletypes" title="Link to this heading">#</a></h2>
+<p>Een variabele heeft een <strong>type</strong>.</p>
+<p>Het type vertelt wat voor soort waarde erin zit.</p>
+<section id="int">
+<h3><code class="docutils literal notranslate"><span class="pre">int</span></code><a class="headerlink" href="#int" title="Link to this heading">#</a></h3>
+<p>Een <code class="docutils literal notranslate"><span class="pre">int</span></code> is een geheel getal.</p>
+<p>Voorbeelden:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">leeftijd</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">aantal_punten</span> <span class="o">=</span> <span class="mi">120</span>
+</pre></div>
+</div>
+</section>
+<section id="float">
+<h3><code class="docutils literal notranslate"><span class="pre">float</span></code><a class="headerlink" href="#float" title="Link to this heading">#</a></h3>
+<p>Een <code class="docutils literal notranslate"><span class="pre">float</span></code> is een kommagetal.</p>
+<p>Voorbeelden:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">temperatuur</span> <span class="o">=</span> <span class="mf">18.5</span>
+<span class="n">gemiddelde</span> <span class="o">=</span> <span class="mf">6.75</span>
+</pre></div>
+</div>
+</section>
+<section id="string">
+<h3><code class="docutils literal notranslate"><span class="pre">string</span></code><a class="headerlink" href="#string" title="Link to this heading">#</a></h3>
+<p>Een <code class="docutils literal notranslate"><span class="pre">string</span></code> is tekst, tussen aanhalingstekens.</p>
+<p>Voorbeelden:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">naam</span> <span class="o">=</span> <span class="s2">"Sam"</span>
+<span class="n">toestand</span> <span class="o">=</span> <span class="s2">"OPEN"</span>
+</pre></div>
+</div>
+</section>
+<section id="boolean">
+<h3><code class="docutils literal notranslate"><span class="pre">boolean</span></code><a class="headerlink" href="#boolean" title="Link to this heading">#</a></h3>
+<p>Een <code class="docutils literal notranslate"><span class="pre">boolean</span></code> heeft maar twee mogelijke waarden:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>True
+False
+</pre></div>
+</div>
+<p>Voorbeelden:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ingelogd</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">deur_open</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p>Je gebruikt een boolean vaak als uitkomst van een controle.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="werken-met-lijsten">
+<h2>Werken met lijsten<a class="headerlink" href="#werken-met-lijsten" title="Link to this heading">#</a></h2>
+<p>Een lijst zet je tussen vierkante haken:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cijfers</span> <span class="o">=</span> <span class="p">[</span><span class="mf">6.5</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>De lijst <code class="docutils literal notranslate"><span class="pre">cijfers</span></code> bevat vier waarden.</p>
+<section id="een-waarde-opvragen">
+<h3>Een waarde opvragen<a class="headerlink" href="#een-waarde-opvragen" title="Link to this heading">#</a></h3>
+<p>Elke plek in de lijst heeft een <strong>index</strong>.</p>
+<p>Let op: de eerste plek heeft index <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cijfers</span> <span class="o">=</span> <span class="p">[</span><span class="mf">6.5</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">cijfers</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cijfers</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Uitvoer:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>6.5
+5.5
+</pre></div>
+</div>
+</section>
+<section id="een-waarde-aanpassen">
+<h3>Een waarde aanpassen<a class="headerlink" href="#een-waarde-aanpassen" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cijfers</span> <span class="o">=</span> <span class="p">[</span><span class="mf">6.5</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">]</span>
+<span class="n">cijfers</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mf">6.0</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">cijfers</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Uitvoer:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[6.5, 7.0, 6.0, 8.0]
+</pre></div>
+</div>
+</section>
+<section id="een-waarde-toevoegen">
+<h3>Een waarde toevoegen<a class="headerlink" href="#een-waarde-toevoegen" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cijfers</span> <span class="o">=</span> <span class="p">[</span><span class="mf">6.5</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">]</span>
+<span class="n">cijfers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mf">8.0</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">cijfers</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Uitvoer:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[6.5, 7.0, 5.5, 8.0]
+</pre></div>
+</div>
+</section>
+<section id="lengte-van-een-lijst">
+<h3>Lengte van een lijst<a class="headerlink" href="#lengte-van-een-lijst" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cijfers</span> <span class="o">=</span> <span class="p">[</span><span class="mf">6.5</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cijfers</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Uitvoer:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="operatoren">
+<h2>Operatoren<a class="headerlink" href="#operatoren" title="Link to this heading">#</a></h2>
+<p>Met operatoren laat je Python rekenen.</p>
+<p>In dit hoofdstuk gebruiken we:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> optellen</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-</span></code> aftrekken</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code> vermenigvuldigen</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/</span></code> delen (kommagetal als uitkomst)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">**</span></code> macht</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">//</span></code> gehele deling</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%</span></code> rest bij deling</p></li>
+</ul>
+<p>Voorbeelden:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">17</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>   <span class="c1"># 22</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span>   <span class="c1"># 12</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span>   <span class="c1"># 85</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">)</span>   <span class="c1"># 3.4</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">**</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># 1419857</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">//</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># 3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span>   <span class="c1"># 2</span>
+</pre></div>
+</div>
+<section id="wanneer-gebruik-je-en">
+<h3>Wanneer gebruik je <code class="docutils literal notranslate"><span class="pre">//</span></code> en <code class="docutils literal notranslate"><span class="pre">%</span></code>?<a class="headerlink" href="#wanneer-gebruik-je-en" title="Link to this heading">#</a></h3>
+<p>Stel: je wilt weten hoeveel complete teams van 4 je kunt maken met 18 leerlingen.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">leerlingen</span> <span class="o">=</span> <span class="mi">18</span>
+<span class="n">teamgrootte</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="n">complete_teams</span> <span class="o">=</span> <span class="n">leerlingen</span> <span class="o">//</span> <span class="n">teamgrootte</span>
+<span class="n">over</span> <span class="o">=</span> <span class="n">leerlingen</span> <span class="o">%</span> <span class="n">teamgrootte</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">complete_teams</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">over</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Uitvoer:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>4
+2
+</pre></div>
+</div>
+<p>Dus: 4 complete teams en 2 leerlingen over.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="van-losse-stappen-naar-herhaling">
+<h2>Van losse stappen naar herhaling<a class="headerlink" href="#van-losse-stappen-naar-herhaling" title="Link to this heading">#</a></h2>
+<p>Kijk naar deze code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="p">[</span><span class="mi">120</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">220</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Dit werkt, maar je herhaalt bijna dezelfde regel steeds opnieuw.</p>
+<p>Dat is een belangrijk signaal:</p>
+<blockquote>
+<div><p>Deze code is klaar voor een lus.</p>
+</div></blockquote>
+<p>In het volgende hoofdstuk leer je hoe je dit met <code class="docutils literal notranslate"><span class="pre">for</span></code> en <code class="docutils literal notranslate"><span class="pre">while</span></code> korter, sneller en overzichtelijker maakt.</p>
+</section>
+<hr class="docutils" />
+<section id="de-functie-range">
+<h2>De functie <code class="docutils literal notranslate"><span class="pre">range()</span></code><a class="headerlink" href="#de-functie-range" title="Link to this heading">#</a></h2>
+<p>De functie <code class="docutils literal notranslate"><span class="pre">range()</span></code> maakt een reeks getallen.</p>
+<p>Dat is handig als je stap voor stap door indexen of getallen wilt gaan.</p>
+<p>Belangrijk: het eindgetal telt niet mee.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p>Uitvoer:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[0, 1, 2, 3, 4]
+</pre></div>
+</div>
+<p>Je kunt <code class="docutils literal notranslate"><span class="pre">range()</span></code> op drie manieren gebruiken:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="n">stop</span><span class="p">)</span>          <span class="c1"># van 0 tot stop-1</span>
+<span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">)</span>   <span class="c1"># van start tot stop-1</span>
+<span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">stap</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Voorbeelden:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p>Uitvoer:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[2, 3, 4, 5, 6]
+[0, 2, 4, 6, 8, 10]
+</pre></div>
+</div>
+<p>In dit hoofdstuk gebruik je <code class="docutils literal notranslate"><span class="pre">range()</span></code> vooral om indexen te begrijpen.
+In hoofdstuk 4 gebruik je <code class="docutils literal notranslate"><span class="pre">range()</span></code> vaak samen met <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p>
+</section>
+<hr class="docutils" />
+<section id="willekeurige-getallen-met-random-randrange">
+<h2>Willekeurige getallen met <code class="docutils literal notranslate"><span class="pre">random.randrange()</span></code><a class="headerlink" href="#willekeurige-getallen-met-random-randrange" title="Link to this heading">#</a></h2>
+<p>Bij games en simulaties wil je vaak een willekeurig geheel getal.</p>
+<p>Daarvoor gebruiken we:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+</pre></div>
+</div>
+<p>en daarna:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Net als bij <code class="docutils literal notranslate"><span class="pre">range()</span></code> telt de stopwaarde niet mee.</p>
+<p>Voorbeelden:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>     <span class="c1"># 0 t/m 9</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>   <span class="c1"># 1 t/m 6</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>  <span class="c1"># 0, 5, 10, 15 of 20</span>
+</pre></div>
+</div>
+<p>Dit sluit goed aan bij lussen, omdat je bijvoorbeeld in elke herhaling een nieuwe willekeurige waarde kunt maken.</p>
+<p>In dit boek gebruiken we hier <code class="docutils literal notranslate"><span class="pre">random.randrange()</span></code> en niet <code class="docutils literal notranslate"><span class="pre">random.random()</span></code>.</p>
+</section>
+<hr class="docutils" />
+<section id="begrippenlijst">
+<h2>Begrippenlijst<a class="headerlink" href="#begrippenlijst" title="Link to this heading">#</a></h2>
+<p>Aan het einde van deze week moet je de volgende begrippen kunnen uitleggen:</p>
+<p><strong>Datastructuur</strong><br />
+Een manier om gegevens geordend op te slaan.</p>
+<p><strong>Lijst</strong><br />
+Een datastructuur met meerdere waarden in een vaste volgorde.</p>
+<p><strong>Index</strong><br />
+De positie van een waarde in een lijst (de eerste index is 0).</p>
+<p><strong>Type</strong><br />
+De soort waarde van een variabele.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">int</span></code></strong><br />
+Geheel getal.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">float</span></code></strong><br />
+Kommagetal.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">string</span></code></strong><br />
+Tekst tussen aanhalingstekens.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">boolean</span></code></strong><br />
+Waarheidswaarde: <code class="docutils literal notranslate"><span class="pre">True</span></code> of <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p><strong>Operator</strong><br />
+Teken waarmee je een bewerking uitvoert, zoals optellen of delen.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">range()</span></code></strong><br />
+Functie die een reeks getallen maakt, waarbij het eindgetal niet wordt meegenomen.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">random.randrange()</span></code></strong><br />
+Functie uit de module <code class="docutils literal notranslate"><span class="pre">random</span></code> die een willekeurig geheel getal kiest binnen een bereik, waarbij de stopwaarde niet wordt meegenomen.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="opdrachten">
+<h1>Opdrachten<a class="headerlink" href="#opdrachten" title="Link to this heading">#</a></h1>
+<ol class="arabic">
+<li><p>Type-herhaling (hoofdstuk 1 en 2)</p>
+<p>Gegeven zijn de variabelen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">toestand</span> <span class="o">=</span> <span class="s2">"OPEN"</span>
+<span class="n">temperatuur</span> <span class="o">=</span> <span class="mf">18.5</span>
+<span class="n">leeftijd</span> <span class="o">=</span> <span class="mi">14</span>
+<span class="n">is_ingelogd</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>a. Schrijf bij elke variabele het type (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">string</span></code>, <code class="docutils literal notranslate"><span class="pre">boolean</span></code>).</p>
+<p>b. Bedenk per variabele een nieuwe waarde met hetzelfde type.</p>
+<p>c. Maak één extra variabele van elk type.</p>
+</li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic" start="2">
+<li><p>Rekenen met operatoren</p>
+<p>Neem:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">29</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">6</span>
+</pre></div>
+</div>
+<p>a. Bereken met Python:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">-</span> <span class="pre">b</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">*</span> <span class="pre">b</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">/</span> <span class="pre">b</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">**</span> <span class="pre">2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">//</span> <span class="pre">b</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">%</span> <span class="pre">b</span></code></p></li>
+</ul>
+<p>b. Schrijf bij elke uitkomst in woorden wat het betekent.</p>
+<p>c. Leg uit wat het verschil is tussen <code class="docutils literal notranslate"><span class="pre">/</span></code> en <code class="docutils literal notranslate"><span class="pre">//</span></code>.</p>
+</li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic" start="3">
+<li><p>Lijst met temperaturen (herhaling beslissingen)</p>
+<p>Je krijgt de lijst:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">temperaturen</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Gebruik de regels uit hoofdstuk 2:</p>
+<ul class="simple">
+<li><p>onder 0: <code class="docutils literal notranslate"><span class="pre">Het</span> <span class="pre">vriest.</span></code></p></li>
+<li><p>0 t/m 15: <code class="docutils literal notranslate"><span class="pre">Het</span> <span class="pre">is</span> <span class="pre">koud.</span></code></p></li>
+<li><p>boven 15: <code class="docutils literal notranslate"><span class="pre">Het</span> <span class="pre">is</span> <span class="pre">niet</span> <span class="pre">koud.</span></code></p></li>
+</ul>
+<p>a. Schrijf code die voor <code class="docutils literal notranslate"><span class="pre">temperaturen[0]</span></code> de juiste tekst print.</p>
+<p>b. Herhaal dat voor <code class="docutils literal notranslate"><span class="pre">temperaturen[1]</span></code>, <code class="docutils literal notranslate"><span class="pre">temperaturen[2]</span></code> en <code class="docutils literal notranslate"><span class="pre">temperaturen[3]</span></code>.</p>
+<p>c. Wat valt je op aan de code die je hebt herhaald?</p>
+<p>d. Schrijf in één zin waarom deze aanpak bij langere lijsten snel onoverzichtelijk wordt.</p>
+</li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic" start="4">
+<li><p>Gemiddelde van drie cijfers</p>
+<p>Gebruik een lijst:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cijfers</span> <span class="o">=</span> <span class="p">[</span><span class="mf">6.5</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>a. Bereken het gemiddelde met <code class="docutils literal notranslate"><span class="pre">+</span></code> en <code class="docutils literal notranslate"><span class="pre">/</span></code>. Gebruik de cijferslijst met index, niet de letterlijke getallen.</p>
+<p>b. Print <code class="docutils literal notranslate"><span class="pre">voldoende</span></code> als het gemiddelde 5.5 of hoger is, anders <code class="docutils literal notranslate"><span class="pre">onvoldoende</span></code>.</p>
+<p>c. Verander de cijfers en test opnieuw met minstens drie sets.</p>
+</li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic" start="5">
+<li><p>Teams maken met <code class="docutils literal notranslate"><span class="pre">//</span></code> en <code class="docutils literal notranslate"><span class="pre">%</span></code></p>
+<p>Een klas heeft 31 leerlingen. Je maakt teams van 4.</p>
+<p>a. Bereken het aantal complete teams.</p>
+<p>b. Bereken hoeveel leerlingen overblijven.</p>
+<p>c. Test opnieuw met teamgroottes 3 en 5.</p>
+<p>d. Leg uit waarom <code class="docutils literal notranslate"><span class="pre">%</span></code> nuttig is in dit soort problemen.</p>
+</li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic" start="6">
+<li><p>Scorelijst verbeteren</p>
+<p>Gegeven:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="p">[</span><span class="mi">120</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">40</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>a. Print de eerste score.</p>
+<p>b. Verhoog de tweede score met 15 punten.</p>
+<p>c. Voeg een nieuwe score toe aan het einde van de lijst.</p>
+<p>d. Print de hele lijst.</p>
+<p>e. Bereken handmatig de som van alle scores.</p>
+</li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic" start="7">
+<li><p>Van toestand naar lijst</p>
+<p>In hoofdstuk 1 werkte je met toestanden van een deur.</p>
+<p>Gebruik nu:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gebeurtenissen</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"openen"</span><span class="p">,</span> <span class="s2">"sluiten"</span><span class="p">,</span> <span class="s2">"openen"</span><span class="p">]</span>
+<span class="n">toestand</span> <span class="o">=</span> <span class="s2">"DICHT"</span>
+</pre></div>
+</div>
+<p>a. Werk stap voor stap <code class="docutils literal notranslate"><span class="pre">gebeurtenissen[0]</span></code>, <code class="docutils literal notranslate"><span class="pre">gebeurtenissen[1]</span></code> en <code class="docutils literal notranslate"><span class="pre">gebeurtenissen[2]</span></code> af met <code class="docutils literal notranslate"><span class="pre">if</span></code> en <code class="docutils literal notranslate"><span class="pre">else</span></code>.</p>
+<p>b. Print na elke stap de nieuwe toestand.</p>
+<p>c. Waarom is dit een goede voorbereiding op het verwerken van langere reeksen gebeurtenissen?</p>
+</li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic" start="8">
+<li><p>Werken met een lijst prijzen</p>
+<p>Bekijk deze code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">prijzen</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.8</span><span class="p">]</span>
+
+<span class="n">totaal</span> <span class="o">=</span> <span class="n">prijzen</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">prijzen</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">prijzen</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">prijzen</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">totaal</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>a. Wat doet deze code?</p>
+<p>b. Welke regels zijn herhaling van hetzelfde idee?</p>
+<p>c. Schrijf in gewone taal een stappenplan om dit met meer prijzen uit te rekenen.</p>
+<p>d. Breid de lijst uit naar 6 prijzen en pas de berekening handmatig aan.</p>
+</li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic" start="9">
+<li><p>Oefenen met <code class="docutils literal notranslate"><span class="pre">range()</span></code></p>
+<p>a. Schrijf op wat de uitvoer is van:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p>b. Maak een lijst met vijf nullen zonder die handmatig uit te typen. Gebruik <code class="docutils literal notranslate"><span class="pre">range()</span></code>.</p>
+<p>c. Een lijst is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">namen</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Joep"</span><span class="p">,</span> <span class="s2">"Niels"</span><span class="p">,</span> <span class="s2">"Amyra"</span><span class="p">,</span> <span class="s2">"Finn"</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Schrijf code die met <code class="docutils literal notranslate"><span class="pre">range()</span></code> alle geldige indexen van deze lijst print.</p>
+</li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic" start="10">
+<li><p>Oefenen met <code class="docutils literal notranslate"><span class="pre">random.randrange()</span></code></p>
+<p>Gebruik:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+</pre></div>
+</div>
+<p>a. Schrijf code die één dobbelsteenworp simuleert met <code class="docutils literal notranslate"><span class="pre">random.randrange(1,</span> <span class="pre">7)</span></code>.</p>
+<p>b. Simuleer daarna nog vier extra worpen en print alle vijf worpen onder elkaar.</p>
+<p>c. Bepaal met <code class="docutils literal notranslate"><span class="pre">//</span></code> en <code class="docutils literal notranslate"><span class="pre">%</span></code> van elke worp of het getal even of oneven is.</p>
+<p>d. Extra: maak een score tussen 0 en 100 in stappen van 5 met <code class="docutils literal notranslate"><span class="pre">random.randrange(0,</span> <span class="pre">101,</span> <span class="pre">5)</span></code>.</p>
+</li>
+</ol>
+<hr class="docutils" />
+<section id="afronding">
+<h2>Afronding<a class="headerlink" href="#afronding" title="Link to this heading">#</a></h2>
+<p>In dit hoofdstuk heb je geleerd hoe je gegevens niet alleen in losse variabelen, maar ook in lijsten kunt opslaan.</p>
+<p>Je hebt gewerkt met de variabeletypes <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">string</span></code> en <code class="docutils literal notranslate"><span class="pre">boolean</span></code>, en je hebt berekeningen gemaakt met de operatoren:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>+  -  *  /  **  //  %
+</pre></div>
+</div>
+<p>Ook heb je gezien dat je bij meerdere waarden snel dezelfde soort regels code herhaalt.</p>
+<p>Dat is precies het punt waarop lussen belangrijk worden.</p>
+<p>In hoofdstuk 4 leer je hoe je met <code class="docutils literal notranslate"><span class="pre">for</span></code> en <code class="docutils literal notranslate"><span class="pre">while</span></code> zulke herhaling slim en overzichtelijk programmeert.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -489,6 +995,54 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Hoofdstuk 3: Datastructuren en operatoren</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-datastructuren">Waarom datastructuren?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variabeletypes">Variabeletypes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#int"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#float"><code class="docutils literal notranslate"><span class="pre">float</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string"><code class="docutils literal notranslate"><span class="pre">string</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean"><code class="docutils literal notranslate"><span class="pre">boolean</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#werken-met-lijsten">Werken met lijsten</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#een-waarde-opvragen">Een waarde opvragen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#een-waarde-aanpassen">Een waarde aanpassen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#een-waarde-toevoegen">Een waarde toevoegen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lengte-van-een-lijst">Lengte van een lijst</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operatoren">Operatoren</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wanneer-gebruik-je-en">Wanneer gebruik je <code class="docutils literal notranslate"><span class="pre">//</span></code> en <code class="docutils literal notranslate"><span class="pre">%</span></code>?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#van-losse-stappen-naar-herhaling">Van losse stappen naar herhaling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-functie-range">De functie <code class="docutils literal notranslate"><span class="pre">range()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#willekeurige-getallen-met-random-randrange">Willekeurige getallen met <code class="docutils literal notranslate"><span class="pre">random.randrange()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#begrippenlijst">Begrippenlijst</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#afronding">Afronding</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>

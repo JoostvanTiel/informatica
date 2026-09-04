@@ -65,7 +65,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Hoofdstuk 5: Grammatica’s" href="hoofdstuk5.html" />
-    <link rel="prev" title="Hoofdstuk 3: Datastructuren" href="hoofdstuk3.html" />
+    <link rel="prev" title="Hoofdstuk 3: Datastructuren en operatoren" href="hoofdstuk3.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -153,6 +153,10 @@
   
 
   
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
 </div>
 
     </header>
@@ -215,10 +219,14 @@
 
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk2.html">Hoofdstuk 2: Algoritmen en beslissingen</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="hoofdstuk3.html">Hoofdstuk 3: Datastructuren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hoofdstuk3.html">Hoofdstuk 3: Datastructuren en operatoren</a></li>
+
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Hoofdstuk 4: Lussen</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk5.html">Hoofdstuk 5: Grammatica’s</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk6.html">Hoofdstuk 6: Toeval &amp; combineren</a></li>
+
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../blok2/index.html">4ha blok 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -405,7 +413,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -421,6 +431,43 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Hoofdstuk 4: Lussen</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-lussen">Waarom lussen?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#twee-soorten-lussen">Twee soorten lussen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-for-lus">De <code class="docutils literal notranslate"><span class="pre">for</span></code>-lus</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-gebeurt-er-precies">Wat gebeurt er precies?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stroomdiagram-van-een-for-lus">Stroomdiagram van een <code class="docutils literal notranslate"><span class="pre">for</span></code>-lus</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#range-in-een-for-lus"><code class="docutils literal notranslate"><span class="pre">range()</span></code> in een <code class="docutils literal notranslate"><span class="pre">for</span></code>-lus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-while-lus">De <code class="docutils literal notranslate"><span class="pre">while</span></code>-lus</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stroomdiagram-van-een-while-lus">Stroomdiagram van een <code class="docutils literal notranslate"><span class="pre">while</span></code>-lus</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-of-while"><code class="docutils literal notranslate"><span class="pre">for</span></code> of <code class="docutils literal notranslate"><span class="pre">while</span></code>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lussen-met-lijsten">Lussen met lijsten</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lussen-met-random-randrange">Lussen met <code class="docutils literal notranslate"><span class="pre">random.randrange()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geneste-lussen">Geneste lussen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stroomdiagram-van-geneste-lussen-globaal">Stroomdiagram van geneste lussen (globaal)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veelgemaakte-fouten">Veelgemaakte fouten</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#begrippenlijst">Begrippenlijst</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#afronding">Afronding</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -432,7 +479,543 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="hoofdstuk-4-lussen">
 <h1>Hoofdstuk 4: Lussen<a class="headerlink" href="#hoofdstuk-4-lussen" title="Link to this heading">#</a></h1>
-<p>Inhoud van hoofdstuk 4.</p>
+<section id="leerdoelen">
+<h2>Leerdoelen<a class="headerlink" href="#leerdoelen" title="Link to this heading">#</a></h2>
+<p>In hoofdstuk 1, 2 en 3 heb je geleerd hoe je informatie bewaart in variabelen, beslissingen neemt met <code class="docutils literal notranslate"><span class="pre">if</span></code> en werkt met lijsten, <code class="docutils literal notranslate"><span class="pre">range()</span></code> en <code class="docutils literal notranslate"><span class="pre">random.randrange()</span></code>.</p>
+<p>In dit hoofdstuk leer je hoe je stappen automatisch herhaalt met lussen.</p>
+<p>Je leert:</p>
+<ul class="simple">
+<li><p>wat een lus is en waarom lussen nodig zijn;</p></li>
+<li><p>het verschil tussen <code class="docutils literal notranslate"><span class="pre">for</span></code> en <code class="docutils literal notranslate"><span class="pre">while</span></code>;</p></li>
+<li><p>hoe je <code class="docutils literal notranslate"><span class="pre">range()</span></code> gebruikt in een <code class="docutils literal notranslate"><span class="pre">for</span></code>-lus;</p></li>
+<li><p>hoe een teller werkt in een <code class="docutils literal notranslate"><span class="pre">while</span></code>-lus;</p></li>
+<li><p>hoe je met lussen totalen, aantallen en patronen maakt;</p></li>
+<li><p>hoe je eenvoudige geneste lussen (een lus in een lus) gebruikt;</p></li>
+<li><p>hoe je een lus ontwerpt met een stroomdiagram;</p></li>
+<li><p>hoe je oneindige lussen voorkomt.</p></li>
+</ul>
+<p>Aan het einde van dit hoofdstuk kun je herhalende taken met <code class="docutils literal notranslate"><span class="pre">for</span></code> en <code class="docutils literal notranslate"><span class="pre">while</span></code> programmeren en kun je eenvoudige patroonproblemen oplossen als voorbereiding op het volgende hoofdstuk.</p>
+</section>
+<hr class="docutils" />
+<section id="waarom-lussen">
+<h2>Waarom lussen?<a class="headerlink" href="#waarom-lussen" title="Link to this heading">#</a></h2>
+<p>Kijk naar deze code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Welkom"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Welkom"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Welkom"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Welkom"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Welkom"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Dit werkt, maar je herhaalt steeds dezelfde regel.</p>
+<p>Met een lus kan de computer die herhaling voor jou doen.</p>
+<p>Een <strong>lus</strong> betekent:</p>
+<blockquote>
+<div><p>voer een of meer instructies meerdere keren uit.</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="twee-soorten-lussen">
+<h2>Twee soorten lussen<a class="headerlink" href="#twee-soorten-lussen" title="Link to this heading">#</a></h2>
+<p>In Python gebruiken we hier twee basisvormen:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span></code>-lus</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">while</span></code>-lus</p></li>
+</ol>
+<p>De keuze hangt af van je probleem.</p>
+<p>Gebruik meestal:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span></code> als je van tevoren weet hoe vaak je wilt herhalen;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">while</span></code> als je doorgaat totdat een voorwaarde niet meer waar is.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="de-for-lus">
+<h2>De <code class="docutils literal notranslate"><span class="pre">for</span></code>-lus<a class="headerlink" href="#de-for-lus" title="Link to this heading">#</a></h2>
+<p>Een <code class="docutils literal notranslate"><span class="pre">for</span></code>-lus loopt vaak door een reeks getallen met <code class="docutils literal notranslate"><span class="pre">range()</span></code>.</p>
+<p>Voorbeeld:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+		<span class="nb">print</span><span class="p">(</span><span class="s2">"Welkom"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Uitvoer:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Welkom
+Welkom
+Welkom
+Welkom
+Welkom
+</pre></div>
+</div>
+<section id="wat-gebeurt-er-precies">
+<h3>Wat gebeurt er precies?<a class="headerlink" href="#wat-gebeurt-er-precies" title="Link to this heading">#</a></h3>
+<p>In <code class="docutils literal notranslate"><span class="pre">range(5)</span></code> zitten de waarden:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>0, 1, 2, 3, 4
+</pre></div>
+</div>
+<p>De variabele <code class="docutils literal notranslate"><span class="pre">i</span></code> krijgt die waarden één voor één.</p>
+<p>Voor elke waarde wordt het blok met inspringing uitgevoerd.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+		<span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Uitvoer:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>0
+1
+2
+3
+4
+</pre></div>
+</div>
+</section>
+<section id="stroomdiagram-van-een-for-lus">
+<h3>Stroomdiagram van een <code class="docutils literal notranslate"><span class="pre">for</span></code>-lus<a class="headerlink" href="#stroomdiagram-van-een-for-lus" title="Link to this heading">#</a></h3>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>START
+	|
+	v
+Zet i op eerste waarde uit range
+	|
+	v
+Is er nog een volgende waarde?
+	| ja
+	v
+Voer lusblok uit
+	|
+	v
+Neem volgende waarde van i
+	|
+	+------ terug naar controle ------+
+	|
+	nee
+	v
+EINDE
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="range-in-een-for-lus">
+<h2><code class="docutils literal notranslate"><span class="pre">range()</span></code> in een <code class="docutils literal notranslate"><span class="pre">for</span></code>-lus<a class="headerlink" href="#range-in-een-for-lus" title="Link to this heading">#</a></h2>
+<p>Je kent <code class="docutils literal notranslate"><span class="pre">range()</span></code> al uit hoofdstuk 3.</p>
+<p>Nu gebruiken we die in lussen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">):</span>
+		<span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Uitvoer:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>2
+3
+4
+5
+6
+</pre></div>
+</div>
+<p>Met stapgrootte:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+		<span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Uitvoer:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>0
+2
+4
+6
+8
+10
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="de-while-lus">
+<h2>De <code class="docutils literal notranslate"><span class="pre">while</span></code>-lus<a class="headerlink" href="#de-while-lus" title="Link to this heading">#</a></h2>
+<p>Een <code class="docutils literal notranslate"><span class="pre">while</span></code>-lus herhaalt zolang een voorwaarde waar is.</p>
+<p>Voorbeeld:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">teller</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">teller</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+		<span class="nb">print</span><span class="p">(</span><span class="n">teller</span><span class="p">)</span>
+		<span class="n">teller</span> <span class="o">=</span> <span class="n">teller</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Uitvoer:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>0
+1
+2
+3
+4
+</pre></div>
+</div>
+<p>Belangrijk:</p>
+<p>Als je <code class="docutils literal notranslate"><span class="pre">teller</span></code> niet verhoogt, blijft de voorwaarde waar en krijg je een oneindige lus.</p>
+<section id="stroomdiagram-van-een-while-lus">
+<h3>Stroomdiagram van een <code class="docutils literal notranslate"><span class="pre">while</span></code>-lus<a class="headerlink" href="#stroomdiagram-van-een-while-lus" title="Link to this heading">#</a></h3>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>START
+	|
+	v
+Initialiseer variabele(n)
+	|
+	v
+Voorwaarde waar?
+	| ja
+	v
+Voer lusblok uit
+	|
+	v
+Pas variabele(n) aan
+	|
+	+------ terug naar controle ------+
+	|
+	nee
+	v
+EINDE
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="for-of-while">
+<h2><code class="docutils literal notranslate"><span class="pre">for</span></code> of <code class="docutils literal notranslate"><span class="pre">while</span></code>?<a class="headerlink" href="#for-of-while" title="Link to this heading">#</a></h2>
+<p>Beide kunnen vaak hetzelfde.</p>
+<p>Voorbeeld met <code class="docutils literal notranslate"><span class="pre">for</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+		<span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Zelfde idee met <code class="docutils literal notranslate"><span class="pre">while</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+		<span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+		<span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>In de praktijk kies je meestal <code class="docutils literal notranslate"><span class="pre">for</span></code> bij een vaste reeks en <code class="docutils literal notranslate"><span class="pre">while</span></code> bij een voorwaarde.</p>
+</section>
+<hr class="docutils" />
+<section id="lussen-met-lijsten">
+<h2>Lussen met lijsten<a class="headerlink" href="#lussen-met-lijsten" title="Link to this heading">#</a></h2>
+<p>In hoofdstuk 3 werkte je al met lijsten.</p>
+<p>Nu kun je door een lijst lopen met indexen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="p">[</span><span class="mi">120</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">40</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">scores</span><span class="p">)):</span>
+		<span class="nb">print</span><span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Uitvoer:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>120
+85
+220
+40
+</pre></div>
+</div>
+<p>En je kunt waarden verwerken:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="p">[</span><span class="mi">120</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">40</span><span class="p">]</span>
+<span class="n">totaal</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">scores</span><span class="p">)):</span>
+		<span class="n">totaal</span> <span class="o">=</span> <span class="n">totaal</span> <span class="o">+</span> <span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">totaal</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Uitvoer:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>465
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="lussen-met-random-randrange">
+<h2>Lussen met <code class="docutils literal notranslate"><span class="pre">random.randrange()</span></code><a class="headerlink" href="#lussen-met-random-randrange" title="Link to this heading">#</a></h2>
+<p>In hoofdstuk 3 heb je <code class="docutils literal notranslate"><span class="pre">random.randrange()</span></code> gezien.</p>
+<p>Samen met lussen kun je meerdere willekeurige waarden maken.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+		<span class="n">worp</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+		<span class="nb">print</span><span class="p">(</span><span class="n">worp</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Dit simuleert vijf dobbelsteenworpen.</p>
+<p>Je kunt tellers combineren met beslissingen uit hoofdstuk 2:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="n">aantal_zessen</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
+		<span class="n">worp</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">worp</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
+				<span class="n">aantal_zessen</span> <span class="o">=</span> <span class="n">aantal_zessen</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">aantal_zessen</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="geneste-lussen">
+<h2>Geneste lussen<a class="headerlink" href="#geneste-lussen" title="Link to this heading">#</a></h2>
+<p>Een <strong>geneste lus</strong> is een lus binnen een andere lus.</p>
+<p>Dat gebruik je vaak voor patronen en tabellen.</p>
+<p>Voorbeeld: 3 regels met 5 sterretjes.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">rij</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+		<span class="k">for</span> <span class="n">kolom</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+				<span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">" "</span><span class="p">)</span>
+		<span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Uitvoer:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>* * * * *
+* * * * *
+* * * * *
+</pre></div>
+</div>
+<section id="stroomdiagram-van-geneste-lussen-globaal">
+<h3>Stroomdiagram van geneste lussen (globaal)<a class="headerlink" href="#stroomdiagram-van-geneste-lussen-globaal" title="Link to this heading">#</a></h3>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>START
+	|
+	v
+Start buitenste lus (rij)
+	|
+	v
+Start binnenste lus (kolom)
+	|
+	v
+Print element
+	|
+	v
+Binnenste lus klaar?
+	| nee -&gt; terug naar print element
+	| ja
+	v
+Nieuwe regel
+	|
+	v
+Buitenste lus klaar?
+	| nee -&gt; terug naar binnenste lus
+	| ja
+	v
+EINDE
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="veelgemaakte-fouten">
+<h2>Veelgemaakte fouten<a class="headerlink" href="#veelgemaakte-fouten" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>Vergeten in te springen</p>
+<p>Alles wat bij de lus hoort, moet ingesprongen staan.</p>
+</li>
+<li><p>Foute <code class="docutils literal notranslate"><span class="pre">range()</span></code>-grens</p>
+<p>De stopwaarde telt niet mee.</p>
+</li>
+<li><p>Teller niet aanpassen in <code class="docutils literal notranslate"><span class="pre">while</span></code></p>
+<p>Dan stopt de lus niet.</p>
+</li>
+<li><p>Buiten de lijst gaan</p>
+<p>Bij indexen moet je binnen <code class="docutils literal notranslate"><span class="pre">0</span></code> tot en met <code class="docutils literal notranslate"><span class="pre">len(lijst)</span> <span class="pre">-</span> <span class="pre">1</span></code> blijven.</p>
+</li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="begrippenlijst">
+<h2>Begrippenlijst<a class="headerlink" href="#begrippenlijst" title="Link to this heading">#</a></h2>
+<p>Aan het einde van deze week moet je de volgende begrippen kunnen uitleggen:</p>
+<p><strong>Lus</strong><br />
+Een instructie waarmee je code herhaald uitvoert.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">for</span></code>-lus</strong><br />
+Lus die door een reeks waarden loopt.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">while</span></code>-lus</strong><br />
+Lus die doorgaat zolang een voorwaarde waar is.</p>
+<p><strong>Teller</strong><br />
+Variabele die bijhoudt hoeveel stappen zijn uitgevoerd.</p>
+<p><strong>Accumulator</strong><br />
+Variabele waarin je tijdens een lus een totaal opbouwt.</p>
+<p><strong>Geneste lus</strong><br />
+Een lus binnen een andere lus.</p>
+<p><strong>Oneindige lus</strong><br />
+Een lus die niet stopt.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="opdrachten">
+<h1>Opdrachten<a class="headerlink" href="#opdrachten" title="Link to this heading">#</a></h1>
+<ol class="arabic">
+<li><p>Eerste <code class="docutils literal notranslate"><span class="pre">for</span></code>-lus</p>
+<p>a. Schrijf code die 10 keer <code class="docutils literal notranslate"><span class="pre">Hallo</span></code> print met een <code class="docutils literal notranslate"><span class="pre">for</span></code>-lus.</p>
+<p>b. Schrijf code die de getallen 0 t/m 9 print, elk op een nieuwe regel.</p>
+<p>c. Pas je code aan zodat alleen de even getallen van 0 t/m 20 worden geprint.</p>
+</li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic" start="2">
+<li><p><code class="docutils literal notranslate"><span class="pre">range()</span></code> goed begrijpen</p>
+<p>Voorspel eerst de uitvoer, voer daarna uit.</p>
+<p>a.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+		 <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>b.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">):</span>
+		 <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>c.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">):</span>
+		 <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>d. Leg uit waarom de stopwaarde niet wordt geprint.</p>
+</li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic" start="3">
+<li><p>Eerste <code class="docutils literal notranslate"><span class="pre">while</span></code>-lus</p>
+<p>a. Schrijf een <code class="docutils literal notranslate"><span class="pre">while</span></code>-lus die de getallen 1 t/m 5 print.</p>
+<p>b. Schrijf dezelfde opdracht met een <code class="docutils literal notranslate"><span class="pre">for</span></code>-lus.</p>
+<p>c. Wat is in jouw code het grootste verschil tussen beide oplossingen?</p>
+</li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic" start="4">
+<li><p>Som en gemiddelde (aansluiting op hoofdstuk 2 en 3)</p>
+<p>Gegeven:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cijfers</span> <span class="o">=</span> <span class="p">[</span><span class="mf">6.5</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>a. Bereken met een lus de som van alle cijfers.</p>
+<p>b. Bereken daarna het gemiddelde.</p>
+<p>c. Print <code class="docutils literal notranslate"><span class="pre">voldoende</span></code> als het gemiddelde 5.5 of hoger is, anders <code class="docutils literal notranslate"><span class="pre">onvoldoende</span></code>.</p>
+</li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic" start="5">
+<li><p>Toestand verwerken in herhaling</p>
+<p>Gegeven:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gebeurtenissen</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"openen"</span><span class="p">,</span> <span class="s2">"sluiten"</span><span class="p">,</span> <span class="s2">"openen"</span><span class="p">,</span> <span class="s2">"openen"</span><span class="p">,</span> <span class="s2">"sluiten"</span><span class="p">]</span>
+<span class="n">toestand</span> <span class="o">=</span> <span class="s2">"DICHT"</span>
+</pre></div>
+</div>
+<p>a. Verwerk de gebeurtenissen met een lus.</p>
+<p>b. Gebruik <code class="docutils literal notranslate"><span class="pre">if</span></code> en <code class="docutils literal notranslate"><span class="pre">elif</span></code> om de toestand te veranderen.</p>
+<p>c. Print na elke gebeurtenis de toestand.</p>
+</li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic" start="6">
+<li><p>Willekeurige worpen</p>
+<p>Gebruik:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+</pre></div>
+</div>
+<p>a. Simuleer 20 dobbelsteenworpen met <code class="docutils literal notranslate"><span class="pre">random.randrange(1,</span> <span class="pre">7)</span></code>.</p>
+<p>b. Tel hoeveel keer een 6 voorkomt.</p>
+<p>c. Tel ook hoeveel worpen even en hoeveel worpen oneven zijn.</p>
+<p>d. Welke operator uit hoofdstuk 3 gebruik je om even/oneven te bepalen?</p>
+</li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic" start="7">
+<li><p>Sterretjes in regels</p>
+<p>a. Print met een lus precies deze regel:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>* * * * * * * * * *
+</pre></div>
+</div>
+<p>b. Print daarna drie regels met respectievelijk 10, 5 en 20 sterretjes.</p>
+<p>c. Gebruik voor elk patroon lussen, niet een kant-en-klare tekststring.</p>
+</li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic" start="8">
+<li><p>Rechthoeken met geneste lussen</p>
+<p>a. Print een rechthoek van 10 bij 10 sterretjes.</p>
+<p>b. Print een rechthoek van 5 bij 10 sterretjes.</p>
+<p>c. Print een rechthoek van 20 bij 5 sterretjes.</p>
+<p>d. Welke <code class="docutils literal notranslate"><span class="pre">range()</span></code> bepaalt het aantal rijen en welke het aantal kolommen?</p>
+</li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic" start="9">
+<li><p>Nummerpatroon</p>
+<p>Print met geneste lussen een blok van 10 regels.</p>
+<p>Elke regel bevat:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>0 1 2 3 4 5 6 7 8 9
+</pre></div>
+</div>
+<p>Tip: bouw eerst een lus die precies één regel print.</p>
+</li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic" start="10">
+<li><p>Driehoek met getallen</p>
+<p>Print:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>0
+0 1
+0 1 2
+0 1 2 3
+0 1 2 3 4
+0 1 2 3 4 5
+0 1 2 3 4 5 6
+0 1 2 3 4 5 6 7
+0 1 2 3 4 5 6 7 8
+0 1 2 3 4 5 6 7 8 9
+</pre></div>
+</div>
+<p>a. Gebruik twee geneste lussen.</p>
+<p>b. Leg uit waarom de binnenste <code class="docutils literal notranslate"><span class="pre">range()</span></code> nu afhangt van de buitenste teller.</p>
+</li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic" start="11">
+<li><p>Vermenigvuldigingstabel 1 t/m 9</p>
+<p>Maak een tabel waarbij elke regel de veelvouden van een getal laat zien.</p>
+<p>Begin met:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>1 2 3 4 5 6 7 8 9
+</pre></div>
+</div>
+<p>en eindig met:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>9 18 27 36 45 54 63 72 81
+</pre></div>
+</div>
+<p>a. Gebruik geneste lussen.</p>
+<p>b. Gebruik de operator <code class="docutils literal notranslate"><span class="pre">*</span></code> voor de berekening.</p>
+<p>c. Extra: zorg dat getallen onder elkaar netjes uitgelijnd staan.</p>
+</li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic" start="12">
+<li><p>Ontwerp-opdracht</p>
+<p>Bedenk een eigen programma met minimaal:</p>
+<ul class="simple">
+<li><p>één lijst;</p></li>
+<li><p>één <code class="docutils literal notranslate"><span class="pre">for</span></code>-lus;</p></li>
+<li><p>één beslissing met <code class="docutils literal notranslate"><span class="pre">if</span></code>;</p></li>
+<li><p>één berekening met een operator uit hoofdstuk 3;</p></li>
+<li><p>duidelijke uitvoer met <code class="docutils literal notranslate"><span class="pre">print</span></code>.</p></li>
+</ul>
+<p>Mogelijke ideeën:</p>
+<ul class="simple">
+<li><p>score-analyse van een game;</p></li>
+<li><p>simulatie van dobbelsteenworpen;</p></li>
+<li><p>verwerking van een lijst met temperaturen;</p></li>
+<li><p>controle van toestanden in een reeks gebeurtenissen.</p></li>
+</ul>
+<p>Lever in:</p>
+<ol class="arabic simple">
+<li><p>je probleemomschrijving;</p></li>
+<li><p>je code;</p></li>
+<li><p>minstens drie testgevallen met verwachte en echte uitvoer.</p></li>
+</ol>
+</li>
+</ol>
+<hr class="docutils" />
+<section id="afronding">
+<h2>Afronding<a class="headerlink" href="#afronding" title="Link to this heading">#</a></h2>
+<p>In dit hoofdstuk heb je geleerd hoe je met lussen herhaling in programma’s slim oplost.</p>
+<p>Je hebt gewerkt met <code class="docutils literal notranslate"><span class="pre">for</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span></code>, <code class="docutils literal notranslate"><span class="pre">range()</span></code>, <code class="docutils literal notranslate"><span class="pre">random.randrange()</span></code> en geneste lussen.</p>
+<p>Ook heb je eerdere kennis toegepast: variabelen, lijsten, beslissingen en operatoren.</p>
+<p>Daardoor kun je nu niet alleen losse opdrachten oplossen, maar ook grotere patronen, tabellen en simulaties bouwen.</p>
+<p>In het volgende hoofdstuk ga je deze vaardigheden verder uitdiepen met uitdagende lusproblemen waarin nauwkeurig denken en stap-voor-stap ontwerpen centraal staan.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -471,7 +1054,7 @@
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Hoofdstuk 3: Datastructuren</p>
+        <p class="prev-next-title">Hoofdstuk 3: Datastructuren en operatoren</p>
       </div>
     </a>
     <a class="right-next"
@@ -489,6 +1072,52 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Hoofdstuk 4: Lussen</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-lussen">Waarom lussen?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#twee-soorten-lussen">Twee soorten lussen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-for-lus">De <code class="docutils literal notranslate"><span class="pre">for</span></code>-lus</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-gebeurt-er-precies">Wat gebeurt er precies?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stroomdiagram-van-een-for-lus">Stroomdiagram van een <code class="docutils literal notranslate"><span class="pre">for</span></code>-lus</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#range-in-een-for-lus"><code class="docutils literal notranslate"><span class="pre">range()</span></code> in een <code class="docutils literal notranslate"><span class="pre">for</span></code>-lus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-while-lus">De <code class="docutils literal notranslate"><span class="pre">while</span></code>-lus</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stroomdiagram-van-een-while-lus">Stroomdiagram van een <code class="docutils literal notranslate"><span class="pre">while</span></code>-lus</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-of-while"><code class="docutils literal notranslate"><span class="pre">for</span></code> of <code class="docutils literal notranslate"><span class="pre">while</span></code>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lussen-met-lijsten">Lussen met lijsten</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lussen-met-random-randrange">Lussen met <code class="docutils literal notranslate"><span class="pre">random.randrange()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geneste-lussen">Geneste lussen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stroomdiagram-van-geneste-lussen-globaal">Stroomdiagram van geneste lussen (globaal)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veelgemaakte-fouten">Veelgemaakte fouten</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#begrippenlijst">Begrippenlijst</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#afronding">Afronding</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>

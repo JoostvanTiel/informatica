@@ -414,44 +414,6 @@ Niet: "direct typen zonder nadenken".
 
 ---
 
-## Programma's ontwerpen
-
-Je zou kunnen denken:
-
-> Waarom tekenen we eerst allemaal diagrammen? Waarom gaan we niet meteen programmeren?
-
-Dat is precies de verkeerde volgorde.
-
-Als je direct begint met code schrijven, kun je gemakkelijk iets maken dat toevallig werkt, maar niet echt goed is. Je weet dan niet altijd waarom het werkt.
-
-Bij informatica willen we eerst het probleem begrijpen.
-
-Daarom gebruiken we een vaste aanpak:
-
-```text
-probleem
-   ↓
-begrijpen
-   ↓
-gegevens vastleggen
-   ↓
-beslissingen bepalen
-   ↓
-algoritme ontwerpen
-   ↓
-stroomdiagram tekenen
-   ↓
-programma schrijven
-   ↓
-testen
-```
-
-Een stroomdiagram is dus een **model** van het gedrag van een algoritme.
-
-Python is vervolgens een manier om dat model door een computer te laten uitvoeren.
-
----
-
 ## Begrippenlijst
 
 Aan het einde van deze week moet je de volgende begrippen kunnen uitleggen:

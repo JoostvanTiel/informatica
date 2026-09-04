@@ -153,6 +153,10 @@
   
 
   
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
 </div>
 
     </header>
@@ -215,10 +219,14 @@
 
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk2.html">Hoofdstuk 2: Algoritmen en beslissingen</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="hoofdstuk3.html">Hoofdstuk 3: Datastructuren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hoofdstuk3.html">Hoofdstuk 3: Datastructuren en operatoren</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk4.html">Hoofdstuk 4: Lussen</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk5.html">Hoofdstuk 5: Grammatica’s</a></li>
+
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Hoofdstuk 6: Toeval &amp; combineren</a></li>
+
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../blok2/index.html">4ha blok 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -405,7 +413,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -421,6 +431,42 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Hoofdstuk 6: Toeval &amp; combineren</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-functies">Waarom functies?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-basis-van-een-functie">De basis van een functie</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stroomdiagram-van-een-functie-aanroep">Stroomdiagram van een functie-aanroep</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters-en-argumenten">Parameters en argumenten</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#return-waarden">Return-waarden</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stroomdiagram-met-return">Stroomdiagram met return</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functies-combineren-met-if-lijsten-en-lussen">Functies combineren met if, lijsten en lussen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functies-met-random-randrange">Functies met random.randrange</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functies-voor-patronen">Functies voor patronen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functies-en-grammatica-denken">Functies en grammatica-denken</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programma-opbouw-in-stappen">Programma-opbouw in stappen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stroomdiagram-van-een-gecombineerd-programma">Stroomdiagram van een gecombineerd programma</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veelgemaakte-fouten">Veelgemaakte fouten</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#begrippenlijst">Begrippenlijst</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#afronding">Afronding</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -432,7 +478,470 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="hoofdstuk-6-toeval-combineren">
 <h1>Hoofdstuk 6: Toeval &amp; combineren<a class="headerlink" href="#hoofdstuk-6-toeval-combineren" title="Link to this heading">#</a></h1>
-<p>Inhoud van hoofdstuk 6.</p>
+<section id="leerdoelen">
+<h2>Leerdoelen<a class="headerlink" href="#leerdoelen" title="Link to this heading">#</a></h2>
+<p>In dit hoofdstuk combineer je alles wat je tot nu toe hebt geleerd.</p>
+<p>Je gebruikt:</p>
+<ul class="simple">
+<li><p>variabelen en types;</p></li>
+<li><p>beslissingen met <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>;</p></li>
+<li><p>lijsten en indexen;</p></li>
+<li><p>operatoren;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">range()</span></code> en <code class="docutils literal notranslate"><span class="pre">random.randrange()</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span></code>- en <code class="docutils literal notranslate"><span class="pre">while</span></code>-lussen;</p></li>
+<li><p>grammatica-denken uit hoofdstuk 5.</p></li>
+</ul>
+<p>Nieuw in dit hoofdstuk: <strong>functies</strong>.</p>
+<p>Je leert:</p>
+<ul class="simple">
+<li><p>waarom functies handig zijn;</p></li>
+<li><p>hoe je een functie definieert met <code class="docutils literal notranslate"><span class="pre">def</span></code>;</p></li>
+<li><p>hoe je parameters gebruikt;</p></li>
+<li><p>hoe je met <code class="docutils literal notranslate"><span class="pre">return</span></code> een waarde teruggeeft;</p></li>
+<li><p>hoe je grotere opdrachten opdeelt in kleine functies.</p></li>
+</ul>
+<p>Aan het einde van dit hoofdstuk kun je een groter probleem opdelen in meerdere functies en die functies samen laten werken in een compleet programma.</p>
+</section>
+<hr class="docutils" />
+<section id="waarom-functies">
+<h2>Waarom functies?<a class="headerlink" href="#waarom-functies" title="Link to this heading">#</a></h2>
+<p>In hoofdstuk 4 en 5 heb je gezien dat code snel lang wordt bij patronen, tabellen en controles.</p>
+<p>Zonder functies krijg je vaak:</p>
+<ul class="simple">
+<li><p>veel herhaling;</p></li>
+<li><p>moeilijk leesbare code;</p></li>
+<li><p>meer kans op fouten;</p></li>
+<li><p>lastig testen.</p></li>
+</ul>
+<p>Met functies kun je een programma opbouwen als losse bouwstenen.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>probleem opdelen -&gt; kleine functies -&gt; combineren -&gt; testen
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="de-basis-van-een-functie">
+<h2>De basis van een functie<a class="headerlink" href="#de-basis-van-een-functie" title="Link to this heading">#</a></h2>
+<p>Een functie maak je met <code class="docutils literal notranslate"><span class="pre">def</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">begroet</span><span class="p">(</span><span class="n">naam</span><span class="p">):</span>
+		<span class="nb">print</span><span class="p">(</span><span class="s2">"Hallo"</span><span class="p">,</span> <span class="n">naam</span><span class="p">)</span>
+
+<span class="n">begroet</span><span class="p">(</span><span class="s2">"Sam"</span><span class="p">)</span>
+<span class="n">begroet</span><span class="p">(</span><span class="s2">"Noor"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Hier:</p>
+<ul class="simple">
+<li><p>is <code class="docutils literal notranslate"><span class="pre">begroet</span></code> de functienaam;</p></li>
+<li><p>is <code class="docutils literal notranslate"><span class="pre">naam</span></code> de parameter;</p></li>
+<li><p>is de ingesprongen code het functieblok.</p></li>
+</ul>
+<section id="stroomdiagram-van-een-functie-aanroep">
+<h3>Stroomdiagram van een functie-aanroep<a class="headerlink" href="#stroomdiagram-van-een-functie-aanroep" title="Link to this heading">#</a></h3>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>START
+	|
+	v
+Roep functie aan
+	|
+	v
+Geef argument(en) mee
+	|
+	v
+Voer functiestappen uit
+	|
+	v
+Terug naar hoofdprogramma
+	|
+	v
+EINDE
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="parameters-en-argumenten">
+<h2>Parameters en argumenten<a class="headerlink" href="#parameters-en-argumenten" title="Link to this heading">#</a></h2>
+<p>Een parameter is de naam in de functie.</p>
+<p>Een argument is de echte waarde die je meegeeft bij aanroepen.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">toon_score</span><span class="p">(</span><span class="n">naam</span><span class="p">,</span> <span class="n">score</span><span class="p">):</span>
+		<span class="nb">print</span><span class="p">(</span><span class="n">naam</span><span class="p">,</span> <span class="s2">"heeft"</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span> <span class="s2">"punten"</span><span class="p">)</span>
+
+<span class="n">toon_score</span><span class="p">(</span><span class="s2">"Yara"</span><span class="p">,</span> <span class="mi">120</span><span class="p">)</span>
+<span class="n">toon_score</span><span class="p">(</span><span class="s2">"Milan"</span><span class="p">,</span> <span class="mi">85</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Je kunt dezelfde functie dus met verschillende waarden gebruiken.</p>
+</section>
+<hr class="docutils" />
+<section id="return-waarden">
+<h2>Return-waarden<a class="headerlink" href="#return-waarden" title="Link to this heading">#</a></h2>
+<p>Gebruik <code class="docutils literal notranslate"><span class="pre">return</span></code> als je een waarde wilt teruggeven.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">kwadraat</span><span class="p">(</span><span class="n">getal</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">getal</span> <span class="o">*</span> <span class="n">getal</span>
+
+<span class="n">uitkomst</span> <span class="o">=</span> <span class="n">kwadraat</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">uitkomst</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Functies met <code class="docutils literal notranslate"><span class="pre">return</span></code> zijn handig om te rekenen, vergelijken of door te geven aan andere functies.</p>
+<section id="stroomdiagram-met-return">
+<h3>Stroomdiagram met return<a class="headerlink" href="#stroomdiagram-met-return" title="Link to this heading">#</a></h3>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>START
+	|
+	v
+Functie krijgt invoer
+	|
+	v
+Berekening / controle
+	|
+	v
+Return resultaat
+	|
+	v
+Hoofdprogramma gebruikt resultaat
+	|
+	v
+EINDE
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="functies-combineren-met-if-lijsten-en-lussen">
+<h2>Functies combineren met if, lijsten en lussen<a class="headerlink" href="#functies-combineren-met-if-lijsten-en-lussen" title="Link to this heading">#</a></h2>
+<p>Voorbeeld: gemiddelde van een lijst berekenen.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">gemiddelde_van_lijst</span><span class="p">(</span><span class="n">cijfers</span><span class="p">):</span>
+		<span class="n">totaal</span> <span class="o">=</span> <span class="mi">0</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cijfers</span><span class="p">)):</span>
+				<span class="n">totaal</span> <span class="o">=</span> <span class="n">totaal</span> <span class="o">+</span> <span class="n">cijfers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+		<span class="k">return</span> <span class="n">totaal</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">cijfers</span><span class="p">)</span>
+
+<span class="n">waarden</span> <span class="o">=</span> <span class="p">[</span><span class="mf">6.5</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">]</span>
+<span class="n">gemiddelde</span> <span class="o">=</span> <span class="n">gemiddelde_van_lijst</span><span class="p">(</span><span class="n">waarden</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">gemiddelde</span> <span class="o">&gt;=</span> <span class="mf">5.5</span><span class="p">:</span>
+		<span class="nb">print</span><span class="p">(</span><span class="s2">"voldoende"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+		<span class="nb">print</span><span class="p">(</span><span class="s2">"onvoldoende"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Je herkent hier stof uit hoofdstuk 2, 3 en 4.</p>
+</section>
+<hr class="docutils" />
+<section id="functies-met-random-randrange">
+<h2>Functies met random.randrange<a class="headerlink" href="#functies-met-random-randrange" title="Link to this heading">#</a></h2>
+<p>Je kunt toeval netjes in een functie stoppen.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">worp_dobbelsteen</span><span class="p">():</span>
+		<span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+		<span class="nb">print</span><span class="p">(</span><span class="n">worp_dobbelsteen</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Of uitgebreider:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">tel_zessen</span><span class="p">(</span><span class="n">aantal_worpen</span><span class="p">):</span>
+		<span class="n">teller</span> <span class="o">=</span> <span class="mi">0</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">aantal_worpen</span><span class="p">):</span>
+				<span class="n">worp</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+				<span class="k">if</span> <span class="n">worp</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
+						<span class="n">teller</span> <span class="o">=</span> <span class="n">teller</span> <span class="o">+</span> <span class="mi">1</span>
+		<span class="k">return</span> <span class="n">teller</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">tel_zessen</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="functies-voor-patronen">
+<h2>Functies voor patronen<a class="headerlink" href="#functies-voor-patronen" title="Link to this heading">#</a></h2>
+<p>Veel patroonopgaven uit lussen worden overzichtelijker met functies.</p>
+<p>Voorbeeld 1: een regel sterretjes.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">print_sterren</span><span class="p">(</span><span class="n">aantal</span><span class="p">):</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">aantal</span><span class="p">):</span>
+				<span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">" "</span><span class="p">)</span>
+		<span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Voorbeeld 2: een rechthoek met sterretjes.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">print_rechthoek</span><span class="p">(</span><span class="n">rijen</span><span class="p">,</span> <span class="n">kolommen</span><span class="p">):</span>
+		<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rijen</span><span class="p">):</span>
+				<span class="n">print_sterren</span><span class="p">(</span><span class="n">kolommen</span><span class="p">)</span>
+
+<span class="n">print_rechthoek</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Hier roept de ene functie de andere functie aan.</p>
+</section>
+<hr class="docutils" />
+<section id="functies-en-grammatica-denken">
+<h2>Functies en grammatica-denken<a class="headerlink" href="#functies-en-grammatica-denken" title="Link to this heading">#</a></h2>
+<p>In hoofdstuk 5 heb je grammatica’s gebruikt om te beschrijven welke strings geldig zijn.</p>
+<p>Nu kun je zo’n controle als functie maken.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">eindigt_op_b</span><span class="p">(</span><span class="n">woord</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">woord</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+				<span class="k">return</span> <span class="kc">False</span>
+		<span class="k">return</span> <span class="n">woord</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">woord</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"b"</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">eindigt_op_b</span><span class="p">(</span><span class="s2">"aaab"</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">eindigt_op_b</span><span class="p">(</span><span class="s2">"aba"</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Combinatie van formeel denken en programmeren is precies wat op examenniveau belangrijk is.</p>
+</section>
+<hr class="docutils" />
+<section id="programma-opbouw-in-stappen">
+<h2>Programma-opbouw in stappen<a class="headerlink" href="#programma-opbouw-in-stappen" title="Link to this heading">#</a></h2>
+<p>Voor grotere opdrachten helpt deze volgorde:</p>
+<ol class="arabic simple">
+<li><p>Beschrijf het probleem in gewone taal.</p></li>
+<li><p>Bepaal input en output.</p></li>
+<li><p>Knip op in functies.</p></li>
+<li><p>Schrijf en test elke functie apart.</p></li>
+<li><p>Bouw het hoofdprogramma dat functies combineert.</p></li>
+<li><p>Test het geheel met meerdere testgevallen.</p></li>
+</ol>
+<section id="stroomdiagram-van-een-gecombineerd-programma">
+<h3>Stroomdiagram van een gecombineerd programma<a class="headerlink" href="#stroomdiagram-van-een-gecombineerd-programma" title="Link to this heading">#</a></h3>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>START
+	|
+	v
+Lees / kies invoer
+	|
+	v
+Roep functie A aan
+	|
+	v
+Roep functie B aan
+	|
+	v
+Gebruik if/elif op resultaten
+	|
+	v
+Print output
+	|
+	v
+EINDE
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="veelgemaakte-fouten">
+<h2>Veelgemaakte fouten<a class="headerlink" href="#veelgemaakte-fouten" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><code class="docutils literal notranslate"><span class="pre">return</span></code> vergeten</p>
+<p>Dan krijg je geen bruikbare uitkomst terug.</p>
+</li>
+<li><p>Verkeerde inspringing</p>
+<p>Dan hoort code niet bij de functie of lus.</p>
+</li>
+<li><p>Variabele buiten bereik gebruiken</p>
+<p>Een variabele die in een functie staat, bestaat niet automatisch buiten die functie.</p>
+</li>
+<li><p>Functie en print door elkaar halen</p>
+<p>Soms wil je printen, soms wil je een waarde teruggeven.</p>
+</li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="begrippenlijst">
+<h2>Begrippenlijst<a class="headerlink" href="#begrippenlijst" title="Link to this heading">#</a></h2>
+<p>Aan het einde van deze week moet je de volgende begrippen kunnen uitleggen:</p>
+<p><strong>Functie</strong><br />
+Een benoemd stuk code dat je kunt aanroepen.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">def</span></code></strong><br />
+Python-sleutelwoord om een functie te definiëren.</p>
+<p><strong>Parameter</strong><br />
+Naam van invoer in de functiedefinitie.</p>
+<p><strong>Argument</strong><br />
+Werkelijke waarde die je meegeeft bij het aanroepen.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">return</span></code></strong><br />
+Geeft een waarde terug uit een functie.</p>
+<p><strong>Lokale variabele</strong><br />
+Variabele die alleen binnen een functie bestaat.</p>
+<p><strong>Hulpfunctie</strong><br />
+Kleine functie die door een andere functie wordt gebruikt.</p>
+<p><strong>Modulair ontwerpen</strong><br />
+Een programma opdelen in losse, samenwerkende onderdelen.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="opdrachten">
+<h1>Opdrachten<a class="headerlink" href="#opdrachten" title="Link to this heading">#</a></h1>
+<ol class="arabic">
+<li><p>Eerste functies</p>
+<p>a. Schrijf een functie <code class="docutils literal notranslate"><span class="pre">begroet(naam)</span></code> die <code class="docutils literal notranslate"><span class="pre">Hallo</span> <span class="pre">&lt;naam&gt;</span></code> print.</p>
+<p>b. Roep de functie aan met drie verschillende namen.</p>
+<p>c. Schrijf een functie <code class="docutils literal notranslate"><span class="pre">toon_getal(getal)</span></code> die het getal en zijn kwadraat print.</p>
+</li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic" start="2">
+<li><p>Return oefenen</p>
+<p>a. Schrijf een functie <code class="docutils literal notranslate"><span class="pre">som(a,</span> <span class="pre">b)</span></code> die <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code> teruggeeft.</p>
+<p>b. Schrijf een functie <code class="docutils literal notranslate"><span class="pre">verschil(a,</span> <span class="pre">b)</span></code> die <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">-</span> <span class="pre">b</span></code> teruggeeft.</p>
+<p>c. Schrijf een functie <code class="docutils literal notranslate"><span class="pre">is_even(getal)</span></code> die <code class="docutils literal notranslate"><span class="pre">True</span></code> of <code class="docutils literal notranslate"><span class="pre">False</span></code> teruggeeft.</p>
+<p>d. Test elke functie met minstens drie voorbeelden.</p>
+</li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic" start="3">
+<li><p>Lijst verwerken met functies</p>
+<p>Gegeven:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cijfers</span> <span class="o">=</span> <span class="p">[</span><span class="mf">6.5</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>a. Schrijf <code class="docutils literal notranslate"><span class="pre">som_lijst(cijfers)</span></code>.</p>
+<p>b. Schrijf <code class="docutils literal notranslate"><span class="pre">gemiddelde_lijst(cijfers)</span></code> die <code class="docutils literal notranslate"><span class="pre">som_lijst</span></code> gebruikt.</p>
+<p>c. Schrijf <code class="docutils literal notranslate"><span class="pre">beoordeling(gemiddelde)</span></code> die <code class="docutils literal notranslate"><span class="pre">voldoende</span></code> of <code class="docutils literal notranslate"><span class="pre">onvoldoende</span></code> teruggeeft.</p>
+<p>d. Combineer alles in een hoofdprogramma.</p>
+</li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic" start="4">
+<li><p>Toestand en gebeurtenissen opnieuw</p>
+<p>Gegeven:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gebeurtenissen</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"openen"</span><span class="p">,</span> <span class="s2">"sluiten"</span><span class="p">,</span> <span class="s2">"openen"</span><span class="p">,</span> <span class="s2">"openen"</span><span class="p">,</span> <span class="s2">"sluiten"</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>a. Schrijf een functie <code class="docutils literal notranslate"><span class="pre">volgende_toestand(toestand,</span> <span class="pre">gebeurtenis)</span></code>.</p>
+<p>b. Verwerk de hele lijst met een lus.</p>
+<p>c. Print na elke stap de toestand.</p>
+<p>d. Test met een tweede lijst gebeurtenissen.</p>
+</li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic" start="5">
+<li><p>Dobbelsteenfuncties</p>
+<p>Gebruik <code class="docutils literal notranslate"><span class="pre">random.randrange()</span></code>.</p>
+<p>a. Schrijf <code class="docutils literal notranslate"><span class="pre">worp_dobbelsteen()</span></code>.</p>
+<p>b. Schrijf <code class="docutils literal notranslate"><span class="pre">aantal_zessen(aantal_worpen)</span></code>.</p>
+<p>c. Schrijf <code class="docutils literal notranslate"><span class="pre">aantal_even(aantal_worpen)</span></code>.</p>
+<p>d. Vergelijk de resultaten van 20, 100 en 1000 worpen.</p>
+</li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic" start="6">
+<li><p>Patroonfunctie 1</p>
+<p>a. Schrijf <code class="docutils literal notranslate"><span class="pre">print_sterren(aantal)</span></code>.</p>
+<p>b. Schrijf <code class="docutils literal notranslate"><span class="pre">print_blok(rijen,</span> <span class="pre">kolommen)</span></code> die <code class="docutils literal notranslate"><span class="pre">print_sterren</span></code> gebruikt.</p>
+<p>c. Test met <code class="docutils literal notranslate"><span class="pre">(10,</span> <span class="pre">10)</span></code>, <code class="docutils literal notranslate"><span class="pre">(5,</span> <span class="pre">10)</span></code> en <code class="docutils literal notranslate"><span class="pre">(20,</span> <span class="pre">5)</span></code>.</p>
+</li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic" start="7">
+<li><p>Patroonfunctie 2</p>
+<p>Schrijf een functie <code class="docutils literal notranslate"><span class="pre">print_getalrij(n)</span></code> die print:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>0 1 2 ... n
+</pre></div>
+</div>
+<p>a. Gebruik een lus.</p>
+<p>b. Gebruik daarna deze functie om 10 regels te printen met telkens <code class="docutils literal notranslate"><span class="pre">0</span></code> t/m <code class="docutils literal notranslate"><span class="pre">9</span></code>.</p>
+</li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic" start="8">
+<li><p>Driehoekfunctie</p>
+<p>Schrijf een functie <code class="docutils literal notranslate"><span class="pre">print_driehoek(hoogte)</span></code> die dit patroon maakt:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>0
+0 1
+0 1 2
+...
+</pre></div>
+</div>
+<p>a. Gebruik geneste lussen.</p>
+<p>b. Roep de functie aan met hoogte 10.</p>
+<p>c. Extra: maak ook een omgekeerde variant.</p>
+</li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic" start="9">
+<li><p>Tafel van vermenigvuldiging</p>
+<p>a. Schrijf een functie <code class="docutils literal notranslate"><span class="pre">print_tafel_van(getal,</span> <span class="pre">max_factor)</span></code>.</p>
+<p>b. Schrijf een functie <code class="docutils literal notranslate"><span class="pre">print_tafels_1_tot_9()</span></code> die alle tafels 1 t/m 9 print.</p>
+<p>c. Zorg dat de uitvoer leesbaar blijft met nette spaties.</p>
+</li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic" start="10">
+<li><p>Grammatica-controlefunctie</p>
+<p>Een woord is geldig als:</p>
+<ul class="simple">
+<li><p>het alleen <code class="docutils literal notranslate"><span class="pre">a</span></code> en <code class="docutils literal notranslate"><span class="pre">b</span></code> bevat;</p></li>
+<li><p>en eindigt op <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p></li>
+</ul>
+<p>a. Schrijf <code class="docutils literal notranslate"><span class="pre">is_geldig_ab_woord(woord)</span></code>.</p>
+<p>b. Test met minstens 8 woorden.</p>
+<p>c. Print per woord: woord + geldig/ongeldig.</p>
+</li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic" start="11">
+<li><p>Mini-project combineren</p>
+<p>Ontwerp een programma dat een lijst met willekeurige scores maakt en daarna analyseert.</p>
+<p>Verplicht:</p>
+<ul class="simple">
+<li><p>gebruik <code class="docutils literal notranslate"><span class="pre">random.randrange()</span></code>;</p></li>
+<li><p>zet de scores in een lijst;</p></li>
+<li><p>gebruik minimaal drie zelfgemaakte functies;</p></li>
+<li><p>gebruik <code class="docutils literal notranslate"><span class="pre">if</span></code> voor een beoordeling;</p></li>
+<li><p>toon minimum, maximum en gemiddelde.</p></li>
+</ul>
+<p>Lever in:</p>
+<ol class="arabic simple">
+<li><p>functielijst met korte uitleg;</p></li>
+<li><p>volledige code;</p></li>
+<li><p>testuitvoer van minstens drie runs.</p></li>
+</ol>
+</li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic" start="12">
+<li><p>Eindopdracht blok 1</p>
+<p>Maak een gecombineerd programma met:</p>
+<ul class="simple">
+<li><p>toestanden of gebeurtenissen;</p></li>
+<li><p>beslissingen;</p></li>
+<li><p>lijsten;</p></li>
+<li><p>lussen;</p></li>
+<li><p>toeval;</p></li>
+<li><p>functies.</p></li>
+</ul>
+<p>Voorbeelden:</p>
+<ul class="simple">
+<li><p>game-ronde simulatie;</p></li>
+<li><p>toegangscontrole met meerdere pogingen;</p></li>
+<li><p>patroongenerator met menu;</p></li>
+<li><p>binaire codegenerator en controle.</p></li>
+</ul>
+<p>Je programma bevat minimaal:</p>
+<ol class="arabic simple">
+<li><p>vier functies;</p></li>
+<li><p>een hoofdprogramma;</p></li>
+<li><p>duidelijke testgevallen;</p></li>
+<li><p>korte reflectie: wat ging goed, wat kan beter.</p></li>
+</ol>
+</li>
+</ol>
+<hr class="docutils" />
+<section id="afronding">
+<h2>Afronding<a class="headerlink" href="#afronding" title="Link to this heading">#</a></h2>
+<p>In dit hoofdstuk heb je geleerd hoe je alle onderdelen van blok 1 kunt combineren in functies.</p>
+<p>Je hebt gewerkt met:</p>
+<ul class="simple">
+<li><p>variabelen en types;</p></li>
+<li><p>beslissingen;</p></li>
+<li><p>lijsten;</p></li>
+<li><p>lussen;</p></li>
+<li><p>toeval met <code class="docutils literal notranslate"><span class="pre">random.randrange()</span></code>;</p></li>
+<li><p>en formeel controleren met regels.</p></li>
+</ul>
+<p>Daardoor kun je nu grotere programma’s ontwerpen die overzichtelijk, testbaar en uitbreidbaar zijn.</p>
+<p>Je bent hiermee klaar voor het vervolg waarin je nog zelfstandiger ontwerpt en programmeert met meerdere samenwerkende functies.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -489,6 +998,51 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Hoofdstuk 6: Toeval &amp; combineren</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-functies">Waarom functies?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-basis-van-een-functie">De basis van een functie</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stroomdiagram-van-een-functie-aanroep">Stroomdiagram van een functie-aanroep</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters-en-argumenten">Parameters en argumenten</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#return-waarden">Return-waarden</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stroomdiagram-met-return">Stroomdiagram met return</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functies-combineren-met-if-lijsten-en-lussen">Functies combineren met if, lijsten en lussen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functies-met-random-randrange">Functies met random.randrange</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functies-voor-patronen">Functies voor patronen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functies-en-grammatica-denken">Functies en grammatica-denken</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programma-opbouw-in-stappen">Programma-opbouw in stappen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stroomdiagram-van-een-gecombineerd-programma">Stroomdiagram van een gecombineerd programma</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veelgemaakte-fouten">Veelgemaakte fouten</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#begrippenlijst">Begrippenlijst</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#afronding">Afronding</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
