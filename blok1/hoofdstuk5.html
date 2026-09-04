@@ -446,12 +446,14 @@
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grammatica-en-het-examenprogramma-informatica">Grammatica en het examenprogramma informatica</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-1-binaire-strings">Voorbeeld 1: binaire strings</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-2-eenvoudige-identifier">Voorbeeld 2: eenvoudige identifier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-2-gebruikersnaam">Voorbeeld 2: gebruikersnaam</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#van-grammatica-naar-code-denken">Van grammatica naar code-denken</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stroomdiagram-van-dit-programma">Stroomdiagram van dit programma</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#begrippenlijst">Begrippenlijst</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#succescriteria">Succescriteria</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-rubric">Mini-rubric</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="pst-show_toc_level nav section-nav flex-column">
@@ -492,8 +494,24 @@
 <section id="waarom-grammatica-s">
 <h2>Waarom grammatica’s?<a class="headerlink" href="#waarom-grammatica-s" title="Link to this heading">#</a></h2>
 <p>Een computer moet precies weten wat geldig is.</p>
-<p>Bij programmeertalen is dat heel belangrijk.</p>
+<p>Dat gebeurt niet alleen in programmeertalen, maar ook in dingen die leerlingen dagelijks gebruiken.</p>
+<p>Denk aan:</p>
+<ul class="simple">
+<li><p>een gebruikersnaam die aan regels moet voldoen;</p></li>
+<li><p>een game-commando zoals <code class="docutils literal notranslate"><span class="pre">move</span> <span class="pre">3</span></code> of <code class="docutils literal notranslate"><span class="pre">jump</span> <span class="pre">2</span></code>;</p></li>
+<li><p>een hashtag zonder spaties;</p></li>
+<li><p>een schoolcode met vast patroon.</p></li>
+</ul>
 <p>Bijvoorbeeld:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>chat!help
+</pre></div>
+</div>
+<p>is een geldig commando, maar:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>chat ! help
+</pre></div>
+</div>
+<p>kan ongeldig zijn als spaties niet zijn toegestaan.</p>
+<p>Ook in Python zelf gelden zulke vormregels. Bijvoorbeeld:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>3 + 4 * 2
 </pre></div>
 </div>
@@ -502,7 +520,7 @@
 </pre></div>
 </div>
 <p>is niet geldig.</p>
-<p>Een grammatica beschrijft die regels.</p>
+<p>Een grammatica beschrijft zulke regels op een precieze manier.</p>
 <p>Zo weet een computer welke invoer syntactisch klopt.</p>
 </section>
 <hr class="docutils" />
@@ -614,9 +632,9 @@ S -&gt; 1
 </div>
 </section>
 <hr class="docutils" />
-<section id="voorbeeld-2-eenvoudige-identifier">
-<h2>Voorbeeld 2: eenvoudige identifier<a class="headerlink" href="#voorbeeld-2-eenvoudige-identifier" title="Link to this heading">#</a></h2>
-<p>Een identifier begint met een letter, daarna volgen letters of cijfers.</p>
+<section id="voorbeeld-2-gebruikersnaam">
+<h2>Voorbeeld 2: gebruikersnaam<a class="headerlink" href="#voorbeeld-2-gebruikersnaam" title="Link to this heading">#</a></h2>
+<p>Stel: een gebruikersnaam begint met een letter, daarna volgen letters of cijfers.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Start -&gt; Letter Rest
 Rest -&gt; Letter Rest | Cijfer Rest | leeg
 Letter -&gt; a | b | ... | z
@@ -641,8 +659,8 @@ level42
 <p>Je kunt regels ook simuleren met code.</p>
 <p>Voorbeeld: maak vijf strings van de vorm <code class="docutils literal notranslate"><span class="pre">a^n</span> <span class="pre">b</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-	 <span class="n">woord</span> <span class="o">=</span> <span class="s2">"a"</span> <span class="o">*</span> <span class="n">n</span> <span class="o">+</span> <span class="s2">"b"</span>
-	 <span class="nb">print</span><span class="p">(</span><span class="n">woord</span><span class="p">)</span>
+     <span class="n">woord</span> <span class="o">=</span> <span class="s2">"a"</span> <span class="o">*</span> <span class="n">n</span> <span class="o">+</span> <span class="s2">"b"</span>
+     <span class="nb">print</span><span class="p">(</span><span class="n">woord</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Uitvoer:</p>
@@ -654,6 +672,24 @@ aaaab
 </pre></div>
 </div>
 <p>Hier herhaal je een patroon met een lus, net als in hoofdstuk 4.</p>
+<p>Je kunt ook een regelcontrole programmeren, bijvoorbeeld voor een gebruikersnaam:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">naam</span> <span class="o">=</span> <span class="s2">"level42"</span>
+<span class="n">geldig</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">naam</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+  <span class="n">geldig</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="k">elif</span> <span class="ow">not</span> <span class="n">naam</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>
+  <span class="n">geldig</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">naam</span><span class="p">)):</span>
+  <span class="n">teken</span> <span class="o">=</span> <span class="n">naam</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+  <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">teken</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()</span> <span class="ow">or</span> <span class="n">teken</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()):</span>
+    <span class="n">geldig</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">geldig</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Zo zie je hoe grammatica-denken direct aansluit op programmeren.</p>
 <section id="stroomdiagram-van-dit-programma">
 <h3>Stroomdiagram van dit programma<a class="headerlink" href="#stroomdiagram-van-dit-programma" title="Link to this heading">#</a></h3>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>START
@@ -700,27 +736,81 @@ De vormregels van een taal.</p>
 <p><strong>Semantiek</strong><br />
 De betekenis van uitdrukkingen in een taal.</p>
 </section>
+<hr class="docutils" />
+<section id="succescriteria">
+<h2>Succescriteria<a class="headerlink" href="#succescriteria" title="Link to this heading">#</a></h2>
+<p>Aan het einde van dit hoofdstuk kun je:</p>
+<ul class="simple">
+<li><p>terminals, niet-terminals, productieregels en startsymbool aanwijzen;</p></li>
+<li><p>een eenvoudige afleiding maken;</p></li>
+<li><p>beoordelen of een woord wel of niet in een taal zit;</p></li>
+<li><p>een simpele taalregel uit de praktijk vertalen naar Python-controle.</p></li>
+</ul>
+</section>
+<section id="mini-rubric">
+<h2>Mini-rubric<a class="headerlink" href="#mini-rubric" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Onderdeel</p></th>
+<th class="head"><p>Startend</p></th>
+<th class="head"><p>Voldoende</p></th>
+<th class="head"><p>Sterk</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Begrijpen</p></td>
+<td><p>Herkent enkele grammatica-termen</p></td>
+<td><p>Legt alle kernbegrippen correct uit</p></td>
+<td><p>Verbindt grammatica aan examenkaders</p></td>
+</tr>
+<tr class="row-odd"><td><p>Toepassen</p></td>
+<td><p>Maakt deels correcte afleiding</p></td>
+<td><p>Maakt correcte afleidingen en voorbeelden</p></td>
+<td><p>Ontwerpt bruikbare eigen grammatica</p></td>
+</tr>
+<tr class="row-even"><td><p>Testen</p></td>
+<td><p>Controleert enkele woorden</p></td>
+<td><p>Test systematisch geldig/ongeldig</p></td>
+<td><p>Onderbouwt testkeuzes met regels</p></td>
+</tr>
+<tr class="row-odd"><td><p>Uitleggen</p></td>
+<td><p>Beschrijft uitkomst kort</p></td>
+<td><p>Legt redeneerstappen uit</p></td>
+<td><p>Vergelijkt alternatieve grammatica’s</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="opdrachten">
 <h1>Opdrachten<a class="headerlink" href="#opdrachten" title="Link to this heading">#</a></h1>
+<p><strong>Kernroute (verplicht, circa 60% van de opgavenlast):</strong> opdracht 1, 2, 3, 4 en 6.<br />
+<strong>Plusroute (verdieping):</strong> opdracht 5, 7 en 8.</p>
 <ol class="arabic">
-<li><p>Onderdelen herkennen</p>
+<li><p>Onderdelen herkennen (gebruikersnaam-regel)</p>
 <p>Gegeven:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>S -&gt; aS
-S -&gt; b
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Start -&gt; Letter Rest
+Rest -&gt; Letter Rest | Cijfer Rest | leeg
+Letter -&gt; a | b | ... | z
+Cijfer -&gt; 0 | 1 | ... | 9
 </pre></div>
 </div>
 <p>a. Wat zijn de terminals?</p>
 <p>b. Wat zijn de niet-terminals?</p>
 <p>c. Wat is het startsymbool?</p>
-<p>d. Noem drie strings die in de taal zitten.</p>
+<p>d. Noem drie geldige gebruikersnamen.</p>
 </li>
 </ol>
 <hr class="docutils" />
 <ol class="arabic" start="2">
-<li><p>Afleiden</p>
-<p>Gebruik dezelfde grammatica.</p>
+<li><p>Afleiden stap voor stap</p>
+<p>Gebruik:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>S -&gt; aS
+S -&gt; b
+</pre></div>
+</div>
 <p>a. Geef een afleiding voor <code class="docutils literal notranslate"><span class="pre">ab</span></code>.</p>
 <p>b. Geef een afleiding voor <code class="docutils literal notranslate"><span class="pre">aaab</span></code>.</p>
 <p>c. Kan <code class="docutils literal notranslate"><span class="pre">aba</span></code> met deze grammatica? Leg uit.</p>
@@ -728,42 +818,45 @@ S -&gt; b
 </ol>
 <hr class="docutils" />
 <ol class="arabic" start="3">
-<li><p>Geldig of ongeldig</p>
-<p>Gegeven grammatica:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>S -&gt; 0S
-S -&gt; 1S
-S -&gt; 0
-S -&gt; 1
+<li><p>Geldig of ongeldig (chat-commando)</p>
+<p>Een commando heeft de vorm:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span> actie spatie getal
+ actie: jump of move
+ getal: 1 t/m 9
 </pre></div>
 </div>
 <p>Bepaal voor elk woord of het geldig is:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>0
-1
-101
-11010
-leeg woord
-2
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>jump 3
+move 9
+fly 2
+jump negen
+move10
+jump 0
 </pre></div>
 </div>
 </li>
 </ol>
 <hr class="docutils" />
 <ol class="arabic" start="4">
-<li><p>Van regel naar patroon</p>
-<p>Schrijf Python-code die de volgende regels print:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>b
-ab
-aab
-aaab
-aaaab
+<li><p>Van regel naar code</p>
+<p>Schrijf Python-code die controleert of een woord:</p>
+<ul class="simple">
+<li><p>begint met een letter;</p></li>
+<li><p>daarna alleen letters/cijfers bevat.</p></li>
+</ul>
+<p>Test met:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span> score1
+ 1score
+ level42
+ @naam
 </pre></div>
 </div>
-<p>Gebruik een lus en de operator <code class="docutils literal notranslate"><span class="pre">*</span></code> voor strings.</p>
+<p>Gebruik een lus en een boolean-variabele.</p>
 </li>
 </ol>
 <hr class="docutils" />
 <ol class="arabic" start="5">
-<li><p>Herhaling met getallenpatroon</p>
+<li><p>Herhaling met getallenpatroon (plusroute)</p>
 <p>Print met geneste lussen:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>0 1 2 3 4 5 6 7 8 9
 </pre></div>
@@ -774,66 +867,32 @@ aaaab
 </ol>
 <hr class="docutils" />
 <ol class="arabic" start="6">
-<li><p>Sterrenblokken</p>
-<p>a. Print een blok van 10 bij 10 sterretjes.</p>
-<p>b. Print een blok van 5 bij 10 sterretjes.</p>
-<p>c. Print een blok van 20 bij 5 sterretjes.</p>
-<p>d. Leg uit welke lus de rijen maakt en welke de kolommen.</p>
+<li><p>Schoolcode ontwerpen</p>
+<p>Een schoolcode heeft de vorm:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>hv-jaar-klasnummer
+</pre></div>
+</div>
+<p>Voorbeeld:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>hv-4-23
+</pre></div>
+</div>
+<p>a. Beschrijf in gewone taal de syntaxis van deze code.</p>
+<p>b. Ontwerp een eenvoudige grammatica voor deze vorm.</p>
+<p>c. Geef drie geldige en drie ongeldige voorbeelden.</p>
 </li>
 </ol>
 <hr class="docutils" />
 <ol class="arabic" start="7">
-<li><p>Grammatica ontwerpen</p>
-<p>Ontwerp een grammatica voor woorden met alleen <code class="docutils literal notranslate"><span class="pre">x</span></code> en <code class="docutils literal notranslate"><span class="pre">y</span></code> die altijd eindigen op <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
-<p>a. Geef terminals, niet-terminals, startsymbool en regels.</p>
-<p>b. Geef vijf voorbeeldwoorden.</p>
-<p>c. Geef twee woorden die niet mogen.</p>
-</li>
-</ol>
-<hr class="docutils" />
-<ol class="arabic" start="8">
-<li><p>Eenvoudige expressies</p>
-<p>Ontwerp een eenvoudige grammatica voor:</p>
-<ul class="simple">
-<li><p>een cijfer (<code class="docutils literal notranslate"><span class="pre">0</span></code> t/m <code class="docutils literal notranslate"><span class="pre">9</span></code>)</p></li>
-<li><p>gevolgd door</p></li>
-<li><p>een operator (<code class="docutils literal notranslate"><span class="pre">+</span></code> of <code class="docutils literal notranslate"><span class="pre">-</span></code>)</p></li>
-<li><p>gevolgd door</p></li>
-<li><p>een cijfer</p></li>
-</ul>
-<p>Voorbeelden van geldige woorden:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>3+4
-8-1
-</pre></div>
-</div>
-<p>Voorbeelden van ongeldige woorden:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>+34
-44-
-</pre></div>
-</div>
-</li>
-</ol>
-<hr class="docutils" />
-<ol class="arabic" start="9">
-<li><p>Willekeurige grammatica-string</p>
+<li><p>Binaire strings met random (plusroute)</p>
 <p>Gebruik <code class="docutils literal notranslate"><span class="pre">random.randrange()</span></code> om willekeurig <code class="docutils literal notranslate"><span class="pre">0</span></code> of <code class="docutils literal notranslate"><span class="pre">1</span></code> te kiezen.</p>
 <p>a. Genereer 8 willekeurige binaire strings met lengte 6.</p>
-<p>b. Laat zien dat elke string past binnen de grammatica van opdracht 3.</p>
+<p>b. Laat zien dat elke string past binnen de taal met alleen symbolen <code class="docutils literal notranslate"><span class="pre">0</span></code> en <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
 <p>c. Tel per string het aantal nullen en enen.</p>
 </li>
 </ol>
 <hr class="docutils" />
-<ol class="arabic" start="10">
-<li><p>Van grammatica naar controle</p>
-<p>Schrijf een programma dat controleert of een woord alleen uit <code class="docutils literal notranslate"><span class="pre">a</span></code> en <code class="docutils literal notranslate"><span class="pre">b</span></code> bestaat en eindigt op <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
-<p>a. Gebruik een lus om de tekens te controleren.</p>
-<p>b. Gebruik een boolean-variabele om bij te houden of het woord geldig blijft.</p>
-<p>c. Test met minstens zes woorden.</p>
-</li>
-</ol>
-<hr class="docutils" />
-<ol class="arabic" start="11">
-<li><p>Verdieping: opbouw zoals patroonopgaven</p>
+<ol class="arabic" start="8">
+<li><p>Verdieping: patroon uit lussen (plusroute)</p>
 <p>Bouw met geneste lussen deze figuur op:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>0
 0 1
@@ -848,25 +907,13 @@ aaaab
 </li>
 </ol>
 <hr class="docutils" />
-<ol class="arabic" start="12">
-<li><p>Examengericht mini-ontwerp</p>
-<p>Ontwerp voor een eenvoudige invoertaal (bijvoorbeeld leerlingcode, productcode of game-commando):</p>
-<ol class="arabic simple">
-<li><p>een korte informele beschrijving;</p></li>
-<li><p>een formele grammatica;</p></li>
-<li><p>drie geldige voorbeelden;</p></li>
-<li><p>drie ongeldige voorbeelden;</p></li>
-<li><p>een Python-fragment dat een deelcontrole doet.</p></li>
-</ol>
-</li>
-</ol>
-<hr class="docutils" />
 <section id="afronding">
 <h2>Afronding<a class="headerlink" href="#afronding" title="Link to this heading">#</a></h2>
 <p>In dit hoofdstuk heb je geleerd dat grammatica’s een formele manier zijn om taalregels te beschrijven.</p>
 <p>Je kunt nu terminals, niet-terminals, productieregels en startsymbolen gebruiken om strings af te leiden en te beoordelen.</p>
+<p>Door voorbeelden uit je eigen wereld (gebruikersnamen, commando’s en codes) zie je dat grammatica’s niet alleen theorie zijn, maar direct bruikbaar in software.</p>
 <p>Je hebt dit gecombineerd met programmeervaardigheden uit eerdere hoofdstukken: variabelen, beslissingen, operatoren, lijsten, lussen en <code class="docutils literal notranslate"><span class="pre">random.randrange()</span></code>.</p>
-<p>Daarmee heb je precies de basis die je nodig hebt voor het volgende combinatiehoofdstuk, waarin je alles samenbrengt en leert werken met functies.</p>
+<p>In het volgende hoofdstuk breng je alles samen in functies, zodat je grotere problemen modulair en overzichtelijk kunt oplossen.</p>
 </section>
 </section>
 
@@ -946,12 +993,14 @@ aaaab
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grammatica-en-het-examenprogramma-informatica">Grammatica en het examenprogramma informatica</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-1-binaire-strings">Voorbeeld 1: binaire strings</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-2-eenvoudige-identifier">Voorbeeld 2: eenvoudige identifier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-2-gebruikersnaam">Voorbeeld 2: gebruikersnaam</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#van-grammatica-naar-code-denken">Van grammatica naar code-denken</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stroomdiagram-van-dit-programma">Stroomdiagram van dit programma</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#begrippenlijst">Begrippenlijst</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#succescriteria">Succescriteria</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-rubric">Mini-rubric</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="pst-show_toc_level nav section-nav flex-column">

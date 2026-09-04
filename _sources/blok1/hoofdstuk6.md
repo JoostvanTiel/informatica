@@ -53,7 +53,7 @@ Een functie maak je met `def`.
 
 ```python
 def begroet(naam):
-		print("Hallo", naam)
+        print("Hallo", naam)
 
 begroet("Sam")
 begroet("Noor")
@@ -69,20 +69,20 @@ Hier:
 
 ```text
 START
-	|
-	v
+    |
+    v
 Roep functie aan
-	|
-	v
+    |
+    v
 Geef argument(en) mee
-	|
-	v
+    |
+    v
 Voer functiestappen uit
-	|
-	v
+    |
+    v
 Terug naar hoofdprogramma
-	|
-	v
+    |
+    v
 EINDE
 ```
 
@@ -96,7 +96,7 @@ Een argument is de echte waarde die je meegeeft bij aanroepen.
 
 ```python
 def toon_score(naam, score):
-		print(naam, "heeft", score, "punten")
+        print(naam, "heeft", score, "punten")
 
 toon_score("Yara", 120)
 toon_score("Milan", 85)
@@ -112,7 +112,7 @@ Gebruik `return` als je een waarde wilt teruggeven.
 
 ```python
 def kwadraat(getal):
-		return getal * getal
+        return getal * getal
 
 uitkomst = kwadraat(6)
 print(uitkomst)
@@ -124,20 +124,20 @@ Functies met `return` zijn handig om te rekenen, vergelijken of door te geven aa
 
 ```text
 START
-	|
-	v
+    |
+    v
 Functie krijgt invoer
-	|
-	v
+    |
+    v
 Berekening / controle
-	|
-	v
+    |
+    v
 Return resultaat
-	|
-	v
+    |
+    v
 Hoofdprogramma gebruikt resultaat
-	|
-	v
+    |
+    v
 EINDE
 ```
 
@@ -149,18 +149,18 @@ Voorbeeld: gemiddelde van een lijst berekenen.
 
 ```python
 def gemiddelde_van_lijst(cijfers):
-		totaal = 0
-		for i in range(len(cijfers)):
-				totaal = totaal + cijfers[i]
-		return totaal / len(cijfers)
+        totaal = 0
+        for i in range(len(cijfers)):
+                totaal = totaal + cijfers[i]
+        return totaal / len(cijfers)
 
 waarden = [6.5, 7.0, 5.5, 8.0]
 gemiddelde = gemiddelde_van_lijst(waarden)
 
 if gemiddelde >= 5.5:
-		print("voldoende")
+        print("voldoende")
 else:
-		print("onvoldoende")
+        print("onvoldoende")
 ```
 
 Je herkent hier stof uit hoofdstuk 2, 3 en 4.
@@ -175,10 +175,10 @@ Je kunt toeval netjes in een functie stoppen.
 import random
 
 def worp_dobbelsteen():
-		return random.randrange(1, 7)
+        return random.randrange(1, 7)
 
 for i in range(5):
-		print(worp_dobbelsteen())
+        print(worp_dobbelsteen())
 ```
 
 Of uitgebreider:
@@ -187,12 +187,12 @@ Of uitgebreider:
 import random
 
 def tel_zessen(aantal_worpen):
-		teller = 0
-		for i in range(aantal_worpen):
-				worp = random.randrange(1, 7)
-				if worp == 6:
-						teller = teller + 1
-		return teller
+        teller = 0
+        for i in range(aantal_worpen):
+                worp = random.randrange(1, 7)
+                if worp == 6:
+                        teller = teller + 1
+        return teller
 
 print(tel_zessen(20))
 ```
@@ -207,17 +207,17 @@ Voorbeeld 1: een regel sterretjes.
 
 ```python
 def print_sterren(aantal):
-		for i in range(aantal):
-				print("*", end=" ")
-		print()
+        for i in range(aantal):
+                print("*", end=" ")
+        print()
 ```
 
 Voorbeeld 2: een rechthoek met sterretjes.
 
 ```python
 def print_rechthoek(rijen, kolommen):
-		for r in range(rijen):
-				print_sterren(kolommen)
+        for r in range(rijen):
+                print_sterren(kolommen)
 
 print_rechthoek(3, 5)
 ```
@@ -234,9 +234,9 @@ Nu kun je zo'n controle als functie maken.
 
 ```python
 def eindigt_op_b(woord):
-		if len(woord) == 0:
-				return False
-		return woord[len(woord) - 1] == "b"
+        if len(woord) == 0:
+                return False
+        return woord[len(woord) - 1] == "b"
 
 print(eindigt_op_b("aaab"))
 print(eindigt_op_b("aba"))
@@ -261,25 +261,38 @@ Voor grotere opdrachten helpt deze volgorde:
 
 ```text
 START
-	|
-	v
+    |
+    v
 Lees / kies invoer
-	|
-	v
+    |
+    v
 Roep functie A aan
-	|
-	v
+    |
+    v
 Roep functie B aan
-	|
-	v
+    |
+    v
 Gebruik if/elif op resultaten
-	|
-	v
+    |
+    v
 Print output
-	|
-	v
+    |
+    v
 EINDE
 ```
+
+---
+
+## Werkwijze voor functie-opgaven (Program Arcade-stijl)
+
+Gebruik bij grotere functie-opgaven steeds deze volgorde:
+
+1. Bouw eerst een kleine hulpfunctie die je kunt testen.
+2. Test die functie met 2-3 concrete voorbeelden.
+3. Voeg daarna een tweede functie toe die de eerste hergebruikt.
+4. Combineer pas daarna alles in het hoofdprogramma.
+
+Dit voorkomt lange foutzoekprocessen en sluit aan bij patroon-, tabel- en simulatieopgaven.
 
 ---
 
@@ -333,7 +346,30 @@ Een programma opdelen in losse, samenwerkende onderdelen.
 
 ---
 
+## Succescriteria
+
+Aan het einde van dit hoofdstuk kun je:
+
+- een groter probleem opdelen in meerdere functies;
+- functies met parameters en `return` correct gebruiken;
+- functies combineren met lussen, lijsten en beslissingen;
+- tussentests uitvoeren en resultaten gericht verbeteren.
+
+## Mini-rubric
+
+| Onderdeel | Startend                           | Voldoende                                  | Sterk                                   |
+| --------- | ---------------------------------- | ------------------------------------------ | --------------------------------------- |
+| Begrijpen | Herkent onderdelen van een functie | Legt parameter/argument/return correct uit | Verantwoordt modulair ontwerp           |
+| Toepassen | Schrijft losse functies            | Combineert functies tot werkend programma  | Bouwt herbruikbare hulpfuncties         |
+| Testen    | Test beperkt                       | Test functies afzonderlijk en samen        | Documenteert tests en verbetert gericht |
+| Uitleggen | Korte beschrijving                 | Legt opbouw stap voor stap uit             | Reflecteert op kwaliteit en keuzes      |
+
+---
+
 # Opdrachten
+
+**Kernroute (verplicht, circa 60% van de opgavenlast):** opdracht 1, 2, 3, 5, 6, 8 en 11.  
+**Plusroute (verdieping):** opdracht 4, 7, 9, 10 en 12.
 
 1. Eerste functies
 
@@ -532,3 +568,5 @@ Je hebt gewerkt met:
 Daardoor kun je nu grotere programma's ontwerpen die overzichtelijk, testbaar en uitbreidbaar zijn.
 
 Je bent hiermee klaar voor het vervolg waarin je nog zelfstandiger ontwerpt en programmeert met meerdere samenwerkende functies.
+
+In het volgende blok neem je deze werkwijze mee naar grotere opgaven waarin decomposition, testen en kwaliteit van code centraal staan.

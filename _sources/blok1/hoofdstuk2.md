@@ -453,7 +453,30 @@ Geeft aan wat er gebeurt als geen van de eerdere voorwaarden waar is.
 
 ---
 
+## Succescriteria
+
+Aan het einde van dit hoofdstuk kun je:
+
+- een probleem vertalen naar input, verwerking en output;
+- een beslissing uitwerken in een stroomdiagram;
+- `if`/`elif`/`else` correct gebruiken in Python;
+- een eenvoudig testplan maken met grensgevallen.
+
+## Mini-rubric
+
+| Onderdeel | Startend                        | Voldoende                                  | Sterk                                |
+| --------- | ------------------------------- | ------------------------------------------ | ------------------------------------ |
+| Begrijpen | Herkent delen van een algoritme | Beschrijft logisch alle stappen            | Verbetert en motiveert keuzes        |
+| Toepassen | Code werkt deels                | Stroomdiagram + code sluiten op elkaar aan | Past oplossing toe in nieuwe context |
+| Testen    | Test willekeurig                | Test met gerichte en grenswaarden          | Maakt volledig testplan met analyse  |
+| Uitleggen | Geeft korte losse uitleg        | Legt stap voor stap uit                    | Kan alternatieven vergelijken        |
+
+---
+
 # Opdrachten
+
+**Kernroute (verplicht, circa 60% van de opgavenlast):** opdracht 1, 2, 3, 5 en 7.  
+**Plusroute (verdieping):** opdracht 4, 6 en 8.
 
 1. Temperatuur beoordelen
 
@@ -702,3 +725,5 @@ Een goede programmeur weet dus:
 - hoe je fouten verbetert.
 
 Dat is precies de basis van goed programmeren.
+
+In het volgende hoofdstuk bouw je hier logisch op voort: je leert hoe je gegevens slim opslaat in variabelen en lijsten en hoe operatoren die gegevens verwerken.

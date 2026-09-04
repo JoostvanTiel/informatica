@@ -459,6 +459,8 @@
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veelgemaakte-fouten">Veelgemaakte fouten</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#begrippenlijst">Begrippenlijst</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#succescriteria">Succescriteria</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-rubric">Mini-rubric</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="pst-show_toc_level nav section-nav flex-column">
@@ -535,7 +537,7 @@
 <p>Een <code class="docutils literal notranslate"><span class="pre">for</span></code>-lus loopt vaak door een reeks getallen met <code class="docutils literal notranslate"><span class="pre">range()</span></code>.</p>
 <p>Voorbeeld:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-		<span class="nb">print</span><span class="p">(</span><span class="s2">"Welkom"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Welkom"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Uitvoer:</p>
@@ -555,7 +557,7 @@ Welkom
 <p>De variabele <code class="docutils literal notranslate"><span class="pre">i</span></code> krijgt die waarden één voor één.</p>
 <p>Voor elke waarde wordt het blok met inspringing uitgevoerd.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-		<span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Uitvoer:</p>
@@ -570,23 +572,23 @@ Welkom
 <section id="stroomdiagram-van-een-for-lus">
 <h3>Stroomdiagram van een <code class="docutils literal notranslate"><span class="pre">for</span></code>-lus<a class="headerlink" href="#stroomdiagram-van-een-for-lus" title="Link to this heading">#</a></h3>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>START
-	|
-	v
+    |
+    v
 Zet i op eerste waarde uit range
-	|
-	v
+    |
+    v
 Is er nog een volgende waarde?
-	| ja
-	v
+    | ja
+    v
 Voer lusblok uit
-	|
-	v
+    |
+    v
 Neem volgende waarde van i
-	|
-	+------ terug naar controle ------+
-	|
-	nee
-	v
+    |
+    +------ terug naar controle ------+
+    |
+    nee
+    v
 EINDE
 </pre></div>
 </div>
@@ -598,7 +600,7 @@ EINDE
 <p>Je kent <code class="docutils literal notranslate"><span class="pre">range()</span></code> al uit hoofdstuk 3.</p>
 <p>Nu gebruiken we die in lussen:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">):</span>
-		<span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Uitvoer:</p>
@@ -611,7 +613,7 @@ EINDE
 </div>
 <p>Met stapgrootte:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
-		<span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Uitvoer:</p>
@@ -632,8 +634,8 @@ EINDE
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">teller</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="k">while</span> <span class="n">teller</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
-		<span class="nb">print</span><span class="p">(</span><span class="n">teller</span><span class="p">)</span>
-		<span class="n">teller</span> <span class="o">=</span> <span class="n">teller</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">teller</span><span class="p">)</span>
+        <span class="n">teller</span> <span class="o">=</span> <span class="n">teller</span> <span class="o">+</span> <span class="mi">1</span>
 </pre></div>
 </div>
 <p>Uitvoer:</p>
@@ -649,23 +651,23 @@ EINDE
 <section id="stroomdiagram-van-een-while-lus">
 <h3>Stroomdiagram van een <code class="docutils literal notranslate"><span class="pre">while</span></code>-lus<a class="headerlink" href="#stroomdiagram-van-een-while-lus" title="Link to this heading">#</a></h3>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>START
-	|
-	v
+    |
+    v
 Initialiseer variabele(n)
-	|
-	v
+    |
+    v
 Voorwaarde waar?
-	| ja
-	v
+    | ja
+    v
 Voer lusblok uit
-	|
-	v
+    |
+    v
 Pas variabele(n) aan
-	|
-	+------ terug naar controle ------+
-	|
-	nee
-	v
+    |
+    +------ terug naar controle ------+
+    |
+    nee
+    v
 EINDE
 </pre></div>
 </div>
@@ -677,14 +679,14 @@ EINDE
 <p>Beide kunnen vaak hetzelfde.</p>
 <p>Voorbeeld met <code class="docutils literal notranslate"><span class="pre">for</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-		<span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Zelfde idee met <code class="docutils literal notranslate"><span class="pre">while</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
-		<span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-		<span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
 </pre></div>
 </div>
 <p>In de praktijk kies je meestal <code class="docutils literal notranslate"><span class="pre">for</span></code> bij een vaste reeks en <code class="docutils literal notranslate"><span class="pre">while</span></code> bij een voorwaarde.</p>
@@ -697,7 +699,7 @@ EINDE
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="p">[</span><span class="mi">120</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">40</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">scores</span><span class="p">)):</span>
-		<span class="nb">print</span><span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>Uitvoer:</p>
@@ -712,7 +714,7 @@ EINDE
 <span class="n">totaal</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">scores</span><span class="p">)):</span>
-		<span class="n">totaal</span> <span class="o">=</span> <span class="n">totaal</span> <span class="o">+</span> <span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">totaal</span> <span class="o">=</span> <span class="n">totaal</span> <span class="o">+</span> <span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">totaal</span><span class="p">)</span>
 </pre></div>
@@ -730,8 +732,8 @@ EINDE
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-		<span class="n">worp</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
-		<span class="nb">print</span><span class="p">(</span><span class="n">worp</span><span class="p">)</span>
+        <span class="n">worp</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">worp</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Dit simuleert vijf dobbelsteenworpen.</p>
@@ -741,9 +743,9 @@ EINDE
 <span class="n">aantal_zessen</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
-		<span class="n">worp</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
-		<span class="k">if</span> <span class="n">worp</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
-				<span class="n">aantal_zessen</span> <span class="o">=</span> <span class="n">aantal_zessen</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">worp</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">worp</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
+                <span class="n">aantal_zessen</span> <span class="o">=</span> <span class="n">aantal_zessen</span> <span class="o">+</span> <span class="mi">1</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">aantal_zessen</span><span class="p">)</span>
 </pre></div>
@@ -756,9 +758,9 @@ EINDE
 <p>Dat gebruik je vaak voor patronen en tabellen.</p>
 <p>Voorbeeld: 3 regels met 5 sterretjes.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">rij</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-		<span class="k">for</span> <span class="n">kolom</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-				<span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">" "</span><span class="p">)</span>
-		<span class="nb">print</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">kolom</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">" "</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Uitvoer:</p>
@@ -770,28 +772,28 @@ EINDE
 <section id="stroomdiagram-van-geneste-lussen-globaal">
 <h3>Stroomdiagram van geneste lussen (globaal)<a class="headerlink" href="#stroomdiagram-van-geneste-lussen-globaal" title="Link to this heading">#</a></h3>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>START
-	|
-	v
+    |
+    v
 Start buitenste lus (rij)
-	|
-	v
+    |
+    v
 Start binnenste lus (kolom)
-	|
-	v
+    |
+    v
 Print element
-	|
-	v
+    |
+    v
 Binnenste lus klaar?
-	| nee -&gt; terug naar print element
-	| ja
-	v
+    | nee -&gt; terug naar print element
+    | ja
+    v
 Nieuwe regel
-	|
-	v
+    |
+    v
 Buitenste lus klaar?
-	| nee -&gt; terug naar binnenste lus
-	| ja
-	v
+    | nee -&gt; terug naar binnenste lus
+    | ja
+    v
 EINDE
 </pre></div>
 </div>
@@ -834,10 +836,58 @@ Een lus binnen een andere lus.</p>
 <p><strong>Oneindige lus</strong><br />
 Een lus die niet stopt.</p>
 </section>
+<hr class="docutils" />
+<section id="succescriteria">
+<h2>Succescriteria<a class="headerlink" href="#succescriteria" title="Link to this heading">#</a></h2>
+<p>Aan het einde van dit hoofdstuk kun je:</p>
+<ul class="simple">
+<li><p>uitleggen wanneer je <code class="docutils literal notranslate"><span class="pre">for</span></code> of <code class="docutils literal notranslate"><span class="pre">while</span></code> kiest;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">range()</span></code> met juiste grenzen toepassen;</p></li>
+<li><p>met lussen sommen, tellingen en patronen maken;</p></li>
+<li><p>geneste lussen gebruiken voor eenvoudige tabellen en figuren.</p></li>
+</ul>
+</section>
+<section id="mini-rubric">
+<h2>Mini-rubric<a class="headerlink" href="#mini-rubric" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Onderdeel</p></th>
+<th class="head"><p>Startend</p></th>
+<th class="head"><p>Voldoende</p></th>
+<th class="head"><p>Sterk</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Begrijpen</p></td>
+<td><p>Kent termen <code class="docutils literal notranslate"><span class="pre">for</span></code> en <code class="docutils literal notranslate"><span class="pre">while</span></code></p></td>
+<td><p>Legt verschil en keuze correct uit</p></td>
+<td><p>Voorspelt gedrag van lussen foutloos</p></td>
+</tr>
+<tr class="row-odd"><td><p>Toepassen</p></td>
+<td><p>Schrijft eenvoudige lus</p></td>
+<td><p>Maakt werkende lusopgaven incl. patroon</p></td>
+<td><p>Combineert lussen met lijsten en condities</p></td>
+</tr>
+<tr class="row-even"><td><p>Testen</p></td>
+<td><p>Probeert enkele runs</p></td>
+<td><p>Controleert grenzen en stopcondities</p></td>
+<td><p>Onderbouwt en documenteert teststrategie</p></td>
+</tr>
+<tr class="row-odd"><td><p>Uitleggen</p></td>
+<td><p>Beschrijft uitkomst kort</p></td>
+<td><p>Legt stap-voor-stap werking uit</p></td>
+<td><p>Verklaart optimalisaties en fouten</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="opdrachten">
 <h1>Opdrachten<a class="headerlink" href="#opdrachten" title="Link to this heading">#</a></h1>
+<p><strong>Kernroute (verplicht, circa 60% van de opgavenlast):</strong> opdracht 1, 2, 3, 4, 6, 8 en 10.<br />
+<strong>Plusroute (verdieping):</strong> opdracht 5, 7, 9, 11 en 12.</p>
 <ol class="arabic">
 <li><p>Eerste <code class="docutils literal notranslate"><span class="pre">for</span></code>-lus</p>
 <p>a. Schrijf code die 10 keer <code class="docutils literal notranslate"><span class="pre">Hallo</span></code> print met een <code class="docutils literal notranslate"><span class="pre">for</span></code>-lus.</p>
@@ -851,17 +901,17 @@ Een lus die niet stopt.</p>
 <p>Voorspel eerst de uitvoer, voer daarna uit.</p>
 <p>a.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-		 <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>b.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">):</span>
-		 <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>c.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">):</span>
-		 <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>d. Leg uit waarom de stopwaarde niet wordt geprint.</p>
@@ -1014,7 +1064,7 @@ Een lus die niet stopt.</p>
 <p>Je hebt gewerkt met <code class="docutils literal notranslate"><span class="pre">for</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span></code>, <code class="docutils literal notranslate"><span class="pre">range()</span></code>, <code class="docutils literal notranslate"><span class="pre">random.randrange()</span></code> en geneste lussen.</p>
 <p>Ook heb je eerdere kennis toegepast: variabelen, lijsten, beslissingen en operatoren.</p>
 <p>Daardoor kun je nu niet alleen losse opdrachten oplossen, maar ook grotere patronen, tabellen en simulaties bouwen.</p>
-<p>In het volgende hoofdstuk ga je deze vaardigheden verder uitdiepen met uitdagende lusproblemen waarin nauwkeurig denken en stap-voor-stap ontwerpen centraal staan.</p>
+<p>In het volgende hoofdstuk gebruik je deze lusvaardigheden als opstap naar grammatica’s: je leert formeel beschrijven welke invoer geldig is en hoe je dat denken koppelt aan code.</p>
 </section>
 </section>
 
@@ -1107,6 +1157,8 @@ Een lus die niet stopt.</p>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veelgemaakte-fouten">Veelgemaakte fouten</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#begrippenlijst">Begrippenlijst</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#succescriteria">Succescriteria</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-rubric">Mini-rubric</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="pst-show_toc_level nav section-nav flex-column">

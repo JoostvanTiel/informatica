@@ -454,9 +454,14 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#begrippenlijst">Begrippenlijst</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#succescriteria">Succescriteria</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-rubric">Mini-rubric</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#afronding">Afronding</a></li>
+</ul>
+</li>
 </ul>
 
             </nav>
@@ -755,7 +760,7 @@ OPEN
 <blockquote>
 <div><p>controleer of <code class="docutils literal notranslate"><span class="pre">toestand</span></code> gelijk is aan <code class="docutils literal notranslate"><span class="pre">&quot;DICHT&quot;</span></code>.</p>
 </div></blockquote>
-<p>Hierboven wordt slechts één toestand gecontroleerdm namelijk of de toestand van de deur <code class="docutils literal notranslate"><span class="pre">&quot;DICHT&quot;</span></code> is.</p>
+<p>Hierboven wordt slechts één toestand gecontroleerd, namelijk of de toestand van de deur <code class="docutils literal notranslate"><span class="pre">&quot;DICHT&quot;</span></code> is.</p>
 <p>Maar onze deur kan natuurlijk OPEN of DICHT zijn.</p>
 <p>We kunnen in ons programma ook gebruik maken van <code class="docutils literal notranslate"><span class="pre">else</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">toestand</span> <span class="o">=</span> <span class="s2">"DICHT"</span>
@@ -949,10 +954,58 @@ Een extra voorwaarde die wordt gecontroleerd als een eerdere <code class="docuti
 <p><strong><code class="docutils literal notranslate"><span class="pre">else</span></code></strong><br />
 Geeft aan wat er gebeurt als de eerdere voorwaarden niet waar zijn.</p>
 </section>
+<hr class="docutils" />
+<section id="succescriteria">
+<h2>Succescriteria<a class="headerlink" href="#succescriteria" title="Link to this heading">#</a></h2>
+<p>Aan het einde van dit hoofdstuk kun je:</p>
+<ul class="simple">
+<li><p>een systeem beschrijven met toestanden, gebeurtenissen en overgangen;</p></li>
+<li><p>een toestandsdiagram tekenen en uitleggen;</p></li>
+<li><p>een eenvoudige overgang vertalen naar Python met variabelen en <code class="docutils literal notranslate"><span class="pre">if</span></code>/<code class="docutils literal notranslate"><span class="pre">else</span></code>;</p></li>
+<li><p>minimaal drie testsituaties bedenken en uitvoeren.</p></li>
+</ul>
+</section>
+<section id="mini-rubric">
+<h2>Mini-rubric<a class="headerlink" href="#mini-rubric" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Onderdeel</p></th>
+<th class="head"><p>Startend</p></th>
+<th class="head"><p>Voldoende</p></th>
+<th class="head"><p>Sterk</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Begrijpen</p></td>
+<td><p>Herkent losse begrippen</p></td>
+<td><p>Legt toestand, gebeurtenis en overgang correct uit</p></td>
+<td><p>Vergelijkt systemen en onderbouwt keuzes</p></td>
+</tr>
+<tr class="row-odd"><td><p>Toepassen</p></td>
+<td><p>Tekent deels correct diagram</p></td>
+<td><p>Maakt werkend diagram + eenvoudige code</p></td>
+<td><p>Bouwt uitgebreid model met extra toestand</p></td>
+</tr>
+<tr class="row-even"><td><p>Testen</p></td>
+<td><p>Test beperkt of zonder plan</p></td>
+<td><p>Test met meerdere situaties</p></td>
+<td><p>Test systematisch met verwachte uitkomsten</p></td>
+</tr>
+<tr class="row-odd"><td><p>Uitleggen</p></td>
+<td><p>Beschrijving is onduidelijk</p></td>
+<td><p>Legt stappen in eigen woorden uit</p></td>
+<td><p>Verantwoordt ontwerpkeuzes helder</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="opdrachten">
 <h1>Opdrachten<a class="headerlink" href="#opdrachten" title="Link to this heading">#</a></h1>
+<p><strong>Kernroute (verplicht, circa 60% van de opgavenlast):</strong> opdracht 1, 2, 4 en 6.<br />
+<strong>Plusroute (verdieping):</strong> opdracht 3, 5 en 7.</p>
 <ol class="arabic">
 <li><p>De deur</p>
 <p>Een automatische deur heeft twee toestanden:</p>
@@ -1211,17 +1264,19 @@ Nieuwe toestand: DICHT
 </div>
 </li>
 </ol>
+</li>
+</ol>
 <hr class="docutils" />
-<h2 class="rubric" id="afronding">Afronding</h2>
+<section id="afronding">
+<h2>Afronding<a class="headerlink" href="#afronding" title="Link to this heading">#</a></h2>
 <p>In dit hoofdstuk heb je geleerd dat veel systemen werken met toestanden.</p>
 <p>Je hebt gezien dat een systeem op basis van gebeurtenissen kan veranderen van toestand, en dat je dit overzichtelijk kunt tekenen in een toestandsdiagram.</p>
 <p>Ook heb je de eerste stap gezet naar programmeren in Python met variabelen en beslissingen zoals <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code> en <code class="docutils literal notranslate"><span class="pre">else</span></code>.</p>
 <p>Een belangrijke conclusie is:</p>
 <p>eerst nadenken over het model, daarna pas programmeren.</p>
 <p>Daarmee wordt je programma niet alleen werkend, maar ook logisch en uitlegbaar.</p>
-<p>In het volgende hoofdstuk ga je deze manier van denken verder gebruiken bij het ontwerpen van algoritmen en het nemen van beslissingen.</p>
-</li>
-</ol>
+<p>In het volgende hoofdstuk ga je deze manier van denken logisch vervolgen: je gebruikt dezelfde aanpak om algoritmen te ontwerpen en beslissingen systematisch te testen.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1308,9 +1363,14 @@ Nieuwe toestand: DICHT
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#begrippenlijst">Begrippenlijst</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#succescriteria">Succescriteria</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-rubric">Mini-rubric</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#afronding">Afronding</a></li>
+</ul>
+</li>
 </ul>
 
   </nav></div>

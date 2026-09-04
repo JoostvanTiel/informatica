@@ -1,0 +1,995 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Lesactiviteiten en docentenhandleiding blok 1 (6 weken) &#8212; Informatica</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'blok1/lesactiviteiten_docentenhandleiding_6weken';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Informatica</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welkom bij het Informatica Boek
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="index.html">4ha blok 1</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="hoofdstuk1.html">Hoofdstuk 1: Toestanden en automaten</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="hoofdstuk2.html">Hoofdstuk 2: Algoritmen en beslissingen</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="hoofdstuk3.html">Hoofdstuk 3: Datastructuren en operatoren</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="hoofdstuk4.html">Hoofdstuk 4: Lussen</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="hoofdstuk5.html">Hoofdstuk 5: Grammatica’s</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="hoofdstuk6.html">Hoofdstuk 6: Toeval &amp; combineren</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../blok2/index.html">4ha blok 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../blok2/hoofdstuk1.html">Hoofdstuk 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blok2/hoofdstuk2.html">Hoofdstuk 2</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../blok3/index.html">4ha blok 3</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../blok3/hoofdstuk1.html">Hoofdstuk 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blok3/hoofdstuk2.html">Hoofdstuk 2</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../blok4/index.html">4ha blok 4</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../blok4/hoofdstuk1.html">Hoofdstuk 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blok4/hoofdstuk2.html">Hoofdstuk 2</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/JoostvanTiel/informatica" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/JoostvanTiel/informatica/issues/new?title=Issue%20on%20page%20%2Fblok1/lesactiviteiten_docentenhandleiding_6weken.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/blok1/lesactiviteiten_docentenhandleiding_6weken.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lesactiviteiten en docentenhandleiding blok 1 (6 weken)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uitgangspunt-tijd">Uitgangspunt tijd</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#haalbaarheid-in-een-oogopslag">Haalbaarheid in één oogopslag</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kernroute-per-week">Kernroute per week</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activiteitenbank-met-docentaanpak">Activiteitenbank met docentaanpak</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toestandenspel-zonder-computer-unplugged">1. Toestandenspel zonder computer (unplugged)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menselijk-stroomdiagram-unplugged">2. Menselijk stroomdiagram (unplugged)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-estafette">3. Debug-estafette</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operatoren-en-typesprint-unplugged-computer">4. Operatoren- en typesprint (unplugged + computer)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lussen-met-ritme-en-patronen-unplugged">5. Lussen met ritme en patronen (unplugged)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#patroonatelier-op-papier">6. Patroonatelier op papier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grammatica-lab-met-kaartjes-unplugged">7. Grammatica-lab met kaartjes (unplugged)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#van-grammatica-naar-validator">8. Van grammatica naar validator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functie-fabriek">9. Functie-fabriek</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-project-studio">10. Mini-project studio</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compacte-docentenhandleiding-per-les-van-45-minuten">Compacte docentenhandleiding per les van 45 minuten</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weekplanning-met-concrete-focus">Weekplanning met concrete focus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimale-set-die-altijd-af-moet">Minimale set die altijd af moet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signalen-om-tempo-bij-te-sturen">Signalen om tempo bij te sturen</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lesactiviteiten-en-docentenhandleiding-blok-1-6-weken">
+<h1>Lesactiviteiten en docentenhandleiding blok 1 (6 weken)<a class="headerlink" href="#lesactiviteiten-en-docentenhandleiding-blok-1-6-weken" title="Link to this heading">#</a></h1>
+<section id="uitgangspunt-tijd">
+<h2>Uitgangspunt tijd<a class="headerlink" href="#uitgangspunt-tijd" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Beschikbare tijd: 3 lesuren van 45 minuten per week, 6 weken</p></li>
+<li><p>Totaal contacttijd: 18 lessen = 810 minuten = 13,5 uur</p></li>
+</ul>
+</section>
+<section id="haalbaarheid-in-een-oogopslag">
+<h2>Haalbaarheid in één oogopslag<a class="headerlink" href="#haalbaarheid-in-een-oogopslag" title="Link to this heading">#</a></h2>
+<p>Ja, dit is haalbaar, mits je per hoofdstuk werkt met:</p>
+<ul class="simple">
+<li><p>een kernroute (moet iedereen doen)</p></li>
+<li><p>een plusroute (verdieping)</p></li>
+<li><p>beperkte huiswerkselectie per week</p></li>
+<li><p>expliciete afbakening van eindproducten</p></li>
+</ul>
+<p>Niet haalbaar is: alle opdrachten uit hoofdstuk 1 t/m 6 volledig klassikaal en individueel laten uitwerken in dezelfde periode.</p>
+</section>
+<section id="kernroute-per-week">
+<h2>Kernroute per week<a class="headerlink" href="#kernroute-per-week" title="Link to this heading">#</a></h2>
+<p>Week 1 (H1 Toestanden en automaten)</p>
+<ul class="simple">
+<li><p>Les 1: begrip toestand en overgang</p></li>
+<li><p>Les 2: toestandsdiagram lezen en maken</p></li>
+<li><p>Les 3: eerste Python-vertaling met if/else</p></li>
+</ul>
+<p>Week 2 (H2 Algoritmen en beslissingen)</p>
+<ul class="simple">
+<li><p>Les 1: input-verwerking-output, probleemanalyse</p></li>
+<li><p>Les 2: stroomdiagrammen en voorwaarden</p></li>
+<li><p>Les 3: testgevallen en grenswaarden</p></li>
+</ul>
+<p>Week 3 (H3 Datastructuren en operatoren)</p>
+<ul class="simple">
+<li><p>Les 1: types en operatoren</p></li>
+<li><p>Les 2: lijsten, indexen, range</p></li>
+<li><p>Les 3: random.randrange en kleine toepassingsopgaven</p></li>
+</ul>
+<p>Week 4 (H4 Lussen)</p>
+<ul class="simple">
+<li><p>Les 1: for en range</p></li>
+<li><p>Les 2: while, teller, oneindige lus vermijden</p></li>
+<li><p>Les 3: geneste lussen en patroonopgaven</p></li>
+</ul>
+<p>Week 5 (H5 Grammatica’s)</p>
+<ul class="simple">
+<li><p>Les 1: terminals, niet-terminals, regels, start</p></li>
+<li><p>Les 2: afleidingen en geldig/ongeldig</p></li>
+<li><p>Les 3: koppeling grammatica naar codecontrole</p></li>
+</ul>
+<p>Week 6 (H6 Combineren en functies)</p>
+<ul class="simple">
+<li><p>Les 1: functies, parameters, return</p></li>
+<li><p>Les 2: hulpfuncties en modulair bouwen</p></li>
+<li><p>Les 3: mini-eindopdracht en evaluatie</p></li>
+</ul>
+</section>
+<section id="activiteitenbank-met-docentaanpak">
+<h2>Activiteitenbank met docentaanpak<a class="headerlink" href="#activiteitenbank-met-docentaanpak" title="Link to this heading">#</a></h2>
+<section id="toestandenspel-zonder-computer-unplugged">
+<h3>1. Toestandenspel zonder computer (unplugged)<a class="headerlink" href="#toestandenspel-zonder-computer-unplugged" title="Link to this heading">#</a></h3>
+<p>Doel</p>
+<ul class="simple">
+<li><p>Toestand, gebeurtenis en overgang begrijpen</p></li>
+</ul>
+<p>Tijd</p>
+<ul class="simple">
+<li><p>25 minuten</p></li>
+</ul>
+<p>Benodigd</p>
+<ul class="simple">
+<li><p>Kaarten met toestanden en gebeurtenissen</p></li>
+<li><p>Tape voor pijlen op de vloer</p></li>
+</ul>
+<p>Uitvoering docent</p>
+<ul class="simple">
+<li><p>Kies 1 systeem (deur, verkeerslicht, spel)</p></li>
+<li><p>Laat leerlingen fysiek van toestand naar toestand lopen</p></li>
+<li><p>Stel steeds de vraag: welke gebeurtenis activeert deze overgang?</p></li>
+</ul>
+<p>Formatieve check</p>
+<ul class="simple">
+<li><p>Exitvraag: noem 1 toestand en 2 mogelijke gebeurtenissen</p></li>
+</ul>
+</section>
+<section id="menselijk-stroomdiagram-unplugged">
+<h3>2. Menselijk stroomdiagram (unplugged)<a class="headerlink" href="#menselijk-stroomdiagram-unplugged" title="Link to this heading">#</a></h3>
+<p>Doel</p>
+<ul class="simple">
+<li><p>Beslissingen en vertakkingen begrijpen</p></li>
+</ul>
+<p>Tijd</p>
+<ul class="simple">
+<li><p>30 minuten</p></li>
+</ul>
+<p>Benodigd</p>
+<ul class="simple">
+<li><p>A4-vellen met START, BESLISSING, ACTIE, EINDE</p></li>
+</ul>
+<p>Uitvoering docent</p>
+<ul class="simple">
+<li><p>Leg het diagram op de vloer</p></li>
+<li><p>Leerling doorloopt pad op basis van voorbeeldinput</p></li>
+<li><p>Klas controleert of keuze bij ja/nee correct is</p></li>
+</ul>
+<p>Formatieve check</p>
+<ul class="simple">
+<li><p>Laat leerlingen dezelfde logica in 4 regels pseudocode noteren</p></li>
+</ul>
+</section>
+<section id="debug-estafette">
+<h3>3. Debug-estafette<a class="headerlink" href="#debug-estafette" title="Link to this heading">#</a></h3>
+<p>Doel</p>
+<ul class="simple">
+<li><p>Fouten in if- en luscode herkennen</p></li>
+</ul>
+<p>Tijd</p>
+<ul class="simple">
+<li><p>30 minuten</p></li>
+</ul>
+<p>Benodigd</p>
+<ul class="simple">
+<li><p>Werkbladen met korte foutieve codefragmenten</p></li>
+</ul>
+<p>Uitvoering docent</p>
+<ul class="simple">
+<li><p>Groepjes van 3 leerlingen</p></li>
+<li><p>Elke 5 minuten schuift het blad door</p></li>
+<li><p>Volgende groep motiveert waarom de oplossing klopt</p></li>
+</ul>
+<p>Formatieve check</p>
+<ul class="simple">
+<li><p>Klassikale nabespreking met foutcategorieen</p></li>
+</ul>
+</section>
+<section id="operatoren-en-typesprint-unplugged-computer">
+<h3>4. Operatoren- en typesprint (unplugged + computer)<a class="headerlink" href="#operatoren-en-typesprint-unplugged-computer" title="Link to this heading">#</a></h3>
+<p>Doel</p>
+<ul class="simple">
+<li><p>Typeherkenning en operatorbetekenis automatiseren</p></li>
+</ul>
+<p>Tijd</p>
+<ul class="simple">
+<li><p>20 minuten unplugged + 20 minuten uitproberen</p></li>
+</ul>
+<p>Benodigd</p>
+<ul class="simple">
+<li><p>Kaartjes met waarden en expressies</p></li>
+</ul>
+<p>Uitvoering docent</p>
+<ul class="simple">
+<li><p>Eerst klassificeren op papier: int, float, string, boolean</p></li>
+<li><p>Daarna in Python controleren met kleine print-tests</p></li>
+</ul>
+<p>Formatieve check</p>
+<ul class="simple">
+<li><p>5 snelle diagnostische vragen</p></li>
+</ul>
+</section>
+<section id="lussen-met-ritme-en-patronen-unplugged">
+<h3>5. Lussen met ritme en patronen (unplugged)<a class="headerlink" href="#lussen-met-ritme-en-patronen-unplugged" title="Link to this heading">#</a></h3>
+<p>Doel</p>
+<ul class="simple">
+<li><p>For/while als herhalingsmechanisme intuïtief maken</p></li>
+</ul>
+<p>Tijd</p>
+<ul class="simple">
+<li><p>20 minuten</p></li>
+</ul>
+<p>Benodigd</p>
+<ul class="simple">
+<li><p>Bord en stift</p></li>
+</ul>
+<p>Uitvoering docent</p>
+<ul class="simple">
+<li><p>Klas klapt 10 keer volgens vast patroon</p></li>
+<li><p>Vertaal patroon naar range-grenzen</p></li>
+<li><p>Bespreek waarom stopwaarde niet meedoet</p></li>
+</ul>
+<p>Formatieve check</p>
+<ul class="simple">
+<li><p>Leerling noteert een correcte range voor 10 herhalingen</p></li>
+</ul>
+</section>
+<section id="patroonatelier-op-papier">
+<h3>6. Patroonatelier op papier<a class="headerlink" href="#patroonatelier-op-papier" title="Link to this heading">#</a></h3>
+<p>Doel</p>
+<ul class="simple">
+<li><p>Geneste lussen voorbereiden zonder syntaxdruk</p></li>
+</ul>
+<p>Tijd</p>
+<ul class="simple">
+<li><p>30 minuten</p></li>
+</ul>
+<p>Benodigd</p>
+<ul class="simple">
+<li><p>Ruitjespapier</p></li>
+</ul>
+<p>Uitvoering docent</p>
+<ul class="simple">
+<li><p>Eerst 5x5 sterren als raster tekenen</p></li>
+<li><p>Dan aangeven: buitenste lus maakt rijen, binnenste lus maakt kolommen</p></li>
+<li><p>Pas daarna naar Python</p></li>
+</ul>
+<p>Formatieve check</p>
+<ul class="simple">
+<li><p>Leerlingen annoteren op papier welke lus wat doet</p></li>
+</ul>
+</section>
+<section id="grammatica-lab-met-kaartjes-unplugged">
+<h3>7. Grammatica-lab met kaartjes (unplugged)<a class="headerlink" href="#grammatica-lab-met-kaartjes-unplugged" title="Link to this heading">#</a></h3>
+<p>Doel</p>
+<ul class="simple">
+<li><p>Afleiding en geldigheid van strings begrijpen</p></li>
+</ul>
+<p>Tijd</p>
+<ul class="simple">
+<li><p>35 minuten</p></li>
+</ul>
+<p>Benodigd</p>
+<ul class="simple">
+<li><p>Kaartjes met niet-terminals, terminals en regels</p></li>
+</ul>
+<p>Uitvoering docent</p>
+<ul class="simple">
+<li><p>Start met startsymbool</p></li>
+<li><p>Leerlingen kiezen om de beurt een productieregel</p></li>
+<li><p>Groep beslist of eindstring geldig is</p></li>
+</ul>
+<p>Formatieve check</p>
+<ul class="simple">
+<li><p>3 woorden: geldig/ongeldig met korte onderbouwing</p></li>
+</ul>
+</section>
+<section id="van-grammatica-naar-validator">
+<h3>8. Van grammatica naar validator<a class="headerlink" href="#van-grammatica-naar-validator" title="Link to this heading">#</a></h3>
+<p>Doel</p>
+<ul class="simple">
+<li><p>Formele regel vertalen naar programmeercontrole</p></li>
+</ul>
+<p>Tijd</p>
+<ul class="simple">
+<li><p>40 minuten</p></li>
+</ul>
+<p>Benodigd</p>
+<ul class="simple">
+<li><p>Computer</p></li>
+</ul>
+<p>Uitvoering docent</p>
+<ul class="simple">
+<li><p>Bespreek eerst regel in natuurlijke taal</p></li>
+<li><p>Laat leerlingen boolean-vlag gebruiken</p></li>
+<li><p>Test samen positieve en negatieve voorbeelden</p></li>
+</ul>
+<p>Formatieve check</p>
+<ul class="simple">
+<li><p>Testtabel met verwacht en werkelijk resultaat</p></li>
+</ul>
+</section>
+<section id="functie-fabriek">
+<h3>9. Functie-fabriek<a class="headerlink" href="#functie-fabriek" title="Link to this heading">#</a></h3>
+<p>Doel</p>
+<ul class="simple">
+<li><p>Programma opdelen in herbruikbare functies</p></li>
+</ul>
+<p>Tijd</p>
+<ul class="simple">
+<li><p>45 minuten</p></li>
+</ul>
+<p>Benodigd</p>
+<ul class="simple">
+<li><p>Computer</p></li>
+</ul>
+<p>Uitvoering docent</p>
+<ul class="simple">
+<li><p>Start met monolithische code</p></li>
+<li><p>Laat klas benoemen welke stukken functie kunnen worden</p></li>
+<li><p>Herschrijf klassikaal naar 3 tot 4 functies</p></li>
+</ul>
+<p>Formatieve check</p>
+<ul class="simple">
+<li><p>Leerling licht hardop toe wat parameter en return doen</p></li>
+</ul>
+</section>
+<section id="mini-project-studio">
+<h3>10. Mini-project studio<a class="headerlink" href="#mini-project-studio" title="Link to this heading">#</a></h3>
+<p>Doel</p>
+<ul class="simple">
+<li><p>Integreren van alle hoofdstukdoelen</p></li>
+</ul>
+<p>Tijd</p>
+<ul class="simple">
+<li><p>2 lessen</p></li>
+</ul>
+<p>Benodigd</p>
+<ul class="simple">
+<li><p>Computer, beoordelingsrubric</p></li>
+</ul>
+<p>Uitvoering docent</p>
+<ul class="simple">
+<li><p>Werk in duo’s</p></li>
+<li><p>Sprint 1: ontwerp en functieschets</p></li>
+<li><p>Sprint 2: bouwen, testen, reflectie</p></li>
+</ul>
+<p>Formatieve check</p>
+<ul class="simple">
+<li><p>Tussentijdse code review met checklist</p></li>
+</ul>
+</section>
+</section>
+<section id="compacte-docentenhandleiding-per-les-van-45-minuten">
+<h2>Compacte docentenhandleiding per les van 45 minuten<a class="headerlink" href="#compacte-docentenhandleiding-per-les-van-45-minuten" title="Link to this heading">#</a></h2>
+<p>Vaste lesstructuur</p>
+<ul class="simple">
+<li><p>0-7 min: startopgave of retrieval</p></li>
+<li><p>7-15 min: korte instructie met worked example</p></li>
+<li><p>15-30 min: begeleide oefening</p></li>
+<li><p>30-40 min: zelfstandige of duo-opdracht</p></li>
+<li><p>40-45 min: exit-ticket en vooruitblik</p></li>
+</ul>
+<p>Didactische keuzes</p>
+<ul class="simple">
+<li><p>Werk met expliciete succescriteria op het bord</p></li>
+<li><p>Model steeds 1 voorbeeld van denken hardop</p></li>
+<li><p>Gebruik foutenanalyse als leerdoel, niet alleen juiste uitkomst</p></li>
+<li><p>Wissel schermwerk af met papieractiviteiten om cognitieve belasting te verlagen</p></li>
+</ul>
+<p>Differentiatie</p>
+<ul class="simple">
+<li><p>Kernroute: basisopgaven verplicht</p></li>
+<li><p>Plusroute: patroonuitbreidingen, uitlijning, extra validaties</p></li>
+<li><p>Steunroute: invulsjablonen voor flowcharts en functiekoppen</p></li>
+</ul>
+<p>Toetsvoorbereiding</p>
+<ul class="simple">
+<li><p>Wekelijks 10 minuten retrievalquiz</p></li>
+<li><p>Om de week een korte formatieve codecheck</p></li>
+<li><p>In week 6 een integrale proeftaak met rubric</p></li>
+</ul>
+</section>
+<section id="weekplanning-met-concrete-focus">
+<h2>Weekplanning met concrete focus<a class="headerlink" href="#weekplanning-met-concrete-focus" title="Link to this heading">#</a></h2>
+<p>Week 1</p>
+<ul class="simple">
+<li><p>Lesdoel: toestandstaal en diagrammen</p></li>
+<li><p>Product: 1 eigen toestandsdiagram + mini-code</p></li>
+</ul>
+<p>Week 2</p>
+<ul class="simple">
+<li><p>Lesdoel: algoritmisch beslissen en testen</p></li>
+<li><p>Product: stroomdiagram + testtabel</p></li>
+</ul>
+<p>Week 3</p>
+<ul class="simple">
+<li><p>Lesdoel: data representeren en rekenen</p></li>
+<li><p>Product: lijstopgaven + operatorverklaringen</p></li>
+</ul>
+<p>Week 4</p>
+<ul class="simple">
+<li><p>Lesdoel: herhaling automatiseren met lussen</p></li>
+<li><p>Product: 3 luspatronen correct werkend</p></li>
+</ul>
+<p>Week 5</p>
+<ul class="simple">
+<li><p>Lesdoel: formele taalregels begrijpen</p></li>
+<li><p>Product: eigen mini-grammatica + validatie-idee</p></li>
+</ul>
+<p>Week 6</p>
+<ul class="simple">
+<li><p>Lesdoel: alles combineren in functies</p></li>
+<li><p>Product: mini-project met functies, tests en reflectie</p></li>
+</ul>
+</section>
+<section id="minimale-set-die-altijd-af-moet">
+<h2>Minimale set die altijd af moet<a class="headerlink" href="#minimale-set-die-altijd-af-moet" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>H1: opdracht 1 of 2 plus eindopdracht in verkorte vorm</p></li>
+<li><p>H2: 2 beslisopgaven inclusief testtabel</p></li>
+<li><p>H3: 1 type-opgave, 1 lijstopgave, 1 random-opgave</p></li>
+<li><p>H4: 1 for-opgave, 1 while-opgave, 1 geneste-lusopgave</p></li>
+<li><p>H5: 1 afleiding, 1 geldig/ongeldig-opgave, 1 mini-ontwerp</p></li>
+<li><p>H6: 3 functies + 1 gecombineerd eindproduct</p></li>
+</ul>
+</section>
+<section id="signalen-om-tempo-bij-te-sturen">
+<h2>Signalen om tempo bij te sturen<a class="headerlink" href="#signalen-om-tempo-bij-te-sturen" title="Link to this heading">#</a></h2>
+<p>Vertraag als</p>
+<ul class="simple">
+<li><p>meer dan een derde van de klas range-grenzen fout doet</p></li>
+<li><p>leerlingen geen onderscheid maken tussen print en return</p></li>
+<li><p>testresultaten niet worden vastgelegd</p></li>
+</ul>
+<p>Versnel als</p>
+<ul class="simple">
+<li><p>kernopgaven binnen 60 procent van de geplande tijd af zijn</p></li>
+<li><p>leerlingen zelfstandig testgevallen bedenken</p></li>
+<li><p>duo’s foutredeneringen goed kunnen uitleggen</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./blok1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uitgangspunt-tijd">Uitgangspunt tijd</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#haalbaarheid-in-een-oogopslag">Haalbaarheid in één oogopslag</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kernroute-per-week">Kernroute per week</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activiteitenbank-met-docentaanpak">Activiteitenbank met docentaanpak</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toestandenspel-zonder-computer-unplugged">1. Toestandenspel zonder computer (unplugged)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menselijk-stroomdiagram-unplugged">2. Menselijk stroomdiagram (unplugged)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-estafette">3. Debug-estafette</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operatoren-en-typesprint-unplugged-computer">4. Operatoren- en typesprint (unplugged + computer)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lussen-met-ritme-en-patronen-unplugged">5. Lussen met ritme en patronen (unplugged)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#patroonatelier-op-papier">6. Patroonatelier op papier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grammatica-lab-met-kaartjes-unplugged">7. Grammatica-lab met kaartjes (unplugged)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#van-grammatica-naar-validator">8. Van grammatica naar validator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functie-fabriek">9. Functie-fabriek</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-project-studio">10. Mini-project studio</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compacte-docentenhandleiding-per-les-van-45-minuten">Compacte docentenhandleiding per les van 45 minuten</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weekplanning-met-concrete-focus">Weekplanning met concrete focus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimale-set-die-altijd-af-moet">Minimale set die altijd af moet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signalen-om-tempo-bij-te-sturen">Signalen om tempo bij te sturen</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By SSgN
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

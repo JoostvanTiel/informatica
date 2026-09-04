@@ -456,8 +456,11 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stroomdiagram-van-een-gecombineerd-programma">Stroomdiagram van een gecombineerd programma</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#werkwijze-voor-functie-opgaven-program-arcade-stijl">Werkwijze voor functie-opgaven (Program Arcade-stijl)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veelgemaakte-fouten">Veelgemaakte fouten</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#begrippenlijst">Begrippenlijst</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#succescriteria">Succescriteria</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-rubric">Mini-rubric</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="pst-show_toc_level nav section-nav flex-column">
@@ -523,7 +526,7 @@
 <h2>De basis van een functie<a class="headerlink" href="#de-basis-van-een-functie" title="Link to this heading">#</a></h2>
 <p>Een functie maak je met <code class="docutils literal notranslate"><span class="pre">def</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">begroet</span><span class="p">(</span><span class="n">naam</span><span class="p">):</span>
-		<span class="nb">print</span><span class="p">(</span><span class="s2">"Hallo"</span><span class="p">,</span> <span class="n">naam</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Hallo"</span><span class="p">,</span> <span class="n">naam</span><span class="p">)</span>
 
 <span class="n">begroet</span><span class="p">(</span><span class="s2">"Sam"</span><span class="p">)</span>
 <span class="n">begroet</span><span class="p">(</span><span class="s2">"Noor"</span><span class="p">)</span>
@@ -538,20 +541,20 @@
 <section id="stroomdiagram-van-een-functie-aanroep">
 <h3>Stroomdiagram van een functie-aanroep<a class="headerlink" href="#stroomdiagram-van-een-functie-aanroep" title="Link to this heading">#</a></h3>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>START
-	|
-	v
+    |
+    v
 Roep functie aan
-	|
-	v
+    |
+    v
 Geef argument(en) mee
-	|
-	v
+    |
+    v
 Voer functiestappen uit
-	|
-	v
+    |
+    v
 Terug naar hoofdprogramma
-	|
-	v
+    |
+    v
 EINDE
 </pre></div>
 </div>
@@ -563,7 +566,7 @@ EINDE
 <p>Een parameter is de naam in de functie.</p>
 <p>Een argument is de echte waarde die je meegeeft bij aanroepen.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">toon_score</span><span class="p">(</span><span class="n">naam</span><span class="p">,</span> <span class="n">score</span><span class="p">):</span>
-		<span class="nb">print</span><span class="p">(</span><span class="n">naam</span><span class="p">,</span> <span class="s2">"heeft"</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span> <span class="s2">"punten"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">naam</span><span class="p">,</span> <span class="s2">"heeft"</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span> <span class="s2">"punten"</span><span class="p">)</span>
 
 <span class="n">toon_score</span><span class="p">(</span><span class="s2">"Yara"</span><span class="p">,</span> <span class="mi">120</span><span class="p">)</span>
 <span class="n">toon_score</span><span class="p">(</span><span class="s2">"Milan"</span><span class="p">,</span> <span class="mi">85</span><span class="p">)</span>
@@ -576,7 +579,7 @@ EINDE
 <h2>Return-waarden<a class="headerlink" href="#return-waarden" title="Link to this heading">#</a></h2>
 <p>Gebruik <code class="docutils literal notranslate"><span class="pre">return</span></code> als je een waarde wilt teruggeven.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">kwadraat</span><span class="p">(</span><span class="n">getal</span><span class="p">):</span>
-		<span class="k">return</span> <span class="n">getal</span> <span class="o">*</span> <span class="n">getal</span>
+        <span class="k">return</span> <span class="n">getal</span> <span class="o">*</span> <span class="n">getal</span>
 
 <span class="n">uitkomst</span> <span class="o">=</span> <span class="n">kwadraat</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">uitkomst</span><span class="p">)</span>
@@ -586,20 +589,20 @@ EINDE
 <section id="stroomdiagram-met-return">
 <h3>Stroomdiagram met return<a class="headerlink" href="#stroomdiagram-met-return" title="Link to this heading">#</a></h3>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>START
-	|
-	v
+    |
+    v
 Functie krijgt invoer
-	|
-	v
+    |
+    v
 Berekening / controle
-	|
-	v
+    |
+    v
 Return resultaat
-	|
-	v
+    |
+    v
 Hoofdprogramma gebruikt resultaat
-	|
-	v
+    |
+    v
 EINDE
 </pre></div>
 </div>
@@ -610,18 +613,18 @@ EINDE
 <h2>Functies combineren met if, lijsten en lussen<a class="headerlink" href="#functies-combineren-met-if-lijsten-en-lussen" title="Link to this heading">#</a></h2>
 <p>Voorbeeld: gemiddelde van een lijst berekenen.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">gemiddelde_van_lijst</span><span class="p">(</span><span class="n">cijfers</span><span class="p">):</span>
-		<span class="n">totaal</span> <span class="o">=</span> <span class="mi">0</span>
-		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cijfers</span><span class="p">)):</span>
-				<span class="n">totaal</span> <span class="o">=</span> <span class="n">totaal</span> <span class="o">+</span> <span class="n">cijfers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-		<span class="k">return</span> <span class="n">totaal</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">cijfers</span><span class="p">)</span>
+        <span class="n">totaal</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cijfers</span><span class="p">)):</span>
+                <span class="n">totaal</span> <span class="o">=</span> <span class="n">totaal</span> <span class="o">+</span> <span class="n">cijfers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">totaal</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">cijfers</span><span class="p">)</span>
 
 <span class="n">waarden</span> <span class="o">=</span> <span class="p">[</span><span class="mf">6.5</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">]</span>
 <span class="n">gemiddelde</span> <span class="o">=</span> <span class="n">gemiddelde_van_lijst</span><span class="p">(</span><span class="n">waarden</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="n">gemiddelde</span> <span class="o">&gt;=</span> <span class="mf">5.5</span><span class="p">:</span>
-		<span class="nb">print</span><span class="p">(</span><span class="s2">"voldoende"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"voldoende"</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-		<span class="nb">print</span><span class="p">(</span><span class="s2">"onvoldoende"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"onvoldoende"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Je herkent hier stof uit hoofdstuk 2, 3 en 4.</p>
@@ -633,22 +636,22 @@ EINDE
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">worp_dobbelsteen</span><span class="p">():</span>
-		<span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-		<span class="nb">print</span><span class="p">(</span><span class="n">worp_dobbelsteen</span><span class="p">())</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">worp_dobbelsteen</span><span class="p">())</span>
 </pre></div>
 </div>
 <p>Of uitgebreider:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">tel_zessen</span><span class="p">(</span><span class="n">aantal_worpen</span><span class="p">):</span>
-		<span class="n">teller</span> <span class="o">=</span> <span class="mi">0</span>
-		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">aantal_worpen</span><span class="p">):</span>
-				<span class="n">worp</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
-				<span class="k">if</span> <span class="n">worp</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
-						<span class="n">teller</span> <span class="o">=</span> <span class="n">teller</span> <span class="o">+</span> <span class="mi">1</span>
-		<span class="k">return</span> <span class="n">teller</span>
+        <span class="n">teller</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">aantal_worpen</span><span class="p">):</span>
+                <span class="n">worp</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">worp</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
+                        <span class="n">teller</span> <span class="o">=</span> <span class="n">teller</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">teller</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">tel_zessen</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
 </pre></div>
@@ -660,15 +663,15 @@ EINDE
 <p>Veel patroonopgaven uit lussen worden overzichtelijker met functies.</p>
 <p>Voorbeeld 1: een regel sterretjes.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">print_sterren</span><span class="p">(</span><span class="n">aantal</span><span class="p">):</span>
-		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">aantal</span><span class="p">):</span>
-				<span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">" "</span><span class="p">)</span>
-		<span class="nb">print</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">aantal</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">" "</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Voorbeeld 2: een rechthoek met sterretjes.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">print_rechthoek</span><span class="p">(</span><span class="n">rijen</span><span class="p">,</span> <span class="n">kolommen</span><span class="p">):</span>
-		<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rijen</span><span class="p">):</span>
-				<span class="n">print_sterren</span><span class="p">(</span><span class="n">kolommen</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rijen</span><span class="p">):</span>
+                <span class="n">print_sterren</span><span class="p">(</span><span class="n">kolommen</span><span class="p">)</span>
 
 <span class="n">print_rechthoek</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
@@ -681,9 +684,9 @@ EINDE
 <p>In hoofdstuk 5 heb je grammatica’s gebruikt om te beschrijven welke strings geldig zijn.</p>
 <p>Nu kun je zo’n controle als functie maken.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">eindigt_op_b</span><span class="p">(</span><span class="n">woord</span><span class="p">):</span>
-		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">woord</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-				<span class="k">return</span> <span class="kc">False</span>
-		<span class="k">return</span> <span class="n">woord</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">woord</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"b"</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">woord</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="n">woord</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">woord</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"b"</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">eindigt_op_b</span><span class="p">(</span><span class="s2">"aaab"</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">eindigt_op_b</span><span class="p">(</span><span class="s2">"aba"</span><span class="p">))</span>
@@ -706,27 +709,39 @@ EINDE
 <section id="stroomdiagram-van-een-gecombineerd-programma">
 <h3>Stroomdiagram van een gecombineerd programma<a class="headerlink" href="#stroomdiagram-van-een-gecombineerd-programma" title="Link to this heading">#</a></h3>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>START
-	|
-	v
+    |
+    v
 Lees / kies invoer
-	|
-	v
+    |
+    v
 Roep functie A aan
-	|
-	v
+    |
+    v
 Roep functie B aan
-	|
-	v
+    |
+    v
 Gebruik if/elif op resultaten
-	|
-	v
+    |
+    v
 Print output
-	|
-	v
+    |
+    v
 EINDE
 </pre></div>
 </div>
 </section>
+</section>
+<hr class="docutils" />
+<section id="werkwijze-voor-functie-opgaven-program-arcade-stijl">
+<h2>Werkwijze voor functie-opgaven (Program Arcade-stijl)<a class="headerlink" href="#werkwijze-voor-functie-opgaven-program-arcade-stijl" title="Link to this heading">#</a></h2>
+<p>Gebruik bij grotere functie-opgaven steeds deze volgorde:</p>
+<ol class="arabic simple">
+<li><p>Bouw eerst een kleine hulpfunctie die je kunt testen.</p></li>
+<li><p>Test die functie met 2-3 concrete voorbeelden.</p></li>
+<li><p>Voeg daarna een tweede functie toe die de eerste hergebruikt.</p></li>
+<li><p>Combineer pas daarna alles in het hoofdprogramma.</p></li>
+</ol>
+<p>Dit voorkomt lange foutzoekprocessen en sluit aan bij patroon-, tabel- en simulatieopgaven.</p>
 </section>
 <hr class="docutils" />
 <section id="veelgemaakte-fouten">
@@ -767,10 +782,58 @@ Kleine functie die door een andere functie wordt gebruikt.</p>
 <p><strong>Modulair ontwerpen</strong><br />
 Een programma opdelen in losse, samenwerkende onderdelen.</p>
 </section>
+<hr class="docutils" />
+<section id="succescriteria">
+<h2>Succescriteria<a class="headerlink" href="#succescriteria" title="Link to this heading">#</a></h2>
+<p>Aan het einde van dit hoofdstuk kun je:</p>
+<ul class="simple">
+<li><p>een groter probleem opdelen in meerdere functies;</p></li>
+<li><p>functies met parameters en <code class="docutils literal notranslate"><span class="pre">return</span></code> correct gebruiken;</p></li>
+<li><p>functies combineren met lussen, lijsten en beslissingen;</p></li>
+<li><p>tussentests uitvoeren en resultaten gericht verbeteren.</p></li>
+</ul>
+</section>
+<section id="mini-rubric">
+<h2>Mini-rubric<a class="headerlink" href="#mini-rubric" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Onderdeel</p></th>
+<th class="head"><p>Startend</p></th>
+<th class="head"><p>Voldoende</p></th>
+<th class="head"><p>Sterk</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Begrijpen</p></td>
+<td><p>Herkent onderdelen van een functie</p></td>
+<td><p>Legt parameter/argument/return correct uit</p></td>
+<td><p>Verantwoordt modulair ontwerp</p></td>
+</tr>
+<tr class="row-odd"><td><p>Toepassen</p></td>
+<td><p>Schrijft losse functies</p></td>
+<td><p>Combineert functies tot werkend programma</p></td>
+<td><p>Bouwt herbruikbare hulpfuncties</p></td>
+</tr>
+<tr class="row-even"><td><p>Testen</p></td>
+<td><p>Test beperkt</p></td>
+<td><p>Test functies afzonderlijk en samen</p></td>
+<td><p>Documenteert tests en verbetert gericht</p></td>
+</tr>
+<tr class="row-odd"><td><p>Uitleggen</p></td>
+<td><p>Korte beschrijving</p></td>
+<td><p>Legt opbouw stap voor stap uit</p></td>
+<td><p>Reflecteert op kwaliteit en keuzes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="opdrachten">
 <h1>Opdrachten<a class="headerlink" href="#opdrachten" title="Link to this heading">#</a></h1>
+<p><strong>Kernroute (verplicht, circa 60% van de opgavenlast):</strong> opdracht 1, 2, 3, 5, 6, 8 en 11.<br />
+<strong>Plusroute (verdieping):</strong> opdracht 4, 7, 9, 10 en 12.</p>
 <ol class="arabic">
 <li><p>Eerste functies</p>
 <p>a. Schrijf een functie <code class="docutils literal notranslate"><span class="pre">begroet(naam)</span></code> die <code class="docutils literal notranslate"><span class="pre">Hallo</span> <span class="pre">&lt;naam&gt;</span></code> print.</p>
@@ -941,6 +1004,7 @@ Een programma opdelen in losse, samenwerkende onderdelen.</p>
 </ul>
 <p>Daardoor kun je nu grotere programma’s ontwerpen die overzichtelijk, testbaar en uitbreidbaar zijn.</p>
 <p>Je bent hiermee klaar voor het vervolg waarin je nog zelfstandiger ontwerpt en programmeert met meerdere samenwerkende functies.</p>
+<p>In het volgende blok neem je deze werkwijze mee naar grotere opgaven waarin decomposition, testen en kwaliteit van code centraal staan.</p>
 </section>
 </section>
 
@@ -1030,8 +1094,11 @@ Een programma opdelen in losse, samenwerkende onderdelen.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stroomdiagram-van-een-gecombineerd-programma">Stroomdiagram van een gecombineerd programma</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#werkwijze-voor-functie-opgaven-program-arcade-stijl">Werkwijze voor functie-opgaven (Program Arcade-stijl)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veelgemaakte-fouten">Veelgemaakte fouten</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#begrippenlijst">Begrippenlijst</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#succescriteria">Succescriteria</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-rubric">Mini-rubric</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="pst-show_toc_level nav section-nav flex-column">

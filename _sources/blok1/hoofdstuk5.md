@@ -24,9 +24,30 @@ Aan het einde van dit hoofdstuk kun je eenvoudige grammatica's lezen, zelf ontwe
 
 Een computer moet precies weten wat geldig is.
 
-Bij programmeertalen is dat heel belangrijk.
+Dat gebeurt niet alleen in programmeertalen, maar ook in dingen die leerlingen dagelijks gebruiken.
+
+Denk aan:
+
+- een gebruikersnaam die aan regels moet voldoen;
+- een game-commando zoals `move 3` of `jump 2`;
+- een hashtag zonder spaties;
+- een schoolcode met vast patroon.
 
 Bijvoorbeeld:
+
+```text
+chat!help
+```
+
+is een geldig commando, maar:
+
+```text
+chat ! help
+```
+
+kan ongeldig zijn als spaties niet zijn toegestaan.
+
+Ook in Python zelf gelden zulke vormregels. Bijvoorbeeld:
 
 ```text
 3 + 4 * 2
@@ -40,7 +61,7 @@ is een geldige expressie, maar:
 
 is niet geldig.
 
-Een grammatica beschrijft die regels.
+Een grammatica beschrijft zulke regels op een precieze manier.
 
 Zo weet een computer welke invoer syntactisch klopt.
 
@@ -172,9 +193,9 @@ Mogelijke strings:
 
 ---
 
-## Voorbeeld 2: eenvoudige identifier
+## Voorbeeld 2: gebruikersnaam
 
-Een identifier begint met een letter, daarna volgen letters of cijfers.
+Stel: een gebruikersnaam begint met een letter, daarna volgen letters of cijfers.
 
 ```text
 Start -> Letter Rest
@@ -208,8 +229,8 @@ Voorbeeld: maak vijf strings van de vorm `a^n b`.
 
 ```python
 for n in range(5):
-	 woord = "a" * n + "b"
-	 print(woord)
+     woord = "a" * n + "b"
+     print(woord)
 ```
 
 Uitvoer:
@@ -223,6 +244,27 @@ aaaab
 ```
 
 Hier herhaal je een patroon met een lus, net als in hoofdstuk 4.
+
+Je kunt ook een regelcontrole programmeren, bijvoorbeeld voor een gebruikersnaam:
+
+```python
+naam = "level42"
+geldig = True
+
+if len(naam) == 0:
+  geldig = False
+elif not naam[0].isalpha():
+  geldig = False
+
+for i in range(len(naam)):
+  teken = naam[i]
+  if not (teken.isalpha() or teken.isdigit()):
+    geldig = False
+
+print(geldig)
+```
+
+Zo zie je hoe grammatica-denken direct aansluit op programmeren.
 
 ### Stroomdiagram van dit programma
 
@@ -281,15 +323,40 @@ De betekenis van uitdrukkingen in een taal.
 
 ---
 
+## Succescriteria
+
+Aan het einde van dit hoofdstuk kun je:
+
+- terminals, niet-terminals, productieregels en startsymbool aanwijzen;
+- een eenvoudige afleiding maken;
+- beoordelen of een woord wel of niet in een taal zit;
+- een simpele taalregel uit de praktijk vertalen naar Python-controle.
+
+## Mini-rubric
+
+| Onderdeel | Startend                         | Voldoende                                 | Sterk                                |
+| --------- | -------------------------------- | ----------------------------------------- | ------------------------------------ |
+| Begrijpen | Herkent enkele grammatica-termen | Legt alle kernbegrippen correct uit       | Verbindt grammatica aan examenkaders |
+| Toepassen | Maakt deels correcte afleiding   | Maakt correcte afleidingen en voorbeelden | Ontwerpt bruikbare eigen grammatica  |
+| Testen    | Controleert enkele woorden       | Test systematisch geldig/ongeldig         | Onderbouwt testkeuzes met regels     |
+| Uitleggen | Beschrijft uitkomst kort         | Legt redeneerstappen uit                  | Vergelijkt alternatieve grammatica's |
+
+---
+
 # Opdrachten
 
-1. Onderdelen herkennen
+**Kernroute (verplicht, circa 60% van de opgavenlast):** opdracht 1, 2, 3, 4 en 6.  
+**Plusroute (verdieping):** opdracht 5, 7 en 8.
+
+1. Onderdelen herkennen (gebruikersnaam-regel)
 
    Gegeven:
 
    ```text
-   S -> aS
-   S -> b
+   Start -> Letter Rest
+   Rest -> Letter Rest | Cijfer Rest | leeg
+   Letter -> a | b | ... | z
+   Cijfer -> 0 | 1 | ... | 9
    ```
 
    a. Wat zijn de terminals?
@@ -298,13 +365,18 @@ De betekenis van uitdrukkingen in een taal.
 
    c. Wat is het startsymbool?
 
-   d. Noem drie strings die in de taal zitten.
+   d. Noem drie geldige gebruikersnamen.
 
 ---
 
-2. Afleiden
+2. Afleiden stap voor stap
 
-   Gebruik dezelfde grammatica.
+   Gebruik:
+
+   ```text
+   S -> aS
+   S -> b
+   ```
 
    a. Geef een afleiding voor `ab`.
 
@@ -314,47 +386,49 @@ De betekenis van uitdrukkingen in een taal.
 
 ---
 
-3. Geldig of ongeldig
+3. Geldig of ongeldig (chat-commando)
 
-   Gegeven grammatica:
+   Een commando heeft de vorm:
 
    ```text
-   S -> 0S
-   S -> 1S
-   S -> 0
-   S -> 1
+    actie spatie getal
+    actie: jump of move
+    getal: 1 t/m 9
    ```
 
    Bepaal voor elk woord of het geldig is:
 
    ```text
-   0
-   1
-   101
-   11010
-   leeg woord
-   2
+   jump 3
+   move 9
+   fly 2
+   jump negen
+   move10
+   jump 0
    ```
 
 ---
 
-4. Van regel naar patroon
+4. Van regel naar code
 
-   Schrijf Python-code die de volgende regels print:
+   Schrijf Python-code die controleert of een woord:
+   - begint met een letter;
+   - daarna alleen letters/cijfers bevat.
+
+   Test met:
 
    ```text
-   b
-   ab
-   aab
-   aaab
-   aaaab
+    score1
+    1score
+    level42
+    @naam
    ```
 
-   Gebruik een lus en de operator `*` voor strings.
+   Gebruik een lus en een boolean-variabele.
 
 ---
 
-5. Herhaling met getallenpatroon
+5. Herhaling met getallenpatroon (plusroute)
 
    Print met geneste lussen:
 
@@ -368,107 +442,57 @@ De betekenis van uitdrukkingen in een taal.
 
 ---
 
-6. Sterrenblokken
+6. Schoolcode ontwerpen
 
-   a. Print een blok van 10 bij 10 sterretjes.
-
-   b. Print een blok van 5 bij 10 sterretjes.
-
-   c. Print een blok van 20 bij 5 sterretjes.
-
-   d. Leg uit welke lus de rijen maakt en welke de kolommen.
-
----
-
-7. Grammatica ontwerpen
-
-   Ontwerp een grammatica voor woorden met alleen `x` en `y` die altijd eindigen op `y`.
-
-   a. Geef terminals, niet-terminals, startsymbool en regels.
-
-   b. Geef vijf voorbeeldwoorden.
-
-   c. Geef twee woorden die niet mogen.
-
----
-
-8. Eenvoudige expressies
-
-   Ontwerp een eenvoudige grammatica voor:
-   - een cijfer (`0` t/m `9`)
-   - gevolgd door
-   - een operator (`+` of `-`)
-   - gevolgd door
-   - een cijfer
-
-   Voorbeelden van geldige woorden:
+   Een schoolcode heeft de vorm:
 
    ```text
-   3+4
-   8-1
+   hv-jaar-klasnummer
    ```
 
-   Voorbeelden van ongeldige woorden:
+   Voorbeeld:
 
    ```text
-   +34
-   44-
+   hv-4-23
    ```
+
+   a. Beschrijf in gewone taal de syntaxis van deze code.
+
+   b. Ontwerp een eenvoudige grammatica voor deze vorm.
+
+   c. Geef drie geldige en drie ongeldige voorbeelden.
 
 ---
 
-9. Willekeurige grammatica-string
+7. Binaire strings met random (plusroute)
 
    Gebruik `random.randrange()` om willekeurig `0` of `1` te kiezen.
 
    a. Genereer 8 willekeurige binaire strings met lengte 6.
 
-   b. Laat zien dat elke string past binnen de grammatica van opdracht 3.
+   b. Laat zien dat elke string past binnen de taal met alleen symbolen `0` en `1`.
 
    c. Tel per string het aantal nullen en enen.
 
 ---
 
-10. Van grammatica naar controle
+8. Verdieping: patroon uit lussen (plusroute)
 
-    Schrijf een programma dat controleert of een woord alleen uit `a` en `b` bestaat en eindigt op `b`.
+   Bouw met geneste lussen deze figuur op:
 
-    a. Gebruik een lus om de tekens te controleren.
+   ```text
+   0
+   0 1
+   0 1 2
+   ...
+   0 1 2 3 4 5 6 7 8 9
+   ```
 
-    b. Gebruik een boolean-variabele om bij te houden of het woord geldig blijft.
+   a. Los eerst de eerste drie regels op.
 
-    c. Test met minstens zes woorden.
+   b. Breid uit naar alle tien regels.
 
----
-
-11. Verdieping: opbouw zoals patroonopgaven
-
-    Bouw met geneste lussen deze figuur op:
-
-    ```text
-    0
-    0 1
-    0 1 2
-    ...
-    0 1 2 3 4 5 6 7 8 9
-    ```
-
-    a. Los eerst de eerste drie regels op.
-
-    b. Breid uit naar alle tien regels.
-
-    c. Leg uit welke grens in `range()` je hebt aangepast.
-
----
-
-12. Examengericht mini-ontwerp
-
-    Ontwerp voor een eenvoudige invoertaal (bijvoorbeeld leerlingcode, productcode of game-commando):
-    1.  een korte informele beschrijving;
-    2.  een formele grammatica;
-    3.  drie geldige voorbeelden;
-    4.  drie ongeldige voorbeelden;
-    5.  een Python-fragment dat een deelcontrole doet.
+   c. Leg uit welke grens in `range()` je hebt aangepast.
 
 ---
 
@@ -478,6 +502,8 @@ In dit hoofdstuk heb je geleerd dat grammatica's een formele manier zijn om taal
 
 Je kunt nu terminals, niet-terminals, productieregels en startsymbolen gebruiken om strings af te leiden en te beoordelen.
 
+Door voorbeelden uit je eigen wereld (gebruikersnamen, commando's en codes) zie je dat grammatica's niet alleen theorie zijn, maar direct bruikbaar in software.
+
 Je hebt dit gecombineerd met programmeervaardigheden uit eerdere hoofdstukken: variabelen, beslissingen, operatoren, lijsten, lussen en `random.randrange()`.
 
-Daarmee heb je precies de basis die je nodig hebt voor het volgende combinatiehoofdstuk, waarin je alles samenbrengt en leert werken met functies.
+In het volgende hoofdstuk breng je alles samen in functies, zodat je grotere problemen modulair en overzichtelijk kunt oplossen.

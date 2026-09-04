@@ -373,7 +373,30 @@ Functie uit de module `random` die een willekeurig geheel getal kiest binnen een
 
 ---
 
+## Succescriteria
+
+Aan het einde van dit hoofdstuk kun je:
+
+- variabeletypes (`int`, `float`, `string`, `boolean`) herkennen en gebruiken;
+- waarden uit lijsten lezen, aanpassen en toevoegen;
+- berekeningen maken met `+`, `-`, `*`, `/`, `**`, `//`, `%`;
+- `range()` en `random.randrange()` correct toepassen in eenvoudige programma's.
+
+## Mini-rubric
+
+| Onderdeel | Startend                       | Voldoende                                     | Sterk                                     |
+| --------- | ------------------------------ | --------------------------------------------- | ----------------------------------------- |
+| Begrijpen | Herkent enkele types/operaties | Legt types, lijsten en operatoren correct uit | Verbindt keuzes aan probleemsituaties     |
+| Toepassen | Maakt kleine codefragmenten    | Schrijft werkende lijst- en rekenopgaven      | Combineert meerdere concepten foutarm     |
+| Testen    | Probeert 1-2 waarden           | Test met meerdere waarden en varianten        | Test systematisch en verklaart uitkomsten |
+| Uitleggen | Geeft losse antwoorden         | Licht keuzes in code duidelijk toe            | Onderbouwt alternatief aanpakken          |
+
+---
+
 # Opdrachten
+
+**Kernroute (verplicht, circa 60% van de opgavenlast):** opdracht 1, 2, 4, 5, 6 en 10.  
+**Plusroute (verdieping):** opdracht 3, 7, 8 en 9.
 
 1. Type-herhaling (hoofdstuk 1 en 2)
 
