@@ -458,13 +458,13 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toestandsdiagrammen">Toestandsdiagrammen</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-de-deur">Oefening: de deur</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1">Opdracht 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2">Opdracht 2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3">Opdracht 3</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-de-deur">Opdracht 1: de deur</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vraag-1">Vraag 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vraag-2">Vraag 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vraag-3">Vraag 3</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#een-automaat">5. Een automaat</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-een-automaat">Opdracht 2: Een automaat</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#een-automaat-uitvoeren">6. Een automaat uitvoeren</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-een-toegangssysteem">7. Oefening: een toegangssysteem</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4">Opdracht 4</a></li>
@@ -641,11 +641,14 @@ OPEN  --sluiten--&gt; DICHT
 </pre></div>
 </div>
 <p>Dat is vaak handig als je een systeem eerst op papier wilt ontwerpen.</p>
+<p>Hieronder zie je een voorbeeld van een toestandsdiagram van een snoepautomaat die drie verschillende producten heeft (banaantjes, kersen, kikkers), met een verschillende prijs.</p>
+<p>Toestandsdiagrammen kunnen ook heel handig zijn als je een (computer)spel wil ontwerpen. Je kunt zo goed de verschillende toestanden (of levels) van het spel overzichtelijk weergeven. Kijk maar eens naar het diagram hieronder:
+![Afbeelding niet gevonden][img/finite-state-game.png]</p>
 </section>
 </section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="oefening-de-deur">
-<h1>Oefening: de deur<a class="headerlink" href="#oefening-de-deur" title="Link to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="opdracht-1-de-deur">
+<h1>Opdracht 1: de deur<a class="headerlink" href="#opdracht-1-de-deur" title="Link to this heading">#</a></h1>
 <p>Een automatische deur heeft twee toestanden:</p>
 <ul class="simple">
 <li><p>DICHT</p></li>
@@ -656,8 +659,8 @@ OPEN  --sluiten--&gt; DICHT
 <li><p>iemand loopt naar de deur;</p></li>
 <li><p>niemand staat meer bij de deur.</p></li>
 </ul>
-<section id="opdracht-1">
-<h2>Opdracht 1<a class="headerlink" href="#opdracht-1" title="Link to this heading">#</a></h2>
+<section id="vraag-1">
+<h2>Vraag 1<a class="headerlink" href="#vraag-1" title="Link to this heading">#</a></h2>
 <p>Teken een toestandsdiagram voor de deur.</p>
 <p>Gebruik twee cirkels:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>DICHT
@@ -667,8 +670,8 @@ OPEN
 </div>
 <p>Teken de pijlen en zet op iedere pijl de gebeurtenis waardoor de overgang plaatsvindt.</p>
 </section>
-<section id="opdracht-2">
-<h2>Opdracht 2<a class="headerlink" href="#opdracht-2" title="Link to this heading">#</a></h2>
+<section id="vraag-2">
+<h2>Vraag 2<a class="headerlink" href="#vraag-2" title="Link to this heading">#</a></h2>
 <p>Beantwoord de volgende vragen.</p>
 <ol class="arabic simple">
 <li><p>In welke toestand begint de deur?</p></li>
@@ -678,19 +681,15 @@ OPEN
 <li><p>Kan de deur vanuit DICHT direct naar DICHT gaan?</p></li>
 </ol>
 </section>
-<section id="opdracht-3">
-<h2>Opdracht 3<a class="headerlink" href="#opdracht-3" title="Link to this heading">#</a></h2>
+<section id="vraag-3">
+<h2>Vraag 3<a class="headerlink" href="#vraag-3" title="Link to this heading">#</a></h2>
 <p>Bedenk zelf een derde toestand voor de deur.</p>
-<p>Bijvoorbeeld:</p>
-<blockquote>
-<div><p>De deur is aan het openen.</p>
-</div></blockquote>
 <p>Pas je toestandsdiagram aan zodat deze toestand ook wordt gebruikt.</p>
 </section>
 </section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="een-automaat">
-<h1>5. Een automaat<a class="headerlink" href="#een-automaat" title="Link to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="opdracht-2-een-automaat">
+<h1>Opdracht 2: Een automaat<a class="headerlink" href="#opdracht-2-een-automaat" title="Link to this heading">#</a></h1>
 <p>Een systeem dat op basis van input van toestand kan veranderen, kunnen we modelleren als een <strong>toestandsmachine</strong>.</p>
 <p>Een veelgebruikte vorm hiervan is een <strong>eindige automaat</strong>.</p>
 <p>“Eindig” betekent hier dat de automaat een eindig aantal toestanden heeft.</p>
@@ -1481,13 +1480,13 @@ Geeft aan wat er gebeurt als de eerdere voorwaarden niet waar zijn.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toestandsdiagrammen">Toestandsdiagrammen</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-de-deur">Oefening: de deur</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1">Opdracht 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2">Opdracht 2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3">Opdracht 3</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-de-deur">Opdracht 1: de deur</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vraag-1">Vraag 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vraag-2">Vraag 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vraag-3">Vraag 3</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#een-automaat">5. Een automaat</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-een-automaat">Opdracht 2: Een automaat</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#een-automaat-uitvoeren">6. Een automaat uitvoeren</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-een-toegangssysteem">7. Oefening: een toegangssysteem</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4">Opdracht 4</a></li>

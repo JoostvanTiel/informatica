@@ -124,9 +124,14 @@ OPEN  --sluiten--> DICHT
 
 Dat is vaak handig als je een systeem eerst op papier wilt ontwerpen.
 
+Hieronder zie je een voorbeeld van een toestandsdiagram van een snoepautomaat die drie verschillende producten heeft (banaantjes, kersen, kikkers), met een verschillende prijs.
+
+Toestandsdiagrammen kunnen ook heel handig zijn als je een (computer)spel wil ontwerpen. Je kunt zo goed de verschillende toestanden (of levels) van het spel overzichtelijk weergeven. Kijk maar eens naar het diagram hieronder:
+![Afbeelding niet gevonden][img/finite-state-game.png]
+
 ---
 
-# Oefening: de deur
+# Opdracht 1: de deur
 
 Een automatische deur heeft twee toestanden:
 
@@ -138,7 +143,7 @@ De deur reageert op twee gebeurtenissen:
 - iemand loopt naar de deur;
 - niemand staat meer bij de deur.
 
-## Opdracht 1
+## Vraag 1
 
 Teken een toestandsdiagram voor de deur.
 
@@ -152,7 +157,7 @@ OPEN
 
 Teken de pijlen en zet op iedere pijl de gebeurtenis waardoor de overgang plaatsvindt.
 
-## Opdracht 2
+## Vraag 2
 
 Beantwoord de volgende vragen.
 
@@ -162,19 +167,15 @@ Beantwoord de volgende vragen.
 4. Kan de deur vanuit OPEN direct naar OPEN gaan?
 5. Kan de deur vanuit DICHT direct naar DICHT gaan?
 
-## Opdracht 3
+## Vraag 3
 
 Bedenk zelf een derde toestand voor de deur.
-
-Bijvoorbeeld:
-
-> De deur is aan het openen.
 
 Pas je toestandsdiagram aan zodat deze toestand ook wordt gebruikt.
 
 ---
 
-# 5. Een automaat
+# Opdracht 2: Een automaat
 
 Een systeem dat op basis van input van toestand kan veranderen, kunnen we modelleren als een **toestandsmachine**.
 
