@@ -131,51 +131,51 @@ Toestandsdiagrammen kunnen ook heel handig zijn als je een (computer)spel wil on
 
 ---
 
-# Opdracht 1: de deur
+# Opdrachten
 
-Een automatische deur heeft twee toestanden:
+1.  de deur
 
-- DICHT
-- OPEN
+    Een automatische deur heeft twee toestanden:
+    - DICHT
+    - OPEN
 
-De deur reageert op twee gebeurtenissen:
+    De deur reageert op twee gebeurtenissen:
+    - iemand loopt naar de deur;
+    - niemand staat meer bij de deur.
 
-- iemand loopt naar de deur;
-- niemand staat meer bij de deur.
+    a. Vraag 1
 
-## Vraag 1
+        Teken een toestandsdiagram voor de deur.
 
-Teken een toestandsdiagram voor de deur.
+        Gebruik twee cirkels:
 
-Gebruik twee cirkels:
+        ```text
+        DICHT
 
-```text
-DICHT
+        OPEN
+        ```
 
-OPEN
-```
+        Teken de pijlen en zet op iedere pijl de gebeurtenis waardoor de overgang plaatsvindt.
 
-Teken de pijlen en zet op iedere pijl de gebeurtenis waardoor de overgang plaatsvindt.
+    b. Vraag 2
 
-## Vraag 2
+        Beantwoord de volgende vragen.
 
-Beantwoord de volgende vragen.
+        1. In welke toestand begint de deur?
+        2. Wat gebeurt er als iemand naar de deur loopt?
+        3. Wat gebeurt er als niemand meer bij de deur staat?
+        4. Kan de deur vanuit OPEN direct naar OPEN gaan?
+        5. Kan de deur vanuit DICHT direct naar DICHT gaan?
 
-1. In welke toestand begint de deur?
-2. Wat gebeurt er als iemand naar de deur loopt?
-3. Wat gebeurt er als niemand meer bij de deur staat?
-4. Kan de deur vanuit OPEN direct naar OPEN gaan?
-5. Kan de deur vanuit DICHT direct naar DICHT gaan?
+    c. Vraag 3
 
-## Vraag 3
+        Bedenk zelf een derde toestand voor de deur.
 
-Bedenk zelf een derde toestand voor de deur.
-
-Pas je toestandsdiagram aan zodat deze toestand ook wordt gebruikt.
+        Pas je toestandsdiagram aan zodat deze toestand ook wordt gebruikt.
 
 ---
 
-# Opdracht 2: Een automaat
+2. Een automaat
 
 Een systeem dat op basis van input van toestand kan veranderen, kunnen we modelleren als een **toestandsmachine**.
 
