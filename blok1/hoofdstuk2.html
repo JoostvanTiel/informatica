@@ -645,43 +645,15 @@ doe niets
 <li><p>ruiten voor beslissingen;</p></li>
 <li><p>pijlen om de volgorde aan te geven.</p></li>
 </ul>
-<p>Bijvoorbeeld:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>          ┌─────────────┐
-          │   START     │
-          └──────┬──────┘
-                 │
-                 v
-        ┌────────────────┐
-        │ Lees temperatuur │
-        └────────┬───────┘
-                 │
-                 v
-           ┌───────────┐
-           │ &lt; 10 °C ? │
-           └─────┬─────┘
-             ja │ nee
-               │
-      ┌────────┘ └────────┐
-      v                    v
-┌────────────────┐   ┌────────────────┐
-│ Neem een jas  │   │ Geen jas      │
-│ mee           │   │ nodig         │
-└───────┬──────┘   └──────┬────────┘
-        │                   │
-        └───────────┬───────┘
-                    v
-              ┌──────────┐
-              │   EINDE  │
-              └──────────┘
-</pre></div>
-</div>
+<p>Bijvoorbeeld:
+![Afbeelding niet gevonden][img/1.2_beslissing1.png]</p>
 <p>De ruit stelt de beslissing voor.</p>
 <p>Er zijn twee mogelijke uitgangen:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>JA
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>*waar*
 </pre></div>
 </div>
 <p>en:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>NEE
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>*niet waar*
 </pre></div>
 </div>
 <p>Dit is vergelijkbaar met een toestandsdiagram, maar het doel is anders.</p>
@@ -706,22 +678,8 @@ OPEN  --sluiten--&gt; DICHT
 </pre></div>
 </div>
 <p>Dit zegt iets over de toestand van de deur.</p>
-<p>Een stroomdiagram kan daarna laten zien wat een programma doet als de deur open of dicht is:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>              START
-                |
-                v
-        Is de deur dicht?
-         /             \
-       ja              nee
-        |               |
-        v               v
-   Open de deur   Sluit de deur
-        |               |
-        └───────┬───────┘
-                v
-              EINDE
-</pre></div>
-</div>
+<p>Een stroomdiagram kan daarna laten zien wat een programma doet als de deur open of dicht is:
+![Afbeelding niet gevonden][img/1.2_beslissing2.png]</p>
 <p>Een goede programmeur kan beide manieren van denken gebruiken.</p>
 </section>
 <hr class="docutils" />
@@ -762,25 +720,8 @@ Anders:
 4. Anders geef aan dat er geen korting is.
 </pre></div>
 </div>
-<p>Daarna kun je een stroomdiagram maken.</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>START
-  |
-  v
-Vraag leeftijd
-  |
-  v
-Is leeftijd &lt; 12?
-   /          ja         nee
-  |             |           |
-  v             v           v
-Korting      Geen korting
-   \             |
-    \____________|
-          |
-          v
-        EINDE
-</pre></div>
-</div>
+<p>Daarna kun je een stroomdiagram maken.
+![Afbeelding niet gevonden][img/1.2_beslissing3.png]</p>
 <p>Pas daarna schrijf je Python:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">leeftijd</span> <span class="o">=</span> <span class="mi">15</span>
 

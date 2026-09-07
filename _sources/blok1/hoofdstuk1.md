@@ -22,7 +22,7 @@ Aan het einde van het hoofdstuk kun je een eenvoudig systeem beschrijven als een
 
 ## Wat is een toestand?
 
-```{image} img/stoplicht.png
+```{image} img/1.1_stoplicht.png
 :alt: Stoplicht
 :width: 200px
 :align: right
@@ -111,7 +111,7 @@ Een overgang tekenen we als een pijl.
 
 Bijvoorbeeld een deur:
 
-![Afbeelding niet gevonden][img/toestandsdiagram.png]
+![Afbeelding niet gevonden][img/1.1_toestandsdiagram.png]
 
 Bij de pijl staat waardoor de overgang plaatsvindt.
 
@@ -127,7 +127,7 @@ Dat is vaak handig als je een systeem eerst op papier wilt ontwerpen.
 Hieronder zie je een voorbeeld van een toestandsdiagram van een snoepautomaat die drie verschillende producten heeft (banaantjes, kersen, kikkers), met een verschillende prijs.
 
 Toestandsdiagrammen kunnen ook heel handig zijn als je een (computer)spel wil ontwerpen. Je kunt zo goed de verschillende toestanden (of levels) van het spel overzichtelijk weergeven. Kijk maar eens naar het diagram hieronder:
-![Afbeelding niet gevonden][img/finite-state-game.png]
+![Afbeelding niet gevonden][img/1.1_finite-state-game.png]
 
 ## Automaten
 
