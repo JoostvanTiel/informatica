@@ -222,49 +222,20 @@ In een eenvoudig stroomdiagram gebruiken we onder andere:
 - pijlen om de volgorde aan te geven.
 
 Bijvoorbeeld:
-
-```text
-          ┌─────────────┐
-          │   START     │
-          └──────┬──────┘
-                 │
-                 v
-        ┌────────────────┐
-        │ Lees temperatuur │
-        └────────┬───────┘
-                 │
-                 v
-           ┌───────────┐
-           │ < 10 °C ? │
-           └─────┬─────┘
-             ja │ nee
-               │
-      ┌────────┘ └────────┐
-      v                    v
-┌────────────────┐   ┌────────────────┐
-│ Neem een jas  │   │ Geen jas      │
-│ mee           │   │ nodig         │
-└───────┬──────┘   └──────┬────────┘
-        │                   │
-        └───────────┬───────┘
-                    v
-              ┌──────────┐
-              │   EINDE  │
-              └──────────┘
-```
+![Afbeelding niet gevonden][img/1.2_beslissing1.png]
 
 De ruit stelt de beslissing voor.
 
 Er zijn twee mogelijke uitgangen:
 
 ```text
-JA
+*waar*
 ```
 
 en:
 
 ```text
-NEE
+*niet waar*
 ```
 
 Dit is vergelijkbaar met een toestandsdiagram, maar het doel is anders.
@@ -297,22 +268,7 @@ OPEN  --sluiten--> DICHT
 Dit zegt iets over de toestand van de deur.
 
 Een stroomdiagram kan daarna laten zien wat een programma doet als de deur open of dicht is:
-
-```text
-              START
-                |
-                v
-        Is de deur dicht?
-         /             \
-       ja              nee
-        |               |
-        v               v
-   Open de deur   Sluit de deur
-        |               |
-        └───────┬───────┘
-                v
-              EINDE
-```
+![Afbeelding niet gevonden][img/1.2_beslissing2.png]
 
 Een goede programmeur kan beide manieren van denken gebruiken.
 
@@ -365,25 +321,7 @@ Begin dan niet meteen met Python. Schrijf eerst het algoritme in gewone taal:
 ```
 
 Daarna kun je een stroomdiagram maken.
-
-```text
-START
-  |
-  v
-Vraag leeftijd
-  |
-  v
-Is leeftijd < 12?
-   /          ja         nee
-  |             |           |
-  v             v           v
-Korting      Geen korting
-   \             |
-    \____________|
-          |
-          v
-        EINDE
-```
+![Afbeelding niet gevonden][img/1.2_beslissing3.png]
 
 Pas daarna schrijf je Python:
 
