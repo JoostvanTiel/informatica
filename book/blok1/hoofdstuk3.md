@@ -564,7 +564,7 @@ Aan het einde van dit hoofdstuk kun je:
    print(list(range(1, 10, 3)))
    ```
 
-   b. Maak een lijst met vijf nullen zonder die handmatig uit te typen. Gebruik `range()`.
+   b. Maak een lijst met getallen van 8 tot en met 148, in stappen van 4 zonder die handmatig uit te typen. Gebruik `range()`.
 
    c. Een lijst is:
 
@@ -572,7 +572,7 @@ Aan het einde van dit hoofdstuk kun je:
    namen = ["Joep", "Niels", "Amyra", "Finn"]
    ```
 
-   Schrijf code die met `range()` alle geldige indexen van deze lijst print.
+   Schrijf code die met `range()` alle geldige indexen van deze lijst opslaat in een nieuwe lijst, genaamd 'indexen'.
 
 ---
 
@@ -589,8 +589,6 @@ Aan het einde van dit hoofdstuk kun je:
     b. Simuleer daarna nog vier extra worpen en print alle vijf worpen onder elkaar.
 
     c. Bepaal met `//` en `%` van elke worp of het getal even of oneven is.
-
-    d. Extra: maak een score tussen 0 en 100 in stappen van 5 met `random.randrange(0, 101, 5)`.
 
 ---
 

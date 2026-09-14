@@ -482,7 +482,7 @@ Aan het einde van dit hoofdstuk kun je:
 
 ---
 
-4. Som en gemiddelde (aansluiting op hoofdstuk 2 en 3)
+4. Som en gemiddelde
 
    Gegeven:
 
@@ -515,21 +515,110 @@ Aan het einde van dit hoofdstuk kun je:
 
 ---
 
-6. Willekeurige worpen
+6.  Uitlegvragen:
+    Voorspel in de volgende vragen steeds wat de code op zal leveren. Voer pas de code uit als je een duidelijk antwoord voor jezelf hebt en controlleer of je het juist had. Hier leer je heel veel van en zul je tijdens coderen vaak aan het doen zijn.
+    a. Wat print dit programma?
 
-   Gebruik:
+    ```python
+    x = 0
+    while x < 10:
+        print(x)
+        x = x + 2
+    ```
 
-   ```python
-   import random
-   ```
+    b. Wat print dit programma?
 
-   a. Simuleer 20 dobbelsteenworpen met `random.randrange(1, 7)`.
+    ```python
+    x = 1
+    while x < 64:
+        print(x)
+        x = x * 2
+    ```
 
-   b. Tel hoeveel keer een 6 voorkomt.
+    c. Leg uit waarom de "and >= 0" niet nodig is.
 
-   c. Tel ook hoeveel worpen even en hoeveel worpen oneven zijn.
+    ```python
+    x = 0
+    while x < 10 and x >= 0:
+    print(x)
+    x = x + 2
+    ```
 
-   d. Welke operator uit hoofdstuk 3 gebruik je om even/oneven te bepalen?
+    d. Wat print dit programma?
+
+    ```python
+    x = 5
+    while x >= 0:
+    print(x)
+    if x == "1":
+    print("Blast off!")
+    x = x - 1
+    ```
+
+    e. Fix de onderstaande code, zodat het niet oneindig herhaalt. Zorg ervoor dat de code de gebruik blijft vragen, totdat hij of zij een getal groter dan nul invult.
+
+    ```python
+    x = float(input("Enter a number greater than zero: "))
+
+        while x <= 0:
+            print("Too small. Enter a number greater than zero: ")
+    ```
+
+    f. Fix de onderstaande code:
+
+    ```python
+    x = 10
+
+    while x < 0:
+        print(x)
+        x - 1
+
+    print("Blast-off")
+    ```
+
+    g. Wat is er mis met de onderstaande code? Het geeft geen errors, maar heeft onnodige code. Leg uit wat er onnodig is.
+
+    ```python
+    i = 0
+    for i in range(10):
+        i += 1
+    ```
+
+    h. In de onderstaande code zie je twee delen. Leg uit waarom de geprintte waardes van x in beide delen verschillen.
+
+    ```python
+    # Deel 1
+    x = 0
+    for i in range(10):
+    x += 1
+    for j in range(10):
+    x += 1
+    print(x)
+
+    # Deel 2
+    x = 0
+    for i in range(10):
+        x += 1
+        for j in range(10):
+            x += 1
+    print(x)
+    ```
+
+7.  Willekeurige worpen
+
+    Gebruik:
+
+    ```python
+    import random
+    ```
+
+    a. Simuleer 20 dobbelsteenworpen met `random.randrange(1, 7)`.
+
+    b. Tel hoeveel keer een 6 voorkomt.
+
+    c. Tel ook hoeveel worpen even en hoeveel worpen oneven zijn.
+
+    d. Welke operator uit hoofdstuk 3 gebruik je om even/oneven te bepalen?
 
 ---
 
@@ -606,6 +695,12 @@ Aan het einde van dit hoofdstuk kun je:
     1 2 3 4 5 6 7 8 9
     ```
 
+    Dan:
+
+    ```text
+    2 4 6 8 10 12 14 16 18
+    ```
+
     en eindig met:
 
     ```text
@@ -620,25 +715,92 @@ Aan het einde van dit hoofdstuk kun je:
 
 ---
 
-12. Ontwerp-opdracht
+12. Schrijf de code die dit print:
 
-    Bedenk een eigen programma met minimaal:
-    - één lijst;
-    - één `for`-lus;
-    - één beslissing met `if`;
-    - één berekening met een operator uit hoofdstuk 3;
-    - duidelijke uitvoer met `print`.
+    ```text
+                    1
+                  1 2 1
+                1 2 3 2 1
+              1 2 3 4 3 2 1
+            1 2 3 4 5 4 3 2 1
+          1 2 3 4 5 6 5 4 3 2 1
+        1 2 3 4 5 6 7 6 5 4 3 2 1
+      1 2 3 4 5 6 7 8 7 6 5 4 3 2 1
+    1 2 3 4 5 6 7 8 9 8 7 6 5 4 3 2 1
+    ```
 
-    Mogelijke ideeën:
-    - score-analyse van een game;
-    - simulatie van dobbelsteenworpen;
-    - verwerking van een lijst met temperaturen;
-    - controle van toestanden in een reeks gebeurtenissen.
+    Tip: schrijf eerst de code die dit print:
 
-    Lever in:
-    1. je probleemomschrijving;
-    2. je code;
-    3. minstens drie testgevallen met verwachte en echte uitvoer.
+    ```text
+    1
+    1 2
+    1 2 3
+    1 2 3 4
+    1 2 3 4 5
+    1 2 3 4 5 6
+    1 2 3 4 5 6 7
+    1 2 3 4 5 6 7 8
+    1 2 3 4 5 6 7 8 9
+    ```
+
+    Schrijf dan de code die dit print :
+
+    ```text
+    1
+    1 2 1
+    1 2 3 2 1
+    1 2 3 4 3 2 1
+    1 2 3 4 5 4 3 2 1
+    1 2 3 4 5 6 5 4 3 2 1
+    1 2 3 4 5 6 7 6 5 4 3 2 1
+    1 2 3 4 5 6 7 8 7 6 5 4 3 2 1
+    1 2 3 4 5 6 7 8 9 8 7 6 5 4 3 2 1
+    ```
+
+    Probeer tenslotte de spaties toe te voegen om het uiteindelijk resultaat te krijgen.
+
+13. Schrijf de code die dit print:
+
+    ```text
+                    1
+                  1 2 1
+                1 2 3 2 1
+              1 2 3 4 3 2 1
+            1 2 3 4 5 4 3 2 1
+          1 2 3 4 5 6 5 4 3 2 1
+        1 2 3 4 5 6 7 6 5 4 3 2 1
+      1 2 3 4 5 6 7 8 7 6 5 4 3 2 1
+    1 2 3 4 5 6 7 8 9 8 7 6 5 4 3 2 1
+      1 2 3 4 5 6 7 8
+        1 2 3 4 5 6 7
+          1 2 3 4 5 6
+            1 2 3 4 5
+              1 2 3 4
+                1 2 3
+                  1 2
+                    1
+    ```
+
+14. Schrijf de code die dit print:
+    ```text
+                    1
+                  1 2 1
+                1 2 3 2 1
+              1 2 3 4 3 2 1
+            1 2 3 4 5 4 3 2 1
+          1 2 3 4 5 6 5 4 3 2 1
+        1 2 3 4 5 6 7 6 5 4 3 2 1
+      1 2 3 4 5 6 7 8 7 6 5 4 3 2 1
+    1 2 3 4 5 6 7 8 9 8 7 6 5 4 3 2 1
+      1 2 3 4 5 6 7 8 7 6 5 4 3 2 1
+        1 2 3 4 5 6 7 6 5 4 3 2 1
+          1 2 3 4 5 6 5 4 3 2 1
+            1 2 3 4 5 4 3 2 1
+              1 2 3 4 3 2 1
+                1 2 3 2 1
+                  1 2 1
+                    1
+    ```
 
 ---
 
