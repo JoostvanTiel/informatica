@@ -907,7 +907,7 @@ Een lus die niet stopt.</p>
 </ol>
 <hr class="docutils" />
 <ol class="arabic" start="4">
-<li><p>Som en gemiddelde (aansluiting op hoofdstuk 2 en 3)</p>
+<li><p>Som en gemiddelde</p>
 <p>Gegeven:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cijfers</span> <span class="o">=</span> <span class="p">[</span><span class="mf">6.5</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">]</span>
 </pre></div>
@@ -932,6 +932,80 @@ Een lus die niet stopt.</p>
 </ol>
 <hr class="docutils" />
 <ol class="arabic" start="6">
+<li><p>Uitlegvragen:
+Voorspel in de volgende vragen steeds wat de code op zal leveren. Voer pas de code uit als je een duidelijk antwoord voor jezelf hebt en controlleer of je het juist had. Hier leer je heel veel van en zul je tijdens coderen vaak aan het doen zijn.
+a. Wat print dit programma?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>b. Wat print dit programma?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">64</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>c. Leg uit waarom de “and &gt;= 0” niet nodig is.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>d. Wat print dit programma?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="k">while</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="s2">"1"</span><span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Blast off!"</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>e. Fix de onderstaande code, zodat het niet oneindig herhaalt. Zorg ervoor dat de code de gebruik blijft vragen, totdat hij of zij een getal groter dan nul invult.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter a number greater than zero: "</span><span class="p">))</span>
+
+    <span class="k">while</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Too small. Enter a number greater than zero: "</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>f. Fix de onderstaande code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Blast-off"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>g. Wat is er mis met de onderstaande code? Het geeft geen errors, maar heeft onnodige code. Leg uit wat er onnodig is.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>h. In de onderstaande code zie je twee delen. Leg uit waarom de geprintte waardes van x in beide delen verschillen.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Deel 1</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+<span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+<span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Deel 2</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
 <li><p>Willekeurige worpen</p>
 <p>Gebruik:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
@@ -1002,6 +1076,10 @@ Een lus die niet stopt.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>1 2 3 4 5 6 7 8 9
 </pre></div>
 </div>
+<p>Dan:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>2 4 6 8 10 12 14 16 18
+</pre></div>
+</div>
 <p>en eindig met:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>9 18 27 36 45 54 63 72 81
 </pre></div>
@@ -1013,28 +1091,85 @@ Een lus die niet stopt.</p>
 </ol>
 <hr class="docutils" />
 <ol class="arabic" start="12">
-<li><p>Ontwerp-opdracht</p>
-<p>Bedenk een eigen programma met minimaal:</p>
-<ul class="simple">
-<li><p>één lijst;</p></li>
-<li><p>één <code class="docutils literal notranslate"><span class="pre">for</span></code>-lus;</p></li>
-<li><p>één beslissing met <code class="docutils literal notranslate"><span class="pre">if</span></code>;</p></li>
-<li><p>één berekening met een operator uit hoofdstuk 3;</p></li>
-<li><p>duidelijke uitvoer met <code class="docutils literal notranslate"><span class="pre">print</span></code>.</p></li>
-</ul>
-<p>Mogelijke ideeën:</p>
-<ul class="simple">
-<li><p>score-analyse van een game;</p></li>
-<li><p>simulatie van dobbelsteenworpen;</p></li>
-<li><p>verwerking van een lijst met temperaturen;</p></li>
-<li><p>controle van toestanden in een reeks gebeurtenissen.</p></li>
-</ul>
-<p>Lever in:</p>
-<ol class="arabic simple">
-<li><p>je probleemomschrijving;</p></li>
-<li><p>je code;</p></li>
-<li><p>minstens drie testgevallen met verwachte en echte uitvoer.</p></li>
-</ol>
+<li><p>Schrijf de code die dit print:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>                1
+              1 2 1
+            1 2 3 2 1
+          1 2 3 4 3 2 1
+        1 2 3 4 5 4 3 2 1
+      1 2 3 4 5 6 5 4 3 2 1
+    1 2 3 4 5 6 7 6 5 4 3 2 1
+  1 2 3 4 5 6 7 8 7 6 5 4 3 2 1
+1 2 3 4 5 6 7 8 9 8 7 6 5 4 3 2 1
+</pre></div>
+</div>
+<p>Tip: schrijf eerst de code die dit print:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+1 2 3 4 5 6
+1 2 3 4 5 6 7
+1 2 3 4 5 6 7 8
+1 2 3 4 5 6 7 8 9
+</pre></div>
+</div>
+<p>Schrijf dan de code die dit print :</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>1
+1 2 1
+1 2 3 2 1
+1 2 3 4 3 2 1
+1 2 3 4 5 4 3 2 1
+1 2 3 4 5 6 5 4 3 2 1
+1 2 3 4 5 6 7 6 5 4 3 2 1
+1 2 3 4 5 6 7 8 7 6 5 4 3 2 1
+1 2 3 4 5 6 7 8 9 8 7 6 5 4 3 2 1
+</pre></div>
+</div>
+<p>Probeer tenslotte de spaties toe te voegen om het uiteindelijk resultaat te krijgen.</p>
+</li>
+<li><p>Schrijf de code die dit print:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>                1
+              1 2 1
+            1 2 3 2 1
+          1 2 3 4 3 2 1
+        1 2 3 4 5 4 3 2 1
+      1 2 3 4 5 6 5 4 3 2 1
+    1 2 3 4 5 6 7 6 5 4 3 2 1
+  1 2 3 4 5 6 7 8 7 6 5 4 3 2 1
+1 2 3 4 5 6 7 8 9 8 7 6 5 4 3 2 1
+  1 2 3 4 5 6 7 8
+    1 2 3 4 5 6 7
+      1 2 3 4 5 6
+        1 2 3 4 5
+          1 2 3 4
+            1 2 3
+              1 2
+                1
+</pre></div>
+</div>
+</li>
+<li><p>Schrijf de code die dit print:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>                1
+              1 2 1
+            1 2 3 2 1
+          1 2 3 4 3 2 1
+        1 2 3 4 5 4 3 2 1
+      1 2 3 4 5 6 5 4 3 2 1
+    1 2 3 4 5 6 7 6 5 4 3 2 1
+  1 2 3 4 5 6 7 8 7 6 5 4 3 2 1
+1 2 3 4 5 6 7 8 9 8 7 6 5 4 3 2 1
+  1 2 3 4 5 6 7 8 7 6 5 4 3 2 1
+    1 2 3 4 5 6 7 6 5 4 3 2 1
+      1 2 3 4 5 6 5 4 3 2 1
+        1 2 3 4 5 4 3 2 1
+          1 2 3 4 3 2 1
+            1 2 3 2 1
+              1 2 1
+                1
+</pre></div>
+</div>
 </li>
 </ol>
 <hr class="docutils" />
