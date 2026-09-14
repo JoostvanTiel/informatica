@@ -222,7 +222,7 @@ In een eenvoudig stroomdiagram gebruiken we onder andere:
 - pijlen om de volgorde aan te geven.
 
 Bijvoorbeeld:
-![Afbeelding niet gevonden][img/1.2_beslissing1.png]
+![Afbeelding niet gevonden](img/1.2_beslissing1.png)
 
 De ruit stelt de beslissing voor.
 
@@ -268,7 +268,7 @@ OPEN  --sluiten--> DICHT
 Dit zegt iets over de toestand van de deur.
 
 Een stroomdiagram kan daarna laten zien wat een programma doet als de deur open of dicht is:
-![Afbeelding niet gevonden][img/1.2_beslissing2.png]
+![Afbeelding niet gevonden](img/1.2_beslissing2.png)
 
 Een goede programmeur kan beide manieren van denken gebruiken.
 
@@ -321,7 +321,7 @@ Begin dan niet meteen met Python. Schrijf eerst het algoritme in gewone taal:
 ```
 
 Daarna kun je een stroomdiagram maken.
-![Afbeelding niet gevonden][img/1.2_beslissing3.png]
+![Afbeelding niet gevonden](img/1.2_beslissing3.png)
 
 Pas daarna schrijf je Python:
 
