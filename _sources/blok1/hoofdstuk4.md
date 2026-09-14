@@ -109,27 +109,7 @@ Uitvoer:
 
 ### Stroomdiagram van een `for`-lus
 
-```text
-START
-    |
-    v
-Zet i op eerste waarde uit range
-    |
-    v
-Is er nog een volgende waarde?
-    | ja
-    v
-Voer lusblok uit
-    |
-    v
-Neem volgende waarde van i
-    |
-    +------ terug naar controle ------+
-    |
-    nee
-    v
-EINDE
-```
+![Afbeelding niet gevonden](img/1.4_for_lus.png)
 
 ---
 
