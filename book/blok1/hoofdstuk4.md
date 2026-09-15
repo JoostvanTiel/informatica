@@ -109,7 +109,7 @@ Uitvoer:
 
 ### Stroomdiagram van een `for`-lus
 
-![Afbeelding niet gevonden](img/1.4_for_lus.png)
+![Afbeelding van een stroomdiagram van een for-lus](img/1.4_for_lus.png)
 
 ---
 
@@ -184,27 +184,7 @@ Als je `teller` niet verhoogt, blijft de voorwaarde waar en krijg je een oneindi
 
 ### Stroomdiagram van een `while`-lus
 
-```text
-START
-    |
-    v
-Initialiseer variabele(n)
-    |
-    v
-Voorwaarde waar?
-    | ja
-    v
-Voer lusblok uit
-    |
-    v
-Pas variabele(n) aan
-    |
-    +------ terug naar controle ------+
-    |
-    nee
-    v
-EINDE
-```
+![Afbeelding van een stroomdiagram van een while-lus](img/1.4_while_lus.png)
 
 ---
 
@@ -330,34 +310,9 @@ Uitvoer:
 * * * * *
 ```
 
-### Stroomdiagram van geneste lussen (globaal)
+### Stroomdiagram van geneste lussen
 
-```text
-START
-    |
-    v
-Start buitenste lus (rij)
-    |
-    v
-Start binnenste lus (kolom)
-    |
-    v
-Print element
-    |
-    v
-Binnenste lus klaar?
-    | nee -> terug naar print element
-    | ja
-    v
-Nieuwe regel
-    |
-    v
-Buitenste lus klaar?
-    | nee -> terug naar binnenste lus
-    | ja
-    v
-EINDE
-```
+![Afbeelding van een geneste for-lus](img/1.4_geneste_for_lus.png)
 
 ---
 
@@ -374,10 +329,6 @@ EINDE
 3. Teller niet aanpassen in `while`
 
    Dan stopt de lus niet.
-
-4. Buiten de lijst gaan
-
-   Bij indexen moet je binnen `0` tot en met `len(lijst) - 1` blijven.
 
 ---
 
@@ -517,6 +468,7 @@ Aan het einde van dit hoofdstuk kun je:
 
 6.  Uitlegvragen:
     Voorspel in de volgende vragen steeds wat de code op zal leveren. Voer pas de code uit als je een duidelijk antwoord voor jezelf hebt en controlleer of je het juist had. Hier leer je heel veel van en zul je tijdens coderen vaak aan het doen zijn.
+
     a. Wat print dit programma?
 
     ```python
