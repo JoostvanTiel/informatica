@@ -454,7 +454,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lussen-met-lijsten">Lussen met lijsten</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lussen-met-random-randrange">Lussen met <code class="docutils literal notranslate"><span class="pre">random.randrange()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geneste-lussen">Geneste lussen</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stroomdiagram-van-geneste-lussen-globaal">Stroomdiagram van geneste lussen (globaal)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stroomdiagram-van-geneste-lussen">Stroomdiagram van geneste lussen</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veelgemaakte-fouten">Veelgemaakte fouten</a></li>
@@ -571,7 +571,7 @@ Welkom
 </section>
 <section id="stroomdiagram-van-een-for-lus">
 <h3>Stroomdiagram van een <code class="docutils literal notranslate"><span class="pre">for</span></code>-lus<a class="headerlink" href="#stroomdiagram-van-een-for-lus" title="Link to this heading">#</a></h3>
-<p><img alt="Afbeelding niet gevonden" src="../_images/1.4_for_lus.png" /></p>
+<p><img alt="Afbeelding van een stroomdiagram van een for-lus" src="../_images/1.4_for_lus.png" /></p>
 </section>
 </section>
 <hr class="docutils" />
@@ -630,27 +630,7 @@ Welkom
 <p>Als je <code class="docutils literal notranslate"><span class="pre">teller</span></code> niet verhoogt, blijft de voorwaarde waar en krijg je een oneindige lus.</p>
 <section id="stroomdiagram-van-een-while-lus">
 <h3>Stroomdiagram van een <code class="docutils literal notranslate"><span class="pre">while</span></code>-lus<a class="headerlink" href="#stroomdiagram-van-een-while-lus" title="Link to this heading">#</a></h3>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>START
-    |
-    v
-Initialiseer variabele(n)
-    |
-    v
-Voorwaarde waar?
-    | ja
-    v
-Voer lusblok uit
-    |
-    v
-Pas variabele(n) aan
-    |
-    +------ terug naar controle ------+
-    |
-    nee
-    v
-EINDE
-</pre></div>
-</div>
+<p><img alt="Afbeelding van een stroomdiagram van een while-lus" src="../_images/1.4_while_lus.png" /></p>
 </section>
 </section>
 <hr class="docutils" />
@@ -749,34 +729,9 @@ EINDE
 * * * * *
 </pre></div>
 </div>
-<section id="stroomdiagram-van-geneste-lussen-globaal">
-<h3>Stroomdiagram van geneste lussen (globaal)<a class="headerlink" href="#stroomdiagram-van-geneste-lussen-globaal" title="Link to this heading">#</a></h3>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>START
-    |
-    v
-Start buitenste lus (rij)
-    |
-    v
-Start binnenste lus (kolom)
-    |
-    v
-Print element
-    |
-    v
-Binnenste lus klaar?
-    | nee -&gt; terug naar print element
-    | ja
-    v
-Nieuwe regel
-    |
-    v
-Buitenste lus klaar?
-    | nee -&gt; terug naar binnenste lus
-    | ja
-    v
-EINDE
-</pre></div>
-</div>
+<section id="stroomdiagram-van-geneste-lussen">
+<h3>Stroomdiagram van geneste lussen<a class="headerlink" href="#stroomdiagram-van-geneste-lussen" title="Link to this heading">#</a></h3>
+<p><img alt="Afbeelding van een geneste for-lus" src="../_images/1.4_geneste_for_lus.png" /></p>
 </section>
 </section>
 <hr class="docutils" />
@@ -791,9 +746,6 @@ EINDE
 </li>
 <li><p>Teller niet aanpassen in <code class="docutils literal notranslate"><span class="pre">while</span></code></p>
 <p>Dan stopt de lus niet.</p>
-</li>
-<li><p>Buiten de lijst gaan</p>
-<p>Bij indexen moet je binnen <code class="docutils literal notranslate"><span class="pre">0</span></code> tot en met <code class="docutils literal notranslate"><span class="pre">len(lijst)</span> <span class="pre">-</span> <span class="pre">1</span></code> blijven.</p>
 </li>
 </ol>
 </section>
@@ -933,8 +885,8 @@ Een lus die niet stopt.</p>
 <hr class="docutils" />
 <ol class="arabic" start="6">
 <li><p>Uitlegvragen:
-Voorspel in de volgende vragen steeds wat de code op zal leveren. Voer pas de code uit als je een duidelijk antwoord voor jezelf hebt en controlleer of je het juist had. Hier leer je heel veel van en zul je tijdens coderen vaak aan het doen zijn.
-a. Wat print dit programma?</p>
+Voorspel in de volgende vragen steeds wat de code op zal leveren. Voer pas de code uit als je een duidelijk antwoord voor jezelf hebt en controlleer of je het juist had. Hier leer je heel veel van en zul je tijdens coderen vaak aan het doen zijn.</p>
+<p>a. Wat print dit programma?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -1267,7 +1219,7 @@ a. Wat print dit programma?</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lussen-met-lijsten">Lussen met lijsten</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lussen-met-random-randrange">Lussen met <code class="docutils literal notranslate"><span class="pre">random.randrange()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geneste-lussen">Geneste lussen</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stroomdiagram-van-geneste-lussen-globaal">Stroomdiagram van geneste lussen (globaal)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stroomdiagram-van-geneste-lussen">Stroomdiagram van geneste lussen</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veelgemaakte-fouten">Veelgemaakte fouten</a></li>
