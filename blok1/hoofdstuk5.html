@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Hoofdstuk 5: Grammatica’s &#8212; Informatica</title>
+    <title>Hoofdstuk 5: Functies &amp; combineren &#8212; Informatica</title>
   
   
   
@@ -64,7 +64,7 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Hoofdstuk 6: Toeval &amp; combineren" href="hoofdstuk6.html" />
+    <link rel="next" title="Blok 2: informatie digitaal &amp; object-georiënteerd programmeren" href="../blok2/index.html" />
     <link rel="prev" title="Hoofdstuk 4: Lussen" href="hoofdstuk4.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -223,9 +223,7 @@
 
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk4.html">Hoofdstuk 4: Lussen</a></li>
 
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Hoofdstuk 5: Grammatica’s</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="hoofdstuk6.html">Hoofdstuk 6: Toeval &amp; combineren</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Hoofdstuk 5: Functies &amp; combineren</a></li>
 
 </ul>
 </details></li>
@@ -426,7 +424,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Hoofdstuk 5: Grammatica’s</h1>
+    <h1>Hoofdstuk 5: Functies & combineren</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -436,21 +434,27 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Hoofdstuk 5: Grammatica’s</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Hoofdstuk 5: Functies &amp; combineren</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-grammatica-s">Waarom grammatica’s?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-een-grammatica">Wat is een grammatica?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#afleiden-stap-voor-stap">Afleiden stap voor stap</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stroomdiagram-van-een-afleiding">Stroomdiagram van een afleiding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-functies">Waarom functies?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-basis-van-een-functie">De basis van een functie</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stroomdiagram-van-een-functie-aanroep">Stroomdiagram van een functie-aanroep</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grammatica-en-het-examenprogramma-informatica">Grammatica en het examenprogramma informatica</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-1-binaire-strings">Voorbeeld 1: binaire strings</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-2-gebruikersnaam">Voorbeeld 2: gebruikersnaam</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#van-grammatica-naar-code-denken">Van grammatica naar code-denken</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stroomdiagram-van-dit-programma">Stroomdiagram van dit programma</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters-en-argumenten">Parameters en argumenten</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#return-waarden">Return-waarden</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stroomdiagram-met-return">Stroomdiagram met return</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functies-combineren-met-if-lijsten-en-lussen">Functies combineren met if, lijsten en lussen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functies-met-random-randrange">Functies met random.randrange</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functies-voor-patronen">Functies voor patronen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programma-opbouw-in-stappen">Programma-opbouw in stappen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stroomdiagram-van-een-gecombineerd-programma">Stroomdiagram van een gecombineerd programma</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#werkwijze-voor-functie-opgaven">Werkwijze voor functie-opgaven</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veelgemaakte-fouten">Veelgemaakte fouten</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#begrippenlijst">Begrippenlijst</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#succescriteria">Succescriteria</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-rubric">Mini-rubric</a></li>
@@ -472,279 +476,302 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="hoofdstuk-5-grammatica-s">
-<h1>Hoofdstuk 5: Grammatica’s<a class="headerlink" href="#hoofdstuk-5-grammatica-s" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="hoofdstuk-5-functies-combineren">
+<h1>Hoofdstuk 5: Functies &amp; combineren<a class="headerlink" href="#hoofdstuk-5-functies-combineren" title="Link to this heading">#</a></h1>
 <section id="leerdoelen">
 <h2>Leerdoelen<a class="headerlink" href="#leerdoelen" title="Link to this heading">#</a></h2>
-<p>In de vorige hoofdstukken heb je gewerkt met toestanden, algoritmen, variabelen, lijsten en lussen.</p>
-<p>In dit hoofdstuk leer je hoe je met grammatica’s nauwkeurig beschrijft welke reeksen symbolen wel en niet geldig zijn.</p>
+<p>In dit hoofdstuk combineer je alles wat je tot nu toe hebt geleerd.</p>
+<p>Je gebruikt:</p>
+<ul class="simple">
+<li><p>variabelen en types;</p></li>
+<li><p>beslissingen met <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>;</p></li>
+<li><p>lijsten en indexen;</p></li>
+<li><p>operatoren;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">range()</span></code> en <code class="docutils literal notranslate"><span class="pre">random.randrange()</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span></code>- en <code class="docutils literal notranslate"><span class="pre">while</span></code>-lussen;</p></li>
+<li><p>grammatica-denken uit hoofdstuk 5.</p></li>
+</ul>
+<p>Nieuw in dit hoofdstuk: <strong>functies</strong>.</p>
 <p>Je leert:</p>
 <ul class="simple">
-<li><p>wat een grammatica is in de informatica;</p></li>
-<li><p>het verschil tussen terminals en niet-terminals;</p></li>
-<li><p>wat productieregels en een startsymbool zijn;</p></li>
-<li><p>hoe je met regels strings kunt afleiden;</p></li>
-<li><p>hoe je een taal formeel beschrijft;</p></li>
-<li><p>hoe grammatica’s aansluiten bij het examenprogramma informatica;</p></li>
-<li><p>hoe je met lussen patronen en strings opbouwt die bij regels horen.</p></li>
+<li><p>waarom functies handig zijn;</p></li>
+<li><p>hoe je een functie definieert met <code class="docutils literal notranslate"><span class="pre">def</span></code>;</p></li>
+<li><p>hoe je parameters gebruikt;</p></li>
+<li><p>hoe je met <code class="docutils literal notranslate"><span class="pre">return</span></code> een waarde teruggeeft;</p></li>
+<li><p>hoe je grotere opdrachten opdeelt in kleine functies.</p></li>
 </ul>
-<p>Aan het einde van dit hoofdstuk kun je eenvoudige grammatica’s lezen, zelf ontwerpen en toepassen in programmeeropdrachten.</p>
+<p>Aan het einde van dit hoofdstuk kun je een groter probleem opdelen in meerdere functies en die functies samen laten werken in een compleet programma.</p>
 </section>
 <hr class="docutils" />
-<section id="waarom-grammatica-s">
-<h2>Waarom grammatica’s?<a class="headerlink" href="#waarom-grammatica-s" title="Link to this heading">#</a></h2>
-<p>Een computer moet precies weten wat geldig is.</p>
-<p>Dat gebeurt niet alleen in programmeertalen, maar ook in dingen die leerlingen dagelijks gebruiken.</p>
-<p>Denk aan:</p>
+<section id="waarom-functies">
+<h2>Waarom functies?<a class="headerlink" href="#waarom-functies" title="Link to this heading">#</a></h2>
+<p>In hoofdstuk 4 en 5 heb je gezien dat code snel lang wordt bij patronen, tabellen en controles.</p>
+<p>Zonder functies krijg je vaak:</p>
 <ul class="simple">
-<li><p>een gebruikersnaam die aan regels moet voldoen;</p></li>
-<li><p>een game-commando zoals <code class="docutils literal notranslate"><span class="pre">move</span> <span class="pre">3</span></code> of <code class="docutils literal notranslate"><span class="pre">jump</span> <span class="pre">2</span></code>;</p></li>
-<li><p>een hashtag zonder spaties;</p></li>
-<li><p>een schoolcode met vast patroon.</p></li>
+<li><p>veel herhaling;</p></li>
+<li><p>moeilijk leesbare code;</p></li>
+<li><p>meer kans op fouten;</p></li>
+<li><p>lastig testen.</p></li>
 </ul>
-<p>Bijvoorbeeld:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>chat!help
-</pre></div>
-</div>
-<p>is een geldig commando, maar:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>chat ! help
-</pre></div>
-</div>
-<p>kan ongeldig zijn als spaties niet zijn toegestaan.</p>
-<p>Ook in Python zelf gelden zulke vormregels. Bijvoorbeeld:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>3 + 4 * 2
-</pre></div>
-</div>
-<p>is een geldige expressie, maar:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>+ 3 *
-</pre></div>
-</div>
-<p>is niet geldig.</p>
-<p>Een grammatica beschrijft zulke regels op een precieze manier.</p>
-<p>Zo weet een computer welke invoer syntactisch klopt.</p>
-</section>
-<hr class="docutils" />
-<section id="wat-is-een-grammatica">
-<h2>Wat is een grammatica?<a class="headerlink" href="#wat-is-een-grammatica" title="Link to this heading">#</a></h2>
-<p>Een <strong>grammatica</strong> is een verzameling regels waarmee je strings kunt opbouwen.</p>
-<p>In de informatica gebruiken we vaak deze onderdelen:</p>
-<ol class="arabic simple">
-<li><p><strong>Terminals</strong>: de symbolen die echt in de uiteindelijke string staan.</p></li>
-<li><p><strong>Niet-terminals</strong>: hulpsymbolen die je tijdens het opbouwen vervangt.</p></li>
-<li><p><strong>Productieregels</strong>: regels die aangeven hoe je vervangt.</p></li>
-<li><p><strong>Startsymbool</strong>: het symbool waarmee je begint.</p></li>
-</ol>
-<p>Voorbeeld:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Terminals: a, b
-Niet-terminals: S
-Start: S
-Regels:
-S -&gt; aS
-S -&gt; b
-</pre></div>
-</div>
-<p>Mogelijke strings uit deze grammatica:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>b
-ab
-aab
-aaab
-...
-</pre></div>
-</div>
-<p>De taal is dus:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>{ a^n b | n &gt;= 0 }
+<p>Met functies kun je een programma opbouwen als losse bouwstenen.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>probleem opdelen -&gt; kleine functies -&gt; combineren -&gt; testen
 </pre></div>
 </div>
 </section>
 <hr class="docutils" />
-<section id="afleiden-stap-voor-stap">
-<h2>Afleiden stap voor stap<a class="headerlink" href="#afleiden-stap-voor-stap" title="Link to this heading">#</a></h2>
-<p>We starten met het startsymbool <code class="docutils literal notranslate"><span class="pre">S</span></code>.</p>
-<p>Voor string <code class="docutils literal notranslate"><span class="pre">aaab</span></code>:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>S
--&gt; aS
--&gt; aaS
--&gt; aaaS
--&gt; aaab
+<section id="de-basis-van-een-functie">
+<h2>De basis van een functie<a class="headerlink" href="#de-basis-van-een-functie" title="Link to this heading">#</a></h2>
+<p>Een functie maak je met <code class="docutils literal notranslate"><span class="pre">def</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">begroet</span><span class="p">(</span><span class="n">naam</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Hallo"</span><span class="p">,</span> <span class="n">naam</span><span class="p">)</span>
+
+<span class="n">begroet</span><span class="p">(</span><span class="s2">"Sam"</span><span class="p">)</span>
+<span class="n">begroet</span><span class="p">(</span><span class="s2">"Noor"</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Dit heet een <strong>afleiding</strong>.</p>
-<section id="stroomdiagram-van-een-afleiding">
-<h3>Stroomdiagram van een afleiding<a class="headerlink" href="#stroomdiagram-van-een-afleiding" title="Link to this heading">#</a></h3>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>START
-  |
-  v
-Schrijf startsymbool op
-  |
-  v
-Kies een regel die past
-  |
-  v
-Vervang een niet-terminaal
-  |
-  v
-Nog niet-terminals over?
-  | ja -&gt; terug naar kies een regel
-  | nee
-  v
-Klaar: string met alleen terminals
-</pre></div>
-</div>
-</section>
-</section>
-<hr class="docutils" />
-<section id="grammatica-en-het-examenprogramma-informatica">
-<h2>Grammatica en het examenprogramma informatica<a class="headerlink" href="#grammatica-en-het-examenprogramma-informatica" title="Link to this heading">#</a></h2>
-<p>Op examenniveau gaat het niet alleen om code schrijven, maar ook om modelleren.</p>
-<p>Grammatica’s horen daarbij, omdat je:</p>
+<p>Hier:</p>
 <ul class="simple">
-<li><p>formeel beschrijft welke invoer geldig is;</p></li>
-<li><p>onderscheid maakt tussen <strong>syntaxis</strong> (vorm) en <strong>semantiek</strong> (betekenis);</p></li>
-<li><p>regels precies en controleerbaar noteert;</p></li>
-<li><p>verband ziet met automaten uit hoofdstuk 1.</p></li>
+<li><p>is <code class="docutils literal notranslate"><span class="pre">begroet</span></code> de functienaam;</p></li>
+<li><p>is <code class="docutils literal notranslate"><span class="pre">naam</span></code> de parameter;</p></li>
+<li><p>is de ingesprongen code het functieblok.</p></li>
 </ul>
-<p>Kort gezegd:</p>
-<p>automaten beschrijven gedrag over tijd,
-grammatica’s beschrijven vorm van symbolen/strings.</p>
-</section>
-<hr class="docutils" />
-<section id="voorbeeld-1-binaire-strings">
-<h2>Voorbeeld 1: binaire strings<a class="headerlink" href="#voorbeeld-1-binaire-strings" title="Link to this heading">#</a></h2>
-<p>We willen alle binaire strings met lengte 1 of meer.</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Terminals: 0, 1
-Niet-terminals: S
-Start: S
-Regels:
-S -&gt; 0S
-S -&gt; 1S
-S -&gt; 0
-S -&gt; 1
-</pre></div>
-</div>
-<p>Mogelijke strings:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>0
-1
-01
-101
-1110
-...
-</pre></div>
-</div>
-</section>
-<hr class="docutils" />
-<section id="voorbeeld-2-gebruikersnaam">
-<h2>Voorbeeld 2: gebruikersnaam<a class="headerlink" href="#voorbeeld-2-gebruikersnaam" title="Link to this heading">#</a></h2>
-<p>Stel: een gebruikersnaam begint met een letter, daarna volgen letters of cijfers.</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Start -&gt; Letter Rest
-Rest -&gt; Letter Rest | Cijfer Rest | leeg
-Letter -&gt; a | b | ... | z
-Cijfer -&gt; 0 | 1 | ... | 9
-</pre></div>
-</div>
-<p>Geldig:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>score1
-x
-level42
-</pre></div>
-</div>
-<p>Niet geldig:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>1score
-@naam
-</pre></div>
-</div>
-</section>
-<hr class="docutils" />
-<section id="van-grammatica-naar-code-denken">
-<h2>Van grammatica naar code-denken<a class="headerlink" href="#van-grammatica-naar-code-denken" title="Link to this heading">#</a></h2>
-<p>Je kunt regels ook simuleren met code.</p>
-<p>Voorbeeld: maak vijf strings van de vorm <code class="docutils literal notranslate"><span class="pre">a^n</span> <span class="pre">b</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-     <span class="n">woord</span> <span class="o">=</span> <span class="s2">"a"</span> <span class="o">*</span> <span class="n">n</span> <span class="o">+</span> <span class="s2">"b"</span>
-     <span class="nb">print</span><span class="p">(</span><span class="n">woord</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Uitvoer:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>b
-ab
-aab
-aaab
-aaaab
-</pre></div>
-</div>
-<p>Hier herhaal je een patroon met een lus, net als in hoofdstuk 4.</p>
-<p>Je kunt ook een regelcontrole programmeren, bijvoorbeeld voor een gebruikersnaam:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">naam</span> <span class="o">=</span> <span class="s2">"level42"</span>
-<span class="n">geldig</span> <span class="o">=</span> <span class="kc">True</span>
-
-<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">naam</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-  <span class="n">geldig</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="k">elif</span> <span class="ow">not</span> <span class="n">naam</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>
-  <span class="n">geldig</span> <span class="o">=</span> <span class="kc">False</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">naam</span><span class="p">)):</span>
-  <span class="n">teken</span> <span class="o">=</span> <span class="n">naam</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-  <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">teken</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()</span> <span class="ow">or</span> <span class="n">teken</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()):</span>
-    <span class="n">geldig</span> <span class="o">=</span> <span class="kc">False</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">geldig</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Zo zie je hoe grammatica-denken direct aansluit op programmeren.</p>
-<section id="stroomdiagram-van-dit-programma">
-<h3>Stroomdiagram van dit programma<a class="headerlink" href="#stroomdiagram-van-dit-programma" title="Link to this heading">#</a></h3>
+<section id="stroomdiagram-van-een-functie-aanroep">
+<h3>Stroomdiagram van een functie-aanroep<a class="headerlink" href="#stroomdiagram-van-een-functie-aanroep" title="Link to this heading">#</a></h3>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>START
-  |
-  v
-Neem n uit range(5)
-  |
-  v
-Maak woord: "a" * n + "b"
-  |
-  v
-Print woord
-  |
-  v
-Nog waarden voor n?
-  | ja -&gt; terug naar maak woord
-  | nee
-  v
+    |
+    v
+Roep functie aan
+    |
+    v
+Geef argument(en) mee
+    |
+    v
+Voer functiestappen uit
+    |
+    v
+Terug naar hoofdprogramma
+    |
+    v
 EINDE
 </pre></div>
 </div>
 </section>
 </section>
 <hr class="docutils" />
+<section id="parameters-en-argumenten">
+<h2>Parameters en argumenten<a class="headerlink" href="#parameters-en-argumenten" title="Link to this heading">#</a></h2>
+<p>Een parameter is de naam in de functie.</p>
+<p>Een argument is de echte waarde die je meegeeft bij aanroepen.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">toon_score</span><span class="p">(</span><span class="n">naam</span><span class="p">,</span> <span class="n">score</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">naam</span><span class="p">,</span> <span class="s2">"heeft"</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span> <span class="s2">"punten"</span><span class="p">)</span>
+
+<span class="n">toon_score</span><span class="p">(</span><span class="s2">"Yara"</span><span class="p">,</span> <span class="mi">120</span><span class="p">)</span>
+<span class="n">toon_score</span><span class="p">(</span><span class="s2">"Milan"</span><span class="p">,</span> <span class="mi">85</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Je kunt dezelfde functie dus met verschillende waarden gebruiken.</p>
+</section>
+<hr class="docutils" />
+<section id="return-waarden">
+<h2>Return-waarden<a class="headerlink" href="#return-waarden" title="Link to this heading">#</a></h2>
+<p>Gebruik <code class="docutils literal notranslate"><span class="pre">return</span></code> als je een waarde wilt teruggeven.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">kwadraat</span><span class="p">(</span><span class="n">getal</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">getal</span> <span class="o">*</span> <span class="n">getal</span>
+
+<span class="n">uitkomst</span> <span class="o">=</span> <span class="n">kwadraat</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">uitkomst</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Functies met <code class="docutils literal notranslate"><span class="pre">return</span></code> zijn handig om te rekenen, vergelijken of door te geven aan andere functies.</p>
+<section id="stroomdiagram-met-return">
+<h3>Stroomdiagram met return<a class="headerlink" href="#stroomdiagram-met-return" title="Link to this heading">#</a></h3>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>START
+    |
+    v
+Functie krijgt invoer
+    |
+    v
+Berekening / controle
+    |
+    v
+Return resultaat
+    |
+    v
+Hoofdprogramma gebruikt resultaat
+    |
+    v
+EINDE
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="functies-combineren-met-if-lijsten-en-lussen">
+<h2>Functies combineren met if, lijsten en lussen<a class="headerlink" href="#functies-combineren-met-if-lijsten-en-lussen" title="Link to this heading">#</a></h2>
+<p>Voorbeeld: gemiddelde van een lijst berekenen.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">gemiddelde_van_lijst</span><span class="p">(</span><span class="n">cijfers</span><span class="p">):</span>
+        <span class="n">totaal</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cijfers</span><span class="p">)):</span>
+                <span class="n">totaal</span> <span class="o">=</span> <span class="n">totaal</span> <span class="o">+</span> <span class="n">cijfers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">totaal</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">cijfers</span><span class="p">)</span>
+
+<span class="n">waarden</span> <span class="o">=</span> <span class="p">[</span><span class="mf">6.5</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">]</span>
+<span class="n">gemiddelde</span> <span class="o">=</span> <span class="n">gemiddelde_van_lijst</span><span class="p">(</span><span class="n">waarden</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">gemiddelde</span> <span class="o">&gt;=</span> <span class="mf">5.5</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"voldoende"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"onvoldoende"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Je herkent hier stof uit hoofdstuk 2, 3 en 4.</p>
+</section>
+<hr class="docutils" />
+<section id="functies-met-random-randrange">
+<h2>Functies met random.randrange<a class="headerlink" href="#functies-met-random-randrange" title="Link to this heading">#</a></h2>
+<p>Je kunt toeval netjes in een functie stoppen.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">worp_dobbelsteen</span><span class="p">():</span>
+        <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">worp_dobbelsteen</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Of uitgebreider:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">tel_zessen</span><span class="p">(</span><span class="n">aantal_worpen</span><span class="p">):</span>
+        <span class="n">teller</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">aantal_worpen</span><span class="p">):</span>
+                <span class="n">worp</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">worp</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
+                        <span class="n">teller</span> <span class="o">=</span> <span class="n">teller</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">teller</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">tel_zessen</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="functies-voor-patronen">
+<h2>Functies voor patronen<a class="headerlink" href="#functies-voor-patronen" title="Link to this heading">#</a></h2>
+<p>Veel patroonopgaven uit lussen worden overzichtelijker met functies.</p>
+<p>Voorbeeld 1: een regel sterretjes.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">print_sterren</span><span class="p">(</span><span class="n">aantal</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">aantal</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">" "</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Voorbeeld 2: een rechthoek met sterretjes.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">print_rechthoek</span><span class="p">(</span><span class="n">rijen</span><span class="p">,</span> <span class="n">kolommen</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rijen</span><span class="p">):</span>
+                <span class="n">print_sterren</span><span class="p">(</span><span class="n">kolommen</span><span class="p">)</span>
+
+<span class="n">print_rechthoek</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Hier roept de ene functie de andere functie aan.</p>
+</section>
+<hr class="docutils" />
+<section id="programma-opbouw-in-stappen">
+<h2>Programma-opbouw in stappen<a class="headerlink" href="#programma-opbouw-in-stappen" title="Link to this heading">#</a></h2>
+<p>Voor grotere opdrachten helpt deze volgorde:</p>
+<ol class="arabic simple">
+<li><p>Beschrijf het probleem in gewone taal.</p></li>
+<li><p>Bepaal input en output.</p></li>
+<li><p>Knip op in functies.</p></li>
+<li><p>Schrijf en test elke functie apart.</p></li>
+<li><p>Bouw het hoofdprogramma dat functies combineert.</p></li>
+<li><p>Test het geheel met meerdere testgevallen.</p></li>
+</ol>
+<section id="stroomdiagram-van-een-gecombineerd-programma">
+<h3>Stroomdiagram van een gecombineerd programma<a class="headerlink" href="#stroomdiagram-van-een-gecombineerd-programma" title="Link to this heading">#</a></h3>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>START
+    |
+    v
+Lees / kies invoer
+    |
+    v
+Roep functie A aan
+    |
+    v
+Roep functie B aan
+    |
+    v
+Gebruik if/elif op resultaten
+    |
+    v
+Print output
+    |
+    v
+EINDE
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="werkwijze-voor-functie-opgaven">
+<h2>Werkwijze voor functie-opgaven<a class="headerlink" href="#werkwijze-voor-functie-opgaven" title="Link to this heading">#</a></h2>
+<p>Gebruik bij grotere functie-opgaven steeds deze volgorde:</p>
+<ol class="arabic simple">
+<li><p>Bouw eerst een kleine hulpfunctie die je kunt testen.</p></li>
+<li><p>Test die functie met 2-3 concrete voorbeelden.</p></li>
+<li><p>Voeg daarna een tweede functie toe die de eerste hergebruikt.</p></li>
+<li><p>Combineer pas daarna alles in het hoofdprogramma.</p></li>
+</ol>
+<p>Dit voorkomt lange foutzoekprocessen en sluit aan bij patroon-, tabel- en simulatieopgaven.</p>
+</section>
+<hr class="docutils" />
+<section id="veelgemaakte-fouten">
+<h2>Veelgemaakte fouten<a class="headerlink" href="#veelgemaakte-fouten" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><code class="docutils literal notranslate"><span class="pre">return</span></code> vergeten</p>
+<p>Dan krijg je geen bruikbare uitkomst terug.</p>
+</li>
+<li><p>Verkeerde inspringing</p>
+<p>Dan hoort code niet bij de functie of lus.</p>
+</li>
+<li><p>Variabele buiten bereik gebruiken</p>
+<p>Een variabele die in een functie staat, bestaat niet automatisch buiten die functie.</p>
+</li>
+<li><p>Functie en print door elkaar halen</p>
+<p>Soms wil je printen, soms wil je een waarde teruggeven.</p>
+</li>
+</ol>
+</section>
+<hr class="docutils" />
 <section id="begrippenlijst">
 <h2>Begrippenlijst<a class="headerlink" href="#begrippenlijst" title="Link to this heading">#</a></h2>
 <p>Aan het einde van deze week moet je de volgende begrippen kunnen uitleggen:</p>
-<p><strong>Grammatica</strong><br />
-Een formele set regels om geldige strings op te bouwen.</p>
-<p><strong>Terminal</strong><br />
-Symbool dat in de uiteindelijke string voorkomt.</p>
-<p><strong>Niet-terminaal</strong><br />
-Hulpsymbool dat tijdens een afleiding wordt vervangen.</p>
-<p><strong>Productieregel</strong><br />
-Regel die aangeeft hoe een niet-terminaal mag worden vervangen.</p>
-<p><strong>Startsymbool</strong><br />
-Het symbool waarmee een afleiding begint.</p>
-<p><strong>Afleiding</strong><br />
-Het stap voor stap toepassen van productieregels.</p>
-<p><strong>Taal</strong><br />
-De verzameling strings die door een grammatica kunnen worden gemaakt.</p>
-<p><strong>Syntaxis</strong><br />
-De vormregels van een taal.</p>
-<p><strong>Semantiek</strong><br />
-De betekenis van uitdrukkingen in een taal.</p>
+<p><strong>Functie</strong><br />
+Een benoemd stuk code dat je kunt aanroepen.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">def</span></code></strong><br />
+Python-sleutelwoord om een functie te definiëren.</p>
+<p><strong>Parameter</strong><br />
+Naam van invoer in de functiedefinitie.</p>
+<p><strong>Argument</strong><br />
+Werkelijke waarde die je meegeeft bij het aanroepen.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">return</span></code></strong><br />
+Geeft een waarde terug uit een functie.</p>
+<p><strong>Lokale variabele</strong><br />
+Variabele die alleen binnen een functie bestaat.</p>
+<p><strong>Hulpfunctie</strong><br />
+Kleine functie die door een andere functie wordt gebruikt.</p>
+<p><strong>Modulair ontwerpen</strong><br />
+Een programma opdelen in losse, samenwerkende onderdelen.</p>
 </section>
 <hr class="docutils" />
 <section id="succescriteria">
 <h2>Succescriteria<a class="headerlink" href="#succescriteria" title="Link to this heading">#</a></h2>
 <p>Aan het einde van dit hoofdstuk kun je:</p>
 <ul class="simple">
-<li><p>terminals, niet-terminals, productieregels en startsymbool aanwijzen;</p></li>
-<li><p>een eenvoudige afleiding maken;</p></li>
-<li><p>beoordelen of een woord wel of niet in een taal zit;</p></li>
-<li><p>een simpele taalregel uit de praktijk vertalen naar Python-controle.</p></li>
+<li><p>een groter probleem opdelen in meerdere functies;</p></li>
+<li><p>functies met parameters en <code class="docutils literal notranslate"><span class="pre">return</span></code> correct gebruiken;</p></li>
+<li><p>functies combineren met lussen, lijsten en beslissingen;</p></li>
+<li><p>tussentests uitvoeren en resultaten gericht verbeteren.</p></li>
 </ul>
 </section>
 <section id="mini-rubric">
@@ -759,24 +786,24 @@ De betekenis van uitdrukkingen in een taal.</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Begrijpen</p></td>
-<td><p>Herkent enkele grammatica-termen</p></td>
-<td><p>Legt alle kernbegrippen correct uit</p></td>
-<td><p>Verbindt grammatica aan examenkaders</p></td>
+<td><p>Herkent onderdelen van een functie</p></td>
+<td><p>Legt parameter/argument/return correct uit</p></td>
+<td><p>Verantwoordt modulair ontwerp</p></td>
 </tr>
 <tr class="row-odd"><td><p>Toepassen</p></td>
-<td><p>Maakt deels correcte afleiding</p></td>
-<td><p>Maakt correcte afleidingen en voorbeelden</p></td>
-<td><p>Ontwerpt bruikbare eigen grammatica</p></td>
+<td><p>Schrijft losse functies</p></td>
+<td><p>Combineert functies tot werkend programma</p></td>
+<td><p>Bouwt herbruikbare hulpfuncties</p></td>
 </tr>
 <tr class="row-even"><td><p>Testen</p></td>
-<td><p>Controleert enkele woorden</p></td>
-<td><p>Test systematisch geldig/ongeldig</p></td>
-<td><p>Onderbouwt testkeuzes met regels</p></td>
+<td><p>Test beperkt</p></td>
+<td><p>Test functies afzonderlijk en samen</p></td>
+<td><p>Documenteert tests en verbetert gericht</p></td>
 </tr>
 <tr class="row-odd"><td><p>Uitleggen</p></td>
-<td><p>Beschrijft uitkomst kort</p></td>
-<td><p>Legt redeneerstappen uit</p></td>
-<td><p>Vergelijkt alternatieve grammatica’s</p></td>
+<td><p>Korte beschrijving</p></td>
+<td><p>Legt opbouw stap voor stap uit</p></td>
+<td><p>Reflecteert op kwaliteit en keuzes</p></td>
 </tr>
 </tbody>
 </table>
@@ -786,134 +813,193 @@ De betekenis van uitdrukkingen in een taal.</p>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="opdrachten">
 <h1>Opdrachten<a class="headerlink" href="#opdrachten" title="Link to this heading">#</a></h1>
-<p><strong>Kernroute (verplicht, circa 60% van de opgavenlast):</strong> opdracht 1, 2, 3, 4 en 6.<br />
-<strong>Plusroute (verdieping):</strong> opdracht 5, 7 en 8.</p>
+<p><strong>Kernroute (verplicht, circa 60% van de opgavenlast):</strong> opdracht 1, 2, 3, 5, 6, 8 en 11.<br />
+<strong>Plusroute (verdieping):</strong> opdracht 4, 7, 9, 10 en 12.</p>
 <ol class="arabic">
-<li><p>Onderdelen herkennen (gebruikersnaam-regel)</p>
-<p>Gegeven:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Start -&gt; Letter Rest
-Rest -&gt; Letter Rest | Cijfer Rest | leeg
-Letter -&gt; a | b | ... | z
-Cijfer -&gt; 0 | 1 | ... | 9
-</pre></div>
-</div>
-<p>a. Wat zijn de terminals?</p>
-<p>b. Wat zijn de niet-terminals?</p>
-<p>c. Wat is het startsymbool?</p>
-<p>d. Noem drie geldige gebruikersnamen.</p>
+<li><p>Eerste functies</p>
+<p>a. Schrijf een functie <code class="docutils literal notranslate"><span class="pre">begroet(naam)</span></code> die <code class="docutils literal notranslate"><span class="pre">Hallo</span> <span class="pre">&lt;naam&gt;</span></code> print.</p>
+<p>b. Roep de functie aan met drie verschillende namen.</p>
+<p>c. Schrijf een functie <code class="docutils literal notranslate"><span class="pre">toon_getal(getal)</span></code> die het getal en zijn kwadraat print.</p>
 </li>
 </ol>
 <hr class="docutils" />
 <ol class="arabic" start="2">
-<li><p>Afleiden stap voor stap</p>
-<p>Gebruik:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>S -&gt; aS
-S -&gt; b
-</pre></div>
-</div>
-<p>a. Geef een afleiding voor <code class="docutils literal notranslate"><span class="pre">ab</span></code>.</p>
-<p>b. Geef een afleiding voor <code class="docutils literal notranslate"><span class="pre">aaab</span></code>.</p>
-<p>c. Kan <code class="docutils literal notranslate"><span class="pre">aba</span></code> met deze grammatica? Leg uit.</p>
+<li><p>Return oefenen</p>
+<p>a. Schrijf een functie <code class="docutils literal notranslate"><span class="pre">som(a,</span> <span class="pre">b)</span></code> die <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code> teruggeeft.</p>
+<p>b. Schrijf een functie <code class="docutils literal notranslate"><span class="pre">verschil(a,</span> <span class="pre">b)</span></code> die <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">-</span> <span class="pre">b</span></code> teruggeeft.</p>
+<p>c. Schrijf een functie <code class="docutils literal notranslate"><span class="pre">is_even(getal)</span></code> die <code class="docutils literal notranslate"><span class="pre">True</span></code> of <code class="docutils literal notranslate"><span class="pre">False</span></code> teruggeeft.</p>
+<p>d. Test elke functie met minstens drie voorbeelden.</p>
 </li>
 </ol>
 <hr class="docutils" />
 <ol class="arabic" start="3">
-<li><p>Geldig of ongeldig (chat-commando)</p>
-<p>Een commando heeft de vorm:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span> actie spatie getal
- actie: jump of move
- getal: 1 t/m 9
+<li><p>Lijst verwerken met functies</p>
+<p>Gegeven:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cijfers</span> <span class="o">=</span> <span class="p">[</span><span class="mf">6.5</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Bepaal voor elk woord of het geldig is:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>jump 3
-move 9
-fly 2
-jump negen
-move10
-jump 0
-</pre></div>
-</div>
+<p>a. Schrijf <code class="docutils literal notranslate"><span class="pre">som_lijst(cijfers)</span></code>.</p>
+<p>b. Schrijf <code class="docutils literal notranslate"><span class="pre">gemiddelde_lijst(cijfers)</span></code> die <code class="docutils literal notranslate"><span class="pre">som_lijst</span></code> gebruikt.</p>
+<p>c. Schrijf <code class="docutils literal notranslate"><span class="pre">beoordeling(gemiddelde)</span></code> die <code class="docutils literal notranslate"><span class="pre">voldoende</span></code> of <code class="docutils literal notranslate"><span class="pre">onvoldoende</span></code> teruggeeft.</p>
+<p>d. Combineer alles in een hoofdprogramma.</p>
 </li>
 </ol>
 <hr class="docutils" />
 <ol class="arabic" start="4">
-<li><p>Van regel naar code</p>
-<p>Schrijf Python-code die controleert of een woord:</p>
-<ul class="simple">
-<li><p>begint met een letter;</p></li>
-<li><p>daarna alleen letters/cijfers bevat.</p></li>
-</ul>
-<p>Test met:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span> score1
- 1score
- level42
- @naam
+<li><p>Toestand en gebeurtenissen opnieuw</p>
+<p>Gegeven:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gebeurtenissen</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"openen"</span><span class="p">,</span> <span class="s2">"sluiten"</span><span class="p">,</span> <span class="s2">"openen"</span><span class="p">,</span> <span class="s2">"openen"</span><span class="p">,</span> <span class="s2">"sluiten"</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Gebruik een lus en een boolean-variabele.</p>
+<p>a. Schrijf een functie <code class="docutils literal notranslate"><span class="pre">volgende_toestand(toestand,</span> <span class="pre">gebeurtenis)</span></code>.</p>
+<p>b. Verwerk de hele lijst met een lus.</p>
+<p>c. Print na elke stap de toestand.</p>
+<p>d. Test met een tweede lijst gebeurtenissen.</p>
 </li>
 </ol>
 <hr class="docutils" />
 <ol class="arabic" start="5">
-<li><p>Herhaling met getallenpatroon (plusroute)</p>
-<p>Print met geneste lussen:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>0 1 2 3 4 5 6 7 8 9
-</pre></div>
-</div>
-<p>op 10 regels onder elkaar.</p>
-<p>Tip: dit patroon gebruik je later opnieuw in combinatie-opgaven.</p>
+<li><p>Dobbelsteenfuncties</p>
+<p>Gebruik <code class="docutils literal notranslate"><span class="pre">random.randrange()</span></code>.</p>
+<p>a. Schrijf <code class="docutils literal notranslate"><span class="pre">worp_dobbelsteen()</span></code>.</p>
+<p>b. Schrijf <code class="docutils literal notranslate"><span class="pre">aantal_zessen(aantal_worpen)</span></code>.</p>
+<p>c. Schrijf <code class="docutils literal notranslate"><span class="pre">aantal_even(aantal_worpen)</span></code>.</p>
+<p>d. Vergelijk de resultaten van 20, 100 en 1000 worpen.</p>
 </li>
 </ol>
 <hr class="docutils" />
 <ol class="arabic" start="6">
-<li><p>Schoolcode ontwerpen</p>
-<p>Een schoolcode heeft de vorm:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>hv-jaar-klasnummer
-</pre></div>
-</div>
-<p>Voorbeeld:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>hv-4-23
-</pre></div>
-</div>
-<p>a. Beschrijf in gewone taal de syntaxis van deze code.</p>
-<p>b. Ontwerp een eenvoudige grammatica voor deze vorm.</p>
-<p>c. Geef drie geldige en drie ongeldige voorbeelden.</p>
+<li><p>Patroonfunctie 1</p>
+<p>a. Schrijf <code class="docutils literal notranslate"><span class="pre">print_sterren(aantal)</span></code>.</p>
+<p>b. Schrijf <code class="docutils literal notranslate"><span class="pre">print_blok(rijen,</span> <span class="pre">kolommen)</span></code> die <code class="docutils literal notranslate"><span class="pre">print_sterren</span></code> gebruikt.</p>
+<p>c. Test met <code class="docutils literal notranslate"><span class="pre">(10,</span> <span class="pre">10)</span></code>, <code class="docutils literal notranslate"><span class="pre">(5,</span> <span class="pre">10)</span></code> en <code class="docutils literal notranslate"><span class="pre">(20,</span> <span class="pre">5)</span></code>.</p>
 </li>
 </ol>
 <hr class="docutils" />
 <ol class="arabic" start="7">
-<li><p>Binaire strings met random (plusroute)</p>
-<p>Gebruik <code class="docutils literal notranslate"><span class="pre">random.randrange()</span></code> om willekeurig <code class="docutils literal notranslate"><span class="pre">0</span></code> of <code class="docutils literal notranslate"><span class="pre">1</span></code> te kiezen.</p>
-<p>a. Genereer 8 willekeurige binaire strings met lengte 6.</p>
-<p>b. Laat zien dat elke string past binnen de taal met alleen symbolen <code class="docutils literal notranslate"><span class="pre">0</span></code> en <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
-<p>c. Tel per string het aantal nullen en enen.</p>
+<li><p>Patroonfunctie 2</p>
+<p>Schrijf een functie <code class="docutils literal notranslate"><span class="pre">print_getalrij(n)</span></code> die print:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>0 1 2 ... n
+</pre></div>
+</div>
+<p>a. Gebruik een lus.</p>
+<p>b. Gebruik daarna deze functie om 10 regels te printen met telkens <code class="docutils literal notranslate"><span class="pre">0</span></code> t/m <code class="docutils literal notranslate"><span class="pre">9</span></code>.</p>
 </li>
 </ol>
 <hr class="docutils" />
 <ol class="arabic" start="8">
-<li><p>Verdieping: patroon uit lussen (plusroute)</p>
-<p>Bouw met geneste lussen deze figuur op:</p>
+<li><p>Driehoekfunctie</p>
+<p>Schrijf een functie <code class="docutils literal notranslate"><span class="pre">print_driehoek(hoogte)</span></code> die dit patroon maakt:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>0
 0 1
 0 1 2
 ...
-0 1 2 3 4 5 6 7 8 9
 </pre></div>
 </div>
-<p>a. Los eerst de eerste drie regels op.</p>
-<p>b. Breid uit naar alle tien regels.</p>
-<p>c. Leg uit welke grens in <code class="docutils literal notranslate"><span class="pre">range()</span></code> je hebt aangepast.</p>
+<p>a. Gebruik geneste lussen.</p>
+<p>b. Roep de functie aan met hoogte 10.</p>
+<p>c. Extra: maak ook een omgekeerde variant.</p>
+</li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic" start="9">
+<li><p>Tafel van vermenigvuldiging</p>
+<p>a. Schrijf een functie <code class="docutils literal notranslate"><span class="pre">print_tafel_van(getal,</span> <span class="pre">max_factor)</span></code>.</p>
+<p>b. Schrijf een functie <code class="docutils literal notranslate"><span class="pre">print_tafels_1_tot_9()</span></code> die alle tafels 1 t/m 9 print.</p>
+<p>c. Zorg dat de uitvoer leesbaar blijft met nette spaties.</p>
+</li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic" start="11">
+<li><p>Mini-project combineren</p>
+<p>Ontwerp een programma dat een lijst met 20 tot 30 willekeurige scores maakt en daarna analyseert.</p>
+<p>Verplicht:</p>
+<ul class="simple">
+<li><p>gebruik <code class="docutils literal notranslate"><span class="pre">random.randrange()</span></code>;</p></li>
+<li><p>zet de scores in een lijst;</p></li>
+<li><p>gebruik minimaal drie zelfgemaakte functies;</p></li>
+<li><p>gebruik <code class="docutils literal notranslate"><span class="pre">if</span></code> voor een beoordeling;</p></li>
+<li><p>toon minimum, maximum en gemiddelde.</p></li>
+</ul>
+<p>Lever in:</p>
+<ol class="arabic simple">
+<li><p>functielijst met korte uitleg;</p></li>
+<li><p>volledige code;</p></li>
+<li><p>testuitvoer van minstens drie runs.</p></li>
+</ol>
+</li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic" start="12">
+<li><p>Eindopdracht blok 1</p>
+<p>Opdracht: “Laboratorium Toegangssysteem”</p>
+<p>Je bouwt een simulatie van een toegangscontrolesysteem voor een beveiligd laboratorium met meerdere gebruikers, een beperkt aantal pogingen en een logboek.</p>
+<p>Toestanden/gebeurtenissen</p>
+<p>Het systeem kent drie toestanden: <code class="docutils literal notranslate"><span class="pre">VERGRENDELD</span></code>, <code class="docutils literal notranslate"><span class="pre">ONTGRENDELD</span></code>, <code class="docutils literal notranslate"><span class="pre">GEBLOKKEERD</span></code>. Elke poging (juiste code, foute code, laatste poging verbruikt) is een gebeurtenis die de toestand kan veranderen.</p>
+<p>Beslissingen</p>
+<blockquote>
+<div><p>Is de ingevoerde code correct? → toestand wordt ONTGRENDELD
+Is het aantal pogingen op? → toestand wordt GEBLOKKEERD
+Is de gebruiker al geblokkeerd bij het opstarten van een nieuwe sessie?</p>
+</div></blockquote>
+<p>Lijsten</p>
+<blockquote>
+<div><p>Een lijst met geregistreerde gebruikers (naam + eigen toegangscode).
+Een logboek (lijst) waarin elke poging wordt vastgelegd als bijv. (gebruikersnaam, tijdstip/volgnummer, resultaat).</p>
+</div></blockquote>
+<p>Lussen</p>
+<blockquote>
+<div><p>Een lus die per gebruiker maximaal 3 pogingen toestaat.
+Een lus in het hoofdprogramma die net zo lang doorgaat tot de gebruiker kiest om te stoppen (menu).</p>
+</div></blockquote>
+<p>Toeval</p>
+<blockquote>
+<div><p>Bij het aanmaken van een nieuwe gebruiker wordt een willekeurige 4-cijferige toegangscode gegenereerd (random).</p>
+</div></blockquote>
+<p>Verplichte functies (minimaal deze vijf, maar meer mag)</p>
+<blockquote>
+<div><p>genereer_toegangscode() → genereert en retourneert een willekeurige 4-cijferige code.
+vraag_code_op(gebruiker, pogingen_over) → simuleert/vraagt invoer op, retourneert de ingevoerde code.
+controleer_code(ingevoerde_code, juiste_code) → retourneert True/False, bevat de beslissingslogica.
+update_logboek(logboek, gebruiker, resultaat) → voegt een regel toe aan de logboek-lijst en retourneert de bijgewerkte lijst.
+functie toon_logboek(logboek) → print het logboek overzichtelijk naar het scherm.</p>
+</div></blockquote>
+<p>Hoofdprogramma</p>
+<blockquote>
+<div><p>Toont een menu: (1) Inloggen, (2) Nieuwe gebruiker aanmaken, (3) Logboek bekijken, (4) Stoppen.
+Roept bij “Inloggen” de juiste functies aan in de juiste volgorde, verwerkt de toestand en logt elke poging.
+Stopt netjes bij keuze 4.</p>
+</div></blockquote>
+<p>Testgevallen (verplicht minimaal deze drie)</p>
+<blockquote>
+<div><p>Gebruiker voert bij de eerste poging meteen de juiste code in → ONTGRENDELD.
+Gebruiker voert 3x een foute code in → GEBLOKKEERD, en dit staat correct in het logboek.
+Nieuwe gebruiker aanmaken → controleer dat de gegenereerde code 4 cijfers lang is en dat de gebruiker aan de lijst is toegevoegd.</p>
+</div></blockquote>
+<p>Reflectie</p>
+<blockquote>
+<div><p>Wat ging goed bij het combineren van deze zes elementen?
+Welk onderdeel (toestanden, lijsten, toeval, …) was het lastigst om correct te laten samenwerken, en waarom?
+Wat zou je aanpassen als je het opnieuw zou doen?</p>
+</div></blockquote>
 </li>
 </ol>
 <hr class="docutils" />
 <section id="afronding">
 <h2>Afronding<a class="headerlink" href="#afronding" title="Link to this heading">#</a></h2>
-<p>In dit hoofdstuk heb je geleerd dat grammatica’s een formele manier zijn om taalregels te beschrijven.</p>
-<p>Je kunt nu terminals, niet-terminals, productieregels en startsymbolen gebruiken om strings af te leiden en te beoordelen.</p>
-<p>Door voorbeelden uit je eigen wereld (gebruikersnamen, commando’s en codes) zie je dat grammatica’s niet alleen theorie zijn, maar direct bruikbaar in software.</p>
-<p>Je hebt dit gecombineerd met programmeervaardigheden uit eerdere hoofdstukken: variabelen, beslissingen, operatoren, lijsten, lussen en <code class="docutils literal notranslate"><span class="pre">random.randrange()</span></code>.</p>
-<p>In het volgende hoofdstuk breng je alles samen in functies, zodat je grotere problemen modulair en overzichtelijk kunt oplossen.</p>
+<p>In dit hoofdstuk heb je geleerd hoe je alle onderdelen van blok 1 kunt combineren in functies.</p>
+<p>Je hebt gewerkt met:</p>
+<ul class="simple">
+<li><p>variabelen en types;</p></li>
+<li><p>beslissingen;</p></li>
+<li><p>lijsten;</p></li>
+<li><p>lussen;</p></li>
+<li><p>toeval met <code class="docutils literal notranslate"><span class="pre">random.randrange()</span></code>;</p></li>
+<li><p>en formeel controleren met regels.</p></li>
+</ul>
+<p>Daardoor kun je nu grotere programma’s ontwerpen die overzichtelijk, testbaar en uitbreidbaar zijn.</p>
+<p>Je bent hiermee klaar voor het vervolg waarin je nog zelfstandiger ontwerpt en programmeert met meerdere samenwerkende functies.</p>
+<p>In het volgende blok neem je deze werkwijze mee naar grotere opgaven waarin decomposition, testen en kwaliteit van code centraal staan.</p>
 </section>
 </section>
 
@@ -957,11 +1043,11 @@ jump 0
       </div>
     </a>
     <a class="right-next"
-       href="hoofdstuk6.html"
+       href="../blok2/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Hoofdstuk 6: Toeval &amp; combineren</p>
+        <p class="prev-next-title">Blok 2: informatie digitaal &amp; object-georiënteerd programmeren</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -983,21 +1069,27 @@ jump 0
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Hoofdstuk 5: Grammatica’s</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Hoofdstuk 5: Functies &amp; combineren</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-grammatica-s">Waarom grammatica’s?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-een-grammatica">Wat is een grammatica?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#afleiden-stap-voor-stap">Afleiden stap voor stap</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stroomdiagram-van-een-afleiding">Stroomdiagram van een afleiding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-functies">Waarom functies?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-basis-van-een-functie">De basis van een functie</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stroomdiagram-van-een-functie-aanroep">Stroomdiagram van een functie-aanroep</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grammatica-en-het-examenprogramma-informatica">Grammatica en het examenprogramma informatica</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-1-binaire-strings">Voorbeeld 1: binaire strings</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-2-gebruikersnaam">Voorbeeld 2: gebruikersnaam</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#van-grammatica-naar-code-denken">Van grammatica naar code-denken</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stroomdiagram-van-dit-programma">Stroomdiagram van dit programma</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters-en-argumenten">Parameters en argumenten</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#return-waarden">Return-waarden</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stroomdiagram-met-return">Stroomdiagram met return</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functies-combineren-met-if-lijsten-en-lussen">Functies combineren met if, lijsten en lussen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functies-met-random-randrange">Functies met random.randrange</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functies-voor-patronen">Functies voor patronen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programma-opbouw-in-stappen">Programma-opbouw in stappen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stroomdiagram-van-een-gecombineerd-programma">Stroomdiagram van een gecombineerd programma</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#werkwijze-voor-functie-opgaven">Werkwijze voor functie-opgaven</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veelgemaakte-fouten">Veelgemaakte fouten</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#begrippenlijst">Begrippenlijst</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#succescriteria">Succescriteria</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-rubric">Mini-rubric</a></li>
