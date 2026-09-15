@@ -467,7 +467,7 @@ Aan het einde van dit hoofdstuk kun je:
 ---
 
 6.  Uitlegvragen:
-    Voorspel in de volgende vragen steeds wat de code op zal leveren. Voer pas de code uit als je een duidelijk antwoord voor jezelf hebt en controlleer of je het juist had. Hier leer je heel veel van en zul je tijdens coderen vaak aan het doen zijn.
+    Voorspel in de volgende vragen steeds wat de code op zal leveren. Voer pas de code uit als je een duidelijk antwoord voor jezelf hebt en controleer of je het juist had. Hier leer je heel veel van en zul je tijdens coderen vaak aan het doen zijn.
 
     a. Wat print dit programma?
 
@@ -536,7 +536,7 @@ Aan het einde van dit hoofdstuk kun je:
         i += 1
     ```
 
-    h. In de onderstaande code zie je twee delen. Leg uit waarom de geprintte waardes van x in beide delen verschillen.
+    h. In de onderstaande code zie je twee delen. Leg uit waarom de geprinte waardes van x in beide delen verschillen.
 
     ```python
     # Deel 1
