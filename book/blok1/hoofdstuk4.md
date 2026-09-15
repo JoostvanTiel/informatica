@@ -507,7 +507,7 @@ Aan het einde van dit hoofdstuk kun je:
     x = x - 1
     ```
 
-    e. Fix de onderstaande code, zodat het niet oneindig herhaalt. Zorg ervoor dat de code de gebruik blijft vragen, totdat hij of zij een getal groter dan nul invult.
+    e. Fix de onderstaande code, zodat het niet oneindig herhaalt. Zorg ervoor dat de code de gebruiker blijft vragen, totdat hij of zij een getal groter dan nul invult.
 
     ```python
     x = float(input("Enter a number greater than zero: "))

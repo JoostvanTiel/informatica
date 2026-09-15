@@ -1,292 +1,298 @@
-# Hoofdstuk 5: Grammatica's
+# Hoofdstuk 5: Functies & combineren
 
 ## Leerdoelen
 
-In de vorige hoofdstukken heb je gewerkt met toestanden, algoritmen, variabelen, lijsten en lussen.
+In dit hoofdstuk combineer je alles wat je tot nu toe hebt geleerd.
 
-In dit hoofdstuk leer je hoe je met grammatica's nauwkeurig beschrijft welke reeksen symbolen wel en niet geldig zijn.
+Je gebruikt:
+
+- variabelen en types;
+- beslissingen met `if`, `elif`, `else`;
+- lijsten en indexen;
+- operatoren;
+- `range()` en `random.randrange()`;
+- `for`- en `while`-lussen;
+- grammatica-denken uit hoofdstuk 5.
+
+Nieuw in dit hoofdstuk: **functies**.
 
 Je leert:
 
-- wat een grammatica is in de informatica;
-- het verschil tussen terminals en niet-terminals;
-- wat productieregels en een startsymbool zijn;
-- hoe je met regels strings kunt afleiden;
-- hoe je een taal formeel beschrijft;
-- hoe grammatica's aansluiten bij het examenprogramma informatica;
-- hoe je met lussen patronen en strings opbouwt die bij regels horen.
+- waarom functies handig zijn;
+- hoe je een functie definieert met `def`;
+- hoe je parameters gebruikt;
+- hoe je met `return` een waarde teruggeeft;
+- hoe je grotere opdrachten opdeelt in kleine functies.
 
-Aan het einde van dit hoofdstuk kun je eenvoudige grammatica's lezen, zelf ontwerpen en toepassen in programmeeropdrachten.
+Aan het einde van dit hoofdstuk kun je een groter probleem opdelen in meerdere functies en die functies samen laten werken in een compleet programma.
 
 ---
 
-## Waarom grammatica's?
+## Waarom functies?
 
-Een computer moet precies weten wat geldig is.
+In hoofdstuk 4 en 5 heb je gezien dat code snel lang wordt bij patronen, tabellen en controles.
 
-Dat gebeurt niet alleen in programmeertalen, maar ook in dingen die leerlingen dagelijks gebruiken.
+Zonder functies krijg je vaak:
 
-Denk aan:
+- veel herhaling;
+- moeilijk leesbare code;
+- meer kans op fouten;
+- lastig testen.
 
-- een gebruikersnaam die aan regels moet voldoen;
-- een game-commando zoals `move 3` of `jump 2`;
-- een hashtag zonder spaties;
-- een schoolcode met vast patroon.
-
-Bijvoorbeeld:
+Met functies kun je een programma opbouwen als losse bouwstenen.
 
 ```text
-chat!help
-```
-
-is een geldig commando, maar:
-
-```text
-chat ! help
-```
-
-kan ongeldig zijn als spaties niet zijn toegestaan.
-
-Ook in Python zelf gelden zulke vormregels. Bijvoorbeeld:
-
-```text
-3 + 4 * 2
-```
-
-is een geldige expressie, maar:
-
-```text
-+ 3 *
-```
-
-is niet geldig.
-
-Een grammatica beschrijft zulke regels op een precieze manier.
-
-Zo weet een computer welke invoer syntactisch klopt.
-
----
-
-## Wat is een grammatica?
-
-Een **grammatica** is een verzameling regels waarmee je strings kunt opbouwen.
-
-In de informatica gebruiken we vaak deze onderdelen:
-
-1. **Terminals**: de symbolen die echt in de uiteindelijke string staan.
-2. **Niet-terminals**: hulpsymbolen die je tijdens het opbouwen vervangt.
-3. **Productieregels**: regels die aangeven hoe je vervangt.
-4. **Startsymbool**: het symbool waarmee je begint.
-
-Voorbeeld:
-
-```text
-Terminals: a, b
-Niet-terminals: S
-Start: S
-Regels:
-S -> aS
-S -> b
-```
-
-Mogelijke strings uit deze grammatica:
-
-```text
-b
-ab
-aab
-aaab
-...
-```
-
-De taal is dus:
-
-```text
-{ a^n b | n >= 0 }
+probleem opdelen -> kleine functies -> combineren -> testen
 ```
 
 ---
 
-## Afleiden stap voor stap
+## De basis van een functie
 
-We starten met het startsymbool `S`.
+Een functie maak je met `def`.
 
-Voor string `aaab`:
+```python
+def begroet(naam):
+        print("Hallo", naam)
 
-```text
-S
--> aS
--> aaS
--> aaaS
--> aaab
+begroet("Sam")
+begroet("Noor")
 ```
 
-Dit heet een **afleiding**.
+Hier:
 
-### Stroomdiagram van een afleiding
+- is `begroet` de functienaam;
+- is `naam` de parameter;
+- is de ingesprongen code het functieblok.
+
+### Stroomdiagram van een functie-aanroep
 
 ```text
 START
-  |
-  v
-Schrijf startsymbool op
-  |
-  v
-Kies een regel die past
-  |
-  v
-Vervang een niet-terminaal
-  |
-  v
-Nog niet-terminals over?
-  | ja -> terug naar kies een regel
-  | nee
-  v
-Klaar: string met alleen terminals
-```
-
----
-
-## Grammatica en het examenprogramma informatica
-
-Op examenniveau gaat het niet alleen om code schrijven, maar ook om modelleren.
-
-Grammatica's horen daarbij, omdat je:
-
-- formeel beschrijft welke invoer geldig is;
-- onderscheid maakt tussen **syntaxis** (vorm) en **semantiek** (betekenis);
-- regels precies en controleerbaar noteert;
-- verband ziet met automaten uit hoofdstuk 1.
-
-Kort gezegd:
-
-automaten beschrijven gedrag over tijd,
-grammatica's beschrijven vorm van symbolen/strings.
-
----
-
-## Voorbeeld 1: binaire strings
-
-We willen alle binaire strings met lengte 1 of meer.
-
-```text
-Terminals: 0, 1
-Niet-terminals: S
-Start: S
-Regels:
-S -> 0S
-S -> 1S
-S -> 0
-S -> 1
-```
-
-Mogelijke strings:
-
-```text
-0
-1
-01
-101
-1110
-...
-```
-
----
-
-## Voorbeeld 2: gebruikersnaam
-
-Stel: een gebruikersnaam begint met een letter, daarna volgen letters of cijfers.
-
-```text
-Start -> Letter Rest
-Rest -> Letter Rest | Cijfer Rest | leeg
-Letter -> a | b | ... | z
-Cijfer -> 0 | 1 | ... | 9
-```
-
-Geldig:
-
-```text
-score1
-x
-level42
-```
-
-Niet geldig:
-
-```text
-1score
-@naam
-```
-
----
-
-## Van grammatica naar code-denken
-
-Je kunt regels ook simuleren met code.
-
-Voorbeeld: maak vijf strings van de vorm `a^n b`.
-
-```python
-for n in range(5):
-     woord = "a" * n + "b"
-     print(woord)
-```
-
-Uitvoer:
-
-```text
-b
-ab
-aab
-aaab
-aaaab
-```
-
-Hier herhaal je een patroon met een lus, net als in hoofdstuk 4.
-
-Je kunt ook een regelcontrole programmeren, bijvoorbeeld voor een gebruikersnaam:
-
-```python
-naam = "level42"
-geldig = True
-
-if len(naam) == 0:
-  geldig = False
-elif not naam[0].isalpha():
-  geldig = False
-
-for i in range(len(naam)):
-  teken = naam[i]
-  if not (teken.isalpha() or teken.isdigit()):
-    geldig = False
-
-print(geldig)
-```
-
-Zo zie je hoe grammatica-denken direct aansluit op programmeren.
-
-### Stroomdiagram van dit programma
-
-```text
-START
-  |
-  v
-Neem n uit range(5)
-  |
-  v
-Maak woord: "a" * n + "b"
-  |
-  v
-Print woord
-  |
-  v
-Nog waarden voor n?
-  | ja -> terug naar maak woord
-  | nee
-  v
+    |
+    v
+Roep functie aan
+    |
+    v
+Geef argument(en) mee
+    |
+    v
+Voer functiestappen uit
+    |
+    v
+Terug naar hoofdprogramma
+    |
+    v
 EINDE
 ```
+
+---
+
+## Parameters en argumenten
+
+Een parameter is de naam in de functie.
+
+Een argument is de echte waarde die je meegeeft bij aanroepen.
+
+```python
+def toon_score(naam, score):
+        print(naam, "heeft", score, "punten")
+
+toon_score("Yara", 120)
+toon_score("Milan", 85)
+```
+
+Je kunt dezelfde functie dus met verschillende waarden gebruiken.
+
+---
+
+## Return-waarden
+
+Gebruik `return` als je een waarde wilt teruggeven.
+
+```python
+def kwadraat(getal):
+        return getal * getal
+
+uitkomst = kwadraat(6)
+print(uitkomst)
+```
+
+Functies met `return` zijn handig om te rekenen, vergelijken of door te geven aan andere functies.
+
+### Stroomdiagram met return
+
+```text
+START
+    |
+    v
+Functie krijgt invoer
+    |
+    v
+Berekening / controle
+    |
+    v
+Return resultaat
+    |
+    v
+Hoofdprogramma gebruikt resultaat
+    |
+    v
+EINDE
+```
+
+---
+
+## Functies combineren met if, lijsten en lussen
+
+Voorbeeld: gemiddelde van een lijst berekenen.
+
+```python
+def gemiddelde_van_lijst(cijfers):
+        totaal = 0
+        for i in range(len(cijfers)):
+                totaal = totaal + cijfers[i]
+        return totaal / len(cijfers)
+
+waarden = [6.5, 7.0, 5.5, 8.0]
+gemiddelde = gemiddelde_van_lijst(waarden)
+
+if gemiddelde >= 5.5:
+        print("voldoende")
+else:
+        print("onvoldoende")
+```
+
+Je herkent hier stof uit hoofdstuk 2, 3 en 4.
+
+---
+
+## Functies met random.randrange
+
+Je kunt toeval netjes in een functie stoppen.
+
+```python
+import random
+
+def worp_dobbelsteen():
+        return random.randrange(1, 7)
+
+for i in range(5):
+        print(worp_dobbelsteen())
+```
+
+Of uitgebreider:
+
+```python
+import random
+
+def tel_zessen(aantal_worpen):
+        teller = 0
+        for i in range(aantal_worpen):
+                worp = random.randrange(1, 7)
+                if worp == 6:
+                        teller = teller + 1
+        return teller
+
+print(tel_zessen(20))
+```
+
+---
+
+## Functies voor patronen
+
+Veel patroonopgaven uit lussen worden overzichtelijker met functies.
+
+Voorbeeld 1: een regel sterretjes.
+
+```python
+def print_sterren(aantal):
+        for i in range(aantal):
+                print("*", end=" ")
+        print()
+```
+
+Voorbeeld 2: een rechthoek met sterretjes.
+
+```python
+def print_rechthoek(rijen, kolommen):
+        for r in range(rijen):
+                print_sterren(kolommen)
+
+print_rechthoek(3, 5)
+```
+
+Hier roept de ene functie de andere functie aan.
+
+---
+
+## Programma-opbouw in stappen
+
+Voor grotere opdrachten helpt deze volgorde:
+
+1. Beschrijf het probleem in gewone taal.
+2. Bepaal input en output.
+3. Knip op in functies.
+4. Schrijf en test elke functie apart.
+5. Bouw het hoofdprogramma dat functies combineert.
+6. Test het geheel met meerdere testgevallen.
+
+### Stroomdiagram van een gecombineerd programma
+
+```text
+START
+    |
+    v
+Lees / kies invoer
+    |
+    v
+Roep functie A aan
+    |
+    v
+Roep functie B aan
+    |
+    v
+Gebruik if/elif op resultaten
+    |
+    v
+Print output
+    |
+    v
+EINDE
+```
+
+---
+
+## Werkwijze voor functie-opgaven
+
+Gebruik bij grotere functie-opgaven steeds deze volgorde:
+
+1. Bouw eerst een kleine hulpfunctie die je kunt testen.
+2. Test die functie met 2-3 concrete voorbeelden.
+3. Voeg daarna een tweede functie toe die de eerste hergebruikt.
+4. Combineer pas daarna alles in het hoofdprogramma.
+
+Dit voorkomt lange foutzoekprocessen en sluit aan bij patroon-, tabel- en simulatieopgaven.
+
+---
+
+## Veelgemaakte fouten
+
+1. `return` vergeten
+
+   Dan krijg je geen bruikbare uitkomst terug.
+
+2. Verkeerde inspringing
+
+   Dan hoort code niet bij de functie of lus.
+
+3. Variabele buiten bereik gebruiken
+
+   Een variabele die in een functie staat, bestaat niet automatisch buiten die functie.
+
+4. Functie en print door elkaar halen
+
+   Soms wil je printen, soms wil je een waarde teruggeven.
 
 ---
 
@@ -294,32 +300,29 @@ EINDE
 
 Aan het einde van deze week moet je de volgende begrippen kunnen uitleggen:
 
-**Grammatica**  
-Een formele set regels om geldige strings op te bouwen.
+**Functie**  
+Een benoemd stuk code dat je kunt aanroepen.
 
-**Terminal**  
-Symbool dat in de uiteindelijke string voorkomt.
+**`def`**  
+Python-sleutelwoord om een functie te definiëren.
 
-**Niet-terminaal**  
-Hulpsymbool dat tijdens een afleiding wordt vervangen.
+**Parameter**  
+Naam van invoer in de functiedefinitie.
 
-**Productieregel**  
-Regel die aangeeft hoe een niet-terminaal mag worden vervangen.
+**Argument**  
+Werkelijke waarde die je meegeeft bij het aanroepen.
 
-**Startsymbool**  
-Het symbool waarmee een afleiding begint.
+**`return`**  
+Geeft een waarde terug uit een functie.
 
-**Afleiding**  
-Het stap voor stap toepassen van productieregels.
+**Lokale variabele**  
+Variabele die alleen binnen een functie bestaat.
 
-**Taal**  
-De verzameling strings die door een grammatica kunnen worden gemaakt.
+**Hulpfunctie**  
+Kleine functie die door een andere functie wordt gebruikt.
 
-**Syntaxis**  
-De vormregels van een taal.
-
-**Semantiek**  
-De betekenis van uitdrukkingen in een taal.
+**Modulair ontwerpen**  
+Een programma opdelen in losse, samenwerkende onderdelen.
 
 ---
 
@@ -327,183 +330,243 @@ De betekenis van uitdrukkingen in een taal.
 
 Aan het einde van dit hoofdstuk kun je:
 
-- terminals, niet-terminals, productieregels en startsymbool aanwijzen;
-- een eenvoudige afleiding maken;
-- beoordelen of een woord wel of niet in een taal zit;
-- een simpele taalregel uit de praktijk vertalen naar Python-controle.
+- een groter probleem opdelen in meerdere functies;
+- functies met parameters en `return` correct gebruiken;
+- functies combineren met lussen, lijsten en beslissingen;
+- tussentests uitvoeren en resultaten gericht verbeteren.
 
 ## Mini-rubric
 
-| Onderdeel | Startend                         | Voldoende                                 | Sterk                                |
-| --------- | -------------------------------- | ----------------------------------------- | ------------------------------------ |
-| Begrijpen | Herkent enkele grammatica-termen | Legt alle kernbegrippen correct uit       | Verbindt grammatica aan examenkaders |
-| Toepassen | Maakt deels correcte afleiding   | Maakt correcte afleidingen en voorbeelden | Ontwerpt bruikbare eigen grammatica  |
-| Testen    | Controleert enkele woorden       | Test systematisch geldig/ongeldig         | Onderbouwt testkeuzes met regels     |
-| Uitleggen | Beschrijft uitkomst kort         | Legt redeneerstappen uit                  | Vergelijkt alternatieve grammatica's |
+| Onderdeel | Startend                           | Voldoende                                  | Sterk                                   |
+| --------- | ---------------------------------- | ------------------------------------------ | --------------------------------------- |
+| Begrijpen | Herkent onderdelen van een functie | Legt parameter/argument/return correct uit | Verantwoordt modulair ontwerp           |
+| Toepassen | Schrijft losse functies            | Combineert functies tot werkend programma  | Bouwt herbruikbare hulpfuncties         |
+| Testen    | Test beperkt                       | Test functies afzonderlijk en samen        | Documenteert tests en verbetert gericht |
+| Uitleggen | Korte beschrijving                 | Legt opbouw stap voor stap uit             | Reflecteert op kwaliteit en keuzes      |
 
 ---
 
 # Opdrachten
 
-**Kernroute (verplicht, circa 60% van de opgavenlast):** opdracht 1, 2, 3, 4 en 6.  
-**Plusroute (verdieping):** opdracht 5, 7 en 8.
+**Kernroute (verplicht, circa 60% van de opgavenlast):** opdracht 1, 2, 3, 5, 6, 8 en 11.  
+**Plusroute (verdieping):** opdracht 4, 7, 9, 10 en 12.
 
-1. Onderdelen herkennen (gebruikersnaam-regel)
+1. Eerste functies
+
+   a. Schrijf een functie `begroet(naam)` die `Hallo <naam>` print.
+
+   b. Roep de functie aan met drie verschillende namen.
+
+   c. Schrijf een functie `toon_getal(getal)` die het getal en zijn kwadraat print.
+
+---
+
+2. Return oefenen
+
+   a. Schrijf een functie `som(a, b)` die `a + b` teruggeeft.
+
+   b. Schrijf een functie `verschil(a, b)` die `a - b` teruggeeft.
+
+   c. Schrijf een functie `is_even(getal)` die `True` of `False` teruggeeft.
+
+   d. Test elke functie met minstens drie voorbeelden.
+
+---
+
+3. Lijst verwerken met functies
 
    Gegeven:
 
-   ```text
-   Start -> Letter Rest
-   Rest -> Letter Rest | Cijfer Rest | leeg
-   Letter -> a | b | ... | z
-   Cijfer -> 0 | 1 | ... | 9
+   ```python
+   cijfers = [6.5, 7.0, 5.5, 8.0, 4.5]
    ```
 
-   a. Wat zijn de terminals?
+   a. Schrijf `som_lijst(cijfers)`.
 
-   b. Wat zijn de niet-terminals?
+   b. Schrijf `gemiddelde_lijst(cijfers)` die `som_lijst` gebruikt.
 
-   c. Wat is het startsymbool?
+   c. Schrijf `beoordeling(gemiddelde)` die `voldoende` of `onvoldoende` teruggeeft.
 
-   d. Noem drie geldige gebruikersnamen.
+   d. Combineer alles in een hoofdprogramma.
 
 ---
 
-2. Afleiden stap voor stap
+4. Toestand en gebeurtenissen opnieuw
 
-   Gebruik:
+   Gegeven:
 
-   ```text
-   S -> aS
-   S -> b
+   ```python
+   gebeurtenissen = ["openen", "sluiten", "openen", "openen", "sluiten"]
    ```
 
-   a. Geef een afleiding voor `ab`.
+   a. Schrijf een functie `volgende_toestand(toestand, gebeurtenis)`.
 
-   b. Geef een afleiding voor `aaab`.
+   b. Verwerk de hele lijst met een lus.
 
-   c. Kan `aba` met deze grammatica? Leg uit.
+   c. Print na elke stap de toestand.
+
+   d. Test met een tweede lijst gebeurtenissen.
 
 ---
 
-3. Geldig of ongeldig (chat-commando)
+5. Dobbelsteenfuncties
 
-   Een commando heeft de vorm:
+   Gebruik `random.randrange()`.
 
-   ```text
-    actie spatie getal
-    actie: jump of move
-    getal: 1 t/m 9
-   ```
+   a. Schrijf `worp_dobbelsteen()`.
 
-   Bepaal voor elk woord of het geldig is:
+   b. Schrijf `aantal_zessen(aantal_worpen)`.
 
-   ```text
-   jump 3
-   move 9
-   fly 2
-   jump negen
-   move10
-   jump 0
-   ```
+   c. Schrijf `aantal_even(aantal_worpen)`.
+
+   d. Vergelijk de resultaten van 20, 100 en 1000 worpen.
 
 ---
 
-4. Van regel naar code
+6. Patroonfunctie 1
 
-   Schrijf Python-code die controleert of een woord:
-   - begint met een letter;
-   - daarna alleen letters/cijfers bevat.
+   a. Schrijf `print_sterren(aantal)`.
 
-   Test met:
+   b. Schrijf `print_blok(rijen, kolommen)` die `print_sterren` gebruikt.
 
-   ```text
-    score1
-    1score
-    level42
-    @naam
-   ```
-
-   Gebruik een lus en een boolean-variabele.
+   c. Test met `(10, 10)`, `(5, 10)` en `(20, 5)`.
 
 ---
 
-5. Herhaling met getallenpatroon (plusroute)
+7. Patroonfunctie 2
 
-   Print met geneste lussen:
+   Schrijf een functie `print_getalrij(n)` die print:
 
    ```text
-   0 1 2 3 4 5 6 7 8 9
+   0 1 2 ... n
    ```
 
-   op 10 regels onder elkaar.
+   a. Gebruik een lus.
 
-   Tip: dit patroon gebruik je later opnieuw in combinatie-opgaven.
+   b. Gebruik daarna deze functie om 10 regels te printen met telkens `0` t/m `9`.
 
 ---
 
-6. Schoolcode ontwerpen
+8. Driehoekfunctie
 
-   Een schoolcode heeft de vorm:
-
-   ```text
-   hv-jaar-klasnummer
-   ```
-
-   Voorbeeld:
-
-   ```text
-   hv-4-23
-   ```
-
-   a. Beschrijf in gewone taal de syntaxis van deze code.
-
-   b. Ontwerp een eenvoudige grammatica voor deze vorm.
-
-   c. Geef drie geldige en drie ongeldige voorbeelden.
-
----
-
-7. Binaire strings met random (plusroute)
-
-   Gebruik `random.randrange()` om willekeurig `0` of `1` te kiezen.
-
-   a. Genereer 8 willekeurige binaire strings met lengte 6.
-
-   b. Laat zien dat elke string past binnen de taal met alleen symbolen `0` en `1`.
-
-   c. Tel per string het aantal nullen en enen.
-
----
-
-8. Verdieping: patroon uit lussen (plusroute)
-
-   Bouw met geneste lussen deze figuur op:
+   Schrijf een functie `print_driehoek(hoogte)` die dit patroon maakt:
 
    ```text
    0
    0 1
    0 1 2
    ...
-   0 1 2 3 4 5 6 7 8 9
    ```
 
-   a. Los eerst de eerste drie regels op.
+   a. Gebruik geneste lussen.
 
-   b. Breid uit naar alle tien regels.
+   b. Roep de functie aan met hoogte 10.
 
-   c. Leg uit welke grens in `range()` je hebt aangepast.
+   c. Extra: maak ook een omgekeerde variant.
+
+---
+
+9. Tafel van vermenigvuldiging
+
+   a. Schrijf een functie `print_tafel_van(getal, max_factor)`.
+
+   b. Schrijf een functie `print_tafels_1_tot_9()` die alle tafels 1 t/m 9 print.
+
+   c. Zorg dat de uitvoer leesbaar blijft met nette spaties.
+
+---
+
+11. Mini-project combineren
+
+    Ontwerp een programma dat een lijst met 20 tot 30 willekeurige scores maakt en daarna analyseert.
+
+    Verplicht:
+    - gebruik `random.randrange()`;
+    - zet de scores in een lijst;
+    - gebruik minimaal drie zelfgemaakte functies;
+    - gebruik `if` voor een beoordeling;
+    - toon minimum, maximum en gemiddelde.
+
+    Lever in:
+    1. functielijst met korte uitleg;
+    2. volledige code;
+    3. testuitvoer van minstens drie runs.
+
+---
+
+12. Eindopdracht blok 1
+
+    Opdracht: "Laboratorium Toegangssysteem"
+
+    Je bouwt een simulatie van een toegangscontrolesysteem voor een beveiligd laboratorium met meerdere gebruikers, een beperkt aantal pogingen en een logboek.
+
+    Toestanden/gebeurtenissen
+
+    Het systeem kent drie toestanden: `VERGRENDELD`, `ONTGRENDELD`, `GEBLOKKEERD`. Elke poging (juiste code, foute code, laatste poging verbruikt) is een gebeurtenis die de toestand kan veranderen.
+
+    Beslissingen
+
+    > Is de ingevoerde code correct? → toestand wordt ONTGRENDELD
+    > Is het aantal pogingen op? → toestand wordt GEBLOKKEERD
+    > Is de gebruiker al geblokkeerd bij het opstarten van een nieuwe sessie?
+
+    Lijsten
+
+    > Een lijst met geregistreerde gebruikers (naam + eigen toegangscode).
+    > Een logboek (lijst) waarin elke poging wordt vastgelegd als bijv. (gebruikersnaam, tijdstip/volgnummer, resultaat).
+
+    Lussen
+
+    > Een lus die per gebruiker maximaal 3 pogingen toestaat.
+    > Een lus in het hoofdprogramma die net zo lang doorgaat tot de gebruiker kiest om te stoppen (menu).
+
+    Toeval
+
+    > Bij het aanmaken van een nieuwe gebruiker wordt een willekeurige 4-cijferige toegangscode gegenereerd (random).
+
+    Verplichte functies (minimaal deze vijf, maar meer mag)
+
+    > genereer_toegangscode() → genereert en retourneert een willekeurige 4-cijferige code.
+    > vraag_code_op(gebruiker, pogingen_over) → simuleert/vraagt invoer op, retourneert de ingevoerde code.
+    > controleer_code(ingevoerde_code, juiste_code) → retourneert True/False, bevat de beslissingslogica.
+    > update_logboek(logboek, gebruiker, resultaat) → voegt een regel toe aan de logboek-lijst en retourneert de bijgewerkte lijst.
+    > functie toon_logboek(logboek) → print het logboek overzichtelijk naar het scherm.
+
+    Hoofdprogramma
+
+    > Toont een menu: (1) Inloggen, (2) Nieuwe gebruiker aanmaken, (3) Logboek bekijken, (4) Stoppen.
+    > Roept bij "Inloggen" de juiste functies aan in de juiste volgorde, verwerkt de toestand en logt elke poging.
+    > Stopt netjes bij keuze 4.
+
+    Testgevallen (verplicht minimaal deze drie)
+
+    > Gebruiker voert bij de eerste poging meteen de juiste code in → ONTGRENDELD.
+    > Gebruiker voert 3x een foute code in → GEBLOKKEERD, en dit staat correct in het logboek.
+    > Nieuwe gebruiker aanmaken → controleer dat de gegenereerde code 4 cijfers lang is en dat de gebruiker aan de lijst is toegevoegd.
+
+    Reflectie
+
+    > Wat ging goed bij het combineren van deze zes elementen?
+    > Welk onderdeel (toestanden, lijsten, toeval, ...) was het lastigst om correct te laten samenwerken, en waarom?
+    > Wat zou je aanpassen als je het opnieuw zou doen?
 
 ---
 
 ## Afronding
 
-In dit hoofdstuk heb je geleerd dat grammatica's een formele manier zijn om taalregels te beschrijven.
+In dit hoofdstuk heb je geleerd hoe je alle onderdelen van blok 1 kunt combineren in functies.
 
-Je kunt nu terminals, niet-terminals, productieregels en startsymbolen gebruiken om strings af te leiden en te beoordelen.
+Je hebt gewerkt met:
 
-Door voorbeelden uit je eigen wereld (gebruikersnamen, commando's en codes) zie je dat grammatica's niet alleen theorie zijn, maar direct bruikbaar in software.
+- variabelen en types;
+- beslissingen;
+- lijsten;
+- lussen;
+- toeval met `random.randrange()`;
+- en formeel controleren met regels.
 
-Je hebt dit gecombineerd met programmeervaardigheden uit eerdere hoofdstukken: variabelen, beslissingen, operatoren, lijsten, lussen en `random.randrange()`.
+Daardoor kun je nu grotere programma's ontwerpen die overzichtelijk, testbaar en uitbreidbaar zijn.
 
-In het volgende hoofdstuk breng je alles samen in functies, zodat je grotere problemen modulair en overzichtelijk kunt oplossen.
+Je bent hiermee klaar voor het vervolg waarin je nog zelfstandiger ontwerpt en programmeert met meerdere samenwerkende functies.
+
+In het volgende blok neem je deze werkwijze mee naar grotere opgaven waarin decomposition, testen en kwaliteit van code centraal staan.
