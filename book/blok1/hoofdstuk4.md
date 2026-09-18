@@ -310,6 +310,11 @@ Uitvoer:
 * * * * *
 ```
 
+### Gebruik van end in print()
+
+In het voorbeeld hierboven zie je dat er gebruik wordt gemaakt van `end=" "` in de functie `print()`. Eerder gebruikte je `end=` niet bij deze functie. In dat geval komt er altijd een **nieuwe regel** na het printen van de tekst. Als `end` wel gebruikt wordt, zal het gegeven symbool (in het voorbeeld hierboven een spatie) achter te tekst komen in plaats van een nieuwe regel.
+De tweede `print()` die wordt uitgevoerd naar de binnenste for-lus, zorgt er dus voor dat er een nieuwe regel gestart wordt.
+
 ### Stroomdiagram van geneste lussen
 
 ![Afbeelding van een geneste for-lus](img/1.4_geneste_for_lus.png)
