@@ -17,6 +17,7 @@ chapters:
     file: blok2/index.md
     sections:
       - title: Informatie digitaal
+        file: blok2/InfDig/index.md
         sections:
           - file: blok2/InfDig/hoofdstuk1.md
           - file: blok2/InfDig/hoofdstuk2.md
@@ -25,6 +26,7 @@ chapters:
           - file: blok2/InfDig/hoofdstuk5.md
           - file: blok2/InfDig/hoofdstuk6.md
       - title: Objectgeoriënteerd programmeren
+        file: blok2/OOP/index.md
         sections:
           - file: blok2/OOP/hoofdstuk1.md
           - file: blok2/OOP/hoofdstuk2.md
