@@ -9,3 +9,6 @@ env/
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
+
+# Oud materiaal
+book/blok2/oud_materiaal
