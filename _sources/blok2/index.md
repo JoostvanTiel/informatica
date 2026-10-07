@@ -1,4 +1,4 @@
-# Blok 2: informatie digitaal & object-georiënteerd programmeren
+# Blok 2: informatie digitaal & object-georiënteerd programmeren testje
 
 In dit blok leer je hoe computer informatie digitaal op kunnen slaan en hoe ze kunnen rekenen.
 
@@ -23,10 +23,6 @@ In dit blok leer je hoe computer informatie digitaal op kunnen slaan en hoe ze k
 6. [Hoofdstuk 6: Start- en eindscherm](./OOP_hoofdstuk6.md)
 
 ## Spoorboekje
-
-# Studiewijzer blok 2 — Informatica, klas 4 HAVO en VWO
-
-## Overzicht
 
 |                   |                                                                                                                                                             |
 | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
