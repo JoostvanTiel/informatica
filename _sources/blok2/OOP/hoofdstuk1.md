@@ -140,7 +140,7 @@ Nu zijn `p1` en `p2` twee verschillende objecten, maar ze hebben dezelfde struct
 - Online zoeken: [Wikipedia: klasse (informatica)](<https://nl.wikipedia.org/wiki/Klasse_(informatica)>)
 - Online zoeken: [Python classes tutorial](https://docs.python.org/3/tutorial/classes.html)
 
-# Opdrachten
+## Opdrachten
 
 **Kernroute (verplicht):** opdracht 1 en 2. **Plusroute:** opdracht 3.
 

@@ -140,7 +140,7 @@ In een game kun je methoden gebruiken voor:
 - Online zoeken: [Python object-oriented programming](https://docs.python.org/3/tutorial/classes.html)
 - Online zoeken: [Wikipedia: objectgeoriënteerd programmeren](https://nl.wikipedia.org/wiki/Objectgeori%C3%ABnteerd_programmeren)
 
-# Opdrachten
+## Opdrachten
 
 **Kernroute (verplicht):** opdracht 1 en 2. **Plusroute:** opdracht 3.
 

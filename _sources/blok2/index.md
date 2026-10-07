@@ -1,26 +1,6 @@
-# Blok 2: informatie digitaal & object-georiënteerd programmeren testje
+# Blok 2: informatie digitaal & object-georiënteerd programmeren
 
 In dit blok leer je hoe computer informatie digitaal op kunnen slaan en hoe ze kunnen rekenen.
-
-## Hoofdstukken in dit blok
-
-### Informatie digitaal
-
-1. [Hoofdstuk 1: Digitale afbeeldingen, pixels en kleur](./InfDig_hoofdstuk1.md)
-2. [Hoofdstuk 2: Bits en bytes](./InfDig_hoofdstuk2.md)
-3. [Hoofdstuk 3: Talstelsels](./InfDig_hoofdstuk3.md)
-4. [Hoofdstuk 4: Digitale tekst](./InfDig_hoofdstuk4.md)
-5. [Hoofdstuk 5: Afbeeldingen, audio en video](./InfDig_hoofdstuk5.md)
-6. [Hoofdstuk 6: Bestanden en extensies](./InfDig_hoofdstuk6.md)
-
-### Object-georiënteerd programmeren
-
-1. [Hoofdstuk 1: Klassen en objecten](./OOP_hoofdstuk1.md)
-2. [Hoofdstuk 2: Eigenschappen en methoden](./OOP_hoofdstuk2.md)
-3. [Hoofdstuk 3: Lijsten van objecten](./OOP_hoofdstuk3.md)
-4. [Hoofdstuk 4: FPS en tijd](./OOP_hoofdstuk4.md)
-5. [Hoofdstuk 5: Score en levens](./OOP_hoofdstuk5.md)
-6. [Hoofdstuk 6: Start- en eindscherm](./OOP_hoofdstuk6.md)
 
 ## Spoorboekje
 

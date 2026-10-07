@@ -122,7 +122,7 @@ In een game is tijd dus belangrijk om bewegingen te synchroniseren.
 - Online zoeken: [Pygame Clock docs](https://www.pygame.org/docs/ref/time.html)
 - Online zoeken: [Wikipedia: frames per second](https://nl.wikipedia.org/wiki/Frames_per_second)
 
-# Opdrachten
+## Opdrachten
 
 **Kernroute (verplicht):** opdracht 1 en 2. **Plusroute:** opdracht 3.
 

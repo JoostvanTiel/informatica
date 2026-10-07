@@ -148,7 +148,7 @@ Zo is het duidelijk wat het spel op ieder moment doet.
 - Online zoeken: [Pygame menu tutorial](https://www.pygame.org/docs/)
 - Online zoeken: [Wikipedia: game state](https://en.wikipedia.org/wiki/Game_state)
 
-# Opdrachten
+## Opdrachten
 
 **Kernroute (verplicht):** opdracht 1 en 2. **Plusroute:** opdracht 3.
 

@@ -174,10 +174,7 @@ Het scherm kan die codes weer omzetten naar letters.
 - Online zoeken: [Unicode tabel](https://home.unicode.org/)
 - Online zoeken: [Wikipedia: Unicode](https://nl.wikipedia.org/wiki/Unicode)
 
-
-
-
-# Opdrachten
+## Opdrachten
 
 **Kernroute (verplicht):** opdracht 1 en 2. **Plusroute:** opdracht 3.
 

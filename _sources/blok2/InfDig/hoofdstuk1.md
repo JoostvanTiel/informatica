@@ -181,7 +181,7 @@ Zo kunnen eenvoudige plaatjes worden gemaakt met pixels.
 - Online zoeken: [RGB-kleurenpalet](https://www.w3schools.com/colors/colors_rgb.asp)
 - Online zoeken: [Wikipedia: pixel](https://nl.wikipedia.org/wiki/Pixel)
 
-# Opdrachten
+## Opdrachten
 
 **Kernroute (verplicht):** opdracht 1 en 2. **Plusroute:** opdracht 3.
 

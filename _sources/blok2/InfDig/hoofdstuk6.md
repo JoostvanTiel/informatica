@@ -147,7 +147,7 @@ De gamecode kan bijvoorbeeld de achtergrondafbeelding openen en de muziek afspel
 - Online zoeken: [Wikipedia: bestand](<https://nl.wikipedia.org/wiki/Bestand_(computer)>)
 - Online zoeken: [Wikipedia: bestandsextensie](https://nl.wikipedia.org/wiki/Bestandsextensie)
 
-# Opdrachten
+## Opdrachten
 
 **Kernroute (verplicht):** opdracht 1 en 2. **Plusroute:** opdracht 3.
 
