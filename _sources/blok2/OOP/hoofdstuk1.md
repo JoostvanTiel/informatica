@@ -25,15 +25,15 @@ Een blauwdruk beschrijft wat een object kan hebben en wat het kan doen.
 Bijvoorbeeld:
 
 ```python
-class Man:
+class Speler:
     def __init__(self, naam, levens):
         self.naam = naam
         self.levens = levens
 ```
 
-Hier is `Man` de klasse.
+Hier is `Speler` de klasse.
 
-De klasse zegt: een persoon heeft een naam en aantal levens.
+De klasse zegt: een speler heeft een naam en aantal levens.
 
 ---
 
@@ -44,10 +44,10 @@ Een **object** is een concrete versie van die blauwdruk.
 Zo maak je een object:
 
 ```python
-joost = Man("Joost", 3)
+joost = Speler("Joost", 3)
 ```
 
-Nu is `joost` een object van de klasse `Man`.
+Nu is `joost` een object van de klasse `Speler`.
 
 Het object heeft eigenschappen zoals:
 
@@ -59,7 +59,7 @@ joost.levens
 Een klasse kan meerdere objecten maken.
 
 ```python
-joris = Man("Joris", 5)
+amyra = Speler("Amyra", 5)
 ```
 
 ---
@@ -92,7 +92,7 @@ Eigenschappen noem je ook wel **attributen**.
 In Python zet je attribuutwaarden in `self`.
 
 ```python
-class Man:
+class Speler:
     def __init__(self, naam, snelheid):
         self.naam = naam
         self.snelheid = snelheid
@@ -111,8 +111,8 @@ class SpelPersonage:
         self.hp = hp
         self.xpos = xpos
 
-p1 = SpelPersonage("SuperJoost", 100, 10)
-p2 = SpelPersonage("SuperJoris", 80, 200)
+p1 = SpelPersonage("SuperTygo", 100, 10)
+p2 = SpelPersonage("SuperFinn", 80, 200)
 ```
 
 Nu zijn `p1` en `p2` twee verschillende objecten, maar ze hebben dezelfde structuur.
@@ -133,27 +133,22 @@ Nu zijn `p1` en `p2` twee verschillende objecten, maar ze hebben dezelfde struct
 3. Hoe maak je een object aan?
 4. Waarom is een klasse handig in een spel?
 
-## Afbeeldingen en bronnen
-
-- Zelf maken: maak een schematische tekening van een klas met 2 objectinstanties.
-- Online zoeken: [Object-oriented programming uitleg](https://www.youtube.com/results?search_query=object+geori%C3%ABnteerd+programmeren+uitleg)
-- Online zoeken: [Wikipedia: klasse (informatica)](<https://nl.wikipedia.org/wiki/Klasse_(informatica)>)
-- Online zoeken: [Python classes tutorial](https://docs.python.org/3/tutorial/classes.html)
-
 ## Opdrachten
-
-**Kernroute (verplicht):** opdracht 1 en 2. **Plusroute:** opdracht 3.
 
 1. Klasse ontwerpen
 
    a. Maak een klasse `Vijand` met een attribuut `naam` en een attribuut `hp`.
+
    b. Maak twee verschillende objecten van deze klasse.
+
    c. Leg uit waarom het handig is om één klasse te gebruiken voor meerdere vijanden.
 
 2. Objecten in een programma
 
    a. Schrijf een klein stukje code waarin je een speler maakt met een naam en levens.
+
    b. Zorg dat je twee verschillende spelers kunt maken.
+
    c. Noem één verschil tussen een klasse en een object.
 
 3. Toepassingsvraag
@@ -161,7 +156,9 @@ Nu zijn `p1` en `p2` twee verschillende objecten, maar ze hebben dezelfde struct
    Je wilt een spel met meerdere kogels maken.
 
    a. Waarom is een klasse handig om kogels te modelleren?
+
    b. Noem twee kenmerken die een kogel kan hebben.
+
    c. Waarom is het niet handig om elke kogel apart handmatig te programmeren?
 
 ### Inzichtsvragen

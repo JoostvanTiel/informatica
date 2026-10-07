@@ -458,7 +458,6 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-een-spelpersonage">Voorbeeld: een spelpersonage</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#afbeeldingen-en-bronnen">Afbeeldingen en bronnen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inzichtsvragen">Inzichtsvragen</a></li>
 </ul>
@@ -495,31 +494,31 @@
 <p>Een <strong>klasse</strong> is een blauwdruk.</p>
 <p>Een blauwdruk beschrijft wat een object kan hebben en wat het kan doen.</p>
 <p>Bijvoorbeeld:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Man</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Speler</span><span class="p">:</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">naam</span><span class="p">,</span> <span class="n">levens</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">naam</span> <span class="o">=</span> <span class="n">naam</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">levens</span> <span class="o">=</span> <span class="n">levens</span>
 </pre></div>
 </div>
-<p>Hier is <code class="docutils literal notranslate"><span class="pre">Man</span></code> de klasse.</p>
-<p>De klasse zegt: een persoon heeft een naam en aantal levens.</p>
+<p>Hier is <code class="docutils literal notranslate"><span class="pre">Speler</span></code> de klasse.</p>
+<p>De klasse zegt: een speler heeft een naam en aantal levens.</p>
 </section>
 <hr class="docutils" />
 <section id="wat-is-een-object">
 <h2>Wat is een object?<a class="headerlink" href="#wat-is-een-object" title="Link to this heading">#</a></h2>
 <p>Een <strong>object</strong> is een concrete versie van die blauwdruk.</p>
 <p>Zo maak je een object:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">joost</span> <span class="o">=</span> <span class="n">Man</span><span class="p">(</span><span class="s2">"Joost"</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">joost</span> <span class="o">=</span> <span class="n">Speler</span><span class="p">(</span><span class="s2">"Joost"</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Nu is <code class="docutils literal notranslate"><span class="pre">joost</span></code> een object van de klasse <code class="docutils literal notranslate"><span class="pre">Man</span></code>.</p>
+<p>Nu is <code class="docutils literal notranslate"><span class="pre">joost</span></code> een object van de klasse <code class="docutils literal notranslate"><span class="pre">Speler</span></code>.</p>
 <p>Het object heeft eigenschappen zoals:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">joost</span><span class="o">.</span><span class="n">naam</span>
 <span class="n">joost</span><span class="o">.</span><span class="n">levens</span>
 </pre></div>
 </div>
 <p>Een klasse kan meerdere objecten maken.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">joris</span> <span class="o">=</span> <span class="n">Man</span><span class="p">(</span><span class="s2">"Joris"</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">amyra</span> <span class="o">=</span> <span class="n">Speler</span><span class="p">(</span><span class="s2">"Amyra"</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -543,7 +542,7 @@
 <h2>Eigenschappen van een object<a class="headerlink" href="#eigenschappen-van-een-object" title="Link to this heading">#</a></h2>
 <p>Eigenschappen noem je ook wel <strong>attributen</strong>.</p>
 <p>In Python zet je attribuutwaarden in <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Man</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Speler</span><span class="p">:</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">naam</span><span class="p">,</span> <span class="n">snelheid</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">naam</span> <span class="o">=</span> <span class="n">naam</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">snelheid</span> <span class="o">=</span> <span class="n">snelheid</span>
@@ -560,8 +559,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">hp</span> <span class="o">=</span> <span class="n">hp</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">xpos</span> <span class="o">=</span> <span class="n">xpos</span>
 
-<span class="n">p1</span> <span class="o">=</span> <span class="n">SpelPersonage</span><span class="p">(</span><span class="s2">"SuperJoost"</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">p2</span> <span class="o">=</span> <span class="n">SpelPersonage</span><span class="p">(</span><span class="s2">"SuperJoris"</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">SpelPersonage</span><span class="p">(</span><span class="s2">"SuperTygo"</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">SpelPersonage</span><span class="p">(</span><span class="s2">"SuperFinn"</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Nu zijn <code class="docutils literal notranslate"><span class="pre">p1</span></code> en <code class="docutils literal notranslate"><span class="pre">p2</span></code> twee verschillende objecten, maar ze hebben dezelfde structuur.</p>
@@ -585,34 +584,24 @@
 <li><p>Waarom is een klasse handig in een spel?</p></li>
 </ol>
 </section>
-<section id="afbeeldingen-en-bronnen">
-<h2>Afbeeldingen en bronnen<a class="headerlink" href="#afbeeldingen-en-bronnen" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Zelf maken: maak een schematische tekening van een klas met 2 objectinstanties.</p></li>
-<li><p>Online zoeken: <a class="reference external" href="https://www.youtube.com/results?search_query=object+geori%C3%ABnteerd+programmeren+uitleg">Object-oriented programming uitleg</a></p></li>
-<li><p>Online zoeken: <a class="reference external" href="https://nl.wikipedia.org/wiki/Klasse_(informatica)">Wikipedia: klasse (informatica)</a></p></li>
-<li><p>Online zoeken: <a class="reference external" href="https://docs.python.org/3/tutorial/classes.html">Python classes tutorial</a></p></li>
-</ul>
-</section>
 <section id="opdrachten">
 <h2>Opdrachten<a class="headerlink" href="#opdrachten" title="Link to this heading">#</a></h2>
-<p><strong>Kernroute (verplicht):</strong> opdracht 1 en 2. <strong>Plusroute:</strong> opdracht 3.</p>
 <ol class="arabic">
 <li><p>Klasse ontwerpen</p>
-<p>a. Maak een klasse <code class="docutils literal notranslate"><span class="pre">Vijand</span></code> met een attribuut <code class="docutils literal notranslate"><span class="pre">naam</span></code> en een attribuut <code class="docutils literal notranslate"><span class="pre">hp</span></code>.
-b. Maak twee verschillende objecten van deze klasse.
-c. Leg uit waarom het handig is om één klasse te gebruiken voor meerdere vijanden.</p>
+<p>a. Maak een klasse <code class="docutils literal notranslate"><span class="pre">Vijand</span></code> met een attribuut <code class="docutils literal notranslate"><span class="pre">naam</span></code> en een attribuut <code class="docutils literal notranslate"><span class="pre">hp</span></code>.</p>
+<p>b. Maak twee verschillende objecten van deze klasse.</p>
+<p>c. Leg uit waarom het handig is om één klasse te gebruiken voor meerdere vijanden.</p>
 </li>
 <li><p>Objecten in een programma</p>
-<p>a. Schrijf een klein stukje code waarin je een speler maakt met een naam en levens.
-b. Zorg dat je twee verschillende spelers kunt maken.
-c. Noem één verschil tussen een klasse en een object.</p>
+<p>a. Schrijf een klein stukje code waarin je een speler maakt met een naam en levens.</p>
+<p>b. Zorg dat je twee verschillende spelers kunt maken.</p>
+<p>c. Noem één verschil tussen een klasse en een object.</p>
 </li>
 <li><p>Toepassingsvraag</p>
 <p>Je wilt een spel met meerdere kogels maken.</p>
-<p>a. Waarom is een klasse handig om kogels te modelleren?
-b. Noem twee kenmerken die een kogel kan hebben.
-c. Waarom is het niet handig om elke kogel apart handmatig te programmeren?</p>
+<p>a. Waarom is een klasse handig om kogels te modelleren?</p>
+<p>b. Noem twee kenmerken die een kogel kan hebben.</p>
+<p>c. Waarom is het niet handig om elke kogel apart handmatig te programmeren?</p>
 </li>
 </ol>
 <section id="inzichtsvragen">
@@ -700,7 +689,6 @@ c. Waarom is het niet handig om elke kogel apart handmatig te programmeren?</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-een-spelpersonage">Voorbeeld: een spelpersonage</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#afbeeldingen-en-bronnen">Afbeeldingen en bronnen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inzichtsvragen">Inzichtsvragen</a></li>
 </ul>

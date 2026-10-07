@@ -35,7 +35,8 @@ aan = 1
 Een enkel bit is heel weinig. Met één bit kun je maar 2 waarden aangeven.
 
 ```text
-1 bit: 2 mogelijkheden
+1 bit:
+2^1 = 2 mogelijkheden
 ```
 
 ---
@@ -51,6 +52,7 @@ Een **byte** bestaat uit 8 bits.
 Met 8 bits kun je meer dan 2 waarden maken.
 
 ```text
+1 byte:
 2^8 = 256 mogelijke combinaties
 ```
 
@@ -85,20 +87,18 @@ Dat bestaat alleen uit:
 
 Voorbeeld:
 
-```text
-0 = 0
-1 = 1
-2 = 10
-3 = 11
-4 = 100
-5 = 101
-```
+| decimaal | binair |
+|==========|========|
+| 0 | 0 |
+| 1 | 1 |
+| 2 | 10 |
+| 3 | 11 |
+| 4 | 100 |
+| 5 | 101 |
 
-Dus:
+Als je een decimaal getal om wil zetten in een binair getal kun je het volgende flowchart gebruiken. Links zie je de stappen in woorden. Rechts in Python code.
 
-```text
-10 binair = 2 in het decimale stelsel
-```
+![Deciamaal naar binair flowchart](img/2.2_Dec2Bin.png)
 
 ---
 
@@ -151,13 +151,9 @@ Een computer hoeft die informatie alleen nog maar te interpreteren als een kleur
 Er zijn speciale eenheden om grote hoeveelheden gegevens te meten:
 
 - 1 byte = 8 bits
-- 1 kilobyte (KB) = 1024 bytes
-- 1 megabyte (MB) = 1024 kilobytes
-- 1 gigabyte (GB) = 1024 megabytes
-
-```text
-1 KB ≈ 1000 bytes
-```
+- 1 kilobyte (KB) = 1000 bytes
+- 1 megabyte (MB) = 1000 kilobytes
+- 1 gigabyte (GB) = 1000 megabytes
 
 Een foto, een liedje of een filmpje neemt dus veel meer ruimte in dan één byte.
 

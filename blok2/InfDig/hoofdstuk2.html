@@ -505,7 +505,8 @@ aan = 1
 </pre></div>
 </div>
 <p>Een enkel bit is heel weinig. Met één bit kun je maar 2 waarden aangeven.</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>1 bit: 2 mogelijkheden
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>1 bit:
+2^1 = 2 mogelijkheden
 </pre></div>
 </div>
 </section>
@@ -517,7 +518,8 @@ aan = 1
 </pre></div>
 </div>
 <p>Met 8 bits kun je meer dan 2 waarden maken.</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>2^8 = 256 mogelijke combinaties
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>1 byte:
+2^8 = 256 mogelijke combinaties
 </pre></div>
 </div>
 <p>Dus 1 byte kan 256 verschillende waarden bevatten.</p>
@@ -543,18 +545,16 @@ aan = 1
 </pre></div>
 </div>
 <p>Voorbeeld:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>0 = 0
-1 = 1
-2 = 10
-3 = 11
-4 = 100
-5 = 101
-</pre></div>
-</div>
-<p>Dus:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>10 binair = 2 in het decimale stelsel
-</pre></div>
-</div>
+<p>| decimaal | binair |
+|==========|========|
+| 0 | 0 |
+| 1 | 1 |
+| 2 | 10 |
+| 3 | 11 |
+| 4 | 100 |
+| 5 | 101 |</p>
+<p>Als je een decimaal getal om wil zetten in een binair getal kun je het volgende flowchart gebruiken. Links zie je de stappen in woorden. Rechts in Python code.</p>
+<p><img alt="Deciamaal naar binair flowchart" src="../../_images/2.2_Dec2Bin.png" /></p>
 </section>
 <hr class="docutils" />
 <section id="waarom-is-binair-handig">
@@ -597,13 +597,10 @@ uit = 0
 <p>Er zijn speciale eenheden om grote hoeveelheden gegevens te meten:</p>
 <ul class="simple">
 <li><p>1 byte = 8 bits</p></li>
-<li><p>1 kilobyte (KB) = 1024 bytes</p></li>
-<li><p>1 megabyte (MB) = 1024 kilobytes</p></li>
-<li><p>1 gigabyte (GB) = 1024 megabytes</p></li>
+<li><p>1 kilobyte (KB) = 1000 bytes</p></li>
+<li><p>1 megabyte (MB) = 1000 kilobytes</p></li>
+<li><p>1 gigabyte (GB) = 1000 megabytes</p></li>
 </ul>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>1 KB ≈ 1000 bytes
-</pre></div>
-</div>
 <p>Een foto, een liedje of een filmpje neemt dus veel meer ruimte in dan één byte.</p>
 </section>
 <hr class="docutils" />
