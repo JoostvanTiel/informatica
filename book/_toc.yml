@@ -12,7 +12,7 @@ chapters:
       - file: blok1/hoofdstuk3.md
       - file: blok1/hoofdstuk4.md
       - file: blok1/hoofdstuk5.md
-  - title: 4ha blok 2
+  - title: 4ha blok 2 test
     file: blok2/index.md
     sections:
       - title: Informatie Digitaal H1
