@@ -31,7 +31,7 @@ Een pixel is dus een klein beeld-element.
 
 Hieronder zie je een afbeelding met een grootte van 8 bij 8 pixels. Deze afbeelding bestaat uit 64 kleine vakjes. Elke vakje heeft een kleur. Samen vormen de vakjes het beeld van een pokeball.
 
-![8 bij 8 afbeelding van een pokeball](img/2.1_pokeball.bmp)
+![8 bij 8 afbeelding van een pokeball](img/2.1_pokeball.png)
 
 ```text
 8 x 8 pixels = 64 kleine kleurvlakken
