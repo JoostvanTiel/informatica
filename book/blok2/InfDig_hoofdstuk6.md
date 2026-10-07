@@ -1,4 +1,4 @@
-# Hoofdstuk 6: Bestanden en extensies
+# Informatie Digitaal Hoofdstuk 6: Bestanden en extensies
 
 ## Leerdoelen
 
@@ -144,11 +144,8 @@ De gamecode kan bijvoorbeeld de achtergrondafbeelding openen en de muziek afspel
 
 - Zelf maken: maak een map met verschillende soorten bestanden en benoem ze netjes.
 - Online zoeken: [Bestandsformaten uitleg](https://www.youtube.com/results?search_query=bestandsextensie+uitleg)
-- Online zoeken: [Wikipedia: bestand](https://nl.wikipedia.org/wiki/Bestand_(computer))
+- Online zoeken: [Wikipedia: bestand](<https://nl.wikipedia.org/wiki/Bestand_(computer)>)
 - Online zoeken: [Wikipedia: bestandsextensie](https://nl.wikipedia.org/wiki/Bestandsextensie)
-
-
-
 
 # Opdrachten
 

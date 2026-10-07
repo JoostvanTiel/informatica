@@ -12,28 +12,21 @@ chapters:
       - file: blok1/hoofdstuk3.md
       - file: blok1/hoofdstuk4.md
       - file: blok1/hoofdstuk5.md
-      - file: blok1/hoofdstuk6.md
   - title: 4ha blok 2
     file: blok2/index.md
     sections:
-      - title: Informatie digitaal
-        file: blok2/InfDig/index.md
-        sections:
-          - file: blok2/InfDig/hoofdstuk1.md
-          - file: blok2/InfDig/hoofdstuk2.md
-          - file: blok2/InfDig/hoofdstuk3.md
-          - file: blok2/InfDig/hoofdstuk4.md
-          - file: blok2/InfDig/hoofdstuk5.md
-          - file: blok2/InfDig/hoofdstuk6.md
-      - title: Objectgeoriënteerd programmeren
-        file: blok2/OOP/index.md
-        sections:
-          - file: blok2/OOP/hoofdstuk1.md
-          - file: blok2/OOP/hoofdstuk2.md
-          - file: blok2/OOP/hoofdstuk3.md
-          - file: blok2/OOP/hoofdstuk4.md
-          - file: blok2/OOP/hoofdstuk5.md
-          - file: blok2/OOP/hoofdstuk6.md
+      - file: blok2/InfDig_hoofdstuk1.md
+      - file: blok2/InfDig_hoofdstuk2.md
+      - file: blok2/InfDig_hoofdstuk3.md
+      - file: blok2/InfDig_hoofdstuk4.md
+      - file: blok2/InfDig_hoofdstuk5.md
+      - file: blok2/InfDig_hoofdstuk6.md
+      - file: blok2/OOP_hoofdstuk1.md
+      - file: blok2/OOP_hoofdstuk2.md
+      - file: blok2/OOP_hoofdstuk3.md
+      - file: blok2/OOP_hoofdstuk4.md
+      - file: blok2/OOP_hoofdstuk5.md
+      - file: blok2/OOP_hoofdstuk6.md
   - title: 4ha blok 3
     file: blok3/index.md
     sections:

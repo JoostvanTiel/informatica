@@ -1,4 +1,4 @@
-# Hoofdstuk 4: FPS en tijd
+# Objectgeoriënteerd Programmeren Hoofdstuk 4: FPS en tijd
 
 ## Leerdoelen
 
@@ -121,8 +121,6 @@ In een game is tijd dus belangrijk om bewegingen te synchroniseren.
 - Online zoeken: [Pygame game loop](https://www.youtube.com/results?search_query=pygame+game+loop+fps)
 - Online zoeken: [Pygame Clock docs](https://www.pygame.org/docs/ref/time.html)
 - Online zoeken: [Wikipedia: frames per second](https://nl.wikipedia.org/wiki/Frames_per_second)
-
-
 
 # Opdrachten
 
