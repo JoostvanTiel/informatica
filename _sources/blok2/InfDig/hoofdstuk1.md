@@ -179,39 +179,44 @@ Zo kunnen eenvoudige plaatjes worden gemaakt met pixels.
 3. Wat betekent RGB?
 4. Wat gebeurt er met de kwaliteit van een afbeelding als je meer pixels gebruikt?
 
-## Afbeeldingen en bronnen
-
-- Zelf maken: maak een kleine 8x8 pixelafbeelding in Paint of een online pixel-editor.
-- Online zoeken: [Pixel art voorbeelden](https://www.google.com/search?q=pixel+art+voorbeeld)
-- Online zoeken: [RGB-kleurenpalet](https://www.w3schools.com/colors/colors_rgb.asp)
-- Online zoeken: [Wikipedia: pixel](https://nl.wikipedia.org/wiki/Pixel)
-
 ## Opdrachten
-
-**Kernroute (verplicht):** opdracht 1 en 2. **Plusroute:** opdracht 3.
 
 1. Pixeltekening maken
 
    a. Teken een 5x5-pixelbeeld op papier. Gebruik alleen zwart en wit. Laat in het midden een klein vierkantje zien.
+
    b. Geef voor 5 pixels aan welke kleur die pixel heeft. Gebruik hierbij de letters `W` (wit) en `Z` (zwart).
+
    c. Leg uit waarom een computer een foto niet als één grote kleur opslaat, maar als veel kleine vakjes.
 
 2. Kleurcodes
 
    a. Schrijf drie verschillende RGB-kleuren op en leg uit wat elk getal betekent.
+
    b. Welke kleur krijg je bij `(255, 0, 0)`? En bij `(0, 255, 0)`? En bij `(0, 0, 255)`?
-   c. Noem een manier om een afbeelding scherper te maken zonder de afbeelding te vergroten.
+
+   c. Welke kleur heeft de RGB-code `(160, 160, 20)`? Controleer je antwoord met [de tool in de paragraaf](#kleur-opslaan)
+
+   d. Noem een manier om een afbeelding scherper te maken zonder de afbeelding te vergroten.
 
 3. Toepassingsvraag
 
    Een game laat een karakter op het scherm bewegen. Het beeld lijkt schokkend en wazig.
 
    a. Waarom kan een hogere resolutie ervoor zorgen dat het beeld beter uitziet?
+
    b. Waarom heeft een game met veel pixels vaak meer geheugen nodig?
+
    c. Welk effect heeft het als je een afbeelding verkleint? Noem één voordeel en één nadeel.
 
-### Inzichtsvragen
+4. Ontwerp je game-karakter
 
-1. Waarom is een pixel niet dezelfde als een object of een tekening op papier?
-2. Waarom is RGB een slimme manier om kleur op te slaan voor computers?
-3. Hoe kun je zonder woorden uitleggen wat een resolutie is?
+   a. Ga naar [deze website](https://www.pixilart.com/draw) en maak een nieuwe afbeelding met een grootte van 16 bij 16 pixels.
+
+   b. Teken een karakter dat je in je game wil gaan gebruiken. Zorg dat het karakter naar rechts kijkt en dat elke pixel een kleur heeft.
+
+   c. Sla de tekening op en download de afbeelding als '.png'.
+
+   c. Maak nog een tekening waarbij het karakter naar links kijkt. Sla ook deze afbeelding op en download hem als '.png'.
+
+   d. Extra: Maak nog twee tekening, één waarbij het karakter omhoog kijkt en één waarbij het karakter omlaag kijkt.
