@@ -220,3 +220,5 @@ Zo kunnen eenvoudige plaatjes worden gemaakt met pixels.
    c. Maak nog een tekening waarbij het karakter naar links kijkt. Sla ook deze afbeelding op en download hem als '.png'.
 
    d. Extra: Maak nog twee tekening, één waarbij het karakter omhoog kijkt en één waarbij het karakter omlaag kijkt.
+
+5. Speel het spelletje [HEX invaers](http://www.hexinvaders.com/#) voor maximaal 15 minuten.
