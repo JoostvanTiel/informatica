@@ -15,18 +15,30 @@ chapters:
   - title: 4ha blok 2
     file: blok2/index.md
     sections:
-      - file: blok2/InfDig_hoofdstuk1.md
-      - file: blok2/InfDig_hoofdstuk2.md
-      - file: blok2/InfDig_hoofdstuk3.md
-      - file: blok2/InfDig_hoofdstuk4.md
-      - file: blok2/InfDig_hoofdstuk5.md
-      - file: blok2/InfDig_hoofdstuk6.md
-      - file: blok2/OOP_hoofdstuk1.md
-      - file: blok2/OOP_hoofdstuk2.md
-      - file: blok2/OOP_hoofdstuk3.md
-      - file: blok2/OOP_hoofdstuk4.md
-      - file: blok2/OOP_hoofdstuk5.md
-      - file: blok2/OOP_hoofdstuk6.md
+      - title: Informatie Digitaal H1
+        file: blok2/InfDig_hoofdstuk1.md
+      - title: Informatie Digitaal H2
+        file: blok2/InfDig_hoofdstuk2.md
+      - title: Informatie Digitaal H3
+        file: blok2/InfDig_hoofdstuk3.md
+      - title: Informatie Digitaal H4
+        file: blok2/InfDig_hoofdstuk4.md
+      - title: Informatie Digitaal H5
+        file: blok2/InfDig_hoofdstuk5.md
+      - title: Informatie Digitaal H6
+        file: blok2/InfDig_hoofdstuk6.md
+      - title: OOP H1
+        file: blok2/OOP_hoofdstuk1.md
+      - title: OOP H2
+        file: blok2/OOP_hoofdstuk2.md
+      - title: OOP H3
+        file: blok2/OOP_hoofdstuk3.md
+      - title: OOP H4
+        file: blok2/OOP_hoofdstuk4.md
+      - title: OOP H5
+        file: blok2/OOP_hoofdstuk5.md
+      - title: OOP H6
+        file: blok2/OOP_hoofdstuk6.md
   - title: 4ha blok 3
     file: blok3/index.md
     sections:
