@@ -16,6 +16,7 @@ chapters:
     file: blok2/index.md
     sections:
       - title: Informatie Digitaal
+        file: blok2/InfDig/index.md
         sections:
           - title: Informatie Digitaal H1
             file: blok2/InfDig/hoofdstuk1.md
