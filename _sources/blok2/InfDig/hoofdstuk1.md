@@ -221,4 +221,4 @@ Zo kunnen eenvoudige plaatjes worden gemaakt met pixels.
 
    d. Extra: Maak nog twee tekening, één waarbij het karakter omhoog kijkt en één waarbij het karakter omlaag kijkt.
 
-5. Speel het spelletje [HEX invaers](http://www.hexinvaders.com/#) voor maximaal 15 minuten.
+5. Speel het spelletje [HEX invaders](http://www.hexinvaders.com/#) voor maximaal 15 minuten.
