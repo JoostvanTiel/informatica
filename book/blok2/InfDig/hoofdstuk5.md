@@ -122,7 +122,7 @@ Daarom gebruikt een computer compressietechnieken om het filmpje kleiner te make
 - Online zoeken: [Wikipedia: digitale audio](https://nl.wikipedia.org/wiki/Digitale_audio)
 - Online zoeken: [Wikipedia: MPEG-4](https://nl.wikipedia.org/wiki/MPEG-4)
 
-# Opdrachten
+## Opdrachten
 
 **Kernroute (verplicht):** opdracht 1 en 2. **Plusroute:** opdracht 3.
 

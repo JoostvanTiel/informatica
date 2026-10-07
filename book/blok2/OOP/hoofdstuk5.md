@@ -123,7 +123,7 @@ Nu kun je het spel laten reageren op acties.
 - Online zoeken: [Pygame font rendering](https://www.pygame.org/docs/ref/font.html)
 - Online zoeken: [Wikipedia: heads-up display](https://nl.wikipedia.org/wiki/Heads-up_display)
 
-# Opdrachten
+## Opdrachten
 
 **Kernroute (verplicht):** opdracht 1 en 2. **Plusroute:** opdracht 3.
 

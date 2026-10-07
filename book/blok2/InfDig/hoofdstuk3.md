@@ -217,7 +217,7 @@ Die hex-code is veel overzichtelijker.
 - Online zoeken: [Wikipedia: binair talstelsel](https://nl.wikipedia.org/wiki/Binair_talstelsel)
 - Online zoeken: [Wikipedia: hexadecimaal talstelsel](https://nl.wikipedia.org/wiki/Hexadecimaal_talstelsel)
 
-# Opdrachten
+## Opdrachten
 
 **Kernroute (verplicht):** opdracht 1 en 2. **Plusroute:** opdracht 3.
 

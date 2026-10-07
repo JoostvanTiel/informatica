@@ -12,33 +12,38 @@ chapters:
       - file: blok1/hoofdstuk3.md
       - file: blok1/hoofdstuk4.md
       - file: blok1/hoofdstuk5.md
-  - title: 4ha blok 2 test
+  - title: 4ha blok 2
     file: blok2/index.md
     sections:
-      - title: Informatie Digitaal H1
-        file: blok2/InfDig_hoofdstuk1.md
-      - title: Informatie Digitaal H2
-        file: blok2/InfDig_hoofdstuk2.md
-      - title: Informatie Digitaal H3
-        file: blok2/InfDig_hoofdstuk3.md
-      - title: Informatie Digitaal H4
-        file: blok2/InfDig_hoofdstuk4.md
-      - title: Informatie Digitaal H5
-        file: blok2/InfDig_hoofdstuk5.md
-      - title: Informatie Digitaal H6
-        file: blok2/InfDig_hoofdstuk6.md
-      - title: OOP H1
-        file: blok2/OOP_hoofdstuk1.md
-      - title: OOP H2
-        file: blok2/OOP_hoofdstuk2.md
-      - title: OOP H3
-        file: blok2/OOP_hoofdstuk3.md
-      - title: OOP H4
-        file: blok2/OOP_hoofdstuk4.md
-      - title: OOP H5
-        file: blok2/OOP_hoofdstuk5.md
-      - title: OOP H6
-        file: blok2/OOP_hoofdstuk6.md
+      - title: Informatie Digitaal
+        sections:
+          - title: Informatie Digitaal H1
+            file: blok2/InfDig/hoofdstuk1.md
+          - title: Informatie Digitaal H2
+            file: blok2/InfDig/hoofdstuk2.md
+          - title: Informatie Digitaal H3
+            file: blok2/InfDig/hoofdstuk3.md
+          - title: Informatie Digitaal H4
+            file: blok2/InfDig/hoofdstuk4.md
+          - title: Informatie Digitaal H5
+            file: blok2/InfDig/hoofdstuk5.md
+          - title: Informatie Digitaal H6
+            file: blok2/InfDig/hoofdstuk6.md
+      - title: Objectgeoriënteerd Programmeren
+        file: blok2/OOP/index.md
+        sections:
+          - title: OOP H1
+            file: blok2/OOP/hoofdstuk1.md
+          - title: OOP H2
+            file: blok2/OOP/hoofdstuk2.md
+          - title: OOP H3
+            file: blok2/OOP/hoofdstuk3.md
+          - title: OOP H4
+            file: blok2/OOP/hoofdstuk4.md
+          - title: OOP H5
+            file: blok2/OOP/hoofdstuk5.md
+          - title: OOP H6
+            file: blok2/OOP/hoofdstuk6.md
   - title: 4ha blok 3
     file: blok3/index.md
     sections:

@@ -187,7 +187,7 @@ Een foto, een liedje of een filmpje neemt dus veel meer ruimte in dan één byte
 
 Inhoud van hoofdstuk 2.
 
-# Opdrachten
+## Opdrachten
 
 **Kernroute (verplicht):** opdracht 1 en 2. **Plusroute:** opdracht 3.
 

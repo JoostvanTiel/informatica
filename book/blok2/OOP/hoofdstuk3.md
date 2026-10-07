@@ -120,7 +120,7 @@ Nu beweegt elke kogel op zijn eigen manier.
 - Online zoeken: [Python list documentation](https://docs.python.org/3/library/stdtypes.html#lists)
 - Online zoeken: [Wikipedia: array (informatica)](https://nl.wikipedia.org/wiki/Array)
 
-# Opdrachten
+## Opdrachten
 
 **Kernroute (verplicht):** opdracht 1 en 2. **Plusroute:** opdracht 3.
 
