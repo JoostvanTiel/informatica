@@ -29,10 +29,12 @@ Het woord pixel komt van:
 
 Een pixel is dus een klein beeld-element.
 
-Stel je een foto voor met een grootte van 10 bij 10 pixels. Dan bestaat die foto uit 100 kleine vakjes. Elk vakje heeft een kleur. Samen vormen die vakjes een beeld.
+Hieronder zie je een afbeelding met een grootte van 8 bij 8 pixels. Deze afbeelding bestaat uit 64 kleine vakjes. Elke vakje heeft een kleur. Samen vormen de vakjes het beeld van een pokeball.
+
+![8 bij 8 afbeelding van een pokeball](img/2.1_pokeball.bmp)
 
 ```text
-10 x 10 pixels = 100 kleine kleurvlakken
+8 x 8 pixels = 64 kleine kleurvlakken
 ```
 
 Als een afbeelding groter is, dan heeft het meer pixels en meestal een hogere kwaliteit.
@@ -95,6 +97,9 @@ Voorbeeld:
 ```
 
 De combinatie van 3 getallen levert dus een kleur op.
+Met de onderstaande tool kun je kijken welke RGB-waardes horen bij verschillende kleuren:
+
+<input type="color">
 
 ---
 
