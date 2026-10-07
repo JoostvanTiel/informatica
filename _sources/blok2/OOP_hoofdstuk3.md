@@ -1,4 +1,4 @@
-# Hoofdstuk 3: Lijsten van objecten
+# Objectgeoriënteerd Programmeren Hoofdstuk 3: Lijsten van objecten
 
 ## Leerdoelen
 
@@ -119,8 +119,6 @@ Nu beweegt elke kogel op zijn eigen manier.
 - Online zoeken: [Python lists tutorial](https://www.youtube.com/results?search_query=python+lists+objects)
 - Online zoeken: [Python list documentation](https://docs.python.org/3/library/stdtypes.html#lists)
 - Online zoeken: [Wikipedia: array (informatica)](https://nl.wikipedia.org/wiki/Array)
-
-
 
 # Opdrachten
 

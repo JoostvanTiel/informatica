@@ -1,4 +1,4 @@
-# Hoofdstuk 5: Score en levens
+# Objectgeoriënteerd Programmeren Hoofdstuk 5: Score en levens
 
 ## Leerdoelen
 
@@ -122,8 +122,6 @@ Nu kun je het spel laten reageren op acties.
 - Online zoeken: [Game HUD uitleg](https://www.youtube.com/results?search_query=game+hud+score+levens)
 - Online zoeken: [Pygame font rendering](https://www.pygame.org/docs/ref/font.html)
 - Online zoeken: [Wikipedia: heads-up display](https://nl.wikipedia.org/wiki/Heads-up_display)
-
-
 
 # Opdrachten
 

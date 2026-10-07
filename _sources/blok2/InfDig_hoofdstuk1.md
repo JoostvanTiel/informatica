@@ -1,4 +1,4 @@
-# Hoofdstuk 1: Digitale afbeeldingen, pixels en kleur
+# Informatie Digitaal Hoofdstuk 1: Digitale afbeeldingen, pixels en kleur
 
 ## Leerdoelen
 
@@ -180,10 +180,6 @@ Zo kunnen eenvoudige plaatjes worden gemaakt met pixels.
 - Online zoeken: [Pixel art voorbeelden](https://www.google.com/search?q=pixel+art+voorbeeld)
 - Online zoeken: [RGB-kleurenpalet](https://www.w3schools.com/colors/colors_rgb.asp)
 - Online zoeken: [Wikipedia: pixel](https://nl.wikipedia.org/wiki/Pixel)
-
-
-
-
 
 # Opdrachten
 

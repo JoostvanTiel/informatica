@@ -1,4 +1,4 @@
-# Hoofdstuk 4: Digitale tekst
+# Informatie Digitaal Hoofdstuk 4: Digitale tekst
 
 ## Leerdoelen
 

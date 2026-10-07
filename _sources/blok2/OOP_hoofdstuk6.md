@@ -1,4 +1,4 @@
-# Hoofdstuk 6: Start- en eindscherm
+# Objectgeoriënteerd Programmeren Hoofdstuk 6: Start- en eindscherm
 
 ## Leerdoelen
 
@@ -147,8 +147,6 @@ Zo is het duidelijk wat het spel op ieder moment doet.
 - Online zoeken: [Game menu UI voorbeelden](https://www.youtube.com/results?search_query=game+menu+ui+start+screen)
 - Online zoeken: [Pygame menu tutorial](https://www.pygame.org/docs/)
 - Online zoeken: [Wikipedia: game state](https://en.wikipedia.org/wiki/Game_state)
-
-
 
 # Opdrachten
 

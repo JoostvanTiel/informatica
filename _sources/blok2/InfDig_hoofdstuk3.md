@@ -1,4 +1,4 @@
-# Hoofdstuk 3: Talstelsels
+# Informatie Digitaal Hoofdstuk 3: Talstelsels
 
 ## Leerdoelen
 
@@ -216,9 +216,6 @@ Die hex-code is veel overzichtelijker.
 - Online zoeken: [Talstelsels uitleg](https://www.youtube.com/results?search_query=talstelsels+binair+hexadecimaal)
 - Online zoeken: [Wikipedia: binair talstelsel](https://nl.wikipedia.org/wiki/Binair_talstelsel)
 - Online zoeken: [Wikipedia: hexadecimaal talstelsel](https://nl.wikipedia.org/wiki/Hexadecimaal_talstelsel)
-
-
-
 
 # Opdrachten
 

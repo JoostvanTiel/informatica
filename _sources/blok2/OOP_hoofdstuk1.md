@@ -1,4 +1,4 @@
-# Hoofdstuk 1: Klassen en objecten
+# Objectgeoriënteerd Programmeren Hoofdstuk 1: Klassen en objecten
 
 ## Leerdoelen
 
@@ -137,10 +137,8 @@ Nu zijn `p1` en `p2` twee verschillende objecten, maar ze hebben dezelfde struct
 
 - Zelf maken: maak een schematische tekening van een klas met 2 objectinstanties.
 - Online zoeken: [Object-oriented programming uitleg](https://www.youtube.com/results?search_query=object+geori%C3%ABnteerd+programmeren+uitleg)
-- Online zoeken: [Wikipedia: klasse (informatica)](https://nl.wikipedia.org/wiki/Klasse_(informatica))
+- Online zoeken: [Wikipedia: klasse (informatica)](<https://nl.wikipedia.org/wiki/Klasse_(informatica)>)
 - Online zoeken: [Python classes tutorial](https://docs.python.org/3/tutorial/classes.html)
-
-
 
 # Opdrachten
 

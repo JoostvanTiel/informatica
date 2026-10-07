@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Blok 2: informatie digitaal &amp; object-georiënteerd programmeren &#8212; Informatica</title>
+    <title>Informatie Digitaal Hoofdstuk 1: Digitale afbeeldingen, pixels en kleur &#8212; Informatica</title>
   
   
   
@@ -60,12 +60,12 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'blok2/index';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'blok2/InfDig_hoofdstuk1';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Informatie Digitaal Hoofdstuk 1: Digitale afbeeldingen, pixels en kleur" href="InfDig_hoofdstuk1.html" />
-    <link rel="prev" title="Hoofdstuk 5: Functies &amp; combineren" href="../blok1/hoofdstuk5.html" />
+    <link rel="next" title="Informatie Digitaal Hoofdstuk 2: Bits en bytes" href="InfDig_hoofdstuk2.html" />
+    <link rel="prev" title="Blok 2: informatie digitaal &amp; object-georiënteerd programmeren" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -227,7 +227,7 @@
 
 </ul>
 </details></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Blok 2: informatie digitaal &amp; object-georiënteerd programmeren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Blok 2: informatie digitaal &amp; object-georiënteerd programmeren</a></li>
 
 <li class="toctree-l1 has-children"><a class="reference internal" href="../blok3/index.html">4ha blok 3</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../blok3/hoofdstuk1.html">Hoofdstuk 1</a></li>
@@ -315,7 +315,7 @@
       
       
       
-      <li><a href="https://github.com/JoostvanTiel/informatica/issues/new?title=Issue%20on%20page%20%2Fblok2/index.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/JoostvanTiel/informatica/issues/new?title=Issue%20on%20page%20%2Fblok2/InfDig_hoofdstuk1.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -345,7 +345,7 @@
       
       
       
-      <li><a href="../_sources/blok2/index.md" target="_blank"
+      <li><a href="../_sources/blok2/InfDig_hoofdstuk1.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -421,7 +421,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Blok 2: informatie digitaal & object-georiënteerd programmeren</h1>
+    <h1>Informatie Digitaal Hoofdstuk 1: Digitale afbeeldingen, pixels en kleur</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -431,13 +431,21 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Blok 2: informatie digitaal &amp; object-georiënteerd programmeren</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spoorboekje">Spoorboekje</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Informatie Digitaal Hoofdstuk 1: Digitale afbeeldingen, pixels en kleur</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-een-pixel">Wat is een pixel?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#een-afbeelding-bestaat-uit-veel-kleine-vakjes">Een afbeelding bestaat uit veel kleine vakjes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kleur-opslaan">Kleur opslaan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hoeveel-informatie-zit-in-een-pixel">Hoeveel informatie zit in een pixel?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resolutie">Resolutie</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-een-kleine-afbeelding">Voorbeeld: een kleine afbeelding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#afbeeldingen-en-bronnen">Afbeeldingen en bronnen</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#studiewijzer-blok-2-informatica-klas-4-havo-en-vwo">Studiewijzer blok 2 — Informatica, klas 4 HAVO en VWO</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overzicht">Overzicht</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weekplanning">Weekplanning</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inzichtsvragen">Inzichtsvragen</a></li>
 </ul>
 </li>
 </ul>
@@ -452,91 +460,190 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="blok-2-informatie-digitaal-object-georienteerd-programmeren">
-<h1>Blok 2: informatie digitaal &amp; object-georiënteerd programmeren<a class="headerlink" href="#blok-2-informatie-digitaal-object-georienteerd-programmeren" title="Link to this heading">#</a></h1>
-<p>In dit blok leer je hoe computer informatie digitaal op kunnen slaan en hoe ze kunnen rekenen.</p>
-<section id="spoorboekje">
-<h2>Spoorboekje<a class="headerlink" href="#spoorboekje" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="informatie-digitaal-hoofdstuk-1-digitale-afbeeldingen-pixels-en-kleur">
+<h1>Informatie Digitaal Hoofdstuk 1: Digitale afbeeldingen, pixels en kleur<a class="headerlink" href="#informatie-digitaal-hoofdstuk-1-digitale-afbeeldingen-pixels-en-kleur" title="Link to this heading">#</a></h1>
+<section id="leerdoelen">
+<h2>Leerdoelen<a class="headerlink" href="#leerdoelen" title="Link to this heading">#</a></h2>
+<p>In dit hoofdstuk leer je hoe een computer een afbeelding opslaat. Een foto, een logo of een gamebeeld bestaat uit heel veel kleine elementen. Die kleine elementen heten <strong>pixels</strong>.</p>
+<p>Je leert:</p>
+<ul class="simple">
+<li><p>wat een pixel is;</p></li>
+<li><p>hoe een computer kleur opslaat;</p></li>
+<li><p>wat een pixelafbeelding is;</p></li>
+<li><p>waarom beeldkwaliteit afhangt van het aantal pixels;</p></li>
+<li><p>hoe een afbeelding in een programma kan worden opgebouwd.</p></li>
+</ul>
+<p>Aan het einde van dit hoofdstuk kun je uitleggen hoe een digitale afbeelding in een computer is opgeslagen en waarom een kleine tekening uit duizenden kleine kleurpunten bestaat.</p>
 </section>
+<hr class="docutils" />
+<section id="wat-is-een-pixel">
+<h2>Wat is een pixel?<a class="headerlink" href="#wat-is-een-pixel" title="Link to this heading">#</a></h2>
+<p>Een digitale afbeelding is geen continue tekening zoals op papier. Een computer werkt met getallen. Daarom moet een afbeelding worden opgesplitst in kleine vierkantjes.</p>
+<p>Elk zo’n vierkantje is een <strong>pixel</strong>.</p>
+<p>Het woord pixel komt van:</p>
+<ul class="simple">
+<li><p><strong>pic</strong> = beeld</p></li>
+<li><p><strong>sel</strong> = element</p></li>
+</ul>
+<p>Een pixel is dus een klein beeld-element.</p>
+<p>Stel je een foto voor met een grootte van 10 bij 10 pixels. Dan bestaat die foto uit 100 kleine vakjes. Elk vakje heeft een kleur. Samen vormen die vakjes een beeld.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>10 x 10 pixels = 100 kleine kleurvlakken
+</pre></div>
+</div>
+<p>Als een afbeelding groter is, dan heeft het meer pixels en meestal een hogere kwaliteit.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="studiewijzer-blok-2-informatica-klas-4-havo-en-vwo">
-<h1>Studiewijzer blok 2 — Informatica, klas 4 HAVO en VWO<a class="headerlink" href="#studiewijzer-blok-2-informatica-klas-4-havo-en-vwo" title="Link to this heading">#</a></h1>
-<section id="overzicht">
-<h2>Overzicht<a class="headerlink" href="#overzicht" title="Link to this heading">#</a></h2>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p></p></th>
-<th class="head"><p></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><strong>Onderwerpen:</strong></p></td>
-<td><p>Informatie digitaal (Inf Dig)<br>Object-georiënteerd programmeren (OOP H) in Python</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Lesmateriaal:</strong></p></td>
-<td><p>Online boek Inf Dig<br>Online boek OOP</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>Toetsing:</strong></p></td>
-<td><p>Theorietoets in TW2<br>PO aan het eind van TW2</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Inhoud toets:</strong></p></td>
-<td><p>Informatie digitaal (h1 t/m h6)</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>Inhoud PO:</strong></p></td>
-<td><p>Python game</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Waarde toets:</strong></p></td>
-<td><p>Je eindcijfer wordt berekend uit de toets (25%) en het PO (75%). Het eindcijfer telt 1 keer mee voor je rapport, voor je jaarcijfer en voor je schoolexamen</p></td>
-</tr>
-</tbody>
-</table>
+<hr class="docutils" />
+<section id="een-afbeelding-bestaat-uit-veel-kleine-vakjes">
+<h2>Een afbeelding bestaat uit veel kleine vakjes<a class="headerlink" href="#een-afbeelding-bestaat-uit-veel-kleine-vakjes" title="Link to this heading">#</a></h2>
+<p>Een gewone foto is niet één groot blok kleur. In een computer wordt elke pixel apart opgeslagen.</p>
+<p>Bijvoorbeeld:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[ ] [ ] [ ] [ ]
+[ ] [x] [x] [ ]
+[ ] [x] [x] [ ]
+[ ] [ ] [ ] [ ]
+</pre></div>
+</div>
+<p>Hier zie je een heel simpel zwart-wit voorbeeld. De <code class="docutils literal notranslate"><span class="pre">x</span></code>-tekens zijn pixels die donker zijn. De <code class="docutils literal notranslate"><span class="pre">[]</span></code>-tekens zijn pixels die licht zijn.</p>
+<p>Als je een afbeelding van 1000 x 1000 pixels hebt, dan heb je al 1.000.000 pixels. Dat is veel informatie!</p>
+</section>
+<hr class="docutils" />
+<section id="kleur-opslaan">
+<h2>Kleur opslaan<a class="headerlink" href="#kleur-opslaan" title="Link to this heading">#</a></h2>
+<p>Een computer kan niet gewoon “rood” of “blauw” opslaan zoals wij dat zeggen. Een computer werkt met getallen.</p>
+<p>Meestal gebruikt een computer <strong>RGB-kleur</strong>.</p>
+<ul class="simple">
+<li><p>R = red = rood</p></li>
+<li><p>G = green = groen</p></li>
+<li><p>B = blue = blauw</p></li>
+</ul>
+<p>Iedere kleur wordt opgeslagen als een combinatie van deze drie kleuren.</p>
+<p>Bijvoorbeeld:</p>
+<ul class="simple">
+<li><p>wit = (255, 255, 255)</p></li>
+<li><p>zwart = (0, 0, 0)</p></li>
+<li><p>rood = (255, 0, 0)</p></li>
+<li><p>groen = (0, 255, 0)</p></li>
+<li><p>blauw = (0, 0, 255)</p></li>
+</ul>
+<p>Elke waarde ligt tussen 0 en 255.</p>
+<p>Dus:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>kleur = (R, G, B)
+</pre></div>
+</div>
+<p>Voorbeeld:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>(255, 0, 0) = rood
+(0, 255, 0) = groen
+(128, 128, 128) = grijs
+</pre></div>
+</div>
+<p>De combinatie van 3 getallen levert dus een kleur op.</p>
+</section>
+<hr class="docutils" />
+<section id="hoeveel-informatie-zit-in-een-pixel">
+<h2>Hoeveel informatie zit in een pixel?<a class="headerlink" href="#hoeveel-informatie-zit-in-een-pixel" title="Link to this heading">#</a></h2>
+<p>Een pixel kan niet alleen zwart of wit zijn. Hij kan ook een kleur hebben.</p>
+<p>Als je een pixel in 256 verschillende tinten rood, groen en blauw wilt kunnen opslaan, dan heb je 3 waarden nodig.</p>
+<p>Dat betekent:</p>
+<ul class="simple">
+<li><p>256 mogelijkheden voor rood</p></li>
+<li><p>256 mogelijkheden voor groen</p></li>
+<li><p>256 mogelijkheden voor blauw</p></li>
+</ul>
+<p>Samen kun je dan miljoenen kleuren maken.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>256 x 256 x 256 = 16.777.216 kleuren
+</pre></div>
+</div>
+<p>Dat is het aantal kleuren dat een gewone RGB-afbeelding kan hebben.</p>
+</section>
+<hr class="docutils" />
+<section id="resolutie">
+<h2>Resolutie<a class="headerlink" href="#resolutie" title="Link to this heading">#</a></h2>
+<p>De kwaliteit van een afbeelding hangt af van de <strong>resolutie</strong>.</p>
+<p>Dat is het aantal pixels in de afbeelding.</p>
+<p>Bijvoorbeeld:</p>
+<ul class="simple">
+<li><p>640 x 480 pixels</p></li>
+<li><p>1920 x 1080 pixels</p></li>
+<li><p>3840 x 2160 pixels</p></li>
+</ul>
+<p>Hoe meer pixels, hoe scherper de afbeelding meestal is.</p>
+<p>Maar hoe meer pixels, hoe meer opslagruimte nodig is.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>meer pixels = scherpere foto = meer geheugen
+</pre></div>
 </div>
 </section>
-<section id="weekplanning">
-<h2>Weekplanning<a class="headerlink" href="#weekplanning" title="Link to this heading">#</a></h2>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Week</p></th>
-<th class="head"><p>Lesstof</p></th>
-<th class="head"><p>Huiswerk</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>2.1: 26-10</p></td>
-<td><p>Inf Dig H1: Digitale afbeeldingen, pixels met kleur<br>OOP H1: Klassen en objecten</p></td>
-<td><p>Maak de vragen van Inf. Dig. H1<br>Maak de vragen van OOP H1</p></td>
-</tr>
-<tr class="row-odd"><td><p>2.2: 02-11</p></td>
-<td><p>Inf Dig H2: Bits en Bytes<br>OOP H2: Eigenschappen en methoden</p></td>
-<td><p>Maak de vragen van Inf. Dig. H2<br>Maak de vragen van OOP H2</p></td>
-</tr>
-<tr class="row-even"><td><p>2.3: 09-11</p></td>
-<td><p>Inf Dig H3: Talstelsels<br>OOP H3: Lijsten van objecten</p></td>
-<td><p>Maak de vragen van Inf. Dig. H3<br>Maak de vragen van OOP H3</p></td>
-</tr>
-<tr class="row-odd"><td><p>2.4: 16-11</p></td>
-<td><p>Inf Dig H4: Digitale tekst<br>OOP H4: FPS en tijd</p></td>
-<td><p>Maak de vragen van Inf. Dig. H4<br>Maak de vragen van OOP H4</p></td>
-</tr>
-<tr class="row-even"><td><p>2.5: 23-11</p></td>
-<td><p>Inf Dig H5: Afbeeldingen, audio en video<br>OOP H5: Score en levens</p></td>
-<td><p>Maak de vragen van Inf. Dig. H5<br>Maak de vragen van OOP H5</p></td>
-</tr>
-<tr class="row-odd"><td><p>2.6: 30-11</p></td>
-<td><p>Inf Dig H6: Bestanden en extensies<br>OOP H6: Start en eindscherm<br>Toetsweek voorbereiden</p></td>
-<td><p>Maak de vragen van Inf. Dig. H6<br>Maak de vragen van OOP H6<br>Maak de oefentoets</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>TW2: 07-12</strong></p></td>
-<td><p>Schriftelijke toets over de leerstof van blok 2<br>Praktische opdracht. deadline: eind van TW2</p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
+<hr class="docutils" />
+<section id="voorbeeld-een-kleine-afbeelding">
+<h2>Voorbeeld: een kleine afbeelding<a class="headerlink" href="#voorbeeld-een-kleine-afbeelding" title="Link to this heading">#</a></h2>
+<p>Stel je voor dat je een 4 x 4 pixelafbeelding hebt.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>(255,255,255) (255,255,255) (255,255,255) (255,255,255)
+(255,255,255) (255,0,0)     (255,0,0)     (255,255,255)
+(255,255,255) (255,0,0)     (255,0,0)     (255,255,255)
+(255,255,255) (255,255,255) (255,255,255) (255,255,255)
+</pre></div>
 </div>
-<p><em>Deze studiewijzer geeft slechts hoofdlijnen weer. Eventueel kan na overleg met de leerlingen van inhoud en tijdspad afgeweken worden.</em></p>
+<p>De rode pixels vormen samen een klein vierkantje op een witte achtergrond.</p>
+<p>Zo kunnen eenvoudige plaatjes worden gemaakt met pixels.</p>
 </section>
-<div class="toctree-wrapper compound">
-</div>
+<hr class="docutils" />
+<section id="samenvatting">
+<h2>Samenvatting<a class="headerlink" href="#samenvatting" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Een afbeelding bestaat uit veel kleine pixels.</p></li>
+<li><p>Elke pixel heeft een kleur.</p></li>
+<li><p>Kleur wordt vaak opgeslagen als RGB.</p></li>
+<li><p>Een pixel is dus eigenlijk een getal of een combinatie van getallen.</p></li>
+<li><p>Hoe meer pixels, hoe scherper en ook vaak groter het bestand.</p></li>
+</ul>
+</section>
+<section id="check-je-begrip">
+<h2>Check je begrip<a class="headerlink" href="#check-je-begrip" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Wat is een pixel?</p></li>
+<li><p>Waarom kun je een afbeelding niet als één getal opslaan?</p></li>
+<li><p>Wat betekent RGB?</p></li>
+<li><p>Wat gebeurt er met de kwaliteit van een afbeelding als je meer pixels gebruikt?</p></li>
+</ol>
+</section>
+<section id="afbeeldingen-en-bronnen">
+<h2>Afbeeldingen en bronnen<a class="headerlink" href="#afbeeldingen-en-bronnen" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Zelf maken: maak een kleine 8x8 pixelafbeelding in Paint of een online pixel-editor.</p></li>
+<li><p>Online zoeken: <a class="reference external" href="https://www.google.com/search?q=pixel+art+voorbeeld">Pixel art voorbeelden</a></p></li>
+<li><p>Online zoeken: <a class="reference external" href="https://www.w3schools.com/colors/colors_rgb.asp">RGB-kleurenpalet</a></p></li>
+<li><p>Online zoeken: <a class="reference external" href="https://nl.wikipedia.org/wiki/Pixel">Wikipedia: pixel</a></p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="opdrachten">
+<h1>Opdrachten<a class="headerlink" href="#opdrachten" title="Link to this heading">#</a></h1>
+<p><strong>Kernroute (verplicht):</strong> opdracht 1 en 2. <strong>Plusroute:</strong> opdracht 3.</p>
+<ol class="arabic">
+<li><p>Pixeltekening maken</p>
+<p>a. Teken een 5x5-pixelbeeld op papier. Gebruik alleen zwart en wit. Laat in het midden een klein vierkantje zien.
+b. Geef voor 5 pixels aan welke kleur die pixel heeft. Gebruik hierbij de letters <code class="docutils literal notranslate"><span class="pre">W</span></code> (wit) en <code class="docutils literal notranslate"><span class="pre">Z</span></code> (zwart).
+c. Leg uit waarom een computer een foto niet als één grote kleur opslaat, maar als veel kleine vakjes.</p>
+</li>
+<li><p>Kleurcodes</p>
+<p>a. Schrijf drie verschillende RGB-kleuren op en leg uit wat elk getal betekent.
+b. Welke kleur krijg je bij <code class="docutils literal notranslate"><span class="pre">(255,</span> <span class="pre">0,</span> <span class="pre">0)</span></code>? En bij <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">255,</span> <span class="pre">0)</span></code>? En bij <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">255)</span></code>?
+c. Noem een manier om een afbeelding scherper te maken zonder de afbeelding te vergroten.</p>
+</li>
+<li><p>Toepassingsvraag</p>
+<p>Een game laat een karakter op het scherm bewegen. Het beeld lijkt schokkend en wazig.</p>
+<p>a. Waarom kan een hogere resolutie ervoor zorgen dat het beeld beter uitziet?
+b. Waarom heeft een game met veel pixels vaak meer geheugen nodig?
+c. Welk effect heeft het als je een afbeelding verkleint? Noem één voordeel en één nadeel.</p>
+</li>
+</ol>
+<section id="inzichtsvragen">
+<h2>Inzichtsvragen<a class="headerlink" href="#inzichtsvragen" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Waarom is een pixel niet dezelfde als een object of een tekening op papier?</p></li>
+<li><p>Waarom is RGB een slimme manier om kleur op te slaan voor computers?</p></li>
+<li><p>Hoe kun je zonder woorden uitleggen wat een resolutie is?</p></li>
+</ol>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -570,20 +677,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../blok1/hoofdstuk5.html"
+       href="index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Hoofdstuk 5: Functies &amp; combineren</p>
+        <p class="prev-next-title">Blok 2: informatie digitaal &amp; object-georiënteerd programmeren</p>
       </div>
     </a>
     <a class="right-next"
-       href="InfDig_hoofdstuk1.html"
+       href="InfDig_hoofdstuk2.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Informatie Digitaal Hoofdstuk 1: Digitale afbeeldingen, pixels en kleur</p>
+        <p class="prev-next-title">Informatie Digitaal Hoofdstuk 2: Bits en bytes</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -605,13 +712,21 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Blok 2: informatie digitaal &amp; object-georiënteerd programmeren</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spoorboekje">Spoorboekje</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Informatie Digitaal Hoofdstuk 1: Digitale afbeeldingen, pixels en kleur</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-een-pixel">Wat is een pixel?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#een-afbeelding-bestaat-uit-veel-kleine-vakjes">Een afbeelding bestaat uit veel kleine vakjes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kleur-opslaan">Kleur opslaan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hoeveel-informatie-zit-in-een-pixel">Hoeveel informatie zit in een pixel?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resolutie">Resolutie</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-een-kleine-afbeelding">Voorbeeld: een kleine afbeelding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#afbeeldingen-en-bronnen">Afbeeldingen en bronnen</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#studiewijzer-blok-2-informatica-klas-4-havo-en-vwo">Studiewijzer blok 2 — Informatica, klas 4 HAVO en VWO</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overzicht">Overzicht</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weekplanning">Weekplanning</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inzichtsvragen">Inzichtsvragen</a></li>
 </ul>
 </li>
 </ul>

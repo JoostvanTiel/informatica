@@ -1,4 +1,4 @@
-# Hoofdstuk 2: Bits en bytes
+# Informatie Digitaal Hoofdstuk 2: Bits en bytes
 
 ## Leerdoelen
 
@@ -185,11 +185,7 @@ Een foto, een liedje of een filmpje neemt dus veel meer ruimte in dan één byte
 - Online zoeken: [Wikipedia: bit](https://nl.wikipedia.org/wiki/Bit)
 - Online zoeken: [Wikipedia: byte](https://nl.wikipedia.org/wiki/Byte)
 
-
-
 Inhoud van hoofdstuk 2.
-
-
 
 # Opdrachten
 

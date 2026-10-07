@@ -1,4 +1,4 @@
-# Hoofdstuk 5: Afbeeldingen, audio en video
+# Informatie Digitaal Hoofdstuk 5: Afbeeldingen, audio en video
 
 ## Leerdoelen
 
@@ -121,9 +121,6 @@ Daarom gebruikt een computer compressietechnieken om het filmpje kleiner te make
 - Online zoeken: [Video compressie uitleg](https://www.youtube.com/results?search_query=video+compressie+uitleg)
 - Online zoeken: [Wikipedia: digitale audio](https://nl.wikipedia.org/wiki/Digitale_audio)
 - Online zoeken: [Wikipedia: MPEG-4](https://nl.wikipedia.org/wiki/MPEG-4)
-
-
-
 
 # Opdrachten
 
