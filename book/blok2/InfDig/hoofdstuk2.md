@@ -88,17 +88,17 @@ Dat bestaat alleen uit:
 Voorbeeld:
 
 | decimaal | binair |
-|==========|========|
-| 0 | 0 |
-| 1 | 1 |
-| 2 | 10 |
-| 3 | 11 |
-| 4 | 100 |
-| 5 | 101 |
+| -------- | ------ |
+| 0        | 0      |
+| 1        | 1      |
+| 2        | 10     |
+| 3        | 11     |
+| 4        | 100    |
+| 5        | 101    |
 
 Als je een decimaal getal om wil zetten in een binair getal kun je het volgende flowchart gebruiken. Links zie je de stappen in woorden. Rechts in Python code.
 
-![Deciamaal naar binair flowchart](img/2.2_Dec2Bin.png)
+![Decimaal naar binair flowchart](img/2.2_Dec2Bin.png)
 
 ---
 
