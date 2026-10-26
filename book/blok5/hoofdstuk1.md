@@ -36,34 +36,15 @@ Ga naar:
 
 https://sql-island.informatik.uni-kl.de/
 
-### Deel A - Verkennen
-
 1. Speel minimaal 30 minuten.
 2. Voltooi zoveel mogelijk levels.
 3. Noteer moeilijke woorden of opdrachten die je tegenkomt.
-
-### Deel B - Bewijs van voortgang
-
-Maak 3 screenshots:
-
-- screenshot 1: een vroeg level;
-- screenshot 2: een level in het midden;
-- screenshot 3: je hoogste behaalde level.
-
-### Deel C - Reflectie
-
-Beantwoord in je schrift of digitaal:
-
-1. Wat snapte je snel?
-2. Waar moest je echt over nadenken?
-3. Welke SQL-opdracht zag je het vaakst?
-4. Wat verwacht je dat we volgende week gaan doen?
 
 ---
 
 ## Koppeling met onze eigen database
 
-In dit blok werken we met `nimmastream_2627_IMPROVED`.
+In dit blok werken we met `nimmastream`.
 
 Je gaat later query's schrijven op tabellen zoals:
 
@@ -108,6 +89,5 @@ Wat je nu in SQL Island leert, gebruik je straks op echte data.
 
 ## Huiswerk
 
-1. Speel SQL Island door tot minimaal 5 afgeronde levels.
-2. Lever je 3 screenshots in.
-3. Schrijf 5 vragen op die je volgende week met echte SQL wilt kunnen oplossen.
+1. Speel SQL Island door totdat je het eiland ontsnapt bent.
+2. Schrijf op welke vragen je lastig vond tijdens het spelen.
