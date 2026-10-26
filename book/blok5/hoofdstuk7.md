@@ -60,6 +60,8 @@ Zo houd je overzicht en kun je tussendoor testen.
 
 ## Opdrachten
 
+Voer alle opdrachten uit in jouw database: `nimmastream_<gebruikersnaam>`.
+
 ### Opdracht 1 - Ontwerp
 
 Maak een kort schema van je tabellen met kolommen en datatypes.

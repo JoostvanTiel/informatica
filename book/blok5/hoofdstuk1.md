@@ -42,9 +42,15 @@ https://sql-island.informatik.uni-kl.de/
 
 ---
 
-## Koppeling met onze eigen database
+## Koppeling met jouw database
 
-In dit blok werken we met `nimmastream`.
+In dit blok werk je in jouw database:
+
+`nimmastream_<gebruikersnaam>`
+
+Voorbeeld:
+
+- gebruikersnaam `leerling_007` -> database `nimmastream_leerling_007`
 
 Je gaat later query's schrijven op tabellen zoals:
 
@@ -72,6 +78,8 @@ Wat je nu in SQL Island leert, gebruik je straks op echte data.
 
 ## Extra opdrachten (als je eerder klaar bent)
 
+Gebruik bij opdracht 3 jouw database: `nimmastream_<gebruikersnaam>`.
+
 1. Maak een woordenlijst met 8 SQL-begrippen uit SQL Island.
 2. Schrijf 5 databankvragen in gewone taal, bijvoorbeeld:
    - "Welke gebruiker is het jongst?"
@@ -85,7 +93,7 @@ Wat je nu in SQL Island leert, gebruik je straks op echte data.
 - SQL gebruik je om vragen te stellen aan data.
 - Een database bestaat uit tabellen met rijen en kolommen.
 - SQL Island helpt je starten met de logica achter query's.
-- In de volgende hoofdstukken ga je dezelfde denkwijze toepassen op onze eigen lesdatabase.
+- In de volgende hoofdstukken ga je dezelfde denkwijze toepassen op jouw database (`nimmastream_<gebruikersnaam>`).
 
 ## Huiswerk
 

@@ -15,6 +15,12 @@ Aan het einde van dit hoofdstuk kun je zelfstandig eenvoudige query's schrijven 
 
 ---
 
+Werk in phpMyAdmin altijd in jouw database:
+
+`nimmastream_<gebruikersnaam>`
+
+---
+
 ## 1. SELECT: gegevens opvragen
 
 Met `SELECT` vraag je data op uit een tabel.
@@ -102,6 +108,8 @@ Bij elke query stel je jezelf drie vragen:
 ---
 
 ## Opdrachten
+
+Voer alle opdrachten uit in jouw database: `nimmastream_<gebruikersnaam>`.
 
 ### Opdracht 1 - Basis (instap)
 

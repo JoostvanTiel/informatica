@@ -15,6 +15,12 @@ Aan het einde van dit hoofdstuk kun je een eenvoudige beheerpagina bouwen voor Ã
 
 ---
 
+Ook in dit hoofdstuk gebruik je jouw database:
+
+`nimmastream_<gebruikersnaam>`
+
+---
+
 ## 1. UPDATE vanuit een formulier
 
 Stap voor stap:
@@ -64,6 +70,8 @@ Gebruik prepared statements met placeholders (`?`).
 ---
 
 ## Opdrachten
+
+Voer alle opdrachten uit in jouw database: `nimmastream_<gebruikersnaam>`.
 
 ### Opdracht 1 - Bewerkfunctie
 
