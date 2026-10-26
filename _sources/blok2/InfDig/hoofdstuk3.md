@@ -219,8 +219,6 @@ Die hex-code is veel overzichtelijker.
 
 ## Opdrachten
 
-**Kernroute (verplicht):** opdracht 1 en 2. **Plusroute:** opdracht 3.
-
 1. Decimaal en binair
 
    a. Zet het decimale getal 13 om naar binair.
@@ -240,6 +238,12 @@ Die hex-code is veel overzichtelijker.
    a. Waarom is een kleurcode in hexadecimaal korter dan dezelfde kleur in binair?
    b. Hoe zou jij een kleur als `#FF0000` uitleggen aan een klasgenoot?
    c. Noem een situatie waarin een computer liever werkt met hexadecimaal dan met decimaal.
+
+4. Kijk naar een kleurcode
+
+   a. Zet de hexadecimale code `#3F8C3A` om naar een korte uitleg in woorden.
+   b. De code `#0000FF` is blauw. Hoe zou je deze code in binair kunnen uitleggen?
+   c. Waarom is hexadecimaal handig bij het programmeren van kleurcodes?
 
 ### Inzichtsvragen
 

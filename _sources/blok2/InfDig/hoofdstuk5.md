@@ -124,8 +124,6 @@ Daarom gebruikt een computer compressietechnieken om het filmpje kleiner te make
 
 ## Opdrachten
 
-**Kernroute (verplicht):** opdracht 1 en 2. **Plusroute:** opdracht 3.
-
 1. Afbeelding, geluid en video vergelijken
 
    a. Noem één kenmerk van een digitale foto, één van geluid en één van video.
@@ -145,6 +143,12 @@ Daarom gebruikt een computer compressietechnieken om het filmpje kleiner te make
    a. Wat kun je doen om het bestand kleiner te maken?
    b. Welke informatie mag eventueel verloren gaan zonder dat het filmpje onbruikbaar wordt?
    c. Waarom is compressie nodig bij digitale media?
+
+4. Denk na over een filmpje
+
+   a. Noem twee dingen die een gamevideo groter maken dan een gewone foto.
+   b. Waarom kunnen beelden per seconde (fps) invloed hebben op het bestand?
+   c. Kies een bestandstype en leg uit waarom je dat type bij een gamevideo zou gebruiken.
 
 ### Inzichtsvragen
 

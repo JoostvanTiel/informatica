@@ -122,8 +122,6 @@ Nu beweegt elke kogel op zijn eigen manier.
 
 ## Opdrachten
 
-**Kernroute (verplicht):** opdracht 1 en 2. **Plusroute:** opdracht 3.
-
 1. Lijst met objecten
 
    a. Maak een lijst met drie vijanden.
@@ -143,6 +141,12 @@ Nu beweegt elke kogel op zijn eigen manier.
    a. Hoe kun je nieuw gemaakte vijanden in een lijst zetten?
    b. Wat gebeurt er als de speler een vijand verslaat?
    c. Waarom is het handig om een lijst van objecten in een game bij te houden?
+
+4. Lijst met kogels
+
+   a. Maak een lijst `kogels` en voeg er twee kogels aan toe.
+   b. Schrijf een `for`-lus die elke kogel met 5 punten beweegt.
+   c. Waarom is het handig om de kogels in één lijst bij te houden?
 
 ### Inzichtsvragen
 

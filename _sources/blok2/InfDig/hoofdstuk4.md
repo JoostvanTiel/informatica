@@ -176,8 +176,6 @@ Het scherm kan die codes weer omzetten naar letters.
 
 ## Opdrachten
 
-**Kernroute (verplicht):** opdracht 1 en 2. **Plusroute:** opdracht 3.
-
 1. Tekst in codes
 
    a. Zet je eigen voornaam om in een kleine ASCII-tabel. Gebruik minimaal 4 letters.
@@ -197,6 +195,12 @@ Het scherm kan die codes weer omzetten naar letters.
    a. Welke oorzaak kan daar aan liggen?
    b. Waarom is Unicode een belangrijke verbetering ten opzichte van ASCII?
    c. Noem één voorbeeld van een teken dat alleen met Unicode goed werkt.
+
+4. Schrijf je eigen naam in codes
+
+   a. Kies 3 letters uit je naam en zet die om in Unicode- of ASCII-codes.
+   b. Leg uit waarom een app voor verschillende talen tekst anders moet coderen.
+   c. Noem een teken dat je niet in ASCII goed kunt opslaan.
 
 ### Inzichtsvragen
 

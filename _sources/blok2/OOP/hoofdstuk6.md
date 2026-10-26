@@ -150,8 +150,6 @@ Zo is het duidelijk wat het spel op ieder moment doet.
 
 ## Opdrachten
 
-**Kernroute (verplicht):** opdracht 1 en 2. **Plusroute:** opdracht 3.
-
 1. Startscherm maken
 
    a. Teken een eenvoudig startscherm met tekst zoals `START SPEL`.
@@ -171,6 +169,12 @@ Zo is het duidelijk wat het spel op ieder moment doet.
    a. Hoe kun je de status van het spel veranderen als het level is afgelopen?
    b. Waarom is een start- en eindscherm belangrijk voor een spelervaring?
    c. Noem een situatie waarin een reset van het spel logisch is.
+
+4. Beheer een spelstate
+
+   a. Maak een variabele `status` met de waarden `startscherm`, `spelen` en `game_over`.
+   b. Leg uit wanneer je `status = "spelen"` zet.
+   c. Schrijf een korte reden waarom een reset van de status belangrijk is voor een nieuwe ronde.
 
 ### Inzichtsvragen
 

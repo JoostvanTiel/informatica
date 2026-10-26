@@ -125,8 +125,6 @@ Nu kun je het spel laten reageren op acties.
 
 ## Opdrachten
 
-**Kernroute (verplicht):** opdracht 1 en 2. **Plusroute:** opdracht 3.
-
 1. Score en levens
 
    a. Maak een klasse `Speler` met `score` en `levens`.
@@ -146,6 +144,12 @@ Nu kun je het spel laten reageren op acties.
    a. Hoe kun je het spel laten reageren wanneer de laatste levenswaarde 0 wordt?
    b. Waarom is een duidelijke score belangrijk voor een game?
    c. Wat is het verschil tussen een score en een levenswaarde in een spel?
+
+4. Spelstatus bijhouden
+
+   a. Maak een korte klasse `Speler` met een score en een methode `verlaag_levens`.
+   b. Leg uit waarom je deze gegevens bij het spelobject bewaart in plaats van in losse variabelen.
+   c. Noem een situatie waarin de score direct moet veranderen in een game.
 
 ### Inzichtsvragen
 

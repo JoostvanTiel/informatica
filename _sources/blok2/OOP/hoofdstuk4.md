@@ -124,8 +124,6 @@ In een game is tijd dus belangrijk om bewegingen te synchroniseren.
 
 ## Opdrachten
 
-**Kernroute (verplicht):** opdracht 1 en 2. **Plusroute:** opdracht 3.
-
 1. FPS en game-lus
 
    a. Leg uit wat FPS betekent.
@@ -145,6 +143,12 @@ In een game is tijd dus belangrijk om bewegingen te synchroniseren.
    a. Hoe kun je met tijd bepalen wanneer een nieuwe enemy verschijnt?
    b. Waarom is een vaste tijdsregel beter dan alleen een toevallige code?
    c. Leg uit waarom een game-lus belangrijk is voor beweging en weergave.
+
+4. Verander de snelheid
+
+   a. Maak een variabele `speed` en laat zien hoe je deze per frame gebruikt om een object te bewegen.
+   b. Waarom is `clock.tick(60)` handig als je meerdere objecten in een spel hebt?
+   c. Noem een situatie waarin een lagere FPS een probleem kan worden.
 
 ### Inzichtsvragen
 
