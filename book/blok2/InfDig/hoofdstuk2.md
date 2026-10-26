@@ -185,8 +185,6 @@ Inhoud van hoofdstuk 2.
 
 ## Opdrachten
 
-**Kernroute (verplicht):** opdracht 1 en 2. **Plusroute:** opdracht 3.
-
 1. Bits en bytes in een tabel
 
    a. Zet de getallen 1, 2, 3, 4 en 5 om naar binair.
@@ -206,6 +204,12 @@ Inhoud van hoofdstuk 2.
    a. Waarom kun je een foto niet zomaar als één getal opslaan?
    b. Hoe kun je de grootte van een bestand vergelijken met het aantal bits en bytes?
    c. Noem een manier om een bestand kleiner te maken zonder de inhoud volledig te verliezen.
+
+4. Je eigen binair schema bouwen
+
+   a. Kies vier getallen tussen 0 en 15 en zet ze om naar binair.
+   b. Schrijf één byte op als acht bits en leg uit waarom een byte handig is om tekens te bewaren.
+   c. Noem een situatie waarin een computer veel binaire informatie tegelijk moet verwerken.
 
 ### Inzichtsvragen
 

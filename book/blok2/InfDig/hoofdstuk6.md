@@ -149,8 +149,6 @@ De gamecode kan bijvoorbeeld de achtergrondafbeelding openen en de muziek afspel
 
 ## Opdrachten
 
-**Kernroute (verplicht):** opdracht 1 en 2. **Plusroute:** opdracht 3.
-
 1. Bestanden herkennen
 
    a. Noem vijf verschillende bestandstypes die je regelmatig tegenkomt.
@@ -170,6 +168,12 @@ De gamecode kan bijvoorbeeld de achtergrondafbeelding openen en de muziek afspel
    a. Hoe weet je computer welke app bij elk bestand past?
    b. Waarom is een juiste bestandsnaam belangrijk?
    c. Noem één reden waarom je bestanden beter organisatorisch opslaat.
+
+4. Eigen projectmap plannen
+
+   a. Maak een kleine overzichtstabel met drie mapjes voor een gameproject.
+   b. Leg uit welke bestanden je in elk mapje zou stoppen.
+   c. Waarom is het nuttig om bestanden logisch te ordenen?
 
 ### Inzichtsvragen
 

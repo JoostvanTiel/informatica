@@ -142,8 +142,6 @@ In een game kun je methoden gebruiken voor:
 
 ## Opdrachten
 
-**Kernroute (verplicht):** opdracht 1 en 2. **Plusroute:** opdracht 3.
-
 1. Methode schrijven
 
    a. Maak een klasse `Speler` met een attribuut `naam` en `score`.
@@ -163,6 +161,12 @@ In een game kun je methoden gebruiken voor:
    a. Welke methode zou je dan kunnen gebruiken?
    b. Wat gebeurt met de score of levens als de vijand wordt verslagen?
    c. Waarom is het handig om gedrag in methoden te stoppen?
+
+4. Eigen methode ontwerpen
+
+   a. Maak een klasse `Vijand` met een attribuut `levens`.
+   b. Voeg een methode `ontvang_schade` toe die levens verlaagt.
+   c. Laat zien wat er gebeurt als een vijand 2 schadepunten krijgt.
 
 ### Inzichtsvragen
 
