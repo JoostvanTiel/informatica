@@ -55,3 +55,14 @@ chapters:
     sections:
       - file: blok4/hoofdstuk1.md
       - file: blok4/hoofdstuk2.md
+  - title: 4ha blok 5
+    file: blok5/index.md
+    sections:
+      - file: blok5/hoofdstuk1.md
+      - file: blok5/hoofdstuk2.md
+      - file: blok5/hoofdstuk3.md
+      - file: blok5/hoofdstuk4.md
+      - file: blok5/hoofdstuk5.md
+      - file: blok5/hoofdstuk6.md
+      - file: blok5/hoofdstuk7.md
+      - file: blok5/hoofdstuk8.md
