@@ -15,6 +15,12 @@ Aan het einde van dit hoofdstuk kun je gerichte wijzigingen doen zonder je datab
 
 ---
 
+Let op: voer deze opdrachten alleen uit in jouw database:
+
+`nimmastream_<gebruikersnaam>`
+
+---
+
 ## 1. Veilig werken: eerst SELECT, dan pas wijzigen
 
 Bij `UPDATE` en `DELETE` verander je data blijvend.  
@@ -96,6 +102,8 @@ Handige functies:
 ---
 
 ## Opdrachten
+
+Voer alle opdrachten uit in jouw database: `nimmastream_<gebruikersnaam>`.
 
 ### Opdracht 1 - Veilige UPDATE
 

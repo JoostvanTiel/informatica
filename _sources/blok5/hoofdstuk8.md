@@ -57,6 +57,8 @@ Laat in je presentatie zien:
 
 ## Opdrachten
 
+Voer alle opdrachten uit in jouw database: `nimmastream_<gebruikersnaam>`.
+
 ### Opdracht 1 - Testplan
 
 Maak een tabel met minimaal 8 tests:

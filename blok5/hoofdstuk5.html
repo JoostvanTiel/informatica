@@ -506,13 +506,15 @@
 <section id="verbinding-maken-met-de-database">
 <h2>1. Verbinding maken met de database<a class="headerlink" href="#verbinding-maken-met-de-database" title="Link to this heading">#</a></h2>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
-<span class="nv">$conn</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">mysqli</span><span class="p">(</span><span class="s2">"localhost"</span><span class="p">,</span> <span class="s2">"root"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"nimmastream_2627"</span><span class="p">);</span>
+<span class="nv">$database</span> <span class="o">=</span> <span class="s2">"nimmastream_&lt;gebruikersnaam&gt;"</span><span class="p">;</span>
+<span class="nv">$conn</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">mysqli</span><span class="p">(</span><span class="s2">"localhost"</span><span class="p">,</span> <span class="s2">"root"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="nv">$database</span><span class="p">);</span>
 <span class="k">if</span> <span class="p">(</span><span class="nv">$conn</span><span class="o">-&gt;</span><span class="na">connect_error</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">die</span><span class="p">(</span><span class="s2">"Verbinding mislukt: "</span> <span class="o">.</span> <span class="nv">$conn</span><span class="o">-&gt;</span><span class="na">connect_error</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="cp">?&gt;</span>
 </pre></div>
 </div>
+<p>Vervang <code class="docutils literal notranslate"><span class="pre">&lt;gebruikersnaam&gt;</span></code> door je eigen gebruikersnaam.</p>
 <p>Zonder verbinding kun je geen query’s uitvoeren.</p>
 </section>
 <hr class="docutils" />
@@ -554,11 +556,12 @@
 <hr class="docutils" />
 <section id="opdrachten">
 <h2>Opdrachten<a class="headerlink" href="#opdrachten" title="Link to this heading">#</a></h2>
+<p>Voer alle opdrachten uit in jouw database: <code class="docutils literal notranslate"><span class="pre">nimmastream_&lt;gebruikersnaam&gt;</span></code>.</p>
 <section id="opdracht-1-basispagina">
 <h3>Opdracht 1 - Basispagina<a class="headerlink" href="#opdracht-1-basispagina" title="Link to this heading">#</a></h3>
 <p>Maak een pagina met:</p>
 <ol class="arabic simple">
-<li><p>verbinding met database;</p></li>
+<li><p>verbinding met jouw database (<code class="docutils literal notranslate"><span class="pre">nimmastream_&lt;gebruikersnaam&gt;</span></code>);</p></li>
 <li><p>lijst van alle gebruikers;</p></li>
 <li><p>nette titel en tussenkop.</p></li>
 </ol>

@@ -2,7 +2,14 @@
 
 In dit blok leer je hoe je met een relationele database werkt, hoe je data ophaalt en bewerkt met SQL, en hoe je die data gebruikt in een webapplicatie met PHP.
 
-Je werkt met de nieuwe database **`nimmastream_2627_IMPROVED`**.
+Belangrijk: je werkt niet allemaal in dezelfde database.  
+Iedere leerling werkt in een eigen database. Jouw database heet:
+
+`nimmastream_<gebruikersnaam>`
+
+Voorbeeld:
+
+- gebruikersnaam `leerling_007` -> database `nimmastream_leerling_007`
 
 ## Spoorboekje
 

@@ -19,12 +19,15 @@ Aan het einde van dit hoofdstuk kun je een werkende uitleespagina bouwen die dat
 
 ```php
 <?php
-$conn = new mysqli("localhost", "root", "", "nimmastream_2627");
+$database = "nimmastream_<gebruikersnaam>";
+$conn = new mysqli("localhost", "root", "", $database);
 if ($conn->connect_error) {
     die("Verbinding mislukt: " . $conn->connect_error);
 }
 ?>
 ```
+
+Vervang `<gebruikersnaam>` door je eigen gebruikersnaam.
 
 Zonder verbinding kun je geen query's uitvoeren.
 
@@ -71,11 +74,13 @@ Controleer:
 
 ## Opdrachten
 
+Voer alle opdrachten uit in jouw database: `nimmastream_<gebruikersnaam>`.
+
 ### Opdracht 1 - Basispagina
 
 Maak een pagina met:
 
-1. verbinding met database;
+1. verbinding met jouw database (`nimmastream_<gebruikersnaam>`);
 2. lijst van alle gebruikers;
 3. nette titel en tussenkop.
 

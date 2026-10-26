@@ -15,6 +15,12 @@ Aan het einde van dit hoofdstuk kun je queries schrijven die informatie uit meer
 
 ---
 
+Gebruik in alle opdrachten jouw database:
+
+`nimmastream_<gebruikersnaam>`
+
+---
+
 ## 1. Waarom meerdere tabellen?
 
 In een goede database staat niet alles in één grote tabel.
@@ -71,6 +77,8 @@ Met extra `JOIN`-regels kun je stap voor stap meer tabellen koppelen.
 ---
 
 ## Opdrachten
+
+Voer alle opdrachten uit in jouw database: `nimmastream_<gebruikersnaam>`.
 
 ### Opdracht 1 - Basis JOINs
 
