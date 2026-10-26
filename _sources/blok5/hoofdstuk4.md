@@ -87,11 +87,11 @@ GROUP BY aflevering_id;
 
 Handige functies:
 
-- `COUNT()`
-- `AVG()`
-- `MIN()`
-- `MAX()`
-- `SUM()`
+- `COUNT()` telt het aantal resultaten
+- `AVG()` berekent het gemiddelde van de resultaten
+- `MIN()` geeft de laagste waarde van de resultaten
+- `MAX()` geeft de hoogste waarde van de resultaten
+- `SUM()` geeft de optelsom van alle resultaten
 
 ---
 
@@ -122,7 +122,7 @@ Handige functies:
 3. Bereken gemiddelde beoordeling per aflevering.
 4. Toon top 3 meest beoordeelde afleveringen.
 
-### Opdracht 5 - Didactische challenge
+### Opdracht 5 - Challenge
 
 Schrijf één foutgevoelige query opzettelijk verkeerd (bijv. zonder `WHERE`) en leg uit wat het risico is.
 

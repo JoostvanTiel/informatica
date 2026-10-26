@@ -464,12 +464,12 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-meerdere-tabellen">1. Waarom meerdere tabellen?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sleutels-keys">2. Sleutels (keys)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inner-join">3. INNER JOIN</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#left-join">4. LEFT JOIN</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#join">3. JOIN</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#join-met-meerdere-tabellen">4. JOIN met meerdere tabellen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veelgemaakte-fouten">5. Veelgemaakte fouten</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-basis-joins">Opdracht 1 - Basis JOINs</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-inner-of-left">Opdracht 2 - INNER of LEFT?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-gericht-koppelen-met-join">Opdracht 2 - Gericht koppelen met JOIN</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-drie-tabellen-koppelen">Opdracht 3 - Drie tabellen koppelen</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-redeneren-over-resultaat">Opdracht 4 - Redeneren over resultaat</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-challenge">Opdracht 5 - Challenge</a></li>
@@ -498,8 +498,7 @@
 <ul class="simple">
 <li><p>waarom databases gegevens spreiden over meerdere tabellen;</p></li>
 <li><p>wat een primary key en foreign key is;</p></li>
-<li><p>wanneer je <code class="docutils literal notranslate"><span class="pre">INNER</span> <span class="pre">JOIN</span></code> gebruikt;</p></li>
-<li><p>wanneer je <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code> gebruikt;</p></li>
+<li><p>hoe je <code class="docutils literal notranslate"><span class="pre">JOIN</span></code> gebruikt om tabellen te koppelen;</p></li>
 <li><p>hoe je JOIN-query’s logisch controleert.</p></li>
 </ul>
 <p>Aan het einde van dit hoofdstuk kun je queries schrijven die informatie uit meerdere tabellen koppelen.</p>
@@ -526,25 +525,24 @@
 <p>Hierdoor weet de database welke records bij elkaar horen.</p>
 </section>
 <hr class="docutils" />
-<section id="inner-join">
-<h2>3. INNER JOIN<a class="headerlink" href="#inner-join" title="Link to this heading">#</a></h2>
-<p>Gebruik <code class="docutils literal notranslate"><span class="pre">INNER</span> <span class="pre">JOIN</span></code> als je alleen records wilt zien die in beide tabellen bestaan.</p>
+<section id="join">
+<h2>3. JOIN<a class="headerlink" href="#join" title="Link to this heading">#</a></h2>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">voornaam</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">profielnaam</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span><span class="w"> </span><span class="n">u</span>
-<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">profielen</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">gebruiker_id</span><span class="p">;</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">profielen</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">gebruiker_id</span><span class="p">;</span>
 </pre></div>
 </div>
 </section>
 <hr class="docutils" />
-<section id="left-join">
-<h2>4. LEFT JOIN<a class="headerlink" href="#left-join" title="Link to this heading">#</a></h2>
-<p>Gebruik <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code> als je alle records uit de linker tabel wilt tonen, ook zonder match.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">voornaam</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="k">type</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span><span class="w"> </span><span class="n">u</span>
-<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">abonnementen</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">gebruiker_id</span><span class="p">;</span>
+<section id="join-met-meerdere-tabellen">
+<h2>4. JOIN met meerdere tabellen<a class="headerlink" href="#join-met-meerdere-tabellen" title="Link to this heading">#</a></h2>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">titel</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aflevering</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">titel</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">serie</span><span class="p">,</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">naam</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">genre</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">afleveringen</span><span class="w"> </span><span class="n">a</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">series</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">serie_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">id</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">genres</span><span class="w"> </span><span class="k">g</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">genre_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Als er geen match is, krijg je <code class="docutils literal notranslate"><span class="pre">NULL</span></code> in kolommen van de rechter tabel.</p>
+<p>Met extra <code class="docutils literal notranslate"><span class="pre">JOIN</span></code>-regels kun je stap voor stap meer tabellen koppelen.</p>
 </section>
 <hr class="docutils" />
 <section id="veelgemaakte-fouten">
@@ -552,8 +550,8 @@
 <ol class="arabic simple">
 <li><p>Join-voorwaarde vergeten (<code class="docutils literal notranslate"><span class="pre">ON</span> <span class="pre">...</span></code>).</p></li>
 <li><p>Verkeerde kolommen aan elkaar koppelen.</p></li>
-<li><p>Verwachten dat <code class="docutils literal notranslate"><span class="pre">INNER</span> <span class="pre">JOIN</span></code> ook niet-gematchte rijen toont.</p></li>
 <li><p>Niet controleren op dubbele rijen door 1-op-veel-relaties.</p></li>
+<li><p>Kolomnamen niet verduidelijken met aliassen (<code class="docutils literal notranslate"><span class="pre">u</span></code>, <code class="docutils literal notranslate"><span class="pre">p</span></code>, <code class="docutils literal notranslate"><span class="pre">a</span></code>).</p></li>
 </ol>
 </section>
 <hr class="docutils" />
@@ -567,13 +565,13 @@
 <li><p>Toon afleveringtitel met serietitel.</p></li>
 </ol>
 </section>
-<section id="opdracht-2-inner-of-left">
-<h3>Opdracht 2 - INNER of LEFT?<a class="headerlink" href="#opdracht-2-inner-of-left" title="Link to this heading">#</a></h3>
-<p>Maak per vraag eerst een voorspelling: gebruik je <code class="docutils literal notranslate"><span class="pre">INNER</span> <span class="pre">JOIN</span></code> of <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code>?</p>
+<section id="opdracht-2-gericht-koppelen-met-join">
+<h3>Opdracht 2 - Gericht koppelen met JOIN<a class="headerlink" href="#opdracht-2-gericht-koppelen-met-join" title="Link to this heading">#</a></h3>
+<p>Schrijf een query met <code class="docutils literal notranslate"><span class="pre">JOIN</span></code> voor:</p>
 <ol class="arabic simple">
-<li><p>Alle gebruikers met eventueel abonnement.</p></li>
-<li><p>Alleen gebruikers die een profiel hebben.</p></li>
-<li><p>Alle genres met eventueel series.</p></li>
+<li><p>gebruikers en hun profielen;</p></li>
+<li><p>series en hun genres;</p></li>
+<li><p>afleveringen en hun serie.</p></li>
 </ol>
 </section>
 <section id="opdracht-3-drie-tabellen-koppelen">
@@ -594,14 +592,19 @@
 </section>
 <section id="opdracht-5-challenge">
 <h3>Opdracht 5 - Challenge<a class="headerlink" href="#opdracht-5-challenge" title="Link to this heading">#</a></h3>
-<p>Schrijf een query die profielen toont zonder beoordelingen (tip: <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code> + <code class="docutils literal notranslate"><span class="pre">IS</span> <span class="pre">NULL</span></code>).</p>
+<p>Schrijf een query met <code class="docutils literal notranslate"><span class="pre">JOIN</span></code> die laat zien:</p>
+<ol class="arabic simple">
+<li><p>profielnaam;</p></li>
+<li><p>afleveringstitel;</p></li>
+<li><p>gegeven beoordeling.</p></li>
+</ol>
 </section>
 </section>
 <hr class="docutils" />
 <section id="check-je-begrip">
 <h2>Check je begrip<a class="headerlink" href="#check-je-begrip" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Wat is het verschil tussen <code class="docutils literal notranslate"><span class="pre">INNER</span> <span class="pre">JOIN</span></code> en <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code>?</p></li>
+<li><p>Waarom heb je bij een <code class="docutils literal notranslate"><span class="pre">JOIN</span></code> altijd een <code class="docutils literal notranslate"><span class="pre">ON</span></code>-voorwaarde nodig?</p></li>
 <li><p>Waarom zijn foreign keys belangrijk?</p></li>
 <li><p>Wanneer kan een JOIN dubbele rijen geven?</p></li>
 <li><p>Hoe controleer je of een JOIN-resultaat klopt?</p></li>
@@ -613,15 +616,14 @@
 <ul class="simple">
 <li><p>Relaties maken het mogelijk om data netjes te verdelen.</p></li>
 <li><p>Met JOINs combineer je die data weer tot bruikbare informatie.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">INNER</span> <span class="pre">JOIN</span></code> geeft alleen matches, <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code> behoudt alle rijen links.</p></li>
+<li><p>Met meerdere <code class="docutils literal notranslate"><span class="pre">JOIN</span></code>-stappen kun je rijke informatie uit verschillende tabellen opbouwen.</p></li>
 </ul>
 </section>
 <section id="huiswerk">
 <h2>Huiswerk<a class="headerlink" href="#huiswerk" title="Link to this heading">#</a></h2>
 <p>Maak 5 JOIN-query’s:</p>
 <ul class="simple">
-<li><p>2x <code class="docutils literal notranslate"><span class="pre">INNER</span> <span class="pre">JOIN</span></code>;</p></li>
-<li><p>2x <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code>;</p></li>
+<li><p>4x met <code class="docutils literal notranslate"><span class="pre">JOIN</span></code> tussen 2 tabellen;</p></li>
 <li><p>1x met minimaal 3 tabellen.</p></li>
 </ul>
 <p>Schrijf per query in één zin wat je ermee wilt aantonen.</p>
@@ -697,12 +699,12 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-meerdere-tabellen">1. Waarom meerdere tabellen?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sleutels-keys">2. Sleutels (keys)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inner-join">3. INNER JOIN</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#left-join">4. LEFT JOIN</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#join">3. JOIN</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#join-met-meerdere-tabellen">4. JOIN met meerdere tabellen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veelgemaakte-fouten">5. Veelgemaakte fouten</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-basis-joins">Opdracht 1 - Basis JOINs</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-inner-of-left">Opdracht 2 - INNER of LEFT?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-gericht-koppelen-met-join">Opdracht 2 - Gericht koppelen met JOIN</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-drie-tabellen-koppelen">Opdracht 3 - Drie tabellen koppelen</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-redeneren-over-resultaat">Opdracht 4 - Redeneren over resultaat</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-challenge">Opdracht 5 - Challenge</a></li>

@@ -8,8 +8,7 @@ Je leert:
 
 - waarom databases gegevens spreiden over meerdere tabellen;
 - wat een primary key en foreign key is;
-- wanneer je `INNER JOIN` gebruikt;
-- wanneer je `LEFT JOIN` gebruikt;
+- hoe je `JOIN` gebruikt om tabellen te koppelen;
 - hoe je JOIN-query's logisch controleert.
 
 Aan het einde van dit hoofdstuk kun je queries schrijven die informatie uit meerdere tabellen koppelen.
@@ -39,29 +38,26 @@ Hierdoor weet de database welke records bij elkaar horen.
 
 ---
 
-## 3. INNER JOIN
-
-Gebruik `INNER JOIN` als je alleen records wilt zien die in beide tabellen bestaan.
+## 3. JOIN
 
 ```sql
 SELECT u.voornaam, p.profielnaam
 FROM gebruikers u
-INNER JOIN profielen p ON u.id = p.gebruiker_id;
+JOIN profielen p ON u.id = p.gebruiker_id;
 ```
 
 ---
 
-## 4. LEFT JOIN
-
-Gebruik `LEFT JOIN` als je alle records uit de linker tabel wilt tonen, ook zonder match.
+## 4. JOIN met meerdere tabellen
 
 ```sql
-SELECT u.voornaam, a.type
-FROM gebruikers u
-LEFT JOIN abonnementen a ON u.id = a.gebruiker_id;
+SELECT a.titel AS aflevering, s.titel AS serie, g.naam AS genre
+FROM afleveringen a
+JOIN series s ON a.serie_id = s.id
+JOIN genres g ON s.genre_id = g.id;
 ```
 
-Als er geen match is, krijg je `NULL` in kolommen van de rechter tabel.
+Met extra `JOIN`-regels kun je stap voor stap meer tabellen koppelen.
 
 ---
 
@@ -69,8 +65,8 @@ Als er geen match is, krijg je `NULL` in kolommen van de rechter tabel.
 
 1. Join-voorwaarde vergeten (`ON ...`).
 2. Verkeerde kolommen aan elkaar koppelen.
-3. Verwachten dat `INNER JOIN` ook niet-gematchte rijen toont.
-4. Niet controleren op dubbele rijen door 1-op-veel-relaties.
+3. Niet controleren op dubbele rijen door 1-op-veel-relaties.
+4. Kolomnamen niet verduidelijken met aliassen (`u`, `p`, `a`).
 
 ---
 
@@ -82,13 +78,13 @@ Als er geen match is, krijg je `NULL` in kolommen van de rechter tabel.
 2. Toon gebruikersnaam met abonnementstype.
 3. Toon afleveringtitel met serietitel.
 
-### Opdracht 2 - INNER of LEFT?
+### Opdracht 2 - Gericht koppelen met JOIN
 
-Maak per vraag eerst een voorspelling: gebruik je `INNER JOIN` of `LEFT JOIN`?
+Schrijf een query met `JOIN` voor:
 
-1. Alle gebruikers met eventueel abonnement.
-2. Alleen gebruikers die een profiel hebben.
-3. Alle genres met eventueel series.
+1. gebruikers en hun profielen;
+2. series en hun genres;
+3. afleveringen en hun serie.
 
 ### Opdracht 3 - Drie tabellen koppelen
 
@@ -105,13 +101,17 @@ Bij elke query noteer je:
 
 ### Opdracht 5 - Challenge
 
-Schrijf een query die profielen toont zonder beoordelingen (tip: `LEFT JOIN` + `IS NULL`).
+Schrijf een query met `JOIN` die laat zien:
+
+1. profielnaam;
+2. afleveringstitel;
+3. gegeven beoordeling.
 
 ---
 
 ## Check je begrip
 
-1. Wat is het verschil tussen `INNER JOIN` en `LEFT JOIN`?
+1. Waarom heb je bij een `JOIN` altijd een `ON`-voorwaarde nodig?
 2. Waarom zijn foreign keys belangrijk?
 3. Wanneer kan een JOIN dubbele rijen geven?
 4. Hoe controleer je of een JOIN-resultaat klopt?
@@ -122,14 +122,13 @@ Schrijf een query die profielen toont zonder beoordelingen (tip: `LEFT JOIN` + `
 
 - Relaties maken het mogelijk om data netjes te verdelen.
 - Met JOINs combineer je die data weer tot bruikbare informatie.
-- `INNER JOIN` geeft alleen matches, `LEFT JOIN` behoudt alle rijen links.
+- Met meerdere `JOIN`-stappen kun je rijke informatie uit verschillende tabellen opbouwen.
 
 ## Huiswerk
 
 Maak 5 JOIN-query's:
 
-- 2x `INNER JOIN`;
-- 2x `LEFT JOIN`;
+- 4x met `JOIN` tussen 2 tabellen;
 - 1x met minimaal 3 tabellen.
 
 Schrijf per query in één zin wat je ermee wilt aantonen.
