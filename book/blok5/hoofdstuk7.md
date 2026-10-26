@@ -15,15 +15,6 @@ Aan het einde van dit hoofdstuk heb je een eerste werkende versie van je webshop
 
 ---
 
-## Lesopbouw (45-60 minuten)
-
-1. **Projectuitleg en eisen (10 min)**
-2. **Ontwerpen (10-15 min)**
-3. **Bouwen (20-25 min)**
-4. **Testen en bijsturen (10 min)**
-
----
-
 ## 1. Projectcontext
 
 Je bouwt een webshop waar gebruikers producten kunnen bekijken en beheren.

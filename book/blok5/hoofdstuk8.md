@@ -15,15 +15,6 @@ Aan het einde van dit hoofdstuk lever je een werkend en onderbouwd eindproduct o
 
 ---
 
-## Lesopbouw (45-60 minuten)
-
-1. **Eindtest uitvoeren (15-20 min)**
-2. **Verbeteringen doorvoeren (15-20 min)**
-3. **Presentatie voorbereiden (10-15 min)**
-4. **Korte reflectie (5 min)**
-
----
-
 ## 1. Eindtest
 
 Test minimaal:

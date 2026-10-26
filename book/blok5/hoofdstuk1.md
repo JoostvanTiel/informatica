@@ -15,17 +15,6 @@ Aan het einde van dit hoofdstuk kun je in eigen woorden uitleggen wat SQL doet e
 
 ---
 
-## Lesopbouw (45-60 minuten)
-
-1. **Start (5 min)**  
-   Korte uitleg: wat is SQL en waarom gebruiken we het?
-2. **Oriëntatie-opdracht (30-35 min)**  
-   Werken in SQL Island.
-3. **Reflectie en nabespreking (10-15 min)**  
-   In tweetallen vergelijken en klassikaal ophalen.
-
----
-
 ## Waarom starten met een game?
 
 Bij SQL moet je leren denken in:
