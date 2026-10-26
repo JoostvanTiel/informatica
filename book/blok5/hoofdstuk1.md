@@ -1,55 +1,82 @@
 # Hoofdstuk 1: Oriëntatie op SQL met SQL Island
 
-## Weekdoel
+## Leerdoelen
 
-Je maakt kennis met SQL en relationele databases door spelenderwijs te oefenen in **SQL Island**:
+In dit hoofdstuk maak je kennis met SQL door te oefenen in een game-omgeving.
+
+Je leert:
+
+- wat een database, tabel, rij en kolom is;
+- wat een query is;
+- waarom SQL belangrijk is voor websites en apps;
+- hoe je stap voor stap logische vragen aan data stelt.
+
+Aan het einde van dit hoofdstuk kun je in eigen woorden uitleggen wat SQL doet en kun je laten zien dat je al eerste query-denkstappen hebt gezet.
+
+---
+
+## Lesopbouw (45-60 minuten)
+
+1. **Start (5 min)**  
+   Korte uitleg: wat is SQL en waarom gebruiken we het?
+2. **Oriëntatie-opdracht (30-35 min)**  
+   Werken in SQL Island.
+3. **Reflectie en nabespreking (10-15 min)**  
+   In tweetallen vergelijken en klassikaal ophalen.
+
+---
+
+## Waarom starten met een game?
+
+Bij SQL moet je leren denken in:
+
+- tabellen;
+- voorwaarden;
+- logische keuzes.
+
+Dat is in het begin best abstract.  
+SQL Island helpt omdat je direct ziet wat er gebeurt als je een query uitvoert.
+
+Je oefent dus niet alleen syntax, maar vooral **datadenken**.
+
+---
+
+## Opdracht: SQL Island
+
+Ga naar:
 
 https://sql-island.informatik.uni-kl.de/
 
-Aan het eind van deze week kun je:
+### Deel A - Verkennen
 
-- uitleggen wat een database, tabel, rij en kolom is;
-- eenvoudige SQL-vragen lezen;
-- eerste basisquery's herkennen;
-- benoemen waarom SQL nuttig is voor websites en apps.
+1. Speel minimaal 30 minuten.
+2. Voltooi zoveel mogelijk levels.
+3. Noteer moeilijke woorden of opdrachten die je tegenkomt.
 
----
+### Deel B - Bewijs van voortgang
 
-## 1. Startopdracht: SQL Island
+Maak 3 screenshots:
 
-In deze les start je met SQL Island als oriëntatie op de stof van dit blok.
+- screenshot 1: een vroeg level;
+- screenshot 2: een level in het midden;
+- screenshot 3: je hoogste behaalde level.
 
-### Opdracht
+### Deel C - Reflectie
 
-1. Open SQL Island.
-2. Speel minimaal 30 minuten.
-3. Maak screenshots van ten minste 3 behaalde levels.
-4. Noteer 3 dingen die je al begrijpt en 3 dingen die je nog lastig vindt.
+Beantwoord in je schrift of digitaal:
 
-### Inleveren
-
-- Screenshot 1: beginfase
-- Screenshot 2: middenfase
-- Screenshot 3: verder level
-- Korte reflectie (max 150 woorden)
+1. Wat snapte je snel?
+2. Waar moest je echt over nadenken?
+3. Welke SQL-opdracht zag je het vaakst?
+4. Wat verwacht je dat we volgende week gaan doen?
 
 ---
 
-## 2. Kernbegrippen
+## Koppeling met onze eigen database
 
-- **Database**: verzameling tabellen met gegevens.
-- **Tabel**: overzicht met kolommen en rijen.
-- **Kolom**: eigenschap (bijv. voornaam, leeftijd).
-- **Rij**: één record (bijv. één gebruiker).
-- **Query**: vraag in SQL aan de database.
+In dit blok werken we met `nimmastream_2627_IMPROVED`.
 
----
-
-## 3. Koppeling met onze lesdatabase
-
-In dit blok gebruiken we de database `nimmastream_2627_IMPROVED`.
-
-Daarin staan onder andere tabellen zoals:
+Je gaat later query's schrijven op tabellen zoals:
 
 - `gebruikers`
 - `series`
@@ -57,23 +84,41 @@ Daarin staan onder andere tabellen zoals:
 - `afleveringen`
 - `profielen`
 - `abonnementen`
+- `kijkgeschiedenis`
+- `beoordelingen`
 
-Deze tabellen gebruiken we de komende weken voor alle opdrachten.
-
----
-
-## 4. Korte klassikale check
-
-Beantwoord aan het eind van de les:
-
-1. Wat doet `SELECT` in SQL?
-2. Waarom is een database handiger dan losse lijstjes?
-3. Welke vraag wil jij in week 2 kunnen beantwoorden met SQL?
+Wat je nu in SQL Island leert, gebruik je straks op echte data.
 
 ---
 
-## 5. Huiswerk
+## Check je begrip
 
-1. Speel SQL Island verder tot je minstens 5 levels hebt voltooid.
-2. Schrijf 5 vragen op die jij later met SQL wilt kunnen oplossen.
-3. Neem je reflectie mee naar de volgende les.
+1. Wat is het verschil tussen een tabel en een rij?
+2. Waarom is SQL handig bij grote hoeveelheden data?
+3. Wat is volgens jou nu al het lastigste van SQL?
+4. Noem een voorbeeld van een vraag die je met SQL kunt beantwoorden.
+
+---
+
+## Extra opdrachten (als je eerder klaar bent)
+
+1. Maak een woordenlijst met 8 SQL-begrippen uit SQL Island.
+2. Schrijf 5 databankvragen in gewone taal, bijvoorbeeld:
+   - "Welke gebruiker is het jongst?"
+   - "Welke series hebben kijkwijzer 12?"
+3. Geef bij elke vraag aan in welke tabel je zou zoeken.
+
+---
+
+## Samenvatting
+
+- SQL gebruik je om vragen te stellen aan data.
+- Een database bestaat uit tabellen met rijen en kolommen.
+- SQL Island helpt je starten met de logica achter query's.
+- In de volgende hoofdstukken ga je dezelfde denkwijze toepassen op onze eigen lesdatabase.
+
+## Huiswerk
+
+1. Speel SQL Island door tot minimaal 5 afgeronde levels.
+2. Lever je 3 screenshots in.
+3. Schrijf 5 vragen op die je volgende week met echte SQL wilt kunnen oplossen.
