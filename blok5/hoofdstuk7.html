@@ -461,11 +461,22 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weekdoel">Weekdoel</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimale-tabellen">1. Minimale tabellen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functionele-eisen">2. Functionele eisen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#projectaanpak">3. Projectaanpak</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huiswerk">4. Huiswerk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lesopbouw-45-60-minuten">Lesopbouw (45-60 minuten)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#projectcontext">1. Projectcontext</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datamodel">2. Datamodel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bouwstrategie">3. Bouwstrategie</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-ontwerp">Opdracht 1 - Ontwerp</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-basisfunctionaliteit">Opdracht 2 - Basisfunctionaliteit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-product-toevoegen">Opdracht 3 - Product toevoegen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-product-wijzigen-en-verwijderen">Opdracht 4 - Product wijzigen en verwijderen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-kwaliteitscontrole">Opdracht 5 - Kwaliteitscontrole</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huiswerk">Huiswerk</a></li>
 </ul>
             </nav>
         </div>
@@ -479,54 +490,135 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="hoofdstuk-7-webshopproject-basisopzet-en-crud">
 <h1>Hoofdstuk 7: Webshopproject - basisopzet en CRUD<a class="headerlink" href="#hoofdstuk-7-webshopproject-basisopzet-en-crud" title="Link to this heading">#</a></h1>
-<section id="weekdoel">
-<h2>Weekdoel<a class="headerlink" href="#weekdoel" title="Link to this heading">#</a></h2>
-<p>Aan het eind van deze week kun je:</p>
+<section id="leerdoelen">
+<h2>Leerdoelen<a class="headerlink" href="#leerdoelen" title="Link to this heading">#</a></h2>
+<p>In dit hoofdstuk start je met het eindproject: een mini-webshop.</p>
+<p>Je leert:</p>
 <ul class="simple">
-<li><p>een eenvoudige webshopdatabase opzetten;</p></li>
+<li><p>eisen vertalen naar een databaseontwerp;</p></li>
+<li><p>tabellen en relaties opzetten;</p></li>
 <li><p>basis-CRUD bouwen voor producten;</p></li>
-<li><p>een werkende projectstructuur neerzetten.</p></li>
+<li><p>gestructureerd testen tijdens het bouwen.</p></li>
+</ul>
+<p>Aan het einde van dit hoofdstuk heb je een eerste werkende versie van je webshop.</p>
+</section>
+<hr class="docutils" />
+<section id="lesopbouw-45-60-minuten">
+<h2>Lesopbouw (45-60 minuten)<a class="headerlink" href="#lesopbouw-45-60-minuten" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Projectuitleg en eisen (10 min)</strong></p></li>
+<li><p><strong>Ontwerpen (10-15 min)</strong></p></li>
+<li><p><strong>Bouwen (20-25 min)</strong></p></li>
+<li><p><strong>Testen en bijsturen (10 min)</strong></p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="projectcontext">
+<h2>1. Projectcontext<a class="headerlink" href="#projectcontext" title="Link to this heading">#</a></h2>
+<p>Je bouwt een webshop waar gebruikers producten kunnen bekijken en beheren.</p>
+<p>Minimale onderdelen:</p>
+<ul class="simple">
+<li><p>productoverzicht;</p></li>
+<li><p>product toevoegen;</p></li>
+<li><p>product aanpassen;</p></li>
+<li><p>product verwijderen.</p></li>
 </ul>
 </section>
 <hr class="docutils" />
-<section id="minimale-tabellen">
-<h2>1. Minimale tabellen<a class="headerlink" href="#minimale-tabellen" title="Link to this heading">#</a></h2>
+<section id="datamodel">
+<h2>2. Datamodel<a class="headerlink" href="#datamodel" title="Link to this heading">#</a></h2>
 <p>Werk minimaal met:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">users</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">artikelen</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">bestellingen</span></code></p></li>
 </ul>
+<p>Denk vooraf na over:</p>
+<ul class="simple">
+<li><p>primaire sleutels (<code class="docutils literal notranslate"><span class="pre">id</span></code>);</p></li>
+<li><p>verplichte velden;</p></li>
+<li><p>relaties tussen tabellen.</p></li>
+</ul>
 </section>
 <hr class="docutils" />
-<section id="functionele-eisen">
-<h2>2. Functionele eisen<a class="headerlink" href="#functionele-eisen" title="Link to this heading">#</a></h2>
-<p>Je webshop moet minimaal kunnen:</p>
+<section id="bouwstrategie">
+<h2>3. Bouwstrategie<a class="headerlink" href="#bouwstrategie" title="Link to this heading">#</a></h2>
+<p>Werk in deze volgorde:</p>
 <ol class="arabic simple">
-<li><p>producten tonen;</p></li>
-<li><p>product toevoegen;</p></li>
-<li><p>product aanpassen;</p></li>
-<li><p>product verwijderen.</p></li>
+<li><p>database opzetten;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">READ</span></code> bouwen (overzichtspagina);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CREATE</span></code> toevoegen;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> toevoegen;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DELETE</span></code> toevoegen.</p></li>
+</ol>
+<p>Zo houd je overzicht en kun je tussendoor testen.</p>
+</section>
+<hr class="docutils" />
+<section id="opdrachten">
+<h2>Opdrachten<a class="headerlink" href="#opdrachten" title="Link to this heading">#</a></h2>
+<section id="opdracht-1-ontwerp">
+<h3>Opdracht 1 - Ontwerp<a class="headerlink" href="#opdracht-1-ontwerp" title="Link to this heading">#</a></h3>
+<p>Maak een kort schema van je tabellen met kolommen en datatypes.</p>
+</section>
+<section id="opdracht-2-basisfunctionaliteit">
+<h3>Opdracht 2 - Basisfunctionaliteit<a class="headerlink" href="#opdracht-2-basisfunctionaliteit" title="Link to this heading">#</a></h3>
+<p>Bouw een productoverzicht met minimaal:</p>
+<ol class="arabic simple">
+<li><p>productnaam;</p></li>
+<li><p>prijs;</p></li>
+<li><p>voorraad.</p></li>
+</ol>
+</section>
+<section id="opdracht-3-product-toevoegen">
+<h3>Opdracht 3 - Product toevoegen<a class="headerlink" href="#opdracht-3-product-toevoegen" title="Link to this heading">#</a></h3>
+<p>Maak een formulier waarmee je nieuwe producten invoegt.</p>
+</section>
+<section id="opdracht-4-product-wijzigen-en-verwijderen">
+<h3>Opdracht 4 - Product wijzigen en verwijderen<a class="headerlink" href="#opdracht-4-product-wijzigen-en-verwijderen" title="Link to this heading">#</a></h3>
+<p>Voeg knoppen of links toe voor:</p>
+<ol class="arabic simple">
+<li><p>product bewerken;</p></li>
+<li><p>product verwijderen (met bevestiging).</p></li>
+</ol>
+</section>
+<section id="opdracht-5-kwaliteitscontrole">
+<h3>Opdracht 5 - Kwaliteitscontrole<a class="headerlink" href="#opdracht-5-kwaliteitscontrole" title="Link to this heading">#</a></h3>
+<p>Maak een checklist en vink af:</p>
+<ul class="simple">
+<li><p>werkt elke CRUD-functie;</p></li>
+<li><p>kloppen foutmeldingen;</p></li>
+<li><p>blijft de pagina bruikbaar bij foute invoer.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="check-je-begrip">
+<h2>Check je begrip<a class="headerlink" href="#check-je-begrip" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Waarom begin je bij een datamodel?</p></li>
+<li><p>Waarom bouw je eerst <code class="docutils literal notranslate"><span class="pre">READ</span></code> en daarna pas bewerken/verwijderen?</p></li>
+<li><p>Welke velden zijn essentieel voor een product?</p></li>
+<li><p>Hoe merk je dat je projectcode te rommelig wordt, en wat doe je dan?</p></li>
 </ol>
 </section>
 <hr class="docutils" />
-<section id="projectaanpak">
-<h2>3. Projectaanpak<a class="headerlink" href="#projectaanpak" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Databaseontwerp maken.</p></li>
-<li><p>SQL-tabellen aanmaken.</p></li>
-<li><p>PHP-pagina’s per CRUD-stap bouwen.</p></li>
-<li><p>Testen met voorbeelddata.</p></li>
-</ol>
+<section id="samenvatting">
+<h2>Samenvatting<a class="headerlink" href="#samenvatting" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Een goed project begint met ontwerp.</p></li>
+<li><p>CRUD bouw je het best stapsgewijs.</p></li>
+<li><p>Door tussentijds te testen voorkom je veel fouten aan het einde.</p></li>
+</ul>
 </section>
-<hr class="docutils" />
 <section id="huiswerk">
-<h2>4. Huiswerk<a class="headerlink" href="#huiswerk" title="Link to this heading">#</a></h2>
-<p>Lever een eerste werkende versie op met minimaal:</p>
+<h2>Huiswerk<a class="headerlink" href="#huiswerk" title="Link to this heading">#</a></h2>
+<p>Lever een eerste werkende versie op met:</p>
 <ul class="simple">
 <li><p>productoverzicht;</p></li>
-<li><p>formulier voor toevoegen;</p></li>
-<li><p>formulier voor wijzigen.</p></li>
+<li><p>toevoegen;</p></li>
+<li><p>wijzigen;</p></li>
+<li><p>verwijderen;</p></li>
+<li><p>korte notitie van wat nog ontbreekt.</p></li>
 </ul>
 </section>
 </section>
@@ -597,11 +689,22 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weekdoel">Weekdoel</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimale-tabellen">1. Minimale tabellen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functionele-eisen">2. Functionele eisen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#projectaanpak">3. Projectaanpak</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huiswerk">4. Huiswerk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lesopbouw-45-60-minuten">Lesopbouw (45-60 minuten)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#projectcontext">1. Projectcontext</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datamodel">2. Datamodel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bouwstrategie">3. Bouwstrategie</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-ontwerp">Opdracht 1 - Ontwerp</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-basisfunctionaliteit">Opdracht 2 - Basisfunctionaliteit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-product-toevoegen">Opdracht 3 - Product toevoegen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-product-wijzigen-en-verwijderen">Opdracht 4 - Product wijzigen en verwijderen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-kwaliteitscontrole">Opdracht 5 - Kwaliteitscontrole</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huiswerk">Huiswerk</a></li>
 </ul>
   </nav></div>
 

@@ -461,12 +461,23 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weekdoel">Weekdoel</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-gegevens-ophalen">1. SELECT: gegevens ophalen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-filteren">2. WHERE: filteren</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lesopbouw-45-60-minuten">Lesopbouw (45-60 minuten)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-gegevens-opvragen">1. SELECT: gegevens opvragen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-filteren-op-voorwaarden">2. WHERE: filteren op voorwaarden</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#order-by-sorteren">3. ORDER BY: sorteren</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oefeningen">4. Oefeningen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huiswerk">5. Huiswerk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#denk-als-een-data-onderzoeker">4. Denk als een data-onderzoeker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-basis-instap">Opdracht 1 - Basis (instap)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-filteren">Opdracht 2 - Filteren</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-sorteren">Opdracht 3 - Sorteren</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-combineren">Opdracht 4 - Combineren</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-challenge">Opdracht 5 - Challenge</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huiswerk">Huiswerk</a></li>
 </ul>
             </nav>
         </div>
@@ -480,49 +491,64 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="hoofdstuk-2-select-where-en-order-by">
 <h1>Hoofdstuk 2: SELECT, WHERE en ORDER BY<a class="headerlink" href="#hoofdstuk-2-select-where-en-order-by" title="Link to this heading">#</a></h1>
-<section id="weekdoel">
-<h2>Weekdoel<a class="headerlink" href="#weekdoel" title="Link to this heading">#</a></h2>
-<p>Aan het eind van deze week kun je:</p>
+<section id="leerdoelen">
+<h2>Leerdoelen<a class="headerlink" href="#leerdoelen" title="Link to this heading">#</a></h2>
+<p>In dit hoofdstuk leer je de basis van SQL-query’s schrijven.</p>
+<p>Je leert:</p>
 <ul class="simple">
 <li><p>gegevens ophalen met <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>;</p></li>
-<li><p>resultaten filteren met <code class="docutils literal notranslate"><span class="pre">WHERE</span></code>;</p></li>
-<li><p>resultaten sorteren met <code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code>;</p></li>
-<li><p>het aantal resultaten beperken met <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code>.</p></li>
+<li><p>gericht filteren met <code class="docutils literal notranslate"><span class="pre">WHERE</span></code>;</p></li>
+<li><p>sorteren met <code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code>;</p></li>
+<li><p>resultaten beperken met <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code>.</p></li>
 </ul>
+<p>Aan het einde van dit hoofdstuk kun je zelfstandig eenvoudige query’s schrijven en controleren of je antwoord logisch is.</p>
 </section>
 <hr class="docutils" />
-<section id="select-gegevens-ophalen">
-<h2>1. SELECT: gegevens ophalen<a class="headerlink" href="#select-gegevens-ophalen" title="Link to this heading">#</a></h2>
+<section id="lesopbouw-45-60-minuten">
+<h2>Lesopbouw (45-60 minuten)<a class="headerlink" href="#lesopbouw-45-60-minuten" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Uitleg + demo (10-15 min)</strong></p></li>
+<li><p><strong>Begeleide oefeningen (20-25 min)</strong></p></li>
+<li><p><strong>Zelfstandige opdrachten (15-20 min)</strong></p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="select-gegevens-opvragen">
+<h2>1. SELECT: gegevens opvragen<a class="headerlink" href="#select-gegevens-opvragen" title="Link to this heading">#</a></h2>
+<p>Met <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> vraag je data op uit een tabel.</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span><span class="p">;</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">*</span></code> betekent: alle kolommen tonen.</p>
-<p>Alleen specifieke kolommen:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">voornaam</span><span class="p">,</span><span class="w"> </span><span class="n">achternaam</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span><span class="p">;</span>
+<p>Het sterretje <code class="docutils literal notranslate"><span class="pre">*</span></code> betekent: alle kolommen.</p>
+<p>Meestal wil je alleen de kolommen die je echt nodig hebt:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">voornaam</span><span class="p">,</span><span class="w"> </span><span class="n">achternaam</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span><span class="p">;</span>
 </pre></div>
 </div>
+<p>Dat maakt je resultaat overzichtelijker.</p>
 </section>
 <hr class="docutils" />
-<section id="where-filteren">
-<h2>2. WHERE: filteren<a class="headerlink" href="#where-filteren" title="Link to this heading">#</a></h2>
-<p>Filteren op voorwaarde:</p>
+<section id="where-filteren-op-voorwaarden">
+<h2>2. WHERE: filteren op voorwaarden<a class="headerlink" href="#where-filteren-op-voorwaarden" title="Link to this heading">#</a></h2>
+<p>Met <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> bepaal je welke rijen je wilt zien.</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">voornaam</span><span class="p">,</span><span class="w"> </span><span class="n">leeftijd</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">leeftijd</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">18</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Combineren met <code class="docutils literal notranslate"><span class="pre">AND</span></code>:</p>
+<p>Je kunt voorwaarden combineren:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">voornaam</span><span class="p">,</span><span class="w"> </span><span class="n">leeftijd</span><span class="p">,</span><span class="w"> </span><span class="n">regio</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">regio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'NH'</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">leeftijd</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Filteren op beginletter:</p>
+<p>Zoeken op patroon:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">voornaam</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">voornaam</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'A%'</span><span class="p">;</span>
 </pre></div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">A%</span></code> betekent: tekst die begint met A.</p>
 </section>
 <hr class="docutils" />
 <section id="order-by-sorteren">
@@ -532,6 +558,10 @@
 <span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">titel</span><span class="w"> </span><span class="k">ASC</span><span class="p">;</span>
 </pre></div>
 </div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ASC</span></code> = oplopend (A-Z, laag-hoog)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DESC</span></code> = aflopend (Z-A, hoog-laag)</p></li>
+</ul>
 <p>Top 5 oudste gebruikers:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">voornaam</span><span class="p">,</span><span class="w"> </span><span class="n">leeftijd</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
@@ -541,25 +571,93 @@
 </div>
 </section>
 <hr class="docutils" />
-<section id="oefeningen">
-<h2>4. Oefeningen<a class="headerlink" href="#oefeningen" title="Link to this heading">#</a></h2>
+<section id="denk-als-een-data-onderzoeker">
+<h2>4. Denk als een data-onderzoeker<a class="headerlink" href="#denk-als-een-data-onderzoeker" title="Link to this heading">#</a></h2>
+<p>Bij elke query stel je jezelf drie vragen:</p>
 <ol class="arabic simple">
-<li><p>Toon alle gebruikers ouder dan 20.</p></li>
-<li><p>Toon alle series met kijkwijzer <code class="docutils literal notranslate"><span class="pre">12</span></code>.</p></li>
-<li><p>Toon de 10 jongste gebruikers.</p></li>
-<li><p>Toon alle actieve abonnementen gesorteerd op <code class="docutils literal notranslate"><span class="pre">gebruiker_id</span></code>.</p></li>
+<li><p><strong>Wat wil ik weten?</strong><br />
+(bijv. jongste gebruikers)</p></li>
+<li><p><strong>Waar staat die data?</strong><br />
+(welke tabel, welke kolom)</p></li>
+<li><p><strong>Hoe controleer ik of het logisch is?</strong><br />
+(kloppen aantallen, volgorde en waarden)</p></li>
 </ol>
 </section>
 <hr class="docutils" />
-<section id="huiswerk">
-<h2>5. Huiswerk<a class="headerlink" href="#huiswerk" title="Link to this heading">#</a></h2>
-<p>Schrijf 5 eigen query’s met minimaal:</p>
+<section id="opdrachten">
+<h2>Opdrachten<a class="headerlink" href="#opdrachten" title="Link to this heading">#</a></h2>
+<section id="opdracht-1-basis-instap">
+<h3>Opdracht 1 - Basis (instap)<a class="headerlink" href="#opdracht-1-basis-instap" title="Link to this heading">#</a></h3>
+<p>Schrijf query’s voor:</p>
+<ol class="arabic simple">
+<li><p>alle gebruikers;</p></li>
+<li><p>alleen voornaam en regio;</p></li>
+<li><p>gebruiker met <code class="docutils literal notranslate"><span class="pre">id</span> <span class="pre">=</span> <span class="pre">1</span></code>.</p></li>
+</ol>
+</section>
+<section id="opdracht-2-filteren">
+<h3>Opdracht 2 - Filteren<a class="headerlink" href="#opdracht-2-filteren" title="Link to this heading">#</a></h3>
+<p>Schrijf query’s voor:</p>
+<ol class="arabic simple">
+<li><p>gebruikers ouder dan 18;</p></li>
+<li><p>gebruikers uit regio <code class="docutils literal notranslate"><span class="pre">ZH</span></code>;</p></li>
+<li><p>series met kijkwijzer <code class="docutils literal notranslate"><span class="pre">16</span></code>;</p></li>
+<li><p>voornamen die beginnen met <code class="docutils literal notranslate"><span class="pre">E</span></code>.</p></li>
+</ol>
+</section>
+<section id="opdracht-3-sorteren">
+<h3>Opdracht 3 - Sorteren<a class="headerlink" href="#opdracht-3-sorteren" title="Link to this heading">#</a></h3>
+<p>Schrijf query’s voor:</p>
+<ol class="arabic simple">
+<li><p>alle series alfabetisch;</p></li>
+<li><p>10 jongste gebruikers;</p></li>
+<li><p>actieve abonnementen op <code class="docutils literal notranslate"><span class="pre">gebruiker_id</span></code>.</p></li>
+</ol>
+</section>
+<section id="opdracht-4-combineren">
+<h3>Opdracht 4 - Combineren<a class="headerlink" href="#opdracht-4-combineren" title="Link to this heading">#</a></h3>
+<p>Los op met één query per vraag:</p>
+<ol class="arabic simple">
+<li><p>Toon de 5 oudste gebruikers uit regio <code class="docutils literal notranslate"><span class="pre">NH</span></code>.</p></li>
+<li><p>Toon alle series met kijkwijzer <code class="docutils literal notranslate"><span class="pre">12</span></code>, alfabetisch.</p></li>
+<li><p>Toon gebruikers tussen 15 en 20 jaar, gesorteerd op leeftijd.</p></li>
+</ol>
+</section>
+<section id="opdracht-5-challenge">
+<h3>Opdracht 5 - Challenge<a class="headerlink" href="#opdracht-5-challenge" title="Link to this heading">#</a></h3>
+<p>Bedenk 2 eigen vragen en schrijf de query’s erbij.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="check-je-begrip">
+<h2>Check je begrip<a class="headerlink" href="#check-je-begrip" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Wanneer gebruik je <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span></code> wel en wanneer niet?</p></li>
+<li><p>Wat is het verschil tussen <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> en <code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code>?</p></li>
+<li><p>Wat doet <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code> precies?</p></li>
+<li><p>Waarom is het slim om een query-resultaat altijd te controleren?</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="samenvatting">
+<h2>Samenvatting<a class="headerlink" href="#samenvatting" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>1x <code class="docutils literal notranslate"><span class="pre">WHERE</span></code></p></li>
-<li><p>1x <code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code></p></li>
-<li><p>1x <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SELECT</span></code> haalt data op.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WHERE</span></code> filtert data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code> sorteert data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LIMIT</span></code> beperkt het aantal resultaten.</p></li>
 </ul>
-<p>Noteer per query wat je verwacht terug te krijgen.</p>
+<p>Dit is de basis waarop alle latere SQL-onderdelen in dit blok verder bouwen.</p>
+</section>
+<section id="huiswerk">
+<h2>Huiswerk<a class="headerlink" href="#huiswerk" title="Link to this heading">#</a></h2>
+<p>Maak 6 eigen query’s:</p>
+<ul class="simple">
+<li><p>minimaal 2 met <code class="docutils literal notranslate"><span class="pre">WHERE</span></code>;</p></li>
+<li><p>minimaal 2 met <code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code>;</p></li>
+<li><p>minimaal 1 met <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code>;</p></li>
+<li><p>minimaal 1 combinatiequery.</p></li>
+</ul>
 </section>
 </section>
 
@@ -629,12 +727,23 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weekdoel">Weekdoel</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-gegevens-ophalen">1. SELECT: gegevens ophalen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-filteren">2. WHERE: filteren</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lesopbouw-45-60-minuten">Lesopbouw (45-60 minuten)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-gegevens-opvragen">1. SELECT: gegevens opvragen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-filteren-op-voorwaarden">2. WHERE: filteren op voorwaarden</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#order-by-sorteren">3. ORDER BY: sorteren</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oefeningen">4. Oefeningen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huiswerk">5. Huiswerk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#denk-als-een-data-onderzoeker">4. Denk als een data-onderzoeker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-basis-instap">Opdracht 1 - Basis (instap)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-filteren">Opdracht 2 - Filteren</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-sorteren">Opdracht 3 - Sorteren</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-combineren">Opdracht 4 - Combineren</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-challenge">Opdracht 5 - Challenge</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huiswerk">Huiswerk</a></li>
 </ul>
   </nav></div>
 

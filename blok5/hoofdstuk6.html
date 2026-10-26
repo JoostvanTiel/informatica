@@ -461,11 +461,22 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weekdoel">Weekdoel</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-via-php">1. UPDATE via PHP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lesopbouw-45-60-minuten">Lesopbouw (45-60 minuten)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-vanuit-een-formulier">1. UPDATE vanuit een formulier</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delete-met-bevestiging">2. DELETE met bevestiging</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validatie">3. Validatie</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huiswerk">4. Huiswerk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basisvalidatie">3. Basisvalidatie</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veilig-programmeren">4. Veilig programmeren</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-bewerkfunctie">Opdracht 1 - Bewerkfunctie</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-verwijderfunctie">Opdracht 2 - Verwijderfunctie</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-inputcontrole">Opdracht 3 - Inputcontrole</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-testmatrix">Opdracht 4 - Testmatrix</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huiswerk">Huiswerk</a></li>
 </ul>
             </nav>
         </div>
@@ -479,19 +490,39 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="hoofdstuk-6-php-mysql-update-en-delete-via-formulieren">
 <h1>Hoofdstuk 6: PHP + MySQL - UPDATE en DELETE via formulieren<a class="headerlink" href="#hoofdstuk-6-php-mysql-update-en-delete-via-formulieren" title="Link to this heading">#</a></h1>
-<section id="weekdoel">
-<h2>Weekdoel<a class="headerlink" href="#weekdoel" title="Link to this heading">#</a></h2>
-<p>Aan het eind van deze week kun je:</p>
+<section id="leerdoelen">
+<h2>Leerdoelen<a class="headerlink" href="#leerdoelen" title="Link to this heading">#</a></h2>
+<p>In dit hoofdstuk bouw je van “alleen lezen” naar “gegevens beheren via een webinterface”.</p>
+<p>Je leert:</p>
 <ul class="simple">
-<li><p>records bijwerken via een formulier;</p></li>
-<li><p>records verwijderen met bevestiging;</p></li>
-<li><p>basisvalidatie toepassen;</p></li>
-<li><p>veiliger werken met prepared statements.</p></li>
+<li><p>records wijzigen met een formulier (<code class="docutils literal notranslate"><span class="pre">UPDATE</span></code>);</p></li>
+<li><p>records verwijderen met bevestiging (<code class="docutils literal notranslate"><span class="pre">DELETE</span></code>);</p></li>
+<li><p>invoer controleren voordat je query’s uitvoert;</p></li>
+<li><p>prepared statements gebruiken voor veiligere code.</p></li>
 </ul>
+<p>Aan het einde van dit hoofdstuk kun je een eenvoudige beheerpagina bouwen voor één tabel.</p>
 </section>
 <hr class="docutils" />
-<section id="update-via-php">
-<h2>1. UPDATE via PHP<a class="headerlink" href="#update-via-php" title="Link to this heading">#</a></h2>
+<section id="lesopbouw-45-60-minuten">
+<h2>Lesopbouw (45-60 minuten)<a class="headerlink" href="#lesopbouw-45-60-minuten" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Demo edit-flow (10 min)</strong></p></li>
+<li><p><strong>Demo delete-flow (10 min)</strong></p></li>
+<li><p><strong>Zelf bouwen (20-30 min)</strong></p></li>
+<li><p><strong>Controle met checklist (10 min)</strong></p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="update-vanuit-een-formulier">
+<h2>1. UPDATE vanuit een formulier<a class="headerlink" href="#update-vanuit-een-formulier" title="Link to this heading">#</a></h2>
+<p>Stap voor stap:</p>
+<ol class="arabic simple">
+<li><p>toon huidige gegevens;</p></li>
+<li><p>laat gebruiker aanpassen;</p></li>
+<li><p>verstuur formulier;</p></li>
+<li><p>voer <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> uit.</p></li>
+</ol>
+<p>Voorbeeld:</p>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$sql = "UPDATE profielen SET leeftijd_profiel = ? WHERE id = ?";</span>
 <span class="x">$stmt = $conn-&gt;prepare($sql);</span>
 <span class="x">$stmt-&gt;bind_param("ii", $leeftijd, $id);</span>
@@ -502,27 +533,100 @@
 <hr class="docutils" />
 <section id="delete-met-bevestiging">
 <h2>2. DELETE met bevestiging<a class="headerlink" href="#delete-met-bevestiging" title="Link to this heading">#</a></h2>
-<p>Voeg altijd een bevestiging toe voordat je verwijdert, zowel in de interface als in je servercode.</p>
-</section>
-<hr class="docutils" />
-<section id="validatie">
-<h2>3. Validatie<a class="headerlink" href="#validatie" title="Link to this heading">#</a></h2>
-<p>Controleer altijd:</p>
+<p>Verwijderen is onomkeerbaar in deze context, dus:</p>
 <ul class="simple">
-<li><p>leeg veld;</p></li>
-<li><p>datatype;</p></li>
-<li><p>ongeldige waarden;</p></li>
-<li><p>veiligheid van invoer.</p></li>
+<li><p>vraag bevestiging in de interface;</p></li>
+<li><p>controleer op de server of een geldig <code class="docutils literal notranslate"><span class="pre">id</span></code> is ontvangen;</p></li>
+<li><p>geef feedback na verwijderen.</p></li>
 </ul>
 </section>
 <hr class="docutils" />
+<section id="basisvalidatie">
+<h2>3. Basisvalidatie<a class="headerlink" href="#basisvalidatie" title="Link to this heading">#</a></h2>
+<p>Controleer minimaal:</p>
+<ul class="simple">
+<li><p>is het veld ingevuld;</p></li>
+<li><p>is het juiste datatype gebruikt;</p></li>
+<li><p>zit de waarde in een logische range;</p></li>
+<li><p>probeer je geen ongeldige <code class="docutils literal notranslate"><span class="pre">id</span></code> te wijzigen of verwijderen.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="veilig-programmeren">
+<h2>4. Veilig programmeren<a class="headerlink" href="#veilig-programmeren" title="Link to this heading">#</a></h2>
+<p>Gebruik bij invoer uit formulieren geen direct ingeplakte SQL-strings.<br />
+Gebruik prepared statements met placeholders (<code class="docutils literal notranslate"><span class="pre">?</span></code>).</p>
+</section>
+<hr class="docutils" />
+<section id="opdrachten">
+<h2>Opdrachten<a class="headerlink" href="#opdrachten" title="Link to this heading">#</a></h2>
+<section id="opdracht-1-bewerkfunctie">
+<h3>Opdracht 1 - Bewerkfunctie<a class="headerlink" href="#opdracht-1-bewerkfunctie" title="Link to this heading">#</a></h3>
+<p>Maak een pagina waarop je één profiel kunt wijzigen:</p>
+<ol class="arabic simple">
+<li><p>ID kiezen;</p></li>
+<li><p>huidig record tonen;</p></li>
+<li><p>leeftijd of naam aanpassen;</p></li>
+<li><p>opslaan en bevestiging tonen.</p></li>
+</ol>
+</section>
+<section id="opdracht-2-verwijderfunctie">
+<h3>Opdracht 2 - Verwijderfunctie<a class="headerlink" href="#opdracht-2-verwijderfunctie" title="Link to this heading">#</a></h3>
+<p>Maak een verwijderknop met:</p>
+<ol class="arabic simple">
+<li><p>confirm-vraag;</p></li>
+<li><p>server-side check;</p></li>
+<li><p>succes- of foutmelding.</p></li>
+</ol>
+</section>
+<section id="opdracht-3-inputcontrole">
+<h3>Opdracht 3 - Inputcontrole<a class="headerlink" href="#opdracht-3-inputcontrole" title="Link to this heading">#</a></h3>
+<p>Voeg validatie toe:</p>
+<ol class="arabic simple">
+<li><p>lege velden blokkeren;</p></li>
+<li><p>leeftijd als getal controleren;</p></li>
+<li><p>foutmelding bij ongeldige invoer.</p></li>
+</ol>
+</section>
+<section id="opdracht-4-testmatrix">
+<h3>Opdracht 4 - Testmatrix<a class="headerlink" href="#opdracht-4-testmatrix" title="Link to this heading">#</a></h3>
+<p>Test ten minste deze situaties:</p>
+<ol class="arabic simple">
+<li><p>geldige update;</p></li>
+<li><p>update met leeg veld;</p></li>
+<li><p>delete met bestaand id;</p></li>
+<li><p>delete met niet-bestaand id.</p></li>
+</ol>
+<p>Noteer per test: verwachting en uitkomst.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="check-je-begrip">
+<h2>Check je begrip<a class="headerlink" href="#check-je-begrip" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Waarom gebruik je prepared statements?</p></li>
+<li><p>Wat is het verschil tussen validatie in de browser en op de server?</p></li>
+<li><p>Waarom moet je na een update altijd teruglezen?</p></li>
+<li><p>Welke fout heeft de meeste impact: foute update of foute delete? Leg uit.</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="samenvatting">
+<h2>Samenvatting<a class="headerlink" href="#samenvatting" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Met formulieren kun je data beheren.</p></li>
+<li><p>UPDATE en DELETE vragen om controle en voorzichtigheid.</p></li>
+<li><p>Validatie en prepared statements maken je code betrouwbaarder en veiliger.</p></li>
+</ul>
+</section>
 <section id="huiswerk">
-<h2>4. Huiswerk<a class="headerlink" href="#huiswerk" title="Link to this heading">#</a></h2>
-<p>Maak een CRUD-pagina voor één tabel (bijv. <code class="docutils literal notranslate"><span class="pre">profielen</span></code>) met:</p>
+<h2>Huiswerk<a class="headerlink" href="#huiswerk" title="Link to this heading">#</a></h2>
+<p>Rond je CRUD-pagina voor één tabel af met:</p>
 <ul class="simple">
 <li><p>overzicht;</p></li>
 <li><p>bewerken;</p></li>
-<li><p>verwijderen met bevestiging.</p></li>
+<li><p>verwijderen;</p></li>
+<li><p>duidelijke fout- en succesmeldingen.</p></li>
 </ul>
 </section>
 </section>
@@ -593,11 +697,22 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weekdoel">Weekdoel</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-via-php">1. UPDATE via PHP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lesopbouw-45-60-minuten">Lesopbouw (45-60 minuten)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-vanuit-een-formulier">1. UPDATE vanuit een formulier</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delete-met-bevestiging">2. DELETE met bevestiging</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validatie">3. Validatie</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huiswerk">4. Huiswerk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basisvalidatie">3. Basisvalidatie</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veilig-programmeren">4. Veilig programmeren</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-bewerkfunctie">Opdracht 1 - Bewerkfunctie</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-verwijderfunctie">Opdracht 2 - Verwijderfunctie</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-inputcontrole">Opdracht 3 - Inputcontrole</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-testmatrix">Opdracht 4 - Testmatrix</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huiswerk">Huiswerk</a></li>
 </ul>
   </nav></div>
 

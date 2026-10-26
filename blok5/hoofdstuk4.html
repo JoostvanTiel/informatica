@@ -461,12 +461,24 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weekdoel">Weekdoel</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update">1. UPDATE</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delete">2. DELETE</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subqueries">3. Subqueries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#group-by">4. GROUP BY</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huiswerk">5. Huiswerk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lesopbouw-45-60-minuten">Lesopbouw (45-60 minuten)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veilig-werken-eerst-select-dan-pas-wijzigen">1. Veilig werken: eerst SELECT, dan pas wijzigen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update">2. UPDATE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delete">3. DELETE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subqueries">4. Subqueries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#group-by-en-aggregatie">5. GROUP BY en aggregatie</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-veilige-update">Opdracht 1 - Veilige UPDATE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-veilige-delete">Opdracht 2 - Veilige DELETE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-subqueries">Opdracht 3 - Subqueries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-statistiek">Opdracht 4 - Statistiek</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-didactische-challenge">Opdracht 5 - Didactische challenge</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huiswerk">Huiswerk</a></li>
 </ul>
             </nav>
         </div>
@@ -480,38 +492,63 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="hoofdstuk-4-update-delete-subqueries-en-group-by">
 <h1>Hoofdstuk 4: UPDATE, DELETE, subqueries en GROUP BY<a class="headerlink" href="#hoofdstuk-4-update-delete-subqueries-en-group-by" title="Link to this heading">#</a></h1>
-<section id="weekdoel">
-<h2>Weekdoel<a class="headerlink" href="#weekdoel" title="Link to this heading">#</a></h2>
-<p>Aan het eind van deze week kun je:</p>
+<section id="leerdoelen">
+<h2>Leerdoelen<a class="headerlink" href="#leerdoelen" title="Link to this heading">#</a></h2>
+<p>In dit hoofdstuk ga je van “data lezen” naar “data beheren”.</p>
+<p>Je leert:</p>
 <ul class="simple">
-<li><p>gegevens wijzigen met <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code>;</p></li>
-<li><p>gegevens verwijderen met <code class="docutils literal notranslate"><span class="pre">DELETE</span></code>;</p></li>
-<li><p>subqueries gebruiken;</p></li>
-<li><p>statistieken maken met <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code>.</p></li>
+<li><p>veilig gegevens wijzigen met <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code>;</p></li>
+<li><p>veilig gegevens verwijderen met <code class="docutils literal notranslate"><span class="pre">DELETE</span></code>;</p></li>
+<li><p>vragen in vragen gebruiken met subqueries;</p></li>
+<li><p>overzichten maken met <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> en aggregatiefuncties.</p></li>
 </ul>
+<p>Aan het einde van dit hoofdstuk kun je gerichte wijzigingen doen zonder je database per ongeluk kapot te maken.</p>
+</section>
+<hr class="docutils" />
+<section id="lesopbouw-45-60-minuten">
+<h2>Lesopbouw (45-60 minuten)<a class="headerlink" href="#lesopbouw-45-60-minuten" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Uitleg veiligheid bij wijzigingen (10 min)</strong></p></li>
+<li><p><strong>Begeleide UPDATE/DELETE (15 min)</strong></p></li>
+<li><p><strong>Subquery en GROUP BY oefenen (20-25 min)</strong></p></li>
+<li><p><strong>Korte afsluitende check (5-10 min)</strong></p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="veilig-werken-eerst-select-dan-pas-wijzigen">
+<h2>1. Veilig werken: eerst SELECT, dan pas wijzigen<a class="headerlink" href="#veilig-werken-eerst-select-dan-pas-wijzigen" title="Link to this heading">#</a></h2>
+<p>Bij <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> en <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> verander je data blijvend.<br />
+Daarom geldt deze regel:</p>
+<ol class="arabic simple">
+<li><p>schrijf eerst een <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> met dezelfde <code class="docutils literal notranslate"><span class="pre">WHERE</span></code>;</p></li>
+<li><p>controleer of dit precies de rijen zijn die je bedoelt;</p></li>
+<li><p>voer pas daarna <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> of <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> uit.</p></li>
+</ol>
 </section>
 <hr class="docutils" />
 <section id="update">
-<h2>1. UPDATE<a class="headerlink" href="#update" title="Link to this heading">#</a></h2>
+<h2>2. UPDATE<a class="headerlink" href="#update" title="Link to this heading">#</a></h2>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span><span class="w"> </span><span class="n">profielen</span>
 <span class="k">SET</span><span class="w"> </span><span class="n">leeftijd_profiel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">15</span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Gebruik altijd <code class="docutils literal notranslate"><span class="pre">WHERE</span></code>, anders wijzig je alle records.</p>
+<p>Zonder <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> verander je <strong>alle</strong> rijen.<br />
+Dat is de meest voorkomende fout bij beginners.</p>
 </section>
 <hr class="docutils" />
 <section id="delete">
-<h2>2. DELETE<a class="headerlink" href="#delete" title="Link to this heading">#</a></h2>
+<h2>3. DELETE<a class="headerlink" href="#delete" title="Link to this heading">#</a></h2>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">kijkgeschiedenis</span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">profiel_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Controleer eerst met een <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> welke rijen je verwijdert.</p>
+<p>Ook hier: zonder <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> verwijder je alles uit de tabel.</p>
 </section>
 <hr class="docutils" />
 <section id="subqueries">
-<h2>3. Subqueries<a class="headerlink" href="#subqueries" title="Link to this heading">#</a></h2>
+<h2>4. Subqueries<a class="headerlink" href="#subqueries" title="Link to this heading">#</a></h2>
+<p>Een subquery is een query binnen een query.</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span>
@@ -520,29 +557,99 @@
 <span class="p">);</span>
 </pre></div>
 </div>
+<p>Je gebruikt dit als je eerst een tussenresultaat nodig hebt.</p>
 </section>
 <hr class="docutils" />
-<section id="group-by">
-<h2>4. GROUP BY<a class="headerlink" href="#group-by" title="Link to this heading">#</a></h2>
+<section id="group-by-en-aggregatie">
+<h2>5. GROUP BY en aggregatie<a class="headerlink" href="#group-by-en-aggregatie" title="Link to this heading">#</a></h2>
+<p>Met <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> maak je samenvattingen.</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">regio</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_gebruikers</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
 <span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">regio</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Gemiddelde beoordeling per aflevering:</p>
+<p>Gemiddelde beoordeling:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">aflevering_id</span><span class="p">,</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">beoordeling</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">gemiddelde</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">beoordelingen</span>
 <span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">aflevering_id</span><span class="p">;</span>
 </pre></div>
 </div>
+<p>Handige functies:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">COUNT()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AVG()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MIN()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MAX()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SUM()</span></code></p></li>
+</ul>
 </section>
 <hr class="docutils" />
+<section id="opdrachten">
+<h2>Opdrachten<a class="headerlink" href="#opdrachten" title="Link to this heading">#</a></h2>
+<section id="opdracht-1-veilige-update">
+<h3>Opdracht 1 - Veilige UPDATE<a class="headerlink" href="#opdracht-1-veilige-update" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Pas de leeftijd van één profiel aan.</p></li>
+<li><p>Laat eerst met <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> zien welke rij je aanpast.</p></li>
+<li><p>Controleer na afloop opnieuw met <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>.</p></li>
+</ol>
+</section>
+<section id="opdracht-2-veilige-delete">
+<h3>Opdracht 2 - Veilige DELETE<a class="headerlink" href="#opdracht-2-veilige-delete" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Verwijder kijkgeschiedenis van één profiel.</p></li>
+<li><p>Controleer vooraf en achteraf met <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>.</p></li>
+<li><p>Leg uit waarom dit veilig is uitgevoerd.</p></li>
+</ol>
+</section>
+<section id="opdracht-3-subqueries">
+<h3>Opdracht 3 - Subqueries<a class="headerlink" href="#opdracht-3-subqueries" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Zoek gebruikers die minstens één profiel hebben.</p></li>
+<li><p>Zoek profielen zonder beoordelingen.</p></li>
+<li><p>Zoek series waarvan minstens één aflevering beoordeeld is.</p></li>
+</ol>
+</section>
+<section id="opdracht-4-statistiek">
+<h3>Opdracht 4 - Statistiek<a class="headerlink" href="#opdracht-4-statistiek" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Tel gebruikers per regio.</p></li>
+<li><p>Tel profielen per gebruiker.</p></li>
+<li><p>Bereken gemiddelde beoordeling per aflevering.</p></li>
+<li><p>Toon top 3 meest beoordeelde afleveringen.</p></li>
+</ol>
+</section>
+<section id="opdracht-5-didactische-challenge">
+<h3>Opdracht 5 - Didactische challenge<a class="headerlink" href="#opdracht-5-didactische-challenge" title="Link to this heading">#</a></h3>
+<p>Schrijf één foutgevoelige query opzettelijk verkeerd (bijv. zonder <code class="docutils literal notranslate"><span class="pre">WHERE</span></code>) en leg uit wat het risico is.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="check-je-begrip">
+<h2>Check je begrip<a class="headerlink" href="#check-je-begrip" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Waarom is <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> bij <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> en <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> cruciaal?</p></li>
+<li><p>Wanneer gebruik je een subquery?</p></li>
+<li><p>Wat is het verschil tussen detaildata en gegroepeerde data?</p></li>
+<li><p>Hoe controleer je of een statistiekquery logisch is?</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="samenvatting">
+<h2>Samenvatting<a class="headerlink" href="#samenvatting" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> wijzigt data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DELETE</span></code> verwijdert data.</p></li>
+<li><p>Subqueries helpen bij complexere voorwaarden.</p></li>
+<li><p>Met <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> maak je overzicht en statistiek.</p></li>
+</ul>
+</section>
 <section id="huiswerk">
-<h2>5. Huiswerk<a class="headerlink" href="#huiswerk" title="Link to this heading">#</a></h2>
+<h2>Huiswerk<a class="headerlink" href="#huiswerk" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Maak 2 veilige <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code>-queries.</p></li>
-<li><p>Maak 1 <code class="docutils literal notranslate"><span class="pre">DELETE</span></code>-query op testdata.</p></li>
-<li><p>Maak 2 statistiekqueries met <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code>.</p></li>
+<li><p>Maak 1 veilige <code class="docutils literal notranslate"><span class="pre">DELETE</span></code>-query.</p></li>
+<li><p>Maak 3 <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code>-queries met uitleg van je uitkomst.</p></li>
 </ol>
 </section>
 </section>
@@ -613,12 +720,24 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weekdoel">Weekdoel</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update">1. UPDATE</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delete">2. DELETE</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subqueries">3. Subqueries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#group-by">4. GROUP BY</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huiswerk">5. Huiswerk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lesopbouw-45-60-minuten">Lesopbouw (45-60 minuten)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veilig-werken-eerst-select-dan-pas-wijzigen">1. Veilig werken: eerst SELECT, dan pas wijzigen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update">2. UPDATE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delete">3. DELETE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subqueries">4. Subqueries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#group-by-en-aggregatie">5. GROUP BY en aggregatie</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-veilige-update">Opdracht 1 - Veilige UPDATE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-veilige-delete">Opdracht 2 - Veilige DELETE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-subqueries">Opdracht 3 - Subqueries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-statistiek">Opdracht 4 - Statistiek</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-didactische-challenge">Opdracht 5 - Didactische challenge</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huiswerk">Huiswerk</a></li>
 </ul>
   </nav></div>
 

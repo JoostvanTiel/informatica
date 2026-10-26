@@ -461,12 +461,24 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weekdoel">Weekdoel</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-relaties">1. Waarom relaties?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inner-join">2. INNER JOIN</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#left-join">3. LEFT JOIN</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oefeningen">4. Oefeningen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huiswerk">5. Huiswerk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lesopbouw-45-60-minuten">Lesopbouw (45-60 minuten)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-meerdere-tabellen">1. Waarom meerdere tabellen?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sleutels-keys">2. Sleutels (keys)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inner-join">3. INNER JOIN</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#left-join">4. LEFT JOIN</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veelgemaakte-fouten">5. Veelgemaakte fouten</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-basis-joins">Opdracht 1 - Basis JOINs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-inner-of-left">Opdracht 2 - INNER of LEFT?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-drie-tabellen-koppelen">Opdracht 3 - Drie tabellen koppelen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-redeneren-over-resultaat">Opdracht 4 - Redeneren over resultaat</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-challenge">Opdracht 5 - Challenge</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huiswerk">Huiswerk</a></li>
 </ul>
             </nav>
         </div>
@@ -480,65 +492,150 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="hoofdstuk-3-relaties-en-joins">
 <h1>Hoofdstuk 3: Relaties en JOINs<a class="headerlink" href="#hoofdstuk-3-relaties-en-joins" title="Link to this heading">#</a></h1>
-<section id="weekdoel">
-<h2>Weekdoel<a class="headerlink" href="#weekdoel" title="Link to this heading">#</a></h2>
-<p>Aan het eind van deze week kun je:</p>
+<section id="leerdoelen">
+<h2>Leerdoelen<a class="headerlink" href="#leerdoelen" title="Link to this heading">#</a></h2>
+<p>In dit hoofdstuk leer je hoe je gegevens uit meerdere tabellen combineert.</p>
+<p>Je leert:</p>
 <ul class="simple">
-<li><p>uitleggen wat relaties en foreign keys zijn;</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">INNER</span> <span class="pre">JOIN</span></code> en <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code> gebruiken;</p></li>
-<li><p>data uit meerdere tabellen combineren.</p></li>
+<li><p>waarom databases gegevens spreiden over meerdere tabellen;</p></li>
+<li><p>wat een primary key en foreign key is;</p></li>
+<li><p>wanneer je <code class="docutils literal notranslate"><span class="pre">INNER</span> <span class="pre">JOIN</span></code> gebruikt;</p></li>
+<li><p>wanneer je <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code> gebruikt;</p></li>
+<li><p>hoe je JOIN-query’s logisch controleert.</p></li>
 </ul>
+<p>Aan het einde van dit hoofdstuk kun je queries schrijven die informatie uit meerdere tabellen koppelen.</p>
 </section>
 <hr class="docutils" />
-<section id="waarom-relaties">
-<h2>1. Waarom relaties?<a class="headerlink" href="#waarom-relaties" title="Link to this heading">#</a></h2>
-<p>Gegevens staan in meerdere tabellen. Bijvoorbeeld:</p>
+<section id="lesopbouw-45-60-minuten">
+<h2>Lesopbouw (45-60 minuten)<a class="headerlink" href="#lesopbouw-45-60-minuten" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Uitleg relaties + schema (10-15 min)</strong></p></li>
+<li><p><strong>JOIN-demo in stappen (10-15 min)</strong></p></li>
+<li><p><strong>Oefenen in tweetallen (20 min)</strong></p></li>
+<li><p><strong>Nabespreking (10 min)</strong></p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="waarom-meerdere-tabellen">
+<h2>1. Waarom meerdere tabellen?<a class="headerlink" href="#waarom-meerdere-tabellen" title="Link to this heading">#</a></h2>
+<p>In een goede database staat niet alles in één grote tabel.</p>
+<p>Voorbeeld:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">gebruikers</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">profielen</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">abonnementen</span></code></p></li>
+<li><p>gebruikersgegevens in <code class="docutils literal notranslate"><span class="pre">gebruikers</span></code></p></li>
+<li><p>profielgegevens in <code class="docutils literal notranslate"><span class="pre">profielen</span></code></p></li>
+<li><p>abonnementen in <code class="docutils literal notranslate"><span class="pre">abonnementen</span></code></p></li>
 </ul>
-<p>Een profiel verwijst via <code class="docutils literal notranslate"><span class="pre">gebruiker_id</span></code> naar een gebruiker. Zo koppel je tabellen aan elkaar.</p>
+<p>Zo voorkom je dubbele data en houd je de structuur overzichtelijk.</p>
+</section>
+<hr class="docutils" />
+<section id="sleutels-keys">
+<h2>2. Sleutels (keys)<a class="headerlink" href="#sleutels-keys" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Primary key</strong>: unieke sleutel van een tabel (bijv. <code class="docutils literal notranslate"><span class="pre">gebruikers.id</span></code>).</p></li>
+<li><p><strong>Foreign key</strong>: verwijzing naar een sleutel in een andere tabel (bijv. <code class="docutils literal notranslate"><span class="pre">profielen.gebruiker_id</span></code>).</p></li>
+</ul>
+<p>Hierdoor weet de database welke records bij elkaar horen.</p>
 </section>
 <hr class="docutils" />
 <section id="inner-join">
-<h2>2. INNER JOIN<a class="headerlink" href="#inner-join" title="Link to this heading">#</a></h2>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">voornaam</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="k">type</span>
+<h2>3. INNER JOIN<a class="headerlink" href="#inner-join" title="Link to this heading">#</a></h2>
+<p>Gebruik <code class="docutils literal notranslate"><span class="pre">INNER</span> <span class="pre">JOIN</span></code> als je alleen records wilt zien die in beide tabellen bestaan.</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">voornaam</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">profielnaam</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span><span class="w"> </span><span class="n">u</span>
-<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">abonnementen</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">gebruiker_id</span><span class="p">;</span>
+<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">profielen</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">gebruiker_id</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Toont alleen records die in beide tabellen een match hebben.</p>
 </section>
 <hr class="docutils" />
 <section id="left-join">
-<h2>3. LEFT JOIN<a class="headerlink" href="#left-join" title="Link to this heading">#</a></h2>
+<h2>4. LEFT JOIN<a class="headerlink" href="#left-join" title="Link to this heading">#</a></h2>
+<p>Gebruik <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code> als je alle records uit de linker tabel wilt tonen, ook zonder match.</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">voornaam</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="k">type</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span><span class="w"> </span><span class="n">u</span>
 <span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">abonnementen</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">gebruiker_id</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Toont alle gebruikers, ook als ze geen abonnement hebben.</p>
+<p>Als er geen match is, krijg je <code class="docutils literal notranslate"><span class="pre">NULL</span></code> in kolommen van de rechter tabel.</p>
 </section>
 <hr class="docutils" />
-<section id="oefeningen">
-<h2>4. Oefeningen<a class="headerlink" href="#oefeningen" title="Link to this heading">#</a></h2>
+<section id="veelgemaakte-fouten">
+<h2>5. Veelgemaakte fouten<a class="headerlink" href="#veelgemaakte-fouten" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Toon <code class="docutils literal notranslate"><span class="pre">profielnaam</span></code> met bijbehorende <code class="docutils literal notranslate"><span class="pre">voornaam</span></code>.</p></li>
-<li><p>Toon series met hun genre.</p></li>
-<li><p>Toon afleveringen met serietitel.</p></li>
-<li><p>Toon alle gebruikers met abonnementstype (ook zonder abonnement).</p></li>
+<li><p>Join-voorwaarde vergeten (<code class="docutils literal notranslate"><span class="pre">ON</span> <span class="pre">...</span></code>).</p></li>
+<li><p>Verkeerde kolommen aan elkaar koppelen.</p></li>
+<li><p>Verwachten dat <code class="docutils literal notranslate"><span class="pre">INNER</span> <span class="pre">JOIN</span></code> ook niet-gematchte rijen toont.</p></li>
+<li><p>Niet controleren op dubbele rijen door 1-op-veel-relaties.</p></li>
 </ol>
 </section>
 <hr class="docutils" />
-<section id="huiswerk">
-<h2>5. Huiswerk<a class="headerlink" href="#huiswerk" title="Link to this heading">#</a></h2>
-<p>Schrijf 4 JOIN-queries:</p>
+<section id="opdrachten">
+<h2>Opdrachten<a class="headerlink" href="#opdrachten" title="Link to this heading">#</a></h2>
+<section id="opdracht-1-basis-joins">
+<h3>Opdracht 1 - Basis JOINs<a class="headerlink" href="#opdracht-1-basis-joins" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Toon profielnaam met voornaam van de gebruiker.</p></li>
+<li><p>Toon gebruikersnaam met abonnementstype.</p></li>
+<li><p>Toon afleveringtitel met serietitel.</p></li>
+</ol>
+</section>
+<section id="opdracht-2-inner-of-left">
+<h3>Opdracht 2 - INNER of LEFT?<a class="headerlink" href="#opdracht-2-inner-of-left" title="Link to this heading">#</a></h3>
+<p>Maak per vraag eerst een voorspelling: gebruik je <code class="docutils literal notranslate"><span class="pre">INNER</span> <span class="pre">JOIN</span></code> of <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code>?</p>
+<ol class="arabic simple">
+<li><p>Alle gebruikers met eventueel abonnement.</p></li>
+<li><p>Alleen gebruikers die een profiel hebben.</p></li>
+<li><p>Alle genres met eventueel series.</p></li>
+</ol>
+</section>
+<section id="opdracht-3-drie-tabellen-koppelen">
+<h3>Opdracht 3 - Drie tabellen koppelen<a class="headerlink" href="#opdracht-3-drie-tabellen-koppelen" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Toon serietitel, genre en kijkwijzer.</p></li>
+<li><p>Toon profielnaam, gebruiker en aantal kijkmomenten.</p></li>
+</ol>
+</section>
+<section id="opdracht-4-redeneren-over-resultaat">
+<h3>Opdracht 4 - Redeneren over resultaat<a class="headerlink" href="#opdracht-4-redeneren-over-resultaat" title="Link to this heading">#</a></h3>
+<p>Bij elke query noteer je:</p>
+<ol class="arabic simple">
+<li><p>verwachte aantal rijen;</p></li>
+<li><p>waarom die query logisch is;</p></li>
+<li><p>welke kolommen je gebruikt om te koppelen.</p></li>
+</ol>
+</section>
+<section id="opdracht-5-challenge">
+<h3>Opdracht 5 - Challenge<a class="headerlink" href="#opdracht-5-challenge" title="Link to this heading">#</a></h3>
+<p>Schrijf een query die profielen toont zonder beoordelingen (tip: <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code> + <code class="docutils literal notranslate"><span class="pre">IS</span> <span class="pre">NULL</span></code>).</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="check-je-begrip">
+<h2>Check je begrip<a class="headerlink" href="#check-je-begrip" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Wat is het verschil tussen <code class="docutils literal notranslate"><span class="pre">INNER</span> <span class="pre">JOIN</span></code> en <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code>?</p></li>
+<li><p>Waarom zijn foreign keys belangrijk?</p></li>
+<li><p>Wanneer kan een JOIN dubbele rijen geven?</p></li>
+<li><p>Hoe controleer je of een JOIN-resultaat klopt?</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="samenvatting">
+<h2>Samenvatting<a class="headerlink" href="#samenvatting" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>minimaal 2x <code class="docutils literal notranslate"><span class="pre">INNER</span> <span class="pre">JOIN</span></code></p></li>
-<li><p>minimaal 1x <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code></p></li>
-<li><p>minimaal 1 query met 3 tabellen</p></li>
+<li><p>Relaties maken het mogelijk om data netjes te verdelen.</p></li>
+<li><p>Met JOINs combineer je die data weer tot bruikbare informatie.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">INNER</span> <span class="pre">JOIN</span></code> geeft alleen matches, <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code> behoudt alle rijen links.</p></li>
 </ul>
+</section>
+<section id="huiswerk">
+<h2>Huiswerk<a class="headerlink" href="#huiswerk" title="Link to this heading">#</a></h2>
+<p>Maak 5 JOIN-query’s:</p>
+<ul class="simple">
+<li><p>2x <code class="docutils literal notranslate"><span class="pre">INNER</span> <span class="pre">JOIN</span></code>;</p></li>
+<li><p>2x <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code>;</p></li>
+<li><p>1x met minimaal 3 tabellen.</p></li>
+</ul>
+<p>Schrijf per query in één zin wat je ermee wilt aantonen.</p>
 </section>
 </section>
 
@@ -608,12 +705,24 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weekdoel">Weekdoel</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-relaties">1. Waarom relaties?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inner-join">2. INNER JOIN</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#left-join">3. LEFT JOIN</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oefeningen">4. Oefeningen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huiswerk">5. Huiswerk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lesopbouw-45-60-minuten">Lesopbouw (45-60 minuten)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-meerdere-tabellen">1. Waarom meerdere tabellen?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sleutels-keys">2. Sleutels (keys)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inner-join">3. INNER JOIN</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#left-join">4. LEFT JOIN</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veelgemaakte-fouten">5. Veelgemaakte fouten</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-basis-joins">Opdracht 1 - Basis JOINs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-inner-of-left">Opdracht 2 - INNER of LEFT?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-drie-tabellen-koppelen">Opdracht 3 - Drie tabellen koppelen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-redeneren-over-resultaat">Opdracht 4 - Redeneren over resultaat</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-challenge">Opdracht 5 - Challenge</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huiswerk">Huiswerk</a></li>
 </ul>
   </nav></div>
 

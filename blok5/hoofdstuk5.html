@@ -461,11 +461,23 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weekdoel">Weekdoel</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verbinding-maken">1. Verbinding maken</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-tonen">2. Data tonen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filter-via-formulier">3. Filter via formulier</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huiswerk">4. Huiswerk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lesopbouw-45-60-minuten">Lesopbouw (45-60 minuten)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verbinding-maken-met-de-database">1. Verbinding maken met de database</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resultaten-tonen-in-html">2. Resultaten tonen in HTML</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formulier-gebruiken-als-filter">3. Formulier gebruiken als filter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kwaliteitscheck-voor-je-pagina">4. Kwaliteitscheck voor je pagina</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-basispagina">Opdracht 1 - Basispagina</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-tabelweergave">Opdracht 2 - Tabelweergave</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-filterformulier">Opdracht 3 - Filterformulier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-uitbreiding">Opdracht 4 - Uitbreiding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-reflectie">Opdracht 5 - Reflectie</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huiswerk">Huiswerk</a></li>
 </ul>
             </nav>
         </div>
@@ -479,50 +491,143 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="hoofdstuk-5-php-mysql-gegevens-tonen">
 <h1>Hoofdstuk 5: PHP + MySQL - gegevens tonen<a class="headerlink" href="#hoofdstuk-5-php-mysql-gegevens-tonen" title="Link to this heading">#</a></h1>
-<section id="weekdoel">
-<h2>Weekdoel<a class="headerlink" href="#weekdoel" title="Link to this heading">#</a></h2>
-<p>Aan het eind van deze week kun je:</p>
+<section id="leerdoelen">
+<h2>Leerdoelen<a class="headerlink" href="#leerdoelen" title="Link to this heading">#</a></h2>
+<p>In dit hoofdstuk maak je de stap van SQL in phpMyAdmin naar SQL in een webpagina.</p>
+<p>Je leert:</p>
 <ul class="simple">
-<li><p>verbinding maken met MySQL vanuit PHP;</p></li>
+<li><p>een databaseverbinding maken in PHP;</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">SELECT</span></code>-resultaten tonen in HTML;</p></li>
-<li><p>filteren via formulieren.</p></li>
+<li><p>invoer van een formulier verwerken;</p></li>
+<li><p>eenvoudige fouten herkennen en oplossen.</p></li>
 </ul>
+<p>Aan het einde van dit hoofdstuk kun je een werkende uitleespagina bouwen die data uit de database toont.</p>
 </section>
 <hr class="docutils" />
-<section id="verbinding-maken">
-<h2>1. Verbinding maken<a class="headerlink" href="#verbinding-maken" title="Link to this heading">#</a></h2>
+<section id="lesopbouw-45-60-minuten">
+<h2>Lesopbouw (45-60 minuten)<a class="headerlink" href="#lesopbouw-45-60-minuten" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Klassikale demo (10-15 min)</strong></p></li>
+<li><p><strong>Samen coderen (10-15 min)</strong></p></li>
+<li><p><strong>Zelfstandig bouwen (20-25 min)</strong></p></li>
+<li><p><strong>Testen en feedback (5 min)</strong></p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="verbinding-maken-met-de-database">
+<h2>1. Verbinding maken met de database<a class="headerlink" href="#verbinding-maken-met-de-database" title="Link to this heading">#</a></h2>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
 <span class="nv">$conn</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">mysqli</span><span class="p">(</span><span class="s2">"localhost"</span><span class="p">,</span> <span class="s2">"root"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"nimmastream_2627"</span><span class="p">);</span>
 <span class="k">if</span> <span class="p">(</span><span class="nv">$conn</span><span class="o">-&gt;</span><span class="na">connect_error</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">die</span><span class="p">(</span><span class="s2">"Verbinding mislukt: "</span> <span class="o">.</span> <span class="nv">$conn</span><span class="o">-&gt;</span><span class="na">connect_error</span><span class="p">);</span>
 <span class="p">}</span>
+<span class="cp">?&gt;</span>
 </pre></div>
 </div>
+<p>Zonder verbinding kun je geen query’s uitvoeren.</p>
 </section>
 <hr class="docutils" />
-<section id="data-tonen">
-<h2>2. Data tonen<a class="headerlink" href="#data-tonen" title="Link to this heading">#</a></h2>
-<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$result = $conn-&gt;query("SELECT voornaam, leeftijd FROM gebruikers");</span>
-<span class="x">while ($row = $result-&gt;fetch_assoc()) {</span>
-<span class="x">    echo "&lt;p&gt;" . $row["voornaam"] . " (" . $row["leeftijd"] . ")&lt;/p&gt;";</span>
-<span class="x">}</span>
+<section id="resultaten-tonen-in-html">
+<h2>2. Resultaten tonen in HTML<a class="headerlink" href="#resultaten-tonen-in-html" title="Link to this heading">#</a></h2>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$result</span> <span class="o">=</span> <span class="nv">$conn</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">"SELECT voornaam, leeftijd FROM gebruikers"</span><span class="p">);</span>
+<span class="k">while</span> <span class="p">(</span><span class="nv">$row</span> <span class="o">=</span> <span class="nv">$result</span><span class="o">-&gt;</span><span class="na">fetch_assoc</span><span class="p">())</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">"&lt;p&gt;"</span> <span class="o">.</span> <span class="nv">$row</span><span class="p">[</span><span class="s2">"voornaam"</span><span class="p">]</span> <span class="o">.</span> <span class="s2">" ("</span> <span class="o">.</span> <span class="nv">$row</span><span class="p">[</span><span class="s2">"leeftijd"</span><span class="p">]</span> <span class="o">.</span> <span class="s2">")&lt;/p&gt;"</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
 </pre></div>
 </div>
+<p>Een nettere variant is data tonen in een tabel (<code class="docutils literal notranslate"><span class="pre">&lt;table&gt;</span></code>).</p>
 </section>
 <hr class="docutils" />
-<section id="filter-via-formulier">
-<h2>3. Filter via formulier<a class="headerlink" href="#filter-via-formulier" title="Link to this heading">#</a></h2>
-<p>Gebruik een formulier met bijvoorbeeld regio of leeftijd als filter en toon de resultaten op dezelfde pagina.</p>
-</section>
-<hr class="docutils" />
-<section id="huiswerk">
-<h2>4. Huiswerk<a class="headerlink" href="#huiswerk" title="Link to this heading">#</a></h2>
-<p>Maak een pagina die:</p>
+<section id="formulier-gebruiken-als-filter">
+<h2>3. Formulier gebruiken als filter<a class="headerlink" href="#formulier-gebruiken-als-filter" title="Link to this heading">#</a></h2>
+<p>Gebruik bijvoorbeeld een regiofilter via <code class="docutils literal notranslate"><span class="pre">GET</span></code>.</p>
+<p>Stappen:</p>
 <ol class="arabic simple">
-<li><p>alle gebruikers toont;</p></li>
-<li><p>kan filteren op regio;</p></li>
-<li><p>nette HTML-output gebruikt.</p></li>
+<li><p>formulier maken;</p></li>
+<li><p>waarde uitlezen uit <code class="docutils literal notranslate"><span class="pre">$_GET</span></code>;</p></li>
+<li><p>query uitvoeren;</p></li>
+<li><p>resultaat tonen.</p></li>
 </ol>
+</section>
+<hr class="docutils" />
+<section id="kwaliteitscheck-voor-je-pagina">
+<h2>4. Kwaliteitscheck voor je pagina<a class="headerlink" href="#kwaliteitscheck-voor-je-pagina" title="Link to this heading">#</a></h2>
+<p>Controleer:</p>
+<ul class="simple">
+<li><p>krijg je geen witte pagina;</p></li>
+<li><p>zie je duidelijke foutmelding bij problemen;</p></li>
+<li><p>werkt je filter meerdere keren achter elkaar;</p></li>
+<li><p>blijft je HTML leesbaar en netjes.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="opdrachten">
+<h2>Opdrachten<a class="headerlink" href="#opdrachten" title="Link to this heading">#</a></h2>
+<section id="opdracht-1-basispagina">
+<h3>Opdracht 1 - Basispagina<a class="headerlink" href="#opdracht-1-basispagina" title="Link to this heading">#</a></h3>
+<p>Maak een pagina met:</p>
+<ol class="arabic simple">
+<li><p>verbinding met database;</p></li>
+<li><p>lijst van alle gebruikers;</p></li>
+<li><p>nette titel en tussenkop.</p></li>
+</ol>
+</section>
+<section id="opdracht-2-tabelweergave">
+<h3>Opdracht 2 - Tabelweergave<a class="headerlink" href="#opdracht-2-tabelweergave" title="Link to this heading">#</a></h3>
+<p>Toon minimaal 3 kolommen in een HTML-tabel, bijvoorbeeld:</p>
+<ul class="simple">
+<li><p>voornaam;</p></li>
+<li><p>leeftijd;</p></li>
+<li><p>regio.</p></li>
+</ul>
+</section>
+<section id="opdracht-3-filterformulier">
+<h3>Opdracht 3 - Filterformulier<a class="headerlink" href="#opdracht-3-filterformulier" title="Link to this heading">#</a></h3>
+<p>Maak een formulier waarmee je op regio filtert.</p>
+</section>
+<section id="opdracht-4-uitbreiding">
+<h3>Opdracht 4 - Uitbreiding<a class="headerlink" href="#opdracht-4-uitbreiding" title="Link to this heading">#</a></h3>
+<p>Voeg een tweede filter toe, bijvoorbeeld op minimale leeftijd.</p>
+</section>
+<section id="opdracht-5-reflectie">
+<h3>Opdracht 5 - Reflectie<a class="headerlink" href="#opdracht-5-reflectie" title="Link to this heading">#</a></h3>
+<p>Leg in 5-8 zinnen uit:</p>
+<ol class="arabic simple">
+<li><p>wat doet PHP in deze opdracht;</p></li>
+<li><p>wat doet SQL in deze opdracht;</p></li>
+<li><p>hoe werken die samen.</p></li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="check-je-begrip">
+<h2>Check je begrip<a class="headerlink" href="#check-je-begrip" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Waarom moet je eerst verbinden voordat je query’s kunt doen?</p></li>
+<li><p>Wat is het verschil tussen SQL-resultaat en HTML-weergave?</p></li>
+<li><p>Wat doet <code class="docutils literal notranslate"><span class="pre">fetch_assoc()</span></code>?</p></li>
+<li><p>Waarom is testen belangrijk bij formulieren?</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="samenvatting">
+<h2>Samenvatting<a class="headerlink" href="#samenvatting" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>PHP kan data ophalen uit MySQL.</p></li>
+<li><p>SQL bepaalt welke data je ophaalt.</p></li>
+<li><p>HTML bepaalt hoe je data toont aan de gebruiker.</p></li>
+</ul>
+</section>
+<section id="huiswerk">
+<h2>Huiswerk<a class="headerlink" href="#huiswerk" title="Link to this heading">#</a></h2>
+<p>Werk je pagina af tot een nette “gebruikersoverzicht”-pagina met:</p>
+<ul class="simple">
+<li><p>tabelweergave;</p></li>
+<li><p>minimaal één werkend filter;</p></li>
+<li><p>korte uitleg bovenaan de pagina.</p></li>
+</ul>
 </section>
 </section>
 
@@ -592,11 +697,23 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weekdoel">Weekdoel</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verbinding-maken">1. Verbinding maken</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-tonen">2. Data tonen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filter-via-formulier">3. Filter via formulier</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huiswerk">4. Huiswerk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lesopbouw-45-60-minuten">Lesopbouw (45-60 minuten)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verbinding-maken-met-de-database">1. Verbinding maken met de database</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resultaten-tonen-in-html">2. Resultaten tonen in HTML</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formulier-gebruiken-als-filter">3. Formulier gebruiken als filter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kwaliteitscheck-voor-je-pagina">4. Kwaliteitscheck voor je pagina</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-basispagina">Opdracht 1 - Basispagina</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-tabelweergave">Opdracht 2 - Tabelweergave</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-filterformulier">Opdracht 3 - Filterformulier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-uitbreiding">Opdracht 4 - Uitbreiding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-reflectie">Opdracht 5 - Reflectie</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huiswerk">Huiswerk</a></li>
 </ul>
   </nav></div>
 
