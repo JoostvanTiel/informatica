@@ -1,0 +1,8 @@
+{
+  "chat.tools.terminal.autoApprove": {
+    "/^Get-ChildItem -Filter \"\\*\\.docx\" -o Name \\| ForEach-Object \\{ Write-Output \"=== \\$_ ===\" \\}$/": {
+      "approve": true,
+      "matchCommandLine": true
+    }
+  }
+}

@@ -1,0 +1,590 @@
+================================================================================
+  SQL LESPLAN: 8 WEKEN (3 SQL + 2 PHP-MySQL + 3 Webshop)
+================================================================================
+KLAS: 5 HAVO / 5 VWO
+DATABASE: nimmastream_2627_improved
+ONDERWERP: Database design + CRUD operaties (SELECT, UPDATE, DELETE)
+EINDPROJECT: Persoonlijke webshop met gebruikersinput
+
+================================================================================
+OVERZICHT
+================================================================================
+
+FASE 1: SQL BASICS (3 weken)
+├─ Week 1: SELECT, WHERE, ORDER BY
+├─ Week 2: JOINs, relaties, meerdere tabellen
+└─ Week 3: Geavanceerd (UPDATE, DELETE, Subqueries, GROUP BY)
+
+FASE 2: PHP-MySQL (2 weken)
+├─ Week 4: SELECT via web formulieren
+└─ Week 5: UPDATE & DELETE via web interface
+
+FASE 3: Webshop Project (3 weken)
+├─ Week 6: Basis CRUD webshop (HAVO: producten, bestellingen, gebruikers)
+├─ Week 7: Uitbreiding (VWO: admin, rollen, beveiliging)
+└─ Week 8: Afwerking & presentaties
+
+HAVO vs VWO:
+- HAVO: Focus op werkende CRUD, eenvoudige structuur
+- VWO: Extra: admin functies, input validation, SQL injection awareness
+
+================================================================================
+WEEK 1: SELECT, WHERE, ORDER BY (5 lessen à 50 min)
+================================================================================
+
+LEERDOELEN:
+✓ Basis SELECT-queries schrijven
+✓ WHERE clauses gebruiken voor filtering
+✓ ORDER BY voor sortering
+✓ Kolommen selecteren vs SELECT *
+✓ LIMIT voor beperken resultaten
+
+LES 1.1: Introductie SQL & SELECT (50 min)
+───────────────────────────────────────────
+Onderwerp: Waarom databases? SELECT basics
+Werkvormen: Uitleg + Live demo (20 min)
+  - Wat is SQL? Waarom databases nodig?
+  - phpMyAdmin interface
+  - Basale SELECT: SELECT * FROM gebruikers;
+  
+Oefening 1 (15 min): SELECT queries
+  1. SELECT alle gebruikers
+  2. SELECT voornaam EN achternaam
+  3. SELECT voornaam van gebruiker met id=1
+  
+Huiswerk (15 min): Lezen notesbookje SELECT basics
+
+───────────────────────────────────────────
+
+LES 1.2: WHERE & Filtering (50 min)
+───────────────────────────────────────────
+Onderwerp: Gegevens filteren met WHERE
+Werkvormen: Uitleg + Oefening in tweetallen
+
+Uitleg (15 min):
+  - WHERE syntax
+  - Vergelijkingsoperatoren: =, <>, <, >, <=, >=
+  - Operators: AND, OR, NOT
+  - IN vs BETWEEN
+
+Oefeningen (25 min):
+  1. SELECT gebruikers WAAR leeftijd > 18
+  2. SELECT gebruikers WAAR regio = 'NH' EN leeftijd < 20
+  3. SELECT alle series WAAR kijkwijzer = '12'
+  4. SELECT gebruikers WAAR voornaam LIKE 'A%'
+  
+Quiz (10 min): Korte begripscheck
+
+───────────────────────────────────────────
+
+LES 1.3: ORDER BY & Sortering (50 min)
+───────────────────────────────────────────
+Onderwerp: Resultaten sorteren
+Werkvormen: Uitleg + Zelfstandig werken
+
+Uitleg (15 min):
+  - ORDER BY ASC / DESC
+  - Meerdere sorteringen
+  - LIMIT voor toplijsten
+
+Oefeningen (25 min):
+  1. SELECT top 5 oudste gebruikers (ORDER BY leeftijd DESC LIMIT 5)
+  2. SELECT alle series alfabetisch (A-Z)
+  3. SELECT gebruikers per regio, alfabetisch
+  4. SELECT 10 jongste gebruikers
+  
+Opdracht (10 min): Zelfstandig query schrijven
+
+───────────────────────────────────────────
+
+LES 1.4: Combinatie + Praktijk (50 min)
+───────────────────────────────────────────
+Onderwerp: SELECT + WHERE + ORDER BY combineren
+Werkvormen: Blokuur zelfstandig werken
+
+Practicum oefeningen:
+  1. SELECT alle profielen van gebruiker 1, alfabetisch
+  2. SELECT abonnementen die ACTIEF zijn, gesorteerd op gebruiker
+  3. SELECT alle kijkgeschiedenis voor profiel 3
+  4. SELECT afleveringen van serie 1, gesorteerd op uitzend_datum
+  
+Challenge (meerkeuzers):
+  - Vind de 3 jongste actieve premium abonnees
+  - SELECT alle users die beginnen met E, en jonger dan 20
+  
+Huiswerk: 5 extra queries bedenken en uitvoeren
+
+───────────────────────────────────────────
+
+LES 1.5: Samenvatting & Toetsing (50 min)
+───────────────────────────────────────────
+Werkvormen: Terugblik + Kleine toets
+
+Korte herhaling (10 min): SELECT, WHERE, ORDER BY
+
+Praktische toets (30 min):
+  - 8 kleine vragen (SELECT queries schrijven)
+  - Zelfcontrole met antwoordmodel
+  
+Afrond: Vragen? Hoe ging het? (10 min)
+
+================================================================================
+WEEK 2: JOINs & Relaties (5 lessen à 50 min)
+================================================================================
+
+LEERDOELEN:
+✓ Begrijpen wat relaties zijn (FK)
+✓ INNER JOIN schrijven
+✓ LEFT JOIN begrijpen
+✓ Data uit meerdere tabellen ophalen
+✓ JOIN syntax en best practices
+
+LES 2.1: Relaties & Foreign Keys (50 min)
+───────────────────────────────────────────
+Onderwerp: Waarom relaties? Hoe werken ze?
+Werkvormen: Uitleg + Diagram + Q&A
+
+Theorie (15 min):
+  - Normalisatie + Foreign Keys
+  - 1-op-veel relatie (gebruiker → profielen)
+  - Entity Relationship Diagram nimmastream
+  - Integriteit & constraints
+
+Demo (20 min):
+  - phpMyAdmin: Relaties tonen
+  - Waarom niet alles in 1 tabel?
+  - Performance & redundantie
+  
+Discussie (15 min): Waarom is dit belangrijk voor websites?
+
+───────────────────────────────────────────
+
+LES 2.2: INNER JOIN (50 min)
+───────────────────────────────────────────
+Onderwerp: Gegevens combineren met INNER JOIN
+Werkvormen: Uitleg + Oefening
+
+Syntax (15 min):
+```sql
+SELECT u.voornaam, a.type
+FROM gebruikers u
+INNER JOIN abonnementen a ON u.id = a.gebruiker_id;
+```
+
+Oefeningen (25 min):
+  1. SELECT voornaam + titel series (via genre_id)
+  2. SELECT profiel + gebruiker voornaam (join profielen & gebruikers)
+  3. SELECT aflevering titel + serie titel
+  4. SELECT gebruiker + zijn abonnement type
+  
+Huiswerk-oefening (10 min): JOIN met 3 tabellen voorbereiding
+
+───────────────────────────────────────────
+
+LES 2.3: LEFT JOIN & Outer Joins (50 min)
+───────────────────────────────────────────
+Onderwerp: Gegevens die NIET matchen
+Werkvormen: Uitleg + Vergelijking INNER vs LEFT
+
+Verschil INNER vs LEFT (20 min):
+  - INNER: alleen matches
+  - LEFT: alle links + matches
+  - Praktisch voorbeeld
+  
+Oefeningen (20 min):
+  1. SELECT alle gebruikers + hun abonnementen (LEFT JOIN)
+  2. SELECT alle genres + hun series (LEFT JOIN)
+  3. SELECT profielen die GEEN beoordelingen hebben (LEFT JOIN + WHERE IS NULL)
+  4. SELECT series met aantal afleveringen
+  
+Mini-project (10 min): Schrijf 1 LEFT JOIN zelf
+
+───────────────────────────────────────────
+
+LES 2.4: Complexe JOINs & Oefening (50 min)
+───────────────────────────────────────────
+Onderwerp: Meerdere JOINs combineren
+Werkvormen: Blokuur practicum
+
+Oefeningen:
+  1. SELECT afleveringen met serie NAAM + genre NAAM
+  2. SELECT profiel + gebruiker voornaam + aantal kijkgeschiedenis
+  3. SELECT beoordeling + aflevering + serie + user info
+  4. SELECT gebruiker + profiel + aantal beoordelingen
+  
+Challenge queries:
+  - Vind alle profielen van Emma met hun serie kijkgeschiedenis
+  - SELECT top 5 meest beoordeelde afleveringen
+  
+Zelfcontrole: Resultaten checken op logica
+
+───────────────────────────────────────────
+
+LES 2.5: Samenvatting JOIN (50 min)
+───────────────────────────────────────────
+Werkvormen: Terugblik + Test
+
+Mini quiz (10 min): INNER vs LEFT vs RIGHT?
+
+Toetsopdrachten (30 min):
+  - 6 JOIN queries schrijven van moeilijkheid oplopend
+  
+Reflectie (10 min): Wat vind je lastig? Vragen?
+
+================================================================================
+WEEK 3: UPDATE, DELETE, Subqueries & GROUP BY (5 lessen)
+================================================================================
+
+LEERDOELEN:
+✓ Gegevens wijzigen met UPDATE
+✓ Voorzichtig verwijderen met DELETE
+✓ WHERE clauses in UPDATE/DELETE
+✓ Subqueries gebruiken
+✓ GROUP BY + COUNT/SUM voor statistieken
+✓ Inzicht in wanneer je wat toepast
+
+LES 3.1: UPDATE - Gegevens aanpassen (50 min)
+───────────────────────────────────────────
+Onderwerp: Gegevens wijzigen + voorzichtigheid
+Werkvormen: Uitleg + Oefening met "undo"
+
+Theorie (15 min):
+  - UPDATE syntax
+  - WHERE clause is CRUCIAAL
+  - Waarom je een backup nodig hebt
+  - Testing: FIRST SELECT before UPDATE
+  
+Demo (15 min):
+  - Verkeerde UPDATE: alle profielen wissen
+  - Veilige UPDATE: eerst SELECT
+  
+Oefeningen (15 min):
+  1. UPDATE profiel 1 leeftijd naar 15 (check eerst met SELECT!)
+  2. UPDATE alle basis abonnementen naar standaard
+  3. UPDATE gebruiker 5 voornaam naar 'Anna-Marie'
+  4. UPDATE alle abonnementen van user 2 naar 'beëindigd'
+  
+Check (5 min): Werkt het? SELECT controleren
+
+───────────────────────────────────────────
+
+LES 3.2: DELETE - Voorzichtig verwijderen (50 min)
+───────────────────────────────────────────
+Onderwerp: Permanent verwijderen + risico's
+Werkvormen: Uitleg + Praktijk met voorzichtigheid
+
+Waarschuwingen (10 min):
+  - DELETE zonder WHERE = ALLES WEG
+  - Transacties (BEGIN / ROLLBACK)
+  - Soft delete vs hard delete
+  - Cascade deletes via FK constraints
+  
+Oefeningen (30 min):
+  1. DELETE kijkgeschiedenis van profiel 10 (check eerst!)
+  2. DELETE beoordelinge< 5 punten (test eerst!)
+  3. DELETE gebruiker 25 (cascade via FK)
+  4. DELETE afleveringen van serie 1 seizoen 1 episode 8
+  
+Safety check (10 min): Data integriteit controleren
+
+HUISWERK: Schrijf veilige UPDATE/DELETE queries
+
+───────────────────────────────────────────
+
+LES 3.3: Subqueries & IN operator (50 min)
+───────────────────────────────────────────
+Onderwerp: Queries binnen queries
+Werkvormen: Uitleg + Aha-moment oefeningen
+
+Concept (15 min):
+  - Wat is subquery?
+  - SELECT in WHERE
+  - Efficiëntie
+  
+Oefeningen (25 min):
+  1. SELECT alle users die NOG GEEN beoordeling gaven
+     (SELECT profiel_id FROM beoordelingen WAAR niets gevonden)
+  2. SELECT afleveringen van de meest beoordeelde serie
+  3. SELECT gebruikers met meer dan 1 profiel
+  4. SELECT profielen die nooit gekeken hebben
+  
+Insight (10 min): Wanneer subqueries gebruiken?
+
+───────────────────────────────────────────
+
+LES 3.4: GROUP BY & Aggregatie (50 min)
+───────────────────────────────────────────
+Onderwerp: Gegevens samenvatten
+Werkvormen: Uitleg + Statistieken oefeningen
+
+Functies (15 min):
+  - COUNT(*), COUNT(DISTINCT)
+  - SUM, AVG, MIN, MAX
+  - GROUP BY + HAVING
+  
+Oefeningen (25 min):
+  1. COUNT hoeveel gebruikers per regio
+  2. COUNT hoeveel profielen per gebruiker
+  3. COUNT hoeveel beoordelingen per profiel
+  4. AVG beoordeling per aflevering
+  5. TOP 3 meest beoordeelde afleveringen
+  
+Challenge (10 min): Maak je eigen statistiek-query
+
+───────────────────────────────────────────
+
+LES 3.5: Samenvatting + Mini-project (50 min)
+───────────────────────────────────────────
+Werkvormen: Integratie + Evaluatie
+
+Mini-project (40 min):
+  "Beheer de nimmastream database"
+  
+Taken:
+  1. Voeg beoordeling toe (INSERT)
+  2. Wijzig een profiel leeftijd (UPDATE)
+  3. Vind profielen zonder beoordelingen (SELECT + Subquery)
+  4. Maak statistieken (GROUP BY)
+  5. Verwijder oude kijkgeschiedenis (DELETE)
+  
+Presentatie (5 min): Wat heb je geleerd?
+
+================================================================================
+WEEK 4: PHP + MySQL (SELECT via web) (5 lessen)
+================================================================================
+
+LEERDOELEN:
+✓ PHP basis + MySQL connector
+✓ SELECT queries uitvoeren vanuit PHP
+✓ Resultaten in HTML tabel tonen
+✓ Formulieren gebruiken voor user input
+✓ SQL in PHP + safety (prepared statements intro)
+
+LES 4.1: PHP Setup & Database Verbinding (50 min)
+───────────────────────────────────────────
+Onderwerp: PHP + MySQL verbinden
+Werkvormen: Demo + Zelfstandig setup
+
+Demo (20 min):
+  - PHP basics recap (variabelen, arrays, loops)
+  - MySQLi en PDO (kort uitleg)
+  - Database credentials
+  
+Praktijk (25 min):
+  - Schrijf PHP verbindingscode
+  - Test op errors
+  - Eerste query draaien
+  
+Huiswerk (5 min): Setup thuis testen
+
+───────────────────────────────────────────
+
+LES 4.2: SELECT resulaten in HTML (50 min)
+───────────────────────────────────────────
+Onderwerp: Data ophalen en weergeven
+Werkvormen: Coding + Live testing
+
+Code-voorbeeld (15 min):
+```php
+$result = $conn->query("SELECT voornaam, leeftijd FROM gebruikers");
+while($row = $result->fetch_assoc()) {
+    echo "<tr><td>".$row["voornaam"]."</td></tr>";
+}
+```
+
+Oefeningen (25 min):
+  1. Maak PHP script: alle gebruikers weergeven
+  2. Maak PHP script: alle genres in dropdown
+  3. Maak PHP script: alle series in tabel
+  
+Styling (10 min): Basis CSS voor tabellen
+
+───────────────────────────────────────────
+
+LES 4.3: Formulieren & User Input (50 min)
+───────────────────────────────────────────
+Onderwerp: Gebruiker laten zoeken/filteren
+Werkvormen: Interactief programmeren
+
+Concept (15 min):
+  - GET vs POST
+  - Form handling in PHP
+  - User input verwerken
+  
+Oefeningen (25 min):
+  1. Zoekformulier: "Zoek gebruiker op voornaam"
+  2. Filter: "Toon abonnementen van type..."
+  3. Filter: "Series van genre..."
+  4. Dropdown: "Kies regio en toon users"
+  
+Huiswerk (10 min): Eigen zoekopdracht bedenken
+
+───────────────────────────────────────────
+
+LES 4.4: JOIN in PHP + SQL Injection intro (50 min)
+───────────────────────────────────────────
+Onderwerp: Complexere queries + veiligheid
+Werkvormen: Codeering + Security awareness
+
+JOIN in PHP (15 min):
+  - SELECT met JOIN in PHP script
+  - Voorbeeld: gebruiker + zijn profielen
+  
+Oefeningen (15 min):
+  1. Pagina: Gebruiker + alle zijn profielen
+  2. Pagina: Profiel + kijkgeschiedenis + afleveringen
+  3. Pagina: Serie + afleveringen + beoordelingen
+  
+SQL Injection waarschuwing (15 min):
+  - Wat IS SQL injection?
+  - GEVAAR: $_GET rechtstreeks in query
+  - Prepared Statements intro
+  
+Code-voorbeeld (goed vs slecht)
+
+───────────────────────────────────────────
+
+LES 4.5: Evaluatie & Voorbereiding UPDATE (50 min)
+───────────────────────────────────────────
+Werkvormen: Testen + Volgende stap intro
+
+Huiswerk: Maak 2 werkende SELECT-pagina's
+
+Volgende week: UPDATE via webformulier
+
+================================================================================
+WEEK 5: PHP + UPDATE/DELETE (2 weken samengevoegd: SELECT BASICS vervolgd)
+================================================================================
+
+LEERDOELEN:
+✓ UPDATE via webformulier
+✓ DELETE met voorzichtigheid
+✓ Confirmatie dialogen
+✓ Input validation basics
+✓ Voorbereiding webshop project
+
+LES 5.1: Formulieren naar UPDATE (50 min)
+───────────────────────────────────────────
+Onderwerp: Wijzigen via webinterface
+Werkvormen: Codering + Live testing
+
+Workflow (15 min):
+  1. Gebruiker selecteert record
+  2. Form toont huidige waarden
+  3. Wijzig en submit
+  4. PHP voert UPDATE uit
+  
+Oefeningen (25 min):
+  1. Wijzig profiel leeftijd
+  2. Wijzig gebruiker voornaam
+  3. Wijzig abonnement type
+  4. Wijzig beoordeling score
+  
+Veiligheid (10 min): Prepared statements!
+
+───────────────────────────────────────────
+
+LES 5.2: DELETE met Voorzichtigheid (50 min)
+───────────────────────────────────────────
+Onderwerp: Permanent verwijderen vanuit web
+Werkvormen: Praktijk + Risk awareness
+
+Pattern (15 min):
+  - Confirmation dialog (JS: "Weet je zeker?")
+  - Double check in PHP
+  - Log deletions (optioneel)
+  
+Oefeningen (25 min):
+  1. Delete profiel (met bevestiging)
+  2. Delete beoordelingen van user
+  3. Delete kijkgeschiedenis
+  4. Soft delete: status='verwijderd'
+  
+Reflectie (10 min): Wanneer permanent, wanneer soft?
+
+───────────────────────────────────────────
+
+LES 5.3: Validatie & Input Security (50 min)
+───────────────────────────────────────────
+Onderwerp: Gebruikers invoer veilig maken
+Werkvormen: Code review + Hardening
+
+Gevallen (20 min):
+  - Empty fields
+  - Verkeerd datatype
+  - SQL injection (opnieuw!)
+  - XSS (basis)
+  
+Best practices (20 min):
+  - isset() checks
+  - Prepared statements (mysqli / PDO)
+  - Escapen van special chars
+  - Type casting
+  
+Code-voorbeelden (10 min)
+
+───────────────────────────────────────────
+
+LES 5.4-5.5: Voorbereiding Webshop + Buffer (100 min)
+───────────────────────────────────────────
+Werkvormen: Herhaaling + Planning + Vragen
+
+- Review: SELECT, UPDATE, DELETE via web
+- Architectuur webshop bespreken
+- HAVO vs VWO verschillen uitleggen
+- Database structuur eigen webshop
+- Tijdsplanning
+- Vragen beantwoorden
+
+================================================================================
+WEEK 6-8: WEBSHOP PROJECT
+================================================================================
+
+NIVEAU HAVO:
+- 3 basis tabellen: users, artikelen, bestellingen
+- CRUD compleet werkend
+- Eenvoudige interface
+- Input validation
+- Focus: techniek werkend krijgen
+
+NIVEAU VWO:
+- Uitbreid met: admin panel, user rollen, logs
+- SQL injection voorkomen (prepared statements)
+- Wachtwoord hashing (password_hash)
+- Session management
+- Authorization checks
+- Focus: beveiliging + geavanceerde features
+
+Week 6: Projectstart + Basis CRUD
+Week 7: Testing + Uitbreiding VWO features
+Week 8: Afwerking + Presentaties
+
+================================================================================
+MATERIALEN NODIG
+================================================================================
+
+- phpmyadmin (al beschikbaar)
+- Tekstneditor (VS Code, Notepad++)
+- Database dump: nimmastream_2627_improved.sql
+- PHP server (apache + mysql)
+- Slides per week
+- Oefeningen + antwoordmodellen
+- Rubric voor webshop project
+
+================================================================================
+TOETSING & EVALUATIE
+================================================================================
+
+Wekelijks:
+- Quiz/mini-toetsen
+- Praktische opdrachten
+- Code review
+
+Eindproduct:
+- Werkende webshop (HAVO 50%, VWO 60%)
+- Code kwaliteit (30%)
+- Documentatie (10%)
+- Presentatie (10%)
+- Veiligheid (VWO extra 20%)
+
+================================================================================
