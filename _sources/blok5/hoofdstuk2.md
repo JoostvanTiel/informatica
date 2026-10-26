@@ -15,14 +15,6 @@ Aan het einde van dit hoofdstuk kun je zelfstandig eenvoudige query's schrijven 
 
 ---
 
-## Lesopbouw (45-60 minuten)
-
-1. **Uitleg + demo (10-15 min)**
-2. **Begeleide oefeningen (20-25 min)**
-3. **Zelfstandige opdrachten (15-20 min)**
-
----
-
 ## 1. SELECT: gegevens opvragen
 
 Met `SELECT` vraag je data op uit een tabel.

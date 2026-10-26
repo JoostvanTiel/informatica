@@ -15,15 +15,6 @@ Aan het einde van dit hoofdstuk kun je een eenvoudige beheerpagina bouwen voor Ã
 
 ---
 
-## Lesopbouw (45-60 minuten)
-
-1. **Demo edit-flow (10 min)**
-2. **Demo delete-flow (10 min)**
-3. **Zelf bouwen (20-30 min)**
-4. **Controle met checklist (10 min)**
-
----
-
 ## 1. UPDATE vanuit een formulier
 
 Stap voor stap:

@@ -16,15 +16,6 @@ Aan het einde van dit hoofdstuk kun je queries schrijven die informatie uit meer
 
 ---
 
-## Lesopbouw (45-60 minuten)
-
-1. **Uitleg relaties + schema (10-15 min)**
-2. **JOIN-demo in stappen (10-15 min)**
-3. **Oefenen in tweetallen (20 min)**
-4. **Nabespreking (10 min)**
-
----
-
 ## 1. Waarom meerdere tabellen?
 
 In een goede database staat niet alles in één grote tabel.

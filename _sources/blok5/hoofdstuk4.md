@@ -15,15 +15,6 @@ Aan het einde van dit hoofdstuk kun je gerichte wijzigingen doen zonder je datab
 
 ---
 
-## Lesopbouw (45-60 minuten)
-
-1. **Uitleg veiligheid bij wijzigingen (10 min)**
-2. **Begeleide UPDATE/DELETE (15 min)**
-3. **Subquery en GROUP BY oefenen (20-25 min)**
-4. **Korte afsluitende check (5-10 min)**
-
----
-
 ## 1. Veilig werken: eerst SELECT, dan pas wijzigen
 
 Bij `UPDATE` en `DELETE` verander je data blijvend.  

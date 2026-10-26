@@ -15,15 +15,6 @@ Aan het einde van dit hoofdstuk kun je een werkende uitleespagina bouwen die dat
 
 ---
 
-## Lesopbouw (45-60 minuten)
-
-1. **Klassikale demo (10-15 min)**
-2. **Samen coderen (10-15 min)**
-3. **Zelfstandig bouwen (20-25 min)**
-4. **Testen en feedback (5 min)**
-
----
-
 ## 1. Verbinding maken met de database
 
 ```php
