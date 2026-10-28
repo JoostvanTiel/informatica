@@ -29,7 +29,11 @@ if ($conn->connect_error) {
 
 Vervang `<gebruikersnaam>` door je eigen gebruikersnaam.
 
-Zonder verbinding kun je geen query's uitvoeren.
+Zonder verbinding kun je geen query's uitvoeren. In PHP is dit het beginpunt van bijna elke database-applicatie: eerst maak je verbinding, daarna voert je SQL uit, en daarna toon je de resultaten op de pagina.
+
+### Waarom is een verbinding nodig?
+
+PHP draait als een server-side taal. Het kan dus niet zomaar met de database praten zonder een connectie. De `mysqli`-verbinding is als een brug tussen je webpagina en de database. Je kunt zonder deze verbinding geen data ophalen of aanpassen.
 
 ---
 
@@ -46,6 +50,22 @@ while ($row = $result->fetch_assoc()) {
 
 Een nettere variant is data tonen in een tabel (`<table>`).
 
+### Wat gebeurt hier?
+
+1. `query()` voert de SQL-opdracht uit.
+2. `fetch_assoc()` haalt per rij een associatief array op.
+3. `echo` zet de waarden om in HTML.
+
+Je kunt dit vergelijken met: "haal de data op, zet elk record om in een begrijpelijk stukje HTML en laat het aan de gebruiker zien".
+
+### Belangrijk verschil
+
+- SQL bepaalt welke gegevens je ophaalt;
+- PHP verwerkt die gegevens;
+- HTML bepaalt hoe deze gegevens worden getoond.
+
+Dat is een kernidee in webapplicaties: de data is niet zichtbaar zonder een opmaaklaag.
+
 ---
 
 ## 3. Formulier gebruiken als filter
@@ -59,6 +79,17 @@ Stappen:
 3. query uitvoeren;
 4. resultaat tonen.
 
+### Voorbeeld van de logica
+
+Je krijgt een vragenlijst van een gebruiker:
+
+- "Welke regio wil je bekijken?"
+- De browser stuurt die waarde door naar PHP.
+- PHP gebruikt die waarde in een SQL-`WHERE`.
+- De database geeft alleen de passende rijen terug.
+
+Dat maakt een webpagina dynamisch: je kunt niet alleen static data tonen, maar ook op basis van een keuze van de gebruiker nieuwe resultaten ophalen.
+
 ---
 
 ## 4. Kwaliteitscheck voor je pagina
@@ -69,6 +100,19 @@ Controleer:
 - zie je duidelijke foutmelding bij problemen;
 - werkt je filter meerdere keren achter elkaar;
 - blijft je HTML leesbaar en netjes.
+
+### Wat is een witte pagina?
+
+Een witte pagina betekent meestal dat er iets misgaat in de PHP-code, bijvoorbeeld een fout in de query of een probleem met de verbinding. In beeld is dat vervelend, omdat je dan niet weet waar het misgaat. Daarom is testen essentieel.
+
+### Goede praktijk
+
+- controleer eerst of de databaseverbinding werkt;
+- test één eenvoudige query voordat je filters toevoegt;
+- gebruik duidelijke variabelenamen;
+- print alleen wat je echt wilt laten zien.
+
+Dit voorkomt dat je pagina langzaam, onduidelijk of onbetrouwbaar wordt.
 
 ---
 

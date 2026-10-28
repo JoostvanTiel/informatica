@@ -30,6 +30,12 @@ Stap voor stap:
 3. verstuur formulier;
 4. voer `UPDATE` uit.
 
+Bij een webformulier werkt het meestal als volgt: de gebruiker opent een pagina, ziet de huidige gegevens, past die aan en klikt op "opslaan". Daarna stuurt de browser die nieuwe waarden terug naar PHP. PHP controleert de invoer en voert vervolgens een SQL-`UPDATE` uit.
+
+### Belangrijk: eerst tonen, dan aanpassen
+
+Je wilt niet dat een gebruiker per ongeluk verkeerde data wijzigz. Daarom is het logisch om eerst de huidige gegevens te tonen en pas daarna een wijziging door te laten voeren. Zodoende kun je de gebruiker begeleiden en voorkom je fouten.
+
 Voorbeeld:
 
 ```php
@@ -38,6 +44,8 @@ $stmt = $conn->prepare($sql);
 $stmt->bind_param("ii", $leeftijd, $id);
 $stmt->execute();
 ```
+
+Hier wordt niet direct een SQL-string met waarden ingevuld. De waarden worden veilig doorgegeven via placeholders.
 
 ---
 
@@ -48,6 +56,10 @@ Verwijderen is onomkeerbaar in deze context, dus:
 - vraag bevestiging in de interface;
 - controleer op de server of een geldig `id` is ontvangen;
 - geef feedback na verwijderen.
+
+### Waarom een bevestiging?
+
+Een delete-knop is op een website heel gemakkelijk te klikken. Als het verwijderen meteen gebeurt zonder controle, kan een gebruiker per ongeluk iets wegslaan. Een bevestiging voorkomt onbedoeld dataverlies en maakt het interface betrouwbaarder.
 
 ---
 
@@ -60,12 +72,26 @@ Controleer minimaal:
 - zit de waarde in een logische range;
 - probeer je geen ongeldige `id` te wijzigen of verwijderen.
 
+### Voorbeeld van logische controle
+
+Als je verwacht dat een leeftijd een getal tussen 0 en 120 is, dan kun je dat in PHP checken. Een leeg veld of een tekstwaarde bij een numeriek veld is een signaal dat de invoer niet klopt. Als de invoer onjuist is, moet je de wijziging afbreken en een duidelijke foutmelding tonen.
+
 ---
 
 ## 4. Veilig programmeren
 
-Gebruik bij invoer uit formulieren geen direct ingeplakte SQL-strings.  
-Gebruik prepared statements met placeholders (`?`).
+Gebruik bij invoer uit formulieren geen direct ingeplakte SQL-strings. Gebruik prepared statements met placeholders (`?`).
+
+### Waarom is dit veilig?
+
+Bij prepared statements worden invoerwaarden gescheiden van de SQL-opdracht zelf. De database behandelt die waarden als data in plaats van als onderdeel van de query. Daardoor worden veel veelvoorkomende beveiligingsproblemen voorkomen, zoals SQL-injectie.
+
+### Belangrijk verschil tussen validatie en beveiliging
+
+- validatie controleert of invoer klopt en logisch is;
+- prepared statements beschermen tegen ongewenste SQL-code in invoer.
+
+Beide zijn belangrijk bij CRUD-pagina's.
 
 ---
 
