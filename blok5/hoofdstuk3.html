@@ -462,11 +462,29 @@
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-meerdere-tabellen">1. Waarom meerdere tabellen?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sleutels-keys">2. Sleutels (keys)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#join">3. JOIN</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#join-met-meerdere-tabellen">4. JOIN met meerdere tabellen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veelgemaakte-fouten">5. Veelgemaakte fouten</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-meerdere-tabellen">1. Waarom meerdere tabellen?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-is-dat-slim">Waarom is dat slim?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sleutels-keys">2. Sleutels (keys)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld">Voorbeeld</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-zijn-sleutels-zo-belangrijk">Waarom zijn sleutels zo belangrijk?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#join">3. JOIN</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-gebeurt-hier">Wat gebeurt hier?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-is-on-zo-belangrijk">Waarom is <code class="docutils literal notranslate"><span class="pre">ON</span></code> zo belangrijk?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#join-met-meerdere-tabellen">4. JOIN met meerdere tabellen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#denk-in-stappen">Denk in stappen</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veelgemaakte-fouten">5. Veelgemaakte fouten</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-aandachtspunt-dubbele-rijen">Extra aandachtspunt: dubbele rijen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#praktische-vuistregel">Praktische vuistregel</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-basis-joins">Opdracht 1 - Basis JOINs</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-gericht-koppelen-met-join">Opdracht 2 - Gericht koppelen met JOIN</a></li>
@@ -509,32 +527,65 @@
 <hr class="docutils" />
 <section id="waarom-meerdere-tabellen">
 <h2>1. Waarom meerdere tabellen?<a class="headerlink" href="#waarom-meerdere-tabellen" title="Link to this heading">#</a></h2>
-<p>In een goede database staat niet alles in één grote tabel.</p>
+<p>In een goede database staat niet alles in één grote tabel. Dat is onoverzichtelijk en vaak onnodig dupliceren van gegevens. In een relationele database splitst men informatie logisch op in verschillende tabellen.</p>
 <p>Voorbeeld:</p>
 <ul class="simple">
 <li><p>gebruikersgegevens in <code class="docutils literal notranslate"><span class="pre">gebruikers</span></code></p></li>
 <li><p>profielgegevens in <code class="docutils literal notranslate"><span class="pre">profielen</span></code></p></li>
 <li><p>abonnementen in <code class="docutils literal notranslate"><span class="pre">abonnementen</span></code></p></li>
 </ul>
-<p>Zo voorkom je dubbele data en houd je de structuur overzichtelijk.</p>
+<p>Zo voorkom je dubbele data en houd je de structuur overzichtelijk. Als een gebruiker bijvoorbeeld meerdere profielen kan hebben, dan hoort dat niet in één grote tabel te staan. Het is veel beter om elke groep informatie op een logische plek te bewaren.</p>
+<section id="waarom-is-dat-slim">
+<h3>Waarom is dat slim?<a class="headerlink" href="#waarom-is-dat-slim" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>je hoeft gegevens niet meerdere keren op te slaan;</p></li>
+<li><p>je kunt dezelfde informatie op verschillende manieren gebruiken;</p></li>
+<li><p>je kunt grote datasets beter beheren;</p></li>
+<li><p>je kunt tabellen aan elkaar koppelen met relaties.</p></li>
+</ul>
+<p>De kern van relationele databases is: gegevens opsplitsen, maar later weer samenbrengen wanneer je er iets mee wilt doen.</p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="sleutels-keys">
 <h2>2. Sleutels (keys)<a class="headerlink" href="#sleutels-keys" title="Link to this heading">#</a></h2>
+<p>Een sleutel is een veld of combinatie van velden die een tabel uniek maakt of laat koppelen.</p>
 <ul class="simple">
 <li><p><strong>Primary key</strong>: unieke sleutel van een tabel (bijv. <code class="docutils literal notranslate"><span class="pre">gebruikers.id</span></code>).</p></li>
 <li><p><strong>Foreign key</strong>: verwijzing naar een sleutel in een andere tabel (bijv. <code class="docutils literal notranslate"><span class="pre">profielen.gebruiker_id</span></code>).</p></li>
 </ul>
 <p>Hierdoor weet de database welke records bij elkaar horen.</p>
+<section id="voorbeeld">
+<h3>Voorbeeld<a class="headerlink" href="#voorbeeld" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">gebruikers.id</span></code> is bijvoorbeeld <code class="docutils literal notranslate"><span class="pre">12</span></code>. In <code class="docutils literal notranslate"><span class="pre">profielen</span></code> staat dan vaak <code class="docutils literal notranslate"><span class="pre">gebruiker_id</span> <span class="pre">=</span> <span class="pre">12</span></code>. Dat betekent: “Dit profiel hoort bij gebruiker 12”. Zonder deze koppeling weet de database niet welke gegevens bij elkaar horen.</p>
+</section>
+<section id="waarom-zijn-sleutels-zo-belangrijk">
+<h3>Waarom zijn sleutels zo belangrijk?<a class="headerlink" href="#waarom-zijn-sleutels-zo-belangrijk" title="Link to this heading">#</a></h3>
+<p>Zonder primaire en vreemde sleutels kun je geen betrouwbare relaties opbouwen. Dan ontstaat snel chaos: je ziet wel data, maar je weet niet welke regels erbij horen.</p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="join">
 <h2>3. JOIN<a class="headerlink" href="#join" title="Link to this heading">#</a></h2>
+<p>Met een <code class="docutils literal notranslate"><span class="pre">JOIN</span></code> combineer je gegevens uit meerdere tabellen. Je koppelt de tabellen aan elkaar op basis van een gemeenschappelijk veld.</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">voornaam</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">profielnaam</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span><span class="w"> </span><span class="n">u</span>
 <span class="k">JOIN</span><span class="w"> </span><span class="n">profielen</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">gebruiker_id</span><span class="p">;</span>
 </pre></div>
 </div>
+<section id="wat-gebeurt-hier">
+<h3>Wat gebeurt hier?<a class="headerlink" href="#wat-gebeurt-hier" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">gebruikers</span> <span class="pre">u</span></code> = tabel gebruikers, met alias <code class="docutils literal notranslate"><span class="pre">u</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">profielen</span> <span class="pre">p</span></code> = tabel profielen, met alias <code class="docutils literal notranslate"><span class="pre">p</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ON</span> <span class="pre">u.id</span> <span class="pre">=</span> <span class="pre">p.gebruiker_id</span></code> = koppeling tussen gebruiker en profiel</p></li>
+</ul>
+<p>Het resultaat is een lijst met de voornaam van de gebruiker en de naam van zijn profiel.</p>
+</section>
+<section id="waarom-is-on-zo-belangrijk">
+<h3>Waarom is <code class="docutils literal notranslate"><span class="pre">ON</span></code> zo belangrijk?<a class="headerlink" href="#waarom-is-on-zo-belangrijk" title="Link to this heading">#</a></h3>
+<p>De <code class="docutils literal notranslate"><span class="pre">ON</span></code>-voorwaarde vertelt SQL precies welke rijen met elkaar moeten worden gekoppeld. Als je die mist, weet SQL niet hoe de tabellen samenhangen.</p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="join-met-meerdere-tabellen">
@@ -545,7 +596,16 @@
 <span class="k">JOIN</span><span class="w"> </span><span class="n">genres</span><span class="w"> </span><span class="k">g</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">genre_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Met extra <code class="docutils literal notranslate"><span class="pre">JOIN</span></code>-regels kun je stap voor stap meer tabellen koppelen.</p>
+<p>Met extra <code class="docutils literal notranslate"><span class="pre">JOIN</span></code>-regels kun je stap voor stap meer tabellen koppelen. Je kunt dit zien als een keten: aflevering hoort bij serie, en serie hoort bij genre.</p>
+<section id="denk-in-stappen">
+<h3>Denk in stappen<a class="headerlink" href="#denk-in-stappen" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Koppel aflevering aan serie.</p></li>
+<li><p>Koppel serie aan genre.</p></li>
+<li><p>Toon de relevante informatie uit alle drie de tabellen.</p></li>
+</ol>
+<p>Dat is precies hoe een relationele database werkt: informatie wordt in kleine stukjes opgeslagen, maar bij een vraag weer samengevoegd.</p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="veelgemaakte-fouten">
@@ -556,6 +616,14 @@
 <li><p>Niet controleren op dubbele rijen door 1-op-veel-relaties.</p></li>
 <li><p>Kolomnamen niet verduidelijken met aliassen (<code class="docutils literal notranslate"><span class="pre">u</span></code>, <code class="docutils literal notranslate"><span class="pre">p</span></code>, <code class="docutils literal notranslate"><span class="pre">a</span></code>).</p></li>
 </ol>
+<section id="extra-aandachtspunt-dubbele-rijen">
+<h3>Extra aandachtspunt: dubbele rijen<a class="headerlink" href="#extra-aandachtspunt-dubbele-rijen" title="Link to this heading">#</a></h3>
+<p>Bij een <code class="docutils literal notranslate"><span class="pre">JOIN</span></code> kunnen dubbele resultaten ontstaan als een tabel meerdere passende records heeft. Bijvoorbeeld: één gebruiker kan meerdere profielen hebben. Als je dan niet goed nadenkt over je koppeling, kun je dezelfde gebruiker meerdere keren zien.</p>
+</section>
+<section id="praktische-vuistregel">
+<h3>Praktische vuistregel<a class="headerlink" href="#praktische-vuistregel" title="Link to this heading">#</a></h3>
+<p>Controleer altijd of je op de juiste sleutel koppelt. Het antwoord moet logisch zijn: “Is dit echt dezelfde record die ik bedoel?”</p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="opdrachten">
@@ -701,11 +769,29 @@
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-meerdere-tabellen">1. Waarom meerdere tabellen?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sleutels-keys">2. Sleutels (keys)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#join">3. JOIN</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#join-met-meerdere-tabellen">4. JOIN met meerdere tabellen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veelgemaakte-fouten">5. Veelgemaakte fouten</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-meerdere-tabellen">1. Waarom meerdere tabellen?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-is-dat-slim">Waarom is dat slim?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sleutels-keys">2. Sleutels (keys)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld">Voorbeeld</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-zijn-sleutels-zo-belangrijk">Waarom zijn sleutels zo belangrijk?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#join">3. JOIN</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-gebeurt-hier">Wat gebeurt hier?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-is-on-zo-belangrijk">Waarom is <code class="docutils literal notranslate"><span class="pre">ON</span></code> zo belangrijk?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#join-met-meerdere-tabellen">4. JOIN met meerdere tabellen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#denk-in-stappen">Denk in stappen</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veelgemaakte-fouten">5. Veelgemaakte fouten</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-aandachtspunt-dubbele-rijen">Extra aandachtspunt: dubbele rijen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#praktische-vuistregel">Praktische vuistregel</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-basis-joins">Opdracht 1 - Basis JOINs</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-gericht-koppelen-met-join">Opdracht 2 - Gericht koppelen met JOIN</a></li>

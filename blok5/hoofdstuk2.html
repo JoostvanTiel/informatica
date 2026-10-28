@@ -462,10 +462,39 @@
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-gegevens-opvragen">1. SELECT: gegevens opvragen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-filteren-op-voorwaarden">2. WHERE: filteren op voorwaarden</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#order-by-sorteren">3. ORDER BY: sorteren</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#denk-als-een-data-onderzoeker">4. Denk als een data-onderzoeker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-gegevens-opvragen">1. SELECT: gegevens opvragen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-is-select-zo-belangrijk">Waarom is <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> zo belangrijk?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#praktische-tip">Praktische tip</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-filteren-op-voorwaarden">2. WHERE: filteren op voorwaarden</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-een-voorwaarde">Wat is een voorwaarde?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#werken-met-meerdere-voorwaarden">Werken met meerdere voorwaarden</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zoeken-op-patroon-like">Zoeken op patroon: <code class="docutils literal notranslate"><span class="pre">LIKE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#belangrijk-verschil">Belangrijk verschil</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#order-by-sorteren">3. ORDER BY: sorteren</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sorteren-op-meerdere-kolommen">Sorteren op meerdere kolommen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#top-5-oudste-gebruikers">Top 5 oudste gebruikers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limit-resultaten-beperken">4. LIMIT: resultaten beperken</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#denk-als-een-data-onderzoeker">5. Denk als een data-onderzoeker</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#een-goede-manier-om-te-denken">Een goede manier om te denken</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld">Voorbeeld</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#controleer-altijd-het-resultaat">Controleer altijd het resultaat</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oefenmetaforen">Oefenmetaforen</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#typische-fouten-en-aandachtspunten">6. Typische fouten en aandachtspunten</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#je-vergeet-de-tabelnaam">1. Je vergeet de tabelnaam</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#je-gebruikt-een-tekstwaarde-zonder-aanhalingstekens">2. Je gebruikt een tekstwaarde zonder aanhalingstekens</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#je-gebruikt-select-zonder-reden">3. Je gebruikt <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span></code> zonder reden</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#je-filtert-niet-goed">4. Je filtert niet goed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#je-controleert-het-resultaat-niet">5. Je controleert het resultaat niet</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-basis-instap">Opdracht 1 - Basis (instap)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-filteren">Opdracht 2 - Filteren</a></li>
@@ -508,44 +537,113 @@
 <hr class="docutils" />
 <section id="select-gegevens-opvragen">
 <h2>1. SELECT: gegevens opvragen<a class="headerlink" href="#select-gegevens-opvragen" title="Link to this heading">#</a></h2>
-<p>Met <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> vraag je data op uit een tabel.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span><span class="p">;</span>
+<p>Met <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> vraag je data op uit een tabel. In SQL is dit het equivalent van: “Geef me de informatie die ik nodig heb”.</p>
+<p>Een tabel in een database kun je vergelijken met een spreadsheet: elke kolom heeft een naam, en elke rij is een record. Als je een query schrijft, vraag je eigenlijk: “Welke kolommen wil ik zien, uit welke tabel, en onder welke voorwaarden?”</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Het sterretje <code class="docutils literal notranslate"><span class="pre">*</span></code> betekent: alle kolommen.</p>
-<p>Meestal wil je alleen de kolommen die je echt nodig hebt:</p>
+<p>Het sterretje <code class="docutils literal notranslate"><span class="pre">*</span></code> betekent: geef alle kolommen terug. Dat is handig als je snel een overzicht wilt zien, maar vaak is dat teveel. Je krijgt dan veel informatie die je misschien niet nodig hebt.</p>
+<p>Meestal wil je juist alleen de kolommen die relevant zijn voor jouw vraag:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">voornaam</span><span class="p">,</span><span class="w"> </span><span class="n">achternaam</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Dat maakt je resultaat overzichtelijker.</p>
+<p>Deze query geeft alleen de namen terug. Dat maakt het resultaat overzichtelijker en werk je sneller met de data.</p>
+<section id="waarom-is-select-zo-belangrijk">
+<h3>Waarom is <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> zo belangrijk?<a class="headerlink" href="#waarom-is-select-zo-belangrijk" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">SELECT</span></code> bepaalt de output van je query. Als je de verkeerde kolommen kiest, heb je het antwoord misschien niet goed in beeld. Je kunt denken aan een data-onderzoeker die eerst beslist welke informatie hij nodig heeft, voordat hij gaat vergelijken of filteren.</p>
+</section>
+<section id="praktische-tip">
+<h3>Praktische tip<a class="headerlink" href="#praktische-tip" title="Link to this heading">#</a></h3>
+<p>Gebruik niet automatisch <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span></code> is handig bij een eerste inspectie.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">voornaam,</span> <span class="pre">achternaam</span></code> is beter als je alleen namen nodig hebt.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span></code> kan onoverzichtelijk worden als een tabel veel kolommen heeft.</p></li>
+</ul>
+</section>
 </section>
 <hr class="docutils" />
 <section id="where-filteren-op-voorwaarden">
 <h2>2. WHERE: filteren op voorwaarden<a class="headerlink" href="#where-filteren-op-voorwaarden" title="Link to this heading">#</a></h2>
-<p>Met <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> bepaal je welke rijen je wilt zien.</p>
+<p>Met <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> kies je alleen de rijen die aan een bepaalde voorwaarde voldoen.</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">voornaam</span><span class="p">,</span><span class="w"> </span><span class="n">leeftijd</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">leeftijd</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">18</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Je kunt voorwaarden combineren:</p>
+<p>Deze query laat alleen gebruikers zien die ouder zijn dan 18. De <code class="docutils literal notranslate"><span class="pre">WHERE</span></code>-clausule werkt dus als een filter.</p>
+<section id="wat-is-een-voorwaarde">
+<h3>Wat is een voorwaarde?<a class="headerlink" href="#wat-is-een-voorwaarde" title="Link to this heading">#</a></h3>
+<p>Een voorwaarde is een vergelijking. Bij SQL gebruik je vaak:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">=</span></code> gelijk aan</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code> groter dan</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code> kleiner dan</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> groter of gelijk aan</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> kleiner of gelijk aan</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span></code> of <code class="docutils literal notranslate"><span class="pre">!=</span></code> ongelijk aan</p></li>
+</ul>
+<p>Bijvoorbeeld:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">voornaam</span><span class="p">,</span><span class="w"> </span><span class="n">leeftijd</span><span class="p">,</span><span class="w"> </span><span class="n">regio</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">regio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'NH'</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">leeftijd</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Zoeken op patroon:</p>
+<p>Deze regel betekent: toon gebruikers uit regio <code class="docutils literal notranslate"><span class="pre">NH</span></code> die jonger zijn dan 20. Je combineert meerdere voorwaarden met <code class="docutils literal notranslate"><span class="pre">AND</span></code>.</p>
+</section>
+<section id="werken-met-meerdere-voorwaarden">
+<h3>Werken met meerdere voorwaarden<a class="headerlink" href="#werken-met-meerdere-voorwaarden" title="Link to this heading">#</a></h3>
+<p>Je kunt meerdere filters combineren:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">AND</span></code> = alle voorwaarden moeten waar zijn</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">OR</span></code> = ten minste één voorwaarde moet waar zijn</p></li>
+</ul>
+<p>Voorbeeld:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">voornaam</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">regio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'NH'</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">regio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'ZH'</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Dit geeft gebruikers uit de regio’s NH of ZH.</p>
+</section>
+<section id="zoeken-op-patroon-like">
+<h3>Zoeken op patroon: <code class="docutils literal notranslate"><span class="pre">LIKE</span></code><a class="headerlink" href="#zoeken-op-patroon-like" title="Link to this heading">#</a></h3>
+<p>Soms wil je niet precies één waarde zoeken, maar tekst met een bepaald patroon. Daarvoor gebruik je <code class="docutils literal notranslate"><span class="pre">LIKE</span></code>.</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">voornaam</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">voornaam</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'A%'</span><span class="p">;</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">A%</span></code> betekent: tekst die begint met A.</p>
+<p><code class="docutils literal notranslate"><span class="pre">A%</span></code> betekent: tekst die begint met <code class="docutils literal notranslate"><span class="pre">A</span></code>. De <code class="docutils literal notranslate"><span class="pre">%</span></code> is een jokerteken.</p>
+<p>Andere voorbeelden:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">voornaam</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">voornaam</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'%a'</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Dit geeft namen die eindigen op <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">voornaam</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">voornaam</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'%in%'</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Dit geeft namen waarin <code class="docutils literal notranslate"><span class="pre">in</span></code> voorkomt.</p>
+</section>
+<section id="belangrijk-verschil">
+<h3>Belangrijk verschil<a class="headerlink" href="#belangrijk-verschil" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">WHERE</span></code> filtert rijen</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SELECT</span></code> bepaalt welke kolommen je ziet</p></li>
+</ul>
+<p>Dus: eerst kies je welke records relevant zijn, daarna kies je welke informatie je daarvan wilt tonen.</p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="order-by-sorteren">
 <h2>3. ORDER BY: sorteren<a class="headerlink" href="#order-by-sorteren" title="Link to this heading">#</a></h2>
+<p>Na het filteren wil je je resultaten vaak in een logische volgorde zetten. Dat doe je met <code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code>.</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">titel</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">series</span>
 <span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">titel</span><span class="w"> </span><span class="k">ASC</span><span class="p">;</span>
@@ -555,7 +653,93 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">ASC</span></code> = oplopend (A-Z, laag-hoog)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">DESC</span></code> = aflopend (Z-A, hoog-laag)</p></li>
 </ul>
-<p>Top 5 oudste gebruikers:</p>
+<p>Bijvoorbeeld:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">titel</span><span class="p">,</span><span class="w"> </span><span class="n">kijkwijzer</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">series</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">kijkwijzer</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Dit geeft eerst de series met de hoogste kijkwijzer weer.</p>
+<section id="sorteren-op-meerdere-kolommen">
+<h3>Sorteren op meerdere kolommen<a class="headerlink" href="#sorteren-op-meerdere-kolommen" title="Link to this heading">#</a></h3>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">voornaam</span><span class="p">,</span><span class="w"> </span><span class="n">leeftijd</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">leeftijd</span><span class="w"> </span><span class="k">DESC</span><span class="p">,</span><span class="w"> </span><span class="n">voornaam</span><span class="w"> </span><span class="k">ASC</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Eerst sorteer je op leeftijd van oud naar jong. Als twee gebruikers dezelfde leeftijd hebben, wordt er daarna alfabetisch op voornaam gesorteerd.</p>
+</section>
+<section id="top-5-oudste-gebruikers">
+<h3>Top 5 oudste gebruikers<a class="headerlink" href="#top-5-oudste-gebruikers" title="Link to this heading">#</a></h3>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">voornaam</span><span class="p">,</span><span class="w"> </span><span class="n">leeftijd</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">leeftijd</span><span class="w"> </span><span class="k">DESC</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code> bepaalt de volgorde, <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code> beperkt het aantal resultaten. Deze combinatie is heel handig bij het vinden van de top 5, top 10 of de oudste/jongste personen.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="limit-resultaten-beperken">
+<h2>4. LIMIT: resultaten beperken<a class="headerlink" href="#limit-resultaten-beperken" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">LIMIT</span></code> zegt: geef maar een bepaald aantal rijen terug.</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">voornaam</span><span class="p">,</span><span class="w"> </span><span class="n">leeftijd</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">leeftijd</span><span class="w"> </span><span class="k">DESC</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Het resultaat bevat dan alleen de eerste 5 gebruikers uit de gesorteerde lijst.</p>
+<p>Waarom is dat nuttig?</p>
+<ul class="simple">
+<li><p>je krijgt niet te veel data in één keer;</p></li>
+<li><p>je kunt snel een overzicht krijgen;</p></li>
+<li><p>je kunt de beste of meest relevante resultaten tonen.</p></li>
+</ul>
+<p>Bijvoorbeeld:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">titel</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">series</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">titel</span><span class="w"> </span><span class="k">ASC</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Je krijgt dan de eerste 10 titels in alfabetische volgorde.</p>
+</section>
+<hr class="docutils" />
+<section id="denk-als-een-data-onderzoeker">
+<h2>5. Denk als een data-onderzoeker<a class="headerlink" href="#denk-als-een-data-onderzoeker" title="Link to this heading">#</a></h2>
+<p>Bij elke query stel je jezelf drie vragen:</p>
+<ol class="arabic simple">
+<li><p><strong>Wat wil ik weten?</strong><br />
+(bijv. “Welke gebruikers zijn ouder dan 18?”)</p></li>
+<li><p><strong>Waar staat die data?</strong><br />
+(welke tabel, welke kolom)</p></li>
+<li><p><strong>Hoe controleer ik of het logisch is?</strong><br />
+(kloppen aantallen, volgorde en waarden)</p></li>
+</ol>
+<section id="een-goede-manier-om-te-denken">
+<h3>Een goede manier om te denken<a class="headerlink" href="#een-goede-manier-om-te-denken" title="Link to this heading">#</a></h3>
+<p>Als je een vraag hebt, probeer die eerst om te zetten in een SQL-idee:</p>
+<ul class="simple">
+<li><p>Welke tabel moet ik openen?</p></li>
+<li><p>Welke kolommen zijn relevant?</p></li>
+<li><p>Welke rijen wil ik zien?</p></li>
+<li><p>Moet ik sorteren?</p></li>
+<li><p>Wil ik alleen een aantal resultaten zien?</p></li>
+</ul>
+</section>
+<section id="voorbeeld">
+<h3>Voorbeeld<a class="headerlink" href="#voorbeeld" title="Link to this heading">#</a></h3>
+<p>Vraag: “Welke 5 oudste gebruikers staan in de database?”</p>
+<p>Je denkt:</p>
+<ul class="simple">
+<li><p>tabel: <code class="docutils literal notranslate"><span class="pre">gebruikers</span></code></p></li>
+<li><p>kolom: <code class="docutils literal notranslate"><span class="pre">leeftijd</span></code></p></li>
+<li><p>sorteren: <code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span> <span class="pre">leeftijd</span> <span class="pre">DESC</span></code></p></li>
+<li><p>limiteren: <code class="docutils literal notranslate"><span class="pre">LIMIT</span> <span class="pre">5</span></code></p></li>
+</ul>
+<p>Query:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">voornaam</span><span class="p">,</span><span class="w"> </span><span class="n">leeftijd</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
 <span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">leeftijd</span><span class="w"> </span><span class="k">DESC</span>
@@ -563,18 +747,69 @@
 </pre></div>
 </div>
 </section>
+<section id="controleer-altijd-het-resultaat">
+<h3>Controleer altijd het resultaat<a class="headerlink" href="#controleer-altijd-het-resultaat" title="Link to this heading">#</a></h3>
+<p>Na elke query vraag je jezelf af:</p>
+<ul class="simple">
+<li><p>klopt het aantal resultaten?</p></li>
+<li><p>staan de juiste waarden in de tabel?</p></li>
+<li><p>is de volgorde logisch?</p></li>
+<li><p>zijn er misschien te veel of te weinig records?</p></li>
+</ul>
+<p>Een query is niet automatisch goed omdat hij “werkt”. Je moet altijd controleren of het antwoord past bij de vraag.</p>
+</section>
+<section id="oefenmetaforen">
+<h3>Oefenmetaforen<a class="headerlink" href="#oefenmetaforen" title="Link to this heading">#</a></h3>
+<p>Je kunt SQL vergelijken met het zoeken in een grote archiefkast:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FROM</span></code> = welke doos open je?</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WHERE</span></code> = welke dossiers neem je eruit?</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SELECT</span></code> = welke informatie schrijf je op?</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code> = in welke volgorde leg je ze neer?</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LIMIT</span></code> = hoeveel documenten geef je mee?</p></li>
+</ul>
+<p>Deze metafoor helpt leerlingen om de logica van SQL beter te begrijpen.</p>
+</section>
+</section>
 <hr class="docutils" />
-<section id="denk-als-een-data-onderzoeker">
-<h2>4. Denk als een data-onderzoeker<a class="headerlink" href="#denk-als-een-data-onderzoeker" title="Link to this heading">#</a></h2>
-<p>Bij elke query stel je jezelf drie vragen:</p>
-<ol class="arabic simple">
-<li><p><strong>Wat wil ik weten?</strong><br />
-(bijv. jongste gebruikers)</p></li>
-<li><p><strong>Waar staat die data?</strong><br />
-(welke tabel, welke kolom)</p></li>
-<li><p><strong>Hoe controleer ik of het logisch is?</strong><br />
-(kloppen aantallen, volgorde en waarden)</p></li>
-</ol>
+<section id="typische-fouten-en-aandachtspunten">
+<h2>6. Typische fouten en aandachtspunten<a class="headerlink" href="#typische-fouten-en-aandachtspunten" title="Link to this heading">#</a></h2>
+<p>Veel beginners maken dezelfde fouten:</p>
+<section id="je-vergeet-de-tabelnaam">
+<h3>1. Je vergeet de tabelnaam<a class="headerlink" href="#je-vergeet-de-tabelnaam" title="Link to this heading">#</a></h3>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">voornaam</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Zonder <code class="docutils literal notranslate"><span class="pre">FROM</span></code> weet SQL niet uit welke tabel je data wilt halen.</p>
+</section>
+<section id="je-gebruikt-een-tekstwaarde-zonder-aanhalingstekens">
+<h3>2. Je gebruikt een tekstwaarde zonder aanhalingstekens<a class="headerlink" href="#je-gebruikt-een-tekstwaarde-zonder-aanhalingstekens" title="Link to this heading">#</a></h3>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">WHERE</span><span class="w"> </span><span class="n">regio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'NH'</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Teksten moeten tussen enkele aanhalingstekens staan. Getallen niet.</p>
+</section>
+<section id="je-gebruikt-select-zonder-reden">
+<h3>3. Je gebruikt <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span></code> zonder reden<a class="headerlink" href="#je-gebruikt-select-zonder-reden" title="Link to this heading">#</a></h3>
+<p>Dat werkt wel, maar het is vaak onoverzichtelijk en minder efficiënt.</p>
+</section>
+<section id="je-filtert-niet-goed">
+<h3>4. Je filtert niet goed<a class="headerlink" href="#je-filtert-niet-goed" title="Link to this heading">#</a></h3>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">WHERE</span><span class="w"> </span><span class="n">leeftijd</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">18</span>
+</pre></div>
+</div>
+<p>is iets heel anders dan</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">WHERE</span><span class="w"> </span><span class="n">leeftijd</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">18</span>
+</pre></div>
+</div>
+<p>Het verschil is klein, maar belangrijk.</p>
+</section>
+<section id="je-controleert-het-resultaat-niet">
+<h3>5. Je controleert het resultaat niet<a class="headerlink" href="#je-controleert-het-resultaat-niet" title="Link to this heading">#</a></h3>
+<p>Als je een query uitvoert, kijk dan altijd of het antwoord logisch is. Bijvoorbeeld: als je verwacht 10 resultaten en je krijgt er 100, dan is er iets mis met de filter of de volgorde.</p>
+<hr class="docutils" />
+</section>
 </section>
 <hr class="docutils" />
 <section id="opdrachten">
@@ -722,10 +957,39 @@
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-gegevens-opvragen">1. SELECT: gegevens opvragen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-filteren-op-voorwaarden">2. WHERE: filteren op voorwaarden</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#order-by-sorteren">3. ORDER BY: sorteren</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#denk-als-een-data-onderzoeker">4. Denk als een data-onderzoeker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-gegevens-opvragen">1. SELECT: gegevens opvragen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-is-select-zo-belangrijk">Waarom is <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> zo belangrijk?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#praktische-tip">Praktische tip</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-filteren-op-voorwaarden">2. WHERE: filteren op voorwaarden</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-een-voorwaarde">Wat is een voorwaarde?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#werken-met-meerdere-voorwaarden">Werken met meerdere voorwaarden</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zoeken-op-patroon-like">Zoeken op patroon: <code class="docutils literal notranslate"><span class="pre">LIKE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#belangrijk-verschil">Belangrijk verschil</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#order-by-sorteren">3. ORDER BY: sorteren</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sorteren-op-meerdere-kolommen">Sorteren op meerdere kolommen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#top-5-oudste-gebruikers">Top 5 oudste gebruikers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limit-resultaten-beperken">4. LIMIT: resultaten beperken</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#denk-als-een-data-onderzoeker">5. Denk als een data-onderzoeker</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#een-goede-manier-om-te-denken">Een goede manier om te denken</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld">Voorbeeld</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#controleer-altijd-het-resultaat">Controleer altijd het resultaat</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oefenmetaforen">Oefenmetaforen</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#typische-fouten-en-aandachtspunten">6. Typische fouten en aandachtspunten</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#je-vergeet-de-tabelnaam">1. Je vergeet de tabelnaam</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#je-gebruikt-een-tekstwaarde-zonder-aanhalingstekens">2. Je gebruikt een tekstwaarde zonder aanhalingstekens</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#je-gebruikt-select-zonder-reden">3. Je gebruikt <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span></code> zonder reden</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#je-filtert-niet-goed">4. Je filtert niet goed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#je-controleert-het-resultaat-niet">5. Je controleert het resultaat niet</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-basis-instap">Opdracht 1 - Basis (instap)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-filteren">Opdracht 2 - Filteren</a></li>

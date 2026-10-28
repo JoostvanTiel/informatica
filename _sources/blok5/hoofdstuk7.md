@@ -26,6 +26,12 @@ Minimale onderdelen:
 - product aanpassen;
 - product verwijderen.
 
+### Waarom is een webshop een goed project?
+
+Een webshop laat veel leerdoelen samenkomen: databases, query's, formulieren, HTML, PHP en veiligheid. Het is dus een ideaal eindproject omdat je alle onderdelen van dit blok in een praktisch voorbeeld kunt inzetten.
+
+In plaats van losse SQL-opdrachten te maken, ga je nu een echte applicatie bouwen met een duidelijke gebruikersdoelstelling.
+
 ---
 
 ## 2. Datamodel
@@ -42,6 +48,19 @@ Denk vooraf na over:
 - verplichte velden;
 - relaties tussen tabellen.
 
+### Waar moet je bij het datamodel aan denken?
+
+Je bouwt niet zomaar tabellen, maar een logische structuur. Een product heeft een naam, prijs en voorraad. Een bestelling hoort bij een gebruiker en bevat meestal meerdere producten. Als je dit goed ontwerpt, wordt het bouwen van formulieren en query's veel eenvoudiger.
+
+### Voorbeeld van logisch nadenken
+
+- elk product heeft een unieke `id`;
+- een bestelling verwijst naar een gebruiker via een `user_id`;
+- een artikel hoort bij een product en een bestelling;
+- een prijs en voorraad zijn belangrijke informatie die je niet wilt missen.
+
+Een goed datamodel is het fundament van een goed project.
+
 ---
 
 ## 3. Bouwstrategie
@@ -55,6 +74,19 @@ Werk in deze volgorde:
 5. `DELETE` toevoegen.
 
 Zo houd je overzicht en kun je tussendoor testen.
+
+### Waarom deze volgorde?
+
+Je wilt kleine successen bouwen. Eerst zorg je dat je data überhaupt kunt zien. Daarna voeg je een nieuwe product toe. Daarna kun je een product aanpassen. Pas als dat werkt, kun je het verwijderen. Zo voorkom je dat je later midden in een chaos van bugs zit zonder te weten waar het probleem zit.
+
+### Goede ontwikkelhabits
+
+- test na elke stap;
+- controleer of de juiste data terugkomt;
+- maak geen enorme wijzigingen zonder tussenstop;
+- neem notities van problemen die je tegenkomt.
+
+Een project werkt het best als je het stap voor stap ontwikkelt.
 
 ---
 

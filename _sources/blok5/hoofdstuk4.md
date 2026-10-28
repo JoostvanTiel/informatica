@@ -23,12 +23,24 @@ Let op: voer deze opdrachten alleen uit in jouw database:
 
 ## 1. Veilig werken: eerst SELECT, dan pas wijzigen
 
-Bij `UPDATE` en `DELETE` verander je data blijvend.  
-Daarom geldt deze regel:
+Bij `UPDATE` en `DELETE` verander je data blijvend. Daarom geldt deze regel:
 
 1. schrijf eerst een `SELECT` met dezelfde `WHERE`;
 2. controleer of dit precies de rijen zijn die je bedoelt;
 3. voer pas daarna `UPDATE` of `DELETE` uit.
+
+Deze stap is cruciaal. Een database is geen papierboekje: je verwijdert of wijzigt echt data, en dat kun je niet zomaar terughalen als je per ongeluk te veel records raakt.
+
+### Denk als een veiligheidsofficier
+
+Voordat je een wijziging doorvoert, stel je jezelf de volgende vragen:
+
+- Welke records passen bij mijn opdracht?
+- Zijn er misschien meer records dan ik verwacht?
+- Is de `WHERE`-voorwaarde precies goed?
+- Als dit fout gaat, wat is dan het risico?
+
+Bij SQL is het vaak beter om één keer extra te controleren dan één keer een opdracht terug te draaien.
 
 ---
 
@@ -40,8 +52,25 @@ SET leeftijd_profiel = 15
 WHERE id = 1;
 ```
 
-Zonder `WHERE` verander je **alle** rijen.  
-Dat is de meest voorkomende fout bij beginners.
+Zonder `WHERE` verander je **alle** rijen. Dat is de meest voorkomende fout bij beginners.
+
+### Goed voorbeeld van een veilige workflow
+
+```sql
+SELECT *
+FROM profielen
+WHERE id = 1;
+```
+
+Als je ziet dat deze rij klopt, dan pas je de wijziging aan:
+
+```sql
+UPDATE profielen
+SET leeftijd_profiel = 15
+WHERE id = 1;
+```
+
+Na afloop controleer je opnieuw met `SELECT`.
 
 ---
 
@@ -54,11 +83,15 @@ WHERE profiel_id = 10;
 
 Ook hier: zonder `WHERE` verwijder je alles uit de tabel.
 
+### Waarom is DELETE riskant?
+
+Verwijderen is vaak moeilijker te herstellen dan aanpassen. Daarom moet je altijd eerst controleren welke rijen je precies verwijdert. De `WHERE` is niet zomaar een extra toevoeging: het is de beveiliging tegen onbedoelde dataverlies.
+
 ---
 
 ## 4. Subqueries
 
-Een subquery is een query binnen een query.
+Een subquery is een query binnen een query. Je gebruikt het wanneer je eerst een tussenresultaat wilt bepalen, en daarna pas een hoofdquery uitvoert.
 
 ```sql
 SELECT *
@@ -69,13 +102,22 @@ WHERE id IN (
 );
 ```
 
-Je gebruikt dit als je eerst een tussenresultaat nodig hebt.
+### Wat gebeurt hier?
+
+1. De subquery zoekt alle `gebruiker_id`-waarden uit `profielen`.
+2. De hoofdquery kiest alle gebruikers waarvan de `id` in die lijst voorkomt.
+
+Subqueries helpen dus bij complexere vragen, bijvoorbeeld:
+
+- gebruikers die een profiel hebben;
+- producten die nog in voorraad zijn;
+- series waarvan een aflevering is bekeken.
 
 ---
 
 ## 5. GROUP BY en aggregatie
 
-Met `GROUP BY` maak je samenvattingen.
+Met `GROUP BY` maak je samenvattingen. In plaats van alle rijen apart te zien, groepeer je ze op basis van een eigenschap.
 
 ```sql
 SELECT regio, COUNT(*) AS aantal_gebruikers
@@ -83,7 +125,9 @@ FROM gebruikers
 GROUP BY regio;
 ```
 
-Gemiddelde beoordeling:
+Dit geeft per regio het aantal gebruikers.
+
+### Gemiddelde beoordeling
 
 ```sql
 SELECT aflevering_id, AVG(beoordeling) AS gemiddelde
@@ -91,13 +135,25 @@ FROM beoordelingen
 GROUP BY aflevering_id;
 ```
 
-Handige functies:
+Je krijgt nu per aflevering het gemiddelde van de beoordelingen.
+
+### Handige functies
 
 - `COUNT()` telt het aantal resultaten
 - `AVG()` berekent het gemiddelde van de resultaten
 - `MIN()` geeft de laagste waarde van de resultaten
 - `MAX()` geeft de hoogste waarde van de resultaten
 - `SUM()` geeft de optelsom van alle resultaten
+
+### Wanneer gebruik je `GROUP BY`?
+
+Als je niet wilt weten wat elk individueel record doet, maar geïnteresseerd bent in een samenvatting. Denk aan vragen als:
+
+- hoeveel gebruikers wonen in elke regio?
+- wat is de gemiddelde score per aflevering?
+- hoeveel producten zijn er per categorie?
+
+Dat is precies het moment waarop groeperen zinvol wordt.
 
 ---
 

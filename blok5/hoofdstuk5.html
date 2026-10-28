@@ -462,10 +462,24 @@
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verbinding-maken-met-de-database">1. Verbinding maken met de database</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resultaten-tonen-in-html">2. Resultaten tonen in HTML</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formulier-gebruiken-als-filter">3. Formulier gebruiken als filter</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kwaliteitscheck-voor-je-pagina">4. Kwaliteitscheck voor je pagina</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verbinding-maken-met-de-database">1. Verbinding maken met de database</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-is-een-verbinding-nodig">Waarom is een verbinding nodig?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resultaten-tonen-in-html">2. Resultaten tonen in HTML</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-gebeurt-hier">Wat gebeurt hier?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#belangrijk-verschil">Belangrijk verschil</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formulier-gebruiken-als-filter">3. Formulier gebruiken als filter</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-van-de-logica">Voorbeeld van de logica</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kwaliteitscheck-voor-je-pagina">4. Kwaliteitscheck voor je pagina</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-een-witte-pagina">Wat is een witte pagina?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goede-praktijk">Goede praktijk</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-basispagina">Opdracht 1 - Basispagina</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-tabelweergave">Opdracht 2 - Tabelweergave</a></li>
@@ -515,7 +529,11 @@
 </pre></div>
 </div>
 <p>Vervang <code class="docutils literal notranslate"><span class="pre">&lt;gebruikersnaam&gt;</span></code> door je eigen gebruikersnaam.</p>
-<p>Zonder verbinding kun je geen query’s uitvoeren.</p>
+<p>Zonder verbinding kun je geen query’s uitvoeren. In PHP is dit het beginpunt van bijna elke database-applicatie: eerst maak je verbinding, daarna voert je SQL uit, en daarna toon je de resultaten op de pagina.</p>
+<section id="waarom-is-een-verbinding-nodig">
+<h3>Waarom is een verbinding nodig?<a class="headerlink" href="#waarom-is-een-verbinding-nodig" title="Link to this heading">#</a></h3>
+<p>PHP draait als een server-side taal. Het kan dus niet zomaar met de database praten zonder een connectie. De <code class="docutils literal notranslate"><span class="pre">mysqli</span></code>-verbinding is als een brug tussen je webpagina en de database. Je kunt zonder deze verbinding geen data ophalen of aanpassen.</p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="resultaten-tonen-in-html">
@@ -529,6 +547,24 @@
 </pre></div>
 </div>
 <p>Een nettere variant is data tonen in een tabel (<code class="docutils literal notranslate"><span class="pre">&lt;table&gt;</span></code>).</p>
+<section id="wat-gebeurt-hier">
+<h3>Wat gebeurt hier?<a class="headerlink" href="#wat-gebeurt-hier" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">query()</span></code> voert de SQL-opdracht uit.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fetch_assoc()</span></code> haalt per rij een associatief array op.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">echo</span></code> zet de waarden om in HTML.</p></li>
+</ol>
+<p>Je kunt dit vergelijken met: “haal de data op, zet elk record om in een begrijpelijk stukje HTML en laat het aan de gebruiker zien”.</p>
+</section>
+<section id="belangrijk-verschil">
+<h3>Belangrijk verschil<a class="headerlink" href="#belangrijk-verschil" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>SQL bepaalt welke gegevens je ophaalt;</p></li>
+<li><p>PHP verwerkt die gegevens;</p></li>
+<li><p>HTML bepaalt hoe deze gegevens worden getoond.</p></li>
+</ul>
+<p>Dat is een kernidee in webapplicaties: de data is niet zichtbaar zonder een opmaaklaag.</p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="formulier-gebruiken-als-filter">
@@ -541,6 +577,17 @@
 <li><p>query uitvoeren;</p></li>
 <li><p>resultaat tonen.</p></li>
 </ol>
+<section id="voorbeeld-van-de-logica">
+<h3>Voorbeeld van de logica<a class="headerlink" href="#voorbeeld-van-de-logica" title="Link to this heading">#</a></h3>
+<p>Je krijgt een vragenlijst van een gebruiker:</p>
+<ul class="simple">
+<li><p>“Welke regio wil je bekijken?”</p></li>
+<li><p>De browser stuurt die waarde door naar PHP.</p></li>
+<li><p>PHP gebruikt die waarde in een SQL-<code class="docutils literal notranslate"><span class="pre">WHERE</span></code>.</p></li>
+<li><p>De database geeft alleen de passende rijen terug.</p></li>
+</ul>
+<p>Dat maakt een webpagina dynamisch: je kunt niet alleen static data tonen, maar ook op basis van een keuze van de gebruiker nieuwe resultaten ophalen.</p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="kwaliteitscheck-voor-je-pagina">
@@ -552,6 +599,20 @@
 <li><p>werkt je filter meerdere keren achter elkaar;</p></li>
 <li><p>blijft je HTML leesbaar en netjes.</p></li>
 </ul>
+<section id="wat-is-een-witte-pagina">
+<h3>Wat is een witte pagina?<a class="headerlink" href="#wat-is-een-witte-pagina" title="Link to this heading">#</a></h3>
+<p>Een witte pagina betekent meestal dat er iets misgaat in de PHP-code, bijvoorbeeld een fout in de query of een probleem met de verbinding. In beeld is dat vervelend, omdat je dan niet weet waar het misgaat. Daarom is testen essentieel.</p>
+</section>
+<section id="goede-praktijk">
+<h3>Goede praktijk<a class="headerlink" href="#goede-praktijk" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>controleer eerst of de databaseverbinding werkt;</p></li>
+<li><p>test één eenvoudige query voordat je filters toevoegt;</p></li>
+<li><p>gebruik duidelijke variabelenamen;</p></li>
+<li><p>print alleen wat je echt wilt laten zien.</p></li>
+</ul>
+<p>Dit voorkomt dat je pagina langzaam, onduidelijk of onbetrouwbaar wordt.</p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="opdrachten">
@@ -690,10 +751,24 @@
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verbinding-maken-met-de-database">1. Verbinding maken met de database</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resultaten-tonen-in-html">2. Resultaten tonen in HTML</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formulier-gebruiken-als-filter">3. Formulier gebruiken als filter</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kwaliteitscheck-voor-je-pagina">4. Kwaliteitscheck voor je pagina</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verbinding-maken-met-de-database">1. Verbinding maken met de database</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-is-een-verbinding-nodig">Waarom is een verbinding nodig?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resultaten-tonen-in-html">2. Resultaten tonen in HTML</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-gebeurt-hier">Wat gebeurt hier?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#belangrijk-verschil">Belangrijk verschil</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formulier-gebruiken-als-filter">3. Formulier gebruiken als filter</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-van-de-logica">Voorbeeld van de logica</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kwaliteitscheck-voor-je-pagina">4. Kwaliteitscheck voor je pagina</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-een-witte-pagina">Wat is een witte pagina?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goede-praktijk">Goede praktijk</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-basispagina">Opdracht 1 - Basispagina</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-tabelweergave">Opdracht 2 - Tabelweergave</a></li>

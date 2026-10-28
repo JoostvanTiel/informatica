@@ -462,9 +462,19 @@
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-starten-met-een-game">Waarom starten met een game?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-sql-island">Opdracht: SQL Island</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#koppeling-met-jouw-database">Koppeling met jouw database</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-starten-met-een-game">Waarom starten met een game?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-een-database-eigenlijk">Wat is een database eigenlijk?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-is-sql-belangrijk">Waarom is SQL belangrijk?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-sql-island">Opdracht: SQL Island</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-je-tijdens-sql-island-moet-proberen-te-zien">Wat je tijdens SQL Island moet proberen te zien</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#koppeling-met-jouw-database">Koppeling met jouw database</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#denk-als-een-informaticus">Denk als een informaticus</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-opdrachten-als-je-eerder-klaar-bent">Extra opdrachten (als je eerder klaar bent)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
@@ -501,11 +511,25 @@
 <ul class="simple">
 <li><p>tabellen;</p></li>
 <li><p>voorwaarden;</p></li>
-<li><p>logische keuzes.</p></li>
+<li><p>logische keuzes;</p></li>
+<li><p>relaties tussen gegevens.</p></li>
 </ul>
-<p>Dat is in het begin best abstract.<br />
-SQL Island helpt omdat je direct ziet wat er gebeurt als je een query uitvoert.</p>
-<p>Je oefent dus niet alleen syntax, maar vooral <strong>datadenken</strong>.</p>
+<p>Dat is in het begin abstract. Een tabel lijkt op een spreadsheet, maar de echte kracht zit in het kunnen vragen stellen aan grote hoeveelheden data. SQL Island helpt je daar stap voor stap in te oefenen: je ziet direct wat een query doet en waarom een antwoord logisch is.</p>
+<p>Je oefent dus niet alleen syntax, maar vooral <strong>datadenken</strong>. De vraag is niet alleen: “Hoe schrijf ik een query?” Maar ook: “Welke informatie wil ik precies hebben?” En: “Welke gegevens moet ik daarvoor uit welke tabel halen?”</p>
+<section id="wat-is-een-database-eigenlijk">
+<h3>Wat is een database eigenlijk?<a class="headerlink" href="#wat-is-een-database-eigenlijk" title="Link to this heading">#</a></h3>
+<p>Een database is een georganiseerde verzameling gegevens. In een database staan verschillende tabellen, en elke tabel heeft kolommen en rijen.</p>
+<ul class="simple">
+<li><p>een <strong>tabel</strong> is een verzameling records over hetzelfde onderwerp;</p></li>
+<li><p>een <strong>rij</strong> is één record, bijvoorbeeld één gebruiker;</p></li>
+<li><p>een <strong>kolom</strong> is een eigenschap, bijvoorbeeld naam, leeftijd of regio.</p></li>
+</ul>
+<p>Als je iets wilt weten als: “Welke gebruikers zijn ouder dan 18?”, dan werk je met een query die precies die rijen uit de tabel haalt.</p>
+</section>
+<section id="waarom-is-sql-belangrijk">
+<h3>Waarom is SQL belangrijk?<a class="headerlink" href="#waarom-is-sql-belangrijk" title="Link to this heading">#</a></h3>
+<p>SQL is een taal die gebruikt wordt om gegevens op te vragen, te filteren, te vergelijken en te combineren. Denk aan een bibliothecaris die in een grote catalogus zoekt. SQL laat je precies die boeken of gegevens vinden die je nodig hebt, zonder alles in één keer te zien.</p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="opdracht-sql-island">
@@ -517,6 +541,16 @@ SQL Island helpt omdat je direct ziet wat er gebeurt als je een query uitvoert.<
 <li><p>Voltooi zoveel mogelijk levels.</p></li>
 <li><p>Noteer moeilijke woorden of opdrachten die je tegenkomt.</p></li>
 </ol>
+<section id="wat-je-tijdens-sql-island-moet-proberen-te-zien">
+<h3>Wat je tijdens SQL Island moet proberen te zien<a class="headerlink" href="#wat-je-tijdens-sql-island-moet-proberen-te-zien" title="Link to this heading">#</a></h3>
+<p>Bij elke opdracht is de kernvraag:</p>
+<ul class="simple">
+<li><p>wat wil ik weten?</p></li>
+<li><p>welke tabel bevat die informatie?</p></li>
+<li><p>welke voorwaarde moet ik toepassen?</p></li>
+</ul>
+<p>Als je die drie vragen kunt beantwoorden, ben je al goed op weg naar echte SQL.</p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="koppeling-met-jouw-database">
@@ -538,7 +572,18 @@ SQL Island helpt omdat je direct ziet wat er gebeurt als je een query uitvoert.<
 <li><p><code class="docutils literal notranslate"><span class="pre">kijkgeschiedenis</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">beoordelingen</span></code></p></li>
 </ul>
-<p>Wat je nu in SQL Island leert, gebruik je straks op echte data.</p>
+<p>Wat je nu in SQL Island leert, gebruik je straks op echte data. Het verschil is dat de game je de logica geeft, en je echte database laat zien hoe die logica in de praktijk werkt.</p>
+<section id="denk-als-een-informaticus">
+<h3>Denk als een informaticus<a class="headerlink" href="#denk-als-een-informaticus" title="Link to this heading">#</a></h3>
+<p>Bij elk SQL-probleem stel je jezelf vier vragen:</p>
+<ol class="arabic simple">
+<li><p>Welke vraag wil ik beantwoorden?</p></li>
+<li><p>Welke tabel bevat de relevante informatie?</p></li>
+<li><p>Welke kolommen zijn nodig?</p></li>
+<li><p>Welke filter, sortering of combinatie past hierbij?</p></li>
+</ol>
+<p>Zo leer je niet alleen syntax, maar ook logisch nadenken.</p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="check-je-begrip">
@@ -651,9 +696,19 @@ SQL Island helpt omdat je direct ziet wat er gebeurt als je een query uitvoert.<
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-starten-met-een-game">Waarom starten met een game?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-sql-island">Opdracht: SQL Island</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#koppeling-met-jouw-database">Koppeling met jouw database</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-starten-met-een-game">Waarom starten met een game?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-een-database-eigenlijk">Wat is een database eigenlijk?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-is-sql-belangrijk">Waarom is SQL belangrijk?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-sql-island">Opdracht: SQL Island</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-je-tijdens-sql-island-moet-proberen-te-zien">Wat je tijdens SQL Island moet proberen te zien</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#koppeling-met-jouw-database">Koppeling met jouw database</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#denk-als-een-informaticus">Denk als een informaticus</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-opdrachten-als-je-eerder-klaar-bent">Extra opdrachten (als je eerder klaar bent)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>

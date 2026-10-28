@@ -462,9 +462,20 @@
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#projectcontext">1. Projectcontext</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datamodel">2. Datamodel</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bouwstrategie">3. Bouwstrategie</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#projectcontext">1. Projectcontext</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-is-een-webshop-een-goed-project">Waarom is een webshop een goed project?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datamodel">2. Datamodel</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waar-moet-je-bij-het-datamodel-aan-denken">Waar moet je bij het datamodel aan denken?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-van-logisch-nadenken">Voorbeeld van logisch nadenken</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bouwstrategie">3. Bouwstrategie</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-deze-volgorde">Waarom deze volgorde?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goede-ontwikkelhabits">Goede ontwikkelhabits</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-ontwerp">Opdracht 1 - Ontwerp</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-basisfunctionaliteit">Opdracht 2 - Basisfunctionaliteit</a></li>
@@ -512,6 +523,11 @@
 <li><p>product aanpassen;</p></li>
 <li><p>product verwijderen.</p></li>
 </ul>
+<section id="waarom-is-een-webshop-een-goed-project">
+<h3>Waarom is een webshop een goed project?<a class="headerlink" href="#waarom-is-een-webshop-een-goed-project" title="Link to this heading">#</a></h3>
+<p>Een webshop laat veel leerdoelen samenkomen: databases, query’s, formulieren, HTML, PHP en veiligheid. Het is dus een ideaal eindproject omdat je alle onderdelen van dit blok in een praktisch voorbeeld kunt inzetten.</p>
+<p>In plaats van losse SQL-opdrachten te maken, ga je nu een echte applicatie bouwen met een duidelijke gebruikersdoelstelling.</p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="datamodel">
@@ -528,6 +544,20 @@
 <li><p>verplichte velden;</p></li>
 <li><p>relaties tussen tabellen.</p></li>
 </ul>
+<section id="waar-moet-je-bij-het-datamodel-aan-denken">
+<h3>Waar moet je bij het datamodel aan denken?<a class="headerlink" href="#waar-moet-je-bij-het-datamodel-aan-denken" title="Link to this heading">#</a></h3>
+<p>Je bouwt niet zomaar tabellen, maar een logische structuur. Een product heeft een naam, prijs en voorraad. Een bestelling hoort bij een gebruiker en bevat meestal meerdere producten. Als je dit goed ontwerpt, wordt het bouwen van formulieren en query’s veel eenvoudiger.</p>
+</section>
+<section id="voorbeeld-van-logisch-nadenken">
+<h3>Voorbeeld van logisch nadenken<a class="headerlink" href="#voorbeeld-van-logisch-nadenken" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>elk product heeft een unieke <code class="docutils literal notranslate"><span class="pre">id</span></code>;</p></li>
+<li><p>een bestelling verwijst naar een gebruiker via een <code class="docutils literal notranslate"><span class="pre">user_id</span></code>;</p></li>
+<li><p>een artikel hoort bij een product en een bestelling;</p></li>
+<li><p>een prijs en voorraad zijn belangrijke informatie die je niet wilt missen.</p></li>
+</ul>
+<p>Een goed datamodel is het fundament van een goed project.</p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="bouwstrategie">
@@ -541,6 +571,20 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">DELETE</span></code> toevoegen.</p></li>
 </ol>
 <p>Zo houd je overzicht en kun je tussendoor testen.</p>
+<section id="waarom-deze-volgorde">
+<h3>Waarom deze volgorde?<a class="headerlink" href="#waarom-deze-volgorde" title="Link to this heading">#</a></h3>
+<p>Je wilt kleine successen bouwen. Eerst zorg je dat je data überhaupt kunt zien. Daarna voeg je een nieuwe product toe. Daarna kun je een product aanpassen. Pas als dat werkt, kun je het verwijderen. Zo voorkom je dat je later midden in een chaos van bugs zit zonder te weten waar het probleem zit.</p>
+</section>
+<section id="goede-ontwikkelhabits">
+<h3>Goede ontwikkelhabits<a class="headerlink" href="#goede-ontwikkelhabits" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>test na elke stap;</p></li>
+<li><p>controleer of de juiste data terugkomt;</p></li>
+<li><p>maak geen enorme wijzigingen zonder tussenstop;</p></li>
+<li><p>neem notities van problemen die je tegenkomt.</p></li>
+</ul>
+<p>Een project werkt het best als je het stap voor stap ontwikkelt.</p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="opdrachten">
@@ -680,9 +724,20 @@
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#projectcontext">1. Projectcontext</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datamodel">2. Datamodel</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bouwstrategie">3. Bouwstrategie</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#projectcontext">1. Projectcontext</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-is-een-webshop-een-goed-project">Waarom is een webshop een goed project?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datamodel">2. Datamodel</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waar-moet-je-bij-het-datamodel-aan-denken">Waar moet je bij het datamodel aan denken?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-van-logisch-nadenken">Voorbeeld van logisch nadenken</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bouwstrategie">3. Bouwstrategie</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-deze-volgorde">Waarom deze volgorde?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goede-ontwikkelhabits">Goede ontwikkelhabits</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-ontwerp">Opdracht 1 - Ontwerp</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-basisfunctionaliteit">Opdracht 2 - Basisfunctionaliteit</a></li>

@@ -462,11 +462,28 @@
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veilig-werken-eerst-select-dan-pas-wijzigen">1. Veilig werken: eerst SELECT, dan pas wijzigen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update">2. UPDATE</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delete">3. DELETE</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subqueries">4. Subqueries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#group-by-en-aggregatie">5. GROUP BY en aggregatie</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veilig-werken-eerst-select-dan-pas-wijzigen">1. Veilig werken: eerst SELECT, dan pas wijzigen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#denk-als-een-veiligheidsofficier">Denk als een veiligheidsofficier</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update">2. UPDATE</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goed-voorbeeld-van-een-veilige-workflow">Goed voorbeeld van een veilige workflow</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delete">3. DELETE</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-is-delete-riskant">Waarom is DELETE riskant?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subqueries">4. Subqueries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-gebeurt-hier">Wat gebeurt hier?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#group-by-en-aggregatie">5. GROUP BY en aggregatie</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gemiddelde-beoordeling">Gemiddelde beoordeling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handige-functies">Handige functies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wanneer-gebruik-je-group-by">Wanneer gebruik je <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code>?</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-veilige-update">Opdracht 1 - Veilige UPDATE</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-veilige-delete">Opdracht 2 - Veilige DELETE</a></li>
@@ -509,13 +526,24 @@
 <hr class="docutils" />
 <section id="veilig-werken-eerst-select-dan-pas-wijzigen">
 <h2>1. Veilig werken: eerst SELECT, dan pas wijzigen<a class="headerlink" href="#veilig-werken-eerst-select-dan-pas-wijzigen" title="Link to this heading">#</a></h2>
-<p>Bij <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> en <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> verander je data blijvend.<br />
-Daarom geldt deze regel:</p>
+<p>Bij <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> en <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> verander je data blijvend. Daarom geldt deze regel:</p>
 <ol class="arabic simple">
 <li><p>schrijf eerst een <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> met dezelfde <code class="docutils literal notranslate"><span class="pre">WHERE</span></code>;</p></li>
 <li><p>controleer of dit precies de rijen zijn die je bedoelt;</p></li>
 <li><p>voer pas daarna <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> of <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> uit.</p></li>
 </ol>
+<p>Deze stap is cruciaal. Een database is geen papierboekje: je verwijdert of wijzigt echt data, en dat kun je niet zomaar terughalen als je per ongeluk te veel records raakt.</p>
+<section id="denk-als-een-veiligheidsofficier">
+<h3>Denk als een veiligheidsofficier<a class="headerlink" href="#denk-als-een-veiligheidsofficier" title="Link to this heading">#</a></h3>
+<p>Voordat je een wijziging doorvoert, stel je jezelf de volgende vragen:</p>
+<ul class="simple">
+<li><p>Welke records passen bij mijn opdracht?</p></li>
+<li><p>Zijn er misschien meer records dan ik verwacht?</p></li>
+<li><p>Is de <code class="docutils literal notranslate"><span class="pre">WHERE</span></code>-voorwaarde precies goed?</p></li>
+<li><p>Als dit fout gaat, wat is dan het risico?</p></li>
+</ul>
+<p>Bij SQL is het vaak beter om één keer extra te controleren dan één keer een opdracht terug te draaien.</p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="update">
@@ -525,8 +553,22 @@ Daarom geldt deze regel:</p>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Zonder <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> verander je <strong>alle</strong> rijen.<br />
-Dat is de meest voorkomende fout bij beginners.</p>
+<p>Zonder <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> verander je <strong>alle</strong> rijen. Dat is de meest voorkomende fout bij beginners.</p>
+<section id="goed-voorbeeld-van-een-veilige-workflow">
+<h3>Goed voorbeeld van een veilige workflow<a class="headerlink" href="#goed-voorbeeld-van-een-veilige-workflow" title="Link to this heading">#</a></h3>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">profielen</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Als je ziet dat deze rij klopt, dan pas je de wijziging aan:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span><span class="w"> </span><span class="n">profielen</span>
+<span class="k">SET</span><span class="w"> </span><span class="n">leeftijd_profiel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">15</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Na afloop controleer je opnieuw met <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>.</p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="delete">
@@ -536,11 +578,15 @@ Dat is de meest voorkomende fout bij beginners.</p>
 </pre></div>
 </div>
 <p>Ook hier: zonder <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> verwijder je alles uit de tabel.</p>
+<section id="waarom-is-delete-riskant">
+<h3>Waarom is DELETE riskant?<a class="headerlink" href="#waarom-is-delete-riskant" title="Link to this heading">#</a></h3>
+<p>Verwijderen is vaak moeilijker te herstellen dan aanpassen. Daarom moet je altijd eerst controleren welke rijen je precies verwijdert. De <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> is niet zomaar een extra toevoeging: het is de beveiliging tegen onbedoelde dataverlies.</p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="subqueries">
 <h2>4. Subqueries<a class="headerlink" href="#subqueries" title="Link to this heading">#</a></h2>
-<p>Een subquery is een query binnen een query.</p>
+<p>Een subquery is een query binnen een query. Je gebruikt het wanneer je eerst een tussenresultaat wilt bepalen, en daarna pas een hoofdquery uitvoert.</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span>
@@ -549,24 +595,41 @@ Dat is de meest voorkomende fout bij beginners.</p>
 <span class="p">);</span>
 </pre></div>
 </div>
-<p>Je gebruikt dit als je eerst een tussenresultaat nodig hebt.</p>
+<section id="wat-gebeurt-hier">
+<h3>Wat gebeurt hier?<a class="headerlink" href="#wat-gebeurt-hier" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>De subquery zoekt alle <code class="docutils literal notranslate"><span class="pre">gebruiker_id</span></code>-waarden uit <code class="docutils literal notranslate"><span class="pre">profielen</span></code>.</p></li>
+<li><p>De hoofdquery kiest alle gebruikers waarvan de <code class="docutils literal notranslate"><span class="pre">id</span></code> in die lijst voorkomt.</p></li>
+</ol>
+<p>Subqueries helpen dus bij complexere vragen, bijvoorbeeld:</p>
+<ul class="simple">
+<li><p>gebruikers die een profiel hebben;</p></li>
+<li><p>producten die nog in voorraad zijn;</p></li>
+<li><p>series waarvan een aflevering is bekeken.</p></li>
+</ul>
+</section>
 </section>
 <hr class="docutils" />
 <section id="group-by-en-aggregatie">
 <h2>5. GROUP BY en aggregatie<a class="headerlink" href="#group-by-en-aggregatie" title="Link to this heading">#</a></h2>
-<p>Met <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> maak je samenvattingen.</p>
+<p>Met <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> maak je samenvattingen. In plaats van alle rijen apart te zien, groepeer je ze op basis van een eigenschap.</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">regio</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_gebruikers</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
 <span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">regio</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Gemiddelde beoordeling:</p>
+<p>Dit geeft per regio het aantal gebruikers.</p>
+<section id="gemiddelde-beoordeling">
+<h3>Gemiddelde beoordeling<a class="headerlink" href="#gemiddelde-beoordeling" title="Link to this heading">#</a></h3>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">aflevering_id</span><span class="p">,</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">beoordeling</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">gemiddelde</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">beoordelingen</span>
 <span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">aflevering_id</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Handige functies:</p>
+<p>Je krijgt nu per aflevering het gemiddelde van de beoordelingen.</p>
+</section>
+<section id="handige-functies">
+<h3>Handige functies<a class="headerlink" href="#handige-functies" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">COUNT()</span></code> telt het aantal resultaten</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">AVG()</span></code> berekent het gemiddelde van de resultaten</p></li>
@@ -574,6 +637,17 @@ Dat is de meest voorkomende fout bij beginners.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">MAX()</span></code> geeft de hoogste waarde van de resultaten</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">SUM()</span></code> geeft de optelsom van alle resultaten</p></li>
 </ul>
+</section>
+<section id="wanneer-gebruik-je-group-by">
+<h3>Wanneer gebruik je <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code>?<a class="headerlink" href="#wanneer-gebruik-je-group-by" title="Link to this heading">#</a></h3>
+<p>Als je niet wilt weten wat elk individueel record doet, maar geïnteresseerd bent in een samenvatting. Denk aan vragen als:</p>
+<ul class="simple">
+<li><p>hoeveel gebruikers wonen in elke regio?</p></li>
+<li><p>wat is de gemiddelde score per aflevering?</p></li>
+<li><p>hoeveel producten zijn er per categorie?</p></li>
+</ul>
+<p>Dat is precies het moment waarop groeperen zinvol wordt.</p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="opdrachten">
@@ -714,11 +788,28 @@ Dat is de meest voorkomende fout bij beginners.</p>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veilig-werken-eerst-select-dan-pas-wijzigen">1. Veilig werken: eerst SELECT, dan pas wijzigen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update">2. UPDATE</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delete">3. DELETE</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subqueries">4. Subqueries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#group-by-en-aggregatie">5. GROUP BY en aggregatie</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veilig-werken-eerst-select-dan-pas-wijzigen">1. Veilig werken: eerst SELECT, dan pas wijzigen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#denk-als-een-veiligheidsofficier">Denk als een veiligheidsofficier</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update">2. UPDATE</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goed-voorbeeld-van-een-veilige-workflow">Goed voorbeeld van een veilige workflow</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delete">3. DELETE</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-is-delete-riskant">Waarom is DELETE riskant?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subqueries">4. Subqueries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-gebeurt-hier">Wat gebeurt hier?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#group-by-en-aggregatie">5. GROUP BY en aggregatie</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gemiddelde-beoordeling">Gemiddelde beoordeling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handige-functies">Handige functies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wanneer-gebruik-je-group-by">Wanneer gebruik je <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code>?</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-veilige-update">Opdracht 1 - Veilige UPDATE</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-veilige-delete">Opdracht 2 - Veilige DELETE</a></li>

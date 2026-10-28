@@ -462,10 +462,23 @@
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-vanuit-een-formulier">1. UPDATE vanuit een formulier</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delete-met-bevestiging">2. DELETE met bevestiging</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basisvalidatie">3. Basisvalidatie</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veilig-programmeren">4. Veilig programmeren</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-vanuit-een-formulier">1. UPDATE vanuit een formulier</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#belangrijk-eerst-tonen-dan-aanpassen">Belangrijk: eerst tonen, dan aanpassen</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delete-met-bevestiging">2. DELETE met bevestiging</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-een-bevestiging">Waarom een bevestiging?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basisvalidatie">3. Basisvalidatie</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-van-logische-controle">Voorbeeld van logische controle</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veilig-programmeren">4. Veilig programmeren</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-is-dit-veilig">Waarom is dit veilig?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#belangrijk-verschil-tussen-validatie-en-beveiliging">Belangrijk verschil tussen validatie en beveiliging</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-bewerkfunctie">Opdracht 1 - Bewerkfunctie</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-verwijderfunctie">Opdracht 2 - Verwijderfunctie</a></li>
@@ -514,6 +527,10 @@
 <li><p>verstuur formulier;</p></li>
 <li><p>voer <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> uit.</p></li>
 </ol>
+<p>Bij een webformulier werkt het meestal als volgt: de gebruiker opent een pagina, ziet de huidige gegevens, past die aan en klikt op “opslaan”. Daarna stuurt de browser die nieuwe waarden terug naar PHP. PHP controleert de invoer en voert vervolgens een SQL-<code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> uit.</p>
+<section id="belangrijk-eerst-tonen-dan-aanpassen">
+<h3>Belangrijk: eerst tonen, dan aanpassen<a class="headerlink" href="#belangrijk-eerst-tonen-dan-aanpassen" title="Link to this heading">#</a></h3>
+<p>Je wilt niet dat een gebruiker per ongeluk verkeerde data wijzigz. Daarom is het logisch om eerst de huidige gegevens te tonen en pas daarna een wijziging door te laten voeren. Zodoende kun je de gebruiker begeleiden en voorkom je fouten.</p>
 <p>Voorbeeld:</p>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$sql = "UPDATE profielen SET leeftijd_profiel = ? WHERE id = ?";</span>
 <span class="x">$stmt = $conn-&gt;prepare($sql);</span>
@@ -521,6 +538,8 @@
 <span class="x">$stmt-&gt;execute();</span>
 </pre></div>
 </div>
+<p>Hier wordt niet direct een SQL-string met waarden ingevuld. De waarden worden veilig doorgegeven via placeholders.</p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="delete-met-bevestiging">
@@ -531,6 +550,10 @@
 <li><p>controleer op de server of een geldig <code class="docutils literal notranslate"><span class="pre">id</span></code> is ontvangen;</p></li>
 <li><p>geef feedback na verwijderen.</p></li>
 </ul>
+<section id="waarom-een-bevestiging">
+<h3>Waarom een bevestiging?<a class="headerlink" href="#waarom-een-bevestiging" title="Link to this heading">#</a></h3>
+<p>Een delete-knop is op een website heel gemakkelijk te klikken. Als het verwijderen meteen gebeurt zonder controle, kan een gebruiker per ongeluk iets wegslaan. Een bevestiging voorkomt onbedoeld dataverlies en maakt het interface betrouwbaarder.</p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="basisvalidatie">
@@ -542,12 +565,27 @@
 <li><p>zit de waarde in een logische range;</p></li>
 <li><p>probeer je geen ongeldige <code class="docutils literal notranslate"><span class="pre">id</span></code> te wijzigen of verwijderen.</p></li>
 </ul>
+<section id="voorbeeld-van-logische-controle">
+<h3>Voorbeeld van logische controle<a class="headerlink" href="#voorbeeld-van-logische-controle" title="Link to this heading">#</a></h3>
+<p>Als je verwacht dat een leeftijd een getal tussen 0 en 120 is, dan kun je dat in PHP checken. Een leeg veld of een tekstwaarde bij een numeriek veld is een signaal dat de invoer niet klopt. Als de invoer onjuist is, moet je de wijziging afbreken en een duidelijke foutmelding tonen.</p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="veilig-programmeren">
 <h2>4. Veilig programmeren<a class="headerlink" href="#veilig-programmeren" title="Link to this heading">#</a></h2>
-<p>Gebruik bij invoer uit formulieren geen direct ingeplakte SQL-strings.<br />
-Gebruik prepared statements met placeholders (<code class="docutils literal notranslate"><span class="pre">?</span></code>).</p>
+<p>Gebruik bij invoer uit formulieren geen direct ingeplakte SQL-strings. Gebruik prepared statements met placeholders (<code class="docutils literal notranslate"><span class="pre">?</span></code>).</p>
+<section id="waarom-is-dit-veilig">
+<h3>Waarom is dit veilig?<a class="headerlink" href="#waarom-is-dit-veilig" title="Link to this heading">#</a></h3>
+<p>Bij prepared statements worden invoerwaarden gescheiden van de SQL-opdracht zelf. De database behandelt die waarden als data in plaats van als onderdeel van de query. Daardoor worden veel veelvoorkomende beveiligingsproblemen voorkomen, zoals SQL-injectie.</p>
+</section>
+<section id="belangrijk-verschil-tussen-validatie-en-beveiliging">
+<h3>Belangrijk verschil tussen validatie en beveiliging<a class="headerlink" href="#belangrijk-verschil-tussen-validatie-en-beveiliging" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>validatie controleert of invoer klopt en logisch is;</p></li>
+<li><p>prepared statements beschermen tegen ongewenste SQL-code in invoer.</p></li>
+</ul>
+<p>Beide zijn belangrijk bij CRUD-pagina’s.</p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="opdrachten">
@@ -691,10 +729,23 @@ Gebruik prepared statements met placeholders (<code class="docutils literal notr
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-vanuit-een-formulier">1. UPDATE vanuit een formulier</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delete-met-bevestiging">2. DELETE met bevestiging</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basisvalidatie">3. Basisvalidatie</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veilig-programmeren">4. Veilig programmeren</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-vanuit-een-formulier">1. UPDATE vanuit een formulier</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#belangrijk-eerst-tonen-dan-aanpassen">Belangrijk: eerst tonen, dan aanpassen</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delete-met-bevestiging">2. DELETE met bevestiging</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-een-bevestiging">Waarom een bevestiging?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basisvalidatie">3. Basisvalidatie</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-van-logische-controle">Voorbeeld van logische controle</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veilig-programmeren">4. Veilig programmeren</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-is-dit-veilig">Waarom is dit veilig?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#belangrijk-verschil-tussen-validatie-en-beveiliging">Belangrijk verschil tussen validatie en beveiliging</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-bewerkfunctie">Opdracht 1 - Bewerkfunctie</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-verwijderfunctie">Opdracht 2 - Verwijderfunctie</a></li>
