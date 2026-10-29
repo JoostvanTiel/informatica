@@ -40,11 +40,11 @@ class Speler:
     # Dit is een METHODE (functie in klasse)
     def verdien_punten(self, aantal):
         self.score += aantal
-        print(f"{self.naam} wint {aantal} punten!")
+        print(self.naam, "wint", aantal, "punten!")
     
     def verlies_leven(self):
         self.levens -= 1
-        print(f"{self.naam} heeft nu {self.levens} levens")
+        print(self.naam, "heeft nu", self.levens, "levens")
 ```
 
 Zie je? De klasse zegt niet alleen **wat** een speler is (naam, x, y), maar ook **wat hij kan doen** (punten verdienen, levens verliezen).
@@ -445,11 +445,11 @@ class Speler:
     
     def verdien_punten(self, aantal):
         self.score += aantal
-        print(f"Score: {self.score}")
+        print("Score:", self.score)
     
     def verlies_leven(self):
         self.levens -= 1
-        print(f"Levens: {self.levens}")
+        print("Levens:", self.levens)
     
     def reset(self):
         self.x = 50

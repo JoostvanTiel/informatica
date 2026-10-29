@@ -276,14 +276,14 @@ class Speler:
 # Gebruik
 held = Speler("Mario", 50, 500)
 
-print(f"Speler {held.naam} staat op ({held.x}, {held.y})")
-print(f"Levens: {held.levens}, Score: {held.score}")
+print("Speler", held.naam, "staat op (", held.x, ",", held.y, ")")
+print("Levens:", held.levens, ", Score:", held.score)
 
 # Verandering
 held.score += 50
 held.levens = 2
 
-print(f"Na actie: {held.levens} levens, {held.score} punten")
+print("Na actie:", held.levens, "levens,", held.score, "punten")
 ```
 
 ---
@@ -348,8 +348,8 @@ p2 = Platform(400, 350, 200, 20)
 p3 = Platform(200, 200, 150, 20)
 
 # Print info
-print(f"Grond: x={grond.x}, breedte={grond.breedte}")
-print(f"Platform 1: y={p1.y}, hoogte={p1.hoogte}")
+print("Grond: x =", grond.x, ", breedte =", grond.breedte)
+print("Platform 1: y =", p1.y, ", hoogte =", p1.hoogte)
 ```
 
 ### Opgave 3: Munten Verzamelen
@@ -372,7 +372,7 @@ munt5 = Munt(500, 250)
 
 # Totale waarde berekenen:
 totaal = munt1.waarde + munt2.waarde + munt3.waarde + munt4.waarde + munt5.waarde
-print(f"Totale munt-waarde: {totaal}")  # 50
+print("Totale munt-waarde:", totaal)
 ```
 
 ### Opgave 4: Game State
@@ -390,17 +390,17 @@ class GameState:
 game = GameState()
 
 # Simulatie
-print(f"Start: Score={game.score}, Levens={game.levens}")
+print("Start: Score =", game.score, ", Levens =", game.levens)
 
 game.munten_verzameld += 3
 game.score += 30
-print(f"Na munten: Score={game.score}")
+print("Na munten: Score =", game.score)
 
 game.levens -= 1
-print(f"Tegen hindernis: Levens={game.levens}")
+print("Tegen hindernis: Levens =", game.levens)
 
 game.level = 2
-print(f"Volgende level: Level={game.level}")
+print("Volgende level: Level =", game.level)
 ```
 
 ---
