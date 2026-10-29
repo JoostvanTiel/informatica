@@ -152,30 +152,34 @@ Zo is het duidelijk wat het spel op ieder moment doet.
 
 1. Startscherm maken
 
-   a. Teken een eenvoudig startscherm met tekst zoals `START SPEL`.
-   b. Leg uit welke variabele je gebruikt om te onthouden in welke toestand het spel zich bevindt.
-   c. Noem drie mogelijke toestanden van een simpel spel.
-
+   <ol type='a'>
+   <li>Teken een eenvoudig startscherm met tekst zoals `START SPEL`.</li>
+   <li>Leg uit welke variabele je gebruikt om te onthouden in welke toestand het spel zich bevindt.</li>
+   <li>Noem drie mogelijke toestanden van een simpel spel.</li>
+   </ol>
 2. Eindscherm en reset
 
-   a. Schrijf een korte structuur waarin het spel eerst een startscherm toont, daarna het spel en daarna een game-over scherm.
-   b. Welke code zou je gebruiken om het spel opnieuw te starten?
-   c. Waarom is het handig om statusvariabelen te gebruiken in plaats van losse losse `if`-checks?
-
+   <ol type='a'>
+   <li>Schrijf een korte structuur waarin het spel eerst een startscherm toont, daarna het spel en daarna een game-over scherm.</li>
+   <li>Welke code zou je gebruiken om het spel opnieuw te starten?</li>
+   <li>Waarom is het handig om statusvariabelen te gebruiken in plaats van losse losse `if`-checks?</li>
+   </ol>
 3. Toepassingsvraag
 
    Je maakt een spel waarin een speler een level kan winnen of verliezen.
 
-   a. Hoe kun je de status van het spel veranderen als het level is afgelopen?
-   b. Waarom is een start- en eindscherm belangrijk voor een spelervaring?
-   c. Noem een situatie waarin een reset van het spel logisch is.
-
+   <ol type='a'>
+   <li>Hoe kun je de status van het spel veranderen als het level is afgelopen?</li>
+   <li>Waarom is een start- en eindscherm belangrijk voor een spelervaring?</li>
+   <li>Noem een situatie waarin een reset van het spel logisch is.</li>
+   </ol>
 4. Beheer een spelstate
 
-   a. Maak een variabele `status` met de waarden `startscherm`, `spelen` en `game_over`.
-   b. Leg uit wanneer je `status = "spelen"` zet.
-   c. Schrijf een korte reden waarom een reset van de status belangrijk is voor een nieuwe ronde.
-
+   <ol type='a'>
+   <li>Maak een variabele `status` met de waarden `startscherm`, `spelen` en `game_over`.</li>
+   <li>Leg uit wanneer je `status = "spelen"` zet.</li>
+   <li>Schrijf een korte reden waarom een reset van de status belangrijk is voor een nieuwe ronde.</li>
+   </ol>
 ### Inzichtsvragen
 
 1. Wat is een spelstatus?

@@ -126,30 +126,34 @@ In een game is tijd dus belangrijk om bewegingen te synchroniseren.
 
 1. FPS en game-lus
 
-   a. Leg uit wat FPS betekent.
-   b. Waarom is 60 FPS vaak een goede keuze voor een game?
-   c. Noem een effect dat je ziet als de FPS laag is.
-
+   <ol type='a'>
+   <li>Leg uit wat FPS betekent.</li>
+   <li>Waarom is 60 FPS vaak een goede keuze voor een game?</li>
+   <li>Noem een effect dat je ziet als de FPS laag is.</li>
+   </ol>
 2. Tijd bijhouden
 
-   a. Maak een variabele `tijd` en laat zien hoe je die per frame opvoert.
-   b. Waarom is tijd handig om een vijand met een vaste snelheid te laten bewegen?
-   c. Wat doet `clock.tick(60)` in Pygame?
-
+   <ol type='a'>
+   <li>Maak een variabele `tijd` en laat zien hoe je die per frame opvoert.</li>
+   <li>Waarom is tijd handig om een vijand met een vaste snelheid te laten bewegen?</li>
+   <li>Wat doet `clock.tick(60)` in Pygame?</li>
+   </ol>
 3. Toepassingsvraag
 
    Je maakt een game waarin een enemy elke 2 seconden opnieuw verschijnt.
 
-   a. Hoe kun je met tijd bepalen wanneer een nieuwe enemy verschijnt?
-   b. Waarom is een vaste tijdsregel beter dan alleen een toevallige code?
-   c. Leg uit waarom een game-lus belangrijk is voor beweging en weergave.
-
+   <ol type='a'>
+   <li>Hoe kun je met tijd bepalen wanneer een nieuwe enemy verschijnt?</li>
+   <li>Waarom is een vaste tijdsregel beter dan alleen een toevallige code?</li>
+   <li>Leg uit waarom een game-lus belangrijk is voor beweging en weergave.</li>
+   </ol>
 4. Verander de snelheid
 
-   a. Maak een variabele `speed` en laat zien hoe je deze per frame gebruikt om een object te bewegen.
-   b. Waarom is `clock.tick(60)` handig als je meerdere objecten in een spel hebt?
-   c. Noem een situatie waarin een lagere FPS een probleem kan worden.
-
+   <ol type='a'>
+   <li>Maak een variabele `speed` en laat zien hoe je deze per frame gebruikt om een object te bewegen.</li>
+   <li>Waarom is `clock.tick(60)` handig als je meerdere objecten in een spel hebt?</li>
+   <li>Noem een situatie waarin een lagere FPS een probleem kan worden.</li>
+   </ol>
 ### Inzichtsvragen
 
 1. Wat is een frame?

@@ -391,12 +391,11 @@ Aan het einde van dit hoofdstuk kun je:
 
 1. Eerste `for`-lus
 
-   a. Schrijf code die 10 keer `Hallo` print met een `for`-lus.
-
-   b. Schrijf code die de getallen 0 t/m 9 print, elk op een nieuwe regel.
-
-   c. Pas je code aan zodat alleen de even getallen van 0 t/m 20 worden geprint.
-
+   <ol type='a'>
+   <li>Schrijf code die 10 keer `Hallo` print met een `for`-lus.</li>
+   <li>Schrijf code die de getallen 0 t/m 9 print, elk op een nieuwe regel.</li>
+   <li>Pas je code aan zodat alleen de even getallen van 0 t/m 20 worden geprint.</li>
+   </ol>
 ---
 
 2. `range()` goed begrijpen
@@ -430,12 +429,11 @@ Aan het einde van dit hoofdstuk kun je:
 
 3. Eerste `while`-lus
 
-   a. Schrijf een `while`-lus die de getallen 1 t/m 5 print.
-
-   b. Schrijf dezelfde opdracht met een `for`-lus.
-
-   c. Wat is in jouw code het grootste verschil tussen beide oplossingen?
-
+   <ol type='a'>
+   <li>Schrijf een `while`-lus die de getallen 1 t/m 5 print.</li>
+   <li>Schrijf dezelfde opdracht met een `for`-lus.</li>
+   <li>Wat is in jouw code het grootste verschil tussen beide oplossingen?</li>
+   </ol>
 ---
 
 4. Som en gemiddelde
@@ -446,12 +444,11 @@ Aan het einde van dit hoofdstuk kun je:
    cijfers = [6.5, 7.0, 5.5, 8.0, 4.5]
    ```
 
-   a. Bereken met een lus de som van alle cijfers.
-
-   b. Bereken daarna het gemiddelde.
-
-   c. Print `voldoende` als het gemiddelde 5.5 of hoger is, anders `onvoldoende`.
-
+   <ol type='a'>
+   <li>Bereken met een lus de som van alle cijfers.</li>
+   <li>Bereken daarna het gemiddelde.</li>
+   <li>Print `voldoende` als het gemiddelde 5.5 of hoger is, anders `onvoldoende`.</li>
+   </ol>
 ---
 
 5. Toestand verwerken in herhaling
@@ -463,19 +460,18 @@ Aan het einde van dit hoofdstuk kun je:
    toestand = "DICHT"
    ```
 
-   a. Verwerk de gebeurtenissen met een lus.
-
-   b. Gebruik `if` en `elif` om de toestand te veranderen.
-
-   c. Print na elke gebeurtenis de toestand.
-
+   <ol type='a'>
+   <li>Verwerk de gebeurtenissen met een lus.</li>
+   <li>Gebruik `if` en `elif` om de toestand te veranderen.</li>
+   <li>Print na elke gebeurtenis de toestand.</li>
+   </ol>
 ---
 
 6.  Uitlegvragen:
     Voorspel in de volgende vragen steeds wat de code op zal leveren. Voer pas de code uit als je een duidelijk antwoord voor jezelf hebt en controleer of je het juist had. Hier leer je heel veel van en zul je tijdens coderen vaak aan het doen zijn.
 
-    a. Wat print dit programma?
-
+    <ol type='a'>
+    <li>Wat print dit programma?</li>
     ```python
     x = 0
     while x < 10:
@@ -483,7 +479,7 @@ Aan het einde van dit hoofdstuk kun je:
         x = x + 2
     ```
 
-    b. Wat print dit programma?
+    <li>Wat print dit programma?</li>
 
     ```python
     x = 1
@@ -491,9 +487,7 @@ Aan het einde van dit hoofdstuk kun je:
         print(x)
         x = x * 2
     ```
-
-    c. Leg uit waarom de "and >= 0" niet nodig is.
-
+    <li>Leg uit waarom de "and >= 0" niet nodig is.</li>
     ```python
     x = 0
     while x < 10 and x >= 0:
@@ -501,7 +495,7 @@ Aan het einde van dit hoofdstuk kun je:
     x = x + 2
     ```
 
-    d. Wat print dit programma?
+    <li>Wat print dit programma?</li>
 
     ```python
     x = 5
@@ -511,9 +505,7 @@ Aan het einde van dit hoofdstuk kun je:
     print("Blast off!")
     x = x - 1
     ```
-
-    e. Fix de onderstaande code, zodat het niet oneindig herhaalt. Zorg ervoor dat de code de gebruiker blijft vragen, totdat hij of zij een getal groter dan nul invult.
-
+    <li>Fix de onderstaande code, zodat het niet oneindig herhaalt. Zorg ervoor dat de code de gebruiker blijft vragen, totdat hij of zij een getal groter dan nul invult.</li>
     ```python
     x = float(input("Enter a number greater than zero: "))
 
@@ -521,7 +513,7 @@ Aan het einde van dit hoofdstuk kun je:
             print("Too small. Enter a number greater than zero: ")
     ```
 
-    f. Fix de onderstaande code:
+    <li>Fix de onderstaande code:</li>
 
     ```python
     x = 10
@@ -532,16 +524,14 @@ Aan het einde van dit hoofdstuk kun je:
 
     print("Blast-off")
     ```
-
-    g. Wat is er mis met de onderstaande code? Het geeft geen errors, maar heeft onnodige code. Leg uit wat er onnodig is.
-
+    <li>Wat is er mis met de onderstaande code? Het geeft geen errors, maar heeft onnodige code. Leg uit wat er onnodig is.</li>
     ```python
     i = 0
     for i in range(10):
         i += 1
     ```
 
-    h. In de onderstaande code zie je twee delen. Leg uit waarom de geprinte waardes van x in beide delen verschillen.
+    <li>In de onderstaande code zie je twee delen. Leg uit waarom de geprinte waardes van x in beide delen verschillen.</li>
 
     ```python
     # Deel 1
@@ -560,7 +550,7 @@ Aan het einde van dit hoofdstuk kun je:
             x += 1
     print(x)
     ```
-
+    </ol>
 7.  Willekeurige worpen
 
     Gebruik:
@@ -569,40 +559,37 @@ Aan het einde van dit hoofdstuk kun je:
     import random
     ```
 
-    a. Simuleer 20 dobbelsteenworpen met `random.randrange(1, 7)`.
-
-    b. Tel hoeveel keer een 6 voorkomt.
-
-    c. Tel ook hoeveel worpen even en hoeveel worpen oneven zijn.
-
-    d. Welke operator uit hoofdstuk 3 gebruik je om even/oneven te bepalen?
-
+    <ol type='a'>
+    <li>Simuleer 20 dobbelsteenworpen met `random.randrange(1, 7)`.</li>
+    <li>Tel hoeveel keer een 6 voorkomt.</li>
+    <li>Tel ook hoeveel worpen even en hoeveel worpen oneven zijn.</li>
+    <li>Welke operator uit hoofdstuk 3 gebruik je om even/oneven te bepalen?</li>
+    </ol>
 ---
 
 7. Sterretjes in regels
 
-   a. Print met een lus precies deze regel:
-
+   <ol type='a'>
+   <li>Print met een lus precies deze regel:</li>
    ```text
    * * * * * * * * * *
    ```
 
-   b. Print daarna drie regels met respectievelijk 10, 5 en 20 sterretjes.
+   <li>Print daarna drie regels met respectievelijk 10, 5 en 20 sterretjes.</li>
 
-   c. Gebruik voor elk patroon lussen, niet een kant-en-klare tekststring.
+   <li>Gebruik voor elk patroon lussen, niet een kant-en-klare tekststring.</li>
 
 ---
 
 8. Rechthoeken met geneste lussen
 
-   a. Print een rechthoek van 10 bij 10 sterretjes.
-
-   b. Print een rechthoek van 5 bij 10 sterretjes.
-
-   c. Print een rechthoek van 20 bij 5 sterretjes.
-
-   d. Welke `range()` bepaalt het aantal rijen en welke het aantal kolommen?
-
+   </ol>
+   <ol type='a'>
+   <li>Print een rechthoek van 10 bij 10 sterretjes.</li>
+   <li>Print een rechthoek van 5 bij 10 sterretjes.</li>
+   <li>Print een rechthoek van 20 bij 5 sterretjes.</li>
+   <li>Welke `range()` bepaalt het aantal rijen en welke het aantal kolommen?</li>
+   </ol>
 ---
 
 9. Nummerpatroon
@@ -636,10 +623,10 @@ Aan het einde van dit hoofdstuk kun je:
     0 1 2 3 4 5 6 7 8 9
     ```
 
-    a. Gebruik twee geneste lussen.
-
-    b. Leg uit waarom de binnenste `range()` nu afhangt van de buitenste teller.
-
+    <ol type='a'>
+    <li>Gebruik twee geneste lussen.</li>
+    <li>Leg uit waarom de binnenste `range()` nu afhangt van de buitenste teller.</li>
+    </ol>
 ---
 
 11. Vermenigvuldigingstabel 1 t/m 9
@@ -664,12 +651,11 @@ Aan het einde van dit hoofdstuk kun je:
     9 18 27 36 45 54 63 72 81
     ```
 
-    a. Gebruik geneste lussen.
-
-    b. Gebruik de operator `*` voor de berekening.
-
-    c. Extra: zorg dat getallen onder elkaar netjes uitgelijnd staan.
-
+    <ol type='a'>
+    <li>Gebruik geneste lussen.</li>
+    <li>Gebruik de operator `*` voor de berekening.</li>
+    <li>Extra: zorg dat getallen onder elkaar netjes uitgelijnd staan.</li>
+    </ol>
 ---
 
 12. Schrijf de code die dit print:

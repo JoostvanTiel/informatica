@@ -127,30 +127,34 @@ Nu kun je het spel laten reageren op acties.
 
 1. Score en levens
 
-   a. Maak een klasse `Speler` met `score` en `levens`.
-   b. Schrijf een methode die 10 punten geeft als een vijand wordt verslagen.
-   c. Schrijf een tweede methode die een leven aftrekt als een vijand een speler raakt.
-
+   <ol type='a'>
+   <li>Maak een klasse `Speler` met `score` en `levens`.</li>
+   <li>Schrijf een methode die 10 punten geeft als een vijand wordt verslagen.</li>
+   <li>Schrijf een tweede methode die een leven aftrekt als een vijand een speler raakt.</li>
+   </ol>
 2. Score tonen
 
-   a. Leg uit waarom je score op het scherm wilt laten zien.
-   b. Hoe kun je een score in tekst omzetten voor weergave?
-   c. Waarom is het handig om score en levens bij de speler te bewaren?
-
+   <ol type='a'>
+   <li>Leg uit waarom je score op het scherm wilt laten zien.</li>
+   <li>Hoe kun je een score in tekst omzetten voor weergave?</li>
+   <li>Waarom is het handig om score en levens bij de speler te bewaren?</li>
+   </ol>
 3. Toepassingsvraag
 
    Je speelt een platformgame en je score is 150 punten, maar je hebt nog 1 leven over.
 
-   a. Hoe kun je het spel laten reageren wanneer de laatste levenswaarde 0 wordt?
-   b. Waarom is een duidelijke score belangrijk voor een game?
-   c. Wat is het verschil tussen een score en een levenswaarde in een spel?
-
+   <ol type='a'>
+   <li>Hoe kun je het spel laten reageren wanneer de laatste levenswaarde 0 wordt?</li>
+   <li>Waarom is een duidelijke score belangrijk voor een game?</li>
+   <li>Wat is het verschil tussen een score en een levenswaarde in een spel?</li>
+   </ol>
 4. Spelstatus bijhouden
 
-   a. Maak een korte klasse `Speler` met een score en een methode `verlaag_levens`.
-   b. Leg uit waarom je deze gegevens bij het spelobject bewaart in plaats van in losse variabelen.
-   c. Noem een situatie waarin de score direct moet veranderen in een game.
-
+   <ol type='a'>
+   <li>Maak een korte klasse `Speler` met een score en een methode `verlaag_levens`.</li>
+   <li>Leg uit waarom je deze gegevens bij het spelobject bewaart in plaats van in losse variabelen.</li>
+   <li>Noem een situatie waarin de score direct moet veranderen in een game.</li>
+   </ol>
 ### Inzichtsvragen
 
 1. Waarom is score een voorbeeld van data die bij een object hoort?

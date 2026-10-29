@@ -602,9 +602,10 @@ Aan het einde van dit hoofdstuk kun je:
    - iemand loopt naar de deur;
    - niemand staat meer bij de deur.
 
-   a. Teken een toestandsdiagram voor de deur. Gebruik twee cirkels, 'DICHT' en 'OPEN'. Teken de pijlen en zet op iedere pijl de gebeurtenis waardoor de overgang plaatsvindt.
-
-   b. Beantwoord de volgende vragen.
+   <ol type='a'>
+   <li>Teken een toestandsdiagram voor de deur. Gebruik twee cirkels, 'DICHT' en 'OPEN'. Teken de pijlen en zet op iedere pijl de gebeurtenis waardoor de overgang plaatsvindt.</li>
+   <li>Beantwoord de volgende vragen.</li>
+   </ol>
    1. In welke toestand begint de deur?
    2. Wat gebeurt er als iemand naar de deur loopt?
    3. Wat gebeurt er als niemand meer bij de deur staat?
@@ -631,8 +632,8 @@ Aan het einde van dit hoofdstuk kun je:
    - Vanuit TOEGANG kan de deur worden gesloten en gaat het systeem terug naar VERGRENDELD.
    - Vanuit ALARM kan het systeem alleen door een beheerder worden gereset.
 
-   a. Teken een toestandsdiagram. Denk goed na over de gebeurtenissen. Je hebt bijvoorbeeld gebeurtenissen nodig zoals:
-
+   <ol type='a'>
+   <li>Teken een toestandsdiagram. Denk goed na over de gebeurtenissen. Je hebt bijvoorbeeld gebeurtenissen nodig zoals:</li>
    ```text
    correcte code
    verkeerde code
@@ -640,12 +641,12 @@ Aan het einde van dit hoofdstuk kun je:
    reset
    ```
 
-   b. Voer de volgende gebeurtenissen uit. Het systeem begint in:
+   <li>Voer de volgende gebeurtenissen uit. Het systeem begint in:</li>
 
    ```text
    VERGRENDELD
    ```
-
+   </ol>
    Gebeurtenissen:
 
    ```text
@@ -723,25 +724,26 @@ Aan het einde van dit hoofdstuk kun je:
 
    De tekst tussen aanhalingstekens is de tekst die we willen laten zien.
 
-   a. Probeer:
-
+   <ol type='a'>
+   <li>Probeer:</li>
+   </ol>
    ```python
    print("Ik leer Python")
    print("Dit is mijn eerste programma")
    ```
 
-   De computer voert de regels van boven naar beneden uit.
+   <ol type='a' start="2">
+   <li>De computer voert de regels van boven naar beneden uit.
 
-   Noteer de uitvoer van dit programma
-
-   b. Schrijf een programma dat de volgende drie regels op het scherm laat zien:
+   Noteer de uitvoer van dit programma</li>
+   <li>Schrijf een programma dat de volgende drie regels op het scherm laat zien:</li>
+   </ol>
 
    ```text
    Ik ben een programmeur.
    Ik werk met toestanden.
    Mijn computer kan een automaat uitvoeren.
    ```
-
 ---
 
 5. Een eerste automaat in Python

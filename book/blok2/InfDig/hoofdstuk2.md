@@ -187,30 +187,34 @@ Inhoud van hoofdstuk 2.
 
 1. Bits en bytes in een tabel
 
-   a. Zet de getallen 1, 2, 3, 4 en 5 om naar binair.
-   b. Hoeveel bits zitten er in 1 byte? Waarom is 1 byte handig om tekst op te slaan?
-   c. Leg uit waarom een computer met 0-en en 1-en kan werken.
-
+   <ol type='a'>
+   <li>Zet de getallen 1, 2, 3, 4 en 5 om naar binair.</li>
+   <li>Hoeveel bits zitten er in 1 byte? Waarom is 1 byte handig om tekst op te slaan?</li>
+   <li>Leg uit waarom een computer met 0-en en 1-en kan werken.</li>
+   </ol>
 2. Van bit naar byte
 
-   a. Schrijf 8 bits op die samen één byte vormen.
-   b. Noem een voorbeeld van een kleine hoeveelheid informatie die minder is dan 1 byte.
-   c. Waarom is een byte groter dan één bit? Geef een korte verklaring.
-
+   <ol type='a'>
+   <li>Schrijf 8 bits op die samen één byte vormen.</li>
+   <li>Noem een voorbeeld van een kleine hoeveelheid informatie die minder is dan 1 byte.</li>
+   <li>Waarom is een byte groter dan één bit? Geef een korte verklaring.</li>
+   </ol>
 3. Toepassingsvraag
 
    Je wilt een foto van 5 MB uploaden. Je laptop heeft weinig vrije opslagruimte.
 
-   a. Waarom kun je een foto niet zomaar als één getal opslaan?
-   b. Hoe kun je de grootte van een bestand vergelijken met het aantal bits en bytes?
-   c. Noem een manier om een bestand kleiner te maken zonder de inhoud volledig te verliezen.
-
+   <ol type='a'>
+   <li>Waarom kun je een foto niet zomaar als één getal opslaan?</li>
+   <li>Hoe kun je de grootte van een bestand vergelijken met het aantal bits en bytes?</li>
+   <li>Noem een manier om een bestand kleiner te maken zonder de inhoud volledig te verliezen.</li>
+   </ol>
 4. Je eigen binair schema bouwen
 
-   a. Kies vier getallen tussen 0 en 15 en zet ze om naar binair.
-   b. Schrijf één byte op als acht bits en leg uit waarom een byte handig is om tekens te bewaren.
-   c. Noem een situatie waarin een computer veel binaire informatie tegelijk moet verwerken.
-
+   <ol type='a'>
+   <li>Kies vier getallen tussen 0 en 15 en zet ze om naar binair.</li>
+   <li>Schrijf één byte op als acht bits en leg uit waarom een byte handig is om tekens te bewaren.</li>
+   <li>Noem een situatie waarin een computer veel binaire informatie tegelijk moet verwerken.</li>
+   </ol>
 ### Inzichtsvragen
 
 1. Als je één bit hebt, hoeveel mogelijke waarden kun je dan opslaan?
