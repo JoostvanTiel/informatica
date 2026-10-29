@@ -42,15 +42,24 @@ STATE_GAME_OVER = "game_over"
 
 class Speler:
     """
-    Speelbare karakter met beweging, springen en score.
+    Speelbare karakter met sprite, beweging, springen en score.
     """
     
-    def __init__(self, x, y):
+    def __init__(self, x, y, sprite_path="speler.png"):
         self.x = x
         self.y = y
-        self.breedte = 40
-        self.hoogte = 50
-        self.kleur = (255, 0, 0)
+        
+        # Sprite laden (of default pixelart maken)
+        try:
+            self.afbeelding = pygame.image.load(sprite_path)
+        except:
+            # Fallback: maak een rood vierkantje als sprite niet bestaat
+            self.afbeelding = pygame.Surface((32, 48))
+            self.afbeelding.fill((255, 0, 0))
+        
+        self.rect = self.afbeelding.get_rect()
+        self.breedte = 32
+        self.hoogte = 48
         
         # Beweging (H2)
         self.xSnelheid = 0
@@ -93,8 +102,10 @@ class Speler:
         self.xSnelheid = snelheid
     
     def draw(self, screen):
-        """Teken de speler."""
-        pygame.draw.rect(screen, self.kleur, [self.x, self.y, self.breedte, self.hoogte])
+        """Teken de speler (sprite)."""
+        self.rect.x = self.x
+        self.rect.y = self.y
+        screen.blit(self.afbeelding, self.rect)
     
     @property
     def links(self):

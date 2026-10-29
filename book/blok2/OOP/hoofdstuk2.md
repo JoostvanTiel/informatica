@@ -2,343 +2,529 @@
 
 ## Leerdoelen
 
-In dit hoofdstuk leer je dat een klasse niet alleen gegevens bevat, maar ook acties kan uitvoeren. Die acties noem je **methoden**.
+Nu gaan we **methoden** introduceren: dingen die objecten kunnen **doen**.
 
-Nog belangrijker: je leert hoe je deze methoden gebruikt in een **werkende game-loop** zodat je spel werkelijk **beweegt en leeft**.
+Plus: we maken onze objecten **zichtbaar** met **pygame** én **sprites**!
 
 Je leert:
 
-- wat een methode is;
-- hoe je attributen en methoden combineert;
-- wat `self` betekent;
-- hoe een object zich kan gedragen;
-- hoe je een methode aanroept;
-- hoe je een **game-loop** bouwt;
-- hoe je **snelheid** en **beweging** implementeert.
+- **Wat een methode is** (functie in een klasse)
+- **Game-loop begrijpen** (INPUT → UPDATE → RENDER)
+- **Pygame-basics** (window, events, display)
+- **Sprite laden** (pixelart voor de speler)
+- **Andere objecten tekenen** met `pygame.draw.rect()`
+- **Toetsenbordbesturing** implementeren
+- **FPS beheren** (frames per seconde)
 
-Aan het einde van dit hoofdstuk heb je een speler die je met pijltjes kunt besturen!
-
----
-
-## Wat is een methode?
-
-Een **methode** is een functie die bij een object hoort.
-
-Een object heeft gegevens en kan ook handelingen uitvoeren.
-
-Voorbeeld:
-
-```python
-class Man:
-    def __init__(self, naam):
-        self.naam = naam
-
-    def groet(self):
-        print("Hoi, ik ben", self.naam)
-```
-
-`groet()` is een methode.
-
-Je roept die methode aan op het object:
-
-```python
-joost = Man("Joost")
-joost.groet()
-```
+Aan het einde van dit hoofstuk:
+- Heeft je speler visueel een sprite
+- Kun je hem met pijltjestoetsen bewegen
+- Lopen andere objecten mee in je game
 
 ---
 
-## `self` in Python
+## Wat is een Methode?
 
-`self` verwijst naar het huidige object.
+Een **methode** is een **functie in een klasse**. Het beschrijft wat een object kan **doen**.
 
-Het geeft aan:
-
-```python
-self.naam
-```
-
-Dat bedoelt: de `naam` van dit specifieke object.
-
-Zonder `self` weet Python niet bij welk object de variabele hoort.
-
----
-
-## Beweging in een game: Methoden in actie
-
-Tot nu toe hebben we methoden gezien die iets afdrukken. Maar in een game moet je **objecten laten bewegen**.
-
-Laten we een Speler-klasse maken met beweging:
+### Voorbeeld
 
 ```python
 class Speler:
-    def __init__(self, x, y):
+    def __init__(self, naam, x, y):
+        self.naam = naam
         self.x = x
         self.y = y
-        self.breedte = 40
-        self.hoogte = 50
-        self.kleur = (255, 0, 0)  # Rood
-        
-        # Snelheid (pixels per frame)
-        self.xSnelheid = 0
-        self.ySnelheid = 0
+        self.levens = 3
     
-    def move(self):
-        """Update de positie op basis van snelheid."""
-        self.x += self.xSnelheid
-        self.y += self.ySnelheid
+    # Dit is een METHODE (functie in klasse)
+    def verdien_punten(self, aantal):
+        self.score += aantal
+        print(f"{self.naam} wint {aantal} punten!")
     
-    def set_x_snelheid(self, snelheid):
-        """Zet de horizontale snelheid."""
-        self.xSnelheid = snelheid
-    
-    def draw(self, screen):
-        """Teken de speler."""
-        pygame.draw.rect(screen, self.kleur, [self.x, self.y, self.breedte, self.hoogte])
+    def verlies_leven(self):
+        self.levens -= 1
+        print(f"{self.naam} heeft nu {self.levens} levens")
 ```
 
-Let op wat hier gebeurt:
+Zie je? De klasse zegt niet alleen **wat** een speler is (naam, x, y), maar ook **wat hij kan doen** (punten verdienen, levens verliezen).
 
-- De methode `move()` gebruikt `self.xSnelheid` en `self.ySnelheid`
-- De methode `set_x_snelheid()` **verandert** de snelheid
-- Deze methoden werken samen om beweging te realiseren
+### Methoden aanroepen
+
+```python
+speler = Speler("Mario", 50, 100)
+speler.verdien_punten(10)      # Output: Mario wint 10 punten!
+speler.verdien_punten(20)      # Output: Mario wint 20 punten!
+speler.verlies_leven()         # Output: Mario heeft nu 2 levens
+```
 
 ---
 
-## De Game-Loop: Alles tot leven brengen
+## De Game-Loop: Hoe Games Werken
 
-Een **game-loop** is het hart van elk spel. Het ziet er zo uit:
+Elke game loopt in een **loop**. Dit gebeurt ~60 keer per seconde:
 
 ```
-1. VERWERKEN → Kijk naar toetsenbord-input
-2. UPDATE → Verplaats objecten, check botsingen
-3. RENDEREN → Teken alles op het scherm
-4. HERHAAL → Ga terug naar stap 1
+INPUT → UPDATE → RENDER → WAIT
 ```
 
-Dit gebeurt ongeveer 60 keer per seconde!
+**INPUT:** Wat drukt de speler (pijltjes, spatiebalk)?  
+**UPDATE:** Verander positie, collision, score, etc.  
+**RENDER:** Teken alles op het scherm.  
+**WAIT:** Wacht tot volgende frame (60 FPS = 16ms per frame).
 
-### Een pygame game-loop
+```python
+while spel_loopt:
+    # INPUT
+    for event in pygame.event.get():
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                speler.x -= 5  # Speler naar links
+    
+    # UPDATE
+    # (Zwaartekracht, collision, etc. komen later)
+    
+    # RENDER
+    screen.fill((150, 150, 150))  # Achtergrond
+    # Teken speler, platforms, etc.
+    pygame.display.flip()
+    
+    # WAIT
+    clock.tick(60)  # 60 FPS
+```
 
-Hier is een compleet voorbeeld met beweging:
+Dit is het **hart van elke game**!
+
+---
+
+## Pygame Installeren en Starten
+
+### Stap 1: Installeer Pygame
+
+```bash
+pip install pygame
+```
+
+### Stap 2: Basis pygame-setup
 
 ```python
 import pygame
 
 pygame.init()
 
-# Constants
+# Scherm-afmetingen
 BREEDTE = 800
 HOOGTE = 600
-FPS = 60
 
-# Kleuren
-ZWART = (0, 0, 0)
-GRIJS = (150, 150, 150)
-
-# Scherm setup
+# Maak venster
 screen = pygame.display.set_mode((BREEDTE, HOOGTE))
-pygame.display.set_caption("Speler beweging")
+pygame.display.set_caption("Stick Hero's Quest")
+
+# Clock voor FPS
 clock = pygame.time.Clock()
 
-# Speler aanmaken
-speler = Speler(400, 500)
-
-# Game loop
+# Game-loop
 running = True
 while running:
-    # STAP 1: INPUT - Toetsenbord verwerken
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-        
-        # Toets ingedrukt
-        elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_LEFT:
-                speler.set_x_snelheid(-7)  # Links bewegen
-            elif event.key == pygame.K_RIGHT:
-                speler.set_x_snelheid(7)   # Rechts bewegen
-        
-        # Toets losgelaten
-        elif event.type == pygame.KEYUP:
-            if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
-                speler.set_x_snelheid(0)   # Stoppen
     
-    # STAP 2: UPDATE - Beweeg de speler
-    speler.move()
+    # Vul scherm met grijs
+    screen.fill((150, 150, 150))
     
-    # STAP 3: RENDER - Teken alles
-    screen.fill(GRIJS)
-    speler.draw(screen)
+    # Update display
     pygame.display.flip()
     
-    # Houd FPS constante op 60
-    clock.tick(FPS)
+    # 60 FPS
+    clock.tick(60)
 
 pygame.quit()
 ```
 
-### Wat gebeurt hier regel voor regel?
-
-**INPUT:**
-- We controleren of KEYDOWN- of KEYUP-events plaatsvinden
-- Als LEFT ingedrukt is, zetten we `xSnelheid` op -7 (naar links)
-- Als RIGHT ingedrukt is, zetten we `xSnelheid` op 7 (naar rechts)
-- Als losgelaten, zetten we `xSnelheid` op 0 (stoppen)
-
-**UPDATE:**
-- We roepen `speler.move()` aan
-- Dit voert uit: `self.x += self.xSnelheid`
-- Dus elke frame beweegt de speler een beetje
-
-**RENDER:**
-- We vullen het scherm grijs
-- We tekenen de speler
-- We verversen het scherm met `pygame.display.flip()`
-
-**TIMING:**
-- `clock.tick(FPS)` zorgt dat dit 60 keer per seconde gebeurt
-
-**Resultaat:** Een speler die vloeiend beweegt als je pijltjes indrukt!
+Run dit. Je ziet een grijs venster. Druk ESCAPE om af te sluiten.
 
 ---
 
-## FPS: Frames Per Second
+## Sprites: Pixel-Art Laden
 
-**FPS** staat voor Frames Per Second. Dit is hoe vaak je scherm per seconde ververst wordt.
+Nu gaat het interessant! We laden een **sprite** (afbeelding) in plaats van vierkantjes te tekenen.
+
+### Stap 1: Een Sprite Maken
+
+Maak zelf een eenvoudig pixelart poppetje in een grafische tool (bijv. Aseprite, Piskel of Paint):
+- **Grootte:** 32x48 pixels (standaard platformer-speler)
+- **Format:** PNG (met transparantie)
+- **Naam:** `speler.png`
+
+Sla het op in dezelfde map als je `.py`-bestand.
+
+**Voorbeeld:** Een rood poppetje van 32x48 pixels met witte ogen.
+
+### Stap 2: Sprite in Klasse Laden
+
+Update je Speler-klasse:
 
 ```python
+class Speler:
+    def __init__(self, x, y, sprite_path):
+        # Positie
+        self.x = x
+        self.y = y
+        
+        # Sprite laden
+        self.afbeelding = pygame.image.load(sprite_path)
+        self.rect = self.afbeelding.get_rect()
+        self.rect.x = self.x
+        self.rect.y = self.y
+        
+        # Game-stats
+        self.levens = 3
+        self.score = 0
+    
+    def draw(self, screen):
+        """Teken de speler op het scherm."""
+        self.rect.x = self.x
+        self.rect.y = self.y
+        screen.blit(self.afbeelding, self.rect)
+    
+    def move_left(self):
+        """Speler gaat naar links."""
+        self.x -= 7
+    
+    def move_right(self):
+        """Speler gaat naar rechts."""
+        self.x += 7
+```
+
+**Wat gebeurt hier?**
+- `pygame.image.load()` laadt de sprite van schijf
+- `get_rect()` geeft een rechthoek (voor positionering)
+- `screen.blit()` plakt de afbeelding op het scherm
+- `move_left/move_right` zijn methoden om te bewegen
+
+### Stap 3: Speler Gebruiken in Game-Loop
+
+```python
+import pygame
+
+pygame.init()
+
+BREEDTE = 800
+HOOGTE = 600
+screen = pygame.display.set_mode((BREEDTE, HOOGTE))
+pygame.display.set_caption("Stick Hero's Quest")
 clock = pygame.time.Clock()
-clock.tick(60)  # 60 frames per seconde
+
+# Maak speler (laadt sprite automatisch)
+speler = Speler(100, 500, "speler.png")
+
+running = True
+while running:
+    # INPUT
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                speler.move_left()
+            elif event.key == pygame.K_RIGHT:
+                speler.move_right()
+    
+    # Grenzen checken (speler kan niet uit scherm lopen)
+    if speler.x < 0:
+        speler.x = 0
+    if speler.x + 32 > BREEDTE:
+        speler.x = BREEDTE - 32
+    
+    # RENDER
+    screen.fill((150, 150, 150))
+    speler.draw(screen)
+    pygame.display.flip()
+    
+    # WAIT
+    clock.tick(60)
+
+pygame.quit()
 ```
 
-Met `clock.tick(60)` run je game op **60 FPS**.
-
-Dit zorgt ervoor dat:
-- De beweging vloeiend is
-- De game op elke computer even snel loopt
-- Je niet "hardloopt" door je code heen
+**Test het:** Run het programma, druk pijltjes, je sprite beweegt!
 
 ---
 
-## Attributen en methoden samen
+## Platforms Tekenen met `draw()`
 
-Een object kan zowel gegevens als gedrag hebben.
+Terwijl de speler een **sprite** is, tekenen we platforms met `pygame.draw.rect()`:
+
+```python
+class Platform:
+    def __init__(self, x, y, breedte, hoogte, kleur=(0, 200, 100)):
+        self.x = x
+        self.y = y
+        self.breedte = breedte
+        self.hoogte = hoogte
+        self.kleur = kleur
+    
+    def draw(self, screen):
+        """Teken platform als rechthoek."""
+        pygame.draw.rect(screen, self.kleur, [self.x, self.y, self.breedte, self.hoogte])
+        # Zwarte border
+        pygame.draw.rect(screen, (0, 0, 0), [self.x, self.y, self.breedte, self.hoogte], 2)
+```
+
+Gebruik in game-loop:
+
+```python
+# Maak platforms
+platforms = [
+    Platform(0, 550, 800, 50),      # Grond
+    Platform(100, 450, 200, 25),    # Platform 1
+    Platform(450, 350, 250, 25),    # Platform 2
+]
+
+# In game-loop (RENDER gedeelte):
+for platform in platforms:
+    platform.draw(screen)
+```
+
+---
+
+## Munten Tekenen
+
+Munten tekenen we als gele cirkels:
+
+```python
+class Munt:
+    def __init__(self, x, y, waarde=10):
+        self.x = x
+        self.y = y
+        self.radius = 8
+        self.waarde = waarde
+    
+    def draw(self, screen):
+        """Teken munt als cirkel."""
+        pygame.draw.circle(screen, (255, 255, 0), [int(self.x), int(self.y)], self.radius)
+```
+
+Gebruik:
+
+```python
+munten = [
+    Munt(200, 400),
+    Munt(575, 300),
+    Munt(275, 200),
+]
+
+# In game-loop:
+for munt in munten:
+    munt.draw(screen)
+```
+
+---
+
+## Complete Voorbeeld: Bewegende Speler
+
+```python
+import pygame
+
+pygame.init()
+
+BREEDTE = 800
+HOOGTE = 600
+screen = pygame.display.set_mode((BREEDTE, HOOGTE))
+pygame.display.set_caption("Stick Hero's Quest")
+clock = pygame.time.Clock()
+
+class Speler:
+    def __init__(self, x, y, sprite_path):
+        self.x = x
+        self.y = y
+        self.afbeelding = pygame.image.load(sprite_path)
+        self.rect = self.afbeelding.get_rect()
+        self.levens = 3
+    
+    def move_left(self):
+        self.x -= 7
+    
+    def move_right(self):
+        self.x += 7
+    
+    def draw(self, screen):
+        self.rect.x = self.x
+        self.rect.y = self.y
+        screen.blit(self.afbeelding, self.rect)
+
+class Platform:
+    def __init__(self, x, y, breedte, hoogte):
+        self.x = x
+        self.y = y
+        self.breedte = breedte
+        self.hoogte = hoogte
+    
+    def draw(self, screen):
+        pygame.draw.rect(screen, (0, 200, 100), [self.x, self.y, self.breedte, self.hoogte])
+        pygame.draw.rect(screen, (0, 0, 0), [self.x, self.y, self.breedte, self.hoogte], 2)
+
+class Munt:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        self.radius = 8
+    
+    def draw(self, screen):
+        pygame.draw.circle(screen, (255, 255, 0), [int(self.x), int(self.y)], self.radius)
+
+# Game-setup
+speler = Speler(50, 500, "speler.png")
+platforms = [
+    Platform(0, 550, 800, 50),
+    Platform(100, 450, 200, 25),
+    Platform(450, 350, 250, 25),
+]
+munten = [
+    Munt(200, 400),
+    Munt(575, 300),
+    Munt(275, 200),
+]
+
+# Game-loop
+running = True
+while running:
+    # INPUT
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                speler.move_left()
+            elif event.key == pygame.K_RIGHT:
+                speler.move_right()
+    
+    # Grenzen
+    if speler.x < 0:
+        speler.x = 0
+    if speler.x + 32 > BREEDTE:
+        speler.x = BREEDTE - 32
+    
+    # RENDER
+    screen.fill((150, 150, 150))
+    
+    for platform in platforms:
+        platform.draw(screen)
+    
+    for munt in munten:
+        munt.draw(screen)
+    
+    speler.draw(screen)
+    
+    pygame.display.flip()
+    clock.tick(60)
+
+pygame.quit()
+```
+
+**Run dit! Je hebt:**
+- Speler-sprite die beweegt
+- Platforms (groen)
+- Munten (geel)
+- Vloeiende beweging (60 FPS)
+
+---
+
+## 🎯 Huiswerk Hst 2
+
+### Opgave 1: Methoden Toevoegen
+
+Voeg methoden toe aan je Speler-klasse:
 
 ```python
 class Speler:
-    def __init__(self, naam, xp):
-        self.naam = naam
-        self.xp = xp
-
-    def voeg_xp_toe(self, aantal):
-        self.xp = self.xp + aantal
-        print(self.naam, "heeft nu", self.xp, "XP")
+    # ... bestaande code ...
+    
+    def verdien_punten(self, aantal):
+        self.score += aantal
+        print(f"Score: {self.score}")
+    
+    def verlies_leven(self):
+        self.levens -= 1
+        print(f"Levens: {self.levens}")
+    
+    def reset(self):
+        self.x = 50
+        self.y = 500
+        self.score = 0
+        self.levens = 3
 ```
 
-Hier heeft het object een attribuut `xp` en een methode `voeg_xp_toe()`.
+Test methoden:
+```python
+speler = Speler(50, 500, "speler.png")
+speler.verdien_punten(10)
+speler.verlies_leven()
+speler.reset()
+```
 
----
+### Opgave 2: Eigen Sprite Maken
 
-## Voorbeeld met een speler
+1. Download **Piskel** (piskelapp.com) of gebruik Paint
+2. Maak een 32x48 poppetje
+3. Sla op als `speler.png` in je project-map
+4. Laad in je code
+
+### Opgave 3: Level Uitbreiden
+
+Voeg meer platforms toe:
 
 ```python
-class Speler:
-    def __init__(self, naam, hp):
-        self.naam = naam
-        self.hp = hp
-
-    def ontvang_schade(self, schade):
-        self.hp = self.hp - schade
-        print(self.naam, "heeft nog", self.hp, "hp")
-
-joost = Speler("Joost", 100)
-joost.ontvang_schade(20)
+platforms = [
+    Platform(0, 550, 800, 50),      # Grond
+    Platform(50, 450, 150, 20),
+    Platform(300, 400, 150, 20),
+    Platform(550, 350, 150, 20),
+    Platform(150, 250, 150, 20),
+    Platform(450, 200, 150, 20),
+]
 ```
 
-De speler houdt zijn eigen levens bij.
+### Opgave 4: Voeg Munten Toe
+
+Maak minstens 5 munten en plaats ze boven platforms.
 
 ---
 
-## Waarom zijn methoden handig?
+## 💡 Samenvatting
 
-Methoden zorgen ervoor dat je gedrag in één plaats kunt zetten.
-
-Dat maakt code:
-
-- overzichtelijker;
-- makkelijker te begrijpen;
-- makkelijker te hergebruiken.
-
-In een game kun je methoden gebruiken voor:
-
-- **bewegen** (de `move()` methode);
-- schieten;
-- springen;
-- punten verdienen;
-- levens verliezen.
+| Concept | Uitleg |
+|---------|--------|
+| **Methode** | Functie in een klasse (wat object kan doen) |
+| **Game-loop** | INPUT → UPDATE → RENDER (60x per seconde) |
+| **Sprite** | Afbeelding voor object (pixelart) |
+| **`draw()`** | Methode om object zichtbaar te maken |
+| **`pygame.image.load()`** | Laadt sprite van schijf |
+| **`screen.blit()`** | Plakt afbeelding op scherm |
+| **`pygame.draw.rect()`** | Tekent rechthoek |
+| **`pygame.draw.circle()`** | Tekent cirkel |
+| **`clock.tick(60)`** | Zorgt voor 60 FPS |
 
 ---
 
-## Samenvatting
+## Checklist: Begrijp je dit?
 
-- Een methode is een functie die bij een object hoort.
-- Attributen slaan gegevens op (bijv. `xSnelheid`).
-- Methoden veranderen of gebruiken die gegevens (bijv. `move()`).
-- `self` betekent: deze instantie van de klasse.
-- Een **game-loop** herhaalt INPUT → UPDATE → RENDER elke frame.
-- **FPS** bepaalt hoe snel de loop draait (bijv. 60 keer per seconde).
+- [ ] Wat is het verschil tussen een methode en een eigenschap?
+- [ ] Wat zijn de 4 stappen van de game-loop?
+- [ ] Hoe laad je een sprite in pygame?
+- [ ] Wat is `screen.blit()`?
+- [ ] Hoe teken je een rechthoek?
+- [ ] Hoe zorgen voor 60 FPS?
+- [ ] Kun je een speler-sprite van een bestand laden?
 
-## Check je begrip
+---
 
-1. Wat is een methode?
-2. Wat betekent `self`?
-3. Hoe roep je een methode aan?
-4. Waarom is het handig om gedrag in methoden te zetten?
-5. Wat zijn de drie stappen van een game-loop?
-6. Wat doet `clock.tick(60)`?
-7. Hoe zorg je dat een speler beweegt naar links?
+## ✅ Volgende Stap
 
-## Opdrachten
-
-1. **Game-loop met beweging**
-
-   <ol type='a'>
-   <li>Maak een Speler-klasse met attributen `x`, `y`, `xSnelheid`.</li>
-   <li>Voeg de methoden `move()` en `set_x_snelheid()` toe.</li>
-   <li>Bouw een game-loop die de speler met pijltjes bestuurbaar maakt.</li>
-   <li>Zorg dat de speler van links naar rechts kan bewegen.</li>
-   </ol>
-
-2. **Met `self` werken**
-
-   <ol type='a'>
-   <li>Leg uit wat `self` betekent in je beweging-programma.</li>
-   <li>Wat zou er fout gaan als je `self` vergat in je `move()` methode?</li>
-   <li>Waarom is het belangrijk dat elke speler zijn eigen `xSnelheid` heeft?</li>
-   </ol>
-
-3. **Toepassingsvraag: Verticale beweging**
-
-   Je wilt dat je speler ook omhoog en omlaag kan bewegen (niet alleen links-rechts).
-
-   <ol type='a'>
-   <li>Voeg `ySnelheid` toe aan je Speler-klasse.</li>
-   <li>Zorg dat pijl omhoog/omlaag ook werkt.</li>
-   <li>Zorg dat de speler niet buiten het scherm kan gaan.</li>
-   </ol>
-
-4. **FPS begrijpen**
-
-   <ol type='a'>
-   <li>Wat gebeurt er met je speler als je `clock.tick(60)` verandert in `clock.tick(30)`?</li>
-   <li>Waarom is een consistente FPS belangrijk in een game?</li>
-   <li>Hoeveel pixels beweegt je speler per seconde als `xSnelheid = 7` en FPS = 60?</li>
-   </ol>
-
-### Inzichtsvragen
-
-1. Wat is het verschil tussen een attribuut en een methode?
-2. Waarom kun je methoden vergelijken met acties van een object?
-3. Waarom stopt de speler van bewegen als je de toets loslaat?
-4. Hoe zorgt `set_x_snelheid()` voor vloeiende beweging?
+**Hoofstuk 3:** 
+- Lijsten van platforms
+- Level-design als datastructuur
+- Collision-voorbereiding
