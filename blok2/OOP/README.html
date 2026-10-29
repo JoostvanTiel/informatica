@@ -1,0 +1,1141 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>🎮 OOP + Pygame: Stick Hero’s Quest &#8212; Informatica</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'blok2/OOP/README';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Informatica</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welkom bij het Informatica Boek
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../blok1/index.html">4ha blok 1</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../blok1/hoofdstuk1.html">Hoofdstuk 1: Toestanden en automaten</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../blok1/hoofdstuk2.html">Hoofdstuk 2: Algoritmen en beslissingen</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../blok1/hoofdstuk3.html">Hoofdstuk 3: Datastructuren en operatoren</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../blok1/hoofdstuk4.html">Hoofdstuk 4: Lussen</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../blok1/hoofdstuk5.html">Hoofdstuk 5: Functies &amp; combineren</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../index.html">4ha blok 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../InfDig/index.html">Informatie Digitaal</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../InfDig/hoofdstuk1.html">Informatie Digitaal H1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../InfDig/hoofdstuk2.html">Informatie Digitaal H2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../InfDig/hoofdstuk3.html">Informatie Digitaal H3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../InfDig/hoofdstuk4.html">Informatie Digitaal H4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../InfDig/hoofdstuk5.html">Informatie Digitaal H5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../InfDig/hoofdstuk6.html">Informatie Digitaal H6</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="index.html">Objectgeoriënteerd Programmeren</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="hoofdstuk1.html">OOP H1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hoofdstuk2.html">OOP H2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hoofdstuk3.html">OOP H3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hoofdstuk4.html">OOP H4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hoofdstuk5.html">OOP H5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hoofdstuk6.html">OOP H6</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../blok3/index.html">4ha blok 3</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../blok3/hoofdstuk1.html">Hoofdstuk 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../blok3/hoofdstuk2.html">Hoofdstuk 2</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../blok4/index.html">4ha blok 4</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../blok4/hoofdstuk1.html">Hoofdstuk 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../blok4/hoofdstuk2.html">Hoofdstuk 2</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../blok5/index.html">4ha blok 5</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../blok5/hoofdstuk1.html">Hoofdstuk 1: Oriëntatie op SQL met SQL Island</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../blok5/hoofdstuk2.html">Hoofdstuk 2: SELECT, WHERE en ORDER BY</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../blok5/hoofdstuk3.html">Hoofdstuk 3: Relaties en JOINs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../blok5/hoofdstuk4.html">Hoofdstuk 4: UPDATE, DELETE, subqueries en GROUP BY</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../blok5/hoofdstuk5.html">Hoofdstuk 5: PHP + MySQL - gegevens tonen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../blok5/hoofdstuk6.html">Hoofdstuk 6: PHP + MySQL - UPDATE en DELETE via formulieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../blok5/hoofdstuk7.html">Hoofdstuk 7: Webshopproject - basisopzet en CRUD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../blok5/hoofdstuk8.html">Hoofdstuk 8: Webshopproject - afronding en presentatie</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/JoostvanTiel/informatica" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/JoostvanTiel/informatica/issues/new?title=Issue%20on%20page%20%2Fblok2/OOP/README.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/blok2/OOP/README.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>🎮 OOP + Pygame: Stick Hero’s Quest</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-dit">📚 Wat Is Dit?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-start">🚀 Quick Start</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voor-docent">Voor Docent</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voor-leerlingen">Voor Leerlingen</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bestandsstructuur">📁 Bestandsstructuur</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#week-per-week-overzicht">🎯 Week-per-Week Overzicht</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-students-build">🎮 What Students Build</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-1-static-sprite">Week 1 - Static Sprite</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-2-interactive-movement">Week 2 - Interactive Movement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-3-level-design">Week 3 - Level Design</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-4-physics-jumping">Week 4 - Physics &amp; Jumping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-5-collectibles-scoring">Week 5 - Collectibles &amp; Scoring</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-6-complete-game">Week 6 - Complete Game</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-checklist">🛠️ Installation Checklist</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-1-python-pygame">Stap 1: Python &amp; Pygame</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-2-test-installation">Stap 2: Test Installation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-3-jupyter-book-optioneel-voor-lesmateriaal">Stap 3: Jupyter Book (optioneel, voor lesmateriaal)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hoe-gebruik-je-dit-lesmateriaal">📖 Hoe Gebruik Je Dit Lesmateriaal?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-a-met-jupyter-book-aanbevolen">Option A: Met Jupyter Book (Aanbevolen)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-b-direct-markdown-lezen">Option B: Direct Markdown Lezen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-c-geprint-handout">Option C: Geprint Handout</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#didactische-aanpak">✅ Didactische Aanpak</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#per-lesson">Per Lesson</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluatie">Evaluatie</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veelgestelde-problemen">🚨 Veelgestelde Problemen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pygame-installeert-niet">“Pygame installeert niet”</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mijn-spel-loopt-niet">“Mijn spel loopt niet”</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#speler-valt-niet">“Speler valt niet”</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collision-werkt-niet">“Collision werkt niet”</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-resources">📚 Extra Resources</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Voor Docent</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voor-leerlingen-bonus">Voor Leerlingen (Bonus)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-outcomes">🎓 Learning Outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eindproduct-stick-hero-s-quest">🏆 Eindproduct: STICK HERO’S QUEST</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gegenereerde-documenten">📝 Gegenereerde Documenten</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feedback-verbetering">🤝 Feedback &amp; Verbetering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#support">📞 Support</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#klaar">✨ Klaar?</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="oop-pygame-stick-hero-s-quest">
+<h1>🎮 OOP + Pygame: Stick Hero’s Quest<a class="headerlink" href="#oop-pygame-stick-hero-s-quest" title="Link to this heading">#</a></h1>
+<p><strong>Compleet geintegreerd curriculum voor Blok 2 - Object Oriented Programming met game-building</strong></p>
+<hr class="docutils" />
+<section id="wat-is-dit">
+<h2>📚 Wat Is Dit?<a class="headerlink" href="#wat-is-dit" title="Link to this heading">#</a></h2>
+<p>Dit is een <strong>6-wekse OOP-cursus</strong> waarin leerlingen:</p>
+<ul class="simple">
+<li><p>✅ OOP-concepten leren (klassen, objecten, methoden, lijsten)</p></li>
+<li><p>✅ Elke week een werkend pygame-programma bouwen</p></li>
+<li><p>✅ <strong>Uiteindelijk een compleet, speelbaar platformer-spel maken</strong></p></li>
+</ul>
+<p>Geen abstracte voorbeelden. Geen “wacht tot het praktijkdeel”. <strong>Direct visueel feedback.</strong></p>
+</section>
+<hr class="docutils" />
+<section id="quick-start">
+<h2>🚀 Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading">#</a></h2>
+<section id="voor-docent">
+<h3>Voor Docent<a class="headerlink" href="#voor-docent" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><strong>Pygame installeren:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pygame
+</pre></div>
+</div>
+</li>
+<li><p><strong>Test het voorbeeld:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>voorbeeld_complete_game.py
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Druk SPACE in menu</p></li>
+<li><p>Pijltjes = bewegen</p></li>
+<li><p>SPACE = springen</p></li>
+<li><p>Geel = punten</p></li>
+<li><p>Vallen = game over</p></li>
+</ul>
+</li>
+<li><p><strong>Lees de bestanden:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">IMPLEMENTATIE_VOLTOOID.md</span></code> → Volledige overview</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PROGRESSIE_WEEK_PER_WEEK.md</span></code> → Didactisch plan</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hoofdstuk1.md</span></code> t/m <code class="docutils literal notranslate"><span class="pre">hoofdstuk6.md</span></code> → Lesmateriaal</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="voor-leerlingen">
+<h3>Voor Leerlingen<a class="headerlink" href="#voor-leerlingen" title="Link to this heading">#</a></h3>
+<p>Volg je docent stap-voor-stap Week 1-6. Elk week:</p>
+<ul class="simple">
+<li><p>📖 Theorie lezen in Jupyter Book</p></li>
+<li><p>💻 Code-voorbeelden typen</p></li>
+<li><p>🎮 Je spel zien groeien</p></li>
+<li><p>🏠 Huiswerk toevoegen</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="bestandsstructuur">
+<h2>📁 Bestandsstructuur<a class="headerlink" href="#bestandsstructuur" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>book/blok2/OOP/
+│
+├── 📖 LESMATERIAAL (6 hoofstukken)
+│   ├── hoofdstuk1.md          → Klassen &amp; Canvas
+│   ├── hoofdstuk2.md          → Game-Loop &amp; Beweging
+│   ├── hoofdstuk3.md          → Lijsten &amp; Platforms
+│   ├── hoofdstuk4.md          → Zwaartekracht &amp; Springen
+│   ├── hoofdstuk5.md          → Collision &amp; Score
+│   └── hoofdstuk6.md          → States &amp; Complete Game
+│
+├── 🎮 WERKENDE VOORBEELDEN
+│   └── voorbeeld_complete_game.py  → Volledig werkend spel
+│
+└── 📋 DOCUMENTATIE
+    ├── README.md (dit bestand)
+    ├── IMPLEMENTATIE_VOLTOOID.md     → Wat er is aangepast
+    ├── PROGRESSIE_WEEK_PER_WEEK.md   → Didactisch plan met checkpoints
+    └── index.md                      → TOC voor Jupyter Book
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="week-per-week-overzicht">
+<h2>🎯 Week-per-Week Overzicht<a class="headerlink" href="#week-per-week-overzicht" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Week</p></th>
+<th class="head"><p>Hst</p></th>
+<th class="head"><p>Concept</p></th>
+<th class="head"><p>Game-Feature</p></th>
+<th class="head"><p>Onderwerp</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>1</strong></p></td>
+<td><p>1</p></td>
+<td><p>Klassen &amp; Objects</p></td>
+<td><p>Speler op canvas</p></td>
+<td><p>Tekenen met <code class="docutils literal notranslate"><span class="pre">draw()</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>2</strong></p></td>
+<td><p>2</p></td>
+<td><p>Methoden &amp; Game-Loop</p></td>
+<td><p>Beweging</p></td>
+<td><p>Interactie: INPUT → UPDATE → RENDER</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>3</strong></p></td>
+<td><p>3</p></td>
+<td><p>Lijsten &amp; Datastructuren</p></td>
+<td><p>Platforms</p></td>
+<td><p>Level-design als data</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>4</strong></p></td>
+<td><p>4</p></td>
+<td><p>FPS &amp; Physics</p></td>
+<td><p>Gravity + Jumping</p></td>
+<td><p>Realistische beweging</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>5</strong></p></td>
+<td><p>5</p></td>
+<td><p>Collision &amp; Interactie</p></td>
+<td><p>Munten &amp; Score</p></td>
+<td><p>AABB collision + HUD</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>6</strong></p></td>
+<td><p>6</p></td>
+<td><p>Game States</p></td>
+<td><p>Menu’s &amp; Flow</p></td>
+<td><p>State machine + Complete game</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="what-students-build">
+<h2>🎮 What Students Build<a class="headerlink" href="#what-students-build" title="Link to this heading">#</a></h2>
+<section id="week-1-static-sprite">
+<h3>Week 1 - Static Sprite<a class="headerlink" href="#week-1-static-sprite" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">speler</span> <span class="o">=</span> <span class="n">Speler</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+<span class="n">speler</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Result:</strong> Rood vierkantje op scherm</p>
+</section>
+<section id="week-2-interactive-movement">
+<h3>Week 2 - Interactive Movement<a class="headerlink" href="#week-2-interactive-movement" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">speler</span><span class="o">.</span><span class="n">set_x_snelheid</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>  <span class="c1"># Pijltjes gebruiken</span>
+<span class="n">speler</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Result:</strong> Speler beweegt links-rechts</p>
+</section>
+<section id="week-3-level-design">
+<h3>Week 3 - Level Design<a class="headerlink" href="#week-3-level-design" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">platforms</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">Platform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">550</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>    <span class="c1"># Grond</span>
+    <span class="n">Platform</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span>  <span class="c1"># Level element</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>Result:</strong> Wereld met platforms</p>
+</section>
+<section id="week-4-physics-jumping">
+<h3>Week 4 - Physics &amp; Jumping<a class="headerlink" href="#week-4-physics-jumping" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">speler</span><span class="o">.</span><span class="n">ySnelheid</span> <span class="o">+=</span> <span class="n">zwaartekracht</span>  <span class="c1"># Vallen</span>
+<span class="n">speler</span><span class="o">.</span><span class="n">spring</span><span class="p">()</span>                     <span class="c1"># SPACE om te springen</span>
+</pre></div>
+</div>
+<p><strong>Result:</strong> Realistisch springend karakter</p>
+</section>
+<section id="week-5-collectibles-scoring">
+<h3>Week 5 - Collectibles &amp; Scoring<a class="headerlink" href="#week-5-collectibles-scoring" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">rechthoeken_botsen</span><span class="p">(</span><span class="n">speler</span><span class="p">,</span> <span class="n">munt</span><span class="p">):</span>
+    <span class="n">speler</span><span class="o">.</span><span class="n">verdien_punten</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">munten</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">munt</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Result:</strong> Werkende score-systeem</p>
+</section>
+<section id="week-6-complete-game">
+<h3>Week 6 - Complete Game<a class="headerlink" href="#week-6-complete-game" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="n">STATE_PLAYING</span><span class="p">:</span>
+    <span class="n">update_game</span><span class="p">()</span>  <span class="c1"># Physics &amp; collision</span>
+    <span class="n">draw_game</span><span class="p">()</span>    <span class="c1"># Render alles</span>
+<span class="k">elif</span> <span class="n">state</span> <span class="o">==</span> <span class="n">STATE_GAME_OVER</span><span class="p">:</span>
+    <span class="n">draw_game_over</span><span class="p">()</span>  <span class="c1"># Eindscore</span>
+</pre></div>
+</div>
+<p><strong>Result:</strong> Professioneel werkend spel!</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="installation-checklist">
+<h2>🛠️ Installation Checklist<a class="headerlink" href="#installation-checklist" title="Link to this heading">#</a></h2>
+<section id="stap-1-python-pygame">
+<h3>Stap 1: Python &amp; Pygame<a class="headerlink" href="#stap-1-python-pygame" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check Python versie (3.8+)</span>
+python<span class="w"> </span>--version
+
+<span class="c1"># Install pygame</span>
+pip<span class="w"> </span>install<span class="w"> </span>pygame
+</pre></div>
+</div>
+</section>
+<section id="stap-2-test-installation">
+<h3>Stap 2: Test Installation<a class="headerlink" href="#stap-2-test-installation" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Navigate naar deze map</span>
+<span class="nb">cd</span><span class="w"> </span><span class="s2">"book/blok2/OOP"</span>
+
+<span class="c1"># Run voorbeeld-spel</span>
+python<span class="w"> </span>voorbeeld_complete_game.py
+</pre></div>
+</div>
+</section>
+<section id="stap-3-jupyter-book-optioneel-voor-lesmateriaal">
+<h3>Stap 3: Jupyter Book (optioneel, voor lesmateriaal)<a class="headerlink" href="#stap-3-jupyter-book-optioneel-voor-lesmateriaal" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># In repository root</span>
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+jupyter-book<span class="w"> </span>build<span class="w"> </span>book/
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="hoe-gebruik-je-dit-lesmateriaal">
+<h2>📖 Hoe Gebruik Je Dit Lesmateriaal?<a class="headerlink" href="#hoe-gebruik-je-dit-lesmateriaal" title="Link to this heading">#</a></h2>
+<section id="option-a-met-jupyter-book-aanbevolen">
+<h3>Option A: Met Jupyter Book (Aanbevolen)<a class="headerlink" href="#option-a-met-jupyter-book-aanbevolen" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter-book<span class="w"> </span>build<span class="w"> </span>book/
+<span class="c1"># Open book/_build/html/blok2/OOP/index.html</span>
+</pre></div>
+</div>
+<p>Leerlingen lezen theorie + code-voorbeelden interactief.</p>
+</section>
+<section id="option-b-direct-markdown-lezen">
+<h3>Option B: Direct Markdown Lezen<a class="headerlink" href="#option-b-direct-markdown-lezen" title="Link to this heading">#</a></h3>
+<p>Open <code class="docutils literal notranslate"><span class="pre">.md</span></code>-bestanden direct in:</p>
+<ul class="simple">
+<li><p>GitHub (web)</p></li>
+<li><p>VS Code (met preview)</p></li>
+<li><p>Jupyter Notebook</p></li>
+<li><p>Elke markdown-viewer</p></li>
+</ul>
+</section>
+<section id="option-c-geprint-handout">
+<h3>Option C: Geprint Handout<a class="headerlink" href="#option-c-geprint-handout" title="Link to this heading">#</a></h3>
+<p>Download/print de <code class="docutils literal notranslate"><span class="pre">.md</span></code>-bestanden als werkboek.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="didactische-aanpak">
+<h2>✅ Didactische Aanpak<a class="headerlink" href="#didactische-aanpak" title="Link to this heading">#</a></h2>
+<section id="per-lesson">
+<h3>Per Lesson<a class="headerlink" href="#per-lesson" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Theorie</strong> (30 min) - Lees hoofdstuk + begrijp concept</p></li>
+<li><p><strong>Samen coderen</strong> (20 min) - Docent type, leerlingen kijken</p></li>
+<li><p><strong>Zelf doen</strong> (40 min) - Leerlingen typen eigen versie</p></li>
+<li><p><strong>Testen</strong> (10 min) - “Werkt het?”</p></li>
+<li><p><strong>Huiswerk</strong> (∞ min) - Uitbreiding van die week</p></li>
+</ol>
+</section>
+<section id="evaluatie">
+<h3>Evaluatie<a class="headerlink" href="#evaluatie" title="Link to this heading">#</a></h3>
+<p>Zie <code class="docutils literal notranslate"><span class="pre">PROGRESSIE_WEEK_PER_WEEK.md</span></code> voor:</p>
+<ul class="simple">
+<li><p>Weekly checkpoints</p></li>
+<li><p>Grading rubric</p></li>
+<li><p>Eindopdracht-criteria</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="veelgestelde-problemen">
+<h2>🚨 Veelgestelde Problemen<a class="headerlink" href="#veelgestelde-problemen" title="Link to this heading">#</a></h2>
+<section id="pygame-installeert-niet">
+<h3>“Pygame installeert niet”<a class="headerlink" href="#pygame-installeert-niet" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Maak virtual env</span>
+python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<span class="c1"># Activate</span>
+venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate<span class="w">  </span><span class="c1"># Windows</span>
+<span class="nb">source</span><span class="w"> </span>venv/bin/activate<span class="w">  </span><span class="c1"># Mac/Linux</span>
+<span class="c1"># Install</span>
+pip<span class="w"> </span>install<span class="w"> </span>pygame
+</pre></div>
+</div>
+</section>
+<section id="mijn-spel-loopt-niet">
+<h3>“Mijn spel loopt niet”<a class="headerlink" href="#mijn-spel-loopt-niet" title="Link to this heading">#</a></h3>
+<p>Controleer:</p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">pygame.init()</span></code> bovenaan</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">clock.tick(60)</span></code> in game-loop</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Events worden verwerkt</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Draw-functies worden aangeroepen</p></li>
+</ul>
+</section>
+<section id="speler-valt-niet">
+<h3>“Speler valt niet”<a class="headerlink" href="#speler-valt-niet" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Controleer zwaartekracht</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"ySnelheid: </span><span class="si">{</span><span class="n">speler</span><span class="o">.</span><span class="n">ySnelheid</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"op_grond: </span><span class="si">{</span><span class="n">speler</span><span class="o">.</span><span class="n">op_grond</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="collision-werkt-niet">
+<h3>“Collision werkt niet”<a class="headerlink" href="#collision-werkt-niet" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Debug AABB collision</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">rechthoeken_botsen</span><span class="p">(</span><span class="n">obj1</span><span class="p">,</span> <span class="n">obj2</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="n">obj1</span><span class="o">.</span><span class="n">rechts</span> <span class="o">&gt;</span> <span class="n">obj2</span><span class="o">.</span><span class="n">links</span> <span class="ow">and</span> <span class="o">...</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">result</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"BOTSING! </span><span class="si">{</span><span class="n">obj1</span><span class="si">}</span><span class="s2"> ↔ </span><span class="si">{</span><span class="n">obj2</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+<p>Zie ook: <code class="docutils literal notranslate"><span class="pre">PROGRESSIE_WEEK_PER_WEEK.md</span></code> → “Problemen &amp; Oplossingen”</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="extra-resources">
+<h2>📚 Extra Resources<a class="headerlink" href="#extra-resources" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3>Voor Docent<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Game Design:</strong> <code class="docutils literal notranslate"><span class="pre">game_design_stickherosquest.md</span></code> (in sessie-workspace)</p></li>
+<li><p><strong>Implementation Plan:</strong> <code class="docutils literal notranslate"><span class="pre">pygame_integratieplan_OOP.md</span></code> (in sessie-workspace)</p></li>
+<li><p><strong>Python Docs:</strong> <a class="reference external" href="https://docs.python.org/3/">https://docs.python.org/3/</a></p></li>
+<li><p><strong>Pygame Docs:</strong> <a class="reference external" href="https://www.pygame.org/docs/">https://www.pygame.org/docs/</a></p></li>
+</ul>
+</section>
+<section id="voor-leerlingen-bonus">
+<h3>Voor Leerlingen (Bonus)<a class="headerlink" href="#voor-leerlingen-bonus" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Pygame Tutorials:</strong> <a class="reference external" href="https://www.pygame.org/wiki/tutorials">https://www.pygame.org/wiki/tutorials</a></p></li>
+<li><p><strong>Python OOP:</strong> <a class="reference external" href="https://docs.python.org/3/tutorial/classes.html">https://docs.python.org/3/tutorial/classes.html</a></p></li>
+<li><p><strong>Game Development:</strong> YouTube “Pygame Tutorial”</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="learning-outcomes">
+<h2>🎓 Learning Outcomes<a class="headerlink" href="#learning-outcomes" title="Link to this heading">#</a></h2>
+<p><strong>Na deze 6 weken kan de leerling:</strong></p>
+<p>✅ <strong>OOP-concepten toepassen:</strong></p>
+<ul class="simple">
+<li><p>Klassen definiëren met eigenschappen en methoden</p></li>
+<li><p>Objecten instantiëren en gebruiken</p></li>
+<li><p>Methoden aanroepen en data manipuleren</p></li>
+<li><p>Lijsten van objecten beheren</p></li>
+</ul>
+<p>✅ <strong>Game-programmering begrijpen:</strong></p>
+<ul class="simple">
+<li><p>Game-loop (INPUT → UPDATE → RENDER) implementeren</p></li>
+<li><p>Toetsenbordbesturing verwerken</p></li>
+<li><p>Physics (gravity, velocity) simuleren</p></li>
+<li><p>Collision detection uitvoeren</p></li>
+<li><p>State machine patroon gebruiken</p></li>
+</ul>
+<p>✅ <strong>Praktisch programmeren:</strong></p>
+<ul class="simple">
+<li><p>Code debuggen en testen</p></li>
+<li><p>Visueel feedback geven (HUD, menus)</p></li>
+<li><p>Datastructuren voor level-design gebruiken</p></li>
+<li><p>Professionele game-flow implementeren</p></li>
+</ul>
+<p>✅ <strong>Reflectie &amp; Iteratie:</strong></p>
+<ul class="simple">
+<li><p>Eigen code aanpassen en verbeteren</p></li>
+<li><p>Performance optimaliseren</p></li>
+<li><p>Eigen features toevoegen (bonus)</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="eindproduct-stick-hero-s-quest">
+<h2>🏆 Eindproduct: STICK HERO’S QUEST<a class="headerlink" href="#eindproduct-stick-hero-s-quest" title="Link to this heading">#</a></h2>
+<p><strong>Een speelbaar platformer-spel waar:</strong></p>
+<ul class="simple">
+<li><p>Speler kan bewegen (←→) en springen (SPACE)</p></li>
+<li><p>Platforms op scherm staan</p></li>
+<li><p>Munten verzamelen punten opleveren</p></li>
+<li><p>Score op HUD verschijnt</p></li>
+<li><p>Game eindigt bij vallen (GAME OVER)</p></li>
+<li><p>Menu-scherm start/herstart het spel</p></li>
+<li><p>Alles bij elkaar: ~400-600 regels Python-code</p></li>
+</ul>
+<p><strong>Portfolio-klaar:</strong> Leerlingen kunnen dit spel:</p>
+<ul class="simple">
+<li><p>Laten zien aan vrienden</p></li>
+<li><p>Op hun CV zetten</p></li>
+<li><p>Uitbreiden met features</p></li>
+<li><p>Hergebruiken als template</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="gegenereerde-documenten">
+<h2>📝 Gegenereerde Documenten<a class="headerlink" href="#gegenereerde-documenten" title="Link to this heading">#</a></h2>
+<p>Dit curriculum is gegenereerd met:</p>
+<ul class="simple">
+<li><p>✅ Expert review van vorig jaar’s materiaal (4HA periode 3)</p></li>
+<li><p>✅ Analyse van huidige OOP-theorie (Blok 2)</p></li>
+<li><p>✅ Didactische voorbereiding (progressie, checkpoints)</p></li>
+<li><p>✅ Werkende code-voorbeelden</p></li>
+<li><p>✅ Grading-criteria</p></li>
+</ul>
+<p><strong>Status:</strong> Klaar voor directe implementatie<br />
+<strong>Datum:</strong> Oktober 2026<br />
+<strong>Auteur:</strong> Copilot AI (onder begeleiding Joost van Tiel)</p>
+</section>
+<hr class="docutils" />
+<section id="feedback-verbetering">
+<h2>🤝 Feedback &amp; Verbetering<a class="headerlink" href="#feedback-verbetering" title="Link to this heading">#</a></h2>
+<p>Heb je suggesties? Log hier feedback:</p>
+<ol class="arabic simple">
+<li><p><strong>Code-voorbeelden:</strong> Werken ze goed? Duidelijk?</p></li>
+<li><p><strong>Moeilijkheidsniveau:</strong> Gaat het te snel? Traag?</p></li>
+<li><p><strong>Student-response:</strong> Wat werkt goed? Wat niet?</p></li>
+<li><p><strong>Features:</strong> Wil je andere game-onderdelen?</p></li>
+</ol>
+<p><strong>Meld issues in:</strong> <code class="docutils literal notranslate"><span class="pre">...</span> <span class="pre">(je</span> <span class="pre">eigen</span> <span class="pre">tracking</span> <span class="pre">system)</span></code></p>
+</section>
+<hr class="docutils" />
+<section id="support">
+<h2>📞 Support<a class="headerlink" href="#support" title="Link to this heading">#</a></h2>
+<p><strong>Voor Docent-Vragen:</strong></p>
+<ul class="simple">
+<li><p>Check <code class="docutils literal notranslate"><span class="pre">IMPLEMENTATIE_VOLTOOID.md</span></code> → Veelgestelde vragen</p></li>
+<li><p>Check <code class="docutils literal notranslate"><span class="pre">PROGRESSIE_WEEK_PER_WEEK.md</span></code> → Troubleshooting</p></li>
+</ul>
+<p><strong>Voor Leerling-Vragen:</strong></p>
+<ul class="simple">
+<li><p>Loop door stap-per-stap van het hoofdstuk</p></li>
+<li><p>Test je code regel-per-regel</p></li>
+<li><p>Print debug-waarden</p></li>
+<li><p>Vraag docent (dat is deel van leren!)</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="klaar">
+<h2>✨ Klaar?<a class="headerlink" href="#klaar" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Laat ons beginnen!</span>
+<span class="n">python</span> <span class="n">voorbeeld_complete_game</span><span class="o">.</span><span class="n">py</span>
+
+<span class="c1"># SPACE → START</span>
+<span class="c1"># Pijltjes → BEWEGEN</span>
+<span class="c1"># SPACE → SPRINGEN</span>
+<span class="c1"># Geel → MUNTEN VERZAMELEN</span>
+<span class="c1"># GAME OVER → TERUG NAAR MENU</span>
+
+<span class="c1"># Week 1 → Week 6: Jij bouwt dit stap-voor-stap!</span>
+</pre></div>
+</div>
+<p><strong>Veel plezier met pygame! 🎮</strong></p>
+<hr class="docutils" />
+<p><em>Opgesteld door: Copilot Code Education</em><br />
+<em>Voor: Joost van Tiel - Informatica Educatie</em><br />
+<em>Status: ✅ Production Ready</em></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./blok2/OOP"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-dit">📚 Wat Is Dit?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-start">🚀 Quick Start</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voor-docent">Voor Docent</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voor-leerlingen">Voor Leerlingen</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bestandsstructuur">📁 Bestandsstructuur</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#week-per-week-overzicht">🎯 Week-per-Week Overzicht</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-students-build">🎮 What Students Build</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-1-static-sprite">Week 1 - Static Sprite</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-2-interactive-movement">Week 2 - Interactive Movement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-3-level-design">Week 3 - Level Design</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-4-physics-jumping">Week 4 - Physics &amp; Jumping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-5-collectibles-scoring">Week 5 - Collectibles &amp; Scoring</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#week-6-complete-game">Week 6 - Complete Game</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-checklist">🛠️ Installation Checklist</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-1-python-pygame">Stap 1: Python &amp; Pygame</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-2-test-installation">Stap 2: Test Installation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-3-jupyter-book-optioneel-voor-lesmateriaal">Stap 3: Jupyter Book (optioneel, voor lesmateriaal)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hoe-gebruik-je-dit-lesmateriaal">📖 Hoe Gebruik Je Dit Lesmateriaal?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-a-met-jupyter-book-aanbevolen">Option A: Met Jupyter Book (Aanbevolen)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-b-direct-markdown-lezen">Option B: Direct Markdown Lezen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-c-geprint-handout">Option C: Geprint Handout</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#didactische-aanpak">✅ Didactische Aanpak</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#per-lesson">Per Lesson</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluatie">Evaluatie</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veelgestelde-problemen">🚨 Veelgestelde Problemen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pygame-installeert-niet">“Pygame installeert niet”</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mijn-spel-loopt-niet">“Mijn spel loopt niet”</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#speler-valt-niet">“Speler valt niet”</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collision-werkt-niet">“Collision werkt niet”</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-resources">📚 Extra Resources</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Voor Docent</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voor-leerlingen-bonus">Voor Leerlingen (Bonus)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-outcomes">🎓 Learning Outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eindproduct-stick-hero-s-quest">🏆 Eindproduct: STICK HERO’S QUEST</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gegenereerde-documenten">📝 Gegenereerde Documenten</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feedback-verbetering">🤝 Feedback &amp; Verbetering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#support">📞 Support</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#klaar">✨ Klaar?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By SSgN
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,187 +1,302 @@
-# Objectgeoriënteerd Programmeren Hoofdstuk 6: Start- en eindscherm
+# Objectgeoriënteerd Programmeren Hoofdstuk 6: Game States, Menus en Complete Game Flow
 
 ## Leerdoelen
 
-Een goed spel begint niet meteen met het spelen. Vaak heb je een **startscherm** en later een **eindscherm**.
+Een volledig spel bestaat uit meerdere **toestanden** (states): een startscherm, het eigenlijke spel, en een game-over scherm. Met behulp van **state management** zorg je dat je spel professioneel aanvoelt.
 
 Je leert:
 
-- hoe een startscherm werkt;
-- hoe je een spel start en reset;
-- hoe je een eindscherm maakt;
-- hoe je een spel opnieuw kunt starten;
-- hoe je de game-status beheert.
+- hoe game-states werken (menu, spelen, game-over);
+- hoe je een state machine bouwt;
+- hoe je een startscherm maakt;
+- hoe je een game-over scherm maakt;
+- hoe je naar verschillende states overgaat;
+- hoe je het spel reset en opnieuw start;
+- hoe je een **complete, werkende game** bouwt.
 
-Aan het einde van dit hoofdstuk kun je een eenvoudige spelstaat ontwerpen met een startscherm en een game-over scherm.
-
----
-
-## Waarom een startscherm?
-
-Een startscherm laat de speler zien dat het spel klaar is om te starten.
-
-Het is nuttig om:
-
-- een titel te tonen;
-- een knop te laten zien;
-- de speler een keuze te geven.
-
-Voorbeeld:
-
-```text
-START SPEL
-SLUIT KNOP
-```
+Aan het einde van dit hoofdstuk heb je een volledige, spelbare platformer game!
 
 ---
 
-## Spelstatus
+## Waarom game-states?
 
 De game hoeft niet altijd in dezelfde staat te zitten.
 
 Je hebt bijvoorbeeld:
 
-- `startscherm`
-- `spelen`
-- `game_over`
+- **`"menu"`** - Startscherm, wacht op SPACE om te beginnen
+- **`"playing"`** - Actief spel, speler bestuurt zijn karakter
+- **`"game_over"`** - Game-over scherm, wacht op SPACE om terug naar menu
 
-Deze toestanden kun je opslaan in een variabele.
+Deze toestanden kun je opslaan in een variabele:
 
 ```python
-status = "startscherm"
+state = "menu"
+
+if state == "menu":
+    toon_startscherm()
+elif state == "playing":
+    update_en_teken_game()
+elif state == "game_over":
+    toon_game_over_scherm()
 ```
 
-Dan kun je in je loop checken welke toestand actief is.
+Het voordeel: je code is **duidelijker gestructureerd** en **makkelijker uit te breiden**.
 
 ---
 
-## Starten van het spel
+## Een State Machine bouwen
 
-Als je op "Start" klikt, zet je de status op:
-
-```python
-status = "spelen"
-```
-
-Dan worden alle objecten opnieuw gemaakt en begint het spel.
+Een **state machine** is een systeem dat toestanden beheert en overgangen tussen toestanden.
 
 ```python
-joost = Speler(100)
-vijanden = []
-```
+STATE_MENU = "menu"
+STATE_PLAYING = "playing"
+STATE_GAME_OVER = "game_over"
 
----
-
-## Eindscherm
-
-Als de speler alle levens verlaat of een doel niet haalt, kun je de status aanpassen:
-
-```python
-status = "game_over"
-```
-
-Daarna kun je een scherm tonen met tekst zoals:
-
-```text
-GAME OVER
-Druk op spatie om opnieuw te starten
-```
-
----
-
-## Resetten van het spel
-
-Een reset is handig als je opnieuw wilt beginnen.
-
-```python
-if status == "game_over" and toets_ingedrukt:
-    status = "startscherm"
-```
-
-Of je roept een functie aan die alle waarden terugzet.
-
-```python
-def start_game():
-    speler = Speler()
-    score = 0
-    status = "spelen"
+class Game:
+    def __init__(self):
+        self.state = STATE_MENU
+        self.score = 0
+        self.level = 1
+    
+    def change_state(self, new_state):
+        """Verander naar een ander state."""
+        self.state = new_state
+        
+        if new_state == STATE_MENU:
+            self.reset_game()
+        elif new_state == STATE_PLAYING:
+            self.start_game()
 ```
 
 ---
 
-## Voorbeeld: simpele spelstatus
+## Het Startscherm
+
+Een startscherm toont:
+- De gametitel
+- Instructies (bv. "Druk SPACE om te starten")
+- Eventueel besturingsknopjes
 
 ```python
-status = "startscherm"
-
-while True:
-    if status == "startscherm":
-        toon_startscherm()
-    elif status == "spelen":
-        update_spel()
-    elif status == "game_over":
-        toon_game_over()
+def draw_menu(screen, font_big, font_small):
+    """Teken het startscherm."""
+    screen.fill((50, 50, 50))  # Donkergrijze achtergrond
+    
+    # Titel
+    title = font_big.render("STICK HERO'S QUEST", True, (255, 200, 0))
+    title_rect = title.get_rect(center=(BREEDTE // 2, HOOGTE // 4))
+    screen.blit(title, title_rect)
+    
+    # Instructies
+    instr1 = font_small.render("Pijlen: Bewegen", True, (255, 255, 255))
+    instr2 = font_small.render("SPACE: Springen", True, (255, 255, 255))
+    instr3 = font_small.render("Druk SPACE om te STARTEN", True, (0, 255, 0))
+    
+    screen.blit(instr1, [BREEDTE // 2 - 100, HOOGTE // 2])
+    screen.blit(instr2, [BREEDTE // 2 - 100, HOOGTE // 2 + 40])
+    screen.blit(instr3, [BREEDTE // 2 - 150, HOOGTE // 2 + 100])
+    
+    pygame.display.flip()
 ```
 
-Zo is het duidelijk wat het spel op ieder moment doet.
+---
+
+## Het Eindscherm (Game Over)
+
+Een game-over scherm toont:
+- "GAME OVER" boodschap
+- Eindresultaat (score, level)
+- Instructie voor herstarten
+
+```python
+def draw_game_over(screen, font_big, font_small, speler):
+    """Teken het game-over scherm."""
+    screen.fill((50, 0, 0))  # Donkerrood
+    
+    # Game Over tekst
+    text = font_big.render("GAME OVER", True, (255, 0, 0))
+    text_rect = text.get_rect(center=(BREEDTE // 2, HOOGTE // 3))
+    screen.blit(text, text_rect)
+    
+    # Score info
+    score_text = font_small.render(f"Final Score: {speler.score}", True, (255, 255, 255))
+    restart_text = font_small.render("Druk SPACE om terug naar MENU", True, (0, 255, 0))
+    
+    screen.blit(score_text, [BREEDTE // 2 - 150, HOOGTE // 2])
+    screen.blit(restart_text, [BREEDTE // 2 - 200, HOOGTE // 2 + 50])
+    
+    pygame.display.flip()
+```
+
+---
+
+## Spel Resetten en Starten
+
+Wanneer je naar "playing" gaat, moet je alles reset:
+
+```python
+def init_game():
+    """Initialiseer een nieuw spel."""
+    speler = Speler(50, 500)
+    
+    platforms = [
+        Platform(0, 550, 800, 50),
+        Platform(100, 450, 200, 25),
+        Platform(450, 350, 250, 25),
+    ]
+    
+    munten = [
+        Munt(200, 400),
+        Munt(575, 300),
+    ]
+    
+    return speler, platforms, munten
+```
+
+---
+
+## Hoe Game States werken: Diagram
+
+```
+┌─────────────┐
+│    MENU     │ (wacht op SPACE)
+└──────┬──────┘
+       │ SPACE ingedrukt
+       ↓
+┌─────────────┐
+│   PLAYING   │ (speler bestuurt, munten pakken)
+└──────┬──────┘
+       │ Speler valt/levens op 0
+       ↓
+┌─────────────┐
+│  GAME OVER  │ (toon score, wacht op SPACE)
+└──────┬──────┘
+       │ SPACE ingedrukt
+       ↓
+    MENU
+```
+
+---
+
+## Waarom een Startscherm?
+
+Een startscherm is belangrijk voor:
+- **Gebruikerservaring** - Spelers weten wanneer ze kunnen starten
+- **Instructies** - Je kunt besturing uitleggen
+- **Branding** - Je game voelt professioneel
+- **Pauze-mogelijkheid** - Spelers kunnen teruggaan
+
+---
+
+## Volledig Voorbeeld: Complete Game met States
+
+Zie de sessie-bestanden voor een volledig werkend voorbeeld (`voorbeeld_complete_game.py`).
+
+De logica:
+
+```python
+def main():
+    state = STATE_MENU
+    running = True
+    
+    while running:
+        # INPUT
+        for event in pygame.event.get():
+            if state == STATE_MENU and event.key == pygame.K_SPACE:
+                state = STATE_PLAYING
+                speler, platforms, munten = init_game()
+            
+            elif state == STATE_PLAYING:
+                # ... speler input ...
+            
+            elif state == STATE_GAME_OVER and event.key == pygame.K_SPACE:
+                state = STATE_MENU
+        
+        # UPDATE & RENDER
+        if state == STATE_MENU:
+            draw_menu()
+        elif state == STATE_PLAYING:
+            game_running = update_game(speler, platforms, munten)
+            draw_game(speler, platforms, munten)
+            if not game_running:
+                state = STATE_GAME_OVER
+        elif state == STATE_GAME_OVER:
+            draw_game_over(speler)
+        
+        clock.tick(60)
+    
+    pygame.quit()
+```
 
 ---
 
 ## Samenvatting
 
-- Een startscherm helpt bij het openen van het spel.
-- Een eindscherm laat de speler zien dat het spel is afgelopen.
-- Je gebruikt statusvariabelen om verschillende schermen te regelen.
-- Resetten en opnieuw starten maakt een spel beter te gebruiken.
+- **State Machine** bestuurt verschillende speltoestanden
+- **STATE_MENU** = Startscherm
+- **STATE_PLAYING** = Actief spel
+- **STATE_GAME_OVER** = Eindscherm
+- **Transities** gebeuren op basis van events (bijv. SPACE)
+- **Reset** zorgt dat het spel opnieuw kan beginnen
+- Met states is je game **professioneel gestructureerd**!
 
 ## Check je begrip
 
-1. Waarom heb je een startscherm?
-2. Wat is een spelstatus?
-3. Hoe kun je een game-over scherm laten zien?
-4. Waarom is resetten handig?
-
-## Afbeeldingen en bronnen
-
-- Zelf maken: maak een schematische flowchart van startscherm → spel → game over.
-- Online zoeken: [Game menu UI voorbeelden](https://www.youtube.com/results?search_query=game+menu+ui+start+screen)
-- Online zoeken: [Pygame menu tutorial](https://www.pygame.org/docs/)
-- Online zoeken: [Wikipedia: game state](https://en.wikipedia.org/wiki/Game_state)
+1. Wat is een state machine?
+2. Welke drie states heeft je game?
+3. Hoe ga je van menu naar playing?
+4. Wat staat op het game-over scherm?
+5. Waarom moet je het spel resetten?
+6. Hoe structureert een state machine je code?
 
 ## Opdrachten
 
-1. Startscherm maken
+1. **Startscherm implementeren**
 
    <ol type='a'>
-   <li>Teken een eenvoudig startscherm met tekst zoals `START SPEL`.</li>
-   <li>Leg uit welke variabele je gebruikt om te onthouden in welke toestand het spel zich bevindt.</li>
-   <li>Noem drie mogelijke toestanden van een simpel spel.</li>
+   <li>Maak een `draw_menu()` functie.</li>
+   <li>Toon gametitel en instructies.</li>
+   <li>Zorg dat SPACE naar playing gaat.</li>
    </ol>
-2. Eindscherm en reset
+
+2. **Game-over scherm**
 
    <ol type='a'>
-   <li>Schrijf een korte structuur waarin het spel eerst een startscherm toont, daarna het spel en daarna een game-over scherm.</li>
-   <li>Welke code zou je gebruiken om het spel opnieuw te starten?</li>
-   <li>Waarom is het handig om statusvariabelen te gebruiken in plaats van losse losse `if`-checks?</li>
+   <li>Maak een `draw_game_over()` functie.</li>
+   <li>Toon "GAME OVER" en de eindscore.</li>
+   <li>SPACE gaat terug naar menu.</li>
    </ol>
-3. Toepassingsvraag
 
-   Je maakt een spel waarin een speler een level kan winnen of verliezen.
-
-   <ol type='a'>
-   <li>Hoe kun je de status van het spel veranderen als het level is afgelopen?</li>
-   <li>Waarom is een start- en eindscherm belangrijk voor een spelervaring?</li>
-   <li>Noem een situatie waarin een reset van het spel logisch is.</li>
-   </ol>
-4. Beheer een spelstate
+3. **State machine**
 
    <ol type='a'>
-   <li>Maak een variabele `status` met de waarden `startscherm`, `spelen` en `game_over`.</li>
-   <li>Leg uit wanneer je `status = "spelen"` zet.</li>
-   <li>Schrijf een korte reden waarom een reset van de status belangrijk is voor een nieuwe ronde.</li>
+   <li>Maak een `state` variabele met MENU, PLAYING, GAME_OVER.</li>
+   <li>Voeg logica toe: if state == MENU, elif state == PLAYING, etc.</li>
+   <li>Test alle transities.</li>
    </ol>
+
+4. **Complete game**
+
+   <ol type='a'>
+   <li>Combineer alles: klasses, game-loop, states, menu's.</li>
+   <li>Test: startscherm → spel → game-over → menu.</li>
+   <li>Zorg dat munten en score werken.</li>
+   </ol>
+
+5. **Level upgrade (bonus)**
+
+   <ol type='a'>
+   <li>Maak een Level 2 met meer platforms en munten.</li>
+   <li>Zorg dat je na Level 1 automatisch Level 2 speelt.</li>
+   <li>Voeg een "Level Won" screen toe.</li>
+   </ol>
+
 ### Inzichtsvragen
 
-1. Wat is een spelstatus?
-2. Waarom kun je het spel vergelijken met een machine met verschillende toestanden?
-3. Hoe helpt een startscherm om een spel overzichtelijk te maken?
+1. Waarom heb je een startscherm nodig?
+2. Hoe helpt een state machine met het organiseren van je code?
+3. Wat gebeurt er als je niet reset?
+4. Hoe voelt een game met startscherm beter dan zonder?
+5. Waarom is een game-over scherm beter dan direct afsluiten?

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Objectgeoriënteerd Programmeren Hoofdstuk 5: Score en levens &#8212; Informatica</title>
+    <title>Objectgeoriënteerd Programmeren Hoofdstuk 5: Collectibles, Score en Botsingsdetectie &#8212; Informatica</title>
   
   
   
@@ -64,8 +64,8 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Objectgeoriënteerd Programmeren Hoofdstuk 6: Start- en eindscherm" href="hoofdstuk6.html" />
-    <link rel="prev" title="Objectgeoriënteerd Programmeren Hoofdstuk 4: FPS en tijd" href="hoofdstuk4.html" />
+    <link rel="next" title="Objectgeoriënteerd Programmeren Hoofdstuk 6: Game States, Menus en Complete Game Flow" href="hoofdstuk6.html" />
+    <link rel="prev" title="Objectgeoriënteerd Programmeren Hoofdstuk 4: FPS, Zwaartekracht en Springen" href="hoofdstuk4.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -451,7 +451,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Objectgeoriënteerd Programmeren Hoofdstuk 5: Score en levens</h1>
+    <h1>Objectgeoriënteerd Programmeren Hoofdstuk 5: Collectibles, Score en Botsingsdetectie</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -462,14 +462,23 @@
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#score">Score</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#levens">Levens</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenwerken-tussen-objecten">Samenwerken tussen objecten</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tekst-op-het-scherm">Tekst op het scherm</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld">Voorbeeld</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#score-en-levens-bijhouden">Score en Levens bijhouden</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#score-en-levens-in-een-klasse">Score en Levens in een klasse</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collectibles-munten-die-je-kunt-pakken">Collectibles: Munten die je kunt pakken</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#munt-klasse">Munt-klasse</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#munten-in-je-level-plaatsen">Munten in je level plaatsen</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#botsingsdetectie-aabb-collision">Botsingsdetectie: AABB Collision</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aabb-formule">AABB Formule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-speler-raakt-munt">Voorbeeld: Speler raakt munt</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tekst-op-het-scherm-score-en-levens-tonen">Tekst op het scherm: Score en Levens tonen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#game-over-detectie">Game Over Detectie</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#volledig-voorbeeld-munten-en-score-werken">Volledig voorbeeld: Munten en Score werken</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#afbeeldingen-en-bronnen">Afbeeldingen en bronnen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inzichtsvragen">Inzichtsvragen</a></li>
 </ul>
@@ -485,24 +494,26 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="objectgeorienteerd-programmeren-hoofdstuk-5-score-en-levens">
-<h1>Objectgeoriënteerd Programmeren Hoofdstuk 5: Score en levens<a class="headerlink" href="#objectgeorienteerd-programmeren-hoofdstuk-5-score-en-levens" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="objectgeorienteerd-programmeren-hoofdstuk-5-collectibles-score-en-botsingsdetectie">
+<h1>Objectgeoriënteerd Programmeren Hoofdstuk 5: Collectibles, Score en Botsingsdetectie<a class="headerlink" href="#objectgeorienteerd-programmeren-hoofdstuk-5-collectibles-score-en-botsingsdetectie" title="Link to this heading">#</a></h1>
 <section id="leerdoelen">
 <h2>Leerdoelen<a class="headerlink" href="#leerdoelen" title="Link to this heading">#</a></h2>
-<p>Een spel is leuker als je punten kunt verzamelen en levens kunt verliezen. Deze informatie moet in het programma worden bijgehouden.</p>
+<p>Een spel is leuker als je punten kunt verzamelen en duidelijke feedback krijgt. Nu gaan we <strong>interactie</strong> tussen verschillende objecten implementeren: speler raakt munten, speler raakt platforms, speler valt uit beeld.</p>
 <p>Je leert:</p>
 <ul class="simple">
 <li><p>hoe je score kunt bijhouden;</p></li>
-<li><p>hoe je levens kunt opslaan;</p></li>
-<li><p>hoe je bij een treffen punten of schade geeft;</p></li>
+<li><p>hoe je levens/health bijhoudt;</p></li>
+<li><p>hoe je <strong>botsingsdetectie</strong> implementeert (AABB collision);</p></li>
+<li><p>hoe je <strong>collectibles</strong> (munten) laat werken;</p></li>
 <li><p>hoe je een score op het scherm laat zien;</p></li>
-<li><p>hoe objecten samenwerken in een spel.</p></li>
+<li><p>hoe je game-over detecteert;</p></li>
+<li><p>hoe objecten met elkaar <strong>interacteren</strong>.</p></li>
 </ul>
-<p>Aan het einde van dit hoofdstuk kun je een score en levens in een kleine game laten werken.</p>
+<p>Aan het einde van dit hoofdstuk heb je een werkende game met munten, score, en game-over!</p>
 </section>
 <hr class="docutils" />
-<section id="score">
-<h2>Score<a class="headerlink" href="#score" title="Link to this heading">#</a></h2>
+<section id="score-en-levens-bijhouden">
+<h2>Score en Levens bijhouden<a class="headerlink" href="#score-en-levens-bijhouden" title="Link to this heading">#</a></h2>
 <p>Een score is een getal dat bijhoudt hoeveel punten je hebt.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">punten</span> <span class="o">=</span> <span class="mi">0</span>
 </pre></div>
@@ -511,129 +522,469 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">punten</span> <span class="o">=</span> <span class="n">punten</span> <span class="o">+</span> <span class="mi">10</span>
 </pre></div>
 </div>
-<p>Dat is precies wat je in een spel vaak doet.</p>
-</section>
-<hr class="docutils" />
-<section id="levens">
-<h2>Levens<a class="headerlink" href="#levens" title="Link to this heading">#</a></h2>
-<p>Levens geven aan hoe vaak een speler iets kan misgaan.</p>
+<p>Levens geven aan hoe vaak iets fout kan gaan:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">levens</span> <span class="o">=</span> <span class="mi">3</span>
-</pre></div>
-</div>
-<p>Als een vijand je raakt, kun je levens verminderen:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">levens</span> <span class="o">=</span> <span class="n">levens</span> <span class="o">-</span> <span class="mi">1</span>
-</pre></div>
-</div>
-<p>Als levens 0 zijn, is het spel afgelopen.</p>
-</section>
-<hr class="docutils" />
-<section id="samenwerken-tussen-objecten">
-<h2>Samenwerken tussen objecten<a class="headerlink" href="#samenwerken-tussen-objecten" title="Link to this heading">#</a></h2>
-<p>In een game zijn score en levens geen losse variabelen. Ze horen vaak bij het spel of bij de speler.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Speler</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">levens</span> <span class="o">=</span> <span class="mi">3</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
-</pre></div>
-</div>
-<p>Als een vijand wordt geraakt, kun je de score veranderen.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">speler</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="mi">10</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils" />
-<section id="tekst-op-het-scherm">
-<h2>Tekst op het scherm<a class="headerlink" href="#tekst-op-het-scherm" title="Link to this heading">#</a></h2>
-<p>Je kunt punten en levens ook laten zien in het spel.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tekst</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s2">"Score: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">punten</span><span class="p">),</span> <span class="kc">True</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-</pre></div>
-</div>
-<p>Dat is handig om de speler te informeren.</p>
-</section>
-<hr class="docutils" />
-<section id="voorbeeld">
-<h2>Voorbeeld<a class="headerlink" href="#voorbeeld" title="Link to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Speler</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">levens</span> <span class="o">=</span> <span class="mi">3</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">raak_gevangen</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">levens</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">levens</span> <span class="o">-</span> <span class="mi">1</span>
-
+<span class="k">if</span> <span class="n">vijand_raakt_speler</span><span class="p">:</span>
+    <span class="n">levens</span> <span class="o">=</span> <span class="n">levens</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">levens</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">game_over</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="score-en-levens-in-een-klasse">
+<h2>Score en Levens in een klasse<a class="headerlink" href="#score-en-levens-in-een-klasse" title="Link to this heading">#</a></h2>
+<p>In een game zijn score en levens niet zomaar losse variabelen. Ze horen bij je speler of je game:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Speler</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="c1"># ... andere attributes ...</span>
+        
+        <span class="c1"># NIEUW: Game stats</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">levens</span> <span class="o">=</span> <span class="mi">3</span>
+    
     <span class="k">def</span><span class="w"> </span><span class="nf">verdien_punten</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">aantal</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">+</span> <span class="n">aantal</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="n">aantal</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">verlies_leven</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">levens</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">levens</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>  <span class="c1"># Game Over</span>
+        <span class="k">return</span> <span class="kc">True</span>
 </pre></div>
 </div>
-<p>Nu kun je het spel laten reageren op acties.</p>
+</section>
+<hr class="docutils" />
+<section id="collectibles-munten-die-je-kunt-pakken">
+<h2>Collectibles: Munten die je kunt pakken<a class="headerlink" href="#collectibles-munten-die-je-kunt-pakken" title="Link to this heading">#</a></h2>
+<p>Nu willen we <strong>munten</strong> toevoegen die de speler kan verzamelen voor punten.</p>
+<section id="munt-klasse">
+<h3>Munt-klasse<a class="headerlink" href="#munt-klasse" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Munt</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="mi">8</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">kleur</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># Geel</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">kleur</span><span class="p">,</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)],</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">)</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">links</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">rechts</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">boven</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">onder</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span>
+</pre></div>
+</div>
+</section>
+<section id="munten-in-je-level-plaatsen">
+<h3>Munten in je level plaatsen<a class="headerlink" href="#munten-in-je-level-plaatsen" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">maak_level_1_munten</span><span class="p">():</span>
+    <span class="n">munten</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">Munt</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">400</span><span class="p">),</span>      <span class="c1"># Op platform 2</span>
+        <span class="n">Munt</span><span class="p">(</span><span class="mi">550</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span>      <span class="c1"># Op platform 3</span>
+        <span class="n">Munt</span><span class="p">(</span><span class="mi">700</span><span class="p">,</span> <span class="mi">450</span><span class="p">),</span>      <span class="c1"># Ergens hangende</span>
+    <span class="p">]</span>
+    <span class="k">return</span> <span class="n">munten</span>
+
+<span class="c1"># In je game:</span>
+<span class="n">munten</span> <span class="o">=</span> <span class="n">maak_level_1_munten</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="botsingsdetectie-aabb-collision">
+<h2>Botsingsdetectie: AABB Collision<a class="headerlink" href="#botsingsdetectie-aabb-collision" title="Link to this heading">#</a></h2>
+<p><strong>AABB</strong> staat voor “Axis-Aligned Bounding Box”. Dit is de simplest manier om botsingen te checken.</p>
+<p>Het principe: beschouw elk object als een rechthoek. Als twee rechthoeken overlappen, botsen ze.</p>
+<section id="aabb-formule">
+<h3>AABB Formule<a class="headerlink" href="#aabb-formule" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">rechthoeken_botsen</span><span class="p">(</span><span class="n">rect1</span><span class="p">,</span> <span class="n">rect2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">rect1</span><span class="o">.</span><span class="n">rechts</span> <span class="o">&gt;</span> <span class="n">rect2</span><span class="o">.</span><span class="n">links</span> <span class="ow">and</span>
+            <span class="n">rect1</span><span class="o">.</span><span class="n">links</span> <span class="o">&lt;</span> <span class="n">rect2</span><span class="o">.</span><span class="n">rechts</span> <span class="ow">and</span>
+            <span class="n">rect1</span><span class="o">.</span><span class="n">onder</span> <span class="o">&gt;</span> <span class="n">rect2</span><span class="o">.</span><span class="n">boven</span> <span class="ow">and</span>
+            <span class="n">rect1</span><span class="o">.</span><span class="n">boven</span> <span class="o">&lt;</span> <span class="n">rect2</span><span class="o">.</span><span class="n">onder</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Dit checkt of de rechthoeken overlappen in zowel X als Y richting.</p>
+</section>
+<section id="voorbeeld-speler-raakt-munt">
+<h3>Voorbeeld: Speler raakt munt<a class="headerlink" href="#voorbeeld-speler-raakt-munt" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">controleer_munten</span><span class="p">(</span><span class="n">speler</span><span class="p">,</span> <span class="n">munten</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Check of speler munten heeft geraakt, voeg toe aan score."""</span>
+    <span class="n">munten_om_te_verwijderen</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">munt</span> <span class="ow">in</span> <span class="n">munten</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">rechthoeken_botsen</span><span class="p">(</span><span class="n">speler</span><span class="p">,</span> <span class="n">munt</span><span class="p">):</span>
+            <span class="n">speler</span><span class="o">.</span><span class="n">verdien_punten</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+            <span class="n">munten_om_te_verwijderen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">munt</span><span class="p">)</span>
+    
+    <span class="c1"># Verwijder verzamelde munten</span>
+    <span class="k">for</span> <span class="n">munt</span> <span class="ow">in</span> <span class="n">munten_om_te_verwijderen</span><span class="p">:</span>
+        <span class="n">munten</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">munt</span><span class="p">)</span>
+
+<span class="c1"># In game-loop:</span>
+<span class="k">while</span> <span class="n">running</span><span class="p">:</span>
+    <span class="c1"># ...</span>
+    <span class="n">speler</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
+    <span class="n">controleer_landing</span><span class="p">(</span><span class="n">speler</span><span class="p">,</span> <span class="n">platforms</span><span class="p">)</span>
+    <span class="n">controleer_munten</span><span class="p">(</span><span class="n">speler</span><span class="p">,</span> <span class="n">munten</span><span class="p">)</span>  <span class="c1"># NIEUW</span>
+    <span class="c1"># ...</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="tekst-op-het-scherm-score-en-levens-tonen">
+<h2>Tekst op het scherm: Score en Levens tonen<a class="headerlink" href="#tekst-op-het-scherm-score-en-levens-tonen" title="Link to this heading">#</a></h2>
+<p>Je kunt score en levens op het scherm laten zien met <code class="docutils literal notranslate"><span class="pre">pygame.font</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Maak een font</span>
+<span class="n">font</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">font</span><span class="o">.</span><span class="n">Font</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">36</span><span class="p">)</span>  <span class="c1"># None = default font, 36 = grootte</span>
+
+<span class="c1"># Maak tekst</span>
+<span class="n">score_tekst</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Score: </span><span class="si">{</span><span class="n">speler</span><span class="o">.</span><span class="n">score</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
+<span class="n">levens_tekst</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Levens: </span><span class="si">{</span><span class="n">speler</span><span class="o">.</span><span class="n">levens</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="c1"># Teken op scherm</span>
+<span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">score_tekst</span><span class="p">,</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>           <span class="c1"># Linksboven</span>
+<span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">levens_tekst</span><span class="p">,</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>          <span class="c1"># Onder score</span>
+</pre></div>
+</div>
+<p><strong>Wat gebeurt hier?</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">font.render()</span></code> maakt een afbeelding van tekst</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f&quot;Score:</span> <span class="pre">{speler.score}&quot;</span></code> is een formatted string (voegt waarde in)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">screen.blit()</span></code> plakt de tekst op het scherm op coördinaten [10, 10]</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="game-over-detectie">
+<h2>Game Over Detectie<a class="headerlink" href="#game-over-detectie" title="Link to this heading">#</a></h2>
+<p>Je game is voorbij als:</p>
+<ol class="arabic simple">
+<li><p>De speler valt uit beeld (y &gt; HOOGTE)</p></li>
+<li><p>De speler 0 levens heeft</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">check_game_over</span><span class="p">(</span><span class="n">speler</span><span class="p">,</span> <span class="n">HOOGTE</span><span class="p">):</span>
+    <span class="c1"># Speler is te ver gevallen</span>
+    <span class="k">if</span> <span class="n">speler</span><span class="o">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="n">HOOGTE</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">"Je bent gevallen!"</span>
+    
+    <span class="c1"># Speler is geen levens meer</span>
+    <span class="k">if</span> <span class="n">speler</span><span class="o">.</span><span class="n">levens</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">"Game Over! Geen levens meer."</span>
+    
+    <span class="c1"># Game loopt nog</span>
+    <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">""</span>
+
+<span class="c1"># In game-loop:</span>
+<span class="k">while</span> <span class="n">running</span><span class="p">:</span>
+    <span class="c1"># ...</span>
+    <span class="n">game_over</span><span class="p">,</span> <span class="n">bericht</span> <span class="o">=</span> <span class="n">check_game_over</span><span class="p">(</span><span class="n">speler</span><span class="p">,</span> <span class="n">HOOGTE</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">game_over</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">bericht</span><span class="p">)</span>
+        <span class="c1"># Naar game-over scherm (Hoofdstuk 6)</span>
+        <span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="volledig-voorbeeld-munten-en-score-werken">
+<h2>Volledig voorbeeld: Munten en Score werken<a class="headerlink" href="#volledig-voorbeeld-munten-en-score-werken" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pygame</span>
+
+<span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+<span class="n">BREEDTE</span> <span class="o">=</span> <span class="mi">800</span>
+<span class="n">HOOGTE</span> <span class="o">=</span> <span class="mi">600</span>
+<span class="n">screen</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="n">BREEDTE</span><span class="p">,</span> <span class="n">HOOGTE</span><span class="p">))</span>
+<span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
+<span class="n">font</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">font</span><span class="o">.</span><span class="n">Font</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">36</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Speler</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">breedte</span> <span class="o">=</span> <span class="mi">40</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hoogte</span> <span class="o">=</span> <span class="mi">50</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">kleur</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">xSnelheid</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ySnelheid</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">zwaartekracht</span> <span class="o">=</span> <span class="mf">0.6</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">kracht_spring</span> <span class="o">=</span> <span class="o">-</span><span class="mi">15</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">op_grond</span> <span class="o">=</span> <span class="kc">False</span>
+        
+        <span class="c1"># NIEUW: Game stats</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">levens</span> <span class="o">=</span> <span class="mi">3</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">verdien_punten</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">aantal</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="n">aantal</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">xSnelheid</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ySnelheid</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">zwaartekracht</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ySnelheid</span>
+        
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">breedte</span> <span class="o">&gt;</span> <span class="n">BREEDTE</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">BREEDTE</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">breedte</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">spring</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">op_grond</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ySnelheid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kracht_spring</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">op_grond</span> <span class="o">=</span> <span class="kc">False</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_x_snelheid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">snelheid</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">xSnelheid</span> <span class="o">=</span> <span class="n">snelheid</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">kleur</span><span class="p">,</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">breedte</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hoogte</span><span class="p">])</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">links</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">rechts</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">breedte</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">boven</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">onder</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">hoogte</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Platform</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">breedte</span><span class="p">,</span> <span class="n">hoogte</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">breedte</span> <span class="o">=</span> <span class="n">breedte</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hoogte</span> <span class="o">=</span> <span class="n">hoogte</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">breedte</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hoogte</span><span class="p">])</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">links</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">rechts</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">breedte</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">boven</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">onder</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">hoogte</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Munt</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="mi">8</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)],</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">)</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">links</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">rechts</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">boven</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">onder</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">rechthoeken_botsen</span><span class="p">(</span><span class="n">obj1</span><span class="p">,</span> <span class="n">obj2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">obj1</span><span class="o">.</span><span class="n">rechts</span> <span class="o">&gt;</span> <span class="n">obj2</span><span class="o">.</span><span class="n">links</span> <span class="ow">and</span>
+            <span class="n">obj1</span><span class="o">.</span><span class="n">links</span> <span class="o">&lt;</span> <span class="n">obj2</span><span class="o">.</span><span class="n">rechts</span> <span class="ow">and</span>
+            <span class="n">obj1</span><span class="o">.</span><span class="n">onder</span> <span class="o">&gt;</span> <span class="n">obj2</span><span class="o">.</span><span class="n">boven</span> <span class="ow">and</span>
+            <span class="n">obj1</span><span class="o">.</span><span class="n">boven</span> <span class="o">&lt;</span> <span class="n">obj2</span><span class="o">.</span><span class="n">onder</span><span class="p">)</span>
+
+<span class="c1"># Level</span>
+<span class="n">platforms</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">Platform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">550</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
+    <span class="n">Platform</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span>
+    <span class="n">Platform</span><span class="p">(</span><span class="mi">450</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="n">munten</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">Munt</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">400</span><span class="p">),</span>
+    <span class="n">Munt</span><span class="p">(</span><span class="mi">575</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="n">speler</span> <span class="o">=</span> <span class="n">Speler</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">controleer_landing</span><span class="p">(</span><span class="n">speler</span><span class="p">,</span> <span class="n">platforms</span><span class="p">):</span>
+    <span class="n">speler</span><span class="o">.</span><span class="n">op_grond</span> <span class="o">=</span> <span class="kc">False</span>
+    
+    <span class="k">for</span> <span class="n">platform</span> <span class="ow">in</span> <span class="n">platforms</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">speler</span><span class="o">.</span><span class="n">rechts</span> <span class="o">&gt;</span> <span class="n">platform</span><span class="o">.</span><span class="n">links</span> <span class="ow">and</span>
+            <span class="n">speler</span><span class="o">.</span><span class="n">links</span> <span class="o">&lt;</span> <span class="n">platform</span><span class="o">.</span><span class="n">rechts</span> <span class="ow">and</span>
+            <span class="n">speler</span><span class="o">.</span><span class="n">onder</span> <span class="o">+</span> <span class="n">speler</span><span class="o">.</span><span class="n">ySnelheid</span> <span class="o">&gt;=</span> <span class="n">platform</span><span class="o">.</span><span class="n">boven</span> <span class="ow">and</span>
+            <span class="n">speler</span><span class="o">.</span><span class="n">ySnelheid</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">):</span>
+            
+            <span class="n">speler</span><span class="o">.</span><span class="n">op_grond</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">speler</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">boven</span> <span class="o">-</span> <span class="n">speler</span><span class="o">.</span><span class="n">hoogte</span>
+            <span class="n">speler</span><span class="o">.</span><span class="n">ySnelheid</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">break</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">controleer_munten</span><span class="p">(</span><span class="n">speler</span><span class="p">,</span> <span class="n">munten</span><span class="p">):</span>
+    <span class="n">munten_om_te_verwijderen</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">munt</span> <span class="ow">in</span> <span class="n">munten</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">rechthoeken_botsen</span><span class="p">(</span><span class="n">speler</span><span class="p">,</span> <span class="n">munt</span><span class="p">):</span>
+            <span class="n">speler</span><span class="o">.</span><span class="n">verdien_punten</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+            <span class="n">munten_om_te_verwijderen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">munt</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">munt</span> <span class="ow">in</span> <span class="n">munten_om_te_verwijderen</span><span class="p">:</span>
+        <span class="n">munten</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">munt</span><span class="p">)</span>
+
+<span class="c1"># Game loop</span>
+<span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">game_over</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">while</span> <span class="n">running</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+            <span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">KEYDOWN</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span><span class="p">:</span>
+                <span class="n">speler</span><span class="o">.</span><span class="n">set_x_snelheid</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">:</span>
+                <span class="n">speler</span><span class="o">.</span><span class="n">set_x_snelheid</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_SPACE</span><span class="p">:</span>
+                <span class="n">speler</span><span class="o">.</span><span class="n">spring</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">KEYUP</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span><span class="p">,</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">]:</span>
+                <span class="n">speler</span><span class="o">.</span><span class="n">set_x_snelheid</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    
+    <span class="n">speler</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
+    <span class="n">controleer_landing</span><span class="p">(</span><span class="n">speler</span><span class="p">,</span> <span class="n">platforms</span><span class="p">)</span>
+    <span class="n">controleer_munten</span><span class="p">(</span><span class="n">speler</span><span class="p">,</span> <span class="n">munten</span><span class="p">)</span>
+    
+    <span class="c1"># Game Over check</span>
+    <span class="k">if</span> <span class="n">speler</span><span class="o">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="n">HOOGTE</span> <span class="ow">or</span> <span class="n">speler</span><span class="o">.</span><span class="n">levens</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">game_over</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Game Over! Score: </span><span class="si">{</span><span class="n">speler</span><span class="o">.</span><span class="n">score</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+    
+    <span class="c1"># RENDER</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">))</span>
+    
+    <span class="k">for</span> <span class="n">platform</span> <span class="ow">in</span> <span class="n">platforms</span><span class="p">:</span>
+        <span class="n">platform</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">munt</span> <span class="ow">in</span> <span class="n">munten</span><span class="p">:</span>
+        <span class="n">munt</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
+    
+    <span class="n">speler</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
+    
+    <span class="c1"># Toon score en levens</span>
+    <span class="n">score_tekst</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Score: </span><span class="si">{</span><span class="n">speler</span><span class="o">.</span><span class="n">score</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
+    <span class="n">levens_tekst</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Levens: </span><span class="si">{</span><span class="n">speler</span><span class="o">.</span><span class="n">levens</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">score_tekst</span><span class="p">,</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">levens_tekst</span><span class="p">,</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>
+    
+    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+    <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+
+<span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</pre></div>
+</div>
 </section>
 <hr class="docutils" />
 <section id="samenvatting">
 <h2>Samenvatting<a class="headerlink" href="#samenvatting" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Score en levens zijn centrale spelgegevens.</p></li>
-<li><p>Je kunt punten toevoegen en levens aftrekken.</p></li>
-<li><p>Het is handig om deze gegevens bij een speler of bij het spel te bewaren.</p></li>
-<li><p>De speler moet kunnen zien wat zijn toestand is.</p></li>
+<li><p><strong>Score en Levens</strong> horen bij de Speler-klasse</p></li>
+<li><p><strong>AABB Collision</strong> is de simpelste manier om botsingen te checken</p></li>
+<li><p><strong>Collectibles</strong> (munten) kunnen verzameld worden voor punten</p></li>
+<li><p><strong>Font rendering</strong> toont tekst op het scherm</p></li>
+<li><p><strong>Game Over</strong> check werkt op vallen of levens op 0</p></li>
+<li><p>Objecten kunnen met elkaar <strong>interacteren</strong>!</p></li>
 </ul>
 </section>
 <section id="check-je-begrip">
 <h2>Check je begrip<a class="headerlink" href="#check-je-begrip" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Wat is score?</p></li>
-<li><p>Hoe kun je levens laten afnemen?</p></li>
-<li><p>Waarom is <code class="docutils literal notranslate"><span class="pre">self</span></code> handig bij score en levens?</p></li>
-<li><p>Waarom laat je de score op het scherm zien?</p></li>
+<li><p>Hoe werk je score bij?</p></li>
+<li><p>Hoe detecteer je of speler en munt botsen?</p></li>
+<li><p>Hoe toon je tekst op het scherm?</p></li>
+<li><p>Wat is AABB collision?</p></li>
+<li><p>Hoe werkt game-over detectie?</p></li>
 </ol>
-</section>
-<section id="afbeeldingen-en-bronnen">
-<h2>Afbeeldingen en bronnen<a class="headerlink" href="#afbeeldingen-en-bronnen" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Zelf maken: maak een schematische scorebalk met levens en punten.</p></li>
-<li><p>Online zoeken: <a class="reference external" href="https://www.youtube.com/results?search_query=game+hud+score+levens">Game HUD uitleg</a></p></li>
-<li><p>Online zoeken: <a class="reference external" href="https://www.pygame.org/docs/ref/font.html">Pygame font rendering</a></p></li>
-<li><p>Online zoeken: <a class="reference external" href="https://nl.wikipedia.org/wiki/Heads-up_display">Wikipedia: heads-up display</a></p></li>
-</ul>
 </section>
 <section id="opdrachten">
 <h2>Opdrachten<a class="headerlink" href="#opdrachten" title="Link to this heading">#</a></h2>
 <ol class="arabic">
-<li><p>Score en levens</p>
+<li><p><strong>Munten toevoegen</strong></p>
 <ol type='a'>
-<li>Maak een klasse `Speler` met `score` en `levens`.</li>
-<li>Schrijf een methode die 10 punten geeft als een vijand wordt verslagen.</li>
-<li>Schrijf een tweede methode die een leven aftrekt als een vijand een speler raakt.</li>
+<li>Maak een Munt-klasse met draw() methode.</li>
+<li>Plaats 5 munten in je level op verschillende posities.</li>
+<li>Zorg dat munten verdwijnen als je ze raakt.</li>
 </ol>
 </li>
-<li><p>Score tonen</p>
+<li><p><strong>Score bijhouden</strong></p>
 <ol type='a'>
-<li>Leg uit waarom je score op het scherm wilt laten zien.</li>
-<li>Hoe kun je een score in tekst omzetten voor weergave?</li>
-<li>Waarom is het handig om score en levens bij de speler te bewaren?</li>
+<li>Voeg score attributen toe aan Speler.</li>
+<li>Zorg dat score +10 gaat als je een munt verzamelt.</li>
+<li>Toon score op het scherm links-boven.</li>
 </ol>
 </li>
-<li><p>Toepassingsvraag</p>
-<p>Je speelt een platformgame en je score is 150 punten, maar je hebt nog 1 leven over.</p>
+<li><p><strong>Botsingsdetectie debuggen</strong></p>
 <ol type='a'>
-<li>Hoe kun je het spel laten reageren wanneer de laatste levenswaarde 0 wordt?</li>
-<li>Waarom is een duidelijke score belangrijk voor een game?</li>
-<li>Wat is het verschil tussen een score en een levenswaarde in een spel?</li>
+<li>Print de botsings-waarden om te controleren of je functies werken.</li>
+<li>Test: botsen munten correct?</li>
+<li>Test: botsen platforms correct?</li>
 </ol>
 </li>
-<li><p>Spelstatus bijhouden</p>
+<li><p><strong>Game-over implementeren</strong></p>
 <ol type='a'>
-<li>Maak een korte klasse `Speler` met een score en een methode `verlaag_levens`.</li>
-<li>Leg uit waarom je deze gegevens bij het spelobject bewaart in plaats van in losse variabelen.</li>
-<li>Noem een situatie waarin de score direct moet veranderen in een game.</li>
+<li>Zorg dat het spel eindigt als speler in gat valt.</li>
+<li>Print de eindscherm (Score en bericht).</li>
+<li>Bonus: maak levens-verlies als speler in gat valt (i.p.v. direct game-over).</li>
 </ol>
 </li>
 </ol>
 <section id="inzichtsvragen">
 <h3>Inzichtsvragen<a class="headerlink" href="#inzichtsvragen" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p>Waarom is score een voorbeeld van data die bij een object hoort?</p></li>
-<li><p>Welke invloed heeft een leven op de spelstatus?</p></li>
-<li><p>Waarom is het fijn als een programma de status van de speler bijhoudt?</p></li>
+<li><p>Waarom is AABB collision handig?</p></li>
+<li><p>Hoe weet je of twee objecten botsen?</p></li>
+<li><p>Waarom hebben alle objecten links/rechts/boven/onder properties nodig?</p></li>
+<li><p>Waarom toon je score en levens op het scherm?</p></li>
 </ol>
 </section>
 </section>
@@ -675,7 +1026,7 @@
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Objectgeoriënteerd Programmeren Hoofdstuk 4: FPS en tijd</p>
+        <p class="prev-next-title">Objectgeoriënteerd Programmeren Hoofdstuk 4: FPS, Zwaartekracht en Springen</p>
       </div>
     </a>
     <a class="right-next"
@@ -683,7 +1034,7 @@
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Objectgeoriënteerd Programmeren Hoofdstuk 6: Start- en eindscherm</p>
+        <p class="prev-next-title">Objectgeoriënteerd Programmeren Hoofdstuk 6: Game States, Menus en Complete Game Flow</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -706,14 +1057,23 @@
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#score">Score</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#levens">Levens</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenwerken-tussen-objecten">Samenwerken tussen objecten</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tekst-op-het-scherm">Tekst op het scherm</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld">Voorbeeld</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#score-en-levens-bijhouden">Score en Levens bijhouden</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#score-en-levens-in-een-klasse">Score en Levens in een klasse</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collectibles-munten-die-je-kunt-pakken">Collectibles: Munten die je kunt pakken</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#munt-klasse">Munt-klasse</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#munten-in-je-level-plaatsen">Munten in je level plaatsen</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#botsingsdetectie-aabb-collision">Botsingsdetectie: AABB Collision</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aabb-formule">AABB Formule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-speler-raakt-munt">Voorbeeld: Speler raakt munt</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tekst-op-het-scherm-score-en-levens-tonen">Tekst op het scherm: Score en Levens tonen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#game-over-detectie">Game Over Detectie</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#volledig-voorbeeld-munten-en-score-werken">Volledig voorbeeld: Munten en Score werken</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#afbeeldingen-en-bronnen">Afbeeldingen en bronnen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inzichtsvragen">Inzichtsvragen</a></li>
 </ul>

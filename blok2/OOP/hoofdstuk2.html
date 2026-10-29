@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Objectgeoriënteerd Programmeren Hoofdstuk 2: Eigenschappen en methoden &#8212; Informatica</title>
+    <title>Objectgeoriënteerd Programmeren Hoofdstuk 2: Methoden en Beweging &#8212; Informatica</title>
   
   
   
@@ -64,8 +64,8 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Objectgeoriënteerd Programmeren Hoofdstuk 3: Lijsten van objecten" href="hoofdstuk3.html" />
-    <link rel="prev" title="Objectgeoriënteerd Programmeren Hoofdstuk 1: Klassen en objecten" href="hoofdstuk1.html" />
+    <link rel="next" title="Objectgeoriënteerd Programmeren Hoofdstuk 3: Lijsten van objecten en Level-ontwerp" href="hoofdstuk3.html" />
+    <link rel="prev" title="Objectgeoriënteerd Programmeren Hoofdstuk 1: Klassen en Objecten" href="hoofdstuk1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -451,7 +451,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Objectgeoriënteerd Programmeren Hoofdstuk 2: Eigenschappen en methoden</h1>
+    <h1>Objectgeoriënteerd Programmeren Hoofdstuk 2: Methoden en Beweging</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -462,18 +462,36 @@
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-een-methode">Wat is een methode?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-in-python"><code class="docutils literal notranslate"><span class="pre">self</span></code> in Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attributen-en-methoden-samen">Attributen en methoden samen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-met-een-speler">Voorbeeld met een speler</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-zijn-methoden-handig">Waarom zijn methoden handig?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#afbeeldingen-en-bronnen">Afbeeldingen en bronnen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inzichtsvragen">Inzichtsvragen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-een-methode">Wat is een Methode?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld">Voorbeeld</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methoden-aanroepen">Methoden aanroepen</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-game-loop-hoe-games-werken">De Game-Loop: Hoe Games Werken</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pygame-installeren-en-starten">Pygame Installeren en Starten</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-1-installeer-pygame">Stap 1: Installeer Pygame</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-2-basis-pygame-setup">Stap 2: Basis pygame-setup</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sprites-pixel-art-laden">Sprites: Pixel-Art Laden</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-1-een-sprite-maken">Stap 1: Een Sprite Maken</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-2-sprite-in-klasse-laden">Stap 2: Sprite in Klasse Laden</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-3-speler-gebruiken-in-game-loop">Stap 3: Speler Gebruiken in Game-Loop</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#platforms-tekenen-met-draw">Platforms Tekenen met <code class="docutils literal notranslate"><span class="pre">draw()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#munten-tekenen">Munten Tekenen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-voorbeeld-bewegende-speler">Complete Voorbeeld: Bewegende Speler</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huiswerk-hst-2">🎯 Huiswerk Hst 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opgave-1-methoden-toevoegen">Opgave 1: Methoden Toevoegen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opgave-2-eigen-sprite-maken">Opgave 2: Eigen Sprite Maken</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opgave-3-level-uitbreiden">Opgave 3: Level Uitbreiden</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opgave-4-voeg-munten-toe">Opgave 4: Voeg Munten Toe</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">💡 Samenvatting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checklist-begrijp-je-dit">Checklist: Begrijp je dit?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#volgende-stap">✅ Volgende Stap</a></li>
 </ul>
             </nav>
         </div>
@@ -485,175 +503,544 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="objectgeorienteerd-programmeren-hoofdstuk-2-eigenschappen-en-methoden">
-<h1>Objectgeoriënteerd Programmeren Hoofdstuk 2: Eigenschappen en methoden<a class="headerlink" href="#objectgeorienteerd-programmeren-hoofdstuk-2-eigenschappen-en-methoden" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="objectgeorienteerd-programmeren-hoofdstuk-2-methoden-en-beweging">
+<h1>Objectgeoriënteerd Programmeren Hoofdstuk 2: Methoden en Beweging<a class="headerlink" href="#objectgeorienteerd-programmeren-hoofdstuk-2-methoden-en-beweging" title="Link to this heading">#</a></h1>
 <section id="leerdoelen">
 <h2>Leerdoelen<a class="headerlink" href="#leerdoelen" title="Link to this heading">#</a></h2>
-<p>In dit hoofdstuk leer je dat een klasse niet alleen gegevens bevat, maar ook acties kan uitvoeren. Die acties noem je <strong>methoden</strong>.</p>
+<p>Nu gaan we <strong>methoden</strong> introduceren: dingen die objecten kunnen <strong>doen</strong>.</p>
+<p>Plus: we maken onze objecten <strong>zichtbaar</strong> met <strong>pygame</strong> én <strong>sprites</strong>!</p>
 <p>Je leert:</p>
 <ul class="simple">
-<li><p>wat een methode is;</p></li>
-<li><p>hoe je attributen en methoden combineert;</p></li>
-<li><p>wat <code class="docutils literal notranslate"><span class="pre">self</span></code> betekent;</p></li>
-<li><p>hoe een object zich kan gedragen;</p></li>
-<li><p>hoe je een methode aanroept.</p></li>
+<li><p><strong>Wat een methode is</strong> (functie in een klasse)</p></li>
+<li><p><strong>Game-loop begrijpen</strong> (INPUT → UPDATE → RENDER)</p></li>
+<li><p><strong>Pygame-basics</strong> (window, events, display)</p></li>
+<li><p><strong>Sprite laden</strong> (pixelart voor de speler)</p></li>
+<li><p><strong>Andere objecten tekenen</strong> met <code class="docutils literal notranslate"><span class="pre">pygame.draw.rect()</span></code></p></li>
+<li><p><strong>Toetsenbordbesturing</strong> implementeren</p></li>
+<li><p><strong>FPS beheren</strong> (frames per seconde)</p></li>
 </ul>
-<p>Aan het einde van dit hoofdstuk kun je een klasse maken met eigenschappen en methoden die iets doen.</p>
+<p>Aan het einde van dit hoofstuk:</p>
+<ul class="simple">
+<li><p>Heeft je speler visueel een sprite</p></li>
+<li><p>Kun je hem met pijltjestoetsen bewegen</p></li>
+<li><p>Lopen andere objecten mee in je game</p></li>
+</ul>
 </section>
 <hr class="docutils" />
 <section id="wat-is-een-methode">
-<h2>Wat is een methode?<a class="headerlink" href="#wat-is-een-methode" title="Link to this heading">#</a></h2>
-<p>Een <strong>methode</strong> is een functie die bij een object hoort.</p>
-<p>Een object heeft gegevens en kan ook handelingen uitvoeren.</p>
-<p>Voorbeeld:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Man</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">naam</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">naam</span> <span class="o">=</span> <span class="n">naam</span>
-
-    <span class="k">def</span><span class="w"> </span><span class="nf">groet</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"Hoi, ik ben"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">naam</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">groet()</span></code> is een methode.</p>
-<p>Je roept die methode aan op het object:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">joost</span> <span class="o">=</span> <span class="n">Man</span><span class="p">(</span><span class="s2">"Joost"</span><span class="p">)</span>
-<span class="n">joost</span><span class="o">.</span><span class="n">groet</span><span class="p">()</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils" />
-<section id="self-in-python">
-<h2><code class="docutils literal notranslate"><span class="pre">self</span></code> in Python<a class="headerlink" href="#self-in-python" title="Link to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">self</span></code> verwijst naar het huidige object.</p>
-<p>Het geeft aan:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">naam</span>
-</pre></div>
-</div>
-<p>Dat bedoelt: de <code class="docutils literal notranslate"><span class="pre">naam</span></code> van dit specifieke object.</p>
-<p>Zonder <code class="docutils literal notranslate"><span class="pre">self</span></code> weet Python niet bij welk object de variabele hoort.</p>
-</section>
-<hr class="docutils" />
-<section id="attributen-en-methoden-samen">
-<h2>Attributen en methoden samen<a class="headerlink" href="#attributen-en-methoden-samen" title="Link to this heading">#</a></h2>
-<p>Een object kan zowel gegevens als gedrag hebben.</p>
+<h2>Wat is een Methode?<a class="headerlink" href="#wat-is-een-methode" title="Link to this heading">#</a></h2>
+<p>Een <strong>methode</strong> is een <strong>functie in een klasse</strong>. Het beschrijft wat een object kan <strong>doen</strong>.</p>
+<section id="voorbeeld">
+<h3>Voorbeeld<a class="headerlink" href="#voorbeeld" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Speler</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">naam</span><span class="p">,</span> <span class="n">xp</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">naam</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">naam</span> <span class="o">=</span> <span class="n">naam</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">xp</span> <span class="o">=</span> <span class="n">xp</span>
-
-    <span class="k">def</span><span class="w"> </span><span class="nf">voeg_xp_toe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">aantal</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">xp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">xp</span> <span class="o">+</span> <span class="n">aantal</span>
-        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">naam</span><span class="p">,</span> <span class="s2">"heeft nu"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">xp</span><span class="p">,</span> <span class="s2">"XP"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">levens</span> <span class="o">=</span> <span class="mi">3</span>
+    
+    <span class="c1"># Dit is een METHODE (functie in klasse)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">verdien_punten</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">aantal</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="n">aantal</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">naam</span><span class="si">}</span><span class="s2"> wint </span><span class="si">{</span><span class="n">aantal</span><span class="si">}</span><span class="s2"> punten!"</span><span class="p">)</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">verlies_leven</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">levens</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">naam</span><span class="si">}</span><span class="s2"> heeft nu </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">levens</span><span class="si">}</span><span class="s2"> levens"</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Hier heeft het object een attribuut <code class="docutils literal notranslate"><span class="pre">xp</span></code> en een methode <code class="docutils literal notranslate"><span class="pre">voeg_xp_toe()</span></code>.</p>
+<p>Zie je? De klasse zegt niet alleen <strong>wat</strong> een speler is (naam, x, y), maar ook <strong>wat hij kan doen</strong> (punten verdienen, levens verliezen).</p>
+</section>
+<section id="methoden-aanroepen">
+<h3>Methoden aanroepen<a class="headerlink" href="#methoden-aanroepen" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">speler</span> <span class="o">=</span> <span class="n">Speler</span><span class="p">(</span><span class="s2">"Mario"</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">speler</span><span class="o">.</span><span class="n">verdien_punten</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>      <span class="c1"># Output: Mario wint 10 punten!</span>
+<span class="n">speler</span><span class="o">.</span><span class="n">verdien_punten</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>      <span class="c1"># Output: Mario wint 20 punten!</span>
+<span class="n">speler</span><span class="o">.</span><span class="n">verlies_leven</span><span class="p">()</span>         <span class="c1"># Output: Mario heeft nu 2 levens</span>
+</pre></div>
+</div>
+</section>
 </section>
 <hr class="docutils" />
-<section id="voorbeeld-met-een-speler">
-<h2>Voorbeeld met een speler<a class="headerlink" href="#voorbeeld-met-een-speler" title="Link to this heading">#</a></h2>
+<section id="de-game-loop-hoe-games-werken">
+<h2>De Game-Loop: Hoe Games Werken<a class="headerlink" href="#de-game-loop-hoe-games-werken" title="Link to this heading">#</a></h2>
+<p>Elke game loopt in een <strong>loop</strong>. Dit gebeurt ~60 keer per seconde:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>INPUT → UPDATE → RENDER → WAIT
+</pre></div>
+</div>
+<p><strong>INPUT:</strong> Wat drukt de speler (pijltjes, spatiebalk)?<br />
+<strong>UPDATE:</strong> Verander positie, collision, score, etc.<br />
+<strong>RENDER:</strong> Teken alles op het scherm.<br />
+<strong>WAIT:</strong> Wacht tot volgende frame (60 FPS = 16ms per frame).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">spel_loopt</span><span class="p">:</span>
+    <span class="c1"># INPUT</span>
+    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">KEYDOWN</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span><span class="p">:</span>
+                <span class="n">speler</span><span class="o">.</span><span class="n">x</span> <span class="o">-=</span> <span class="mi">5</span>  <span class="c1"># Speler naar links</span>
+    
+    <span class="c1"># UPDATE</span>
+    <span class="c1"># (Zwaartekracht, collision, etc. komen later)</span>
+    
+    <span class="c1"># RENDER</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">))</span>  <span class="c1"># Achtergrond</span>
+    <span class="c1"># Teken speler, platforms, etc.</span>
+    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+    
+    <span class="c1"># WAIT</span>
+    <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>  <span class="c1"># 60 FPS</span>
+</pre></div>
+</div>
+<p>Dit is het <strong>hart van elke game</strong>!</p>
+</section>
+<hr class="docutils" />
+<section id="pygame-installeren-en-starten">
+<h2>Pygame Installeren en Starten<a class="headerlink" href="#pygame-installeren-en-starten" title="Link to this heading">#</a></h2>
+<section id="stap-1-installeer-pygame">
+<h3>Stap 1: Installeer Pygame<a class="headerlink" href="#stap-1-installeer-pygame" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pygame
+</pre></div>
+</div>
+</section>
+<section id="stap-2-basis-pygame-setup">
+<h3>Stap 2: Basis pygame-setup<a class="headerlink" href="#stap-2-basis-pygame-setup" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pygame</span>
+
+<span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+<span class="c1"># Scherm-afmetingen</span>
+<span class="n">BREEDTE</span> <span class="o">=</span> <span class="mi">800</span>
+<span class="n">HOOGTE</span> <span class="o">=</span> <span class="mi">600</span>
+
+<span class="c1"># Maak venster</span>
+<span class="n">screen</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="n">BREEDTE</span><span class="p">,</span> <span class="n">HOOGTE</span><span class="p">))</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s2">"Stick Hero's Quest"</span><span class="p">)</span>
+
+<span class="c1"># Clock voor FPS</span>
+<span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
+
+<span class="c1"># Game-loop</span>
+<span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">while</span> <span class="n">running</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+            <span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+    
+    <span class="c1"># Vul scherm met grijs</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">))</span>
+    
+    <span class="c1"># Update display</span>
+    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+    
+    <span class="c1"># 60 FPS</span>
+    <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+
+<span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Run dit. Je ziet een grijs venster. Druk ESCAPE om af te sluiten.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="sprites-pixel-art-laden">
+<h2>Sprites: Pixel-Art Laden<a class="headerlink" href="#sprites-pixel-art-laden" title="Link to this heading">#</a></h2>
+<p>Nu gaat het interessant! We laden een <strong>sprite</strong> (afbeelding) in plaats van vierkantjes te tekenen.</p>
+<section id="stap-1-een-sprite-maken">
+<h3>Stap 1: Een Sprite Maken<a class="headerlink" href="#stap-1-een-sprite-maken" title="Link to this heading">#</a></h3>
+<p>Maak zelf een eenvoudig pixelart poppetje in een grafische tool (bijv. Aseprite, Piskel of Paint):</p>
+<ul class="simple">
+<li><p><strong>Grootte:</strong> 32x48 pixels (standaard platformer-speler)</p></li>
+<li><p><strong>Format:</strong> PNG (met transparantie)</p></li>
+<li><p><strong>Naam:</strong> <code class="docutils literal notranslate"><span class="pre">speler.png</span></code></p></li>
+</ul>
+<p>Sla het op in dezelfde map als je <code class="docutils literal notranslate"><span class="pre">.py</span></code>-bestand.</p>
+<p><strong>Voorbeeld:</strong> Een rood poppetje van 32x48 pixels met witte ogen.</p>
+</section>
+<section id="stap-2-sprite-in-klasse-laden">
+<h3>Stap 2: Sprite in Klasse Laden<a class="headerlink" href="#stap-2-sprite-in-klasse-laden" title="Link to this heading">#</a></h3>
+<p>Update je Speler-klasse:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Speler</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">naam</span><span class="p">,</span> <span class="n">hp</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">naam</span> <span class="o">=</span> <span class="n">naam</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">hp</span> <span class="o">=</span> <span class="n">hp</span>
-
-    <span class="k">def</span><span class="w"> </span><span class="nf">ontvang_schade</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">schade</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">hp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hp</span> <span class="o">-</span> <span class="n">schade</span>
-        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">naam</span><span class="p">,</span> <span class="s2">"heeft nog"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hp</span><span class="p">,</span> <span class="s2">"hp"</span><span class="p">)</span>
-
-<span class="n">joost</span> <span class="o">=</span> <span class="n">Speler</span><span class="p">(</span><span class="s2">"Joost"</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">joost</span><span class="o">.</span><span class="n">ontvang_schade</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sprite_path</span><span class="p">):</span>
+        <span class="c1"># Positie</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        
+        <span class="c1"># Sprite laden</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">afbeelding</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">sprite_path</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">afbeelding</span><span class="o">.</span><span class="n">get_rect</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span>
+        
+        <span class="c1"># Game-stats</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">levens</span> <span class="o">=</span> <span class="mi">3</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Teken de speler op het scherm."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span>
+        <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">afbeelding</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="p">)</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">move_left</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Speler gaat naar links."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">-=</span> <span class="mi">7</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">move_right</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Speler gaat naar rechts."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="mi">7</span>
 </pre></div>
 </div>
-<p>De speler houdt zijn eigen levens bij.</p>
+<p><strong>Wat gebeurt hier?</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pygame.image.load()</span></code> laadt de sprite van schijf</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_rect()</span></code> geeft een rechthoek (voor positionering)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">screen.blit()</span></code> plakt de afbeelding op het scherm</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">move_left/move_right</span></code> zijn methoden om te bewegen</p></li>
+</ul>
+</section>
+<section id="stap-3-speler-gebruiken-in-game-loop">
+<h3>Stap 3: Speler Gebruiken in Game-Loop<a class="headerlink" href="#stap-3-speler-gebruiken-in-game-loop" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pygame</span>
+
+<span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+<span class="n">BREEDTE</span> <span class="o">=</span> <span class="mi">800</span>
+<span class="n">HOOGTE</span> <span class="o">=</span> <span class="mi">600</span>
+<span class="n">screen</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="n">BREEDTE</span><span class="p">,</span> <span class="n">HOOGTE</span><span class="p">))</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s2">"Stick Hero's Quest"</span><span class="p">)</span>
+<span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
+
+<span class="c1"># Maak speler (laadt sprite automatisch)</span>
+<span class="n">speler</span> <span class="o">=</span> <span class="n">Speler</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s2">"speler.png"</span><span class="p">)</span>
+
+<span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">while</span> <span class="n">running</span><span class="p">:</span>
+    <span class="c1"># INPUT</span>
+    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+            <span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+        
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">KEYDOWN</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span><span class="p">:</span>
+                <span class="n">speler</span><span class="o">.</span><span class="n">move_left</span><span class="p">()</span>
+            <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">:</span>
+                <span class="n">speler</span><span class="o">.</span><span class="n">move_right</span><span class="p">()</span>
+    
+    <span class="c1"># Grenzen checken (speler kan niet uit scherm lopen)</span>
+    <span class="k">if</span> <span class="n">speler</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">speler</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">speler</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">32</span> <span class="o">&gt;</span> <span class="n">BREEDTE</span><span class="p">:</span>
+        <span class="n">speler</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">BREEDTE</span> <span class="o">-</span> <span class="mi">32</span>
+    
+    <span class="c1"># RENDER</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">))</span>
+    <span class="n">speler</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
+    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+    
+    <span class="c1"># WAIT</span>
+    <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+
+<span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Test het:</strong> Run het programma, druk pijltjes, je sprite beweegt!</p>
+</section>
 </section>
 <hr class="docutils" />
-<section id="waarom-zijn-methoden-handig">
-<h2>Waarom zijn methoden handig?<a class="headerlink" href="#waarom-zijn-methoden-handig" title="Link to this heading">#</a></h2>
-<p>Methoden zorgen ervoor dat je gedrag in één plaats kunt zetten.</p>
-<p>Dat maakt code:</p>
+<section id="platforms-tekenen-met-draw">
+<h2>Platforms Tekenen met <code class="docutils literal notranslate"><span class="pre">draw()</span></code><a class="headerlink" href="#platforms-tekenen-met-draw" title="Link to this heading">#</a></h2>
+<p>Terwijl de speler een <strong>sprite</strong> is, tekenen we platforms met <code class="docutils literal notranslate"><span class="pre">pygame.draw.rect()</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Platform</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">breedte</span><span class="p">,</span> <span class="n">hoogte</span><span class="p">,</span> <span class="n">kleur</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">)):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">breedte</span> <span class="o">=</span> <span class="n">breedte</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hoogte</span> <span class="o">=</span> <span class="n">hoogte</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">kleur</span> <span class="o">=</span> <span class="n">kleur</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Teken platform als rechthoek."""</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">kleur</span><span class="p">,</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">breedte</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hoogte</span><span class="p">])</span>
+        <span class="c1"># Zwarte border</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">breedte</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hoogte</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Gebruik in game-loop:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Maak platforms</span>
+<span class="n">platforms</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">Platform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">550</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>      <span class="c1"># Grond</span>
+    <span class="n">Platform</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span>    <span class="c1"># Platform 1</span>
+    <span class="n">Platform</span><span class="p">(</span><span class="mi">450</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span>    <span class="c1"># Platform 2</span>
+<span class="p">]</span>
+
+<span class="c1"># In game-loop (RENDER gedeelte):</span>
+<span class="k">for</span> <span class="n">platform</span> <span class="ow">in</span> <span class="n">platforms</span><span class="p">:</span>
+    <span class="n">platform</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="munten-tekenen">
+<h2>Munten Tekenen<a class="headerlink" href="#munten-tekenen" title="Link to this heading">#</a></h2>
+<p>Munten tekenen we als gele cirkels:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Munt</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">waarde</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="mi">8</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">waarde</span> <span class="o">=</span> <span class="n">waarde</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Teken munt als cirkel."""</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)],</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Gebruik:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">munten</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">Munt</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">400</span><span class="p">),</span>
+    <span class="n">Munt</span><span class="p">(</span><span class="mi">575</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span>
+    <span class="n">Munt</span><span class="p">(</span><span class="mi">275</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="c1"># In game-loop:</span>
+<span class="k">for</span> <span class="n">munt</span> <span class="ow">in</span> <span class="n">munten</span><span class="p">:</span>
+    <span class="n">munt</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="complete-voorbeeld-bewegende-speler">
+<h2>Complete Voorbeeld: Bewegende Speler<a class="headerlink" href="#complete-voorbeeld-bewegende-speler" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pygame</span>
+
+<span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+<span class="n">BREEDTE</span> <span class="o">=</span> <span class="mi">800</span>
+<span class="n">HOOGTE</span> <span class="o">=</span> <span class="mi">600</span>
+<span class="n">screen</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="n">BREEDTE</span><span class="p">,</span> <span class="n">HOOGTE</span><span class="p">))</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s2">"Stick Hero's Quest"</span><span class="p">)</span>
+<span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Speler</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sprite_path</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">afbeelding</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">sprite_path</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">afbeelding</span><span class="o">.</span><span class="n">get_rect</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">levens</span> <span class="o">=</span> <span class="mi">3</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">move_left</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">-=</span> <span class="mi">7</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">move_right</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="mi">7</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span>
+        <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">afbeelding</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Platform</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">breedte</span><span class="p">,</span> <span class="n">hoogte</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">breedte</span> <span class="o">=</span> <span class="n">breedte</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hoogte</span> <span class="o">=</span> <span class="n">hoogte</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">breedte</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hoogte</span><span class="p">])</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">breedte</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hoogte</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Munt</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="mi">8</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)],</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">)</span>
+
+<span class="c1"># Game-setup</span>
+<span class="n">speler</span> <span class="o">=</span> <span class="n">Speler</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s2">"speler.png"</span><span class="p">)</span>
+<span class="n">platforms</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">Platform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">550</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
+    <span class="n">Platform</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span>
+    <span class="n">Platform</span><span class="p">(</span><span class="mi">450</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span>
+<span class="p">]</span>
+<span class="n">munten</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">Munt</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">400</span><span class="p">),</span>
+    <span class="n">Munt</span><span class="p">(</span><span class="mi">575</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span>
+    <span class="n">Munt</span><span class="p">(</span><span class="mi">275</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="c1"># Game-loop</span>
+<span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">while</span> <span class="n">running</span><span class="p">:</span>
+    <span class="c1"># INPUT</span>
+    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+            <span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+        
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">KEYDOWN</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span><span class="p">:</span>
+                <span class="n">speler</span><span class="o">.</span><span class="n">move_left</span><span class="p">()</span>
+            <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">:</span>
+                <span class="n">speler</span><span class="o">.</span><span class="n">move_right</span><span class="p">()</span>
+    
+    <span class="c1"># Grenzen</span>
+    <span class="k">if</span> <span class="n">speler</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">speler</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">speler</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">32</span> <span class="o">&gt;</span> <span class="n">BREEDTE</span><span class="p">:</span>
+        <span class="n">speler</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">BREEDTE</span> <span class="o">-</span> <span class="mi">32</span>
+    
+    <span class="c1"># RENDER</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">))</span>
+    
+    <span class="k">for</span> <span class="n">platform</span> <span class="ow">in</span> <span class="n">platforms</span><span class="p">:</span>
+        <span class="n">platform</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">munt</span> <span class="ow">in</span> <span class="n">munten</span><span class="p">:</span>
+        <span class="n">munt</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
+    
+    <span class="n">speler</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
+    
+    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+    <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+
+<span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Run dit! Je hebt:</strong></p>
 <ul class="simple">
-<li><p>overzichtelijker;</p></li>
-<li><p>makkelijker te begrijpen;</p></li>
-<li><p>makkelijker te hergebruiken.</p></li>
+<li><p>Speler-sprite die beweegt</p></li>
+<li><p>Platforms (groen)</p></li>
+<li><p>Munten (geel)</p></li>
+<li><p>Vloeiende beweging (60 FPS)</p></li>
 </ul>
-<p>In een game kun je methoden gebruiken voor:</p>
-<ul class="simple">
-<li><p>bewegen;</p></li>
-<li><p>schieten;</p></li>
-<li><p>springen;</p></li>
-<li><p>punten verdienen;</p></li>
-<li><p>levens verliezen.</p></li>
-</ul>
+</section>
+<hr class="docutils" />
+<section id="huiswerk-hst-2">
+<h2>🎯 Huiswerk Hst 2<a class="headerlink" href="#huiswerk-hst-2" title="Link to this heading">#</a></h2>
+<section id="opgave-1-methoden-toevoegen">
+<h3>Opgave 1: Methoden Toevoegen<a class="headerlink" href="#opgave-1-methoden-toevoegen" title="Link to this heading">#</a></h3>
+<p>Voeg methoden toe aan je Speler-klasse:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Speler</span><span class="p">:</span>
+    <span class="c1"># ... bestaande code ...</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">verdien_punten</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">aantal</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="n">aantal</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Score: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">score</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">verlies_leven</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">levens</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Levens: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">levens</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">50</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">500</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">levens</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<p>Test methoden:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">speler</span> <span class="o">=</span> <span class="n">Speler</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s2">"speler.png"</span><span class="p">)</span>
+<span class="n">speler</span><span class="o">.</span><span class="n">verdien_punten</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">speler</span><span class="o">.</span><span class="n">verlies_leven</span><span class="p">()</span>
+<span class="n">speler</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="opgave-2-eigen-sprite-maken">
+<h3>Opgave 2: Eigen Sprite Maken<a class="headerlink" href="#opgave-2-eigen-sprite-maken" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Download <strong>Piskel</strong> (<a class="reference external" href="http://piskelapp.com">piskelapp.com</a>) of gebruik Paint</p></li>
+<li><p>Maak een 32x48 poppetje</p></li>
+<li><p>Sla op als <code class="docutils literal notranslate"><span class="pre">speler.png</span></code> in je project-map</p></li>
+<li><p>Laad in je code</p></li>
+</ol>
+</section>
+<section id="opgave-3-level-uitbreiden">
+<h3>Opgave 3: Level Uitbreiden<a class="headerlink" href="#opgave-3-level-uitbreiden" title="Link to this heading">#</a></h3>
+<p>Voeg meer platforms toe:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">platforms</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">Platform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">550</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>      <span class="c1"># Grond</span>
+    <span class="n">Platform</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span>
+    <span class="n">Platform</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span>
+    <span class="n">Platform</span><span class="p">(</span><span class="mi">550</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span>
+    <span class="n">Platform</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span>
+    <span class="n">Platform</span><span class="p">(</span><span class="mi">450</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="opgave-4-voeg-munten-toe">
+<h3>Opgave 4: Voeg Munten Toe<a class="headerlink" href="#opgave-4-voeg-munten-toe" title="Link to this heading">#</a></h3>
+<p>Maak minstens 5 munten en plaats ze boven platforms.</p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="samenvatting">
-<h2>Samenvatting<a class="headerlink" href="#samenvatting" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Een methode is een functie die bij een object hoort.</p></li>
-<li><p>Attributen slaan gegevens op.</p></li>
-<li><p>Methoden veranderen of gebruiken die gegevens.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">self</span></code> betekent: deze instantie van de klasse.</p></li>
+<h2>💡 Samenvatting<a class="headerlink" href="#samenvatting" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Concept</p></th>
+<th class="head"><p>Uitleg</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Methode</strong></p></td>
+<td><p>Functie in een klasse (wat object kan doen)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Game-loop</strong></p></td>
+<td><p>INPUT → UPDATE → RENDER (60x per seconde)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Sprite</strong></p></td>
+<td><p>Afbeelding voor object (pixelart)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong><code class="docutils literal notranslate"><span class="pre">draw()</span></code></strong></p></td>
+<td><p>Methode om object zichtbaar te maken</p></td>
+</tr>
+<tr class="row-even"><td><p><strong><code class="docutils literal notranslate"><span class="pre">pygame.image.load()</span></code></strong></p></td>
+<td><p>Laadt sprite van schijf</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong><code class="docutils literal notranslate"><span class="pre">screen.blit()</span></code></strong></p></td>
+<td><p>Plakt afbeelding op scherm</p></td>
+</tr>
+<tr class="row-even"><td><p><strong><code class="docutils literal notranslate"><span class="pre">pygame.draw.rect()</span></code></strong></p></td>
+<td><p>Tekent rechthoek</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong><code class="docutils literal notranslate"><span class="pre">pygame.draw.circle()</span></code></strong></p></td>
+<td><p>Tekent cirkel</p></td>
+</tr>
+<tr class="row-even"><td><p><strong><code class="docutils literal notranslate"><span class="pre">clock.tick(60)</span></code></strong></p></td>
+<td><p>Zorgt voor 60 FPS</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="checklist-begrijp-je-dit">
+<h2>Checklist: Begrijp je dit?<a class="headerlink" href="#checklist-begrijp-je-dit" title="Link to this heading">#</a></h2>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Wat is het verschil tussen een methode en een eigenschap?</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Wat zijn de 4 stappen van de game-loop?</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Hoe laad je een sprite in pygame?</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Wat is <code class="docutils literal notranslate"><span class="pre">screen.blit()</span></code>?</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Hoe teken je een rechthoek?</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Hoe zorgen voor 60 FPS?</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Kun je een speler-sprite van een bestand laden?</p></li>
 </ul>
 </section>
-<section id="check-je-begrip">
-<h2>Check je begrip<a class="headerlink" href="#check-je-begrip" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Wat is een methode?</p></li>
-<li><p>Wat betekent <code class="docutils literal notranslate"><span class="pre">self</span></code>?</p></li>
-<li><p>Hoe roep je een methode aan?</p></li>
-<li><p>Waarom is het handig om gedrag in methoden te zetten?</p></li>
-</ol>
-</section>
-<section id="afbeeldingen-en-bronnen">
-<h2>Afbeeldingen en bronnen<a class="headerlink" href="#afbeeldingen-en-bronnen" title="Link to this heading">#</a></h2>
+<hr class="docutils" />
+<section id="volgende-stap">
+<h2>✅ Volgende Stap<a class="headerlink" href="#volgende-stap" title="Link to this heading">#</a></h2>
+<p><strong>Hoofstuk 3:</strong></p>
 <ul class="simple">
-<li><p>Zelf maken: maak een schema met een object en verschillende methoden.</p></li>
-<li><p>Online zoeken: <a class="reference external" href="https://www.youtube.com/results?search_query=python+methoden+class+self">Methoden in Python</a></p></li>
-<li><p>Online zoeken: <a class="reference external" href="https://docs.python.org/3/tutorial/classes.html">Python object-oriented programming</a></p></li>
-<li><p>Online zoeken: <a class="reference external" href="https://nl.wikipedia.org/wiki/Objectgeori%C3%ABnteerd_programmeren">Wikipedia: objectgeoriënteerd programmeren</a></p></li>
+<li><p>Lijsten van platforms</p></li>
+<li><p>Level-design als datastructuur</p></li>
+<li><p>Collision-voorbereiding</p></li>
 </ul>
-</section>
-<section id="opdrachten">
-<h2>Opdrachten<a class="headerlink" href="#opdrachten" title="Link to this heading">#</a></h2>
-<ol class="arabic">
-<li><p>Methode schrijven</p>
-<ol type='a'>
-<li>Maak een klasse `Speler` met een attribuut `naam` en `score`.</li>
-<li>Voeg een methode `verdien_punten` toe die de score verhoogt.</li>
-<li>Roep deze methode aan en laat zien wat de score wordt.</li>
-</ol>
-</li>
-<li><p>Met <code class="docutils literal notranslate"><span class="pre">self</span></code> werken</p>
-<ol type='a'>
-<li>Leg uit wat `self` betekent in Python.</li>
-<li>Waarom kun je zonder `self` niet goed weten bij welk object je werkt?</li>
-<li>Schrijf een korte methode die een speler een schadepunt geeft.</li>
-</ol>
-</li>
-<li><p>Toepassingsvraag</p>
-<p>In een game raakt een speler een vijand.</p>
-<ol type='a'>
-<li>Welke methode zou je dan kunnen gebruiken?</li>
-<li>Wat gebeurt met de score of levens als de vijand wordt verslagen?</li>
-<li>Waarom is het handig om gedrag in methoden te stoppen?</li>
-</ol>
-</li>
-<li><p>Eigen methode ontwerpen</p>
-<ol type='a'>
-<li>Maak een klasse `Vijand` met een attribuut `levens`.</li>
-<li>Voeg een methode `ontvang_schade` toe die levens verlaagt.</li>
-<li>Laat zien wat er gebeurt als een vijand 2 schadepunten krijgt.</li>
-</ol>
-</li>
-</ol>
-<section id="inzichtsvragen">
-<h3>Inzichtsvragen<a class="headerlink" href="#inzichtsvragen" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Wat is het verschil tussen een attribuut en een methode?</p></li>
-<li><p>Waarom kun je methoden vergelijken met acties van een object?</p></li>
-<li><p>Waarom is een object in Python vaak een ‘dingen dat iets kan doen’?</p></li>
-</ol>
-</section>
 </section>
 </section>
 
@@ -693,7 +1080,7 @@
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Objectgeoriënteerd Programmeren Hoofdstuk 1: Klassen en objecten</p>
+        <p class="prev-next-title">Objectgeoriënteerd Programmeren Hoofdstuk 1: Klassen en Objecten</p>
       </div>
     </a>
     <a class="right-next"
@@ -701,7 +1088,7 @@
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Objectgeoriënteerd Programmeren Hoofdstuk 3: Lijsten van objecten</p>
+        <p class="prev-next-title">Objectgeoriënteerd Programmeren Hoofdstuk 3: Lijsten van objecten en Level-ontwerp</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -724,18 +1111,36 @@
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-een-methode">Wat is een methode?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-in-python"><code class="docutils literal notranslate"><span class="pre">self</span></code> in Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attributen-en-methoden-samen">Attributen en methoden samen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-met-een-speler">Voorbeeld met een speler</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-zijn-methoden-handig">Waarom zijn methoden handig?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#afbeeldingen-en-bronnen">Afbeeldingen en bronnen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inzichtsvragen">Inzichtsvragen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-een-methode">Wat is een Methode?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld">Voorbeeld</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methoden-aanroepen">Methoden aanroepen</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-game-loop-hoe-games-werken">De Game-Loop: Hoe Games Werken</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pygame-installeren-en-starten">Pygame Installeren en Starten</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-1-installeer-pygame">Stap 1: Installeer Pygame</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-2-basis-pygame-setup">Stap 2: Basis pygame-setup</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sprites-pixel-art-laden">Sprites: Pixel-Art Laden</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-1-een-sprite-maken">Stap 1: Een Sprite Maken</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-2-sprite-in-klasse-laden">Stap 2: Sprite in Klasse Laden</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-3-speler-gebruiken-in-game-loop">Stap 3: Speler Gebruiken in Game-Loop</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#platforms-tekenen-met-draw">Platforms Tekenen met <code class="docutils literal notranslate"><span class="pre">draw()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#munten-tekenen">Munten Tekenen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-voorbeeld-bewegende-speler">Complete Voorbeeld: Bewegende Speler</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huiswerk-hst-2">🎯 Huiswerk Hst 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opgave-1-methoden-toevoegen">Opgave 1: Methoden Toevoegen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opgave-2-eigen-sprite-maken">Opgave 2: Eigen Sprite Maken</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opgave-3-level-uitbreiden">Opgave 3: Level Uitbreiden</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opgave-4-voeg-munten-toe">Opgave 4: Voeg Munten Toe</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">💡 Samenvatting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checklist-begrijp-je-dit">Checklist: Begrijp je dit?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#volgende-stap">✅ Volgende Stap</a></li>
 </ul>
   </nav></div>
 

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Objectgeoriënteerd Programmeren Hoofdstuk 1: Klassen en objecten &#8212; Informatica</title>
+    <title>Objectgeoriënteerd Programmeren Hoofdstuk 1: Klassen en Objecten &#8212; Informatica</title>
   
   
   
@@ -64,7 +64,7 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Objectgeoriënteerd Programmeren Hoofdstuk 2: Eigenschappen en methoden" href="hoofdstuk2.html" />
+    <link rel="next" title="Objectgeoriënteerd Programmeren Hoofdstuk 2: Methoden en Beweging" href="hoofdstuk2.html" />
     <link rel="prev" title="Objectgeoriënteerd Programmeren" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -451,7 +451,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Objectgeoriënteerd Programmeren Hoofdstuk 1: Klassen en objecten</h1>
+    <h1>Objectgeoriënteerd Programmeren Hoofdstuk 1: Klassen en Objecten</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -462,17 +462,35 @@
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-een-klasse">Wat is een klasse?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-een-object">Wat is een object?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-zijn-klassen-handig">Waarom zijn klassen handig?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenschappen-van-een-object">Eigenschappen van een object</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-een-spelpersonage">Voorbeeld: een spelpersonage</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inzichtsvragen">Inzichtsvragen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-een-klasse">Wat is een Klasse?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-de-klasse-speler">Voorbeeld: De klasse “Speler”</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-init">Wat is <code class="docutils literal notranslate"><span class="pre">__init__</span></code>?</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#een-object-aanmaken">Een Object Aanmaken</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenschappen-gebruiken">Eigenschappen gebruiken</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meerdere-objecten-van-dezelfde-klasse">Meerdere Objecten van Dezelfde Klasse</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#praktijk-1-platform-klasse">Praktijk 1: Platform-Klasse</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#praktijk-2-munt-klasse">Praktijk 2: Munt-Klasse</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenschappen-lezen-en-schrijven">Eigenschappen: Lezen en Schrijven</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lezen-uitlezen">Lezen (uitlezen)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#schrijven-veranderen">Schrijven (veranderen)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#praktijk-3-score-bijhouden">Praktijk 3: Score Bijhouden</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#praktijk-4-eigen-klasse-aanmaken">Praktijk 4: Eigen Klasse Aanmaken</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huiswerk-hst-1">🎯 Huiswerk Hst 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opgave-1-eigen-klasse-ontwerpen">Opgave 1: Eigen Klasse Ontwerpen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opgave-2-level-data">Opgave 2: Level Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opgave-3-munten-verzamelen">Opgave 3: Munten Verzamelen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opgave-4-game-state">Opgave 4: Game State</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">💡 Samenvatting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checklist-begrijp-je-dit">Checklist: Begrijp je dit?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#volgende-stap">✅ Volgende Stap</a></li>
 </ul>
             </nav>
         </div>
@@ -485,150 +503,437 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="objectgeorienteerd-programmeren-hoofdstuk-1-klassen-en-objecten">
-<h1>Objectgeoriënteerd Programmeren Hoofdstuk 1: Klassen en objecten<a class="headerlink" href="#objectgeorienteerd-programmeren-hoofdstuk-1-klassen-en-objecten" title="Link to this heading">#</a></h1>
+<h1>Objectgeoriënteerd Programmeren Hoofdstuk 1: Klassen en Objecten<a class="headerlink" href="#objectgeorienteerd-programmeren-hoofdstuk-1-klassen-en-objecten" title="Link to this heading">#</a></h1>
 <section id="leerdoelen">
 <h2>Leerdoelen<a class="headerlink" href="#leerdoelen" title="Link to this heading">#</a></h2>
 <p>In deze lessen ga je werken met <strong>klassen</strong> en <strong>objecten</strong>. Dat is het begin van object-georiënteerd programmeren.</p>
 <p>Je leert:</p>
 <ul class="simple">
-<li><p>wat een klasse is;</p></li>
-<li><p>wat een object is;</p></li>
-<li><p>hoe je een object maakt;</p></li>
-<li><p>waarom klassen handig zijn in een spel of programma;</p></li>
-<li><p>hoe een klasse verschillende objecten kan beschrijven.</p></li>
+<li><p><strong>Wat een klasse is</strong> (blauwdruk voor objecten)</p></li>
+<li><p><strong>Wat een object is</strong> (instantie van een klasse)</p></li>
+<li><p><strong>Eigenschappen</strong> (data die een object heeft)</p></li>
+<li><p><strong>Hoe je objecten maakt</strong> (<code class="docutils literal notranslate"><span class="pre">__init__</span></code>)</p></li>
+<li><p><strong>Waarom klassen handig zijn</strong> (herbruikbaarheid, organisatie)</p></li>
+<li><p><strong>Meerdere objecten van dezelfde klasse</strong></p></li>
 </ul>
-<p>Aan het einde van dit hoofdstuk kun je een eenvoudige klasse ontwerpen en objecten daarvan maken.</p>
+<p>⚠️ <strong>BELANGRIJK:</strong> In dit hoofstuk <strong>GEEN pygame of grafische output</strong>! We starten zuiver met OOP-concepten. Je leert hoe klassen werken, en vervolgens hoe je ze op het scherm zichtbaar maakt in Hoofstuk 2.</p>
+<p>Aan het einde van dit hoofstuk kun je:</p>
+<ul class="simple">
+<li><p>Een klasse definiëren met eigenschappen</p></li>
+<li><p>Meerdere objecten aanmaken</p></li>
+<li><p>Objecteigenschappen lezen en schrijven</p></li>
+</ul>
 </section>
 <hr class="docutils" />
 <section id="wat-is-een-klasse">
-<h2>Wat is een klasse?<a class="headerlink" href="#wat-is-een-klasse" title="Link to this heading">#</a></h2>
-<p>Een <strong>klasse</strong> is een blauwdruk.</p>
-<p>Een blauwdruk beschrijft wat een object kan hebben en wat het kan doen.</p>
-<p>Bijvoorbeeld:</p>
+<h2>Wat is een Klasse?<a class="headerlink" href="#wat-is-een-klasse" title="Link to this heading">#</a></h2>
+<p>Een <strong>klasse</strong> is een <strong>blauwdruk</strong> voor objecten.</p>
+<p>Net zoals een blauwdruk van een huis beschrijft hoe je een huis bouwt, beschrijft een klasse hoe je een object maakt.</p>
+<section id="voorbeeld-de-klasse-speler">
+<h3>Voorbeeld: De klasse “Speler”<a class="headerlink" href="#voorbeeld-de-klasse-speler" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Speler</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">naam</span><span class="p">,</span> <span class="n">levens</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">naam</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">naam</span> <span class="o">=</span> <span class="n">naam</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">levens</span> <span class="o">=</span> <span class="n">levens</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">levens</span> <span class="o">=</span> <span class="mi">3</span>
 </pre></div>
 </div>
-<p>Hier is <code class="docutils literal notranslate"><span class="pre">Speler</span></code> de klasse.</p>
-<p>De klasse zegt: een speler heeft een naam en aantal levens.</p>
+<p>Dit zegt:</p>
+<ul class="simple">
+<li><p>Klasse heet <code class="docutils literal notranslate"><span class="pre">Speler</span></code></p></li>
+<li><p>Een Speler <strong>heeft</strong> een naam</p></li>
+<li><p>Een Speler <strong>heeft</strong> een x-positie</p></li>
+<li><p>Een Speler <strong>heeft</strong> een y-positie</p></li>
+<li><p>Een Speler <strong>heeft</strong> 3 levens</p></li>
+</ul>
+</section>
+<section id="wat-is-init">
+<h3>Wat is <code class="docutils literal notranslate"><span class="pre">__init__</span></code>?<a class="headerlink" href="#wat-is-init" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">__init__</span></code> is de <strong>constructor</strong> (konstruktor). Dit is een speciale methode die wordt <strong>aangeroepen wanneer je een object aanmaakt</strong>.</p>
+<p>De <code class="docutils literal notranslate"><span class="pre">__init__</span></code> zet alle <strong>eigenschappen</strong> van het object op beginwaarden.</p>
+<p><code class="docutils literal notranslate"><span class="pre">self</span></code> betekent “dit object”.</p>
+</section>
 </section>
 <hr class="docutils" />
-<section id="wat-is-een-object">
-<h2>Wat is een object?<a class="headerlink" href="#wat-is-een-object" title="Link to this heading">#</a></h2>
-<p>Een <strong>object</strong> is een concrete versie van die blauwdruk.</p>
-<p>Zo maak je een object:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">joost</span> <span class="o">=</span> <span class="n">Speler</span><span class="p">(</span><span class="s2">"Joost"</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<section id="een-object-aanmaken">
+<h2>Een Object Aanmaken<a class="headerlink" href="#een-object-aanmaken" title="Link to this heading">#</a></h2>
+<p>Wanneer je een object aanmaakt, zeg je:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mijn_speler</span> <span class="o">=</span> <span class="n">Speler</span><span class="p">(</span><span class="s2">"Mario"</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Nu is <code class="docutils literal notranslate"><span class="pre">joost</span></code> een object van de klasse <code class="docutils literal notranslate"><span class="pre">Speler</span></code>.</p>
-<p>Het object heeft eigenschappen zoals:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">joost</span><span class="o">.</span><span class="n">naam</span>
-<span class="n">joost</span><span class="o">.</span><span class="n">levens</span>
+<p>Dit doet:</p>
+<ol class="arabic simple">
+<li><p>Maak een NIEUW object van klasse Speler</p></li>
+<li><p>Noem het <code class="docutils literal notranslate"><span class="pre">mijn_speler</span></code></p></li>
+<li><p>Geef <code class="docutils literal notranslate"><span class="pre">naam=&quot;Mario&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">x=100</span></code>, <code class="docutils literal notranslate"><span class="pre">y=200</span></code> aan</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__</span></code> zet <code class="docutils literal notranslate"><span class="pre">levens=3</span></code></p></li>
+</ol>
+<p>Nu bestaat <code class="docutils literal notranslate"><span class="pre">mijn_speler</span></code> met die waarden!</p>
+<section id="eigenschappen-gebruiken">
+<h3>Eigenschappen gebruiken<a class="headerlink" href="#eigenschappen-gebruiken" title="Link to this heading">#</a></h3>
+<p>Je kunt eigenschappen <strong>uitlezen</strong> met <code class="docutils literal notranslate"><span class="pre">.</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mijn_speler</span><span class="o">.</span><span class="n">naam</span><span class="p">)</span>      <span class="c1"># Output: Mario</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mijn_speler</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>         <span class="c1"># Output: 100</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mijn_speler</span><span class="o">.</span><span class="n">levens</span><span class="p">)</span>    <span class="c1"># Output: 3</span>
 </pre></div>
 </div>
-<p>Een klasse kan meerdere objecten maken.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">amyra</span> <span class="o">=</span> <span class="n">Speler</span><span class="p">(</span><span class="s2">"Amyra"</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<p>Je kunt eigenschappen ook <strong>veranderen</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mijn_speler</span><span class="o">.</span><span class="n">levens</span> <span class="o">=</span> <span class="mi">2</span>       <span class="c1"># Speler verliest een leven</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mijn_speler</span><span class="o">.</span><span class="n">levens</span><span class="p">)</span>    <span class="c1"># Output: 2</span>
 </pre></div>
 </div>
 </section>
+</section>
 <hr class="docutils" />
-<section id="waarom-zijn-klassen-handig">
-<h2>Waarom zijn klassen handig?<a class="headerlink" href="#waarom-zijn-klassen-handig" title="Link to this heading">#</a></h2>
-<p>Met klassen kun je veel gelijke dingen op een overzichtelijke manier maken.</p>
-<p>In een spel heb je vaak veel vijanden, spelers of kogels.</p>
-<p>Zonder klassen zou je elke speler apart moeten programmeren.</p>
-<p>Met klassen kun je bijvoorbeeld één blauwdruk maken voor alle spelers.</p>
+<section id="meerdere-objecten-van-dezelfde-klasse">
+<h2>Meerdere Objecten van Dezelfde Klasse<a class="headerlink" href="#meerdere-objecten-van-dezelfde-klasse" title="Link to this heading">#</a></h2>
+<p><strong>Kracht van klassen:</strong> Je kunt <strong>veel objecten</strong> van dezelfde klasse maken!</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Speler</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">naam</span><span class="p">,</span> <span class="n">score</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">naam</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">naam</span> <span class="o">=</span> <span class="n">naam</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="n">score</span>
-</pre></div>
-</div>
-<p>Dan kun je meerdere spelers aanmaken zonder de code steeds opnieuw te schrijven.</p>
-</section>
-<hr class="docutils" />
-<section id="eigenschappen-van-een-object">
-<h2>Eigenschappen van een object<a class="headerlink" href="#eigenschappen-van-een-object" title="Link to this heading">#</a></h2>
-<p>Eigenschappen noem je ook wel <strong>attributen</strong>.</p>
-<p>In Python zet je attribuutwaarden in <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Speler</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">naam</span><span class="p">,</span> <span class="n">snelheid</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">naam</span> <span class="o">=</span> <span class="n">naam</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">snelheid</span> <span class="o">=</span> <span class="n">snelheid</span>
-</pre></div>
-</div>
-<p>Nu heeft elk object zijn eigen waarde voor <code class="docutils literal notranslate"><span class="pre">naam</span></code> en <code class="docutils literal notranslate"><span class="pre">snelheid</span></code>.</p>
-</section>
-<hr class="docutils" />
-<section id="voorbeeld-een-spelpersonage">
-<h2>Voorbeeld: een spelpersonage<a class="headerlink" href="#voorbeeld-een-spelpersonage" title="Link to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">SpelPersonage</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">naam</span><span class="p">,</span> <span class="n">hp</span><span class="p">,</span> <span class="n">xpos</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">naam</span> <span class="o">=</span> <span class="n">naam</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">hp</span> <span class="o">=</span> <span class="n">hp</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">xpos</span> <span class="o">=</span> <span class="n">xpos</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">levens</span> <span class="o">=</span> <span class="mi">3</span>
 
-<span class="n">p1</span> <span class="o">=</span> <span class="n">SpelPersonage</span><span class="p">(</span><span class="s2">"SuperTygo"</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">p2</span> <span class="o">=</span> <span class="n">SpelPersonage</span><span class="p">(</span><span class="s2">"SuperFinn"</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="c1"># Maak DRIE verschillende spelers</span>
+<span class="n">speler1</span> <span class="o">=</span> <span class="n">Speler</span><span class="p">(</span><span class="s2">"Mario"</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">speler2</span> <span class="o">=</span> <span class="n">Speler</span><span class="p">(</span><span class="s2">"Luigi"</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">speler3</span> <span class="o">=</span> <span class="n">Speler</span><span class="p">(</span><span class="s2">"Toad"</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+
+<span class="c1"># Elk object is APART</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">speler1</span><span class="o">.</span><span class="n">naam</span><span class="p">)</span>      <span class="c1"># Mario</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">speler2</span><span class="o">.</span><span class="n">naam</span><span class="p">)</span>      <span class="c1"># Luigi</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">speler3</span><span class="o">.</span><span class="n">naam</span><span class="p">)</span>      <span class="c1"># Toad</span>
+
+<span class="c1"># Ze kunnen verschillen</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">speler1</span><span class="o">.</span><span class="n">levens</span><span class="p">)</span>    <span class="c1"># 3</span>
+<span class="n">speler2</span><span class="o">.</span><span class="n">levens</span> <span class="o">=</span> <span class="mi">1</span>       <span class="c1"># Luigi heeft minder levens</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">speler2</span><span class="o">.</span><span class="n">levens</span><span class="p">)</span>    <span class="c1"># 1</span>
+
+<span class="c1"># Andere spelers veranderen niet!</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">speler1</span><span class="o">.</span><span class="n">levens</span><span class="p">)</span>    <span class="c1"># Nog steeds 3</span>
 </pre></div>
 </div>
-<p>Nu zijn <code class="docutils literal notranslate"><span class="pre">p1</span></code> en <code class="docutils literal notranslate"><span class="pre">p2</span></code> twee verschillende objecten, maar ze hebben dezelfde structuur.</p>
+<p>Zie je? <strong>Dezelfde klasse, maar verschillende objecten met verschillende data.</strong></p>
+<p>Dit is het <strong>voordeel van klassen</strong>: je schrijft de code <strong>één keer</strong>, maar je kunt er <strong>honderd objecten</strong> mee maken.</p>
+</section>
+<hr class="docutils" />
+<section id="praktijk-1-platform-klasse">
+<h2>Praktijk 1: Platform-Klasse<a class="headerlink" href="#praktijk-1-platform-klasse" title="Link to this heading">#</a></h2>
+<p>In ons spel hebben we ook platforms (rotsen waar je op springt).</p>
+<p>Maak een <code class="docutils literal notranslate"><span class="pre">Platform</span></code>-klasse:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Platform</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">breedte</span><span class="p">,</span> <span class="n">hoogte</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">breedte</span> <span class="o">=</span> <span class="n">breedte</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hoogte</span> <span class="o">=</span> <span class="n">hoogte</span>
+</pre></div>
+</div>
+<p>Nu kun je platforms aanmaken:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grond</span> <span class="o">=</span> <span class="n">Platform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">550</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">platform1</span> <span class="o">=</span> <span class="n">Platform</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="n">platform2</span> <span class="o">=</span> <span class="n">Platform</span><span class="p">(</span><span class="mi">450</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Elk platform is apart. Ze kunnen verschillende afmetingen hebben!</p>
+<p>Test je begrip:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">grond</span><span class="o">.</span><span class="n">breedte</span><span class="p">)</span>        <span class="c1"># 800</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">platform1</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>          <span class="c1"># 100</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">platform2</span><span class="o">.</span><span class="n">hoogte</span><span class="p">)</span>     <span class="c1"># 25</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="praktijk-2-munt-klasse">
+<h2>Praktijk 2: Munt-Klasse<a class="headerlink" href="#praktijk-2-munt-klasse" title="Link to this heading">#</a></h2>
+<p>Munten zijn collectibles in ons spel. Een munt heeft positie en waarde:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Munt</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">waarde</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+</div>
+<p>Aanmaken:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">munt1</span> <span class="o">=</span> <span class="n">Munt</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+<span class="n">munt2</span> <span class="o">=</span> <span class="n">Munt</span><span class="p">(</span><span class="mi">575</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+<span class="n">munt3</span> <span class="o">=</span> <span class="n">Munt</span><span class="p">(</span><span class="mi">275</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+
+<span class="c1"># Munten hebben dezelfde waarde</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">munt1</span><span class="o">.</span><span class="n">waarde</span><span class="p">)</span>   <span class="c1"># 10</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">munt2</span><span class="o">.</span><span class="n">waarde</span><span class="p">)</span>   <span class="c1"># 10</span>
+
+<span class="c1"># Maar verschillende posities</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">munt1</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>        <span class="c1"># 200</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">munt2</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>        <span class="c1"># 575</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="eigenschappen-lezen-en-schrijven">
+<h2>Eigenschappen: Lezen en Schrijven<a class="headerlink" href="#eigenschappen-lezen-en-schrijven" title="Link to this heading">#</a></h2>
+<section id="lezen-uitlezen">
+<h3>Lezen (uitlezen)<a class="headerlink" href="#lezen-uitlezen" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">speler</span> <span class="o">=</span> <span class="n">Speler</span><span class="p">(</span><span class="s2">"Mario"</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">x_positie</span> <span class="o">=</span> <span class="n">speler</span><span class="o">.</span><span class="n">x</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x_positie</span><span class="p">)</span>              <span class="c1"># 50</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">speler</span><span class="o">.</span><span class="n">naam</span><span class="p">)</span>            <span class="c1"># Mario</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">speler</span><span class="o">.</span><span class="n">levens</span><span class="p">)</span>          <span class="c1"># 3</span>
+</pre></div>
+</div>
+</section>
+<section id="schrijven-veranderen">
+<h3>Schrijven (veranderen)<a class="headerlink" href="#schrijven-veranderen" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">speler</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">75</span>                 <span class="c1"># Speler gaat naar x=75</span>
+<span class="n">speler</span><span class="o">.</span><span class="n">levens</span> <span class="o">=</span> <span class="n">speler</span><span class="o">.</span><span class="n">levens</span> <span class="o">-</span> <span class="mi">1</span>  <span class="c1"># Verlies een leven</span>
+<span class="n">speler</span><span class="o">.</span><span class="n">levens</span> <span class="o">-=</span> <span class="mi">1</span>            <span class="c1"># Korter geschreven</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">speler</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>               <span class="c1"># 75</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">speler</span><span class="o">.</span><span class="n">levens</span><span class="p">)</span>          <span class="c1"># 2</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="praktijk-3-score-bijhouden">
+<h2>Praktijk 3: Score Bijhouden<a class="headerlink" href="#praktijk-3-score-bijhouden" title="Link to this heading">#</a></h2>
+<p>Laten we een klasse maken die score bijhoudt:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">GameState</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">level</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># Aanmaken</span>
+<span class="n">game</span> <span class="o">=</span> <span class="n">GameState</span><span class="p">()</span>
+
+<span class="c1"># Lezen</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">game</span><span class="o">.</span><span class="n">score</span><span class="p">)</span>              <span class="c1"># 0</span>
+
+<span class="c1"># Veranderen</span>
+<span class="n">game</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="n">game</span><span class="o">.</span><span class="n">score</span> <span class="o">+</span> <span class="mi">10</span>   <span class="c1"># Score omhoog</span>
+<span class="n">game</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="mi">20</span>               <span class="c1"># Nog meer</span>
+<span class="n">game</span><span class="o">.</span><span class="n">level</span> <span class="o">=</span> <span class="mi">2</span>                 <span class="c1"># Volgende level</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">game</span><span class="o">.</span><span class="n">score</span><span class="p">)</span>              <span class="c1"># 30</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">game</span><span class="o">.</span><span class="n">level</span><span class="p">)</span>              <span class="c1"># 2</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="praktijk-4-eigen-klasse-aanmaken">
+<h2>Praktijk 4: Eigen Klasse Aanmaken<a class="headerlink" href="#praktijk-4-eigen-klasse-aanmaken" title="Link to this heading">#</a></h2>
+<p>Laat ons een <strong>complete klasse</strong> voor ons spel maken met vele eigenschappen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Speler</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">naam</span><span class="p">,</span> <span class="n">start_x</span><span class="p">,</span> <span class="n">start_y</span><span class="p">):</span>
+        <span class="c1"># Identiteit</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">naam</span> <span class="o">=</span> <span class="n">naam</span>
+        
+        <span class="c1"># Positie</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">start_x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">start_y</span>
+        
+        <span class="c1"># Afmetingen (pixel-art wordt later ingeladen)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">breedte</span> <span class="o">=</span> <span class="mi">32</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hoogte</span> <span class="o">=</span> <span class="mi">48</span>
+        
+        <span class="c1"># Game-stats</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">levens</span> <span class="o">=</span> <span class="mi">3</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">op_grond</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># Staat speler op een platform?</span>
+        
+        <span class="c1"># Snelheden (voor beweging in Hst 2)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x_snelheid</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y_snelheid</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Gebruik</span>
+<span class="n">held</span> <span class="o">=</span> <span class="n">Speler</span><span class="p">(</span><span class="s2">"Mario"</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Speler </span><span class="si">{</span><span class="n">held</span><span class="o">.</span><span class="n">naam</span><span class="si">}</span><span class="s2"> staat op (</span><span class="si">{</span><span class="n">held</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">held</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">)"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Levens: </span><span class="si">{</span><span class="n">held</span><span class="o">.</span><span class="n">levens</span><span class="si">}</span><span class="s2">, Score: </span><span class="si">{</span><span class="n">held</span><span class="o">.</span><span class="n">score</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># Verandering</span>
+<span class="n">held</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="mi">50</span>
+<span class="n">held</span><span class="o">.</span><span class="n">levens</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Na actie: </span><span class="si">{</span><span class="n">held</span><span class="o">.</span><span class="n">levens</span><span class="si">}</span><span class="s2"> levens, </span><span class="si">{</span><span class="n">held</span><span class="o">.</span><span class="n">score</span><span class="si">}</span><span class="s2"> punten"</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="huiswerk-hst-1">
+<h2>🎯 Huiswerk Hst 1<a class="headerlink" href="#huiswerk-hst-1" title="Link to this heading">#</a></h2>
+<section id="opgave-1-eigen-klasse-ontwerpen">
+<h3>Opgave 1: Eigen Klasse Ontwerpen<a class="headerlink" href="#opgave-1-eigen-klasse-ontwerpen" title="Link to this heading">#</a></h3>
+<p>Ontwerp een klasse voor <strong>iets uit JOUW leven</strong>. Bijvoorbeeld:</p>
+<p><strong>Optie A - Huisdier:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Huisdier</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">naam</span><span class="p">,</span> <span class="n">soort</span><span class="p">,</span> <span class="n">leeftijd</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">naam</span> <span class="o">=</span> <span class="n">naam</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">soort</span> <span class="o">=</span> <span class="n">soort</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">leeftijd</span> <span class="o">=</span> <span class="n">leeftijd</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">energie</span> <span class="o">=</span> <span class="mi">100</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">honger</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p><strong>Optie B - Auto:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Auto</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">merk</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">bouwjaar</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">merk</span> <span class="o">=</span> <span class="n">merk</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bouwjaar</span> <span class="o">=</span> <span class="n">bouwjaar</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">benzine</span> <span class="o">=</span> <span class="mi">100</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">snelheid</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p><strong>Optie C - Persoon (in RPG-spel):</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Persoon</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">naam</span><span class="p">,</span> <span class="n">klasse</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">naam</span> <span class="o">=</span> <span class="n">naam</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">klasse</span> <span class="o">=</span> <span class="n">klasse</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hp</span> <span class="o">=</span> <span class="mi">100</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mana</span> <span class="o">=</span> <span class="mi">50</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">level</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p><strong>Maak 2-3 objecten van jouw klasse en verander wat waarden.</strong></p>
+</section>
+<section id="opgave-2-level-data">
+<h3>Opgave 2: Level Data<a class="headerlink" href="#opgave-2-level-data" title="Link to this heading">#</a></h3>
+<p>Maak 4 platforms voor ons spel met realistische getallen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Platform</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">breedte</span><span class="p">,</span> <span class="n">hoogte</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">breedte</span> <span class="o">=</span> <span class="n">breedte</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hoogte</span> <span class="o">=</span> <span class="n">hoogte</span>
+
+<span class="c1"># JOUW platforms:</span>
+<span class="n">grond</span> <span class="o">=</span> <span class="n">Platform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">550</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>      <span class="c1"># Bodem</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Platform</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">Platform</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="n">Platform</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+
+<span class="c1"># Print info</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Grond: x=</span><span class="si">{</span><span class="n">grond</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">, breedte=</span><span class="si">{</span><span class="n">grond</span><span class="o">.</span><span class="n">breedte</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Platform 1: y=</span><span class="si">{</span><span class="n">p1</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">, hoogte=</span><span class="si">{</span><span class="n">p1</span><span class="o">.</span><span class="n">hoogte</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="opgave-3-munten-verzamelen">
+<h3>Opgave 3: Munten Verzamelen<a class="headerlink" href="#opgave-3-munten-verzamelen" title="Link to this heading">#</a></h3>
+<p>Maak 5 munten met verschillende posities. Bereken de TOTALE waarde:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Munt</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">waarde</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1"># 5 munten</span>
+<span class="n">munt1</span> <span class="o">=</span> <span class="n">Munt</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+<span class="n">munt2</span> <span class="o">=</span> <span class="n">Munt</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">munt3</span> <span class="o">=</span> <span class="n">Munt</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">munt4</span> <span class="o">=</span> <span class="n">Munt</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+<span class="n">munt5</span> <span class="o">=</span> <span class="n">Munt</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">250</span><span class="p">)</span>
+
+<span class="c1"># Totale waarde berekenen:</span>
+<span class="n">totaal</span> <span class="o">=</span> <span class="n">munt1</span><span class="o">.</span><span class="n">waarde</span> <span class="o">+</span> <span class="n">munt2</span><span class="o">.</span><span class="n">waarde</span> <span class="o">+</span> <span class="n">munt3</span><span class="o">.</span><span class="n">waarde</span> <span class="o">+</span> <span class="n">munt4</span><span class="o">.</span><span class="n">waarde</span> <span class="o">+</span> <span class="n">munt5</span><span class="o">.</span><span class="n">waarde</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Totale munt-waarde: </span><span class="si">{</span><span class="n">totaal</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>  <span class="c1"># 50</span>
+</pre></div>
+</div>
+</section>
+<section id="opgave-4-game-state">
+<h3>Opgave 4: Game State<a class="headerlink" href="#opgave-4-game-state" title="Link to this heading">#</a></h3>
+<p>Maak een GameState-klasse en simuleer een spel:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">GameState</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">levens</span> <span class="o">=</span> <span class="mi">3</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">level</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">munten_verzameld</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">game</span> <span class="o">=</span> <span class="n">GameState</span><span class="p">()</span>
+
+<span class="c1"># Simulatie</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Start: Score=</span><span class="si">{</span><span class="n">game</span><span class="o">.</span><span class="n">score</span><span class="si">}</span><span class="s2">, Levens=</span><span class="si">{</span><span class="n">game</span><span class="o">.</span><span class="n">levens</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="n">game</span><span class="o">.</span><span class="n">munten_verzameld</span> <span class="o">+=</span> <span class="mi">3</span>
+<span class="n">game</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="mi">30</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Na munten: Score=</span><span class="si">{</span><span class="n">game</span><span class="o">.</span><span class="n">score</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="n">game</span><span class="o">.</span><span class="n">levens</span> <span class="o">-=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Tegen hindernis: Levens=</span><span class="si">{</span><span class="n">game</span><span class="o">.</span><span class="n">levens</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="n">game</span><span class="o">.</span><span class="n">level</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Volgende level: Level=</span><span class="si">{</span><span class="n">game</span><span class="o">.</span><span class="n">level</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
 </section>
 <hr class="docutils" />
 <section id="samenvatting">
-<h2>Samenvatting<a class="headerlink" href="#samenvatting" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Een klasse is een blauwdruk.</p></li>
-<li><p>Een object is een concrete instantie van die blauwdruk.</p></li>
-<li><p>Attributen beschrijven een object.</p></li>
-<li><p>Met klassen kun je meerdere vergelijkbare objecten maken.</p></li>
+<h2>💡 Samenvatting<a class="headerlink" href="#samenvatting" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Concept</p></th>
+<th class="head"><p>Uitleg</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Klasse</strong></p></td>
+<td><p>Blauwdruk voor objecten</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Object</strong></p></td>
+<td><p>Instantie van een klasse (concrete versie)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Eigenschap/Attribuut</strong></p></td>
+<td><p>Data die een object heeft (self.naam)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong><code class="docutils literal notranslate"><span class="pre">__init__</span></code></strong></p></td>
+<td><p>Constructor - zet beginwaarden op</p></td>
+</tr>
+<tr class="row-even"><td><p><strong><code class="docutils literal notranslate"><span class="pre">self</span></code></strong></p></td>
+<td><p>Verwijzing naar “dit object”</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Aanmaken</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">obj</span> <span class="pre">=</span> <span class="pre">Klasse(waarden)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Lezen</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">obj.eigenschap</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Schrijven</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">obj.eigenschap</span> <span class="pre">=</span> <span class="pre">waarde</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="checklist-begrijp-je-dit">
+<h2>Checklist: Begrijp je dit?<a class="headerlink" href="#checklist-begrijp-je-dit" title="Link to this heading">#</a></h2>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Wat is het verschil tussen een klasse en een object?</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Waarom heet het <code class="docutils literal notranslate"><span class="pre">__init__</span></code> en niet <code class="docutils literal notranslate"><span class="pre">init</span></code>?</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Wat betekent <code class="docutils literal notranslate"><span class="pre">self</span></code>?</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Kun je een klasse met 5+ eigenschappen schrijven?</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Kun je 3 verschillende objecten van dezelfde klasse maken?</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Kun je eigenschappen uitlezen EN veranderen?</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Begrijp je waarom klassen handig zijn in games?</p></li>
 </ul>
 </section>
-<section id="check-je-begrip">
-<h2>Check je begrip<a class="headerlink" href="#check-je-begrip" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Wat is het verschil tussen een klasse en een object?</p></li>
-<li><p>Wat is een attribuut?</p></li>
-<li><p>Hoe maak je een object aan?</p></li>
-<li><p>Waarom is een klasse handig in een spel?</p></li>
-</ol>
-</section>
-<section id="opdrachten">
-<h2>Opdrachten<a class="headerlink" href="#opdrachten" title="Link to this heading">#</a></h2>
-<ol class="arabic">
-<li><p>Klasse ontwerpen</p>
-<ol type='a'>
-<li>Maak een klasse `Vijand` met een attribuut `naam` en een attribuut `hp`.</li>
-<li>Maak twee verschillende objecten van deze klasse.</li>
-<li>Leg uit waarom het handig is om één klasse te gebruiken voor meerdere vijanden.</li>
-</ol>
-</li>
-<li><p>Objecten in een programma</p>
-<ol type='a'>
-<li>Schrijf een klein stukje code waarin je een speler maakt met een naam en levens.</li>
-<li>Zorg dat je twee verschillende spelers kunt maken.</li>
-<li>Noem één verschil tussen een klasse en een object.</li>
-</ol>
-</li>
-<li><p>Toepassingsvraag</p>
-<p>Je wilt een spel met meerdere kogels maken.</p>
-<ol type='a'>
-<li>Waarom is een klasse handig om kogels te modelleren?</li>
-<li>Noem twee kenmerken die een kogel kan hebben.</li>
-<li>Waarom is het niet handig om elke kogel apart handmatig te programmeren?</li>
-</ol>
-</li>
-</ol>
-<section id="inzichtsvragen">
-<h3>Inzichtsvragen<a class="headerlink" href="#inzichtsvragen" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Wat is een blauwdruk in een programma?</p></li>
-<li><p>Waarom is een object niet hetzelfde als een klasse?</p></li>
-<li><p>Hoe kun je een klasse als ‘bouwplan’ uitleggen?</p></li>
-</ol>
-</section>
+<hr class="docutils" />
+<section id="volgende-stap">
+<h2>✅ Volgende Stap<a class="headerlink" href="#volgende-stap" title="Link to this heading">#</a></h2>
+<p><strong>Hoofstuk 2:</strong> Nu gaan we:</p>
+<ul class="simple">
+<li><p><strong>Methoden</strong> leren (wat objecten kunnen <strong>doen</strong>)</p></li>
+<li><p><strong>Pygame</strong> introduceren (objecten zichtbaar maken)</p></li>
+<li><p>De <strong>speler-sprite</strong> inladen</p></li>
+<li><p>Andere objecten met <code class="docutils literal notranslate"><span class="pre">draw()</span></code> tekenen</p></li>
+</ul>
 </section>
 </section>
 
@@ -676,7 +981,7 @@
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Objectgeoriënteerd Programmeren Hoofdstuk 2: Eigenschappen en methoden</p>
+        <p class="prev-next-title">Objectgeoriënteerd Programmeren Hoofdstuk 2: Methoden en Beweging</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -699,17 +1004,35 @@
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-een-klasse">Wat is een klasse?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-een-object">Wat is een object?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-zijn-klassen-handig">Waarom zijn klassen handig?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenschappen-van-een-object">Eigenschappen van een object</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-een-spelpersonage">Voorbeeld: een spelpersonage</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inzichtsvragen">Inzichtsvragen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-een-klasse">Wat is een Klasse?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-de-klasse-speler">Voorbeeld: De klasse “Speler”</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-init">Wat is <code class="docutils literal notranslate"><span class="pre">__init__</span></code>?</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#een-object-aanmaken">Een Object Aanmaken</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenschappen-gebruiken">Eigenschappen gebruiken</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meerdere-objecten-van-dezelfde-klasse">Meerdere Objecten van Dezelfde Klasse</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#praktijk-1-platform-klasse">Praktijk 1: Platform-Klasse</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#praktijk-2-munt-klasse">Praktijk 2: Munt-Klasse</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenschappen-lezen-en-schrijven">Eigenschappen: Lezen en Schrijven</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lezen-uitlezen">Lezen (uitlezen)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#schrijven-veranderen">Schrijven (veranderen)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#praktijk-3-score-bijhouden">Praktijk 3: Score Bijhouden</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#praktijk-4-eigen-klasse-aanmaken">Praktijk 4: Eigen Klasse Aanmaken</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huiswerk-hst-1">🎯 Huiswerk Hst 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opgave-1-eigen-klasse-ontwerpen">Opgave 1: Eigen Klasse Ontwerpen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opgave-2-level-data">Opgave 2: Level Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opgave-3-munten-verzamelen">Opgave 3: Munten Verzamelen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opgave-4-game-state">Opgave 4: Game State</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">💡 Samenvatting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checklist-begrijp-je-dit">Checklist: Begrijp je dit?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#volgende-stap">✅ Volgende Stap</a></li>
 </ul>
   </nav></div>
 

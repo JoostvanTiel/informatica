@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Objectgeoriënteerd Programmeren Hoofdstuk 3: Lijsten van objecten &#8212; Informatica</title>
+    <title>Objectgeoriënteerd Programmeren Hoofdstuk 3: Lijsten van objecten en Level-ontwerp &#8212; Informatica</title>
   
   
   
@@ -64,8 +64,8 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Objectgeoriënteerd Programmeren Hoofdstuk 4: FPS en tijd" href="hoofdstuk4.html" />
-    <link rel="prev" title="Objectgeoriënteerd Programmeren Hoofdstuk 2: Eigenschappen en methoden" href="hoofdstuk2.html" />
+    <link rel="next" title="Objectgeoriënteerd Programmeren Hoofdstuk 4: FPS, Zwaartekracht en Springen" href="hoofdstuk4.html" />
+    <link rel="prev" title="Objectgeoriënteerd Programmeren Hoofdstuk 2: Methoden en Beweging" href="hoofdstuk2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -451,7 +451,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Objectgeoriënteerd Programmeren Hoofdstuk 3: Lijsten van objecten</h1>
+    <h1>Objectgeoriënteerd Programmeren Hoofdstuk 3: Lijsten van objecten en Level-ontwerp</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -463,13 +463,22 @@
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-een-lijst">Waarom een lijst?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#over-een-lijst-lopen">Over een lijst lopen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objecten-toevoegen">Objecten toevoegen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objecten-verwijderen">Objecten verwijderen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#over-een-lijst-lopen">Over een lijst lopen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#praktijkvoorbeeld-in-de-game-loop">Praktijkvoorbeeld in de game-loop</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#een-niveau-als-data-level-ontwerp">Een niveau als data: Level-ontwerp</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objecten-toevoegen">Objecten toevoegen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-kogels-schieten">Voorbeeld: kogels schieten</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objecten-verwijderen">Objecten verwijderen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-kogels-verdwijnen-bij-scherm-grens">Voorbeeld: kogels verdwijnen bij scherm-grens</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-lijst-met-kogels">Voorbeeld: lijst met kogels</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#afbeeldingen-en-bronnen">Afbeeldingen en bronnen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inzichtsvragen">Inzichtsvragen</a></li>
 </ul>
@@ -485,19 +494,21 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="objectgeorienteerd-programmeren-hoofdstuk-3-lijsten-van-objecten">
-<h1>Objectgeoriënteerd Programmeren Hoofdstuk 3: Lijsten van objecten<a class="headerlink" href="#objectgeorienteerd-programmeren-hoofdstuk-3-lijsten-van-objecten" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="objectgeorienteerd-programmeren-hoofdstuk-3-lijsten-van-objecten-en-level-ontwerp">
+<h1>Objectgeoriënteerd Programmeren Hoofdstuk 3: Lijsten van objecten en Level-ontwerp<a class="headerlink" href="#objectgeorienteerd-programmeren-hoofdstuk-3-lijsten-van-objecten-en-level-ontwerp" title="Link to this heading">#</a></h1>
 <section id="leerdoelen">
 <h2>Leerdoelen<a class="headerlink" href="#leerdoelen" title="Link to this heading">#</a></h2>
-<p>In een spel heb je vaak meerdere objecten tegelijk: vijanden, kogels, muren en spelers. Die kun je handig in een lijst bewaren.</p>
+<p>In een spel heb je vaak meerdere objecten tegelijk: vijanden, kogels, <strong>platforms</strong>, muren en spelers. Die kun je handig in een lijst bewaren.</p>
 <p>Je leert:</p>
 <ul class="simple">
 <li><p>hoe je meerdere objecten in een lijst zet;</p></li>
 <li><p>hoe je over een lijst van objecten kunt lopen;</p></li>
 <li><p>hoe je objecten kunt toevoegen en verwijderen;</p></li>
-<li><p>waarom lijsten handig zijn in een game.</p></li>
+<li><p>waarom lijsten handig zijn in een game;</p></li>
+<li><p>hoe je een <strong>niveau ontwerpt</strong> met platforms;</p></li>
+<li><p>hoe je alle platforms tegelijk <strong>tekent</strong> in je game-loop.</p></li>
 </ul>
-<p>Aan het einde van dit hoofdstuk kun je een lijst van objecten gebruiken om een kleine game te maken.</p>
+<p>Aan het einde van dit hoofdstuk heb je een speelwereld met meerdere platforms waar je speler overheen kan springen!</p>
 </section>
 <hr class="docutils" />
 <section id="waarom-een-lijst">
@@ -514,16 +525,94 @@
 </pre></div>
 </div>
 <p>Nu kunnen we alle vijanden tegelijk verwerken.</p>
+<p><strong>In een platformer:</strong> We willen meerdere platforms hebben.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">platforms</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Platform</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">breedte</span><span class="p">,</span> <span class="n">hoogte</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">breedte</span> <span class="o">=</span> <span class="n">breedte</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hoogte</span> <span class="o">=</span> <span class="n">hoogte</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">breedte</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hoogte</span><span class="p">])</span>
+
+<span class="c1"># Maak platforms</span>
+<span class="n">platforms</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Platform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">550</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>      <span class="c1"># Grond</span>
+<span class="n">platforms</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Platform</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">25</span><span class="p">))</span>    <span class="c1"># Platform 2</span>
+<span class="n">platforms</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Platform</span><span class="p">(</span><span class="mi">450</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">25</span><span class="p">))</span>    <span class="c1"># Platform 3</span>
+</pre></div>
+</div>
+<p>Nu hebben we een <strong>nivel</strong> gemaakt!</p>
 </section>
 <hr class="docutils" />
 <section id="over-een-lijst-lopen">
 <h2>Over een lijst lopen<a class="headerlink" href="#over-een-lijst-lopen" title="Link to this heading">#</a></h2>
 <p>Met een <code class="docutils literal notranslate"><span class="pre">for</span></code>-lus kun je door een lijst van objecten heen gaan.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">vijand</span> <span class="ow">in</span> <span class="n">vijanden</span><span class="p">:</span>
-    <span class="n">vijand</span><span class="o">.</span><span class="n">beweeg</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">platform</span> <span class="ow">in</span> <span class="n">platforms</span><span class="p">:</span>
+    <span class="n">platform</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Zo kun je voor elk object dezelfde actie uitvoeren.</p>
+<p>Dit is <strong>krachtig</strong>: schrijf je code eenmaal, en het werkt voor alle objecten in je lijst.</p>
+<section id="praktijkvoorbeeld-in-de-game-loop">
+<h3>Praktijkvoorbeeld in de game-loop<a class="headerlink" href="#praktijkvoorbeeld-in-de-game-loop" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># In je game-loop:</span>
+<span class="k">while</span> <span class="n">running</span><span class="p">:</span>
+    <span class="c1"># Events verwerken...</span>
+    
+    <span class="c1"># UPDATE</span>
+    <span class="n">speler</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
+    
+    <span class="c1"># RENDER</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">))</span>
+    
+    <span class="c1"># Teken ALLE platforms</span>
+    <span class="k">for</span> <span class="n">platform</span> <span class="ow">in</span> <span class="n">platforms</span><span class="p">:</span>
+        <span class="n">platform</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
+    
+    <span class="c1"># Teken speler</span>
+    <span class="n">speler</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
+    
+    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="een-niveau-als-data-level-ontwerp">
+<h2>Een niveau als data: Level-ontwerp<a class="headerlink" href="#een-niveau-als-data-level-ontwerp" title="Link to this heading">#</a></h2>
+<p>In plaats van platforms hardcoded in te toefen, kun je een niveau als <strong>data</strong> beschrijven:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">maak_level_1</span><span class="p">():</span>
+    <span class="n">platforms</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">Platform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">550</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">)),</span>      <span class="c1"># Grond</span>
+        <span class="n">Platform</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">255</span><span class="p">)),</span>      <span class="c1"># Platform blauw</span>
+        <span class="n">Platform</span><span class="p">(</span><span class="mi">350</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span>      <span class="c1"># Platform oranje</span>
+        <span class="n">Platform</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">255</span><span class="p">)),</span>    <span class="c1"># Platform paars</span>
+    <span class="p">]</span>
+    <span class="k">return</span> <span class="n">platforms</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">maak_level_2</span><span class="p">():</span>
+    <span class="n">platforms</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">Platform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">550</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">)),</span>
+        <span class="n">Platform</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">255</span><span class="p">)),</span>
+        <span class="n">Platform</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">380</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span>
+        <span class="n">Platform</span><span class="p">(</span><span class="mi">350</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">255</span><span class="p">)),</span>
+        <span class="n">Platform</span><span class="p">(</span><span class="mi">550</span><span class="p">,</span> <span class="mi">380</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span>
+        <span class="n">Platform</span><span class="p">(</span><span class="mi">700</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">255</span><span class="p">)),</span>
+    <span class="p">]</span>
+    <span class="k">return</span> <span class="n">platforms</span>
+
+<span class="c1"># In je game:</span>
+<span class="n">level</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">if</span> <span class="n">level</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="n">platforms</span> <span class="o">=</span> <span class="n">maak_level_1</span><span class="p">()</span>
+<span class="k">elif</span> <span class="n">level</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="n">platforms</span> <span class="o">=</span> <span class="n">maak_level_2</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Voordeel:</strong> Je kunt levels gemakkelijk ontwerpen en veranderen zonder code te herschrijven!</p>
 </section>
 <hr class="docutils" />
 <section id="objecten-toevoegen">
@@ -533,16 +622,49 @@
 </pre></div>
 </div>
 <p>Dat is handig als nieuwe enemies ontstaan in de game.</p>
+<section id="voorbeeld-kogels-schieten">
+<h3>Voorbeeld: kogels schieten<a class="headerlink" href="#voorbeeld-kogels-schieten" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">kogels</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">schiet_kogel</span><span class="p">(</span><span class="n">speler</span><span class="p">,</span> <span class="n">kogels</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Voeg een nieuwe kogel toe waar de speler staat."""</span>
+    <span class="n">kogel</span> <span class="o">=</span> <span class="n">Kogel</span><span class="p">(</span><span class="n">speler</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">speler</span><span class="o">.</span><span class="n">breedte</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">speler</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">kogels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">kogel</span><span class="p">)</span>
+
+<span class="c1"># In je game-loop:</span>
+<span class="k">if</span> <span class="n">spacebar_ingedrukt</span><span class="p">:</span>
+    <span class="n">schiet_kogel</span><span class="p">(</span><span class="n">speler</span><span class="p">,</span> <span class="n">kogels</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
 </section>
 <hr class="docutils" />
 <section id="objecten-verwijderen">
 <h2>Objecten verwijderen<a class="headerlink" href="#objecten-verwijderen" title="Link to this heading">#</a></h2>
 <p>Als een object verdwijnt, kun je het weer uit de lijst halen.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vijanden</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vijanden</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># Verwijder het eerste object</span>
 </pre></div>
 </div>
 <p>Of je kunt een object markeren en later verwijderen.</p>
 <p>Dit is handig bij kogels, vijanden of munitie in een spel.</p>
+<section id="voorbeeld-kogels-verdwijnen-bij-scherm-grens">
+<h3>Voorbeeld: kogels verdwijnen bij scherm-grens<a class="headerlink" href="#voorbeeld-kogels-verdwijnen-bij-scherm-grens" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># In je game-loop UPDATE:</span>
+<span class="n">kogels_om_te_verwijderen</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">kogel</span> <span class="ow">in</span> <span class="n">kogels</span><span class="p">:</span>
+    <span class="n">kogel</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
+    
+    <span class="c1"># Kogel is uit beeld</span>
+    <span class="k">if</span> <span class="n">kogel</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">BREEDTE</span><span class="p">:</span>
+        <span class="n">kogels_om_te_verwijderen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">kogel</span><span class="p">)</span>
+
+<span class="c1"># Verwijder kogels die uit beeld zijn</span>
+<span class="k">for</span> <span class="n">kogel</span> <span class="ow">in</span> <span class="n">kogels_om_te_verwijderen</span><span class="p">:</span>
+    <span class="n">kogels</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">kogel</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
 </section>
 <hr class="docutils" />
 <section id="voorbeeld-lijst-met-kogels">
@@ -550,17 +672,23 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">kogels</span> <span class="o">=</span> <span class="p">[]</span>
 
 <span class="k">class</span><span class="w"> </span><span class="nc">Kogel</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">snelheid</span> <span class="o">=</span> <span class="mi">10</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">beweeg</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="mi">5</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">snelheid</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)],</span> <span class="mi">5</span><span class="p">)</span>
 
-<span class="n">kogels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Kogel</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
-<span class="n">kogels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Kogel</span><span class="p">(</span><span class="mi">50</span><span class="p">))</span>
+<span class="n">kogels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Kogel</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+<span class="n">kogels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Kogel</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>
 
 <span class="k">for</span> <span class="n">kogel</span> <span class="ow">in</span> <span class="n">kogels</span><span class="p">:</span>
-    <span class="n">kogel</span><span class="o">.</span><span class="n">beweeg</span><span class="p">()</span>
+    <span class="n">kogel</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
+    <span class="n">kogel</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Nu beweegt elke kogel op zijn eigen manier.</p>
@@ -571,8 +699,9 @@
 <ul class="simple">
 <li><p>Lijsten kunnen meerdere objecten bevatten.</p></li>
 <li><p>Je kunt met een lus alle objecten verwerken.</p></li>
-<li><p>Nieuwe objecten kunnen worden toegevoegd.</p></li>
-<li><p>Verwijderde objecten kunnen uit de lijst worden gehaald.</p></li>
+<li><p>Nieuwe objecten kunnen worden toegevoegd met <code class="docutils literal notranslate"><span class="pre">append()</span></code>.</p></li>
+<li><p>Verwijderde objecten kunnen uit de lijst worden gehaald met <code class="docutils literal notranslate"><span class="pre">remove()</span></code> of <code class="docutils literal notranslate"><span class="pre">pop()</span></code>.</p></li>
+<li><p><strong>Niveaus kunnen als data worden beschreven</strong>, makkelijk om te veranderen.</p></li>
 </ul>
 </section>
 <section id="check-je-begrip">
@@ -582,47 +711,40 @@
 <li><p>Hoe voeg je een object toe aan een lijst?</p></li>
 <li><p>Hoe loop je over alle objecten in een lijst?</p></li>
 <li><p>Waarom is dit handig in een game?</p></li>
+<li><p>Hoe maak je een niveau-functie met platforms?</p></li>
+<li><p>Wanneer verwijder je objecten uit een lijst?</p></li>
 </ol>
-</section>
-<section id="afbeeldingen-en-bronnen">
-<h2>Afbeeldingen en bronnen<a class="headerlink" href="#afbeeldingen-en-bronnen" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Zelf maken: teken een lijst met 3 vijanden en laat zien hoe je ze in een lus verwerkt.</p></li>
-<li><p>Online zoeken: <a class="reference external" href="https://www.youtube.com/results?search_query=python+lists+objects">Python lists tutorial</a></p></li>
-<li><p>Online zoeken: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#lists">Python list documentation</a></p></li>
-<li><p>Online zoeken: <a class="reference external" href="https://nl.wikipedia.org/wiki/Array">Wikipedia: array (informatica)</a></p></li>
-</ul>
 </section>
 <section id="opdrachten">
 <h2>Opdrachten<a class="headerlink" href="#opdrachten" title="Link to this heading">#</a></h2>
 <ol class="arabic">
-<li><p>Lijst met objecten</p>
+<li><p><strong>Lijst met platforms</strong></p>
 <ol type='a'>
-<li>Maak een lijst met drie vijanden.</li>
-<li>Gebruik een `for`-lus om over alle vijanden heen te lopen.</li>
-<li>Leg uit waarom een lijst handig is bij een game met meerdere enemies.</li>
+<li>Maak een Platform-klasse met `x`, `y`, `breedte`, `hoogte` attributen.</li>
+<li>Voeg een `draw()` methode toe.</li>
+<li>Maak een lijst met 5 platforms op verschillende hoogte.</li>
+<li>Gebruik een `for`-lus om alle platforms te tekenen.</li>
 </ol>
 </li>
-<li><p>Voorwerp toevoegen en verwijderen</p>
+<li><p><strong>Niveau-ontwerp</strong></p>
 <ol type='a'>
-<li>Voeg een nieuwe vijand toe aan een lijst met `append()`.</li>
-<li>Laat zien hoe je een object uit een lijst kunt verwijderen.</li>
-<li>Waarom kun je een lijst beter gebruiken dan losse variabelen als je veel objecten hebt?</li>
+<li>Schrijf een functie `maak_level_1()` die platforms retourneert.</li>
+<li>Schrijf een functie `maak_level_2()` met moeilijkere layout.</li>
+<li>Zorg dat je tussen levels kunt wisselen.</li>
 </ol>
 </li>
-<li><p>Toepassingsvraag</p>
-<p>Een spel spawnt elke paar seconden een nieuwe vijand.</p>
+<li><p><strong>Toepassingsvraag: Kogels</strong></p>
 <ol type='a'>
-<li>Hoe kun je nieuw gemaakte vijanden in een lijst zetten?</li>
-<li>Wat gebeurt er als de speler een vijand verslaat?</li>
-<li>Waarom is het handig om een lijst van objecten in een game bij te houden?</li>
+<li>Maak een Kogel-klasse met `x`, `y`, `snelheid`.</li>
+<li>Maak een `schiet_kogel()` functie die kogels aan een lijst toevoegt.</li>
+<li>Zorg dat kogels verdwijnen als ze uit beeld gaan.</li>
 </ol>
 </li>
-<li><p>Lijst met kogels</p>
+<li><p><strong>Meerdere object-types tegelijk</strong></p>
 <ol type='a'>
-<li>Maak een lijst `kogels` en voeg er twee kogels aan toe.</li>
-<li>Schrijf een `for`-lus die elke kogel met 5 punten beweegt.</li>
-<li>Waarom is het handig om de kogels in één lijst bij te houden?</li>
+<li>Je hebt zowel platforms als vijanden in je game.</li>
+<li>Maak aparte lijsten: `platforms = []` en `vijanden = []`</li>
+<li>Teken beide soorten in je game-loop met aparte for-loops.</li>
 </ol>
 </li>
 </ol>
@@ -632,6 +754,7 @@
 <li><p>Wat is het voordeel van een lijst van objecten?</p></li>
 <li><p>Waarom kun je met één lus meerdere objecten tegelijk bewerken?</p></li>
 <li><p>Wat is het verschil tussen één object en een lijst van objecten?</p></li>
+<li><p>Hoe helpt het beschrijven van een niveau als “data” je om makkelijker levels te bouwen?</p></li>
 </ol>
 </section>
 </section>
@@ -673,7 +796,7 @@
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Objectgeoriënteerd Programmeren Hoofdstuk 2: Eigenschappen en methoden</p>
+        <p class="prev-next-title">Objectgeoriënteerd Programmeren Hoofdstuk 2: Methoden en Beweging</p>
       </div>
     </a>
     <a class="right-next"
@@ -681,7 +804,7 @@
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Objectgeoriënteerd Programmeren Hoofdstuk 4: FPS en tijd</p>
+        <p class="prev-next-title">Objectgeoriënteerd Programmeren Hoofdstuk 4: FPS, Zwaartekracht en Springen</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -705,13 +828,22 @@
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-een-lijst">Waarom een lijst?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#over-een-lijst-lopen">Over een lijst lopen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objecten-toevoegen">Objecten toevoegen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objecten-verwijderen">Objecten verwijderen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#over-een-lijst-lopen">Over een lijst lopen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#praktijkvoorbeeld-in-de-game-loop">Praktijkvoorbeeld in de game-loop</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#een-niveau-als-data-level-ontwerp">Een niveau als data: Level-ontwerp</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objecten-toevoegen">Objecten toevoegen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-kogels-schieten">Voorbeeld: kogels schieten</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objecten-verwijderen">Objecten verwijderen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-kogels-verdwijnen-bij-scherm-grens">Voorbeeld: kogels verdwijnen bij scherm-grens</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-lijst-met-kogels">Voorbeeld: lijst met kogels</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#afbeeldingen-en-bronnen">Afbeeldingen en bronnen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inzichtsvragen">Inzichtsvragen</a></li>
 </ul>

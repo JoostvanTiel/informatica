@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Objectgeoriënteerd Programmeren Hoofdstuk 4: FPS en tijd &#8212; Informatica</title>
+    <title>Objectgeoriënteerd Programmeren Hoofdstuk 4: FPS, Zwaartekracht en Springen &#8212; Informatica</title>
   
   
   
@@ -64,8 +64,8 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Objectgeoriënteerd Programmeren Hoofdstuk 5: Score en levens" href="hoofdstuk5.html" />
-    <link rel="prev" title="Objectgeoriënteerd Programmeren Hoofdstuk 3: Lijsten van objecten" href="hoofdstuk3.html" />
+    <link rel="next" title="Objectgeoriënteerd Programmeren Hoofdstuk 5: Collectibles, Score en Botsingsdetectie" href="hoofdstuk5.html" />
+    <link rel="prev" title="Objectgeoriënteerd Programmeren Hoofdstuk 3: Lijsten van objecten en Level-ontwerp" href="hoofdstuk3.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -451,7 +451,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Objectgeoriënteerd Programmeren Hoofdstuk 4: FPS en tijd</h1>
+    <h1>Objectgeoriënteerd Programmeren Hoofdstuk 4: FPS, Zwaartekracht en Springen</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -463,13 +463,20 @@
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-fps">Wat is FPS?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-game-lus">De game-lus</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clock-tick-60"><code class="docutils literal notranslate"><span class="pre">clock.tick(60)</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tijd-bijhouden">Tijd bijhouden</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-beweging-afhankelijk-van-tijd">Voorbeeld: beweging afhankelijk van tijd</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-game-lus-en-timing">De game-lus en timing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-consistent-timing">Waarom consistent timing?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zwaartekracht-realistisch-vallen">Zwaartekracht: Realistisch vallen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hoe-zwaartekracht-werkt">Hoe zwaartekracht werkt</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visueel">Visueel:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#springen-initiele-snelheid-omhoog">Springen: Initiële snelheid omhoog</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#landingsdetectie-op-grond-checken">Landingsdetectie: “Op grond?” checken</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#volledig-voorbeeld-speler-met-zwaartekracht-en-springen">Volledig voorbeeld: Speler met zwaartekracht en springen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#afbeeldingen-en-bronnen">Afbeeldingen en bronnen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inzichtsvragen">Inzichtsvragen</a></li>
 </ul>
@@ -485,151 +492,411 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="objectgeorienteerd-programmeren-hoofdstuk-4-fps-en-tijd">
-<h1>Objectgeoriënteerd Programmeren Hoofdstuk 4: FPS en tijd<a class="headerlink" href="#objectgeorienteerd-programmeren-hoofdstuk-4-fps-en-tijd" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="objectgeorienteerd-programmeren-hoofdstuk-4-fps-zwaartekracht-en-springen">
+<h1>Objectgeoriënteerd Programmeren Hoofdstuk 4: FPS, Zwaartekracht en Springen<a class="headerlink" href="#objectgeorienteerd-programmeren-hoofdstuk-4-fps-zwaartekracht-en-springen" title="Link to this heading">#</a></h1>
 <section id="leerdoelen">
 <h2>Leerdoelen<a class="headerlink" href="#leerdoelen" title="Link to this heading">#</a></h2>
-<p>In een spel is tijd belangrijk. Je wilt dat bewegingen vloeiend verlopen en dat de tijd goed wordt bijgehouden.</p>
+<p>In een spel is tijd en beweging alles. Je wilt dat bewegingen vloeiend verlopen en dat fysica realistisch voelt.</p>
+<p>Tot nu toe kon je speler alleen links-rechts bewegen. Nu gaan we <strong>verticale beweging</strong> toevoegen: <strong>springen</strong> en <strong>vallen</strong> door zwaartekracht.</p>
 <p>Je leert:</p>
 <ul class="simple">
-<li><p>wat FPS betekent;</p></li>
-<li><p>hoe een game-lus werkt;</p></li>
+<li><p>wat FPS betekent en waarom het belangrijk is;</p></li>
+<li><p>hoe een game-lus timing regelt;</p></li>
 <li><p>hoe je tijd in een spel bijhoudt;</p></li>
-<li><p>waarom <code class="docutils literal notranslate"><span class="pre">clock.tick(60)</span></code> belangrijk is;</p></li>
-<li><p>hoe je acties met tijd kunt aanpassen.</p></li>
+<li><p>hoe je <strong>zwaartekracht</strong> implementeert;</p></li>
+<li><p>hoe je <strong>springen</strong> mechanieken bouwt;</p></li>
+<li><p>hoe je detecteert of een speler “op de grond” staat;</p></li>
+<li><p>waarom <code class="docutils literal notranslate"><span class="pre">clock.tick(60)</span></code> essentieel is voor vloeiende gameplay.</p></li>
 </ul>
-<p>Aan het einde van dit hoofdstuk kun je uitleggen hoe een game de tijd en frames gebruikt om bewegingen te laten lopen.</p>
+<p>Aan het einde van dit hoofdstuk heeft je speler echte fysica: hij valt, springt, en het voelt natuurlijk!</p>
 </section>
 <hr class="docutils" />
 <section id="wat-is-fps">
 <h2>Wat is FPS?<a class="headerlink" href="#wat-is-fps" title="Link to this heading">#</a></h2>
-<p><strong>FPS</strong> staat voor <strong>frames per second</strong>.</p>
+<p><strong>FPS</strong> staat voor <strong>Frames Per Second</strong>.</p>
 <p>Dat betekent hoeveel beelden per seconde op het scherm worden ververst.</p>
 <p>Bijvoorbeeld:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>60 FPS
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>30 FPS  = soepel, maar niet erg vloeiend (consoles, films)
+60 FPS  = zeer vloeiend (meeste games)
+120 FPS = extreem soepel (esports games)
 </pre></div>
 </div>
-<p>Een game die 60 fps draait, lijkt erg vloeiend.</p>
-</section>
-<hr class="docutils" />
-<section id="de-game-lus">
-<h2>De game-lus<a class="headerlink" href="#de-game-lus" title="Link to this heading">#</a></h2>
-<p>Een game draait vaak in een lus:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="c1"># kijk naar toetsen</span>
-    <span class="c1"># update de objecten</span>
-    <span class="c1"># teken alles op het scherm</span>
-</pre></div>
-</div>
-<p>Deze lus wordt vele keren per seconde uitgevoerd.</p>
-<p>Bij elke update wordt de toestand van het spel aangepast.</p>
-</section>
-<hr class="docutils" />
-<section id="clock-tick-60">
-<h2><code class="docutils literal notranslate"><span class="pre">clock.tick(60)</span></code><a class="headerlink" href="#clock-tick-60" title="Link to this heading">#</a></h2>
-<p>In Pygame gebruik je een klok:</p>
+<p>Met 60 FPS voeren we onze game-loop <strong>60 keer per seconde</strong> uit.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
+<span class="k">while</span> <span class="n">running</span><span class="p">:</span>
+    <span class="c1"># ... game code ...</span>
+    <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>  <span class="c1"># Zorg dat dit 60 keer per seconde gebeurt</span>
 </pre></div>
 </div>
-<p>Dan kun je de snelheid regelen:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Dat betekent dat de game ongeveer 60 frames per seconde draait.</p>
 </section>
 <hr class="docutils" />
-<section id="tijd-bijhouden">
-<h2>Tijd bijhouden<a class="headerlink" href="#tijd-bijhouden" title="Link to this heading">#</a></h2>
-<p>Je kunt een teller maken voor de tijd:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tijd</span> <span class="o">=</span> <span class="mi">0</span>
+<section id="de-game-lus-en-timing">
+<h2>De game-lus en timing<a class="headerlink" href="#de-game-lus-en-timing" title="Link to this heading">#</a></h2>
+<p>Herinner je de game-loop uit Hoofdstuk 2:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1. INPUT   → Lees toetsenbord
+2. UPDATE  → Verplaats objecten, check collisies
+3. RENDER  → Teken alles
+4. WAIT    → Zorg dat dit 1/60ste van een seconde duurt
 </pre></div>
 </div>
-<p>In elke lus kun je de tijd verhogen:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tijd</span> <span class="o">+=</span> <span class="mi">1</span>
-</pre></div>
-</div>
-<p>Ook kun je de tijd gebruiken om een vijand elke paar seconden te laten spawnen.</p>
+<p>Dit herhaalt zich 60 keer per seconde.</p>
+<section id="waarom-consistent-timing">
+<h3>Waarom consistent timing?<a class="headerlink" href="#waarom-consistent-timing" title="Link to this heading">#</a></h3>
+<p>Als je geen <code class="docutils literal notranslate"><span class="pre">clock.tick(60)</span></code> gebruikt, loopt je game zo snel als je computer kan (misschien 1000+ FPS). Dat betekent:</p>
+<ul class="simple">
+<li><p>Beweging is onmogelijk voorstelbaar snel</p></li>
+<li><p>Op snellere computers gaat alles sneller</p></li>
+<li><p>Beweging is niet consistent</p></li>
+</ul>
+<p>Met <code class="docutils literal notranslate"><span class="pre">clock.tick(60)</span></code>:</p>
+<ul class="simple">
+<li><p>Alle computers draaien op dezelfde snelheid</p></li>
+<li><p>Beweging is voorspelbaar</p></li>
+<li><p>Je kunt precies berekenen hoe ver iets per frame beweegt</p></li>
+</ul>
+</section>
 </section>
 <hr class="docutils" />
-<section id="voorbeeld-beweging-afhankelijk-van-tijd">
-<h2>Voorbeeld: beweging afhankelijk van tijd<a class="headerlink" href="#voorbeeld-beweging-afhankelijk-van-tijd" title="Link to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">speed</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<section id="zwaartekracht-realistisch-vallen">
+<h2>Zwaartekracht: Realistisch vallen<a class="headerlink" href="#zwaartekracht-realistisch-vallen" title="Link to this heading">#</a></h2>
+<p>Tot nu toe stond je speler stil als je hem niet aanstuurde. Maar in de echte wereld <strong>valt</strong> je speler door zwaartekracht.</p>
+<section id="hoe-zwaartekracht-werkt">
+<h3>Hoe zwaartekracht werkt<a class="headerlink" href="#hoe-zwaartekracht-werkt" title="Link to this heading">#</a></h3>
+<p>Zwaartekracht is een <strong>constante versnelling omlaag</strong>.</p>
+<p>Elke frame voegen we een klein beetje snelheid toe:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Speler</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">xSnelheid</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ySnelheid</span> <span class="o">=</span> <span class="mi">0</span>
+        
+        <span class="c1"># NIEUW: Zwaartekracht</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">zwaartekracht</span> <span class="o">=</span> <span class="mf">0.6</span>      <span class="c1"># Pixels per frame^2</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">op_grond</span> <span class="o">=</span> <span class="kc">False</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Horizontale beweging (zoals eerder)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">xSnelheid</span>
+        
+        <span class="c1"># NIEUW: Zwaartekracht toevoegen</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ySnelheid</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">zwaartekracht</span>
+        
+        <span class="c1"># Verticale beweging</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ySnelheid</span>
+        
+        <span class="c1"># Game Over: speler valt uit scherm</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="n">HOOGTE</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>  <span class="c1"># Game is voorbij</span>
+        
+        <span class="k">return</span> <span class="kc">True</span>  <span class="c1"># Game loopt nog</span>
+</pre></div>
+</div>
+<p><strong>Wat gebeurt hier?</strong></p>
+<ul class="simple">
+<li><p>Elke frame verhogen we <code class="docutils literal notranslate"><span class="pre">ySnelheid</span></code> met 0.6</p></li>
+<li><p>Dit geeft het effect van versnelling</p></li>
+<li><p>De speler beweegt steeds sneller omlaag</p></li>
+</ul>
+</section>
+<section id="visueel">
+<h3>Visueel:<a class="headerlink" href="#visueel" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Frame</span> <span class="mi">0</span><span class="p">:</span> <span class="n">ySnelheid</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>   <span class="n">y</span> <span class="n">beweging</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">Frame</span> <span class="mi">1</span><span class="p">:</span> <span class="n">ySnelheid</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">,</span> <span class="n">y</span> <span class="n">beweging</span> <span class="o">=</span> <span class="mf">0.6</span>
+<span class="n">Frame</span> <span class="mi">2</span><span class="p">:</span> <span class="n">ySnelheid</span> <span class="o">=</span> <span class="mf">1.2</span><span class="p">,</span> <span class="n">y</span> <span class="n">beweging</span> <span class="o">=</span> <span class="mf">1.2</span>
+<span class="n">Frame</span> <span class="mi">3</span><span class="p">:</span> <span class="n">ySnelheid</span> <span class="o">=</span> <span class="mf">1.8</span><span class="p">,</span> <span class="n">y</span> <span class="n">beweging</span> <span class="o">=</span> <span class="mf">1.8</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>De speler versnelt en valt steeds sneller!</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="springen-initiele-snelheid-omhoog">
+<h2>Springen: Initiële snelheid omhoog<a class="headerlink" href="#springen-initiele-snelheid-omhoog" title="Link to this heading">#</a></h2>
+<p>Om te springen geven we de speler een <strong>negatieve snelheid</strong> (omhoog).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Speler</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="c1"># ... vorig code ...</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">kracht_spring</span> <span class="o">=</span> <span class="o">-</span><span class="mi">15</span>  <span class="c1"># Negatief = omhoog</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">spring</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""De speler springt (alleen als hij op grond staat)."""</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">op_grond</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ySnelheid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kracht_spring</span>  <span class="c1"># -15</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">op_grond</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p><strong>Wat gebeurt?</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Spring</span> <span class="n">ingedrukt</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">ySnelheid</span> <span class="n">wordt</span> <span class="o">-</span><span class="mi">15</span> <span class="p">(</span><span class="n">omhoog</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">Speler</span> <span class="n">beweegt</span> <span class="n">omhoog</span><span class="p">:</span> <span class="n">y</span> <span class="o">-=</span> <span class="mi">15</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">speed</span>
+<span class="n">Volgende</span> <span class="n">frames</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">Zwaartekracht</span> <span class="n">voegt</span> <span class="mf">0.6</span> <span class="n">toe</span><span class="p">:</span> <span class="n">ySnelheid</span> <span class="o">=</span> <span class="o">-</span><span class="mf">14.4</span>
+<span class="o">-</span> <span class="n">Dan</span> <span class="o">-</span><span class="mf">13.8</span><span class="p">,</span> <span class="o">-</span><span class="mf">13.2</span><span class="p">,</span> <span class="o">...</span>
+<span class="o">-</span> <span class="n">Uiteindelijk</span> <span class="n">wordt</span> <span class="n">ySnelheid</span> <span class="n">positief</span>
+<span class="o">-</span> <span class="n">Speler</span> <span class="n">begint</span> <span class="n">omlaag</span> <span class="n">te</span> <span class="n">vallen</span>
+
+<span class="n">Op</span> <span class="n">grond</span> <span class="n">teruggekomen</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">Collision</span> <span class="n">detectie</span><span class="p">:</span> <span class="n">op_grond</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="o">-</span> <span class="n">Volgende</span> <span class="n">sprong</span> <span class="ow">is</span> <span class="n">mogelijk</span>
 </pre></div>
 </div>
-<p>Als je per frame 2 pixels beweegt, dan gaat de speler snel over het scherm.</p>
-<p>In een game is tijd dus belangrijk om bewegingen te synchroniseren.</p>
+<p>Dit geeft het natuurlijke sprong-patroon: omhoog, langzamer, stopt, valt, versnelt.</p>
+</section>
+<hr class="docutils" />
+<section id="landingsdetectie-op-grond-checken">
+<h2>Landingsdetectie: “Op grond?” checken<a class="headerlink" href="#landingsdetectie-op-grond-checken" title="Link to this heading">#</a></h2>
+<p>De speler kan alleen springen als hij “op grond” staat. Dit checken we in UPDATE:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">controleer_landing</span><span class="p">(</span><span class="n">speler</span><span class="p">,</span> <span class="n">platforms</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Check of speler op een platform staat."""</span>
+    <span class="n">speler</span><span class="o">.</span><span class="n">op_grond</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># Assume niet op grond</span>
+    
+    <span class="k">for</span> <span class="n">platform</span> <span class="ow">in</span> <span class="n">platforms</span><span class="p">:</span>
+        <span class="c1"># AABB collision: rechthoeken overlappen?</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">speler</span><span class="o">.</span><span class="n">rechts</span> <span class="o">&gt;</span> <span class="n">platform</span><span class="o">.</span><span class="n">links</span> <span class="ow">and</span>
+            <span class="n">speler</span><span class="o">.</span><span class="n">links</span> <span class="o">&lt;</span> <span class="n">platform</span><span class="o">.</span><span class="n">rechts</span> <span class="ow">and</span>
+            <span class="n">speler</span><span class="o">.</span><span class="n">onder</span> <span class="o">+</span> <span class="n">speler</span><span class="o">.</span><span class="n">ySnelheid</span> <span class="o">&gt;=</span> <span class="n">platform</span><span class="o">.</span><span class="n">boven</span> <span class="ow">and</span>
+            <span class="n">speler</span><span class="o">.</span><span class="n">ySnelheid</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">):</span>  <span class="c1"># Valt omlaag, niet omhoog</span>
+            
+            <span class="c1"># Speler landt!</span>
+            <span class="n">speler</span><span class="o">.</span><span class="n">op_grond</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">speler</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">boven</span> <span class="o">-</span> <span class="n">speler</span><span class="o">.</span><span class="n">hoogte</span>
+            <span class="n">speler</span><span class="o">.</span><span class="n">ySnelheid</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">break</span>
+
+<span class="c1"># In game-loop:</span>
+<span class="k">while</span> <span class="n">running</span><span class="p">:</span>
+    <span class="c1"># INPUT</span>
+    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">KEYDOWN</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_SPACE</span><span class="p">:</span>
+                <span class="n">speler</span><span class="o">.</span><span class="n">spring</span><span class="p">()</span>
+    
+    <span class="c1"># UPDATE</span>
+    <span class="n">speler</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
+    <span class="n">controleer_landing</span><span class="p">(</span><span class="n">speler</span><span class="p">,</span> <span class="n">platforms</span><span class="p">)</span>
+    
+    <span class="c1"># RENDER</span>
+    <span class="c1"># ... teken alles ...</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="volledig-voorbeeld-speler-met-zwaartekracht-en-springen">
+<h2>Volledig voorbeeld: Speler met zwaartekracht en springen<a class="headerlink" href="#volledig-voorbeeld-speler-met-zwaartekracht-en-springen" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pygame</span>
+
+<span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+<span class="n">BREEDTE</span> <span class="o">=</span> <span class="mi">800</span>
+<span class="n">HOOGTE</span> <span class="o">=</span> <span class="mi">600</span>
+<span class="n">screen</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="n">BREEDTE</span><span class="p">,</span> <span class="n">HOOGTE</span><span class="p">))</span>
+<span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Speler</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">breedte</span> <span class="o">=</span> <span class="mi">40</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hoogte</span> <span class="o">=</span> <span class="mi">50</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">kleur</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">xSnelheid</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ySnelheid</span> <span class="o">=</span> <span class="mi">0</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">zwaartekracht</span> <span class="o">=</span> <span class="mf">0.6</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">kracht_spring</span> <span class="o">=</span> <span class="o">-</span><span class="mi">15</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">op_grond</span> <span class="o">=</span> <span class="kc">False</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Horizontaal</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">xSnelheid</span>
+        
+        <span class="c1"># Zwaartekracht</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ySnelheid</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">zwaartekracht</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ySnelheid</span>
+        
+        <span class="c1"># Grenzen</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">breedte</span> <span class="o">&gt;</span> <span class="n">BREEDTE</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">BREEDTE</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">breedte</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">spring</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">op_grond</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ySnelheid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kracht_spring</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">op_grond</span> <span class="o">=</span> <span class="kc">False</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_x_snelheid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">snelheid</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">xSnelheid</span> <span class="o">=</span> <span class="n">snelheid</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">kleur</span><span class="p">,</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">breedte</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hoogte</span><span class="p">])</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">links</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">rechts</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">breedte</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">boven</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">onder</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">hoogte</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Platform</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">breedte</span><span class="p">,</span> <span class="n">hoogte</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">breedte</span> <span class="o">=</span> <span class="n">breedte</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hoogte</span> <span class="o">=</span> <span class="n">hoogte</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">breedte</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hoogte</span><span class="p">])</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">links</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">rechts</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">breedte</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">boven</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">onder</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">hoogte</span>
+
+<span class="c1"># Maak level</span>
+<span class="n">platforms</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">Platform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">550</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>      <span class="c1"># Grond</span>
+    <span class="n">Platform</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span>    <span class="c1"># Platform 2</span>
+    <span class="n">Platform</span><span class="p">(</span><span class="mi">450</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span>    <span class="c1"># Platform 3</span>
+<span class="p">]</span>
+
+<span class="n">speler</span> <span class="o">=</span> <span class="n">Speler</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">controleer_landing</span><span class="p">(</span><span class="n">speler</span><span class="p">,</span> <span class="n">platforms</span><span class="p">):</span>
+    <span class="n">speler</span><span class="o">.</span><span class="n">op_grond</span> <span class="o">=</span> <span class="kc">False</span>
+    
+    <span class="k">for</span> <span class="n">platform</span> <span class="ow">in</span> <span class="n">platforms</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">speler</span><span class="o">.</span><span class="n">rechts</span> <span class="o">&gt;</span> <span class="n">platform</span><span class="o">.</span><span class="n">links</span> <span class="ow">and</span>
+            <span class="n">speler</span><span class="o">.</span><span class="n">links</span> <span class="o">&lt;</span> <span class="n">platform</span><span class="o">.</span><span class="n">rechts</span> <span class="ow">and</span>
+            <span class="n">speler</span><span class="o">.</span><span class="n">onder</span> <span class="o">+</span> <span class="n">speler</span><span class="o">.</span><span class="n">ySnelheid</span> <span class="o">&gt;=</span> <span class="n">platform</span><span class="o">.</span><span class="n">boven</span> <span class="ow">and</span>
+            <span class="n">speler</span><span class="o">.</span><span class="n">ySnelheid</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">):</span>
+            
+            <span class="n">speler</span><span class="o">.</span><span class="n">op_grond</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">speler</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">boven</span> <span class="o">-</span> <span class="n">speler</span><span class="o">.</span><span class="n">hoogte</span>
+            <span class="n">speler</span><span class="o">.</span><span class="n">ySnelheid</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">break</span>
+
+<span class="c1"># Game loop</span>
+<span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">while</span> <span class="n">running</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+            <span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">KEYDOWN</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span><span class="p">:</span>
+                <span class="n">speler</span><span class="o">.</span><span class="n">set_x_snelheid</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">:</span>
+                <span class="n">speler</span><span class="o">.</span><span class="n">set_x_snelheid</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_SPACE</span><span class="p">:</span>
+                <span class="n">speler</span><span class="o">.</span><span class="n">spring</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">KEYUP</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span><span class="p">,</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">]:</span>
+                <span class="n">speler</span><span class="o">.</span><span class="n">set_x_snelheid</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    
+    <span class="n">speler</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
+    <span class="n">controleer_landing</span><span class="p">(</span><span class="n">speler</span><span class="p">,</span> <span class="n">platforms</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">speler</span><span class="o">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="n">HOOGTE</span><span class="p">:</span>  <span class="c1"># Game Over</span>
+        <span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+    
+    <span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">platform</span> <span class="ow">in</span> <span class="n">platforms</span><span class="p">:</span>
+        <span class="n">platform</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
+    <span class="n">speler</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
+    
+    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+    <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+
+<span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</pre></div>
+</div>
 </section>
 <hr class="docutils" />
 <section id="samenvatting">
 <h2>Samenvatting<a class="headerlink" href="#samenvatting" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>FPS geeft aan hoeveel beelden per seconde worden getoond.</p></li>
-<li><p>Een game werkt in een lus.</p></li>
-<li><p>De klok regelt de snelheid van de loop.</p></li>
-<li><p>Tijd helpt bij beweging, spawnen en updates.</p></li>
+<li><p><strong>FPS</strong> bepaalt hoe snel je game draait (60 FPS = 60 beelden per seconde)</p></li>
+<li><p><strong>Zwaartekracht</strong> is een constante versnelling omlaag (<code class="docutils literal notranslate"><span class="pre">ySnelheid</span> <span class="pre">+=</span> <span class="pre">zwaartekracht</span></code>)</p></li>
+<li><p><strong>Springen</strong> geeft je speler een initiële negatieve (omhoog) snelheid</p></li>
+<li><p><strong>Landingsdetectie</strong> checkt of je speler op een platform staat</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">clock.tick(60)</span></code> zorgt dat alles consistent speed draait</p></li>
+<li><p>Met deze elementen heb je realistisch speelgedrag!</p></li>
 </ul>
 </section>
 <section id="check-je-begrip">
 <h2>Check je begrip<a class="headerlink" href="#check-je-begrip" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Wat betekent FPS?</p></li>
-<li><p>Waarom is een game-lus belangrijk?</p></li>
-<li><p>Wat doet <code class="docutils literal notranslate"><span class="pre">clock.tick(60)</span></code>?</p></li>
-<li><p>Waarom is tijd handig in een spel?</p></li>
+<li><p>Wat betekent FPS en waarom is 60 FPS standaard?</p></li>
+<li><p>Hoe voeg je zwaartekracht toe aan je speler?</p></li>
+<li><p>Hoe implementeer je springen?</p></li>
+<li><p>Wat doet <code class="docutils literal notranslate"><span class="pre">op_grond</span></code>?</p></li>
+<li><p>Waarom kan de speler alleen springen als hij op grond staat?</p></li>
+<li><p>Hoe detecteer je of een speler op een platform landt?</p></li>
 </ol>
-</section>
-<section id="afbeeldingen-en-bronnen">
-<h2>Afbeeldingen en bronnen<a class="headerlink" href="#afbeeldingen-en-bronnen" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Zelf maken: teken een schema van een game-loop met update en render.</p></li>
-<li><p>Online zoeken: <a class="reference external" href="https://www.youtube.com/results?search_query=pygame+game+loop+fps">Pygame game loop</a></p></li>
-<li><p>Online zoeken: <a class="reference external" href="https://www.pygame.org/docs/ref/time.html">Pygame Clock docs</a></p></li>
-<li><p>Online zoeken: <a class="reference external" href="https://nl.wikipedia.org/wiki/Frames_per_second">Wikipedia: frames per second</a></p></li>
-</ul>
 </section>
 <section id="opdrachten">
 <h2>Opdrachten<a class="headerlink" href="#opdrachten" title="Link to this heading">#</a></h2>
 <ol class="arabic">
-<li><p>FPS en game-lus</p>
+<li><p><strong>Zwaartekracht implementeren</strong></p>
 <ol type='a'>
-<li>Leg uit wat FPS betekent.</li>
-<li>Waarom is 60 FPS vaak een goede keuze voor een game?</li>
-<li>Noem een effect dat je ziet als de FPS laag is.</li>
+<li>Voeg `ySnelheid` en `zwaartekracht = 0.6` toe aan je Speler-klasse.</li>
+<li>Zorg dat je speler valt als hij in de lucht is.</li>
+<li>Maak minstens twee platforms en zorg dat de speler op de grond landt.</li>
 </ol>
 </li>
-<li><p>Tijd bijhouden</p>
+<li><p><strong>Springen implementeren</strong></p>
 <ol type='a'>
-<li>Maak een variabele `tijd` en laat zien hoe je die per frame opvoert.</li>
-<li>Waarom is tijd handig om een vijand met een vaste snelheid te laten bewegen?</li>
-<li>Wat doet `clock.tick(60)` in Pygame?</li>
+<li>Voeg een `spring()` methode toe.</li>
+<li>Zorg dat je speler omhoog springt met SPACE.</li>
+<li>Zorg dat de speler niet meerdere keren in lucht kan springen.</li>
 </ol>
 </li>
-<li><p>Toepassingsvraag</p>
-<p>Je maakt een game waarin een enemy elke 2 seconden opnieuw verschijnt.</p>
+<li><p><strong>Landingsdetectie</strong></p>
 <ol type='a'>
-<li>Hoe kun je met tijd bepalen wanneer een nieuwe enemy verschijnt?</li>
-<li>Waarom is een vaste tijdsregel beter dan alleen een toevallige code?</li>
-<li>Leg uit waarom een game-lus belangrijk is voor beweging en weergave.</li>
+<li>Schrijf een `controleer_landing()` functie.</li>
+<li>Zorg dat `op_grond` True is als de speler op platform staat.</li>
+<li>Test: kan je spelen op elk platform springen?</li>
 </ol>
 </li>
-<li><p>Verander de snelheid</p>
+<li><p><strong>Zwaartekracht tunen</strong></p>
 <ol type='a'>
-<li>Maak een variabele `speed` en laat zien hoe je deze per frame gebruikt om een object te bewegen.</li>
-<li>Waarom is `clock.tick(60)` handig als je meerdere objecten in een spel hebt?</li>
-<li>Noem een situatie waarin een lagere FPS een probleem kan worden.</li>
+<li>Verander `zwaartekracht` naar 0.4 of 0.8 en voel het verschil.</li>
+<li>Verander `kracht_spring` en zie hoe hoger/lager de speler springt.</li>
+<li>Wat voel je als meer realistisch?</li>
 </ol>
 </li>
 </ol>
 <section id="inzichtsvragen">
 <h3>Inzichtsvragen<a class="headerlink" href="#inzichtsvragen" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p>Wat is een frame?</p></li>
-<li><p>Wat gebeurt er met een game als de computer minder frames per seconde kan tekenen?</p></li>
-<li><p>Waarom is tijd een belangrijk onderdeel van computerspellen?</p></li>
+<li><p>Waarom is een constante zwaartekracht belangrijker dan vaste afstanden?</p></li>
+<li><p>Waarom springt een speler niet oneindig hoog?</p></li>
+<li><p>Hoe hangt de hoogte van je sprong af van <code class="docutils literal notranslate"><span class="pre">kracht_spring</span></code>?</p></li>
+<li><p>Waarom kan je niet springen terwijl je al in de lucht bent?</p></li>
 </ol>
 </section>
 </section>
@@ -671,7 +938,7 @@
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Objectgeoriënteerd Programmeren Hoofdstuk 3: Lijsten van objecten</p>
+        <p class="prev-next-title">Objectgeoriënteerd Programmeren Hoofdstuk 3: Lijsten van objecten en Level-ontwerp</p>
       </div>
     </a>
     <a class="right-next"
@@ -679,7 +946,7 @@
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Objectgeoriënteerd Programmeren Hoofdstuk 5: Score en levens</p>
+        <p class="prev-next-title">Objectgeoriënteerd Programmeren Hoofdstuk 5: Collectibles, Score en Botsingsdetectie</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -703,13 +970,20 @@
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-fps">Wat is FPS?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-game-lus">De game-lus</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clock-tick-60"><code class="docutils literal notranslate"><span class="pre">clock.tick(60)</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tijd-bijhouden">Tijd bijhouden</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-beweging-afhankelijk-van-tijd">Voorbeeld: beweging afhankelijk van tijd</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-game-lus-en-timing">De game-lus en timing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-consistent-timing">Waarom consistent timing?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zwaartekracht-realistisch-vallen">Zwaartekracht: Realistisch vallen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hoe-zwaartekracht-werkt">Hoe zwaartekracht werkt</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visueel">Visueel:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#springen-initiele-snelheid-omhoog">Springen: Initiële snelheid omhoog</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#landingsdetectie-op-grond-checken">Landingsdetectie: “Op grond?” checken</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#volledig-voorbeeld-speler-met-zwaartekracht-en-springen">Volledig voorbeeld: Speler met zwaartekracht en springen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#afbeeldingen-en-bronnen">Afbeeldingen en bronnen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inzichtsvragen">Inzichtsvragen</a></li>
 </ul>

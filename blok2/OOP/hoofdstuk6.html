@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Objectgeoriënteerd Programmeren Hoofdstuk 6: Start- en eindscherm &#8212; Informatica</title>
+    <title>Objectgeoriënteerd Programmeren Hoofdstuk 6: Game States, Menus en Complete Game Flow &#8212; Informatica</title>
   
   
   
@@ -65,7 +65,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Blok 3: webdesign, databases &amp; websecurity" href="../../blok3/index.html" />
-    <link rel="prev" title="Objectgeoriënteerd Programmeren Hoofdstuk 5: Score en levens" href="hoofdstuk5.html" />
+    <link rel="prev" title="Objectgeoriënteerd Programmeren Hoofdstuk 5: Collectibles, Score en Botsingsdetectie" href="hoofdstuk5.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -451,7 +451,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Objectgeoriënteerd Programmeren Hoofdstuk 6: Start- en eindscherm</h1>
+    <h1>Objectgeoriënteerd Programmeren Hoofdstuk 6: Game States, Menus en Complete Game Flow</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -462,15 +462,16 @@
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-een-startscherm">Waarom een startscherm?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spelstatus">Spelstatus</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starten-van-het-spel">Starten van het spel</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eindscherm">Eindscherm</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resetten-van-het-spel">Resetten van het spel</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-simpele-spelstatus">Voorbeeld: simpele spelstatus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-game-states">Waarom game-states?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#een-state-machine-bouwen">Een State Machine bouwen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#het-startscherm">Het Startscherm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#het-eindscherm-game-over">Het Eindscherm (Game Over)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spel-resetten-en-starten">Spel Resetten en Starten</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hoe-game-states-werken-diagram">Hoe Game States werken: Diagram</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-een-startscherm">Waarom een Startscherm?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#volledig-voorbeeld-complete-game-met-states">Volledig Voorbeeld: Complete Game met States</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#afbeeldingen-en-bronnen">Afbeeldingen en bronnen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inzichtsvragen">Inzichtsvragen</a></li>
 </ul>
@@ -486,178 +487,297 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="objectgeorienteerd-programmeren-hoofdstuk-6-start-en-eindscherm">
-<h1>Objectgeoriënteerd Programmeren Hoofdstuk 6: Start- en eindscherm<a class="headerlink" href="#objectgeorienteerd-programmeren-hoofdstuk-6-start-en-eindscherm" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="objectgeorienteerd-programmeren-hoofdstuk-6-game-states-menus-en-complete-game-flow">
+<h1>Objectgeoriënteerd Programmeren Hoofdstuk 6: Game States, Menus en Complete Game Flow<a class="headerlink" href="#objectgeorienteerd-programmeren-hoofdstuk-6-game-states-menus-en-complete-game-flow" title="Link to this heading">#</a></h1>
 <section id="leerdoelen">
 <h2>Leerdoelen<a class="headerlink" href="#leerdoelen" title="Link to this heading">#</a></h2>
-<p>Een goed spel begint niet meteen met het spelen. Vaak heb je een <strong>startscherm</strong> en later een <strong>eindscherm</strong>.</p>
+<p>Een volledig spel bestaat uit meerdere <strong>toestanden</strong> (states): een startscherm, het eigenlijke spel, en een game-over scherm. Met behulp van <strong>state management</strong> zorg je dat je spel professioneel aanvoelt.</p>
 <p>Je leert:</p>
 <ul class="simple">
-<li><p>hoe een startscherm werkt;</p></li>
-<li><p>hoe je een spel start en reset;</p></li>
-<li><p>hoe je een eindscherm maakt;</p></li>
-<li><p>hoe je een spel opnieuw kunt starten;</p></li>
-<li><p>hoe je de game-status beheert.</p></li>
+<li><p>hoe game-states werken (menu, spelen, game-over);</p></li>
+<li><p>hoe je een state machine bouwt;</p></li>
+<li><p>hoe je een startscherm maakt;</p></li>
+<li><p>hoe je een game-over scherm maakt;</p></li>
+<li><p>hoe je naar verschillende states overgaat;</p></li>
+<li><p>hoe je het spel reset en opnieuw start;</p></li>
+<li><p>hoe je een <strong>complete, werkende game</strong> bouwt.</p></li>
 </ul>
-<p>Aan het einde van dit hoofdstuk kun je een eenvoudige spelstaat ontwerpen met een startscherm en een game-over scherm.</p>
+<p>Aan het einde van dit hoofdstuk heb je een volledige, spelbare platformer game!</p>
 </section>
 <hr class="docutils" />
-<section id="waarom-een-startscherm">
-<h2>Waarom een startscherm?<a class="headerlink" href="#waarom-een-startscherm" title="Link to this heading">#</a></h2>
-<p>Een startscherm laat de speler zien dat het spel klaar is om te starten.</p>
-<p>Het is nuttig om:</p>
-<ul class="simple">
-<li><p>een titel te tonen;</p></li>
-<li><p>een knop te laten zien;</p></li>
-<li><p>de speler een keuze te geven.</p></li>
-</ul>
-<p>Voorbeeld:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>START SPEL
-SLUIT KNOP
-</pre></div>
-</div>
-</section>
-<hr class="docutils" />
-<section id="spelstatus">
-<h2>Spelstatus<a class="headerlink" href="#spelstatus" title="Link to this heading">#</a></h2>
+<section id="waarom-game-states">
+<h2>Waarom game-states?<a class="headerlink" href="#waarom-game-states" title="Link to this heading">#</a></h2>
 <p>De game hoeft niet altijd in dezelfde staat te zitten.</p>
 <p>Je hebt bijvoorbeeld:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">startscherm</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">spelen</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">game_over</span></code></p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">&quot;menu&quot;</span></code></strong> - Startscherm, wacht op SPACE om te beginnen</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">&quot;playing&quot;</span></code></strong> - Actief spel, speler bestuurt zijn karakter</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">&quot;game_over&quot;</span></code></strong> - Game-over scherm, wacht op SPACE om terug naar menu</p></li>
 </ul>
-<p>Deze toestanden kun je opslaan in een variabele.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">status</span> <span class="o">=</span> <span class="s2">"startscherm"</span>
-</pre></div>
-</div>
-<p>Dan kun je in je loop checken welke toestand actief is.</p>
-</section>
-<hr class="docutils" />
-<section id="starten-van-het-spel">
-<h2>Starten van het spel<a class="headerlink" href="#starten-van-het-spel" title="Link to this heading">#</a></h2>
-<p>Als je op “Start” klikt, zet je de status op:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">status</span> <span class="o">=</span> <span class="s2">"spelen"</span>
-</pre></div>
-</div>
-<p>Dan worden alle objecten opnieuw gemaakt en begint het spel.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">joost</span> <span class="o">=</span> <span class="n">Speler</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">vijanden</span> <span class="o">=</span> <span class="p">[]</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils" />
-<section id="eindscherm">
-<h2>Eindscherm<a class="headerlink" href="#eindscherm" title="Link to this heading">#</a></h2>
-<p>Als de speler alle levens verlaat of een doel niet haalt, kun je de status aanpassen:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">status</span> <span class="o">=</span> <span class="s2">"game_over"</span>
-</pre></div>
-</div>
-<p>Daarna kun je een scherm tonen met tekst zoals:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>GAME OVER
-Druk op spatie om opnieuw te starten
-</pre></div>
-</div>
-</section>
-<hr class="docutils" />
-<section id="resetten-van-het-spel">
-<h2>Resetten van het spel<a class="headerlink" href="#resetten-van-het-spel" title="Link to this heading">#</a></h2>
-<p>Een reset is handig als je opnieuw wilt beginnen.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="s2">"game_over"</span> <span class="ow">and</span> <span class="n">toets_ingedrukt</span><span class="p">:</span>
-    <span class="n">status</span> <span class="o">=</span> <span class="s2">"startscherm"</span>
-</pre></div>
-</div>
-<p>Of je roept een functie aan die alle waarden terugzet.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">start_game</span><span class="p">():</span>
-    <span class="n">speler</span> <span class="o">=</span> <span class="n">Speler</span><span class="p">()</span>
-    <span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">status</span> <span class="o">=</span> <span class="s2">"spelen"</span>
-</pre></div>
-</div>
-</section>
-<hr class="docutils" />
-<section id="voorbeeld-simpele-spelstatus">
-<h2>Voorbeeld: simpele spelstatus<a class="headerlink" href="#voorbeeld-simpele-spelstatus" title="Link to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">status</span> <span class="o">=</span> <span class="s2">"startscherm"</span>
+<p>Deze toestanden kun je opslaan in een variabele:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="s2">"menu"</span>
 
-<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="s2">"startscherm"</span><span class="p">:</span>
-        <span class="n">toon_startscherm</span><span class="p">()</span>
-    <span class="k">elif</span> <span class="n">status</span> <span class="o">==</span> <span class="s2">"spelen"</span><span class="p">:</span>
-        <span class="n">update_spel</span><span class="p">()</span>
-    <span class="k">elif</span> <span class="n">status</span> <span class="o">==</span> <span class="s2">"game_over"</span><span class="p">:</span>
-        <span class="n">toon_game_over</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="s2">"menu"</span><span class="p">:</span>
+    <span class="n">toon_startscherm</span><span class="p">()</span>
+<span class="k">elif</span> <span class="n">state</span> <span class="o">==</span> <span class="s2">"playing"</span><span class="p">:</span>
+    <span class="n">update_en_teken_game</span><span class="p">()</span>
+<span class="k">elif</span> <span class="n">state</span> <span class="o">==</span> <span class="s2">"game_over"</span><span class="p">:</span>
+    <span class="n">toon_game_over_scherm</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Zo is het duidelijk wat het spel op ieder moment doet.</p>
+<p>Het voordeel: je code is <strong>duidelijker gestructureerd</strong> en <strong>makkelijker uit te breiden</strong>.</p>
+</section>
+<hr class="docutils" />
+<section id="een-state-machine-bouwen">
+<h2>Een State Machine bouwen<a class="headerlink" href="#een-state-machine-bouwen" title="Link to this heading">#</a></h2>
+<p>Een <strong>state machine</strong> is een systeem dat toestanden beheert en overgangen tussen toestanden.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">STATE_MENU</span> <span class="o">=</span> <span class="s2">"menu"</span>
+<span class="n">STATE_PLAYING</span> <span class="o">=</span> <span class="s2">"playing"</span>
+<span class="n">STATE_GAME_OVER</span> <span class="o">=</span> <span class="s2">"game_over"</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Game</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">STATE_MENU</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">level</span> <span class="o">=</span> <span class="mi">1</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">change_state</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_state</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Verander naar een ander state."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">new_state</span>
+        
+        <span class="k">if</span> <span class="n">new_state</span> <span class="o">==</span> <span class="n">STATE_MENU</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">reset_game</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">new_state</span> <span class="o">==</span> <span class="n">STATE_PLAYING</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">start_game</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="het-startscherm">
+<h2>Het Startscherm<a class="headerlink" href="#het-startscherm" title="Link to this heading">#</a></h2>
+<p>Een startscherm toont:</p>
+<ul class="simple">
+<li><p>De gametitel</p></li>
+<li><p>Instructies (bv. “Druk SPACE om te starten”)</p></li>
+<li><p>Eventueel besturingsknopjes</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">draw_menu</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">font_big</span><span class="p">,</span> <span class="n">font_small</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Teken het startscherm."""</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>  <span class="c1"># Donkergrijze achtergrond</span>
+    
+    <span class="c1"># Titel</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">font_big</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s2">"STICK HERO'S QUEST"</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">title_rect</span> <span class="o">=</span> <span class="n">title</span><span class="o">.</span><span class="n">get_rect</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="n">BREEDTE</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">HOOGTE</span> <span class="o">//</span> <span class="mi">4</span><span class="p">))</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">title_rect</span><span class="p">)</span>
+    
+    <span class="c1"># Instructies</span>
+    <span class="n">instr1</span> <span class="o">=</span> <span class="n">font_small</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s2">"Pijlen: Bewegen"</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
+    <span class="n">instr2</span> <span class="o">=</span> <span class="n">font_small</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s2">"SPACE: Springen"</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
+    <span class="n">instr3</span> <span class="o">=</span> <span class="n">font_small</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s2">"Druk SPACE om te STARTEN"</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    
+    <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">instr1</span><span class="p">,</span> <span class="p">[</span><span class="n">BREEDTE</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">100</span><span class="p">,</span> <span class="n">HOOGTE</span> <span class="o">//</span> <span class="mi">2</span><span class="p">])</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">instr2</span><span class="p">,</span> <span class="p">[</span><span class="n">BREEDTE</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">100</span><span class="p">,</span> <span class="n">HOOGTE</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">40</span><span class="p">])</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">instr3</span><span class="p">,</span> <span class="p">[</span><span class="n">BREEDTE</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">150</span><span class="p">,</span> <span class="n">HOOGTE</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">100</span><span class="p">])</span>
+    
+    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="het-eindscherm-game-over">
+<h2>Het Eindscherm (Game Over)<a class="headerlink" href="#het-eindscherm-game-over" title="Link to this heading">#</a></h2>
+<p>Een game-over scherm toont:</p>
+<ul class="simple">
+<li><p>“GAME OVER” boodschap</p></li>
+<li><p>Eindresultaat (score, level)</p></li>
+<li><p>Instructie voor herstarten</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">draw_game_over</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">font_big</span><span class="p">,</span> <span class="n">font_small</span><span class="p">,</span> <span class="n">speler</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Teken het game-over scherm."""</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>  <span class="c1"># Donkerrood</span>
+    
+    <span class="c1"># Game Over tekst</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">font_big</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s2">"GAME OVER"</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">text_rect</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">get_rect</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="n">BREEDTE</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">HOOGTE</span> <span class="o">//</span> <span class="mi">3</span><span class="p">))</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">text_rect</span><span class="p">)</span>
+    
+    <span class="c1"># Score info</span>
+    <span class="n">score_text</span> <span class="o">=</span> <span class="n">font_small</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Final Score: </span><span class="si">{</span><span class="n">speler</span><span class="o">.</span><span class="n">score</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
+    <span class="n">restart_text</span> <span class="o">=</span> <span class="n">font_small</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s2">"Druk SPACE om terug naar MENU"</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    
+    <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">score_text</span><span class="p">,</span> <span class="p">[</span><span class="n">BREEDTE</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">150</span><span class="p">,</span> <span class="n">HOOGTE</span> <span class="o">//</span> <span class="mi">2</span><span class="p">])</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">restart_text</span><span class="p">,</span> <span class="p">[</span><span class="n">BREEDTE</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">200</span><span class="p">,</span> <span class="n">HOOGTE</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">50</span><span class="p">])</span>
+    
+    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="spel-resetten-en-starten">
+<h2>Spel Resetten en Starten<a class="headerlink" href="#spel-resetten-en-starten" title="Link to this heading">#</a></h2>
+<p>Wanneer je naar “playing” gaat, moet je alles reset:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">init_game</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">"""Initialiseer een nieuw spel."""</span>
+    <span class="n">speler</span> <span class="o">=</span> <span class="n">Speler</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+    
+    <span class="n">platforms</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">Platform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">550</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
+        <span class="n">Platform</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span>
+        <span class="n">Platform</span><span class="p">(</span><span class="mi">450</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span>
+    <span class="p">]</span>
+    
+    <span class="n">munten</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">Munt</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">400</span><span class="p">),</span>
+        <span class="n">Munt</span><span class="p">(</span><span class="mi">575</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span>
+    <span class="p">]</span>
+    
+    <span class="k">return</span> <span class="n">speler</span><span class="p">,</span> <span class="n">platforms</span><span class="p">,</span> <span class="n">munten</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="hoe-game-states-werken-diagram">
+<h2>Hoe Game States werken: Diagram<a class="headerlink" href="#hoe-game-states-werken-diagram" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>┌─────────────┐
+│    MENU     │ (wacht op SPACE)
+└──────┬──────┘
+       │ SPACE ingedrukt
+       ↓
+┌─────────────┐
+│   PLAYING   │ (speler bestuurt, munten pakken)
+└──────┬──────┘
+       │ Speler valt/levens op 0
+       ↓
+┌─────────────┐
+│  GAME OVER  │ (toon score, wacht op SPACE)
+└──────┬──────┘
+       │ SPACE ingedrukt
+       ↓
+    MENU
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="waarom-een-startscherm">
+<h2>Waarom een Startscherm?<a class="headerlink" href="#waarom-een-startscherm" title="Link to this heading">#</a></h2>
+<p>Een startscherm is belangrijk voor:</p>
+<ul class="simple">
+<li><p><strong>Gebruikerservaring</strong> - Spelers weten wanneer ze kunnen starten</p></li>
+<li><p><strong>Instructies</strong> - Je kunt besturing uitleggen</p></li>
+<li><p><strong>Branding</strong> - Je game voelt professioneel</p></li>
+<li><p><strong>Pauze-mogelijkheid</strong> - Spelers kunnen teruggaan</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="volledig-voorbeeld-complete-game-met-states">
+<h2>Volledig Voorbeeld: Complete Game met States<a class="headerlink" href="#volledig-voorbeeld-complete-game-met-states" title="Link to this heading">#</a></h2>
+<p>Zie de sessie-bestanden voor een volledig werkend voorbeeld (<code class="docutils literal notranslate"><span class="pre">voorbeeld_complete_game.py</span></code>).</p>
+<p>De logica:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="n">STATE_MENU</span>
+    <span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
+    
+    <span class="k">while</span> <span class="n">running</span><span class="p">:</span>
+        <span class="c1"># INPUT</span>
+        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="n">STATE_MENU</span> <span class="ow">and</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_SPACE</span><span class="p">:</span>
+                <span class="n">state</span> <span class="o">=</span> <span class="n">STATE_PLAYING</span>
+                <span class="n">speler</span><span class="p">,</span> <span class="n">platforms</span><span class="p">,</span> <span class="n">munten</span> <span class="o">=</span> <span class="n">init_game</span><span class="p">()</span>
+            
+            <span class="k">elif</span> <span class="n">state</span> <span class="o">==</span> <span class="n">STATE_PLAYING</span><span class="p">:</span>
+                <span class="c1"># ... speler input ...</span>
+            
+            <span class="k">elif</span> <span class="n">state</span> <span class="o">==</span> <span class="n">STATE_GAME_OVER</span> <span class="ow">and</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_SPACE</span><span class="p">:</span>
+                <span class="n">state</span> <span class="o">=</span> <span class="n">STATE_MENU</span>
+        
+        <span class="c1"># UPDATE &amp; RENDER</span>
+        <span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="n">STATE_MENU</span><span class="p">:</span>
+            <span class="n">draw_menu</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">state</span> <span class="o">==</span> <span class="n">STATE_PLAYING</span><span class="p">:</span>
+            <span class="n">game_running</span> <span class="o">=</span> <span class="n">update_game</span><span class="p">(</span><span class="n">speler</span><span class="p">,</span> <span class="n">platforms</span><span class="p">,</span> <span class="n">munten</span><span class="p">)</span>
+            <span class="n">draw_game</span><span class="p">(</span><span class="n">speler</span><span class="p">,</span> <span class="n">platforms</span><span class="p">,</span> <span class="n">munten</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">game_running</span><span class="p">:</span>
+                <span class="n">state</span> <span class="o">=</span> <span class="n">STATE_GAME_OVER</span>
+        <span class="k">elif</span> <span class="n">state</span> <span class="o">==</span> <span class="n">STATE_GAME_OVER</span><span class="p">:</span>
+            <span class="n">draw_game_over</span><span class="p">(</span><span class="n">speler</span><span class="p">)</span>
+        
+        <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+    
+    <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</pre></div>
+</div>
 </section>
 <hr class="docutils" />
 <section id="samenvatting">
 <h2>Samenvatting<a class="headerlink" href="#samenvatting" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Een startscherm helpt bij het openen van het spel.</p></li>
-<li><p>Een eindscherm laat de speler zien dat het spel is afgelopen.</p></li>
-<li><p>Je gebruikt statusvariabelen om verschillende schermen te regelen.</p></li>
-<li><p>Resetten en opnieuw starten maakt een spel beter te gebruiken.</p></li>
+<li><p><strong>State Machine</strong> bestuurt verschillende speltoestanden</p></li>
+<li><p><strong>STATE_MENU</strong> = Startscherm</p></li>
+<li><p><strong>STATE_PLAYING</strong> = Actief spel</p></li>
+<li><p><strong>STATE_GAME_OVER</strong> = Eindscherm</p></li>
+<li><p><strong>Transities</strong> gebeuren op basis van events (bijv. SPACE)</p></li>
+<li><p><strong>Reset</strong> zorgt dat het spel opnieuw kan beginnen</p></li>
+<li><p>Met states is je game <strong>professioneel gestructureerd</strong>!</p></li>
 </ul>
 </section>
 <section id="check-je-begrip">
 <h2>Check je begrip<a class="headerlink" href="#check-je-begrip" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Waarom heb je een startscherm?</p></li>
-<li><p>Wat is een spelstatus?</p></li>
-<li><p>Hoe kun je een game-over scherm laten zien?</p></li>
-<li><p>Waarom is resetten handig?</p></li>
+<li><p>Wat is een state machine?</p></li>
+<li><p>Welke drie states heeft je game?</p></li>
+<li><p>Hoe ga je van menu naar playing?</p></li>
+<li><p>Wat staat op het game-over scherm?</p></li>
+<li><p>Waarom moet je het spel resetten?</p></li>
+<li><p>Hoe structureert een state machine je code?</p></li>
 </ol>
-</section>
-<section id="afbeeldingen-en-bronnen">
-<h2>Afbeeldingen en bronnen<a class="headerlink" href="#afbeeldingen-en-bronnen" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Zelf maken: maak een schematische flowchart van startscherm → spel → game over.</p></li>
-<li><p>Online zoeken: <a class="reference external" href="https://www.youtube.com/results?search_query=game+menu+ui+start+screen">Game menu UI voorbeelden</a></p></li>
-<li><p>Online zoeken: <a class="reference external" href="https://www.pygame.org/docs/">Pygame menu tutorial</a></p></li>
-<li><p>Online zoeken: <a class="reference external" href="https://en.wikipedia.org/wiki/Game_state">Wikipedia: game state</a></p></li>
-</ul>
 </section>
 <section id="opdrachten">
 <h2>Opdrachten<a class="headerlink" href="#opdrachten" title="Link to this heading">#</a></h2>
 <ol class="arabic">
-<li><p>Startscherm maken</p>
+<li><p><strong>Startscherm implementeren</strong></p>
 <ol type='a'>
-<li>Teken een eenvoudig startscherm met tekst zoals `START SPEL`.</li>
-<li>Leg uit welke variabele je gebruikt om te onthouden in welke toestand het spel zich bevindt.</li>
-<li>Noem drie mogelijke toestanden van een simpel spel.</li>
+<li>Maak een `draw_menu()` functie.</li>
+<li>Toon gametitel en instructies.</li>
+<li>Zorg dat SPACE naar playing gaat.</li>
 </ol>
 </li>
-<li><p>Eindscherm en reset</p>
+<li><p><strong>Game-over scherm</strong></p>
 <ol type='a'>
-<li>Schrijf een korte structuur waarin het spel eerst een startscherm toont, daarna het spel en daarna een game-over scherm.</li>
-<li>Welke code zou je gebruiken om het spel opnieuw te starten?</li>
-<li>Waarom is het handig om statusvariabelen te gebruiken in plaats van losse losse `if`-checks?</li>
+<li>Maak een `draw_game_over()` functie.</li>
+<li>Toon "GAME OVER" en de eindscore.</li>
+<li>SPACE gaat terug naar menu.</li>
 </ol>
 </li>
-<li><p>Toepassingsvraag</p>
-<p>Je maakt een spel waarin een speler een level kan winnen of verliezen.</p>
+<li><p><strong>State machine</strong></p>
 <ol type='a'>
-<li>Hoe kun je de status van het spel veranderen als het level is afgelopen?</li>
-<li>Waarom is een start- en eindscherm belangrijk voor een spelervaring?</li>
-<li>Noem een situatie waarin een reset van het spel logisch is.</li>
+<li>Maak een `state` variabele met MENU, PLAYING, GAME_OVER.</li>
+<li>Voeg logica toe: if state == MENU, elif state == PLAYING, etc.</li>
+<li>Test alle transities.</li>
 </ol>
 </li>
-<li><p>Beheer een spelstate</p>
+<li><p><strong>Complete game</strong></p>
 <ol type='a'>
-<li>Maak een variabele `status` met de waarden `startscherm`, `spelen` en `game_over`.</li>
-<li>Leg uit wanneer je `status = "spelen"` zet.</li>
-<li>Schrijf een korte reden waarom een reset van de status belangrijk is voor een nieuwe ronde.</li>
+<li>Combineer alles: klasses, game-loop, states, menu's.</li>
+<li>Test: startscherm → spel → game-over → menu.</li>
+<li>Zorg dat munten en score werken.</li>
+</ol>
+</li>
+<li><p><strong>Level upgrade (bonus)</strong></p>
+<ol type='a'>
+<li>Maak een Level 2 met meer platforms en munten.</li>
+<li>Zorg dat je na Level 1 automatisch Level 2 speelt.</li>
+<li>Voeg een "Level Won" screen toe.</li>
 </ol>
 </li>
 </ol>
 <section id="inzichtsvragen">
 <h3>Inzichtsvragen<a class="headerlink" href="#inzichtsvragen" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p>Wat is een spelstatus?</p></li>
-<li><p>Waarom kun je het spel vergelijken met een machine met verschillende toestanden?</p></li>
-<li><p>Hoe helpt een startscherm om een spel overzichtelijk te maken?</p></li>
+<li><p>Waarom heb je een startscherm nodig?</p></li>
+<li><p>Hoe helpt een state machine met het organiseren van je code?</p></li>
+<li><p>Wat gebeurt er als je niet reset?</p></li>
+<li><p>Hoe voelt een game met startscherm beter dan zonder?</p></li>
+<li><p>Waarom is een game-over scherm beter dan direct afsluiten?</p></li>
 </ol>
 </section>
 </section>
@@ -699,7 +819,7 @@ Druk op spatie om opnieuw te starten
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Objectgeoriënteerd Programmeren Hoofdstuk 5: Score en levens</p>
+        <p class="prev-next-title">Objectgeoriënteerd Programmeren Hoofdstuk 5: Collectibles, Score en Botsingsdetectie</p>
       </div>
     </a>
     <a class="right-next"
@@ -730,15 +850,16 @@ Druk op spatie om opnieuw te starten
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-een-startscherm">Waarom een startscherm?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spelstatus">Spelstatus</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starten-van-het-spel">Starten van het spel</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eindscherm">Eindscherm</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resetten-van-het-spel">Resetten van het spel</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-simpele-spelstatus">Voorbeeld: simpele spelstatus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-game-states">Waarom game-states?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#een-state-machine-bouwen">Een State Machine bouwen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#het-startscherm">Het Startscherm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#het-eindscherm-game-over">Het Eindscherm (Game Over)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spel-resetten-en-starten">Spel Resetten en Starten</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hoe-game-states-werken-diagram">Hoe Game States werken: Diagram</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-een-startscherm">Waarom een Startscherm?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#volledig-voorbeeld-complete-game-met-states">Volledig Voorbeeld: Complete Game met States</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#afbeeldingen-en-bronnen">Afbeeldingen en bronnen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inzichtsvragen">Inzichtsvragen</a></li>
 </ul>
