@@ -183,42 +183,36 @@ Zo kunnen eenvoudige plaatjes worden gemaakt met pixels.
 
 1. Pixeltekening maken
 
-   a. Teken een 5x5-pixelbeeld op papier. Gebruik alleen zwart en wit. Laat in het midden een klein vierkantje zien.
-
-   b. Geef voor 5 pixels aan welke kleur die pixel heeft. Gebruik hierbij de letters `W` (wit) en `Z` (zwart).
-
-   c. Leg uit waarom een computer een foto niet als één grote kleur opslaat, maar als veel kleine vakjes.
-
+   <ol type='a'>
+   <li>Teken een 5x5-pixelbeeld op papier. Gebruik alleen zwart en wit. Laat in het midden een klein vierkantje zien.</li>
+   <li>Geef voor 5 pixels aan welke kleur die pixel heeft. Gebruik hierbij de letters `W` (wit) en `Z` (zwart).</li>
+   <li>Leg uit waarom een computer een foto niet als één grote kleur opslaat, maar als veel kleine vakjes.</li>
+   </ol>
 2. Kleurcodes
 
-   a. Schrijf drie verschillende RGB-kleuren op en leg uit wat elk getal betekent.
-
-   b. Welke kleur krijg je bij `(255, 0, 0)`? En bij `(0, 255, 0)`? En bij `(0, 0, 255)`?
-
-   c. Welke kleur heeft de RGB-code `(160, 160, 20)`? Controleer je antwoord met [de tool in de paragraaf](#kleur-opslaan)
-
-   d. Noem een manier om een afbeelding scherper te maken zonder de afbeelding te vergroten.
-
+   <ol type='a'>
+   <li>Schrijf drie verschillende RGB-kleuren op en leg uit wat elk getal betekent.</li>
+   <li>Welke kleur krijg je bij `(255, 0, 0)`? En bij `(0, 255, 0)`? En bij `(0, 0, 255)`?</li>
+   <li>Welke kleur heeft de RGB-code `(160, 160, 20)`? Controleer je antwoord met [de tool in de paragraaf](#kleur-opslaan)</li>
+   <li>Noem een manier om een afbeelding scherper te maken zonder de afbeelding te vergroten.</li>
+   </ol>
 3. Toepassingsvraag
 
    Een game laat een karakter op het scherm bewegen. Het beeld lijkt schokkend en wazig.
 
-   a. Waarom kan een hogere resolutie ervoor zorgen dat het beeld beter uitziet?
-
-   b. Waarom heeft een game met veel pixels vaak meer geheugen nodig?
-
-   c. Welk effect heeft het als je een afbeelding verkleint? Noem één voordeel en één nadeel.
-
+   <ol type='a'>
+   <li>Waarom kan een hogere resolutie ervoor zorgen dat het beeld beter uitziet?</li>
+   <li>Waarom heeft een game met veel pixels vaak meer geheugen nodig?</li>
+   <li>Welk effect heeft het als je een afbeelding verkleint? Noem één voordeel en één nadeel.</li>
+   </ol>
 4. Ontwerp je game-karakter
 
-   a. Ga naar [deze website](https://www.pixilart.com/draw) en maak een nieuwe afbeelding met een grootte van 16 bij 16 pixels.
-
-   b. Teken een karakter dat je in je game wil gaan gebruiken. Zorg dat het karakter naar rechts kijkt en dat elke pixel een kleur heeft.
-
-   c. Sla de tekening op en download de afbeelding als '.png'.
-
-   c. Maak nog een tekening waarbij het karakter naar links kijkt. Sla ook deze afbeelding op en download hem als '.png'.
-
-   d. Extra: Maak nog twee tekeningen, één waarbij het karakter omhoog kijkt en één waarbij het karakter omlaag kijkt.
+   <ol type='a'>
+   <li>Ga naar [deze website](https://www.pixilart.com/draw) en maak een nieuwe afbeelding met een grootte van 16 bij 16 pixels.</li>
+   <li>Teken een karakter dat je in je game wil gaan gebruiken. Zorg dat het karakter naar rechts kijkt en dat elke pixel een kleur heeft.</li>
+   <li>Sla de tekening op en download de afbeelding als '.png'.</li>
+   <li>Maak nog een tekening waarbij het karakter naar links kijkt. Sla ook deze afbeelding op en download hem als '.png'.</li>
+   <li>Extra: Maak nog twee tekeningen, één waarbij het karakter omhoog kijkt en één waarbij het karakter omlaag kijkt.</li>
+   </ol>
 
 5. Speel het spelletje [HEX invaders](http://www.hexinvaders.com/#) voor maximaal 15 minuten.

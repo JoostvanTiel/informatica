@@ -221,30 +221,34 @@ Die hex-code is veel overzichtelijker.
 
 1. Decimaal en binair
 
-   a. Zet het decimale getal 13 om naar binair.
-   b. Zet het binaire getal `1011` om naar decimaal.
-   c. Leg uit waarom je bij het omrekenen van binair naar decimaal steeds met machten van 2 werkt.
-
+   <ol type='a'>
+   <li>Zet het decimale getal 13 om naar binair.</li>
+   <li>Zet het binaire getal `1011` om naar decimaal.</li>
+   <li>Leg uit waarom je bij het omrekenen van binair naar decimaal steeds met machten van 2 werkt.</li>
+   </ol>
 2. Hexadecimaal
 
-   a. Schrijf de waarden van 0 tot 15 op in het hexadecimale stelsel.
-   b. Welke hexadecimale code hoort bij het binaire getal `1010`?
-   c. Waarom is hexadecimaal handiger dan binair voor mensen?
-
+   <ol type='a'>
+   <li>Schrijf de waarden van 0 tot 15 op in het hexadecimale stelsel.</li>
+   <li>Welke hexadecimale code hoort bij het binaire getal `1010`?</li>
+   <li>Waarom is hexadecimaal handiger dan binair voor mensen?</li>
+   </ol>
 3. Toepassingsvraag
 
    In een game worden kleuren vaak in hexadecimale codes opgeslagen.
 
-   a. Waarom is een kleurcode in hexadecimaal korter dan dezelfde kleur in binair?
-   b. Hoe zou jij een kleur als `#FF0000` uitleggen aan een klasgenoot?
-   c. Noem een situatie waarin een computer liever werkt met hexadecimaal dan met decimaal.
-
+   <ol type='a'>
+   <li>Waarom is een kleurcode in hexadecimaal korter dan dezelfde kleur in binair?</li>
+   <li>Hoe zou jij een kleur als `#FF0000` uitleggen aan een klasgenoot?</li>
+   <li>Noem een situatie waarin een computer liever werkt met hexadecimaal dan met decimaal.</li>
+   </ol>
 4. Kijk naar een kleurcode
 
-   a. Zet de hexadecimale code `#3F8C3A` om naar een korte uitleg in woorden.
-   b. De code `#0000FF` is blauw. Hoe zou je deze code in binair kunnen uitleggen?
-   c. Waarom is hexadecimaal handig bij het programmeren van kleurcodes?
-
+   <ol type='a'>
+   <li>Zet de hexadecimale code `#3F8C3A` om naar een korte uitleg in woorden.</li>
+   <li>De code `#0000FF` is blauw. Hoe zou je deze code in binair kunnen uitleggen?</li>
+   <li>Waarom is hexadecimaal handig bij het programmeren van kleurcodes?</li>
+   </ol>
 ### Inzichtsvragen
 
 1. Wat is het verschil tussen basis 10 en basis 2?

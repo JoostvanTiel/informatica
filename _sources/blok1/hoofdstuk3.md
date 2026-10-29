@@ -409,12 +409,11 @@ Aan het einde van dit hoofdstuk kun je:
    is_ingelogd = True
    ```
 
-   a. Schrijf bij elke variabele het type (`int`, `float`, `string`, `boolean`).
-
-   b. Bedenk per variabele een nieuwe waarde met hetzelfde type.
-
-   c. Maak één extra variabele van elk type.
-
+   <ol type='a'>
+   <li>Schrijf bij elke variabele het type (`int`, `float`, `string`, `boolean`).</li>
+   <li>Bedenk per variabele een nieuwe waarde met hetzelfde type.</li>
+   <li>Maak één extra variabele van elk type.</li>
+   </ol>
 ---
 
 2. Rekenen met operatoren
@@ -426,18 +425,18 @@ Aan het einde van dit hoofdstuk kun je:
    b = 6
    ```
 
-   a. Bereken met Python:
+   <ol type='a'>
+   <li>Bereken met Python:
    - `a + b`
    - `a - b`
    - `a * b`
    - `a / b`
    - `a ** 2`
    - `a // b`
-   - `a % b`
-
-   b. Schrijf bij elke uitkomst in woorden wat het betekent.
-
-   c. Leg uit wat het verschil is tussen `/` en `//`.
+   - `a % b`</li>
+   <li>Schrijf bij elke uitkomst in woorden wat het betekent.</li>
+   <li>Leg uit wat het verschil is tussen `/` en `//`.</li>
+   </ol>
 
 ---
 
@@ -454,14 +453,12 @@ Aan het einde van dit hoofdstuk kun je:
    - 0 t/m 15: `Het is koud.`
    - boven 15: `Het is niet koud.`
 
-   a. Schrijf code die voor `temperaturen[0]` de juiste tekst print.
-
-   b. Herhaal dat voor `temperaturen[1]`, `temperaturen[2]` en `temperaturen[3]`.
-
-   c. Wat valt je op aan de code die je hebt herhaald?
-
-   d. Schrijf in één zin waarom deze aanpak bij langere lijsten snel onoverzichtelijk wordt.
-
+   <ol type='a'>
+   <li>Schrijf code die voor `temperaturen[0]` de juiste tekst print.</li>
+   <li>Herhaal dat voor `temperaturen[1]`, `temperaturen[2]` en `temperaturen[3]`.</li>
+   <li>Wat valt je op aan de code die je hebt herhaald?</li>
+   <li>Schrijf in één zin waarom deze aanpak bij langere lijsten snel onoverzichtelijk wordt.</li>
+   </ol>
 ---
 
 4. Gemiddelde van drie cijfers
@@ -472,26 +469,23 @@ Aan het einde van dit hoofdstuk kun je:
    cijfers = [6.5, 7.0, 5.5]
    ```
 
-   a. Bereken het gemiddelde met `+` en `/`. Gebruik de cijferslijst met index, niet de letterlijke getallen.
-
-   b. Print `voldoende` als het gemiddelde 5.5 of hoger is, anders `onvoldoende`.
-
-   c. Verander de cijfers en test opnieuw met minstens drie sets.
-
+   <ol type='a'>
+   <li>Bereken het gemiddelde met `+` en `/`. Gebruik de cijferslijst met index, niet de letterlijke getallen.</li>
+   <li>Print `voldoende` als het gemiddelde 5.5 of hoger is, anders `onvoldoende`.</li>
+   <li>Verander de cijfers en test opnieuw met minstens drie sets.</li>
+   </ol>
 ---
 
 5. Teams maken met `//` en `%`
 
    Een klas heeft 31 leerlingen. Je maakt teams van 4.
 
-   a. Bereken het aantal complete teams.
-
-   b. Bereken hoeveel leerlingen overblijven.
-
-   c. Test opnieuw met teamgroottes 3 en 5.
-
-   d. Leg uit waarom `%` nuttig is in dit soort problemen.
-
+   <ol type='a'>
+   <li>Bereken het aantal complete teams.</li>
+   <li>Bereken hoeveel leerlingen overblijven.</li>
+   <li>Test opnieuw met teamgroottes 3 en 5.</li>
+   <li>Leg uit waarom `%` nuttig is in dit soort problemen.</li>
+   </ol>
 ---
 
 6. Scorelijst verbeteren
@@ -502,16 +496,13 @@ Aan het einde van dit hoofdstuk kun je:
    scores = [120, 85, 220, 40]
    ```
 
-   a. Print de eerste score.
-
-   b. Verhoog de tweede score met 15 punten.
-
-   c. Voeg een nieuwe score toe aan het einde van de lijst.
-
-   d. Print de hele lijst.
-
-   e. Bereken handmatig de som van alle scores.
-
+   <ol type='a'>
+   <li>Print de eerste score.</li>
+   <li>Verhoog de tweede score met 15 punten.</li>
+   <li>Voeg een nieuwe score toe aan het einde van de lijst.</li>
+   <li>Print de hele lijst.</li>
+   <li>Bereken handmatig de som van alle scores.</li>
+   </ol>
 ---
 
 7. Van toestand naar lijst
@@ -525,12 +516,11 @@ Aan het einde van dit hoofdstuk kun je:
    toestand = "DICHT"
    ```
 
-   a. Werk stap voor stap `gebeurtenissen[0]`, `gebeurtenissen[1]` en `gebeurtenissen[2]` af met `if` en `else`.
-
-   b. Print na elke stap de nieuwe toestand.
-
-   c. Waarom is dit een goede voorbereiding op het verwerken van langere reeksen gebeurtenissen?
-
+   <ol type='a'>
+   <li>Werk stap voor stap `gebeurtenissen[0]`, `gebeurtenissen[1]` en `gebeurtenissen[2]` af met `if` en `else`.</li>
+   <li>Print na elke stap de nieuwe toestand.</li>
+   <li>Waarom is dit een goede voorbereiding op het verwerken van langere reeksen gebeurtenissen?</li>
+   </ol>
 ---
 
 8. Werken met een lijst prijzen
@@ -544,34 +534,32 @@ Aan het einde van dit hoofdstuk kun je:
    print(totaal)
    ```
 
-   a. Wat doet deze code?
-
-   b. Welke regels zijn herhaling van hetzelfde idee?
-
-   c. Schrijf in gewone taal een stappenplan om dit met meer prijzen uit te rekenen.
-
-   d. Breid de lijst uit naar 6 prijzen en pas de berekening handmatig aan.
-
+   <ol type='a'>
+   <li>Wat doet deze code?</li>
+   <li>Welke regels zijn herhaling van hetzelfde idee?</li>
+   <li>Schrijf in gewone taal een stappenplan om dit met meer prijzen uit te rekenen.</li>
+   <li>Breid de lijst uit naar 6 prijzen en pas de berekening handmatig aan.</li>
+   </ol>
 ---
 
 9. Oefenen met `range()`
 
-   a. Schrijf op wat de uitvoer is van:
-
+   <ol type='a'>
+   <li>Schrijf op wat de uitvoer is van:</li>
    ```python
    print(list(range(4)))
    print(list(range(3, 8)))
    print(list(range(1, 10, 3)))
    ```
 
-   b. Maak een lijst met getallen van 8 tot en met 148, in stappen van 4 zonder die handmatig uit te typen. Gebruik `range()`.
+   <li>Maak een lijst met getallen van 8 tot en met 148, in stappen van 4 zonder die handmatig uit te typen. Gebruik `range()`.</li>
 
-   c. Een lijst is:
+   <li>Een lijst is:</li>
 
    ```python
    namen = ["Joep", "Niels", "Amyra", "Finn"]
    ```
-
+   </ol>
    Schrijf code die met `range()` alle geldige indexen van deze lijst opslaat in een nieuwe lijst, genaamd 'indexen'.
 
 ---
@@ -584,12 +572,11 @@ Aan het einde van dit hoofdstuk kun je:
     import random
     ```
 
-    a. Schrijf code die één dobbelsteenworp simuleert met `random.randrange(1, 7)`.
-
-    b. Simuleer daarna nog vier extra worpen en print alle vijf worpen onder elkaar.
-
-    c. Bepaal met `//` en `%` van elke worp of het getal even of oneven is.
-
+    <ol type='a'>
+    <li>Schrijf code die één dobbelsteenworp simuleert met `random.randrange(1, 7)`.</li>
+    <li>Simuleer daarna nog vier extra worpen en print alle vijf worpen onder elkaar.</li>
+    <li>Bepaal met `//` en `%` van elke worp of het getal even of oneven is.</li>
+    </ol>
 ---
 
 ## Afronding

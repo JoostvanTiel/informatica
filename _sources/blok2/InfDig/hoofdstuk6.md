@@ -151,30 +151,34 @@ De gamecode kan bijvoorbeeld de achtergrondafbeelding openen en de muziek afspel
 
 1. Bestanden herkennen
 
-   a. Noem vijf verschillende bestandstypes die je regelmatig tegenkomt.
-   b. Doe een voorbeeld van een bestandnaam met extensie en leg uit wat de extensie betekent.
-   c. Waarom kan een bestand met de verkeerde extensie soms niet goed openen?
-
+   <ol type='a'>
+   <li>Noem vijf verschillende bestandstypes die je regelmatig tegenkomt.</li>
+   <li>Doe een voorbeeld van een bestandnaam met extensie en leg uit wat de extensie betekent.</li>
+   <li>Waarom kan een bestand met de verkeerde extensie soms niet goed openen?</li>
+   </ol>
 2. Mappen en structuur
 
-   a. Maak een kleine projectmap met de namen `images`, `audio` en `code`.
-   b. Leg uit waarom een nette mapstructuur handig is.
-   c. Wat is het risico als je alle bestanden door elkaar in één map stopt?
-
+   <ol type='a'>
+   <li>Maak een kleine projectmap met de namen `images`, `audio` en `code`.</li>
+   <li>Leg uit waarom een nette mapstructuur handig is.</li>
+   <li>Wat is het risico als je alle bestanden door elkaar in één map stopt?</li>
+   </ol>
 3. Toepassingsvraag
 
    Je hebt een Python-bestand, een foto en een geluidsbestand in één map staan.
 
-   a. Hoe weet je computer welke app bij elk bestand past?
-   b. Waarom is een juiste bestandsnaam belangrijk?
-   c. Noem één reden waarom je bestanden beter organisatorisch opslaat.
-
+   <ol type='a'>
+   <li>Hoe weet je computer welke app bij elk bestand past?</li>
+   <li>Waarom is een juiste bestandsnaam belangrijk?</li>
+   <li>Noem één reden waarom je bestanden beter organisatorisch opslaat.</li>
+   </ol>
 4. Eigen projectmap plannen
 
-   a. Maak een kleine overzichtstabel met drie mapjes voor een gameproject.
-   b. Leg uit welke bestanden je in elk mapje zou stoppen.
-   c. Waarom is het nuttig om bestanden logisch te ordenen?
-
+   <ol type='a'>
+   <li>Maak een kleine overzichtstabel met drie mapjes voor een gameproject.</li>
+   <li>Leg uit welke bestanden je in elk mapje zou stoppen.</li>
+   <li>Waarom is het nuttig om bestanden logisch te ordenen?</li>
+   </ol>
 ### Inzichtsvragen
 
 1. Wat is een extensie precies?

@@ -126,30 +126,34 @@ Daarom gebruikt een computer compressietechnieken om het filmpje kleiner te make
 
 1. Afbeelding, geluid en video vergelijken
 
-   a. Noem één kenmerk van een digitale foto, één van geluid en één van video.
-   b. Leg uit waarom een video vaak veel meer ruimte inneemt dan een foto.
-   c. Welke combinatie van factoren maakt een video meestal groot?
-
+   <ol type='a'>
+   <li>Noem één kenmerk van een digitale foto, één van geluid en één van video.</li>
+   <li>Leg uit waarom een video vaak veel meer ruimte inneemt dan een foto.</li>
+   <li>Welke combinatie van factoren maakt een video meestal groot?</li>
+   </ol>
 2. Compressie
 
-   a. Noem het verschil tussen verliesvrij en verliesgevoelig comprimeren.
-   b. Geef een voorbeeld van een bestandstype dat vaak verliesvrij wordt gecomprimeerd.
-   c. Geef een voorbeeld van een bestandstype dat vaak met verlies wordt gecomprimeerd.
-
+   <ol type='a'>
+   <li>Noem het verschil tussen verliesvrij en verliesgevoelig comprimeren.</li>
+   <li>Geef een voorbeeld van een bestandstype dat vaak verliesvrij wordt gecomprimeerd.</li>
+   <li>Geef een voorbeeld van een bestandstype dat vaak met verlies wordt gecomprimeerd.</li>
+   </ol>
 3. Toepassingsvraag
 
    Je wilt een korte gamevideo met muziek uploaden, maar de app geeft aan dat het bestand te groot is.
 
-   a. Wat kun je doen om het bestand kleiner te maken?
-   b. Welke informatie mag eventueel verloren gaan zonder dat het filmpje onbruikbaar wordt?
-   c. Waarom is compressie nodig bij digitale media?
-
+   <ol type='a'>
+   <li>Wat kun je doen om het bestand kleiner te maken?</li>
+   <li>Welke informatie mag eventueel verloren gaan zonder dat het filmpje onbruikbaar wordt?</li>
+   <li>Waarom is compressie nodig bij digitale media?</li>
+   </ol>
 4. Denk na over een filmpje
 
-   a. Noem twee dingen die een gamevideo groter maken dan een gewone foto.
-   b. Waarom kunnen beelden per seconde (fps) invloed hebben op het bestand?
-   c. Kies een bestandstype en leg uit waarom je dat type bij een gamevideo zou gebruiken.
-
+   <ol type='a'>
+   <li>Noem twee dingen die een gamevideo groter maken dan een gewone foto.</li>
+   <li>Waarom kunnen beelden per seconde (fps) invloed hebben op het bestand?</li>
+   <li>Kies een bestandstype en leg uit waarom je dat type bij een gamevideo zou gebruiken.</li>
+   </ol>
 ### Inzichtsvragen
 
 1. Wat is een frame in een video?

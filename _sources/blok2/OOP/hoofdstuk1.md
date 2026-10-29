@@ -137,30 +137,27 @@ Nu zijn `p1` en `p2` twee verschillende objecten, maar ze hebben dezelfde struct
 
 1. Klasse ontwerpen
 
-   a. Maak een klasse `Vijand` met een attribuut `naam` en een attribuut `hp`.
-
-   b. Maak twee verschillende objecten van deze klasse.
-
-   c. Leg uit waarom het handig is om één klasse te gebruiken voor meerdere vijanden.
-
+   <ol type='a'>
+   <li>Maak een klasse `Vijand` met een attribuut `naam` en een attribuut `hp`.</li>
+   <li>Maak twee verschillende objecten van deze klasse.</li>
+   <li>Leg uit waarom het handig is om één klasse te gebruiken voor meerdere vijanden.</li>
+   </ol>
 2. Objecten in een programma
 
-   a. Schrijf een klein stukje code waarin je een speler maakt met een naam en levens.
-
-   b. Zorg dat je twee verschillende spelers kunt maken.
-
-   c. Noem één verschil tussen een klasse en een object.
-
+   <ol type='a'>
+   <li>Schrijf een klein stukje code waarin je een speler maakt met een naam en levens.</li>
+   <li>Zorg dat je twee verschillende spelers kunt maken.</li>
+   <li>Noem één verschil tussen een klasse en een object.</li>
+   </ol>
 3. Toepassingsvraag
 
    Je wilt een spel met meerdere kogels maken.
 
-   a. Waarom is een klasse handig om kogels te modelleren?
-
-   b. Noem twee kenmerken die een kogel kan hebben.
-
-   c. Waarom is het niet handig om elke kogel apart handmatig te programmeren?
-
+   <ol type='a'>
+   <li>Waarom is een klasse handig om kogels te modelleren?</li>
+   <li>Noem twee kenmerken die een kogel kan hebben.</li>
+   <li>Waarom is het niet handig om elke kogel apart handmatig te programmeren?</li>
+   </ol>
 ### Inzichtsvragen
 
 1. Wat is een blauwdruk in een programma?

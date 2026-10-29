@@ -144,30 +144,34 @@ In een game kun je methoden gebruiken voor:
 
 1. Methode schrijven
 
-   a. Maak een klasse `Speler` met een attribuut `naam` en `score`.
-   b. Voeg een methode `verdien_punten` toe die de score verhoogt.
-   c. Roep deze methode aan en laat zien wat de score wordt.
-
+   <ol type='a'>
+   <li>Maak een klasse `Speler` met een attribuut `naam` en `score`.</li>
+   <li>Voeg een methode `verdien_punten` toe die de score verhoogt.</li>
+   <li>Roep deze methode aan en laat zien wat de score wordt.</li>
+   </ol>
 2. Met `self` werken
 
-   a. Leg uit wat `self` betekent in Python.
-   b. Waarom kun je zonder `self` niet goed weten bij welk object je werkt?
-   c. Schrijf een korte methode die een speler een schadepunt geeft.
-
+   <ol type='a'>
+   <li>Leg uit wat `self` betekent in Python.</li>
+   <li>Waarom kun je zonder `self` niet goed weten bij welk object je werkt?</li>
+   <li>Schrijf een korte methode die een speler een schadepunt geeft.</li>
+   </ol>
 3. Toepassingsvraag
 
    In een game raakt een speler een vijand.
 
-   a. Welke methode zou je dan kunnen gebruiken?
-   b. Wat gebeurt met de score of levens als de vijand wordt verslagen?
-   c. Waarom is het handig om gedrag in methoden te stoppen?
-
+   <ol type='a'>
+   <li>Welke methode zou je dan kunnen gebruiken?</li>
+   <li>Wat gebeurt met de score of levens als de vijand wordt verslagen?</li>
+   <li>Waarom is het handig om gedrag in methoden te stoppen?</li>
+   </ol>
 4. Eigen methode ontwerpen
 
-   a. Maak een klasse `Vijand` met een attribuut `levens`.
-   b. Voeg een methode `ontvang_schade` toe die levens verlaagt.
-   c. Laat zien wat er gebeurt als een vijand 2 schadepunten krijgt.
-
+   <ol type='a'>
+   <li>Maak een klasse `Vijand` met een attribuut `levens`.</li>
+   <li>Voeg een methode `ontvang_schade` toe die levens verlaagt.</li>
+   <li>Laat zien wat er gebeurt als een vijand 2 schadepunten krijgt.</li>
+   </ol>
 ### Inzichtsvragen
 
 1. Wat is het verschil tussen een attribuut en een methode?

@@ -353,24 +353,21 @@ Aan het einde van dit hoofdstuk kun je:
 
 1. Eerste functies
 
-   a. Schrijf een functie `begroet(naam)` die `Hallo <naam>` print.
-
-   b. Roep de functie aan met drie verschillende namen.
-
-   c. Schrijf een functie `toon_getal(getal)` die het getal en zijn kwadraat print.
-
+   <ol type='a'>
+   <li>Schrijf een functie `begroet(naam)` die `Hallo <naam>` print.</li>
+   <li>Roep de functie aan met drie verschillende namen.</li>
+   <li>Schrijf een functie `toon_getal(getal)` die het getal en zijn kwadraat print.</li>
+   </ol>
 ---
 
 2. Return oefenen
 
-   a. Schrijf een functie `som(a, b)` die `a + b` teruggeeft.
-
-   b. Schrijf een functie `verschil(a, b)` die `a - b` teruggeeft.
-
-   c. Schrijf een functie `is_even(getal)` die `True` of `False` teruggeeft.
-
-   d. Test elke functie met minstens drie voorbeelden.
-
+   <ol type='a'>
+   <li>Schrijf een functie `som(a, b)` die `a + b` teruggeeft.</li>
+   <li>Schrijf een functie `verschil(a, b)` die `a - b` teruggeeft.</li>
+   <li>Schrijf een functie `is_even(getal)` die `True` of `False` teruggeeft.</li>
+   <li>Test elke functie met minstens drie voorbeelden.</li>
+   </ol>
 ---
 
 3. Lijst verwerken met functies
@@ -381,14 +378,12 @@ Aan het einde van dit hoofdstuk kun je:
    cijfers = [6.5, 7.0, 5.5, 8.0, 4.5]
    ```
 
-   a. Schrijf `som_lijst(cijfers)`.
-
-   b. Schrijf `gemiddelde_lijst(cijfers)` die `som_lijst` gebruikt.
-
-   c. Schrijf `beoordeling(gemiddelde)` die `voldoende` of `onvoldoende` teruggeeft.
-
-   d. Combineer alles in een hoofdprogramma.
-
+   <ol type='a'>
+   <li>Schrijf `som_lijst(cijfers)`.</li>
+   <li>Schrijf `gemiddelde_lijst(cijfers)` die `som_lijst` gebruikt.</li>
+   <li>Schrijf `beoordeling(gemiddelde)` die `voldoende` of `onvoldoende` teruggeeft.</li>
+   <li>Combineer alles in een hoofdprogramma.</li>
+   </ol>
 ---
 
 4. Toestand en gebeurtenissen opnieuw
@@ -399,38 +394,33 @@ Aan het einde van dit hoofdstuk kun je:
    gebeurtenissen = ["openen", "sluiten", "openen", "openen", "sluiten"]
    ```
 
-   a. Schrijf een functie `volgende_toestand(toestand, gebeurtenis)`.
-
-   b. Verwerk de hele lijst met een lus.
-
-   c. Print na elke stap de toestand.
-
-   d. Test met een tweede lijst gebeurtenissen.
-
+   <ol type='a'>
+   <li>Schrijf een functie `volgende_toestand(toestand, gebeurtenis)`.</li>
+   <li>Verwerk de hele lijst met een lus.</li>
+   <li>Print na elke stap de toestand.</li>
+   <li>Test met een tweede lijst gebeurtenissen.</li>
+   </ol>
 ---
 
 5. Dobbelsteenfuncties
 
    Gebruik `random.randrange()`.
 
-   a. Schrijf `worp_dobbelsteen()`.
-
-   b. Schrijf `aantal_zessen(aantal_worpen)`.
-
-   c. Schrijf `aantal_even(aantal_worpen)`.
-
-   d. Vergelijk de resultaten van 20, 100 en 1000 worpen.
-
+   <ol type='a'>
+   <li>Schrijf `worp_dobbelsteen()`.</li>
+   <li>Schrijf `aantal_zessen(aantal_worpen)`.</li>
+   <li>Schrijf `aantal_even(aantal_worpen)`.</li>
+   <li>Vergelijk de resultaten van 20, 100 en 1000 worpen.</li>
+   </ol>
 ---
 
 6. Patroonfunctie 1
 
-   a. Schrijf `print_sterren(aantal)`.
-
-   b. Schrijf `print_blok(rijen, kolommen)` die `print_sterren` gebruikt.
-
-   c. Test met `(10, 10)`, `(5, 10)` en `(20, 5)`.
-
+   <ol type='a'>
+   <li>Schrijf `print_sterren(aantal)`.</li>
+   <li>Schrijf `print_blok(rijen, kolommen)` die `print_sterren` gebruikt.</li>
+   <li>Test met `(10, 10)`, `(5, 10)` en `(20, 5)`.</li>
+   </ol>
 ---
 
 7. Patroonfunctie 2
@@ -441,10 +431,10 @@ Aan het einde van dit hoofdstuk kun je:
    0 1 2 ... n
    ```
 
-   a. Gebruik een lus.
-
-   b. Gebruik daarna deze functie om 10 regels te printen met telkens `0` t/m `9`.
-
+   <ol type='a'>
+   <li>Gebruik een lus.</li>
+   <li>Gebruik daarna deze functie om 10 regels te printen met telkens `0` t/m `9`.</li>
+   </ol>
 ---
 
 8. Driehoekfunctie
@@ -458,22 +448,20 @@ Aan het einde van dit hoofdstuk kun je:
    ...
    ```
 
-   a. Gebruik geneste lussen.
-
-   b. Roep de functie aan met hoogte 10.
-
-   c. Extra: maak ook een omgekeerde variant.
-
+   <ol type='a'>
+   <li>Gebruik geneste lussen.</li>
+   <li>Roep de functie aan met hoogte 10.</li>
+   <li>Extra: maak ook een omgekeerde variant.</li>
+   </ol>
 ---
 
 9. Tafel van vermenigvuldiging
 
-   a. Schrijf een functie `print_tafel_van(getal, max_factor)`.
-
-   b. Schrijf een functie `print_tafels_1_tot_9()` die alle tafels 1 t/m 9 print.
-
-   c. Zorg dat de uitvoer leesbaar blijft met nette spaties.
-
+   <ol type='a'>
+   <li>Schrijf een functie `print_tafel_van(getal, max_factor)`.</li>
+   <li>Schrijf een functie `print_tafels_1_tot_9()` die alle tafels 1 t/m 9 print.</li>
+   <li>Zorg dat de uitvoer leesbaar blijft met nette spaties.</li>
+   </ol>
 ---
 
 11. Mini-project combineren

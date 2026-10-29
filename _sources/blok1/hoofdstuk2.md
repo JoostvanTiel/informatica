@@ -425,14 +425,11 @@ Aan het einde van dit hoofdstuk kun je:
    - van 0 °C tot en met 15 °C: `Het is koud.`
    - boven 15 °C: `Het is niet koud.`
 
-   a. Schrijf het algoritme in gewone taal.
-
-   b. Teken een stroomdiagram.
-
-   c. Schrijf daarna de Python-code. Gebruik `if`, `elif` en `else`.
-
-   d. Test je programma met de waarden:
-
+   <ol type='a'>
+   <li>Schrijf het algoritme in gewone taal.</li>
+   <li>Teken een stroomdiagram.</li>
+   <li>Schrijf daarna de Python-code. Gebruik `if`, `elif` en `else`.</li>
+   <li>Test je programma met de waarden:</li>
    ```text
    -5
    0
@@ -457,15 +454,12 @@ Aan het einde van dit hoofdstuk kun je:
    100 t/m 499    → Gevorderd
    500 of hoger   → Expert
    ```
-
-   a. Maak eerst een stroomdiagram.
-
-   b. Schrijf het algoritme in gewone taal.
-
-   c. Schrijf het programma in Python.
-
-   d. Test met deze waarden:
-
+   </ol>
+   <ol type='a'>
+   <li>Maak eerst een stroomdiagram.</li>
+   <li>Schrijf het algoritme in gewone taal.</li>
+   <li>Schrijf het programma in Python.</li>
+   <li>Test met deze waarden:</li>
    ```text
    0
    50
@@ -491,17 +485,14 @@ Aan het einde van dit hoofdstuk kun je:
    gemiddelde ≥ 5,5 → voldoende
    gemiddelde < 5,5 → onvoldoende
    ```
-
-   a. Schrijf eerst het algoritme in gewone taal.
-
-   b. Maak een stroomdiagram.
-
-   c. Schrijf de Python-code.
-
-   d. Test met minstens vijf verschillende combinaties van cijfers. Let hierbij op grensgevallen.
-
-   e. Waarom is een grensgeval belangrijk?
-
+   </ol>
+   <ol type='a'>
+   <li>Schrijf eerst het algoritme in gewone taal.</li>
+   <li>Maak een stroomdiagram.</li>
+   <li>Schrijf de Python-code.</li>
+   <li>Test met minstens vijf verschillende combinaties van cijfers. Let hierbij op grensgevallen.</li>
+   <li>Waarom is een grensgeval belangrijk?</li>
+   </ol>
 ---
 
 4. Waar zit de fout?
@@ -517,14 +508,12 @@ Aan het einde van dit hoofdstuk kun je:
        print("Je bent niet volwassen.")
    ```
 
-   a. Wat print het programma?
-
-   b. Is dat volgens jou correct?
-
-   c. Verbeter het programma.
-
-   d. Bedenk zelf drie testwaarden waarmee je kunt controleren of de verbetering goed werkt.
-
+   <ol type='a'>
+   <li>Wat print het programma?</li>
+   <li>Is dat volgens jou correct?</li>
+   <li>Verbeter het programma.</li>
+   <li>Bedenk zelf drie testwaarden waarmee je kunt controleren of de verbetering goed werkt.</li>
+   </ol>
 ---
 
 5. Attractie
@@ -535,14 +524,11 @@ Aan het einde van dit hoofdstuk kun je:
    - minimaal 140 cm lang;
    - én minimaal 10 jaar oud.
 
-   a. Maak eerst een stroomdiagram.
-
-   b. Schrijf het algoritme in gewone taal.
-
-   c. Schrijf de Python-code.
-
-   d. Test alle combinaties van:
-
+   <ol type='a'>
+   <li>Maak eerst een stroomdiagram.</li>
+   <li>Schrijf het algoritme in gewone taal.</li>
+   <li>Schrijf de Python-code.</li>
+   <li>Test alle combinaties van:</li>
    ```text
    lengte: 130 cm of 150 cm
    leeftijd: 8 jaar of 12 jaar
@@ -590,7 +576,7 @@ Aan het einde van dit hoofdstuk kun je:
    ```text
    Toegang toegestaan
    ```
-
+   </ol>
    Anders:
 
    ```text
@@ -605,8 +591,8 @@ Aan het einde van dit hoofdstuk kun je:
 
    Je moet controleren of het programma voor verschillende waardes het juiste resultaat geeft.
 
-   a. Maak een testplan voor het volgende programma:
-
+   <ol type='a'>
+   <li>Maak een testplan voor het volgende programma:</li>
    ```python
    score = 100
 
@@ -618,13 +604,13 @@ Aan het einde van dit hoofdstuk kun je:
        print("Expert")
    ```
 
-   b. Gebruik minimaal zeven testgevallen.
+   <li>Gebruik minimaal zeven testgevallen.</li>
 
-   c. Voorspel eerst de uitvoer.
+   <li>Voorspel eerst de uitvoer.</li>
 
-   d. Voer daarna het programma uit.
+   <li>Voer daarna het programma uit.</li>
 
-   e. Kloppen alle uitkomsten met de bedoeling van het algoritme?
+   <li>Kloppen alle uitkomsten met de bedoeling van het algoritme?</li>
 
 ---
 
@@ -632,20 +618,16 @@ Aan het einde van dit hoofdstuk kun je:
 
    Kies een probleem uit je eigen leven of uit een game, een app of een systeem in de school.
 
-   a. Beschrijf het probleem.
-
-   b. Bepaal de input en de output.
-
-   c. Schrijf het algoritme in gewone taal.
-
-   d. Teken een stroomdiagram.
-
-   e. Schrijf de Python-code.
-
-   f. Test je programma met minstens drie verschillende situaties.
-
-   g. Verbeter je programma als je fouten tegenkomt.
-
+   </ol>
+   <ol type='a'>
+   <li>Beschrijf het probleem.</li>
+   <li>Bepaal de input en de output.</li>
+   <li>Schrijf het algoritme in gewone taal.</li>
+   <li>Teken een stroomdiagram.</li>
+   <li>Schrijf de Python-code.</li>
+   <li>Test je programma met minstens drie verschillende situaties.</li>
+   <li>Verbeter je programma als je fouten tegenkomt.</li>
+   </ol>
 ---
 
 ## Afronding

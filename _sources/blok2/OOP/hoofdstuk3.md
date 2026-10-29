@@ -124,30 +124,34 @@ Nu beweegt elke kogel op zijn eigen manier.
 
 1. Lijst met objecten
 
-   a. Maak een lijst met drie vijanden.
-   b. Gebruik een `for`-lus om over alle vijanden heen te lopen.
-   c. Leg uit waarom een lijst handig is bij een game met meerdere enemies.
-
+   <ol type='a'>
+   <li>Maak een lijst met drie vijanden.</li>
+   <li>Gebruik een `for`-lus om over alle vijanden heen te lopen.</li>
+   <li>Leg uit waarom een lijst handig is bij een game met meerdere enemies.</li>
+   </ol>
 2. Voorwerp toevoegen en verwijderen
 
-   a. Voeg een nieuwe vijand toe aan een lijst met `append()`.
-   b. Laat zien hoe je een object uit een lijst kunt verwijderen.
-   c. Waarom kun je een lijst beter gebruiken dan losse variabelen als je veel objecten hebt?
-
+   <ol type='a'>
+   <li>Voeg een nieuwe vijand toe aan een lijst met `append()`.</li>
+   <li>Laat zien hoe je een object uit een lijst kunt verwijderen.</li>
+   <li>Waarom kun je een lijst beter gebruiken dan losse variabelen als je veel objecten hebt?</li>
+   </ol>
 3. Toepassingsvraag
 
    Een spel spawnt elke paar seconden een nieuwe vijand.
 
-   a. Hoe kun je nieuw gemaakte vijanden in een lijst zetten?
-   b. Wat gebeurt er als de speler een vijand verslaat?
-   c. Waarom is het handig om een lijst van objecten in een game bij te houden?
-
+   <ol type='a'>
+   <li>Hoe kun je nieuw gemaakte vijanden in een lijst zetten?</li>
+   <li>Wat gebeurt er als de speler een vijand verslaat?</li>
+   <li>Waarom is het handig om een lijst van objecten in een game bij te houden?</li>
+   </ol>
 4. Lijst met kogels
 
-   a. Maak een lijst `kogels` en voeg er twee kogels aan toe.
-   b. Schrijf een `for`-lus die elke kogel met 5 punten beweegt.
-   c. Waarom is het handig om de kogels in één lijst bij te houden?
-
+   <ol type='a'>
+   <li>Maak een lijst `kogels` en voeg er twee kogels aan toe.</li>
+   <li>Schrijf een `for`-lus die elke kogel met 5 punten beweegt.</li>
+   <li>Waarom is het handig om de kogels in één lijst bij te houden?</li>
+   </ol>
 ### Inzichtsvragen
 
 1. Wat is het voordeel van een lijst van objecten?
