@@ -559,21 +559,21 @@
 <section id="een-object-aanmaken">
 <h2>Een Object Aanmaken<a class="headerlink" href="#een-object-aanmaken" title="Link to this heading">#</a></h2>
 <p>Wanneer je een object aanmaakt, zeg je:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mijn_speler</span> <span class="o">=</span> <span class="n">Speler</span><span class="p">(</span><span class="s2">"Mario"</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mijn_speler</span> <span class="o">=</span> <span class="n">Speler</span><span class="p">(</span><span class="s2">"Levi"</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Dit doet:</p>
 <ol class="arabic simple">
 <li><p>Maak een NIEUW object van klasse Speler</p></li>
 <li><p>Noem het <code class="docutils literal notranslate"><span class="pre">mijn_speler</span></code></p></li>
-<li><p>Geef <code class="docutils literal notranslate"><span class="pre">naam=&quot;Mario&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">x=100</span></code>, <code class="docutils literal notranslate"><span class="pre">y=200</span></code> aan</p></li>
+<li><p>Geef <code class="docutils literal notranslate"><span class="pre">naam=&quot;Levi&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">x=100</span></code>, <code class="docutils literal notranslate"><span class="pre">y=200</span></code> aan</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">__init__</span></code> zet <code class="docutils literal notranslate"><span class="pre">levens=3</span></code></p></li>
 </ol>
 <p>Nu bestaat <code class="docutils literal notranslate"><span class="pre">mijn_speler</span></code> met die waarden!</p>
 <section id="eigenschappen-gebruiken">
 <h3>Eigenschappen gebruiken<a class="headerlink" href="#eigenschappen-gebruiken" title="Link to this heading">#</a></h3>
 <p>Je kunt eigenschappen <strong>uitlezen</strong> met <code class="docutils literal notranslate"><span class="pre">.</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mijn_speler</span><span class="o">.</span><span class="n">naam</span><span class="p">)</span>      <span class="c1"># Output: Mario</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mijn_speler</span><span class="o">.</span><span class="n">naam</span><span class="p">)</span>      <span class="c1"># Output: Levi</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">mijn_speler</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>         <span class="c1"># Output: 100</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">mijn_speler</span><span class="o">.</span><span class="n">levens</span><span class="p">)</span>    <span class="c1"># Output: 3</span>
 </pre></div>
@@ -597,12 +597,12 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">levens</span> <span class="o">=</span> <span class="mi">3</span>
 
 <span class="c1"># Maak DRIE verschillende spelers</span>
-<span class="n">speler1</span> <span class="o">=</span> <span class="n">Speler</span><span class="p">(</span><span class="s2">"Mario"</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">speler1</span> <span class="o">=</span> <span class="n">Speler</span><span class="p">(</span><span class="s2">"Levi"</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
 <span class="n">speler2</span> <span class="o">=</span> <span class="n">Speler</span><span class="p">(</span><span class="s2">"Luigi"</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
 <span class="n">speler3</span> <span class="o">=</span> <span class="n">Speler</span><span class="p">(</span><span class="s2">"Toad"</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
 
 <span class="c1"># Elk object is APART</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">speler1</span><span class="o">.</span><span class="n">naam</span><span class="p">)</span>      <span class="c1"># Mario</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">speler1</span><span class="o">.</span><span class="n">naam</span><span class="p">)</span>      <span class="c1"># Levi</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">speler2</span><span class="o">.</span><span class="n">naam</span><span class="p">)</span>      <span class="c1"># Luigi</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">speler3</span><span class="o">.</span><span class="n">naam</span><span class="p">)</span>      <span class="c1"># Toad</span>
 
@@ -676,12 +676,12 @@
 <h2>Eigenschappen: Lezen en Schrijven<a class="headerlink" href="#eigenschappen-lezen-en-schrijven" title="Link to this heading">#</a></h2>
 <section id="lezen-uitlezen">
 <h3>Lezen (uitlezen)<a class="headerlink" href="#lezen-uitlezen" title="Link to this heading">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">speler</span> <span class="o">=</span> <span class="n">Speler</span><span class="p">(</span><span class="s2">"Mario"</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">speler</span> <span class="o">=</span> <span class="n">Speler</span><span class="p">(</span><span class="s2">"Levi"</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 
 <span class="n">x_positie</span> <span class="o">=</span> <span class="n">speler</span><span class="o">.</span><span class="n">x</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x_positie</span><span class="p">)</span>              <span class="c1"># 50</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">speler</span><span class="o">.</span><span class="n">naam</span><span class="p">)</span>            <span class="c1"># Mario</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">speler</span><span class="o">.</span><span class="n">naam</span><span class="p">)</span>            <span class="c1"># Levi</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">speler</span><span class="o">.</span><span class="n">levens</span><span class="p">)</span>          <span class="c1"># 3</span>
 </pre></div>
 </div>
@@ -731,35 +731,35 @@
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">naam</span><span class="p">,</span> <span class="n">start_x</span><span class="p">,</span> <span class="n">start_y</span><span class="p">):</span>
         <span class="c1"># Identiteit</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">naam</span> <span class="o">=</span> <span class="n">naam</span>
-        
+
         <span class="c1"># Positie</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">start_x</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">start_y</span>
-        
+
         <span class="c1"># Afmetingen (pixel-art wordt later ingeladen)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">breedte</span> <span class="o">=</span> <span class="mi">32</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">hoogte</span> <span class="o">=</span> <span class="mi">48</span>
-        
+
         <span class="c1"># Game-stats</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">levens</span> <span class="o">=</span> <span class="mi">3</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">op_grond</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># Staat speler op een platform?</span>
-        
+
         <span class="c1"># Snelheden (voor beweging in Hst 2)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x_snelheid</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">y_snelheid</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="c1"># Gebruik</span>
-<span class="n">held</span> <span class="o">=</span> <span class="n">Speler</span><span class="p">(</span><span class="s2">"Mario"</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+<span class="n">held</span> <span class="o">=</span> <span class="n">Speler</span><span class="p">(</span><span class="s2">"Levi"</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Speler </span><span class="si">{</span><span class="n">held</span><span class="o">.</span><span class="n">naam</span><span class="si">}</span><span class="s2"> staat op (</span><span class="si">{</span><span class="n">held</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">held</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">)"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Levens: </span><span class="si">{</span><span class="n">held</span><span class="o">.</span><span class="n">levens</span><span class="si">}</span><span class="s2">, Score: </span><span class="si">{</span><span class="n">held</span><span class="o">.</span><span class="n">score</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Speler"</span><span class="p">,</span> <span class="n">held</span><span class="o">.</span><span class="n">naam</span><span class="p">,</span> <span class="s2">"staat op ("</span><span class="p">,</span> <span class="n">held</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="s2">","</span><span class="p">,</span> <span class="n">held</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="s2">")"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Levens:"</span><span class="p">,</span> <span class="n">held</span><span class="o">.</span><span class="n">levens</span><span class="p">,</span> <span class="s2">", Score:"</span><span class="p">,</span> <span class="n">held</span><span class="o">.</span><span class="n">score</span><span class="p">)</span>
 
 <span class="c1"># Verandering</span>
 <span class="n">held</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="mi">50</span>
 <span class="n">held</span><span class="o">.</span><span class="n">levens</span> <span class="o">=</span> <span class="mi">2</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Na actie: </span><span class="si">{</span><span class="n">held</span><span class="o">.</span><span class="n">levens</span><span class="si">}</span><span class="s2"> levens, </span><span class="si">{</span><span class="n">held</span><span class="o">.</span><span class="n">score</span><span class="si">}</span><span class="s2"> punten"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Na actie:"</span><span class="p">,</span> <span class="n">held</span><span class="o">.</span><span class="n">levens</span><span class="p">,</span> <span class="s2">"levens,"</span><span class="p">,</span> <span class="n">held</span><span class="o">.</span><span class="n">score</span><span class="p">,</span> <span class="s2">"punten"</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -818,8 +818,8 @@
 <span class="n">p3</span> <span class="o">=</span> <span class="n">Platform</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 
 <span class="c1"># Print info</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Grond: x=</span><span class="si">{</span><span class="n">grond</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">, breedte=</span><span class="si">{</span><span class="n">grond</span><span class="o">.</span><span class="n">breedte</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Platform 1: y=</span><span class="si">{</span><span class="n">p1</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">, hoogte=</span><span class="si">{</span><span class="n">p1</span><span class="o">.</span><span class="n">hoogte</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Grond: x ="</span><span class="p">,</span> <span class="n">grond</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="s2">", breedte ="</span><span class="p">,</span> <span class="n">grond</span><span class="o">.</span><span class="n">breedte</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Platform 1: y ="</span><span class="p">,</span> <span class="n">p1</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="s2">", hoogte ="</span><span class="p">,</span> <span class="n">p1</span><span class="o">.</span><span class="n">hoogte</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -841,7 +841,7 @@
 
 <span class="c1"># Totale waarde berekenen:</span>
 <span class="n">totaal</span> <span class="o">=</span> <span class="n">munt1</span><span class="o">.</span><span class="n">waarde</span> <span class="o">+</span> <span class="n">munt2</span><span class="o">.</span><span class="n">waarde</span> <span class="o">+</span> <span class="n">munt3</span><span class="o">.</span><span class="n">waarde</span> <span class="o">+</span> <span class="n">munt4</span><span class="o">.</span><span class="n">waarde</span> <span class="o">+</span> <span class="n">munt5</span><span class="o">.</span><span class="n">waarde</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Totale munt-waarde: </span><span class="si">{</span><span class="n">totaal</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>  <span class="c1"># 50</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Totale munt-waarde:"</span><span class="p">,</span> <span class="n">totaal</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -858,17 +858,17 @@
 <span class="n">game</span> <span class="o">=</span> <span class="n">GameState</span><span class="p">()</span>
 
 <span class="c1"># Simulatie</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Start: Score=</span><span class="si">{</span><span class="n">game</span><span class="o">.</span><span class="n">score</span><span class="si">}</span><span class="s2">, Levens=</span><span class="si">{</span><span class="n">game</span><span class="o">.</span><span class="n">levens</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Start: Score ="</span><span class="p">,</span> <span class="n">game</span><span class="o">.</span><span class="n">score</span><span class="p">,</span> <span class="s2">", Levens ="</span><span class="p">,</span> <span class="n">game</span><span class="o">.</span><span class="n">levens</span><span class="p">)</span>
 
 <span class="n">game</span><span class="o">.</span><span class="n">munten_verzameld</span> <span class="o">+=</span> <span class="mi">3</span>
 <span class="n">game</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="mi">30</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Na munten: Score=</span><span class="si">{</span><span class="n">game</span><span class="o">.</span><span class="n">score</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Na munten: Score ="</span><span class="p">,</span> <span class="n">game</span><span class="o">.</span><span class="n">score</span><span class="p">)</span>
 
 <span class="n">game</span><span class="o">.</span><span class="n">levens</span> <span class="o">-=</span> <span class="mi">1</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Tegen hindernis: Levens=</span><span class="si">{</span><span class="n">game</span><span class="o">.</span><span class="n">levens</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Tegen hindernis: Levens ="</span><span class="p">,</span> <span class="n">game</span><span class="o">.</span><span class="n">levens</span><span class="p">)</span>
 
 <span class="n">game</span><span class="o">.</span><span class="n">level</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Volgende level: Level=</span><span class="si">{</span><span class="n">game</span><span class="o">.</span><span class="n">level</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Volgende level: Level ="</span><span class="p">,</span> <span class="n">game</span><span class="o">.</span><span class="n">level</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>

@@ -417,7 +417,7 @@ while running:
     # Game Over check
     if speler.y > HOOGTE or speler.levens <= 0:
         game_over = True
-        print(f"Game Over! Score: {speler.score}")
+        print("Game Over! Score:", speler.score)
         running = False
     
     # RENDER

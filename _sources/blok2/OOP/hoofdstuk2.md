@@ -17,6 +17,7 @@ Je leert:
 - **FPS beheren** (frames per seconde)
 
 Aan het einde van dit hoofstuk:
+
 - Heeft je speler visueel een sprite
 - Kun je hem met pijltjestoetsen bewegen
 - Lopen andere objecten mee in je game
@@ -36,15 +37,15 @@ class Speler:
         self.x = x
         self.y = y
         self.levens = 3
-    
+
     # Dit is een METHODE (functie in klasse)
     def verdien_punten(self, aantal):
         self.score += aantal
-        print(f"{self.naam} wint {aantal} punten!")
-    
+        print(self.naam, "wint", aantal, "punten!")
+
     def verlies_leven(self):
         self.levens -= 1
-        print(f"{self.naam} heeft nu {self.levens} levens")
+        print(self.naam, "heeft nu", self.levens, "levens")
 ```
 
 Zie je? De klasse zegt niet alleen **wat** een speler is (naam, x, y), maar ook **wat hij kan doen** (punten verdienen, levens verliezen).
@@ -52,10 +53,10 @@ Zie je? De klasse zegt niet alleen **wat** een speler is (naam, x, y), maar ook 
 ### Methoden aanroepen
 
 ```python
-speler = Speler("Mario", 50, 100)
-speler.verdien_punten(10)      # Output: Mario wint 10 punten!
-speler.verdien_punten(20)      # Output: Mario wint 20 punten!
-speler.verlies_leven()         # Output: Mario heeft nu 2 levens
+speler = Speler("Moustafa", 50, 100)
+speler.verdien_punten(10)      # Output: Moustafa wint 10 punten!
+speler.verdien_punten(20)      # Output: Moustafa wint 20 punten!
+speler.verlies_leven()         # Output: Moustafa heeft nu 2 levens
 ```
 
 ---
@@ -80,15 +81,15 @@ while spel_loopt:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
                 speler.x -= 5  # Speler naar links
-    
+
     # UPDATE
     # (Zwaartekracht, collision, etc. komen later)
-    
+
     # RENDER
     screen.fill((150, 150, 150))  # Achtergrond
     # Teken speler, platforms, etc.
     pygame.display.flip()
-    
+
     # WAIT
     clock.tick(60)  # 60 FPS
 ```
@@ -129,13 +130,13 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-    
+
     # Vul scherm met grijs
     screen.fill((150, 150, 150))
-    
+
     # Update display
     pygame.display.flip()
-    
+
     # 60 FPS
     clock.tick(60)
 
@@ -153,6 +154,7 @@ Nu gaat het interessant! We laden een **sprite** (afbeelding) in plaats van vier
 ### Stap 1: Een Sprite Maken
 
 Maak zelf een eenvoudig pixelart poppetje in een grafische tool (bijv. Aseprite, Piskel of Paint):
+
 - **Grootte:** 32x48 pixels (standaard platformer-speler)
 - **Format:** PNG (met transparantie)
 - **Naam:** `speler.png`
@@ -171,33 +173,34 @@ class Speler:
         # Positie
         self.x = x
         self.y = y
-        
+
         # Sprite laden
         self.afbeelding = pygame.image.load(sprite_path)
         self.rect = self.afbeelding.get_rect()
         self.rect.x = self.x
         self.rect.y = self.y
-        
+
         # Game-stats
         self.levens = 3
         self.score = 0
-    
+
     def draw(self, screen):
         """Teken de speler op het scherm."""
         self.rect.x = self.x
         self.rect.y = self.y
         screen.blit(self.afbeelding, self.rect)
-    
+
     def move_left(self):
         """Speler gaat naar links."""
         self.x -= 7
-    
+
     def move_right(self):
         """Speler gaat naar rechts."""
         self.x += 7
 ```
 
 **Wat gebeurt hier?**
+
 - `pygame.image.load()` laadt de sprite van schijf
 - `get_rect()` geeft een rechthoek (voor positionering)
 - `screen.blit()` plakt de afbeelding op het scherm
@@ -225,24 +228,24 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-        
+
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
                 speler.move_left()
             elif event.key == pygame.K_RIGHT:
                 speler.move_right()
-    
+
     # Grenzen checken (speler kan niet uit scherm lopen)
     if speler.x < 0:
         speler.x = 0
     if speler.x + 32 > BREEDTE:
         speler.x = BREEDTE - 32
-    
+
     # RENDER
     screen.fill((150, 150, 150))
     speler.draw(screen)
     pygame.display.flip()
-    
+
     # WAIT
     clock.tick(60)
 
@@ -265,7 +268,7 @@ class Platform:
         self.breedte = breedte
         self.hoogte = hoogte
         self.kleur = kleur
-    
+
     def draw(self, screen):
         """Teken platform als rechthoek."""
         pygame.draw.rect(screen, self.kleur, [self.x, self.y, self.breedte, self.hoogte])
@@ -301,7 +304,7 @@ class Munt:
         self.y = y
         self.radius = 8
         self.waarde = waarde
-    
+
     def draw(self, screen):
         """Teken munt als cirkel."""
         pygame.draw.circle(screen, (255, 255, 0), [int(self.x), int(self.y)], self.radius)
@@ -343,13 +346,13 @@ class Speler:
         self.afbeelding = pygame.image.load(sprite_path)
         self.rect = self.afbeelding.get_rect()
         self.levens = 3
-    
+
     def move_left(self):
         self.x -= 7
-    
+
     def move_right(self):
         self.x += 7
-    
+
     def draw(self, screen):
         self.rect.x = self.x
         self.rect.y = self.y
@@ -361,7 +364,7 @@ class Platform:
         self.y = y
         self.breedte = breedte
         self.hoogte = hoogte
-    
+
     def draw(self, screen):
         pygame.draw.rect(screen, (0, 200, 100), [self.x, self.y, self.breedte, self.hoogte])
         pygame.draw.rect(screen, (0, 0, 0), [self.x, self.y, self.breedte, self.hoogte], 2)
@@ -371,7 +374,7 @@ class Munt:
         self.x = x
         self.y = y
         self.radius = 8
-    
+
     def draw(self, screen):
         pygame.draw.circle(screen, (255, 255, 0), [int(self.x), int(self.y)], self.radius)
 
@@ -395,30 +398,30 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-        
+
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
                 speler.move_left()
             elif event.key == pygame.K_RIGHT:
                 speler.move_right()
-    
+
     # Grenzen
     if speler.x < 0:
         speler.x = 0
     if speler.x + 32 > BREEDTE:
         speler.x = BREEDTE - 32
-    
+
     # RENDER
     screen.fill((150, 150, 150))
-    
+
     for platform in platforms:
         platform.draw(screen)
-    
+
     for munt in munten:
         munt.draw(screen)
-    
+
     speler.draw(screen)
-    
+
     pygame.display.flip()
     clock.tick(60)
 
@@ -426,6 +429,7 @@ pygame.quit()
 ```
 
 **Run dit! Je hebt:**
+
 - Speler-sprite die beweegt
 - Platforms (groen)
 - Munten (geel)
@@ -442,15 +446,15 @@ Voeg methoden toe aan je Speler-klasse:
 ```python
 class Speler:
     # ... bestaande code ...
-    
+
     def verdien_punten(self, aantal):
         self.score += aantal
-        print(f"Score: {self.score}")
-    
+        print("Score:", self.score)
+
     def verlies_leven(self):
         self.levens -= 1
-        print(f"Levens: {self.levens}")
-    
+        print("Levens:", self.levens)
+
     def reset(self):
         self.x = 50
         self.y = 500
@@ -459,6 +463,7 @@ class Speler:
 ```
 
 Test methoden:
+
 ```python
 speler = Speler(50, 500, "speler.png")
 speler.verdien_punten(10)
@@ -496,17 +501,17 @@ Maak minstens 5 munten en plaats ze boven platforms.
 
 ## 💡 Samenvatting
 
-| Concept | Uitleg |
-|---------|--------|
-| **Methode** | Functie in een klasse (wat object kan doen) |
-| **Game-loop** | INPUT → UPDATE → RENDER (60x per seconde) |
-| **Sprite** | Afbeelding voor object (pixelart) |
-| **`draw()`** | Methode om object zichtbaar te maken |
-| **`pygame.image.load()`** | Laadt sprite van schijf |
-| **`screen.blit()`** | Plakt afbeelding op scherm |
-| **`pygame.draw.rect()`** | Tekent rechthoek |
-| **`pygame.draw.circle()`** | Tekent cirkel |
-| **`clock.tick(60)`** | Zorgt voor 60 FPS |
+| Concept                    | Uitleg                                      |
+| -------------------------- | ------------------------------------------- |
+| **Methode**                | Functie in een klasse (wat object kan doen) |
+| **Game-loop**              | INPUT → UPDATE → RENDER (60x per seconde)   |
+| **Sprite**                 | Afbeelding voor object (pixelart)           |
+| **`draw()`**               | Methode om object zichtbaar te maken        |
+| **`pygame.image.load()`**  | Laadt sprite van schijf                     |
+| **`screen.blit()`**        | Plakt afbeelding op scherm                  |
+| **`pygame.draw.rect()`**   | Tekent rechthoek                            |
+| **`pygame.draw.circle()`** | Tekent cirkel                               |
+| **`clock.tick(60)`**       | Zorgt voor 60 FPS                           |
 
 ---
 
@@ -524,7 +529,8 @@ Maak minstens 5 munten en plaats ze boven platforms.
 
 ## ✅ Volgende Stap
 
-**Hoofstuk 3:** 
+**Hoofstuk 3:**
+
 - Lijsten van platforms
 - Level-design als datastructuur
 - Collision-voorbereiding

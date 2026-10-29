@@ -538,25 +538,25 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">levens</span> <span class="o">=</span> <span class="mi">3</span>
-    
+
     <span class="c1"># Dit is een METHODE (functie in klasse)</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">verdien_punten</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">aantal</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="n">aantal</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">naam</span><span class="si">}</span><span class="s2"> wint </span><span class="si">{</span><span class="n">aantal</span><span class="si">}</span><span class="s2"> punten!"</span><span class="p">)</span>
-    
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">naam</span><span class="p">,</span> <span class="s2">"wint"</span><span class="p">,</span> <span class="n">aantal</span><span class="p">,</span> <span class="s2">"punten!"</span><span class="p">)</span>
+
     <span class="k">def</span><span class="w"> </span><span class="nf">verlies_leven</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">levens</span> <span class="o">-=</span> <span class="mi">1</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">naam</span><span class="si">}</span><span class="s2"> heeft nu </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">levens</span><span class="si">}</span><span class="s2"> levens"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">naam</span><span class="p">,</span> <span class="s2">"heeft nu"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">levens</span><span class="p">,</span> <span class="s2">"levens"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Zie je? De klasse zegt niet alleen <strong>wat</strong> een speler is (naam, x, y), maar ook <strong>wat hij kan doen</strong> (punten verdienen, levens verliezen).</p>
 </section>
 <section id="methoden-aanroepen">
 <h3>Methoden aanroepen<a class="headerlink" href="#methoden-aanroepen" title="Link to this heading">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">speler</span> <span class="o">=</span> <span class="n">Speler</span><span class="p">(</span><span class="s2">"Mario"</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">speler</span><span class="o">.</span><span class="n">verdien_punten</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>      <span class="c1"># Output: Mario wint 10 punten!</span>
-<span class="n">speler</span><span class="o">.</span><span class="n">verdien_punten</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>      <span class="c1"># Output: Mario wint 20 punten!</span>
-<span class="n">speler</span><span class="o">.</span><span class="n">verlies_leven</span><span class="p">()</span>         <span class="c1"># Output: Mario heeft nu 2 levens</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">speler</span> <span class="o">=</span> <span class="n">Speler</span><span class="p">(</span><span class="s2">"Moustafa"</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">speler</span><span class="o">.</span><span class="n">verdien_punten</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>      <span class="c1"># Output: Moustafa wint 10 punten!</span>
+<span class="n">speler</span><span class="o">.</span><span class="n">verdien_punten</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>      <span class="c1"># Output: Moustafa wint 20 punten!</span>
+<span class="n">speler</span><span class="o">.</span><span class="n">verlies_leven</span><span class="p">()</span>         <span class="c1"># Output: Moustafa heeft nu 2 levens</span>
 </pre></div>
 </div>
 </section>
@@ -578,15 +578,15 @@
         <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">KEYDOWN</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span><span class="p">:</span>
                 <span class="n">speler</span><span class="o">.</span><span class="n">x</span> <span class="o">-=</span> <span class="mi">5</span>  <span class="c1"># Speler naar links</span>
-    
+
     <span class="c1"># UPDATE</span>
     <span class="c1"># (Zwaartekracht, collision, etc. komen later)</span>
-    
+
     <span class="c1"># RENDER</span>
     <span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">))</span>  <span class="c1"># Achtergrond</span>
     <span class="c1"># Teken speler, platforms, etc.</span>
     <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
-    
+
     <span class="c1"># WAIT</span>
     <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>  <span class="c1"># 60 FPS</span>
 </pre></div>
@@ -625,13 +625,13 @@
     <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
         <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
             <span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
-    
+
     <span class="c1"># Vul scherm met grijs</span>
     <span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">))</span>
-    
+
     <span class="c1"># Update display</span>
     <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
-    
+
     <span class="c1"># 60 FPS</span>
     <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
 
@@ -664,27 +664,27 @@
         <span class="c1"># Positie</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
-        
+
         <span class="c1"># Sprite laden</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">afbeelding</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">sprite_path</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">rect</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">afbeelding</span><span class="o">.</span><span class="n">get_rect</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span>
-        
+
         <span class="c1"># Game-stats</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">levens</span> <span class="o">=</span> <span class="mi">3</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
-    
+
     <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">"""Teken de speler op het scherm."""</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span>
         <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">afbeelding</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="p">)</span>
-    
+
     <span class="k">def</span><span class="w"> </span><span class="nf">move_left</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">"""Speler gaat naar links."""</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">-=</span> <span class="mi">7</span>
-    
+
     <span class="k">def</span><span class="w"> </span><span class="nf">move_right</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">"""Speler gaat naar rechts."""</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="mi">7</span>
@@ -719,24 +719,24 @@
     <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
         <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
             <span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
-        
+
         <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">KEYDOWN</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span><span class="p">:</span>
                 <span class="n">speler</span><span class="o">.</span><span class="n">move_left</span><span class="p">()</span>
             <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">:</span>
                 <span class="n">speler</span><span class="o">.</span><span class="n">move_right</span><span class="p">()</span>
-    
+
     <span class="c1"># Grenzen checken (speler kan niet uit scherm lopen)</span>
     <span class="k">if</span> <span class="n">speler</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">speler</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">if</span> <span class="n">speler</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">32</span> <span class="o">&gt;</span> <span class="n">BREEDTE</span><span class="p">:</span>
         <span class="n">speler</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">BREEDTE</span> <span class="o">-</span> <span class="mi">32</span>
-    
+
     <span class="c1"># RENDER</span>
     <span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">))</span>
     <span class="n">speler</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
     <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
-    
+
     <span class="c1"># WAIT</span>
     <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
 
@@ -757,7 +757,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">breedte</span> <span class="o">=</span> <span class="n">breedte</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">hoogte</span> <span class="o">=</span> <span class="n">hoogte</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">kleur</span> <span class="o">=</span> <span class="n">kleur</span>
-    
+
     <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">"""Teken platform als rechthoek."""</span>
         <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">kleur</span><span class="p">,</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">breedte</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hoogte</span><span class="p">])</span>
@@ -789,7 +789,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="mi">8</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">waarde</span> <span class="o">=</span> <span class="n">waarde</span>
-    
+
     <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">"""Teken munt als cirkel."""</span>
         <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)],</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">)</span>
@@ -828,13 +828,13 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">afbeelding</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">sprite_path</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">rect</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">afbeelding</span><span class="o">.</span><span class="n">get_rect</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">levens</span> <span class="o">=</span> <span class="mi">3</span>
-    
+
     <span class="k">def</span><span class="w"> </span><span class="nf">move_left</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">-=</span> <span class="mi">7</span>
-    
+
     <span class="k">def</span><span class="w"> </span><span class="nf">move_right</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="mi">7</span>
-    
+
     <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span>
@@ -846,7 +846,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">breedte</span> <span class="o">=</span> <span class="n">breedte</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">hoogte</span> <span class="o">=</span> <span class="n">hoogte</span>
-    
+
     <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
         <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">breedte</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hoogte</span><span class="p">])</span>
         <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">breedte</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hoogte</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
@@ -856,7 +856,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="mi">8</span>
-    
+
     <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
         <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)],</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">)</span>
 
@@ -880,30 +880,30 @@
     <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
         <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
             <span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
-        
+
         <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">KEYDOWN</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span><span class="p">:</span>
                 <span class="n">speler</span><span class="o">.</span><span class="n">move_left</span><span class="p">()</span>
             <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">:</span>
                 <span class="n">speler</span><span class="o">.</span><span class="n">move_right</span><span class="p">()</span>
-    
+
     <span class="c1"># Grenzen</span>
     <span class="k">if</span> <span class="n">speler</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">speler</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">if</span> <span class="n">speler</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">32</span> <span class="o">&gt;</span> <span class="n">BREEDTE</span><span class="p">:</span>
         <span class="n">speler</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">BREEDTE</span> <span class="o">-</span> <span class="mi">32</span>
-    
+
     <span class="c1"># RENDER</span>
     <span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">))</span>
-    
+
     <span class="k">for</span> <span class="n">platform</span> <span class="ow">in</span> <span class="n">platforms</span><span class="p">:</span>
         <span class="n">platform</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
-    
+
     <span class="k">for</span> <span class="n">munt</span> <span class="ow">in</span> <span class="n">munten</span><span class="p">:</span>
         <span class="n">munt</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
-    
+
     <span class="n">speler</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
-    
+
     <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
     <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
 
@@ -926,15 +926,15 @@
 <p>Voeg methoden toe aan je Speler-klasse:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Speler</span><span class="p">:</span>
     <span class="c1"># ... bestaande code ...</span>
-    
+
     <span class="k">def</span><span class="w"> </span><span class="nf">verdien_punten</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">aantal</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="n">aantal</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Score: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">score</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-    
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Score:"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">score</span><span class="p">)</span>
+
     <span class="k">def</span><span class="w"> </span><span class="nf">verlies_leven</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">levens</span> <span class="o">-=</span> <span class="mi">1</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Levens: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">levens</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-    
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Levens:"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">levens</span><span class="p">)</span>
+
     <span class="k">def</span><span class="w"> </span><span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">50</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">500</span>

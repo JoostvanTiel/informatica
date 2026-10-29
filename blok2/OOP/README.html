@@ -825,8 +825,8 @@ pip<span class="w"> </span>install<span class="w"> </span>pygame
 <section id="speler-valt-niet">
 <h3>“Speler valt niet”<a class="headerlink" href="#speler-valt-niet" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Controleer zwaartekracht</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"ySnelheid: </span><span class="si">{</span><span class="n">speler</span><span class="o">.</span><span class="n">ySnelheid</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"op_grond: </span><span class="si">{</span><span class="n">speler</span><span class="o">.</span><span class="n">op_grond</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"ySnelheid:"</span><span class="p">,</span> <span class="n">speler</span><span class="o">.</span><span class="n">ySnelheid</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"op_grond:"</span><span class="p">,</span> <span class="n">speler</span><span class="o">.</span><span class="n">op_grond</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -836,7 +836,7 @@ pip<span class="w"> </span>install<span class="w"> </span>pygame
 <span class="k">def</span><span class="w"> </span><span class="nf">rechthoeken_botsen</span><span class="p">(</span><span class="n">obj1</span><span class="p">,</span> <span class="n">obj2</span><span class="p">):</span>
     <span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="n">obj1</span><span class="o">.</span><span class="n">rechts</span> <span class="o">&gt;</span> <span class="n">obj2</span><span class="o">.</span><span class="n">links</span> <span class="ow">and</span> <span class="o">...</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">result</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"BOTSING! </span><span class="si">{</span><span class="n">obj1</span><span class="si">}</span><span class="s2"> ↔ </span><span class="si">{</span><span class="n">obj2</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"BOTSING! objecten raken elkaar"</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">result</span>
 </pre></div>
 </div>

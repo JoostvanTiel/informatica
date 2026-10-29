@@ -16,6 +16,7 @@ Je leert:
 ⚠️ **BELANGRIJK:** In dit hoofstuk **GEEN pygame of grafische output**! We starten zuiver met OOP-concepten. Je leert hoe klassen werken, en vervolgens hoe je ze op het scherm zichtbaar maakt in Hoofstuk 2.
 
 Aan het einde van dit hoofstuk kun je:
+
 - Een klasse definiëren met eigenschappen
 - Meerdere objecten aanmaken
 - Objecteigenschappen lezen en schrijven
@@ -40,10 +41,11 @@ class Speler:
 ```
 
 Dit zegt:
+
 - Klasse heet `Speler`
 - Een Speler **heeft** een naam
 - Een Speler **heeft** een x-positie
-- Een Speler **heeft** een y-positie  
+- Een Speler **heeft** een y-positie
 - Een Speler **heeft** 3 levens
 
 ### Wat is `__init__`?
@@ -61,13 +63,14 @@ De `__init__` zet alle **eigenschappen** van het object op beginwaarden.
 Wanneer je een object aanmaakt, zeg je:
 
 ```python
-mijn_speler = Speler("Mario", 100, 200)
+mijn_speler = Speler("Levi", 100, 200)
 ```
 
 Dit doet:
+
 1. Maak een NIEUW object van klasse Speler
 2. Noem het `mijn_speler`
-3. Geef `naam="Mario"`, `x=100`, `y=200` aan
+3. Geef `naam="Levi"`, `x=100`, `y=200` aan
 4. `__init__` zet `levens=3`
 
 Nu bestaat `mijn_speler` met die waarden!
@@ -77,7 +80,7 @@ Nu bestaat `mijn_speler` met die waarden!
 Je kunt eigenschappen **uitlezen** met `.`:
 
 ```python
-print(mijn_speler.naam)      # Output: Mario
+print(mijn_speler.naam)      # Output: Levi
 print(mijn_speler.x)         # Output: 100
 print(mijn_speler.levens)    # Output: 3
 ```
@@ -104,12 +107,12 @@ class Speler:
         self.levens = 3
 
 # Maak DRIE verschillende spelers
-speler1 = Speler("Mario", 100, 200)
+speler1 = Speler("Levi", 100, 200)
 speler2 = Speler("Luigi", 300, 200)
 speler3 = Speler("Toad", 500, 400)
 
 # Elk object is APART
-print(speler1.naam)      # Mario
+print(speler1.naam)      # Levi
 print(speler2.naam)      # Luigi
 print(speler3.naam)      # Toad
 
@@ -154,6 +157,7 @@ platform2 = Platform(450, 300, 250, 25)
 Elk platform is apart. Ze kunnen verschillende afmetingen hebben!
 
 Test je begrip:
+
 ```python
 print(grond.breedte)        # 800
 print(platform1.x)          # 100
@@ -197,12 +201,12 @@ print(munt2.x)        # 575
 ### Lezen (uitlezen)
 
 ```python
-speler = Speler("Mario", 50, 100)
+speler = Speler("Levi", 50, 100)
 
 x_positie = speler.x
 print(x_positie)              # 50
 
-print(speler.naam)            # Mario
+print(speler.naam)            # Levi
 print(speler.levens)          # 3
 ```
 
@@ -255,35 +259,35 @@ class Speler:
     def __init__(self, naam, start_x, start_y):
         # Identiteit
         self.naam = naam
-        
+
         # Positie
         self.x = start_x
         self.y = start_y
-        
+
         # Afmetingen (pixel-art wordt later ingeladen)
         self.breedte = 32
         self.hoogte = 48
-        
+
         # Game-stats
         self.levens = 3
         self.score = 0
         self.op_grond = False  # Staat speler op een platform?
-        
+
         # Snelheden (voor beweging in Hst 2)
         self.x_snelheid = 0
         self.y_snelheid = 0
 
 # Gebruik
-held = Speler("Mario", 50, 500)
+held = Speler("Levi", 50, 500)
 
-print(f"Speler {held.naam} staat op ({held.x}, {held.y})")
-print(f"Levens: {held.levens}, Score: {held.score}")
+print("Speler", held.naam, "staat op (", held.x, ",", held.y, ")")
+print("Levens:", held.levens, ", Score:", held.score)
 
 # Verandering
 held.score += 50
 held.levens = 2
 
-print(f"Na actie: {held.levens} levens, {held.score} punten")
+print("Na actie:", held.levens, "levens,", held.score, "punten")
 ```
 
 ---
@@ -295,6 +299,7 @@ print(f"Na actie: {held.levens} levens, {held.score} punten")
 Ontwerp een klasse voor **iets uit JOUW leven**. Bijvoorbeeld:
 
 **Optie A - Huisdier:**
+
 ```python
 class Huisdier:
     def __init__(self, naam, soort, leeftijd):
@@ -306,6 +311,7 @@ class Huisdier:
 ```
 
 **Optie B - Auto:**
+
 ```python
 class Auto:
     def __init__(self, merk, model, bouwjaar):
@@ -317,6 +323,7 @@ class Auto:
 ```
 
 **Optie C - Persoon (in RPG-spel):**
+
 ```python
 class Persoon:
     def __init__(self, naam, klasse):
@@ -348,8 +355,8 @@ p2 = Platform(400, 350, 200, 20)
 p3 = Platform(200, 200, 150, 20)
 
 # Print info
-print(f"Grond: x={grond.x}, breedte={grond.breedte}")
-print(f"Platform 1: y={p1.y}, hoogte={p1.hoogte}")
+print("Grond: x =", grond.x, ", breedte =", grond.breedte)
+print("Platform 1: y =", p1.y, ", hoogte =", p1.hoogte)
 ```
 
 ### Opgave 3: Munten Verzamelen
@@ -372,7 +379,7 @@ munt5 = Munt(500, 250)
 
 # Totale waarde berekenen:
 totaal = munt1.waarde + munt2.waarde + munt3.waarde + munt4.waarde + munt5.waarde
-print(f"Totale munt-waarde: {totaal}")  # 50
+print("Totale munt-waarde:", totaal)
 ```
 
 ### Opgave 4: Game State
@@ -390,33 +397,33 @@ class GameState:
 game = GameState()
 
 # Simulatie
-print(f"Start: Score={game.score}, Levens={game.levens}")
+print("Start: Score =", game.score, ", Levens =", game.levens)
 
 game.munten_verzameld += 3
 game.score += 30
-print(f"Na munten: Score={game.score}")
+print("Na munten: Score =", game.score)
 
 game.levens -= 1
-print(f"Tegen hindernis: Levens={game.levens}")
+print("Tegen hindernis: Levens =", game.levens)
 
 game.level = 2
-print(f"Volgende level: Level={game.level}")
+print("Volgende level: Level =", game.level)
 ```
 
 ---
 
 ## 💡 Samenvatting
 
-| Concept | Uitleg |
-|---------|--------|
-| **Klasse** | Blauwdruk voor objecten |
-| **Object** | Instantie van een klasse (concrete versie) |
-| **Eigenschap/Attribuut** | Data die een object heeft (self.naam) |
-| **`__init__`** | Constructor - zet beginwaarden op |
-| **`self`** | Verwijzing naar "dit object" |
-| **Aanmaken** | `obj = Klasse(waarden)` |
-| **Lezen** | `obj.eigenschap` |
-| **Schrijven** | `obj.eigenschap = waarde` |
+| Concept                  | Uitleg                                     |
+| ------------------------ | ------------------------------------------ |
+| **Klasse**               | Blauwdruk voor objecten                    |
+| **Object**               | Instantie van een klasse (concrete versie) |
+| **Eigenschap/Attribuut** | Data die een object heeft (self.naam)      |
+| **`__init__`**           | Constructor - zet beginwaarden op          |
+| **`self`**               | Verwijzing naar "dit object"               |
+| **Aanmaken**             | `obj = Klasse(waarden)`                    |
+| **Lezen**                | `obj.eigenschap`                           |
+| **Schrijven**            | `obj.eigenschap = waarde`                  |
 
 ---
 
@@ -435,6 +442,7 @@ print(f"Volgende level: Level={game.level}")
 ## ✅ Volgende Stap
 
 **Hoofstuk 2:** Nu gaan we:
+
 - **Methoden** leren (wat objecten kunnen **doen**)
 - **Pygame** introduceren (objecten zichtbaar maken)
 - De **speler-sprite** inladen

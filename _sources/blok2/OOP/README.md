@@ -229,8 +229,8 @@ Controleer:
 ### "Speler valt niet"
 ```python
 # Controleer zwaartekracht
-print(f"ySnelheid: {speler.ySnelheid}")
-print(f"op_grond: {speler.op_grond}")
+print("ySnelheid:", speler.ySnelheid)
+print("op_grond:", speler.op_grond)
 ```
 
 ### "Collision werkt niet"
@@ -239,7 +239,7 @@ print(f"op_grond: {speler.op_grond}")
 def rechthoeken_botsen(obj1, obj2):
     result = (obj1.rechts > obj2.links and ...)
     if result:
-        print(f"BOTSING! {obj1} ↔ {obj2}")
+        print("BOTSING! objecten raken elkaar")
     return result
 ```
 
