@@ -3,6 +3,7 @@
 ## Leerdoelen
 
 Na dit hoofdstuk kun je:
+
 - Een PHP-bestand openen en sluiten
 - Variabelen aanmaken en waarden toekennen
 - De `echo` functie gebruiken om tekst af te drukken
@@ -65,17 +66,21 @@ Dit print: `Hallo wereld!`
 Er is een belangrijk verschil tussen enkele (`'`) en dubbele (`"`) aanhalingstekens:
 
 **Dubbele aanhalingstekens (`"`)**: Variabelen worden vervangen door hun waarde:
+
 ```php
 $naam = "Karel";
 echo "Hallo $naam!";
 ```
+
 Dit print: `Hallo Karel!`
 
 **Enkele aanhalingstekens (`'`)**: Variabelen worden NIET vervangen:
+
 ```php
 $naam = "Karel";
 echo 'Hallo $naam!';
 ```
+
 Dit print: `Hallo $naam!`
 
 ### Strings Samenvoegen
@@ -111,6 +116,7 @@ echo "Welkom in PHP!";
 ```
 
 Output:
+
 ```
 Welkom in PHP!
 ```
@@ -127,6 +133,7 @@ echo "Ik woon in " . $stad . ", " . $land;
 ```
 
 Output:
+
 ```
 Ik woon in Amsterdam, Nederland
 ```
@@ -143,6 +150,7 @@ echo "Mijn naam is $naam en ik ben $leeftijd jaar oud.";
 ```
 
 Output:
+
 ```
 Mijn naam is Isa en ik ben 15 jaar oud.
 ```
@@ -160,6 +168,7 @@ echo "Totaal: €" . ($aantal * $prijs);
 ```
 
 Output:
+
 ```
 Je hebt 5 items gekocht.
 Totaal: €15
@@ -172,6 +181,7 @@ Totaal: €15
 Maak een PHP-bestand dat je naam, leeftijd en woonplaats afdrukt. Gebruik variabelen en echo.
 
 **Verwachte output:**
+
 ```
 Hallo, ik ben [jouw naam], ik ben [jouw leeftijd] jaar oud en ik woon in [jouw plaats].
 ```
@@ -179,6 +189,7 @@ Hallo, ik ben [jouw naam], ik ben [jouw leeftijd] jaar oud en ik woon in [jouw p
 ### Oefening 2: Strings Samenvoegen
 
 Maak variabelen voor voornaam en achternaam. Print dan volledige informatie zoals:
+
 ```
 Voornaam: [voornaam]
 Achternaam: [achternaam]
@@ -190,6 +201,7 @@ Volledige naam: [voornaam achternaam]
 Maak variabelen voor aantal uren dat je hebt gewerkt en je uurtarief. Bereken en print het totaalbedrag.
 
 **Verwachte output:**
+
 ```
 Je hebt 8 uren gewerkt à €12,50 per uur.
 Je verdient: €100,00
@@ -199,7 +211,6 @@ Je verdient: €100,00
 
 Maak een PHP-bestand en test het verschil tussen dubbele en enkele aanhalingstekens. Print dezelfde zin twee keer: eenmaal met dubbele en eenmaal met enkele aanhalingstekens en kijk wat het verschil is.
 
-### Oefening 5: Vrij Opdracht
+### Oefening 5: Vrije Opdracht
 
 Maak een PHP-bestand dat een recept beschrijft. Gebruik minstens 5 variabelen (ingrediënten, hoeveelheden, bereidingstijd, etc.) en print het hele recept netjes geformateerd met echo.
-
