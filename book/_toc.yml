@@ -66,3 +66,14 @@ chapters:
       - file: blok5/hoofdstuk6.md
       - file: blok5/hoofdstuk7.md
       - file: blok5/hoofdstuk8.md
+  - title: 4ha blok 6
+    file: blok6/index.md
+    sections:
+      - file: blok6/hoofdstuk1.md
+      - file: blok6/hoofdstuk2.md
+      - file: blok6/hoofdstuk3.md
+      - file: blok6/hoofdstuk4.md
+      - file: blok6/hoofdstuk5.md
+      - file: blok6/hoofdstuk6.md
+      - title: Bonus - Wiskundige Bewerkingen
+        file: blok6/bonus_wiskunde.md
