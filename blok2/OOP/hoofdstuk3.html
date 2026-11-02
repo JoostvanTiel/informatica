@@ -534,7 +534,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">breedte</span> <span class="o">=</span> <span class="n">breedte</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">hoogte</span> <span class="o">=</span> <span class="n">hoogte</span>
-    
+
     <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
         <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">breedte</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hoogte</span><span class="p">])</span>
 
@@ -544,7 +544,7 @@
 <span class="n">platforms</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Platform</span><span class="p">(</span><span class="mi">450</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">25</span><span class="p">))</span>    <span class="c1"># Platform 3</span>
 </pre></div>
 </div>
-<p>Nu hebben we een <strong>nivel</strong> gemaakt!</p>
+<p>Nu hebben we een <strong>level</strong> gemaakt!</p>
 </section>
 <hr class="docutils" />
 <section id="over-een-lijst-lopen">
@@ -561,20 +561,20 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># In je game-loop:</span>
 <span class="k">while</span> <span class="n">running</span><span class="p">:</span>
     <span class="c1"># Events verwerken...</span>
-    
+
     <span class="c1"># UPDATE</span>
     <span class="n">speler</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
-    
+
     <span class="c1"># RENDER</span>
     <span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">))</span>
-    
+
     <span class="c1"># Teken ALLE platforms</span>
     <span class="k">for</span> <span class="n">platform</span> <span class="ow">in</span> <span class="n">platforms</span><span class="p">:</span>
         <span class="n">platform</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
-    
+
     <span class="c1"># Teken speler</span>
     <span class="n">speler</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
-    
+
     <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -654,7 +654,7 @@
 
 <span class="k">for</span> <span class="n">kogel</span> <span class="ow">in</span> <span class="n">kogels</span><span class="p">:</span>
     <span class="n">kogel</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
-    
+
     <span class="c1"># Kogel is uit beeld</span>
     <span class="k">if</span> <span class="n">kogel</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">BREEDTE</span><span class="p">:</span>
         <span class="n">kogels_om_te_verwijderen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">kogel</span><span class="p">)</span>
@@ -679,7 +679,7 @@
 
     <span class="k">def</span><span class="w"> </span><span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">snelheid</span>
-    
+
     <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
         <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)],</span> <span class="mi">5</span><span class="p">)</span>
 

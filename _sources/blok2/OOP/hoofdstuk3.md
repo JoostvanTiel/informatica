@@ -48,7 +48,7 @@ class Platform:
         self.y = y
         self.breedte = breedte
         self.hoogte = hoogte
-    
+
     def draw(self, screen):
         pygame.draw.rect(screen, (0, 200, 0), [self.x, self.y, self.breedte, self.hoogte])
 
@@ -58,7 +58,7 @@ platforms.append(Platform(150, 450, 200, 25))    # Platform 2
 platforms.append(Platform(450, 350, 250, 25))    # Platform 3
 ```
 
-Nu hebben we een **nivel** gemaakt!
+Nu hebben we een **level** gemaakt!
 
 ---
 
@@ -81,20 +81,20 @@ Dit is **krachtig**: schrijf je code eenmaal, en het werkt voor alle objecten in
 # In je game-loop:
 while running:
     # Events verwerken...
-    
+
     # UPDATE
     speler.move()
-    
+
     # RENDER
     screen.fill((150, 150, 150))
-    
+
     # Teken ALLE platforms
     for platform in platforms:
         platform.draw(screen)
-    
+
     # Teken speler
     speler.draw(screen)
-    
+
     pygame.display.flip()
 ```
 
@@ -184,7 +184,7 @@ kogels_om_te_verwijderen = []
 
 for kogel in kogels:
     kogel.move()
-    
+
     # Kogel is uit beeld
     if kogel.x > BREEDTE:
         kogels_om_te_verwijderen.append(kogel)
@@ -209,7 +209,7 @@ class Kogel:
 
     def move(self):
         self.x += self.snelheid
-    
+
     def draw(self, screen):
         pygame.draw.circle(screen, (255, 255, 0), [int(self.x), int(self.y)], 5)
 

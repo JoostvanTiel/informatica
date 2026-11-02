@@ -765,15 +765,14 @@
 </div>
 <p>Gebruik in game-loop:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Maak platforms</span>
-<span class="n">platforms</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="n">Platform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">550</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>      <span class="c1"># Grond</span>
-    <span class="n">Platform</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span>    <span class="c1"># Platform 1</span>
-    <span class="n">Platform</span><span class="p">(</span><span class="mi">450</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span>    <span class="c1"># Platform 2</span>
-<span class="p">]</span>
+<span class="n">grond</span> <span class="o">=</span> <span class="n">Platform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">550</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span> <span class="c1"># Grond</span>
+<span class="n">platform_1</span> <span class="o">=</span> <span class="n">Platform</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span> <span class="c1"># Platform 1</span>
+<span class="n">platform_2</span> <span class="o">=</span> <span class="n">Platform</span><span class="p">(</span><span class="mi">450</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span> <span class="c1"># Platform 2</span>
 
 <span class="c1"># In game-loop (RENDER gedeelte):</span>
-<span class="k">for</span> <span class="n">platform</span> <span class="ow">in</span> <span class="n">platforms</span><span class="p">:</span>
-    <span class="n">platform</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
+<span class="n">grond</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
+<span class="n">platform_1</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
+<span class="n">platform_2</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -794,15 +793,14 @@
 </pre></div>
 </div>
 <p>Gebruik:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">munten</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="n">Munt</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">400</span><span class="p">),</span>
-    <span class="n">Munt</span><span class="p">(</span><span class="mi">575</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span>
-    <span class="n">Munt</span><span class="p">(</span><span class="mi">275</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span>
-<span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">munt_1</span> <span class="o">=</span> <span class="n">Munt</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+<span class="n">munt_2</span> <span class="o">=</span> <span class="n">Munt</span><span class="p">(</span><span class="mi">575</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+<span class="n">munt_3</span> <span class="o">=</span> <span class="n">Munt</span><span class="p">(</span><span class="mi">275</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
 
 <span class="c1"># In game-loop:</span>
-<span class="k">for</span> <span class="n">munt</span> <span class="ow">in</span> <span class="n">munten</span><span class="p">:</span>
-    <span class="n">munt</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
+<span class="n">munt_1</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
+<span class="n">munt_2</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
+<span class="n">munt_3</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -860,16 +858,14 @@
 
 <span class="c1"># Game-setup</span>
 <span class="n">speler</span> <span class="o">=</span> <span class="n">Speler</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s2">"speler.png"</span><span class="p">)</span>
-<span class="n">platforms</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="n">Platform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">550</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
-    <span class="n">Platform</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span>
-    <span class="n">Platform</span><span class="p">(</span><span class="mi">450</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span>
-<span class="p">]</span>
-<span class="n">munten</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="n">Munt</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">400</span><span class="p">),</span>
-    <span class="n">Munt</span><span class="p">(</span><span class="mi">575</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span>
-    <span class="n">Munt</span><span class="p">(</span><span class="mi">275</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span>
-<span class="p">]</span>
+
+<span class="n">grond</span> <span class="o">=</span> <span class="n">Platform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">550</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span> <span class="c1"># Grond</span>
+<span class="n">platform_1</span> <span class="o">=</span> <span class="n">Platform</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span> <span class="c1"># Platform 1</span>
+<span class="n">platform_2</span> <span class="o">=</span> <span class="n">Platform</span><span class="p">(</span><span class="mi">450</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span> <span class="c1"># Platform 2</span>
+
+<span class="n">munt_1</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
+<span class="n">munt_2</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
+<span class="n">munt_3</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
 
 <span class="c1"># Game-loop</span>
 <span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
@@ -894,11 +890,13 @@
     <span class="c1"># RENDER</span>
     <span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">))</span>
 
-    <span class="k">for</span> <span class="n">platform</span> <span class="ow">in</span> <span class="n">platforms</span><span class="p">:</span>
-        <span class="n">platform</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
+    <span class="n">grond</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
+    <span class="n">platform_1</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
+    <span class="n">platform_2</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
 
-    <span class="k">for</span> <span class="n">munt</span> <span class="ow">in</span> <span class="n">munten</span><span class="p">:</span>
-        <span class="n">munt</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
+    <span class="n">munt_1</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
+    <span class="n">munt_2</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
+    <span class="n">munt_3</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
 
     <span class="n">speler</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
 
@@ -960,14 +958,12 @@
 <section id="opgave-3-level-uitbreiden">
 <h3>Opgave 3: Level Uitbreiden<a class="headerlink" href="#opgave-3-level-uitbreiden" title="Link to this heading">#</a></h3>
 <p>Voeg meer platforms toe:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">platforms</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="n">Platform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">550</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>      <span class="c1"># Grond</span>
-    <span class="n">Platform</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span>
-    <span class="n">Platform</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span>
-    <span class="n">Platform</span><span class="p">(</span><span class="mi">550</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span>
-    <span class="n">Platform</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span>
-    <span class="n">Platform</span><span class="p">(</span><span class="mi">450</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span>
-<span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grond</span> <span class="o">=</span> <span class="n">Platform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">550</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span> <span class="c1"># Grond</span>
+<span class="n">platform_1</span> <span class="o">=</span> <span class="n">Platform</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">platform_2</span> <span class="o">=</span> <span class="n">Platform</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">platform_3</span> <span class="o">=</span> <span class="n">Platform</span><span class="p">(</span><span class="mi">550</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">platform_4</span> <span class="o">=</span> <span class="n">Platform</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">platform_5</span> <span class="o">=</span> <span class="n">Platform</span><span class="p">(</span><span class="mi">450</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
