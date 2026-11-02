@@ -1,0 +1,1007 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Hoofdstuk 5: Sessies en Cookies &#8212; Informatica</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'blok6/hoofdstuk5';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Hoofdstuk 6: Lussen in PHP" href="hoofdstuk6.html" />
+    <link rel="prev" title="Hoofdstuk 4: Willekeurige Getallen en Raadspelletjes" href="hoofdstuk4.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Informatica</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welkom bij het Informatica Boek
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../blok1/index.html">4ha blok 1</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../blok1/hoofdstuk1.html">Hoofdstuk 1: Toestanden en automaten</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../blok1/hoofdstuk2.html">Hoofdstuk 2: Algoritmen en beslissingen</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../blok1/hoofdstuk3.html">Hoofdstuk 3: Datastructuren en operatoren</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../blok1/hoofdstuk4.html">Hoofdstuk 4: Lussen</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../blok1/hoofdstuk5.html">Hoofdstuk 5: Functies &amp; combineren</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../blok2/index.html">4ha blok 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../blok2/InfDig/index.html">Informatie Digitaal</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../blok2/InfDig/hoofdstuk1.html">Informatie Digitaal H1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../blok2/InfDig/hoofdstuk2.html">Informatie Digitaal H2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../blok2/InfDig/hoofdstuk3.html">Informatie Digitaal H3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../blok2/InfDig/hoofdstuk4.html">Informatie Digitaal H4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../blok2/InfDig/hoofdstuk5.html">Informatie Digitaal H5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../blok2/InfDig/hoofdstuk6.html">Informatie Digitaal H6</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../blok2/OOP/index.html">Objectgeoriënteerd Programmeren</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../blok2/OOP/hoofdstuk1.html">OOP H1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../blok2/OOP/hoofdstuk2.html">OOP H2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../blok2/OOP/hoofdstuk3.html">OOP H3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../blok2/OOP/hoofdstuk4.html">OOP H4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../blok2/OOP/hoofdstuk5.html">OOP H5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../blok2/OOP/hoofdstuk6.html">OOP H6</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../blok3/index.html">4ha blok 3</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../blok3/hoofdstuk1.html">Hoofdstuk 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blok3/hoofdstuk2.html">Hoofdstuk 2</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../blok4/index.html">4ha blok 4</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../blok4/hoofdstuk1.html">Hoofdstuk 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blok4/hoofdstuk2.html">Hoofdstuk 2</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../blok5/index.html">4ha blok 5</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../blok5/hoofdstuk1.html">Hoofdstuk 1: Oriëntatie op SQL met SQL Island</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blok5/hoofdstuk2.html">Hoofdstuk 2: SELECT, WHERE en ORDER BY</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blok5/hoofdstuk3.html">Hoofdstuk 3: Relaties en JOINs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blok5/hoofdstuk4.html">Hoofdstuk 4: UPDATE, DELETE, subqueries en GROUP BY</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blok5/hoofdstuk5.html">Hoofdstuk 5: PHP + MySQL - gegevens tonen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blok5/hoofdstuk6.html">Hoofdstuk 6: PHP + MySQL - UPDATE en DELETE via formulieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blok5/hoofdstuk7.html">Hoofdstuk 7: Webshopproject - basisopzet en CRUD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blok5/hoofdstuk8.html">Hoofdstuk 8: Webshopproject - afronding en presentatie</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">4ha blok 6</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="hoofdstuk1.html">Hoofdstuk 1: PHP Basis - Variabelen en echo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hoofdstuk2.html">Hoofdstuk 2: HTML Formulieren met PHP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hoofdstuk3.html">Hoofdstuk 3: Afbeeldingen en Condities in PHP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hoofdstuk4.html">Hoofdstuk 4: Willekeurige Getallen en Raadspelletjes</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Hoofdstuk 5: Sessies en Cookies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hoofdstuk6.html">Hoofdstuk 6: Lussen in PHP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bonus_wiskunde.html">Bonus - Wiskundige Bewerkingen</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/JoostvanTiel/informatica" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/JoostvanTiel/informatica/issues/new?title=Issue%20on%20page%20%2Fblok6/hoofdstuk5.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/blok6/hoofdstuk5.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Hoofdstuk 5: Sessies en Cookies</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theorie">Theorie</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-een-sessie">Wat is een Sessie?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sessies-starten">Sessies Starten</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-in-sessies-opslaan">Data in Sessies Opslaan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-uit-sessies-lezen">Data uit Sessies Lezen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sessiedata-wissen">Sessiedata Wissen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-zijn-cookies">Wat zijn Cookies?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cookies-aanmaken">Cookies Aanmaken</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cookies-uitlezen">Cookies Uitlezen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cookies-wissen">Cookies Wissen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sessies-vs-cookies">Sessies vs. Cookies</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeelden">Voorbeelden</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-1-login-systeem-met-sessie">Voorbeeld 1: Login Systeem met Sessie</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-2-winkelwagentje-met-sessie">Voorbeeld 2: Winkelwagentje met Sessie</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-3-cookie-voor-terugkeren">Voorbeeld 3: Cookie voor Terugkeren</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-4-thema-selectie-met-cookie">Voorbeeld 4: Thema-selectie met Cookie</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oefeningen">Oefeningen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-1-bezoekerscounter">Oefening 1: Bezoekerscounter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-2-winkelwagen">Oefening 2: Winkelwagen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-3-voorkeurverzameling">Oefening 3: Voorkeurverzameling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-4-login-pagina-s">Oefening 4: Login Pagina’s</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-5-vrije-opdracht-quiz">Oefening 5: Vrije Opdracht - Quiz</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="hoofdstuk-5-sessies-en-cookies">
+<h1>Hoofdstuk 5: Sessies en Cookies<a class="headerlink" href="#hoofdstuk-5-sessies-en-cookies" title="Link to this heading">#</a></h1>
+<section id="leerdoelen">
+<h2>Leerdoelen<a class="headerlink" href="#leerdoelen" title="Link to this heading">#</a></h2>
+<p>Na dit hoofdstuk kun je:</p>
+<ul class="simple">
+<li><p>Sessies gebruiken om tijdelijk data op te slaan</p></li>
+<li><p>Cookies gebruiken om data permanent op te slaan</p></li>
+<li><p>Het verschil tussen sessies en cookies begrijpen</p></li>
+<li><p>Sessies en cookies wissen</p></li>
+<li><p>Data tussen pagina’s doorgeven en onthouden</p></li>
+</ul>
+</section>
+<section id="theorie">
+<h2>Theorie<a class="headerlink" href="#theorie" title="Link to this heading">#</a></h2>
+<section id="wat-is-een-sessie">
+<h3>Wat is een Sessie?<a class="headerlink" href="#wat-is-een-sessie" title="Link to this heading">#</a></h3>
+<p>Een <strong>sessie</strong> is een manier om gegevens op de server op te slaan. Deze gegevens zijn beschikbaar zolang de gebruiker op je website is. Zodra de browser wordt gesloten, verdwijnt de sessie.</p>
+<p><strong>Sessies zijn nuttig voor:</strong></p>
+<ul class="simple">
+<li><p>Ingelogde gebruikers onthouden</p></li>
+<li><p>Winkelwagentjes</p></li>
+<li><p>Gebruikersprefetenties (tijdelijk)</p></li>
+</ul>
+</section>
+<section id="sessies-starten">
+<h3>Sessies Starten<a class="headerlink" href="#sessies-starten" title="Link to this heading">#</a></h3>
+<p>Elke PHP-pagina die sessies wil gebruiken, moet <code class="docutils literal notranslate"><span class="pre">session_start()</span></code> bovenaan hebben:</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nb">session_start</span><span class="p">();</span>  <span class="c1">// Dit moet ALTIJD bovenaan staan!</span>
+<span class="cp">?&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="data-in-sessies-opslaan">
+<h3>Data in Sessies Opslaan<a class="headerlink" href="#data-in-sessies-opslaan" title="Link to this heading">#</a></h3>
+<p>Je kunt data opslaan in de <code class="docutils literal notranslate"><span class="pre">$_SESSION</span></code> array:</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nb">session_start</span><span class="p">();</span>
+
+<span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'gebruiker'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Jan"</span><span class="p">;</span>
+<span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'leeftijd'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">16</span><span class="p">;</span>
+<span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'is_ingelogd'</span><span class="p">]</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="data-uit-sessies-lezen">
+<h3>Data uit Sessies Lezen<a class="headerlink" href="#data-uit-sessies-lezen" title="Link to this heading">#</a></h3>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nb">session_start</span><span class="p">();</span>
+
+<span class="k">echo</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'gebruiker'</span><span class="p">];</span>  <span class="c1">// Print: Jan</span>
+<span class="k">echo</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'leeftijd'</span><span class="p">];</span>   <span class="c1">// Print: 16</span>
+<span class="cp">?&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="sessiedata-wissen">
+<h3>Sessiedata Wissen<a class="headerlink" href="#sessiedata-wissen" title="Link to this heading">#</a></h3>
+<p>Je kunt individuele sessiegegevens wissen:</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">unset($_SESSION['gebruiker']);</span>
+</pre></div>
+</div>
+<p>Of de hele sessie:</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">session_destroy();</span>
+</pre></div>
+</div>
+</section>
+<section id="wat-zijn-cookies">
+<h3>Wat zijn Cookies?<a class="headerlink" href="#wat-zijn-cookies" title="Link to this heading">#</a></h3>
+<p>Een <strong>cookie</strong> is een kleine bestand dat op de computer van de gebruiker wordt opgeslagen. Cookies blijven bestaan totdat ze verlopen, zelfs als de browser wordt gesloten.</p>
+<p><strong>Cookies zijn nuttig voor:</strong></p>
+<ul class="simple">
+<li><p>“Onthoud mij” functionaliteit</p></li>
+<li><p>Gebruikersprefetenties (permanent)</p></li>
+<li><p>Analytics</p></li>
+<li><p>Tracking</p></li>
+</ul>
+</section>
+<section id="cookies-aanmaken">
+<h3>Cookies Aanmaken<a class="headerlink" href="#cookies-aanmaken" title="Link to this heading">#</a></h3>
+<p>Cookies maak je aan met <code class="docutils literal notranslate"><span class="pre">setcookie()</span></code>:</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nb">setcookie</span><span class="p">(</span><span class="s2">"username"</span><span class="p">,</span> <span class="s2">"Jan"</span><span class="p">);</span>
+<span class="cp">?&gt;</span>
+</pre></div>
+</div>
+<p><strong>BELANGRIJK:</strong> <code class="docutils literal notranslate"><span class="pre">setcookie()</span></code> moet VÓÓR alle HTML worden aangeroepen! Dit betekent nog voor <code class="docutils literal notranslate"><span class="pre">&lt;html&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;!DOCTYPE&gt;</span></code>, en zelfs voor <code class="docutils literal notranslate"><span class="pre">echo</span></code>.</p>
+<p><strong>Geldigheidsduur instellen:</strong></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="c1">// Cookie geldig voor 30 dagen</span>
+<span class="nb">setcookie</span><span class="p">(</span><span class="s2">"username"</span><span class="p">,</span> <span class="s2">"Jan"</span><span class="p">,</span> <span class="nb">time</span><span class="p">()</span> <span class="o">+</span> <span class="p">(</span><span class="mi">30</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span><span class="p">));</span>
+
+<span class="c1">// Cookie geldig voor 1 uur</span>
+<span class="nb">setcookie</span><span class="p">(</span><span class="s2">"sessionid"</span><span class="p">,</span> <span class="s2">"abc123"</span><span class="p">,</span> <span class="nb">time</span><span class="p">()</span> <span class="o">+</span> <span class="mi">3600</span><span class="p">);</span>
+<span class="cp">?&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="cookies-uitlezen">
+<h3>Cookies Uitlezen<a class="headerlink" href="#cookies-uitlezen" title="Link to this heading">#</a></h3>
+<p>Je kunt cookies uitlezen via de <code class="docutils literal notranslate"><span class="pre">$_COOKIE</span></code> array:</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">'username'</span><span class="p">]))</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">"Welkom terug, "</span> <span class="o">.</span> <span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">'username'</span><span class="p">];</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="cookies-wissen">
+<h3>Cookies Wissen<a class="headerlink" href="#cookies-wissen" title="Link to this heading">#</a></h3>
+<p>Je kunt een cookie verwijderen door deze met een vervallen datum in te stellen:</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nb">setcookie</span><span class="p">(</span><span class="s2">"username"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="nb">time</span><span class="p">()</span> <span class="o">-</span> <span class="mi">3600</span><span class="p">);</span>  <span class="c1">// Verlopen!</span>
+<span class="nb">unset</span><span class="p">(</span><span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">'username'</span><span class="p">]);</span>
+<span class="cp">?&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="sessies-vs-cookies">
+<h3>Sessies vs. Cookies<a class="headerlink" href="#sessies-vs-cookies" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Kenmerk</p></th>
+<th class="head"><p>Sessie</p></th>
+<th class="head"><p>Cookie</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Opslaglocatie</p></td>
+<td><p>Server</p></td>
+<td><p>Browser</p></td>
+</tr>
+<tr class="row-odd"><td><p>Duur</p></td>
+<td><p>Tot browser sluit</p></td>
+<td><p>Tot vervaldatum</p></td>
+</tr>
+<tr class="row-even"><td><p>Beveiliging</p></td>
+<td><p>Veiliger</p></td>
+<td><p>Minder veilig</p></td>
+</tr>
+<tr class="row-odd"><td><p>Snelheid</p></td>
+<td><p>Snel</p></td>
+<td><p>Zeer snel</p></td>
+</tr>
+<tr class="row-even"><td><p>Voorraad</p></td>
+<td><p>Beperkt</p></td>
+<td><p>Beperkt per domein</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="voorbeelden">
+<h2>Voorbeelden<a class="headerlink" href="#voorbeelden" title="Link to this heading">#</a></h2>
+<section id="voorbeeld-1-login-systeem-met-sessie">
+<h3>Voorbeeld 1: Login Systeem met Sessie<a class="headerlink" href="#voorbeeld-1-login-systeem-met-sessie" title="Link to this heading">#</a></h3>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nb">session_start</span><span class="p">();</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'login'</span><span class="p">]))</span> <span class="p">{</span>
+    <span class="nv">$gebruiker</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'gebruiker'</span><span class="p">];</span>
+    <span class="nv">$wachtwoord</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'wachtwoord'</span><span class="p">];</span>
+    
+    <span class="c1">// Eenvoudige controle (normaal zou je een database gebruiken!)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$gebruiker</span> <span class="o">==</span> <span class="s2">"admin"</span> <span class="o">&amp;&amp;</span> <span class="nv">$wachtwoord</span> <span class="o">==</span> <span class="s2">"geheim"</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'ingelogd'</span><span class="p">]</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+        <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'gebruiker'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$gebruiker</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">"&lt;p&gt;Foutieve gegevens!&lt;/p&gt;"</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'logout'</span><span class="p">]))</span> <span class="p">{</span>
+    <span class="nb">session_destroy</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'ingelogd'</span><span class="p">])</span> <span class="o">&amp;&amp;</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'ingelogd'</span><span class="p">]</span> <span class="o">==</span> <span class="k">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">"&lt;p&gt;Welkom "</span> <span class="o">.</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'gebruiker'</span><span class="p">]</span> <span class="o">.</span> <span class="s2">"!&lt;/p&gt;"</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="s2">"&lt;form action='login.php' method='post'&gt;"</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="s2">"&lt;input type='submit' name='logout' value='Uitloggen'&gt;"</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="s2">"&lt;/form&gt;"</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">"&lt;form action='login.php' method='post'&gt;"</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="s2">"Gebruiker: &lt;input type='text' name='gebruiker'&gt;&lt;br&gt;"</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="s2">"Wachtwoord: &lt;input type='password' name='wachtwoord'&gt;&lt;br&gt;"</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="s2">"&lt;input type='submit' name='login' value='Inloggen'&gt;"</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="s2">"&lt;/form&gt;"</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="voorbeeld-2-winkelwagentje-met-sessie">
+<h3>Voorbeeld 2: Winkelwagentje met Sessie<a class="headerlink" href="#voorbeeld-2-winkelwagentje-met-sessie" title="Link to this heading">#</a></h3>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nb">session_start</span><span class="p">();</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'winkelwagen'</span><span class="p">]))</span> <span class="p">{</span>
+    <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'winkelwagen'</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'voeg_toe'</span><span class="p">]))</span> <span class="p">{</span>
+    <span class="nv">$artikel</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'artikel'</span><span class="p">];</span>
+    <span class="nv">$prijs</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'prijs'</span><span class="p">];</span>
+    
+    <span class="nv">$item</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">'naam'</span> <span class="o">=&gt;</span> <span class="nv">$artikel</span><span class="p">,</span> <span class="s1">'prijs'</span> <span class="o">=&gt;</span> <span class="nv">$prijs</span><span class="p">);</span>
+    <span class="nb">array_push</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'winkelwagen'</span><span class="p">],</span> <span class="nv">$item</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">echo</span> <span class="s2">"&lt;h1&gt;Winkelwagen&lt;/h1&gt;"</span><span class="p">;</span>
+
+<span class="c1">// Toon alle artikelen</span>
+<span class="nv">$totaal</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'winkelwagen'</span><span class="p">]</span> <span class="k">as</span> <span class="nv">$item</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">"&lt;p&gt;"</span> <span class="o">.</span> <span class="nv">$item</span><span class="p">[</span><span class="s1">'naam'</span><span class="p">]</span> <span class="o">.</span> <span class="s2">" - €"</span> <span class="o">.</span> <span class="nv">$item</span><span class="p">[</span><span class="s1">'prijs'</span><span class="p">]</span> <span class="o">.</span> <span class="s2">"&lt;/p&gt;"</span><span class="p">;</span>
+    <span class="nv">$totaal</span> <span class="o">+=</span> <span class="nv">$item</span><span class="p">[</span><span class="s1">'prijs'</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="k">echo</span> <span class="s2">"&lt;p&gt;&lt;strong&gt;Totaal: €"</span> <span class="o">.</span> <span class="nv">$totaal</span> <span class="o">.</span> <span class="s2">"&lt;/strong&gt;&lt;/p&gt;"</span><span class="p">;</span>
+
+<span class="k">echo</span> <span class="s2">"&lt;form action='winkelwagen.php' method='post'&gt;"</span><span class="p">;</span>
+<span class="k">echo</span> <span class="s2">"Artikel: &lt;input type='text' name='artikel'&gt;&lt;br&gt;"</span><span class="p">;</span>
+<span class="k">echo</span> <span class="s2">"Prijs: &lt;input type='number' step='0.01' name='prijs'&gt;&lt;br&gt;"</span><span class="p">;</span>
+<span class="k">echo</span> <span class="s2">"&lt;input type='submit' name='voeg_toe' value='Toevoegen'&gt;"</span><span class="p">;</span>
+<span class="k">echo</span> <span class="s2">"&lt;/form&gt;"</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="voorbeeld-3-cookie-voor-terugkeren">
+<h3>Voorbeeld 3: Cookie voor Terugkeren<a class="headerlink" href="#voorbeeld-3-cookie-voor-terugkeren" title="Link to this heading">#</a></h3>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'login'</span><span class="p">]))</span> <span class="p">{</span>
+    <span class="nv">$naam</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'naam'</span><span class="p">];</span>
+    
+    <span class="c1">// Onthoud voor 365 dagen</span>
+    <span class="nb">setcookie</span><span class="p">(</span><span class="s2">"laatste_bezoeker"</span><span class="p">,</span> <span class="nv">$naam</span><span class="p">,</span> <span class="nb">time</span><span class="p">()</span> <span class="o">+</span> <span class="p">(</span><span class="mi">365</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span><span class="p">));</span>
+    <span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">'laatste_bezoeker'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$naam</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">'laatste_bezoeker'</span><span class="p">]))</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">"&lt;p&gt;Welkom terug, "</span> <span class="o">.</span> <span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">'laatste_bezoeker'</span><span class="p">]</span> <span class="o">.</span> <span class="s2">"!&lt;/p&gt;"</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+
+<span class="x">&lt;form action="cookie.php" method="post"&gt;</span>
+<span class="x">    Naam: &lt;input type="text" name="naam"&gt;&lt;br&gt;</span>
+<span class="x">    &lt;input type="submit" name="login" value="Opslaan"&gt;</span>
+<span class="x">&lt;/form&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="voorbeeld-4-thema-selectie-met-cookie">
+<h3>Voorbeeld 4: Thema-selectie met Cookie<a class="headerlink" href="#voorbeeld-4-thema-selectie-met-cookie" title="Link to this heading">#</a></h3>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'thema'</span><span class="p">]))</span> <span class="p">{</span>
+    <span class="nb">setcookie</span><span class="p">(</span><span class="s2">"thema"</span><span class="p">,</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'thema'</span><span class="p">],</span> <span class="nb">time</span><span class="p">()</span> <span class="o">+</span> <span class="p">(</span><span class="mi">365</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span><span class="p">));</span>
+    <span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">'thema'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'thema'</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="nv">$thema</span> <span class="o">=</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">'thema'</span><span class="p">])</span> <span class="o">?</span> <span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">'thema'</span><span class="p">]</span> <span class="o">:</span> <span class="s1">'licht'</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$thema</span> <span class="o">==</span> <span class="s1">'donker'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">"&lt;body style='background-color: #333; color: white;'&gt;"</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">"&lt;body style='background-color: white; color: black;'&gt;"</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">echo</span> <span class="s2">"&lt;h1&gt;Kies je thema&lt;/h1&gt;"</span><span class="p">;</span>
+
+<span class="k">echo</span> <span class="s2">"&lt;form action='thema.php' method='post'&gt;"</span><span class="p">;</span>
+<span class="k">echo</span> <span class="s2">"&lt;input type='radio' name='thema' value='licht'&gt; Licht&lt;br&gt;"</span><span class="p">;</span>
+<span class="k">echo</span> <span class="s2">"&lt;input type='radio' name='thema' value='donker'&gt; Donker&lt;br&gt;"</span><span class="p">;</span>
+<span class="k">echo</span> <span class="s2">"&lt;input type='submit' value='Opslaan'&gt;"</span><span class="p">;</span>
+<span class="k">echo</span> <span class="s2">"&lt;/form&gt;"</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="oefeningen">
+<h2>Oefeningen<a class="headerlink" href="#oefeningen" title="Link to this heading">#</a></h2>
+<section id="oefening-1-bezoekerscounter">
+<h3>Oefening 1: Bezoekerscounter<a class="headerlink" href="#oefening-1-bezoekerscounter" title="Link to this heading">#</a></h3>
+<p>Maak een PHP-bestand dat:</p>
+<ol class="arabic simple">
+<li><p>Telt hoeveel keer een pagina is bezocht (gebruik een cookie)</p></li>
+<li><p>De pagina herlaad en kijk of het aantal omhoog gaat</p></li>
+<li><p>Een “Reset” knop heeft om de teller op nul te zetten</p></li>
+</ol>
+</section>
+<section id="oefening-2-winkelwagen">
+<h3>Oefening 2: Winkelwagen<a class="headerlink" href="#oefening-2-winkelwagen" title="Link to this heading">#</a></h3>
+<p>Maak een PHP-bestand met:</p>
+<ol class="arabic simple">
+<li><p>Een lijst van producten</p></li>
+<li><p>Een formulier om producten toe te voegen aan een winkelwagen (gebruik sessie)</p></li>
+<li><p>Een overzicht van alle artikelen in de winkelwagen met totaalbedrag</p></li>
+<li><p>Een “Kassa” knop die de winkelwagen leedt</p></li>
+</ol>
+</section>
+<section id="oefening-3-voorkeurverzameling">
+<h3>Oefening 3: Voorkeurverzameling<a class="headerlink" href="#oefening-3-voorkeurverzameling" title="Link to this heading">#</a></h3>
+<p>Maak een PHP-bestand dat:</p>
+<ol class="arabic simple">
+<li><p>De gebruiker vraagt om zijn lievelingskleur, eten en muziekgenre</p></li>
+<li><p>Dit opslaat in een cookie</p></li>
+<li><p>Bij volgende bezoek de voorkeur onthoudt en afdrukt</p></li>
+</ol>
+</section>
+<section id="oefening-4-login-pagina-s">
+<h3>Oefening 4: Login Pagina’s<a class="headerlink" href="#oefening-4-login-pagina-s" title="Link to this heading">#</a></h3>
+<p>Maak twee PHP-bestanden:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">login.php</span></code> - Login formulier</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">welkom.php</span></code> - Beveiligde pagina die alleen beschikbaar is als je ingelogd bent</p></li>
+</ol>
+<p>Zorg dat:</p>
+<ul class="simple">
+<li><p>Je kunt inloggen met gebruiker “student” en wachtwoord “geheim”</p></li>
+<li><p>De sessie voert je naar de welkompagina</p></li>
+<li><p>Je kunt uitloggen en teruggaan naar de loginpagina</p></li>
+</ul>
+</section>
+<section id="oefening-5-vrije-opdracht-quiz">
+<h3>Oefening 5: Vrije Opdracht - Quiz<a class="headerlink" href="#oefening-5-vrije-opdracht-quiz" title="Link to this heading">#</a></h3>
+<p>Maak een quiz waarbij:</p>
+<ol class="arabic simple">
+<li><p>Vragen en antwoorden in sessie worden opgeslagen</p></li>
+<li><p>De score wordt bijgehouden</p></li>
+<li><p>Na het spel de score wordt opgeslagen in een cookie</p></li>
+<li><p>Volgende keer de vorige score wordt weergegeven</p></li>
+</ol>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./blok6"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="hoofdstuk4.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Hoofdstuk 4: Willekeurige Getallen en Raadspelletjes</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="hoofdstuk6.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Hoofdstuk 6: Lussen in PHP</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theorie">Theorie</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-een-sessie">Wat is een Sessie?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sessies-starten">Sessies Starten</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-in-sessies-opslaan">Data in Sessies Opslaan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-uit-sessies-lezen">Data uit Sessies Lezen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sessiedata-wissen">Sessiedata Wissen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-zijn-cookies">Wat zijn Cookies?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cookies-aanmaken">Cookies Aanmaken</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cookies-uitlezen">Cookies Uitlezen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cookies-wissen">Cookies Wissen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sessies-vs-cookies">Sessies vs. Cookies</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeelden">Voorbeelden</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-1-login-systeem-met-sessie">Voorbeeld 1: Login Systeem met Sessie</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-2-winkelwagentje-met-sessie">Voorbeeld 2: Winkelwagentje met Sessie</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-3-cookie-voor-terugkeren">Voorbeeld 3: Cookie voor Terugkeren</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-4-thema-selectie-met-cookie">Voorbeeld 4: Thema-selectie met Cookie</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oefeningen">Oefeningen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-1-bezoekerscounter">Oefening 1: Bezoekerscounter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-2-winkelwagen">Oefening 2: Winkelwagen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-3-voorkeurverzameling">Oefening 3: Voorkeurverzameling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-4-login-pagina-s">Oefening 4: Login Pagina’s</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oefening-5-vrije-opdracht-quiz">Oefening 5: Vrije Opdracht - Quiz</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By SSgN
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
