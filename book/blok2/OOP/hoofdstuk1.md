@@ -13,8 +13,6 @@ Je leert:
 - **Waarom klassen handig zijn** (herbruikbaarheid, organisatie)
 - **Meerdere objecten van dezelfde klasse**
 
-⚠️ **BELANGRIJK:** In dit hoofstuk **GEEN pygame of grafische output**! We starten zuiver met OOP-concepten. Je leert hoe klassen werken, en vervolgens hoe je ze op het scherm zichtbaar maakt in Hoofstuk 2.
-
 Aan het einde van dit hoofstuk kun je:
 
 - Een klasse definiëren met eigenschappen
@@ -292,7 +290,7 @@ print("Na actie:", held.levens, "levens,", held.score, "punten")
 
 ---
 
-## 🎯 Huiswerk Hst 1
+## Huiswerk Hst 1
 
 ### Opgave 1: Eigen Klasse Ontwerpen
 
@@ -412,7 +410,7 @@ print("Volgende level: Level =", game.level)
 
 ---
 
-## 💡 Samenvatting
+## Samenvatting
 
 | Concept                  | Uitleg                                     |
 | ------------------------ | ------------------------------------------ |
@@ -439,7 +437,7 @@ print("Volgende level: Level =", game.level)
 
 ---
 
-## ✅ Volgende Stap
+## Volgende Stap
 
 **Hoofstuk 2:** Nu gaan we:
 

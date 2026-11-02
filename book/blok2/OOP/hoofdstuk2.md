@@ -102,9 +102,7 @@ Dit is het **hart van elke game**!
 
 ### Stap 1: Installeer Pygame
 
-```bash
-pip install pygame
-```
+In Thonny ga je bovenin je scherm naar 'Hulpmiddelen' en dan naar 'Plug-ins beheren...'. Zoek naar 'pygame' en klik op 'pygame' in de zoekresultaten. Klik onderin op 'Installeren' en wacht tot de installatie voltooid is.
 
 ### Stap 2: Basis pygame-setup
 
@@ -437,7 +435,7 @@ pygame.quit()
 
 ---
 
-## 🎯 Huiswerk Hst 2
+## Huiswerk Hst 2
 
 ### Opgave 1: Methoden Toevoegen
 
@@ -499,7 +497,7 @@ Maak minstens 5 munten en plaats ze boven platforms.
 
 ---
 
-## 💡 Samenvatting
+## Samenvatting
 
 | Concept                    | Uitleg                                      |
 | -------------------------- | ------------------------------------------- |
@@ -527,7 +525,7 @@ Maak minstens 5 munten en plaats ze boven platforms.
 
 ---
 
-## ✅ Volgende Stap
+## Volgende Stap
 
 **Hoofstuk 3:**
 
