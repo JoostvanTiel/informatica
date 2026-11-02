@@ -207,9 +207,3 @@ Schrijf één foutgevoelige query opzettelijk verkeerd (bijv. zonder `WHERE`) en
 - `DELETE` verwijdert data.
 - Subqueries helpen bij complexere voorwaarden.
 - Met `GROUP BY` maak je overzicht en statistiek.
-
-## Huiswerk
-
-1. Maak 2 veilige `UPDATE`-queries.
-2. Maak 1 veilige `DELETE`-query.
-3. Maak 3 `GROUP BY`-queries met uitleg van je uitkomst.

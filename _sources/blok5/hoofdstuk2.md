@@ -116,7 +116,8 @@ FROM gebruikers
 WHERE regio = 'NH' AND leeftijd > 18;
 ```
 
-Dit geeft ALLEEN gebruikers die BEIDE voorwaarden hebben: 
+Dit geeft ALLEEN gebruikers die BEIDE voorwaarden hebben:
+
 - regio NH ÉN ouder dan 18
 
 **OR = ten minste één voorwaarde moet waar zijn**
@@ -460,12 +461,3 @@ Bedenk 2 eigen vragen en schrijf de query's erbij.
 - `LIMIT` beperkt het aantal resultaten.
 
 Dit is de basis waarop alle latere SQL-onderdelen in dit blok verder bouwen.
-
-## Huiswerk
-
-Maak 6 eigen query's:
-
-- minimaal 2 met `WHERE`;
-- minimaal 2 met `ORDER BY`;
-- minimaal 1 met `LIMIT`;
-- minimaal 1 combinatiequery.
