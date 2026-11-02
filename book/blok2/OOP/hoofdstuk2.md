@@ -278,15 +278,14 @@ Gebruik in game-loop:
 
 ```python
 # Maak platforms
-platforms = [
-    Platform(0, 550, 800, 50),      # Grond
-    Platform(100, 450, 200, 25),    # Platform 1
-    Platform(450, 350, 250, 25),    # Platform 2
-]
+grond = Platform(0, 550, 800, 50) # Grond
+platform_1 = Platform(100, 450, 200, 25) # Platform 1
+platform_2 = Platform(450, 350, 250, 25) # Platform 2
 
 # In game-loop (RENDER gedeelte):
-for platform in platforms:
-    platform.draw(screen)
+grond.draw(screen)
+platform_1.draw(screen)
+platform_2.draw(screen)
 ```
 
 ---
@@ -311,15 +310,14 @@ class Munt:
 Gebruik:
 
 ```python
-munten = [
-    Munt(200, 400),
-    Munt(575, 300),
-    Munt(275, 200),
-]
+munt_1 = Munt(200, 400)
+munt_2 = Munt(575, 300)
+munt_3 = Munt(275, 200)
 
 # In game-loop:
-for munt in munten:
-    munt.draw(screen)
+munt_1.draw(screen)
+munt_2.draw(screen)
+munt_3.draw(screen)
 ```
 
 ---
@@ -378,16 +376,14 @@ class Munt:
 
 # Game-setup
 speler = Speler(50, 500, "speler.png")
-platforms = [
-    Platform(0, 550, 800, 50),
-    Platform(100, 450, 200, 25),
-    Platform(450, 350, 250, 25),
-]
-munten = [
-    Munt(200, 400),
-    Munt(575, 300),
-    Munt(275, 200),
-]
+
+grond = Platform(0, 550, 800, 50) # Grond
+platform_1 = Platform(100, 450, 200, 25) # Platform 1
+platform_2 = Platform(450, 350, 250, 25) # Platform 2
+
+munt_1.draw(screen)
+munt_2.draw(screen)
+munt_3.draw(screen)
 
 # Game-loop
 running = True
@@ -412,11 +408,13 @@ while running:
     # RENDER
     screen.fill((150, 150, 150))
 
-    for platform in platforms:
-        platform.draw(screen)
+    grond.draw(screen)
+    platform_1.draw(screen)
+    platform_2.draw(screen)
 
-    for munt in munten:
-        munt.draw(screen)
+    munt_1.draw(screen)
+    munt_2.draw(screen)
+    munt_3.draw(screen)
 
     speler.draw(screen)
 
@@ -481,14 +479,12 @@ speler.reset()
 Voeg meer platforms toe:
 
 ```python
-platforms = [
-    Platform(0, 550, 800, 50),      # Grond
-    Platform(50, 450, 150, 20),
-    Platform(300, 400, 150, 20),
-    Platform(550, 350, 150, 20),
-    Platform(150, 250, 150, 20),
-    Platform(450, 200, 150, 20),
-]
+grond = Platform(0, 550, 800, 50) # Grond
+platform_1 = Platform(50, 450, 150, 20)
+platform_2 = Platform(300, 400, 150, 20)
+platform_3 = Platform(550, 350, 150, 20)
+platform_4 = Platform(150, 250, 150, 20)
+platform_5 = Platform(450, 200, 150, 20)
 ```
 
 ### Opgave 4: Voeg Munten Toe
