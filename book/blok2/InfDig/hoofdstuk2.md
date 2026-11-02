@@ -174,15 +174,6 @@ Een foto, een liedje of een filmpje neemt dus veel meer ruimte in dan één byte
 3. Waarom gebruiken computers het binaire stelsel?
 4. Wat is het verschil tussen een bit en een byte?
 
-## Afbeeldingen en bronnen
-
-- Zelf maken: maak een klein schema van 8 bits en zet die om in een binair getal.
-- Online zoeken: [Bits en bytes uitgelegd](https://www.youtube.com/results?search_query=bits+en+bytes+uitleg)
-- Online zoeken: [Wikipedia: bit](https://nl.wikipedia.org/wiki/Bit)
-- Online zoeken: [Wikipedia: byte](https://nl.wikipedia.org/wiki/Byte)
-
-Inhoud van hoofdstuk 2.
-
 ## Opdrachten
 
 1. Bits en bytes in een tabel
@@ -192,6 +183,7 @@ Inhoud van hoofdstuk 2.
    <li>Hoeveel bits zitten er in 1 byte? Waarom is 1 byte handig om tekst op te slaan?</li>
    <li>Leg uit waarom een computer met 0-en en 1-en kan werken.</li>
    </ol>
+
 2. Van bit naar byte
 
    <ol type='a'>
@@ -199,6 +191,7 @@ Inhoud van hoofdstuk 2.
    <li>Noem een voorbeeld van een kleine hoeveelheid informatie die minder is dan 1 byte.</li>
    <li>Waarom is een byte groter dan één bit? Geef een korte verklaring.</li>
    </ol>
+
 3. Toepassingsvraag
 
    Je wilt een foto van 5 MB uploaden. Je laptop heeft weinig vrije opslagruimte.
@@ -208,6 +201,7 @@ Inhoud van hoofdstuk 2.
    <li>Hoe kun je de grootte van een bestand vergelijken met het aantal bits en bytes?</li>
    <li>Noem een manier om een bestand kleiner te maken zonder de inhoud volledig te verliezen.</li>
    </ol>
+
 4. Je eigen binair schema bouwen
 
    <ol type='a'>
@@ -215,6 +209,7 @@ Inhoud van hoofdstuk 2.
    <li>Schrijf één byte op als acht bits en leg uit waarom een byte handig is om tekens te bewaren.</li>
    <li>Noem een situatie waarin een computer veel binaire informatie tegelijk moet verwerken.</li>
    </ol>
+
 ### Inzichtsvragen
 
 1. Als je één bit hebt, hoeveel mogelijke waarden kun je dan opslaan?
