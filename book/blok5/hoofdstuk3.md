@@ -148,13 +148,52 @@ Schrijf een query met `JOIN` voor:
 1. Toon serietitel, genre en kijkwijzer.
 2. Toon profielnaam, gebruiker en aantal kijkmomenten.
 
-### Opdracht 4 - Redeneren over resultaat
+### Opdracht 4 - Controleren of je JOIN klopt
 
-Bij elke query noteer je:
+Dit is de meest lastige opdrachttype. Volg deze aanpak:
 
-1. verwachte aantal rijen;
-2. waarom die query logisch is;
-3. welke kolommen je gebruikt om te koppelen.
+**Stap 1: Schrijf de query**
+```sql
+SELECT u.voornaam, p.profielnaam
+FROM gebruikers u
+JOIN profielen p ON u.id = p.gebruiker_id;
+```
+
+**Stap 2: Voordat je de query uitvoert, denk vooruit:**
+
+"Hoeveel rijen verwacht ik?"
+
+Kijk in je hoofd na welke gebruiker hoeveel profielen hebben:
+- Gebruiker 1 (Jan) → 2 profielen
+- Gebruiker 2 (Peter) → 1 profiel
+- Gebruiker 3 (Roos) → 3 profielen
+- → Totaal verwacht: 2+1+3 = **6 rijen**
+
+**Stap 3: Voer de query uit**
+
+Resultaat:
+```
+voornaam | profielnaam
+---------|------------
+Jan      | Kinderprofiel
+Jan      | Volwassenen
+Peter    | Favorieten
+Roos     | Profiel1
+Roos     | Profiel2
+Roos     | Profiel3
+```
+
+**Stap 4: Controleer kritisch**
+- ✅ Aantal rijen klopt (6 verwacht, 6 gekregen)
+- ✅ Dezelfde voornaam verschijnt meermaals (logisch: 1 gebruiker met meerdere profielen)
+- ✅ Koppeling klopt (Jan's profielen zijn werkelijk van Jan)
+
+**Mogelijke problemen die je zo opspoort:**
+- ❌ Aantal rijen veel hoger (10+)? Misschien fout in ON-voorwaarde
+- ❌ Lege tabel? Misschien geen data in ene tabel, of ON-voorwaarde kan niets matchen
+- ❌ Rij van Jan en Peter gemixed? ON-voorwaarde waarschijnlijk fout
+
+Voer deze controlestappen uit bij elk van deze queries en noteer je verwachting versus werkelijke uitkomst.
 
 ### Opdracht 5 - Challenge
 
