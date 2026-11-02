@@ -153,6 +153,7 @@ Schrijf een query met `JOIN` voor:
 Dit is de meest lastige opdrachttype. Volg deze aanpak:
 
 **Stap 1: Schrijf de query**
+
 ```sql
 SELECT u.voornaam, p.profielnaam
 FROM gebruikers u
@@ -164,6 +165,7 @@ JOIN profielen p ON u.id = p.gebruiker_id;
 "Hoeveel rijen verwacht ik?"
 
 Kijk in je hoofd na welke gebruiker hoeveel profielen hebben:
+
 - Gebruiker 1 (Jan) → 2 profielen
 - Gebruiker 2 (Peter) → 1 profiel
 - Gebruiker 3 (Roos) → 3 profielen
@@ -172,6 +174,7 @@ Kijk in je hoofd na welke gebruiker hoeveel profielen hebben:
 **Stap 3: Voer de query uit**
 
 Resultaat:
+
 ```
 voornaam | profielnaam
 ---------|------------
@@ -184,11 +187,13 @@ Roos     | Profiel3
 ```
 
 **Stap 4: Controleer kritisch**
+
 - ✅ Aantal rijen klopt (6 verwacht, 6 gekregen)
 - ✅ Dezelfde voornaam verschijnt meermaals (logisch: 1 gebruiker met meerdere profielen)
 - ✅ Koppeling klopt (Jan's profielen zijn werkelijk van Jan)
 
 **Mogelijke problemen die je zo opspoort:**
+
 - ❌ Aantal rijen veel hoger (10+)? Misschien fout in ON-voorwaarde
 - ❌ Lege tabel? Misschien geen data in ene tabel, of ON-voorwaarde kan niets matchen
 - ❌ Rij van Jan en Peter gemixed? ON-voorwaarde waarschijnlijk fout
@@ -219,12 +224,3 @@ Schrijf een query met `JOIN` die laat zien:
 - Relaties maken het mogelijk om data netjes te verdelen.
 - Met JOINs combineer je die data weer tot bruikbare informatie.
 - Met meerdere `JOIN`-stappen kun je rijke informatie uit verschillende tabellen opbouwen.
-
-## Huiswerk
-
-Maak 5 JOIN-query's:
-
-- 4x met `JOIN` tussen 2 tabellen;
-- 1x met minimaal 3 tabellen.
-
-Schrijf per query in één zin wat je ermee wilt aantonen.
