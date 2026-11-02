@@ -61,6 +61,59 @@ Je bouwt niet zomaar tabellen, maar een logische structuur. Een product heeft ee
 
 Een goed datamodel is het fundament van een goed project.
 
+### Template: Basis webshop schema
+
+Hier zie je een compleet voorbeeld om mee te starten:
+
+```sql
+-- Tabel 1: Gebruikers
+CREATE TABLE users (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  voornaam VARCHAR(50) NOT NULL,
+  achternaam VARCHAR(50) NOT NULL,
+  email VARCHAR(100) UNIQUE NOT NULL,
+  wachtwoord VARCHAR(255) NOT NULL,
+  registratiedatum DATETIME DEFAULT NOW()
+);
+
+-- Tabel 2: Producten/Artikelen
+CREATE TABLE artikelen (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  naam VARCHAR(100) NOT NULL,
+  beschrijving TEXT,
+  prijs DECIMAL(10, 2) NOT NULL,
+  voorraad INT NOT NULL DEFAULT 0,
+  gecreerddatum DATETIME DEFAULT NOW()
+);
+
+-- Tabel 3: Bestellingen
+CREATE TABLE bestellingen (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  user_id INT NOT NULL,
+  orderdatum DATETIME DEFAULT NOW(),
+  totaalprijs DECIMAL(10, 2),
+  status VARCHAR(50) DEFAULT 'pending',
+  FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+-- Tabel 4: Orderitems (koppelingenstabel voor veel-op-veel relatie)
+CREATE TABLE orderitems (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  bestelling_id INT NOT NULL,
+  artikel_id INT NOT NULL,
+  hoeveelheid INT NOT NULL,
+  prijs_per_stuk DECIMAL(10, 2),
+  FOREIGN KEY (bestelling_id) REFERENCES bestellingen(id),
+  FOREIGN KEY (artikel_id) REFERENCES artikelen(id)
+);
+```
+
+**Dit voorbeeld laat zien:**
+- **users**: basisgegevens van klanten
+- **artikelen**: producten in je winkel
+- **bestellingen**: één bestelling per klant
+- **orderitems**: relatie tussen bestelling en artikel (1 bestelling = veel artikelen)
+
 ---
 
 ## 3. Bouwstrategie
@@ -87,6 +140,20 @@ Je wilt kleine successen bouwen. Eerst zorg je dat je data überhaupt kunt zien.
 - neem notities van problemen die je tegenkomt.
 
 Een project werkt het best als je het stap voor stap ontwikkelt.
+
+### Testplan: Maak dit METEEN!
+
+Maak nu al een testlijst met verwachtingen. Je vult die stap voor stap in:
+
+| Functie | Actie | Verwachte uitkomst | Werkelijke uitkomst | Status |
+|---------|-------|-------------------|-------------------|--------|
+| READ | Data ophalen | Alle producten zichtbaar | | |
+| CREATE | Nieuw product toevoegen | Nieuw product in tabel | | |
+| UPDATE | Product aanpassen | Aanpassing zichtbaar | | |
+| DELETE | Product verwijderen | Product weg uit tabel | | |
+| Validatie | Leeg veld versturen | Foutmelding | | |
+
+Door dit vooruit in te vullen, weet je precies wat goed moet werken!
 
 ---
 

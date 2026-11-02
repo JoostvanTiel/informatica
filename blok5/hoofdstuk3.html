@@ -489,7 +489,7 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-basis-joins">Opdracht 1 - Basis JOINs</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-gericht-koppelen-met-join">Opdracht 2 - Gericht koppelen met JOIN</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-drie-tabellen-koppelen">Opdracht 3 - Drie tabellen koppelen</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-redeneren-over-resultaat">Opdracht 4 - Redeneren over resultaat</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-controleren-of-je-join-klopt">Opdracht 4 - Controleren of je JOIN klopt</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-challenge">Opdracht 5 - Challenge</a></li>
 </ul>
 </li>
@@ -653,14 +653,49 @@
 <li><p>Toon profielnaam, gebruiker en aantal kijkmomenten.</p></li>
 </ol>
 </section>
-<section id="opdracht-4-redeneren-over-resultaat">
-<h3>Opdracht 4 - Redeneren over resultaat<a class="headerlink" href="#opdracht-4-redeneren-over-resultaat" title="Link to this heading">#</a></h3>
-<p>Bij elke query noteer je:</p>
-<ol class="arabic simple">
-<li><p>verwachte aantal rijen;</p></li>
-<li><p>waarom die query logisch is;</p></li>
-<li><p>welke kolommen je gebruikt om te koppelen.</p></li>
-</ol>
+<section id="opdracht-4-controleren-of-je-join-klopt">
+<h3>Opdracht 4 - Controleren of je JOIN klopt<a class="headerlink" href="#opdracht-4-controleren-of-je-join-klopt" title="Link to this heading">#</a></h3>
+<p>Dit is de meest lastige opdrachttype. Volg deze aanpak:</p>
+<p><strong>Stap 1: Schrijf de query</strong></p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">voornaam</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">profielnaam</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span><span class="w"> </span><span class="n">u</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">profielen</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">gebruiker_id</span><span class="p">;</span>
+</pre></div>
+</div>
+<p><strong>Stap 2: Voordat je de query uitvoert, denk vooruit:</strong></p>
+<p>“Hoeveel rijen verwacht ik?”</p>
+<p>Kijk in je hoofd na welke gebruiker hoeveel profielen hebben:</p>
+<ul class="simple">
+<li><p>Gebruiker 1 (Jan) → 2 profielen</p></li>
+<li><p>Gebruiker 2 (Peter) → 1 profiel</p></li>
+<li><p>Gebruiker 3 (Roos) → 3 profielen</p></li>
+<li><p>→ Totaal verwacht: 2+1+3 = <strong>6 rijen</strong></p></li>
+</ul>
+<p><strong>Stap 3: Voer de query uit</strong></p>
+<p>Resultaat:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">voornaam</span> <span class="o">|</span> <span class="n">profielnaam</span>
+<span class="o">---------|------------</span>
+<span class="n">Jan</span>      <span class="o">|</span> <span class="n">Kinderprofiel</span>
+<span class="n">Jan</span>      <span class="o">|</span> <span class="n">Volwassenen</span>
+<span class="n">Peter</span>    <span class="o">|</span> <span class="n">Favorieten</span>
+<span class="n">Roos</span>     <span class="o">|</span> <span class="n">Profiel1</span>
+<span class="n">Roos</span>     <span class="o">|</span> <span class="n">Profiel2</span>
+<span class="n">Roos</span>     <span class="o">|</span> <span class="n">Profiel3</span>
+</pre></div>
+</div>
+<p><strong>Stap 4: Controleer kritisch</strong></p>
+<ul class="simple">
+<li><p>✅ Aantal rijen klopt (6 verwacht, 6 gekregen)</p></li>
+<li><p>✅ Dezelfde voornaam verschijnt meermaals (logisch: 1 gebruiker met meerdere profielen)</p></li>
+<li><p>✅ Koppeling klopt (Jan’s profielen zijn werkelijk van Jan)</p></li>
+</ul>
+<p><strong>Mogelijke problemen die je zo opspoort:</strong></p>
+<ul class="simple">
+<li><p>❌ Aantal rijen veel hoger (10+)? Misschien fout in ON-voorwaarde</p></li>
+<li><p>❌ Lege tabel? Misschien geen data in ene tabel, of ON-voorwaarde kan niets matchen</p></li>
+<li><p>❌ Rij van Jan en Peter gemixed? ON-voorwaarde waarschijnlijk fout</p></li>
+</ul>
+<p>Voer deze controlestappen uit bij elk van deze queries en noteer je verwachting versus werkelijke uitkomst.</p>
 </section>
 <section id="opdracht-5-challenge">
 <h3>Opdracht 5 - Challenge<a class="headerlink" href="#opdracht-5-challenge" title="Link to this heading">#</a></h3>
@@ -796,7 +831,7 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-basis-joins">Opdracht 1 - Basis JOINs</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-gericht-koppelen-met-join">Opdracht 2 - Gericht koppelen met JOIN</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-drie-tabellen-koppelen">Opdracht 3 - Drie tabellen koppelen</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-redeneren-over-resultaat">Opdracht 4 - Redeneren over resultaat</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-controleren-of-je-join-klopt">Opdracht 4 - Controleren of je JOIN klopt</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-challenge">Opdracht 5 - Challenge</a></li>
 </ul>
 </li>

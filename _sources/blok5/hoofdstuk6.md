@@ -86,6 +86,58 @@ Gebruik bij invoer uit formulieren geen direct ingeplakte SQL-strings. Gebruik p
 
 Bij prepared statements worden invoerwaarden gescheiden van de SQL-opdracht zelf. De database behandelt die waarden als data in plaats van als onderdeel van de query. Daardoor worden veel veelvoorkomende beveiligingsproblemen voorkomen, zoals SQL-injectie.
 
+### Praktisch voorbeeld: Volledige UPDATE workflow
+
+**Stap 1: HTML-formulier**
+
+```html
+<form method="POST" action="bewerkprofiel.php">
+  <input type="hidden" name="id" value="<?php echo $id; ?>">
+  <label>Leeftijd:</label>
+  <input type="number" name="leeftijd" value="<?php echo $huidigeleeftijd; ?>">
+  <button type="submit">Opslaan</button>
+</form>
+```
+
+**Stap 2: PHP - Invoer uit formulier lezen**
+
+```php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $id = $_POST['id'];           // Welk profiel wijzigen?
+    $leeftijd = $_POST['leeftijd']; // Naar welke leeftijd?
+    
+    // Validatie: is leeftijd ingevuld en logisch?
+    if (empty($leeftijd) || $leeftijd < 0 || $leeftijd > 120) {
+        echo "Fout: leeftijd moet tussen 0 en 120 zijn.";
+    } else {
+        // Stap 3: Prepared statement
+        $sql = "UPDATE profielen SET leeftijd_profiel = ? WHERE id = ?";
+        $stmt = $conn->prepare($sql);
+        
+        // Stap 4: Types en waarden koppelen
+        $stmt->bind_param("ii", $leeftijd, $id);
+        // "ii" = twee integers
+        // eerste ? = $leeftijd
+        // tweede ? = $id
+        
+        // Stap 5: Uitvoeren
+        if ($stmt->execute()) {
+            echo "Profiel bijgewerkt!";
+        } else {
+            echo "Fout: " . $stmt->error;
+        }
+    }
+}
+```
+
+**Waarom is dit veilig?**
+
+`bind_param()` scheidt de SQL-code van de invoerdata:
+- SQL-code: `UPDATE profielen SET leeftijd_profiel = ? WHERE id = ?`
+- Data: `[15, 1]`
+
+Zelfs als iemand typt `'; DROP TABLE gebruikers; --`, wordt het behandeld als GETAL, niet als SQL-code!
+
 ### Belangrijk verschil tussen validatie en beveiliging
 
 - validatie controleert of invoer klopt en logisch is;

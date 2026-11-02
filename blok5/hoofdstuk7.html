@@ -469,11 +469,13 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datamodel">2. Datamodel</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waar-moet-je-bij-het-datamodel-aan-denken">Waar moet je bij het datamodel aan denken?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-van-logisch-nadenken">Voorbeeld van logisch nadenken</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#template-basis-webshop-schema">Template: Basis webshop schema</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bouwstrategie">3. Bouwstrategie</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-deze-volgorde">Waarom deze volgorde?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goede-ontwikkelhabits">Goede ontwikkelhabits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testplan-maak-dit-meteen">Testplan: Maak dit METEEN!</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
@@ -558,6 +560,59 @@
 </ul>
 <p>Een goed datamodel is het fundament van een goed project.</p>
 </section>
+<section id="template-basis-webshop-schema">
+<h3>Template: Basis webshop schema<a class="headerlink" href="#template-basis-webshop-schema" title="Link to this heading">#</a></h3>
+<p>Hier zie je een compleet voorbeeld om mee te starten:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Tabel 1: Gebruikers</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="n">id</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+<span class="w">  </span><span class="n">voornaam</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">  </span><span class="n">achternaam</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">  </span><span class="n">email</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">UNIQUE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">  </span><span class="n">wachtwoord</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">  </span><span class="n">registratiedatum</span><span class="w"> </span><span class="n">DATETIME</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span>
+<span class="p">);</span>
+
+<span class="c1">-- Tabel 2: Producten/Artikelen</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">artikelen</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="n">id</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+<span class="w">  </span><span class="n">naam</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">  </span><span class="n">beschrijving</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<span class="w">  </span><span class="n">prijs</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">  </span><span class="n">voorraad</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="n">gecreerddatum</span><span class="w"> </span><span class="n">DATETIME</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span>
+<span class="p">);</span>
+
+<span class="c1">-- Tabel 3: Bestellingen</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">bestellingen</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="n">id</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+<span class="w">  </span><span class="n">user_id</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">  </span><span class="n">orderdatum</span><span class="w"> </span><span class="n">DATETIME</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">(),</span>
+<span class="w">  </span><span class="n">totaalprijs</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span>
+<span class="w">  </span><span class="n">status</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">'pending'</span><span class="p">,</span>
+<span class="w">  </span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">user_id</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">users</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
+<span class="p">);</span>
+
+<span class="c1">-- Tabel 4: Orderitems (koppelingenstabel voor veel-op-veel relatie)</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">orderitems</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="n">id</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+<span class="w">  </span><span class="n">bestelling_id</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">  </span><span class="n">artikel_id</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">  </span><span class="n">hoeveelheid</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">  </span><span class="n">prijs_per_stuk</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span>
+<span class="w">  </span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">bestelling_id</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">bestellingen</span><span class="p">(</span><span class="n">id</span><span class="p">),</span>
+<span class="w">  </span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">artikel_id</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">artikelen</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Dit voorbeeld laat zien:</strong></p>
+<ul class="simple">
+<li><p><strong>users</strong>: basisgegevens van klanten</p></li>
+<li><p><strong>artikelen</strong>: producten in je winkel</p></li>
+<li><p><strong>bestellingen</strong>: één bestelling per klant</p></li>
+<li><p><strong>orderitems</strong>: relatie tussen bestelling en artikel (1 bestelling = veel artikelen)</p></li>
+</ul>
+</section>
 </section>
 <hr class="docutils" />
 <section id="bouwstrategie">
@@ -584,6 +639,54 @@
 <li><p>neem notities van problemen die je tegenkomt.</p></li>
 </ul>
 <p>Een project werkt het best als je het stap voor stap ontwikkelt.</p>
+</section>
+<section id="testplan-maak-dit-meteen">
+<h3>Testplan: Maak dit METEEN!<a class="headerlink" href="#testplan-maak-dit-meteen" title="Link to this heading">#</a></h3>
+<p>Maak nu al een testlijst met verwachtingen. Je vult die stap voor stap in:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Functie</p></th>
+<th class="head"><p>Actie</p></th>
+<th class="head"><p>Verwachte uitkomst</p></th>
+<th class="head"><p>Werkelijke uitkomst</p></th>
+<th class="head"><p>Status</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>READ</p></td>
+<td><p>Data ophalen</p></td>
+<td><p>Alle producten zichtbaar</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>CREATE</p></td>
+<td><p>Nieuw product toevoegen</p></td>
+<td><p>Nieuw product in tabel</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>UPDATE</p></td>
+<td><p>Product aanpassen</p></td>
+<td><p>Aanpassing zichtbaar</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>DELETE</p></td>
+<td><p>Product verwijderen</p></td>
+<td><p>Product weg uit tabel</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Validatie</p></td>
+<td><p>Leeg veld versturen</p></td>
+<td><p>Foutmelding</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Door dit vooruit in te vullen, weet je precies wat goed moet werken!</p>
 </section>
 </section>
 <hr class="docutils" />
@@ -731,11 +834,13 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datamodel">2. Datamodel</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waar-moet-je-bij-het-datamodel-aan-denken">Waar moet je bij het datamodel aan denken?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-van-logisch-nadenken">Voorbeeld van logisch nadenken</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#template-basis-webshop-schema">Template: Basis webshop schema</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bouwstrategie">3. Bouwstrategie</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-deze-volgorde">Waarom deze volgorde?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goede-ontwikkelhabits">Goede ontwikkelhabits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testplan-maak-dit-meteen">Testplan: Maak dit METEEN!</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">

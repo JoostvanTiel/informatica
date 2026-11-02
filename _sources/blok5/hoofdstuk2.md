@@ -15,6 +15,8 @@ Aan het einde van dit hoofdstuk kun je zelfstandig eenvoudige query's schrijven 
 
 ---
 
+We werken met phpmyadmin, [dat vind je hier](http://informatica.ssgn.nl/phpmyadmin/)
+Je kunt inloggen met je gebruikersnaam (voornaam+eerstelettervanjeachternaam) en je wachtwoord
 Werk in phpMyAdmin altijd in jouw database:
 
 `nimmastream_<gebruikersnaam>`
@@ -80,7 +82,19 @@ Een voorwaarde is een vergelijking. Bij SQL gebruik je vaak:
 - `<=` kleiner of gelijk aan
 - `<>` of `!=` ongelijk aan
 
-Bijvoorbeeld:
+### BELANGRIJK: Aanhalingstekens bij tekst en data
+
+Dit is een veel gemaakte fout. Let goed op:
+
+```sql
+WHERE leeftijd > 18;           -- Getal, GEEN aanhalingstekens
+WHERE regio = 'NH';             -- Tekst, ALTIJD tussen aanhalingstekens!
+WHERE datum = '2024-01-01';     -- Datum, ook in aanhalingstekens
+```
+
+**Regel**: Getal = geen aanhalingstekens | Tekst/Datum = aanhalingstekens
+
+Voorbeeld met meerdere voorwaarden:
 
 ```sql
 SELECT voornaam, leeftijd, regio
@@ -88,24 +102,53 @@ FROM gebruikers
 WHERE regio = 'NH' AND leeftijd < 20;
 ```
 
-Deze regel betekent: toon gebruikers uit regio `NH` die jonger zijn dan 20. Je combineert meerdere voorwaarden met `AND`.
+Deze query betekent: toon gebruikers uit regio `NH` (tekst, dus aanhalingstekens!) die jonger zijn dan 20 (getal, dus geen aanhalingstekens). Je combineert meerdere voorwaarden met `AND`.
 
-### Werken met meerdere voorwaarden
+### Werken met meerdere voorwaarden: AND vs OR
 
-Je kunt meerdere filters combineren:
+Je kunt meerdere filters combineren, maar het verschil is CRUCIAAL:
 
-- `AND` = alle voorwaarden moeten waar zijn
-- `OR` = ten minste één voorwaarde moet waar zijn
-
-Voorbeeld:
+**AND = alle voorwaarden moeten waar zijn**
 
 ```sql
-SELECT voornaam
+SELECT voornaam, leeftijd, regio
+FROM gebruikers
+WHERE regio = 'NH' AND leeftijd > 18;
+```
+
+Dit geeft ALLEEN gebruikers die BEIDE voorwaarden hebben: 
+- regio NH ÉN ouder dan 18
+
+**OR = ten minste één voorwaarde moet waar zijn**
+
+```sql
+SELECT voornaam, regio
 FROM gebruikers
 WHERE regio = 'NH' OR regio = 'ZH';
 ```
 
-Dit geeft gebruikers uit de regio's NH of ZH.
+Dit geeft gebruikers uit regio NH OF regio ZH (dus beide).
+
+### Praktisch verschil
+
+Stel je voor: je zoekt kinderprofielen in een bepaalde regio.
+
+```sql
+-- CORRECT: Profiel voor kinderen EN in Noord Holland
+SELECT profielnaam, leeftijd_profiel, regio
+FROM profielen p
+JOIN gebruikers u ON p.gebruiker_id = u.id
+WHERE p.leeftijd_profiel < 13 AND u.regio = 'NH';
+```
+
+```sql
+-- VERKEERD: Profiel voor kinderen OF Noord Holland
+-- Dit geeft ook volwassenen uit andere regio's!
+SELECT profielnaam, leeftijd_profiel, regio
+FROM profielen p
+JOIN gebruikers u ON p.gebruiker_id = u.id
+WHERE p.leeftijd_profiel < 13 OR u.regio = 'NH';
+```
 
 ### Zoeken op patroon: `LIKE`
 
@@ -136,6 +179,16 @@ WHERE voornaam LIKE '%in%';
 ```
 
 Dit geeft namen waarin `in` voorkomt.
+
+### Wanneer gebruik je LIKE?
+
+LIKE is handig voor **flexibel zoeken** in tekst:
+
+- **Autocomplete**: Gebruiker typt "An" → toon "Anna", "Andrea", "Annelies"
+- **Filtereren**: Gebruiker zoekt alle series met "Marvel" in titel
+- **Flexibel**: Je weet niet exact hoe iets gespeld is, maar je weet wel een deel
+
+**Opgelet**: LIKE is voor grote databases langzamer dan `=`. Dus gebruik het enkel als je echt pattern-matching nodig hebt!
 
 ### Belangrijk verschil
 
@@ -334,6 +387,7 @@ Het verschil is klein, maar belangrijk.
 Als je een query uitvoert, kijk dan altijd of het antwoord logisch is. Bijvoorbeeld: als je verwacht 10 resultaten en je krijgt er 100, dan is er iets mis met de filter of de volgorde.
 
 ---
+
 ---
 
 ## Opdrachten
@@ -348,14 +402,24 @@ Schrijf query's voor:
 2. alleen voornaam en regio;
 3. gebruiker met `id = 1`.
 
-### Opdracht 2 - Filteren
+### Opdracht 2 - Filteren (enkele en meervoudige voorwaarden)
 
-Schrijf query's voor:
+**A. Enkele filter (WHERE met 1 voorwaarde):**
 
-1. gebruikers ouder dan 18;
-2. gebruikers uit regio `ZH`;
-3. series met kijkwijzer `16`;
-4. voornamen die beginnen met `E`.
+1. Alle gebruikers ouder dan 18
+2. Alle gebruikers uit regio `ZH`
+3. Alle series met kijkwijzer `16`
+4. Voornamen die beginnen met `E`
+
+**B. Meerdere filters met AND (beide voorwaarden waar):**
+
+5. Gebruikers ouder dan 18 EN uit regio `ZH`
+6. Series met kijkwijzer `12` EN uit genre actie
+
+**C. Meerdere filters met OR (minstens 1 voorwaarde waar):**
+
+7. Gebruikers uit regio `ZH` OF `NH`
+8. Series met kijkwijzer `12` OF `16`
 
 ### Opdracht 3 - Sorteren
 

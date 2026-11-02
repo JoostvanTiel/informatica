@@ -473,6 +473,8 @@
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formulier-gebruiken-als-filter">3. Formulier gebruiken als filter</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-van-de-logica">Voorbeeld van de logica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarschuwing-invoer-is-onveilig-zonder-voorzorgen">WAARSCHUWING: Invoer is onveilig zonder voorzorgen!</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oplossing-prepared-statements">Oplossing: Prepared statements</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kwaliteitscheck-voor-je-pagina">4. Kwaliteitscheck voor je pagina</a><ul class="nav section-nav flex-column">
@@ -587,6 +589,24 @@
 <li><p>De database geeft alleen de passende rijen terug.</p></li>
 </ul>
 <p>Dat maakt een webpagina dynamisch: je kunt niet alleen static data tonen, maar ook op basis van een keuze van de gebruiker nieuwe resultaten ophalen.</p>
+</section>
+<section id="waarschuwing-invoer-is-onveilig-zonder-voorzorgen">
+<h3>WAARSCHUWING: Invoer is onveilig zonder voorzorgen!<a class="headerlink" href="#waarschuwing-invoer-is-onveilig-zonder-voorzorgen" title="Link to this heading">#</a></h3>
+<p>Dit voorbeeld is <strong>ONVEILIG</strong>:</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$regio = $_GET['regio'];</span>
+<span class="x">$result = $conn-&gt;query("SELECT * FROM gebruikers WHERE regio = '$regio'");</span>
+</pre></div>
+</div>
+<p>Als een gebruiker intypt: <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">OR</span> <span class="pre">'1'='1</span></code>, dan wordt je query:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">regio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">''</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="s1">'1'</span><span class="o">=</span><span class="s1">'1'</span>
+</pre></div>
+</div>
+<p>Dit toont <strong>ALLE gebruikers</strong>, zelfs degenen uit andere regio’s! Dit heet <strong>SQL-injectie</strong>.</p>
+</section>
+<section id="oplossing-prepared-statements">
+<h3>Oplossing: Prepared statements<a class="headerlink" href="#oplossing-prepared-statements" title="Link to this heading">#</a></h3>
+<p>In het volgende hoofdstuk leer je “prepared statements” om dit veilig te maken. Die scheiden de SQL-code van gebruikersinvoer, zodat invoer niet als code wordt uitgevoerd.</p>
+<p><strong>Voor nu</strong>: Maak geen complexe formulieren met invoer in WHERE! Dit hoofdstuk is puur om SELECT te leren.</p>
 </section>
 </section>
 <hr class="docutils" />
@@ -762,6 +782,8 @@
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formulier-gebruiken-als-filter">3. Formulier gebruiken als filter</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-van-de-logica">Voorbeeld van de logica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarschuwing-invoer-is-onveilig-zonder-voorzorgen">WAARSCHUWING: Invoer is onveilig zonder voorzorgen!</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oplossing-prepared-statements">Oplossing: Prepared statements</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kwaliteitscheck-voor-je-pagina">4. Kwaliteitscheck voor je pagina</a><ul class="nav section-nav flex-column">

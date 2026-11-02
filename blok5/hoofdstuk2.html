@@ -469,8 +469,11 @@
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-filteren-op-voorwaarden">2. WHERE: filteren op voorwaarden</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-een-voorwaarde">Wat is een voorwaarde?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#werken-met-meerdere-voorwaarden">Werken met meerdere voorwaarden</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#belangrijk-aanhalingstekens-bij-tekst-en-data">BELANGRIJK: Aanhalingstekens bij tekst en data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#werken-met-meerdere-voorwaarden-and-vs-or">Werken met meerdere voorwaarden: AND vs OR</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#praktisch-verschil">Praktisch verschil</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zoeken-op-patroon-like">Zoeken op patroon: <code class="docutils literal notranslate"><span class="pre">LIKE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wanneer-gebruik-je-like">Wanneer gebruik je LIKE?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#belangrijk-verschil">Belangrijk verschil</a></li>
 </ul>
 </li>
@@ -497,7 +500,7 @@
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-basis-instap">Opdracht 1 - Basis (instap)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-filteren">Opdracht 2 - Filteren</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-filteren-enkele-en-meervoudige-voorwaarden">Opdracht 2 - Filteren (enkele en meervoudige voorwaarden)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-sorteren">Opdracht 3 - Sorteren</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-combineren">Opdracht 4 - Combineren</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-challenge">Opdracht 5 - Challenge</a></li>
@@ -531,7 +534,9 @@
 </ul>
 <p>Aan het einde van dit hoofdstuk kun je zelfstandig eenvoudige query’s schrijven en controleren of je antwoord logisch is.</p>
 <hr class="docutils" />
-<p>Werk in phpMyAdmin altijd in jouw database:</p>
+<p>We werken met phpmyadmin, <a class="reference external" href="http://informatica.ssgn.nl/phpmyadmin/">dat vind je hier</a>
+Je kunt inloggen met je gebruikersnaam (voornaam+eerstelettervanjeachternaam) en je wachtwoord
+Werk in phpMyAdmin altijd in jouw database:</p>
 <p><code class="docutils literal notranslate"><span class="pre">nimmastream_&lt;gebruikersnaam&gt;</span></code></p>
 </section>
 <hr class="docutils" />
@@ -585,28 +590,63 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> kleiner of gelijk aan</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span></code> of <code class="docutils literal notranslate"><span class="pre">!=</span></code> ongelijk aan</p></li>
 </ul>
-<p>Bijvoorbeeld:</p>
+</section>
+<section id="belangrijk-aanhalingstekens-bij-tekst-en-data">
+<h3>BELANGRIJK: Aanhalingstekens bij tekst en data<a class="headerlink" href="#belangrijk-aanhalingstekens-bij-tekst-en-data" title="Link to this heading">#</a></h3>
+<p>Dit is een veel gemaakte fout. Let goed op:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">WHERE</span><span class="w"> </span><span class="n">leeftijd</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">18</span><span class="p">;</span><span class="w">           </span><span class="c1">-- Getal, GEEN aanhalingstekens</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">regio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'NH'</span><span class="p">;</span><span class="w">             </span><span class="c1">-- Tekst, ALTIJD tussen aanhalingstekens!</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">datum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'2024-01-01'</span><span class="p">;</span><span class="w">     </span><span class="c1">-- Datum, ook in aanhalingstekens</span>
+</pre></div>
+</div>
+<p><strong>Regel</strong>: Getal = geen aanhalingstekens | Tekst/Datum = aanhalingstekens</p>
+<p>Voorbeeld met meerdere voorwaarden:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">voornaam</span><span class="p">,</span><span class="w"> </span><span class="n">leeftijd</span><span class="p">,</span><span class="w"> </span><span class="n">regio</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">regio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'NH'</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">leeftijd</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Deze regel betekent: toon gebruikers uit regio <code class="docutils literal notranslate"><span class="pre">NH</span></code> die jonger zijn dan 20. Je combineert meerdere voorwaarden met <code class="docutils literal notranslate"><span class="pre">AND</span></code>.</p>
+<p>Deze query betekent: toon gebruikers uit regio <code class="docutils literal notranslate"><span class="pre">NH</span></code> (tekst, dus aanhalingstekens!) die jonger zijn dan 20 (getal, dus geen aanhalingstekens). Je combineert meerdere voorwaarden met <code class="docutils literal notranslate"><span class="pre">AND</span></code>.</p>
 </section>
-<section id="werken-met-meerdere-voorwaarden">
-<h3>Werken met meerdere voorwaarden<a class="headerlink" href="#werken-met-meerdere-voorwaarden" title="Link to this heading">#</a></h3>
-<p>Je kunt meerdere filters combineren:</p>
+<section id="werken-met-meerdere-voorwaarden-and-vs-or">
+<h3>Werken met meerdere voorwaarden: AND vs OR<a class="headerlink" href="#werken-met-meerdere-voorwaarden-and-vs-or" title="Link to this heading">#</a></h3>
+<p>Je kunt meerdere filters combineren, maar het verschil is CRUCIAAL:</p>
+<p><strong>AND = alle voorwaarden moeten waar zijn</strong></p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">voornaam</span><span class="p">,</span><span class="w"> </span><span class="n">leeftijd</span><span class="p">,</span><span class="w"> </span><span class="n">regio</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">regio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'NH'</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">leeftijd</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">18</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Dit geeft ALLEEN gebruikers die BEIDE voorwaarden hebben:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">AND</span></code> = alle voorwaarden moeten waar zijn</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">OR</span></code> = ten minste één voorwaarde moet waar zijn</p></li>
+<li><p>regio NH ÉN ouder dan 18</p></li>
 </ul>
-<p>Voorbeeld:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">voornaam</span>
+<p><strong>OR = ten minste één voorwaarde moet waar zijn</strong></p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">voornaam</span><span class="p">,</span><span class="w"> </span><span class="n">regio</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">regio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'NH'</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">regio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'ZH'</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Dit geeft gebruikers uit de regio’s NH of ZH.</p>
+<p>Dit geeft gebruikers uit regio NH OF regio ZH (dus beide).</p>
+</section>
+<section id="praktisch-verschil">
+<h3>Praktisch verschil<a class="headerlink" href="#praktisch-verschil" title="Link to this heading">#</a></h3>
+<p>Stel je voor: je zoekt kinderprofielen in een bepaalde regio.</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="c1">-- CORRECT: Profiel voor kinderen EN in Noord Holland</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">profielnaam</span><span class="p">,</span><span class="w"> </span><span class="n">leeftijd_profiel</span><span class="p">,</span><span class="w"> </span><span class="n">regio</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">profielen</span><span class="w"> </span><span class="n">p</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">gebruikers</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">gebruiker_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">leeftijd_profiel</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">13</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">regio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'NH'</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="c1">-- VERKEERD: Profiel voor kinderen OF Noord Holland</span>
+<span class="c1">-- Dit geeft ook volwassenen uit andere regio's!</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">profielnaam</span><span class="p">,</span><span class="w"> </span><span class="n">leeftijd_profiel</span><span class="p">,</span><span class="w"> </span><span class="n">regio</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">profielen</span><span class="w"> </span><span class="n">p</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">gebruikers</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">gebruiker_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">leeftijd_profiel</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">13</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">regio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'NH'</span><span class="p">;</span>
+</pre></div>
+</div>
 </section>
 <section id="zoeken-op-patroon-like">
 <h3>Zoeken op patroon: <code class="docutils literal notranslate"><span class="pre">LIKE</span></code><a class="headerlink" href="#zoeken-op-patroon-like" title="Link to this heading">#</a></h3>
@@ -630,6 +670,16 @@
 </pre></div>
 </div>
 <p>Dit geeft namen waarin <code class="docutils literal notranslate"><span class="pre">in</span></code> voorkomt.</p>
+</section>
+<section id="wanneer-gebruik-je-like">
+<h3>Wanneer gebruik je LIKE?<a class="headerlink" href="#wanneer-gebruik-je-like" title="Link to this heading">#</a></h3>
+<p>LIKE is handig voor <strong>flexibel zoeken</strong> in tekst:</p>
+<ul class="simple">
+<li><p><strong>Autocomplete</strong>: Gebruiker typt “An” → toon “Anna”, “Andrea”, “Annelies”</p></li>
+<li><p><strong>Filtereren</strong>: Gebruiker zoekt alle series met “Marvel” in titel</p></li>
+<li><p><strong>Flexibel</strong>: Je weet niet exact hoe iets gespeld is, maar je weet wel een deel</p></li>
+</ul>
+<p><strong>Opgelet</strong>: LIKE is voor grote databases langzamer dan <code class="docutils literal notranslate"><span class="pre">=</span></code>. Dus gebruik het enkel als je echt pattern-matching nodig hebt!</p>
 </section>
 <section id="belangrijk-verschil">
 <h3>Belangrijk verschil<a class="headerlink" href="#belangrijk-verschil" title="Link to this heading">#</a></h3>
@@ -824,14 +874,24 @@
 <li><p>gebruiker met <code class="docutils literal notranslate"><span class="pre">id</span> <span class="pre">=</span> <span class="pre">1</span></code>.</p></li>
 </ol>
 </section>
-<section id="opdracht-2-filteren">
-<h3>Opdracht 2 - Filteren<a class="headerlink" href="#opdracht-2-filteren" title="Link to this heading">#</a></h3>
-<p>Schrijf query’s voor:</p>
+<section id="opdracht-2-filteren-enkele-en-meervoudige-voorwaarden">
+<h3>Opdracht 2 - Filteren (enkele en meervoudige voorwaarden)<a class="headerlink" href="#opdracht-2-filteren-enkele-en-meervoudige-voorwaarden" title="Link to this heading">#</a></h3>
+<p><strong>A. Enkele filter (WHERE met 1 voorwaarde):</strong></p>
 <ol class="arabic simple">
-<li><p>gebruikers ouder dan 18;</p></li>
-<li><p>gebruikers uit regio <code class="docutils literal notranslate"><span class="pre">ZH</span></code>;</p></li>
-<li><p>series met kijkwijzer <code class="docutils literal notranslate"><span class="pre">16</span></code>;</p></li>
-<li><p>voornamen die beginnen met <code class="docutils literal notranslate"><span class="pre">E</span></code>.</p></li>
+<li><p>Alle gebruikers ouder dan 18</p></li>
+<li><p>Alle gebruikers uit regio <code class="docutils literal notranslate"><span class="pre">ZH</span></code></p></li>
+<li><p>Alle series met kijkwijzer <code class="docutils literal notranslate"><span class="pre">16</span></code></p></li>
+<li><p>Voornamen die beginnen met <code class="docutils literal notranslate"><span class="pre">E</span></code></p></li>
+</ol>
+<p><strong>B. Meerdere filters met AND (beide voorwaarden waar):</strong></p>
+<ol class="arabic simple" start="5">
+<li><p>Gebruikers ouder dan 18 EN uit regio <code class="docutils literal notranslate"><span class="pre">ZH</span></code></p></li>
+<li><p>Series met kijkwijzer <code class="docutils literal notranslate"><span class="pre">12</span></code> EN uit genre actie</p></li>
+</ol>
+<p><strong>C. Meerdere filters met OR (minstens 1 voorwaarde waar):</strong></p>
+<ol class="arabic simple" start="7">
+<li><p>Gebruikers uit regio <code class="docutils literal notranslate"><span class="pre">ZH</span></code> OF <code class="docutils literal notranslate"><span class="pre">NH</span></code></p></li>
+<li><p>Series met kijkwijzer <code class="docutils literal notranslate"><span class="pre">12</span></code> OF <code class="docutils literal notranslate"><span class="pre">16</span></code></p></li>
 </ol>
 </section>
 <section id="opdracht-3-sorteren">
@@ -964,8 +1024,11 @@
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-filteren-op-voorwaarden">2. WHERE: filteren op voorwaarden</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-een-voorwaarde">Wat is een voorwaarde?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#werken-met-meerdere-voorwaarden">Werken met meerdere voorwaarden</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#belangrijk-aanhalingstekens-bij-tekst-en-data">BELANGRIJK: Aanhalingstekens bij tekst en data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#werken-met-meerdere-voorwaarden-and-vs-or">Werken met meerdere voorwaarden: AND vs OR</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#praktisch-verschil">Praktisch verschil</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zoeken-op-patroon-like">Zoeken op patroon: <code class="docutils literal notranslate"><span class="pre">LIKE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wanneer-gebruik-je-like">Wanneer gebruik je LIKE?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#belangrijk-verschil">Belangrijk verschil</a></li>
 </ul>
 </li>
@@ -992,7 +1055,7 @@
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-basis-instap">Opdracht 1 - Basis (instap)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-filteren">Opdracht 2 - Filteren</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-filteren-enkele-en-meervoudige-voorwaarden">Opdracht 2 - Filteren (enkele en meervoudige voorwaarden)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-sorteren">Opdracht 3 - Sorteren</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-combineren">Opdracht 4 - Combineren</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-challenge">Opdracht 5 - Challenge</a></li>

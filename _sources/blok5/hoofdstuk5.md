@@ -90,6 +90,29 @@ Je krijgt een vragenlijst van een gebruiker:
 
 Dat maakt een webpagina dynamisch: je kunt niet alleen static data tonen, maar ook op basis van een keuze van de gebruiker nieuwe resultaten ophalen.
 
+### WAARSCHUWING: Invoer is onveilig zonder voorzorgen!
+
+Dit voorbeeld is **ONVEILIG**:
+
+```php
+$regio = $_GET['regio'];
+$result = $conn->query("SELECT * FROM gebruikers WHERE regio = '$regio'");
+```
+
+Als een gebruiker intypt: `' OR '1'='1`, dan wordt je query:
+
+```sql
+SELECT * FROM gebruikers WHERE regio = '' OR '1'='1'
+```
+
+Dit toont **ALLE gebruikers**, zelfs degenen uit andere regio's! Dit heet **SQL-injectie**.
+
+### Oplossing: Prepared statements
+
+In het volgende hoofdstuk leer je "prepared statements" om dit veilig te maken. Die scheiden de SQL-code van gebruikersinvoer, zodat invoer niet als code wordt uitgevoerd.
+
+**Voor nu**: Maak geen complexe formulieren met invoer in WHERE! Dit hoofdstuk is puur om SELECT te leren.
+
 ---
 
 ## 4. Kwaliteitscheck voor je pagina
