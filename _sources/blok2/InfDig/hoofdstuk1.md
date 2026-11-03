@@ -188,6 +188,7 @@ Zo kunnen eenvoudige plaatjes worden gemaakt met pixels.
    <li>Geef voor 5 pixels aan welke kleur die pixel heeft. Gebruik hierbij de letters `W` (wit) en `Z` (zwart).</li>
    <li>Leg uit waarom een computer een foto niet als één grote kleur opslaat, maar als veel kleine vakjes.</li>
    </ol>
+
 2. Kleurcodes
 
    <ol type='a'>
@@ -196,6 +197,7 @@ Zo kunnen eenvoudige plaatjes worden gemaakt met pixels.
    <li>Welke kleur heeft de RGB-code `(160, 160, 20)`? Controleer je antwoord met [de tool in de paragraaf](#kleur-opslaan)</li>
    <li>Noem een manier om een afbeelding scherper te maken zonder de afbeelding te vergroten.</li>
    </ol>
+
 3. Toepassingsvraag
 
    Een game laat een karakter op het scherm bewegen. Het beeld lijkt schokkend en wazig.
@@ -205,10 +207,11 @@ Zo kunnen eenvoudige plaatjes worden gemaakt met pixels.
    <li>Waarom heeft een game met veel pixels vaak meer geheugen nodig?</li>
    <li>Welk effect heeft het als je een afbeelding verkleint? Noem één voordeel en één nadeel.</li>
    </ol>
+
 4. Ontwerp je game-karakter
 
    <ol type='a'>
-   <li>Ga naar [deze website](https://www.pixilart.com/draw) en maak een nieuwe afbeelding met een grootte van 16 bij 16 pixels.</li>
+   <li>Ga naar <a href='https://www.pixilart.com/draw'>deze website</a> en maak een nieuwe afbeelding met een grootte van 16 bij 16 pixels.</li>
    <li>Teken een karakter dat je in je game wil gaan gebruiken. Zorg dat het karakter naar rechts kijkt en dat elke pixel een kleur heeft.</li>
    <li>Sla de tekening op en download de afbeelding als '.png'.</li>
    <li>Maak nog een tekening waarbij het karakter naar links kijkt. Sla ook deze afbeelding op en download hem als '.png'.</li>

@@ -63,7 +63,7 @@ speler.verlies_leven()         # Output: Moustafa heeft nu 2 levens
 
 ## De Game-Loop: Hoe Games Werken
 
-Elke game loopt in een **loop**. Dit gebeurt ~60 keer per seconde:
+Elke game loopt in een **loop**. Dit gebeurt meestal zo'n 60 keer per seconde:
 
 ```
 INPUT → UPDATE → RENDER → WAIT
@@ -75,9 +75,13 @@ INPUT → UPDATE → RENDER → WAIT
 **WAIT:** Wacht tot volgende frame (60 FPS = 16ms per frame).
 
 ```python
-while spel_loopt:
+done = False
+
+while not done:
     # INPUT
     for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            done = True # Spel sluit netjes af
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
                 speler.x -= 5  # Speler naar links
@@ -100,9 +104,11 @@ Dit is het **hart van elke game**!
 
 ## Pygame Installeren en Starten
 
+Als je Thonny van teams hebt gehaald en het zo opent hoef je stap 1 niet te doorlopen. Als het goed is werkt pygame dan al automatisch.
+
 ### Stap 1: Installeer Pygame
 
-In Thonny ga je bovenin je scherm naar 'Hulpmiddelen' en dan naar 'Plug-ins beheren...'. Zoek naar 'pygame' en klik op 'pygame' in de zoekresultaten. Klik onderin op 'Installeren' en wacht tot de installatie voltooid is.
+In Thonny ga je bovenin je scherm naar 'Hulpmiddelen' en dan naar 'Plug-ins beheren...'. Zoek naar 'pygame-ce' en klik op 'pygame-ce' in de zoekresultaten. Klik onderin op 'Installeren' en wacht tot de installatie voltooid is.
 
 ### Stap 2: Basis pygame-setup
 
@@ -123,11 +129,11 @@ pygame.display.set_caption("Stick Hero's Quest")
 clock = pygame.time.Clock()
 
 # Game-loop
-running = True
-while running:
+done = False
+while not done:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            running = False
+            done = True
 
     # Vul scherm met grijs
     screen.fill((150, 150, 150))
@@ -147,19 +153,17 @@ Run dit. Je ziet een grijs venster. Druk ESCAPE om af te sluiten.
 
 ## Sprites: Pixel-Art Laden
 
-Nu gaat het interessant! We laden een **sprite** (afbeelding) in plaats van vierkantjes te tekenen.
+Nu gaat het interessant worden! We laden een **sprite** (afbeelding) in plaats van vierkantjes te tekenen.
 
 ### Stap 1: Een Sprite Maken
 
 Maak zelf een eenvoudig pixelart poppetje in een grafische tool (bijv. Aseprite, Piskel of Paint):
 
-- **Grootte:** 32x48 pixels (standaard platformer-speler)
+- **Grootte:** 16x16 pixels
 - **Format:** PNG (met transparantie)
-- **Naam:** `speler.png`
+- **Naam:** `speler.png` of `speler_links.png` en `speler_rechts.png`
 
 Sla het op in dezelfde map als je `.py`-bestand.
-
-**Voorbeeld:** Een rood poppetje van 32x48 pixels met witte ogen.
 
 ### Stap 2: Sprite in Klasse Laden
 
@@ -214,18 +218,18 @@ pygame.init()
 BREEDTE = 800
 HOOGTE = 600
 screen = pygame.display.set_mode((BREEDTE, HOOGTE))
-pygame.display.set_caption("Stick Hero's Quest")
+pygame.display.set_caption("Mijn eerste spel =)")
 clock = pygame.time.Clock()
 
 # Maak speler (laadt sprite automatisch)
 speler = Speler(100, 500, "speler.png")
 
-running = True
-while running:
+done = False
+while not done:
     # INPUT
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            running = False
+            done = True
 
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
@@ -236,8 +240,8 @@ while running:
     # Grenzen checken (speler kan niet uit scherm lopen)
     if speler.x < 0:
         speler.x = 0
-    if speler.x + 32 > BREEDTE:
-        speler.x = BREEDTE - 32
+    if speler.x + 16 > BREEDTE:
+        speler.x = BREEDTE - 16
 
     # RENDER
     screen.fill((150, 150, 150))
@@ -304,7 +308,7 @@ class Munt:
 
     def draw(self, screen):
         """Teken munt als cirkel."""
-        pygame.draw.circle(screen, (255, 255, 0), [int(self.x), int(self.y)], self.radius)
+        pygame.draw.circle(screen, (255, 255, 0), [self.x, self.y], self.radius)
 ```
 
 Gebruik:

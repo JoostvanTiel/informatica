@@ -574,7 +574,7 @@
 <hr class="docutils" />
 <section id="de-game-loop-hoe-games-werken">
 <h2>De Game-Loop: Hoe Games Werken<a class="headerlink" href="#de-game-loop-hoe-games-werken" title="Link to this heading">#</a></h2>
-<p>Elke game loopt in een <strong>loop</strong>. Dit gebeurt ~60 keer per seconde:</p>
+<p>Elke game loopt in een <strong>loop</strong>. Dit gebeurt meestal zo’n 60 keer per seconde:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>INPUT → UPDATE → RENDER → WAIT
 </pre></div>
 </div>
@@ -582,9 +582,13 @@
 <strong>UPDATE:</strong> Verander positie, collision, score, etc.<br />
 <strong>RENDER:</strong> Teken alles op het scherm.<br />
 <strong>WAIT:</strong> Wacht tot volgende frame (60 FPS = 16ms per frame).</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">spel_loopt</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">done</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">while</span> <span class="ow">not</span> <span class="n">done</span><span class="p">:</span>
     <span class="c1"># INPUT</span>
     <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+            <span class="n">done</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># Spel sluit netjes af</span>
         <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">KEYDOWN</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span><span class="p">:</span>
                 <span class="n">speler</span><span class="o">.</span><span class="n">x</span> <span class="o">-=</span> <span class="mi">5</span>  <span class="c1"># Speler naar links</span>
@@ -606,9 +610,10 @@
 <hr class="docutils" />
 <section id="pygame-installeren-en-starten">
 <h2>Pygame Installeren en Starten<a class="headerlink" href="#pygame-installeren-en-starten" title="Link to this heading">#</a></h2>
+<p>Als je Thonny van teams hebt gehaald en het zo opent hoef je stap 1 niet te doorlopen. Als het goed is werkt pygame dan al automatisch.</p>
 <section id="stap-1-installeer-pygame">
 <h3>Stap 1: Installeer Pygame<a class="headerlink" href="#stap-1-installeer-pygame" title="Link to this heading">#</a></h3>
-<p>In Thonny ga je bovenin je scherm naar ‘Hulpmiddelen’ en dan naar ‘Plug-ins beheren…’. Zoek naar ‘pygame’ en klik op ‘pygame’ in de zoekresultaten. Klik onderin op ‘Installeren’ en wacht tot de installatie voltooid is.</p>
+<p>In Thonny ga je bovenin je scherm naar ‘Hulpmiddelen’ en dan naar ‘Plug-ins beheren…’. Zoek naar ‘pygame-ce’ en klik op ‘pygame-ce’ in de zoekresultaten. Klik onderin op ‘Installeren’ en wacht tot de installatie voltooid is.</p>
 </section>
 <section id="stap-2-basis-pygame-setup">
 <h3>Stap 2: Basis pygame-setup<a class="headerlink" href="#stap-2-basis-pygame-setup" title="Link to this heading">#</a></h3>
@@ -628,11 +633,11 @@
 <span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
 
 <span class="c1"># Game-loop</span>
-<span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="k">while</span> <span class="n">running</span><span class="p">:</span>
+<span class="n">done</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="k">while</span> <span class="ow">not</span> <span class="n">done</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
         <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
-            <span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">done</span> <span class="o">=</span> <span class="kc">True</span>
 
     <span class="c1"># Vul scherm met grijs</span>
     <span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">))</span>
@@ -652,17 +657,16 @@
 <hr class="docutils" />
 <section id="sprites-pixel-art-laden">
 <h2>Sprites: Pixel-Art Laden<a class="headerlink" href="#sprites-pixel-art-laden" title="Link to this heading">#</a></h2>
-<p>Nu gaat het interessant! We laden een <strong>sprite</strong> (afbeelding) in plaats van vierkantjes te tekenen.</p>
+<p>Nu gaat het interessant worden! We laden een <strong>sprite</strong> (afbeelding) in plaats van vierkantjes te tekenen.</p>
 <section id="stap-1-een-sprite-maken">
 <h3>Stap 1: Een Sprite Maken<a class="headerlink" href="#stap-1-een-sprite-maken" title="Link to this heading">#</a></h3>
 <p>Maak zelf een eenvoudig pixelart poppetje in een grafische tool (bijv. Aseprite, Piskel of Paint):</p>
 <ul class="simple">
-<li><p><strong>Grootte:</strong> 32x48 pixels (standaard platformer-speler)</p></li>
+<li><p><strong>Grootte:</strong> 16x16 pixels</p></li>
 <li><p><strong>Format:</strong> PNG (met transparantie)</p></li>
-<li><p><strong>Naam:</strong> <code class="docutils literal notranslate"><span class="pre">speler.png</span></code></p></li>
+<li><p><strong>Naam:</strong> <code class="docutils literal notranslate"><span class="pre">speler.png</span></code> of <code class="docutils literal notranslate"><span class="pre">speler_links.png</span></code> en <code class="docutils literal notranslate"><span class="pre">speler_rechts.png</span></code></p></li>
 </ul>
 <p>Sla het op in dezelfde map als je <code class="docutils literal notranslate"><span class="pre">.py</span></code>-bestand.</p>
-<p><strong>Voorbeeld:</strong> Een rood poppetje van 32x48 pixels met witte ogen.</p>
 </section>
 <section id="stap-2-sprite-in-klasse-laden">
 <h3>Stap 2: Sprite in Klasse Laden<a class="headerlink" href="#stap-2-sprite-in-klasse-laden" title="Link to this heading">#</a></h3>
@@ -715,18 +719,18 @@
 <span class="n">BREEDTE</span> <span class="o">=</span> <span class="mi">800</span>
 <span class="n">HOOGTE</span> <span class="o">=</span> <span class="mi">600</span>
 <span class="n">screen</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="n">BREEDTE</span><span class="p">,</span> <span class="n">HOOGTE</span><span class="p">))</span>
-<span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s2">"Stick Hero's Quest"</span><span class="p">)</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s2">"Mijn eerste spel =)"</span><span class="p">)</span>
 <span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
 
 <span class="c1"># Maak speler (laadt sprite automatisch)</span>
 <span class="n">speler</span> <span class="o">=</span> <span class="n">Speler</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s2">"speler.png"</span><span class="p">)</span>
 
-<span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="k">while</span> <span class="n">running</span><span class="p">:</span>
+<span class="n">done</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="k">while</span> <span class="ow">not</span> <span class="n">done</span><span class="p">:</span>
     <span class="c1"># INPUT</span>
     <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
         <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
-            <span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">done</span> <span class="o">=</span> <span class="kc">True</span>
 
         <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">KEYDOWN</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span><span class="p">:</span>
@@ -737,8 +741,8 @@
     <span class="c1"># Grenzen checken (speler kan niet uit scherm lopen)</span>
     <span class="k">if</span> <span class="n">speler</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">speler</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">if</span> <span class="n">speler</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">32</span> <span class="o">&gt;</span> <span class="n">BREEDTE</span><span class="p">:</span>
-        <span class="n">speler</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">BREEDTE</span> <span class="o">-</span> <span class="mi">32</span>
+    <span class="k">if</span> <span class="n">speler</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">16</span> <span class="o">&gt;</span> <span class="n">BREEDTE</span><span class="p">:</span>
+        <span class="n">speler</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">BREEDTE</span> <span class="o">-</span> <span class="mi">16</span>
 
     <span class="c1"># RENDER</span>
     <span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">))</span>
@@ -799,7 +803,7 @@
 
     <span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">"""Teken munt als cirkel."""</span>
-        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)],</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">)</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Gebruik:</p>
