@@ -159,7 +159,7 @@ Nu gaat het interessant worden! We laden een **sprite** (afbeelding) in plaats v
 
 Maak zelf een eenvoudig pixelart poppetje in een grafische tool (bijv. Aseprite, Piskel of Paint):
 
-- **Grootte:** 16x16 pixels
+- **Grootte:** 32x32 pixels
 - **Format:** PNG (met transparantie)
 - **Naam:** `speler.png` of `speler_links.png` en `speler_rechts.png`
 
