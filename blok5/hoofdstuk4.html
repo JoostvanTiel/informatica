@@ -488,6 +488,7 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-6-open-casus-1-uitdaging">Opdracht 6 - Open casus 1 (uitdaging)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-7-open-casus-2-uitdaging">Opdracht 7 - Open casus 2 (uitdaging)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-8-open-casus-3-uitdaging">Opdracht 8 - Open casus 3 (uitdaging)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-9-open-casus-4-uitdaging">Opdracht 9 - Open casus 4 (uitdaging)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
@@ -585,57 +586,33 @@
 <section id="opdracht-1-basis-update">
 <h3>Opdracht 1 - Basis (<code class="docutils literal notranslate"><span class="pre">UPDATE</span></code>)<a class="headerlink" href="#opdracht-1-basis-update" title="Link to this heading">#</a></h3>
 <p>Vraag: “Pauzeer abonnement 2.”</p>
-<p>Stap 1 (controle):</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">gebruiker_id</span><span class="p">,</span><span class="w"> </span><span class="n">status</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">abonnementen</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>Stap 2 (wijzigen):</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span><span class="w"> </span><span class="n">abonnementen</span>
-<span class="k">SET</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'gepauzeerd'</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>Stap 3 (controle):</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">gebruiker_id</span><span class="p">,</span><span class="w"> </span><span class="n">status</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">abonnementen</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-</pre></div>
-</div>
+<p>Schrijf zelf:</p>
+<ol class="arabic simple">
+<li><p>een controle-<code class="docutils literal notranslate"><span class="pre">SELECT</span></code> op abonnement <code class="docutils literal notranslate"><span class="pre">id</span> <span class="pre">=</span> <span class="pre">2</span></code>;</p></li>
+<li><p>een <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> die alleen deze rij aanpast;</p></li>
+<li><p>een tweede controle-<code class="docutils literal notranslate"><span class="pre">SELECT</span></code>.</p></li>
+</ol>
 <p>Hoe weet je dat je alleen deze rij hebt aangepast?</p>
 </section>
 <section id="opdracht-2-basis-delete">
 <h3>Opdracht 2 - Basis (<code class="docutils literal notranslate"><span class="pre">DELETE</span></code>)<a class="headerlink" href="#opdracht-2-basis-delete" title="Link to this heading">#</a></h3>
 <p>Vraag: “Verwijder testabonnementen van de testdatum weer.”</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">abonnementen</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">gestart_op</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'2099-01-01'</span>
-<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
-</pre></div>
-</div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">abonnementen</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">gestart_op</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'2099-01-01'</span><span class="p">;</span>
-</pre></div>
-</div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">abonnementen</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">gestart_op</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'2099-01-01'</span><span class="p">;</span>
-</pre></div>
-</div>
+<p>Schrijf zelf:</p>
+<ol class="arabic simple">
+<li><p>een <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> om te controleren welke rijen worden geraakt;</p></li>
+<li><p>een <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> met precies dezelfde <code class="docutils literal notranslate"><span class="pre">WHERE</span></code>;</p></li>
+<li><p>een controle-<code class="docutils literal notranslate"><span class="pre">SELECT</span></code> na afloop.</p></li>
+</ol>
 </section>
 <section id="opdracht-3-verdieping-subquery">
 <h3>Opdracht 3 - Verdieping (subquery)<a class="headerlink" href="#opdracht-3-verdieping-subquery" title="Link to this heading">#</a></h3>
 <p>Vraag: “Welke gebruikers hebben géén abonnement?”</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">email</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span>
-<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="n">gebruiker_id</span>
-<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">abonnementen</span>
-<span class="p">)</span>
-<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
-</pre></div>
-</div>
+<p>Schrijf zelf een query met <code class="docutils literal notranslate"><span class="pre">NOT</span> <span class="pre">IN</span> <span class="pre">(subquery)</span></code> op:</p>
+<ul class="simple">
+<li><p>hoofdtabel: <code class="docutils literal notranslate"><span class="pre">gebruikers</span></code></p></li>
+<li><p>subquery: <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">gebruiker_id</span> <span class="pre">FROM</span> <span class="pre">abonnementen</span></code></p></li>
+<li><p>sortering op <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p></li>
+</ul>
 <p>Controlequery:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
@@ -661,43 +638,16 @@
 <section id="opdracht-5-onderzoek-zonder-foreign-keys-wees-records">
 <h3>Opdracht 5 - Onderzoek zonder foreign keys (wees-records)<a class="headerlink" href="#opdracht-5-onderzoek-zonder-foreign-keys-wees-records" title="Link to this heading">#</a></h3>
 <p>We maken bewust een wees-record.</p>
+<p>Gebruik deze vaste testwaarden: gebruiker-id <code class="docutils literal notranslate"><span class="pre">9001</span></code>, profiel-id <code class="docutils literal notranslate"><span class="pre">9001</span></code>.</p>
+<p>Schrijf zelf 5 query’s:</p>
 <ol class="arabic simple">
-<li><p>Voeg een testgebruiker toe:</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">INSERT</span></code> testgebruiker;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">INSERT</span></code> testprofiel dat naar gebruiker 9001 verwijst;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DELETE</span></code> van gebruiker 9001;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SELECT</span></code> die laat zien dat profiel 9001 nog bestaat;</p></li>
+<li><p>opruim-<code class="docutils literal notranslate"><span class="pre">DELETE</span></code> op profiel 9001.</p></li>
 </ol>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">gebruikers</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="n">wachtwoord</span><span class="p">,</span><span class="w"> </span><span class="n">land</span><span class="p">)</span>
-<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">9001</span><span class="p">,</span><span class="w"> </span><span class="s1">'test.wees@nimmastream.com'</span><span class="p">,</span><span class="w"> </span><span class="s1">'tijdelijk'</span><span class="p">,</span><span class="w"> </span><span class="s1">'NL'</span><span class="p">);</span>
-</pre></div>
-</div>
-<ol class="arabic simple" start="2">
-<li><p>Voeg een profiel toe dat bij deze gebruiker hoort:</p></li>
-</ol>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">profielen</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">gebruiker_id</span><span class="p">,</span><span class="w"> </span><span class="n">voornaam</span><span class="p">,</span><span class="w"> </span><span class="n">tussenvoegsel</span><span class="p">,</span><span class="w"> </span><span class="n">achternaam</span><span class="p">,</span><span class="w"> </span><span class="n">leeftijd_profiel</span><span class="p">,</span><span class="w"> </span><span class="n">regio</span><span class="p">)</span>
-<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">9001</span><span class="p">,</span><span class="w"> </span><span class="mi">9001</span><span class="p">,</span><span class="w"> </span><span class="s1">'Test'</span><span class="p">,</span><span class="w"> </span><span class="s1">''</span><span class="p">,</span><span class="w"> </span><span class="s1">'Wees'</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="s1">'NH'</span><span class="p">);</span>
-</pre></div>
-</div>
-<ol class="arabic simple" start="3">
-<li><p>Verwijder daarna de gebruiker:</p></li>
-</ol>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9001</span><span class="p">;</span>
-</pre></div>
-</div>
-<ol class="arabic simple" start="4">
-<li><p>Controleer of het profiel nog bestaat:</p></li>
-</ol>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">profielen</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9001</span><span class="p">;</span>
-</pre></div>
-</div>
-<ol class="arabic simple" start="5">
-<li><p>Leg uit waarom dit kan zonder foreign keys.</p></li>
-<li><p>Ruim op:</p></li>
-</ol>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">profielen</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9001</span><span class="p">;</span>
-</pre></div>
-</div>
+<p>Lever ook één uitlegzin: waarom kan dit zonder foreign keys?</p>
 </section>
 <section id="opdracht-6-open-casus-1-uitdaging">
 <h3>Opdracht 6 - Open casus 1 (uitdaging)<a class="headerlink" href="#opdracht-6-open-casus-1-uitdaging" title="Link to this heading">#</a></h3>
@@ -711,65 +661,67 @@
 <li><p>Schrijf de query’s.</p></li>
 <li><p>Controleer en leg uit.</p></li>
 </ol>
-<p>Startqueries:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">email</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'harry.styles@nimmastream.com'</span><span class="p">;</span>
-
-<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">abonnementen</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">gebruiker_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">140</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>Los op met een <code class="docutils literal notranslate"><span class="pre">INSERT</span></code> en controleer met een nieuwe <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>.</p>
+<p>Maak minimaal 3 query’s:</p>
+<ol class="arabic simple">
+<li><p>zoek de gebruiker op e-mailadres;</p></li>
+<li><p>controleer of er een abonnement is;</p></li>
+<li><p>voeg een passend abonnement toe met <code class="docutils literal notranslate"><span class="pre">INSERT</span></code> en controleer direct.</p></li>
+</ol>
+<p>Verplicht in je eindantwoord:</p>
+<ul class="simple">
+<li><p>welke <code class="docutils literal notranslate"><span class="pre">gebruiker_id</span></code> je hebt gevonden;</p></li>
+<li><p>welke <code class="docutils literal notranslate"><span class="pre">id</span></code> van het nieuwe abonnement is aangemaakt;</p></li>
+<li><p>waarom jouw oplossing veilig was.</p></li>
+</ul>
 </section>
 <section id="opdracht-7-open-casus-2-uitdaging">
 <h3>Opdracht 7 - Open casus 2 (uitdaging)<a class="headerlink" href="#opdracht-7-open-casus-2-uitdaging" title="Link to this heading">#</a></h3>
 <p><strong>Oudermelding:</strong><br />
 “Mijn kindprofiel heeft series gekeken die niet bij de leeftijd passen.”</p>
 <p>Werk weer in 5 stappen.</p>
-<p>Gebruik als kernquery:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span><span class="p">,</span>
-<span class="w">       </span><span class="n">p</span><span class="p">.</span><span class="n">voornaam</span><span class="p">,</span>
-<span class="w">       </span><span class="n">p</span><span class="p">.</span><span class="n">achternaam</span><span class="p">,</span>
-<span class="w">       </span><span class="n">p</span><span class="p">.</span><span class="n">leeftijd_profiel</span><span class="p">,</span>
-<span class="w">       </span><span class="n">s</span><span class="p">.</span><span class="n">titel</span><span class="p">,</span>
-<span class="w">       </span><span class="n">s</span><span class="p">.</span><span class="n">kijkwijzer</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">kijkgeschiedenis</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">k</span>
-<span class="k">JOIN</span><span class="w"> </span><span class="n">profielen</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">profiel_id</span>
-<span class="k">JOIN</span><span class="w"> </span><span class="n">afleveringen</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">aflevering_id</span>
-<span class="k">JOIN</span><span class="w"> </span><span class="n">series</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">serie_id</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">kijkwijzer</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">'6'</span><span class="p">,</span><span class="w"> </span><span class="s1">'9'</span><span class="p">,</span><span class="w"> </span><span class="s1">'12'</span><span class="p">,</span><span class="w"> </span><span class="s1">'16'</span><span class="p">,</span><span class="w"> </span><span class="s1">'18'</span><span class="p">)</span>
-<span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="k">CAST</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">kijkwijzer</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">UNSIGNED</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">leeftijd_profiel</span>
-<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">gekeken_op</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>Controlequery:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_profielen</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">kijkgeschiedenis</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">k</span>
-<span class="k">JOIN</span><span class="w"> </span><span class="n">profielen</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">profiel_id</span>
-<span class="k">JOIN</span><span class="w"> </span><span class="n">afleveringen</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">aflevering_id</span>
-<span class="k">JOIN</span><span class="w"> </span><span class="n">series</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">serie_id</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">kijkwijzer</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">'6'</span><span class="p">,</span><span class="w"> </span><span class="s1">'9'</span><span class="p">,</span><span class="w"> </span><span class="s1">'12'</span><span class="p">,</span><span class="w"> </span><span class="s1">'16'</span><span class="p">,</span><span class="w"> </span><span class="s1">'18'</span><span class="p">)</span>
-<span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="k">CAST</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">kijkwijzer</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">UNSIGNED</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">leeftijd_profiel</span><span class="p">;</span>
-</pre></div>
-</div>
+<p>Schrijf zelf:</p>
+<ol class="arabic simple">
+<li><p>Query A (detail): toon minimaal <code class="docutils literal notranslate"><span class="pre">profiel_id</span></code>, naam, leeftijd, serietitel, kijkwijzer, kijkdatum.</p></li>
+<li><p>Query B (controle): tel het aantal <strong>verschillende</strong> profielen met dit probleem.</p></li>
+</ol>
+<p>Randvoorwaarden:</p>
+<ul class="simple">
+<li><p>koppel <code class="docutils literal notranslate"><span class="pre">kijkgeschiedenis</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">profielen</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">afleveringen</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">series</span></code>;</p></li>
+<li><p>vergelijk alleen numerieke kijkwijzers (<code class="docutils literal notranslate"><span class="pre">6,</span> <span class="pre">9,</span> <span class="pre">12,</span> <span class="pre">16,</span> <span class="pre">18</span></code>) met profielleeftijd.</p></li>
+</ul>
 </section>
 <section id="opdracht-8-open-casus-3-uitdaging">
 <h3>Opdracht 8 - Open casus 3 (uitdaging)<a class="headerlink" href="#opdracht-8-open-casus-3-uitdaging" title="Link to this heading">#</a></h3>
 <p><strong>Interne melding:</strong><br />
 “Er is kijkgeschiedenis ná een beëindigd abonnement. Hoeveel profielen zijn dat?”</p>
 <p>Werk in 5 stappen.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_profielen</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">profielen</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">p</span>
-<span class="k">JOIN</span><span class="w"> </span><span class="n">abonnementen</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">ab</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">ab</span><span class="p">.</span><span class="n">gebruiker_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">gebruiker_id</span>
-<span class="k">JOIN</span><span class="w"> </span><span class="n">kijkgeschiedenis</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">profiel_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">ab</span><span class="p">.</span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'beëindigd'</span>
-<span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">ab</span><span class="p">.</span><span class="n">beëindigd_op</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span>
-<span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="nb">DATE</span><span class="p">(</span><span class="n">k</span><span class="p">.</span><span class="n">gekeken_op</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">ab</span><span class="p">.</span><span class="n">beëindigd_op</span><span class="p">;</span>
-</pre></div>
-</div>
+<p>Schrijf zelf:</p>
+<ol class="arabic simple">
+<li><p>Query A (detail): toon profiel-id, gebruiker-id, einddatum abonnement, kijkdatum.</p></li>
+<li><p>Query B (controle): tel het aantal <strong>verschillende</strong> profielen.</p></li>
+</ol>
+<p>Randvoorwaarden:</p>
+<ul class="simple">
+<li><p>gebruik alleen abonnementen met status <code class="docutils literal notranslate"><span class="pre">beëindigd</span></code>;</p></li>
+<li><p>vergelijk <code class="docutils literal notranslate"><span class="pre">DATE(gekeken_op)</span></code> met <code class="docutils literal notranslate"><span class="pre">beëindigd_op</span></code>.</p></li>
+</ul>
 <p>Leg uit of dit een datakwaliteitsprobleem is of een businessregel-probleem.</p>
+</section>
+<section id="opdracht-9-open-casus-4-uitdaging">
+<h3>Opdracht 9 - Open casus 4 (uitdaging)<a class="headerlink" href="#opdracht-9-open-casus-4-uitdaging" title="Link to this heading">#</a></h3>
+<p><strong>Melding van collega-redactie:</strong><br />
+“Sommige kijkmomenten lijken geregistreerd vóór de officiële uitzenddatum. Kun jij controleren hoeveel dat er zijn?”</p>
+<p>Werk in 5 stappen.</p>
+<p>Schrijf zelf:</p>
+<ol class="arabic simple">
+<li><p>Query A (detail): toon minimaal <code class="docutils literal notranslate"><span class="pre">kijkgeschiedenis.id</span></code>, <code class="docutils literal notranslate"><span class="pre">profiel_id</span></code>, <code class="docutils literal notranslate"><span class="pre">aflevering_id</span></code>, kijkdatum, uitzenddatum.</p></li>
+<li><p>Query B (controle): tel het aantal probleemregels.</p></li>
+</ol>
+<p>Randvoorwaarde:</p>
+<ul class="simple">
+<li><p>alleen regels waar kijkdatum <strong>eerder</strong> is dan uitzenddatum.</p></li>
+</ul>
+<p>Leg uit: is dit waarschijnlijk invoerfout, timezone-issue, of testdata?</p>
 </section>
 </section>
 <hr class="docutils" />
@@ -882,6 +834,7 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-6-open-casus-1-uitdaging">Opdracht 6 - Open casus 1 (uitdaging)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-7-open-casus-2-uitdaging">Opdracht 7 - Open casus 2 (uitdaging)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-8-open-casus-3-uitdaging">Opdracht 8 - Open casus 3 (uitdaging)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-9-open-casus-4-uitdaging">Opdracht 9 - Open casus 4 (uitdaging)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>

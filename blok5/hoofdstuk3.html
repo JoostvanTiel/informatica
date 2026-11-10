@@ -605,13 +605,13 @@ Met <code class="docutils literal notranslate"><span class="pre">LEFT</span> <sp
 <section id="opdracht-1-basis-join">
 <h3>Opdracht 1 - Basis (<code class="docutils literal notranslate"><span class="pre">JOIN</span></code>)<a class="headerlink" href="#opdracht-1-basis-join" title="Link to this heading">#</a></h3>
 <p>Vraag: “Toon kijkgeschiedenis met profielnaam.”</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">voornaam</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">achternaam</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">aflevering_id</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">gekeken_op</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">kijkgeschiedenis</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">k</span>
-<span class="k">JOIN</span><span class="w"> </span><span class="n">profielen</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">profiel_id</span>
-<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">id</span>
-<span class="k">LIMIT</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
-</pre></div>
-</div>
+<p>Schrijf zelf een <code class="docutils literal notranslate"><span class="pre">JOIN</span></code>-query met:</p>
+<ul class="simple">
+<li><p>tabel <code class="docutils literal notranslate"><span class="pre">kijkgeschiedenis</span></code> als hoofdtabel;</p></li>
+<li><p>koppeling met <code class="docutils literal notranslate"><span class="pre">profielen</span></code> via profiel-id;</p></li>
+<li><p>kolommen: kijkgeschiedenis-id, voornaam, achternaam, aflevering-id, gekeken-op;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LIMIT</span> <span class="pre">20</span></code>.</p></li>
+</ul>
 <p>Controlequery:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_rijen</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">kijkgeschiedenis</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">k</span>
@@ -622,12 +622,7 @@ Met <code class="docutils literal notranslate"><span class="pre">LEFT</span> <sp
 <section id="opdracht-2-basis-left-join">
 <h3>Opdracht 2 - Basis (<code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code>)<a class="headerlink" href="#opdracht-2-basis-left-join" title="Link to this heading">#</a></h3>
 <p>Vraag: “Welke gebruikers hebben géén abonnement?”</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">email</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">u</span>
-<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">abonnementen</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">gebruiker_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span>
-</pre></div>
-</div>
+<p>Schrijf zelf een <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code>-query met <code class="docutils literal notranslate"><span class="pre">IS</span> <span class="pre">NULL</span></code> om gebruikers zonder abonnement te vinden.</p>
 <p>Controlequery:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_zonder_abonnement</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">u</span>
@@ -639,22 +634,18 @@ Met <code class="docutils literal notranslate"><span class="pre">LEFT</span> <sp
 <section id="opdracht-3-verdieping-count-distinct">
 <h3>Opdracht 3 - Verdieping (<code class="docutils literal notranslate"><span class="pre">COUNT(DISTINCT</span> <span class="pre">...)</span></code>)<a class="headerlink" href="#opdracht-3-verdieping-count-distinct" title="Link to this heading">#</a></h3>
 <p>Vraag: “Hoeveel verschillende profielen hebben minimaal één beoordeling gegeven?”</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">profiel_id</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_profielen</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">beoordelingen</span><span class="p">;</span>
-</pre></div>
-</div>
+<p>Schrijf zelf een query met <code class="docutils literal notranslate"><span class="pre">COUNT(DISTINCT</span> <span class="pre">...)</span></code> op <code class="docutils literal notranslate"><span class="pre">profiel_id</span></code> in <code class="docutils literal notranslate"><span class="pre">beoordelingen</span></code>.</p>
 <p>Controlevraag: waarom is dit getal lager dan het totaal aantal profielen?</p>
 </section>
 <section id="opdracht-4-verdieping-having">
 <h3>Opdracht 4 - Verdieping (<code class="docutils literal notranslate"><span class="pre">HAVING</span></code>)<a class="headerlink" href="#opdracht-4-verdieping-having" title="Link to this heading">#</a></h3>
 <p>Vraag: “Welke gebruikers hebben precies 3 profielen?”</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">gebruiker_id</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_profielen</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">profielen</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">p</span>
-<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">gebruiker_id</span>
-<span class="k">HAVING</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span>
-<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">gebruiker_id</span><span class="p">;</span>
-</pre></div>
-</div>
+<p>Schrijf zelf een query met:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span> <span class="pre">gebruiker_id</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HAVING</span> <span class="pre">COUNT(*)</span> <span class="pre">=</span> <span class="pre">3</span></code></p></li>
+<li><p>sortering op <code class="docutils literal notranslate"><span class="pre">gebruiker_id</span></code>.</p></li>
+</ul>
 <p>Controlequery:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_gebruikers_met_3_profielen</span>
 <span class="k">FROM</span><span class="w"> </span><span class="p">(</span>
@@ -685,34 +676,35 @@ Met <code class="docutils literal notranslate"><span class="pre">LEFT</span> <sp
 <h3>Opdracht 6 - Open casus (uitdaging)<a class="headerlink" href="#opdracht-6-open-casus-uitdaging" title="Link to this heading">#</a></h3>
 <p><strong>Melding van collega:</strong><br />
 “Ik vermoed dat sommige beoordelingen niet te koppelen zijn aan een kijkmoment. Kun jij dat uitzoeken?”</p>
-<p>Werk in deze volgorde:</p>
+<p>Werk in deze volgorde en lever precies dit in:</p>
 <ol class="arabic simple">
-<li><p>Wat weet ik al?</p></li>
-<li><p>Wat moet ik uitzoeken?</p></li>
-<li><p>In welke tabellen zit dat?</p></li>
-<li><p>Schrijf de query:</p></li>
+<li><p><strong>Wat weet ik al?</strong></p>
+<ul class="simple">
+<li><p>Eén beoordeling hoort inhoudelijk bij een gekeken aflevering.</p></li>
+</ul>
+</li>
+<li><p><strong>Wat moet ik uitzoeken?</strong></p>
+<ul class="simple">
+<li><p>Welke beoordelingen géén match hebben in <code class="docutils literal notranslate"><span class="pre">kijkgeschiedenis</span></code>.</p></li>
+</ul>
+</li>
+<li><p><strong>Tabellen + koppeling</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">beoordelingen</span></code> en <code class="docutils literal notranslate"><span class="pre">kijkgeschiedenis</span></code>, koppeling op <code class="docutils literal notranslate"><span class="pre">profiel_id</span></code> én <code class="docutils literal notranslate"><span class="pre">aflevering_id</span></code>.</p></li>
+</ul>
+</li>
+<li><p><strong>Schrijf 2 query’s</strong></p>
+<ul class="simple">
+<li><p>Query A: lijst met probleemregels (<code class="docutils literal notranslate"><span class="pre">beoordeling_id</span></code>, <code class="docutils literal notranslate"><span class="pre">profiel_id</span></code>, <code class="docutils literal notranslate"><span class="pre">aflevering_id</span></code>, <code class="docutils literal notranslate"><span class="pre">beoordeling</span></code>).</p></li>
+<li><p>Query B: alleen het totaal aantal probleemregels.</p></li>
+</ul>
+</li>
+<li><p><strong>Controle en conclusie</strong></p>
+<ul class="simple">
+<li><p>Leg in 2-3 zinnen uit waarom dit een datakwaliteitsprobleem is.</p></li>
+</ul>
+</li>
 </ol>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">profiel_id</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">aflevering_id</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">beoordeling</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">beoordelingen</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">b</span>
-<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">kijkgeschiedenis</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">k</span>
-<span class="w">  </span><span class="k">ON</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">profiel_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">profiel_id</span>
-<span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">aflevering_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">aflevering_id</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span>
-<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
-</pre></div>
-</div>
-<ol class="arabic simple" start="5">
-<li><p>Controleer je antwoord:</p></li>
-</ol>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_beoordelingen_zonder_kijkmoment</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">beoordelingen</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">b</span>
-<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">kijkgeschiedenis</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">k</span>
-<span class="w">  </span><span class="k">ON</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">profiel_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">profiel_id</span>
-<span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">aflevering_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">aflevering_id</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>Leg uit waarom dit een datakwaliteitsprobleem kan zijn.</p>
 </section>
 </section>
 <hr class="docutils" />

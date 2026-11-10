@@ -582,12 +582,12 @@
 <section id="opdracht-1-basis-where">
 <h3>Opdracht 1 - Basis (<code class="docutils literal notranslate"><span class="pre">WHERE</span></code>)<a class="headerlink" href="#opdracht-1-basis-where" title="Link to this heading">#</a></h3>
 <p>Vraag: “Welke series hebben kijkwijzer 16?”</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">titel</span><span class="p">,</span><span class="w"> </span><span class="n">kijkwijzer</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">series</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">kijkwijzer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'16'</span>
-<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">titel</span><span class="p">;</span>
-</pre></div>
-</div>
+<p>Schrijf zelf een query met:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FROM</span> <span class="pre">series</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WHERE</span> <span class="pre">kijkwijzer</span> <span class="pre">=</span> <span class="pre">'16'</span></code></p></li>
+<li><p>alfabetische sortering op titel</p></li>
+</ul>
 <p>Controlequery:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_series_16</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">series</span>
@@ -599,12 +599,7 @@
 <section id="opdracht-2-basis-and-or">
 <h3>Opdracht 2 - Basis (<code class="docutils literal notranslate"><span class="pre">AND</span></code>/<code class="docutils literal notranslate"><span class="pre">OR</span></code>)<a class="headerlink" href="#opdracht-2-basis-and-or" title="Link to this heading">#</a></h3>
 <p>Vraag: “Welke profielen wonen in NH of ZH?”</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">voornaam</span><span class="p">,</span><span class="w"> </span><span class="n">achternaam</span><span class="p">,</span><span class="w"> </span><span class="n">regio</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">profielen</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">regio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'NH'</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">regio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'ZH'</span>
-<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">regio</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
-</pre></div>
-</div>
+<p>Schrijf zelf een query met <code class="docutils literal notranslate"><span class="pre">OR</span></code> voor regio <code class="docutils literal notranslate"><span class="pre">NH</span></code> of <code class="docutils literal notranslate"><span class="pre">ZH</span></code>.</p>
 <p>Controlequery:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_nh_of_zh</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">profielen</span>
@@ -616,11 +611,7 @@
 <section id="opdracht-3-verdieping-like">
 <h3>Opdracht 3 - Verdieping (<code class="docutils literal notranslate"><span class="pre">LIKE</span></code>)<a class="headerlink" href="#opdracht-3-verdieping-like" title="Link to this heading">#</a></h3>
 <p>Vraag: “Welke gebruikers hebben ‘harry’ in hun e-mail?”</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">email</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'%harry%'</span><span class="p">;</span>
-</pre></div>
-</div>
+<p>Schrijf zelf een query met <code class="docutils literal notranslate"><span class="pre">LIKE</span></code>.</p>
 <p>Controlequery:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_harry</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
@@ -631,12 +622,7 @@
 <section id="opdracht-4-verdieping-is-null">
 <h3>Opdracht 4 - Verdieping (<code class="docutils literal notranslate"><span class="pre">IS</span> <span class="pre">NULL</span></code>)<a class="headerlink" href="#opdracht-4-verdieping-is-null" title="Link to this heading">#</a></h3>
 <p>Vraag: “Welke abonnementen zijn nog niet beëindigd?”</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">gebruiker_id</span><span class="p">,</span><span class="w"> </span><span class="k">type</span><span class="p">,</span><span class="w"> </span><span class="n">status</span><span class="p">,</span><span class="w"> </span><span class="n">beëindigd_op</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">abonnementen</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">beëindigd_op</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span>
-<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
-</pre></div>
-</div>
+<p>Schrijf zelf een query met <code class="docutils literal notranslate"><span class="pre">IS</span> <span class="pre">NULL</span></code> op <code class="docutils literal notranslate"><span class="pre">beëindigd_op</span></code>.</p>
 <p>Controlequery:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_lopend</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">abonnementen</span>
@@ -683,7 +669,11 @@
 <li><p>tel gebruikers met <code class="docutils literal notranslate"><span class="pre">land</span> <span class="pre">=</span> <span class="pre">'UK'</span></code>;</p></li>
 <li><p>tel profielen met <code class="docutils literal notranslate"><span class="pre">regio</span> <span class="pre">=</span> <span class="pre">'VK'</span></code>.</p></li>
 </ol>
-<p>Sluit af met: is de codering consistent of niet?</p>
+<p>Sluit af met:</p>
+<ul class="simple">
+<li><p>is de codering consistent of niet?</p></li>
+<li><p>welke keuze zou jij als databouwer maken (<code class="docutils literal notranslate"><span class="pre">UK</span></code> of <code class="docutils literal notranslate"><span class="pre">VK</span></code>) en waarom?</p></li>
+</ul>
 </section>
 </section>
 <hr class="docutils" />

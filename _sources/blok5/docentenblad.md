@@ -313,6 +313,10 @@ Na correcte `INSERT`:
 
 - Profielen met kijkgeschiedenis na einddatum beëindigd abonnement -> **125**
 
+### Opdracht 9 - Open casus 4
+
+- Kijkmomenten vóór uitzenddatum -> **24**
+
 ---
 
 ## 4. Aanbevolen database-aanpassingen (optioneel)
@@ -348,3 +352,11 @@ Na correcte `INSERT`:
 
 Deze herziening is inhoudelijk gevalideerd op een lokale SQLite-kopie van de dump (geen MySQL-client beschikbaar in deze omgeving).  
 Waar MySQL-specifieke syntax relevant is, is in de hoofdstukken MySQL 8-syntax aangehouden (`CURDATE()`, enum-waarden, `CAST(... AS UNSIGNED)`).
+
+---
+
+## 6. Fixscript anomalieën
+
+Voor het opschonen van de data (met behoud van de Harry Styles-casus, de 24-kijkmomenten-casus en leesbare wachtwoorden) is een apart script toegevoegd:
+
+- [fix_anomalieen.sql](</C:/Users/JoostvanTiel/OneDrive - voCampus/_Lesmateriaal/Informatica/Eigen methode/informatica/book/blok5/SQL/fix_anomalieen.sql>)

@@ -113,13 +113,12 @@ ORDER BY p.gebruiker_id;
 
 Vraag: "Toon kijkgeschiedenis met profielnaam."
 
-```sql
-SELECT k.id, p.voornaam, p.achternaam, k.aflevering_id, k.gekeken_op
-FROM kijkgeschiedenis AS k
-JOIN profielen AS p ON p.id = k.profiel_id
-ORDER BY k.id
-LIMIT 20;
-```
+Schrijf zelf een `JOIN`-query met:
+
+- tabel `kijkgeschiedenis` als hoofdtabel;
+- koppeling met `profielen` via profiel-id;
+- kolommen: kijkgeschiedenis-id, voornaam, achternaam, aflevering-id, gekeken-op;
+- `LIMIT 20`.
 
 Controlequery:
 
@@ -133,12 +132,7 @@ JOIN profielen AS p ON p.id = k.profiel_id;
 
 Vraag: "Welke gebruikers hebben géén abonnement?"
 
-```sql
-SELECT u.id, u.email
-FROM gebruikers AS u
-LEFT JOIN abonnementen AS a ON a.gebruiker_id = u.id
-WHERE a.id IS NULL;
-```
+Schrijf zelf een `LEFT JOIN`-query met `IS NULL` om gebruikers zonder abonnement te vinden.
 
 Controlequery:
 
@@ -153,10 +147,7 @@ WHERE a.id IS NULL;
 
 Vraag: "Hoeveel verschillende profielen hebben minimaal één beoordeling gegeven?"
 
-```sql
-SELECT COUNT(DISTINCT profiel_id) AS aantal_profielen
-FROM beoordelingen;
-```
+Schrijf zelf een query met `COUNT(DISTINCT ...)` op `profiel_id` in `beoordelingen`.
 
 Controlevraag: waarom is dit getal lager dan het totaal aantal profielen?
 
@@ -164,13 +155,11 @@ Controlevraag: waarom is dit getal lager dan het totaal aantal profielen?
 
 Vraag: "Welke gebruikers hebben precies 3 profielen?"
 
-```sql
-SELECT p.gebruiker_id, COUNT(*) AS aantal_profielen
-FROM profielen AS p
-GROUP BY p.gebruiker_id
-HAVING COUNT(*) = 3
-ORDER BY p.gebruiker_id;
-```
+Schrijf zelf een query met:
+
+- `GROUP BY gebruiker_id`
+- `HAVING COUNT(*) = 3`
+- sortering op `gebruiker_id`.
 
 Controlequery:
 
@@ -204,35 +193,19 @@ WHERE u.id = p.gebruiker_id;
 **Melding van collega:**  
 "Ik vermoed dat sommige beoordelingen niet te koppelen zijn aan een kijkmoment. Kun jij dat uitzoeken?"
 
-Werk in deze volgorde:
+Werk in deze volgorde en lever precies dit in:
 
-1. Wat weet ik al?
-2. Wat moet ik uitzoeken?
-3. In welke tabellen zit dat?
-4. Schrijf de query:
-
-```sql
-SELECT b.id, b.profiel_id, b.aflevering_id, b.beoordeling
-FROM beoordelingen AS b
-LEFT JOIN kijkgeschiedenis AS k
-  ON k.profiel_id = b.profiel_id
- AND k.aflevering_id = b.aflevering_id
-WHERE k.id IS NULL
-ORDER BY b.id;
-```
-
-5. Controleer je antwoord:
-
-```sql
-SELECT COUNT(*) AS aantal_beoordelingen_zonder_kijkmoment
-FROM beoordelingen AS b
-LEFT JOIN kijkgeschiedenis AS k
-  ON k.profiel_id = b.profiel_id
- AND k.aflevering_id = b.aflevering_id
-WHERE k.id IS NULL;
-```
-
-Leg uit waarom dit een datakwaliteitsprobleem kan zijn.
+1. **Wat weet ik al?**  
+   - Eén beoordeling hoort inhoudelijk bij een gekeken aflevering.
+2. **Wat moet ik uitzoeken?**  
+   - Welke beoordelingen géén match hebben in `kijkgeschiedenis`.
+3. **Tabellen + koppeling**  
+   - `beoordelingen` en `kijkgeschiedenis`, koppeling op `profiel_id` én `aflevering_id`.
+4. **Schrijf 2 query’s**  
+   - Query A: lijst met probleemregels (`beoordeling_id`, `profiel_id`, `aflevering_id`, `beoordeling`).  
+   - Query B: alleen het totaal aantal probleemregels.
+5. **Controle en conclusie**  
+   - Leg in 2-3 zinnen uit waarom dit een datakwaliteitsprobleem is.
 
 ---
 

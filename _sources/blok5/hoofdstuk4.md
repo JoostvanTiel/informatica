@@ -90,29 +90,11 @@ Controleer vooraf en achteraf op dezelfde manier.
 
 Vraag: "Pauzeer abonnement 2."
 
-Stap 1 (controle):
+Schrijf zelf:
 
-```sql
-SELECT id, gebruiker_id, status
-FROM abonnementen
-WHERE id = 2;
-```
-
-Stap 2 (wijzigen):
-
-```sql
-UPDATE abonnementen
-SET status = 'gepauzeerd'
-WHERE id = 2;
-```
-
-Stap 3 (controle):
-
-```sql
-SELECT id, gebruiker_id, status
-FROM abonnementen
-WHERE id = 2;
-```
+1. een controle-`SELECT` op abonnement `id = 2`;
+2. een `UPDATE` die alleen deze rij aanpast;
+3. een tweede controle-`SELECT`.
 
 Hoe weet je dat je alleen deze rij hebt aangepast?
 
@@ -120,37 +102,21 @@ Hoe weet je dat je alleen deze rij hebt aangepast?
 
 Vraag: "Verwijder testabonnementen van de testdatum weer."
 
-```sql
-SELECT *
-FROM abonnementen
-WHERE gestart_op = '2099-01-01'
-ORDER BY id;
-```
+Schrijf zelf:
 
-```sql
-DELETE FROM abonnementen
-WHERE gestart_op = '2099-01-01';
-```
-
-```sql
-SELECT *
-FROM abonnementen
-WHERE gestart_op = '2099-01-01';
-```
+1. een `SELECT` om te controleren welke rijen worden geraakt;
+2. een `DELETE` met precies dezelfde `WHERE`;
+3. een controle-`SELECT` na afloop.
 
 ### Opdracht 3 - Verdieping (subquery)
 
 Vraag: "Welke gebruikers hebben géén abonnement?"
 
-```sql
-SELECT id, email
-FROM gebruikers
-WHERE id NOT IN (
-  SELECT gebruiker_id
-  FROM abonnementen
-)
-ORDER BY id;
-```
+Schrijf zelf een query met `NOT IN (subquery)` op:
+
+- hoofdtabel: `gebruikers`
+- subquery: `SELECT gebruiker_id FROM abonnementen`
+- sortering op `id`.
 
 Controlequery:
 
@@ -179,43 +145,17 @@ DELETE FROM abonnementen;
 
 We maken bewust een wees-record.
 
-1. Voeg een testgebruiker toe:
+Gebruik deze vaste testwaarden: gebruiker-id `9001`, profiel-id `9001`.
 
-```sql
-INSERT INTO gebruikers (id, email, wachtwoord, land)
-VALUES (9001, 'test.wees@nimmastream.com', 'tijdelijk', 'NL');
-```
+Schrijf zelf 5 query’s:
 
-2. Voeg een profiel toe dat bij deze gebruiker hoort:
+1. `INSERT` testgebruiker;
+2. `INSERT` testprofiel dat naar gebruiker 9001 verwijst;
+3. `DELETE` van gebruiker 9001;
+4. `SELECT` die laat zien dat profiel 9001 nog bestaat;
+5. opruim-`DELETE` op profiel 9001.
 
-```sql
-INSERT INTO profielen (id, gebruiker_id, voornaam, tussenvoegsel, achternaam, leeftijd_profiel, regio)
-VALUES (9001, 9001, 'Test', '', 'Wees', 30, 'NH');
-```
-
-3. Verwijder daarna de gebruiker:
-
-```sql
-DELETE FROM gebruikers
-WHERE id = 9001;
-```
-
-4. Controleer of het profiel nog bestaat:
-
-```sql
-SELECT *
-FROM profielen
-WHERE id = 9001;
-```
-
-5. Leg uit waarom dit kan zonder foreign keys.
-
-6. Ruim op:
-
-```sql
-DELETE FROM profielen
-WHERE id = 9001;
-```
+Lever ook één uitlegzin: waarom kan dit zonder foreign keys?
 
 ### Opdracht 6 - Open casus 1 (uitdaging)
 
@@ -230,19 +170,17 @@ Werk in deze volgorde:
 4. Schrijf de query's.
 5. Controleer en leg uit.
 
-Startqueries:
+Maak minimaal 3 query’s:
 
-```sql
-SELECT id, email
-FROM gebruikers
-WHERE email = 'harry.styles@nimmastream.com';
+1. zoek de gebruiker op e-mailadres;
+2. controleer of er een abonnement is;
+3. voeg een passend abonnement toe met `INSERT` en controleer direct.
 
-SELECT *
-FROM abonnementen
-WHERE gebruiker_id = 140;
-```
+Verplicht in je eindantwoord:
 
-Los op met een `INSERT` en controleer met een nieuwe `SELECT`.
+- welke `gebruiker_id` je hebt gevonden;
+- welke `id` van het nieuwe abonnement is aangemaakt;
+- waarom jouw oplossing veilig was.
 
 ### Opdracht 7 - Open casus 2 (uitdaging)
 
@@ -251,35 +189,15 @@ Los op met een `INSERT` en controleer met een nieuwe `SELECT`.
 
 Werk weer in 5 stappen.
 
-Gebruik als kernquery:
+Schrijf zelf:
 
-```sql
-SELECT p.id,
-       p.voornaam,
-       p.achternaam,
-       p.leeftijd_profiel,
-       s.titel,
-       s.kijkwijzer
-FROM kijkgeschiedenis AS k
-JOIN profielen AS p ON p.id = k.profiel_id
-JOIN afleveringen AS a ON a.id = k.aflevering_id
-JOIN series AS s ON s.id = a.serie_id
-WHERE s.kijkwijzer IN ('6', '9', '12', '16', '18')
-  AND CAST(s.kijkwijzer AS UNSIGNED) > p.leeftijd_profiel
-ORDER BY p.id, k.gekeken_op;
-```
+1. Query A (detail): toon minimaal `profiel_id`, naam, leeftijd, serietitel, kijkwijzer, kijkdatum.
+2. Query B (controle): tel het aantal **verschillende** profielen met dit probleem.
 
-Controlequery:
+Randvoorwaarden:
 
-```sql
-SELECT COUNT(DISTINCT p.id) AS aantal_profielen
-FROM kijkgeschiedenis AS k
-JOIN profielen AS p ON p.id = k.profiel_id
-JOIN afleveringen AS a ON a.id = k.aflevering_id
-JOIN series AS s ON s.id = a.serie_id
-WHERE s.kijkwijzer IN ('6', '9', '12', '16', '18')
-  AND CAST(s.kijkwijzer AS UNSIGNED) > p.leeftijd_profiel;
-```
+- koppel `kijkgeschiedenis` -> `profielen` -> `afleveringen` -> `series`;
+- vergelijk alleen numerieke kijkwijzers (`6, 9, 12, 16, 18`) met profielleeftijd.
 
 ### Opdracht 8 - Open casus 3 (uitdaging)
 
@@ -288,17 +206,35 @@ WHERE s.kijkwijzer IN ('6', '9', '12', '16', '18')
 
 Werk in 5 stappen.
 
-```sql
-SELECT COUNT(DISTINCT p.id) AS aantal_profielen
-FROM profielen AS p
-JOIN abonnementen AS ab ON ab.gebruiker_id = p.gebruiker_id
-JOIN kijkgeschiedenis AS k ON k.profiel_id = p.id
-WHERE ab.status = 'beëindigd'
-  AND ab.beëindigd_op IS NOT NULL
-  AND DATE(k.gekeken_op) > ab.beëindigd_op;
-```
+Schrijf zelf:
+
+1. Query A (detail): toon profiel-id, gebruiker-id, einddatum abonnement, kijkdatum.
+2. Query B (controle): tel het aantal **verschillende** profielen.
+
+Randvoorwaarden:
+
+- gebruik alleen abonnementen met status `beëindigd`;
+- vergelijk `DATE(gekeken_op)` met `beëindigd_op`.
 
 Leg uit of dit een datakwaliteitsprobleem is of een businessregel-probleem.
+
+### Opdracht 9 - Open casus 4 (uitdaging)
+
+**Melding van collega-redactie:**  
+"Sommige kijkmomenten lijken geregistreerd vóór de officiële uitzenddatum. Kun jij controleren hoeveel dat er zijn?"
+
+Werk in 5 stappen.
+
+Schrijf zelf:
+
+1. Query A (detail): toon minimaal `kijkgeschiedenis.id`, `profiel_id`, `aflevering_id`, kijkdatum, uitzenddatum.
+2. Query B (controle): tel het aantal probleemregels.
+
+Randvoorwaarde:
+
+- alleen regels waar kijkdatum **eerder** is dan uitzenddatum.
+
+Leg uit: is dit waarschijnlijk invoerfout, timezone-issue, of testdata?
 
 ---
 

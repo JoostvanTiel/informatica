@@ -516,10 +516,12 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-6-open-casus-1">Opdracht 6 - Open casus 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-7-open-casus-2">Opdracht 7 - Open casus 2</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-8-open-casus-3">Opdracht 8 - Open casus 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-9-open-casus-4">Opdracht 9 - Open casus 4</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aanbevolen-database-aanpassingen-optioneel">4. Aanbevolen database-aanpassingen (optioneel)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#technische-noot-bij-deze-herziening">5. Technische noot bij deze herziening</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fixscript-anomalieen">6. Fixscript anomalieën</a></li>
 </ul>
             </nav>
         </div>
@@ -909,6 +911,12 @@ Veilig alternatief met onmogelijke id toont 0 wijzigingen.</p>
 <li><p>Profielen met kijkgeschiedenis na einddatum beëindigd abonnement -&gt; <strong>125</strong></p></li>
 </ul>
 </section>
+<section id="opdracht-9-open-casus-4">
+<h3>Opdracht 9 - Open casus 4<a class="headerlink" href="#opdracht-9-open-casus-4" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Kijkmomenten vóór uitzenddatum -&gt; <strong>24</strong></p></li>
+</ul>
+</section>
 </section>
 <hr class="docutils" />
 <section id="aanbevolen-database-aanpassingen-optioneel">
@@ -960,6 +968,14 @@ Veilig alternatief met onmogelijke id toont 0 wijzigingen.</p>
 <h2>5. Technische noot bij deze herziening<a class="headerlink" href="#technische-noot-bij-deze-herziening" title="Link to this heading">#</a></h2>
 <p>Deze herziening is inhoudelijk gevalideerd op een lokale SQLite-kopie van de dump (geen MySQL-client beschikbaar in deze omgeving).<br />
 Waar MySQL-specifieke syntax relevant is, is in de hoofdstukken MySQL 8-syntax aangehouden (<code class="docutils literal notranslate"><span class="pre">CURDATE()</span></code>, enum-waarden, <code class="docutils literal notranslate"><span class="pre">CAST(...</span> <span class="pre">AS</span> <span class="pre">UNSIGNED)</span></code>).</p>
+</section>
+<hr class="docutils" />
+<section id="fixscript-anomalieen">
+<h2>6. Fixscript anomalieën<a class="headerlink" href="#fixscript-anomalieen" title="Link to this heading">#</a></h2>
+<p>Voor het opschonen van de data (met behoud van de Harry Styles-casus, de 24-kijkmomenten-casus en leesbare wachtwoorden) is een apart script toegevoegd:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#/C:/Users/JoostvanTiel/OneDrive%20-%20voCampus/_Lesmateriaal/Informatica/Eigen%20methode/informatica/book/blok5/SQL/fix_anomalieen.sql"><span class="xref myst">fix_anomalieen.sql</span></a></p></li>
+</ul>
 </section>
 </section>
 
@@ -1056,10 +1072,12 @@ Waar MySQL-specifieke syntax relevant is, is in de hoofdstukken MySQL 8-syntax a
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-6-open-casus-1">Opdracht 6 - Open casus 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-7-open-casus-2">Opdracht 7 - Open casus 2</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-8-open-casus-3">Opdracht 8 - Open casus 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-9-open-casus-4">Opdracht 9 - Open casus 4</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aanbevolen-database-aanpassingen-optioneel">4. Aanbevolen database-aanpassingen (optioneel)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#technische-noot-bij-deze-herziening">5. Technische noot bij deze herziening</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fixscript-anomalieen">6. Fixscript anomalieën</a></li>
 </ul>
   </nav></div>
 

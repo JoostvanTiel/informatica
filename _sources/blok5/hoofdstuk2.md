@@ -93,12 +93,11 @@ Steeds eerst voorspellen, dan uitvoeren, dan controleren.
 
 Vraag: "Welke series hebben kijkwijzer 16?"
 
-```sql
-SELECT id, titel, kijkwijzer
-FROM series
-WHERE kijkwijzer = '16'
-ORDER BY titel;
-```
+Schrijf zelf een query met:
+
+- `FROM series`
+- `WHERE kijkwijzer = '16'`
+- alfabetische sortering op titel
 
 Controlequery:
 
@@ -114,12 +113,7 @@ Hoe weet je dat dit klopt?
 
 Vraag: "Welke profielen wonen in NH of ZH?"
 
-```sql
-SELECT id, voornaam, achternaam, regio
-FROM profielen
-WHERE regio = 'NH' OR regio = 'ZH'
-ORDER BY regio, id;
-```
+Schrijf zelf een query met `OR` voor regio `NH` of `ZH`.
 
 Controlequery:
 
@@ -135,11 +129,7 @@ Schrijf daarna ook een versie met `AND` en leg uit waarom die veel minder rijen 
 
 Vraag: "Welke gebruikers hebben 'harry' in hun e-mail?"
 
-```sql
-SELECT id, email
-FROM gebruikers
-WHERE email LIKE '%harry%';
-```
+Schrijf zelf een query met `LIKE`.
 
 Controlequery:
 
@@ -153,12 +143,7 @@ WHERE email LIKE '%harry%';
 
 Vraag: "Welke abonnementen zijn nog niet beëindigd?"
 
-```sql
-SELECT id, gebruiker_id, type, status, beëindigd_op
-FROM abonnementen
-WHERE beëindigd_op IS NULL
-ORDER BY id;
-```
+Schrijf zelf een query met `IS NULL` op `beëindigd_op`.
 
 Controlequery:
 
@@ -212,7 +197,10 @@ Maak zelf twee queries:
 1. tel gebruikers met `land = 'UK'`;
 2. tel profielen met `regio = 'VK'`.
 
-Sluit af met: is de codering consistent of niet?
+Sluit af met:
+
+- is de codering consistent of niet?
+- welke keuze zou jij als databouwer maken (`UK` of `VK`) en waarom?
 
 ---
 
