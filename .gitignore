@@ -12,3 +12,6 @@ env/
 
 # Oud materiaal
 book/blok2/oud_materiaal
+
+# Databases
+book/blok5/SQL/*

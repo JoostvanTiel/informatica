@@ -1,226 +1,259 @@
-# Hoofdstuk 3: Relaties en JOINs
+# Hoofdstuk 3: Tabellen koppelen met JOIN
 
 ## Leerdoelen
 
-In dit hoofdstuk leer je hoe je gegevens uit meerdere tabellen combineert.
+In dit hoofdstuk leer je:
 
-Je leert:
+- tabellen koppelen met `JOIN`;
+- aliassen gebruiken (`u`, `p`, `a`, `k`);
+- werken met `LEFT JOIN`;
+- samenvatten met `GROUP BY`, `COUNT(DISTINCT ...)` en `HAVING`.
 
-- waarom databases gegevens spreiden over meerdere tabellen;
-- wat een primary key en foreign key is;
-- hoe je `JOIN` gebruikt om tabellen te koppelen;
-- hoe je JOIN-query's logisch controleert.
-
-Aan het einde van dit hoofdstuk kun je queries schrijven die informatie uit meerdere tabellen koppelen.
+Aan het einde kun je klantvragen beantwoorden waarvoor je meerdere tabellen nodig hebt.
 
 ---
 
-Gebruik in alle opdrachten jouw database:
+Werk in:
 
 `nimmastream_<gebruikersnaam>`
 
 ---
 
-## 1. Waarom meerdere tabellen?
+## Voordoen en nadoen
 
-In een goede database staat niet alles in één grote tabel. Dat is onoverzichtelijk en vaak onnodig dupliceren van gegevens. In een relationele database splitst men informatie logisch op in verschillende tabellen.
+### Voordoen (nieuw concept: `JOIN` + aliassen)
 
-Voorbeeld:
-
-- gebruikersgegevens in `gebruikers`
-- profielgegevens in `profielen`
-- abonnementen in `abonnementen`
-
-Zo voorkom je dubbele data en houd je de structuur overzichtelijk. Als een gebruiker bijvoorbeeld meerdere profielen kan hebben, dan hoort dat niet in één grote tabel te staan. Het is veel beter om elke groep informatie op een logische plek te bewaren.
-
-### Waarom is dat slim?
-
-- je hoeft gegevens niet meerdere keren op te slaan;
-- je kunt dezelfde informatie op verschillende manieren gebruiken;
-- je kunt grote datasets beter beheren;
-- je kunt tabellen aan elkaar koppelen met relaties.
-
-De kern van relationele databases is: gegevens opsplitsen, maar later weer samenbrengen wanneer je er iets mee wilt doen.
-
----
-
-## 2. Sleutels (keys)
-
-Een sleutel is een veld of combinatie van velden die een tabel uniek maakt of laat koppelen.
-
-- **Primary key**: unieke sleutel van een tabel (bijv. `gebruikers.id`).
-- **Foreign key**: verwijzing naar een sleutel in een andere tabel (bijv. `profielen.gebruiker_id`).
-
-Hierdoor weet de database welke records bij elkaar horen.
-
-### Voorbeeld
-
-`gebruikers.id` is bijvoorbeeld `12`. In `profielen` staat dan vaak `gebruiker_id = 12`. Dat betekent: "Dit profiel hoort bij gebruiker 12". Zonder deze koppeling weet de database niet welke gegevens bij elkaar horen.
-
-### Waarom zijn sleutels zo belangrijk?
-
-Zonder primaire en vreemde sleutels kun je geen betrouwbare relaties opbouwen. Dan ontstaat snel chaos: je ziet wel data, maar je weet niet welke regels erbij horen.
-
----
-
-## 3. JOIN
-
-Met een `JOIN` combineer je gegevens uit meerdere tabellen. Je koppelt de tabellen aan elkaar op basis van een gemeenschappelijk veld.
+Vraag: "Welke profielen horen bij welke gebruiker?"
 
 ```sql
-SELECT u.voornaam, p.profielnaam
-FROM gebruikers u
-JOIN profielen p ON u.id = p.gebruiker_id;
+SELECT p.id AS profiel_id,
+       p.voornaam,
+       p.achternaam,
+       u.id AS gebruiker_id,
+       u.email
+FROM profielen AS p
+JOIN gebruikers AS u ON u.id = p.gebruiker_id
+ORDER BY p.id
+LIMIT 10;
 ```
 
-### Wat gebeurt hier?
-
-- `gebruikers u` = tabel gebruikers, met alias `u`
-- `profielen p` = tabel profielen, met alias `p`
-- `ON u.id = p.gebruiker_id` = koppeling tussen gebruiker en profiel
-
-Het resultaat is een lijst met de voornaam van de gebruiker en de naam van zijn profiel.
-
-### Waarom is `ON` zo belangrijk?
-
-De `ON`-voorwaarde vertelt SQL precies welke rijen met elkaar moeten worden gekoppeld. Als je die mist, weet SQL niet hoe de tabellen samenhangen.
-
----
-
-## 4. JOIN met meerdere tabellen
+Controlequery:
 
 ```sql
-SELECT a.titel AS aflevering, s.titel AS serie, g.naam AS genre
-FROM afleveringen a
-JOIN series s ON a.serie_id = s.id
-JOIN genres g ON s.genre_id = g.id;
+SELECT COUNT(*) AS aantal_koppelingen
+FROM profielen AS p
+JOIN gebruikers AS u ON u.id = p.gebruiker_id;
 ```
 
-Met extra `JOIN`-regels kun je stap voor stap meer tabellen koppelen. Je kunt dit zien als een keten: aflevering hoort bij serie, en serie hoort bij genre.
+Voorspel eerst: verwacht je evenveel rijen als in `profielen`? Waarom?
 
-### Denk in stappen
+### Nadoen (één verandering)
 
-1. Koppel aflevering aan serie.
-2. Koppel serie aan genre.
-3. Toon de relevante informatie uit alle drie de tabellen.
+Koppel nu `series` met `genres`:
 
-Dat is precies hoe een relationele database werkt: informatie wordt in kleine stukjes opgeslagen, maar bij een vraag weer samengevoegd.
+```sql
+SELECT s.id, s.titel, g.naam AS genre, s.kijkwijzer
+FROM series AS s
+JOIN genres AS g ON g.id = s.genre_id
+ORDER BY s.id;
+```
+
+Controlequery:
+
+```sql
+SELECT COUNT(*) AS aantal_series_met_genre
+FROM series AS s
+JOIN genres AS g ON g.id = s.genre_id;
+```
 
 ---
 
-## 5. Veelgemaakte fouten
+## Nieuwe stap: `LEFT JOIN`
 
-1. Join-voorwaarde vergeten (`ON ...`).
-2. Verkeerde kolommen aan elkaar koppelen.
-3. Niet controleren op dubbele rijen door 1-op-veel-relaties.
-4. Kolomnamen niet verduidelijken met aliassen (`u`, `p`, `a`).
+Met `JOIN` krijg je alleen matches.  
+Met `LEFT JOIN` krijg je ook rijen zonder match.
 
-### Extra aandachtspunt: dubbele rijen
+Voorbeeldvraag: "Welke gebruikers hebben geen abonnement?"
 
-Bij een `JOIN` kunnen dubbele resultaten ontstaan als een tabel meerdere passende records heeft. Bijvoorbeeld: één gebruiker kan meerdere profielen hebben. Als je dan niet goed nadenkt over je koppeling, kun je dezelfde gebruiker meerdere keren zien.
+```sql
+SELECT u.id, u.email
+FROM gebruikers AS u
+LEFT JOIN abonnementen AS a ON a.gebruiker_id = u.id
+WHERE a.id IS NULL;
+```
 
-### Praktische vuistregel
+---
 
-Controleer altijd of je op de juiste sleutel koppelt. Het antwoord moet logisch zijn: "Is dit echt dezelfde record die ik bedoel?"
+## Nieuwe stap: groeperen en filteren op groepen
+
+### `COUNT(DISTINCT ...)`
+
+```sql
+SELECT COUNT(DISTINCT profiel_id) AS unieke_profielen_met_beoordeling
+FROM beoordelingen;
+```
+
+### `GROUP BY` + `HAVING`
+
+Vraag: "Welke gebruikers hebben 3 profielen?"
+
+```sql
+SELECT p.gebruiker_id, COUNT(*) AS aantal_profielen
+FROM profielen AS p
+GROUP BY p.gebruiker_id
+HAVING COUNT(*) = 3
+ORDER BY p.gebruiker_id;
+```
 
 ---
 
 ## Opdrachten
 
-Voer alle opdrachten uit in jouw database: `nimmastream_<gebruikersnaam>`.
+### Opdracht 1 - Basis (`JOIN`)
 
-### Opdracht 1 - Basis JOINs
-
-1. Toon profielnaam met voornaam van de gebruiker.
-2. Toon gebruikersnaam met abonnementstype.
-3. Toon afleveringtitel met serietitel.
-
-### Opdracht 2 - Gericht koppelen met JOIN
-
-Schrijf een query met `JOIN` voor:
-
-1. gebruikers en hun profielen;
-2. series en hun genres;
-3. afleveringen en hun serie.
-
-### Opdracht 3 - Drie tabellen koppelen
-
-1. Toon serietitel, genre en kijkwijzer.
-2. Toon profielnaam, gebruiker en aantal kijkmomenten.
-
-### Opdracht 4 - Controleren of je JOIN klopt
-
-Dit is de meest lastige opdrachttype. Volg deze aanpak:
-
-**Stap 1: Schrijf de query**
+Vraag: "Toon kijkgeschiedenis met profielnaam."
 
 ```sql
-SELECT u.voornaam, p.profielnaam
+SELECT k.id, p.voornaam, p.achternaam, k.aflevering_id, k.gekeken_op
+FROM kijkgeschiedenis AS k
+JOIN profielen AS p ON p.id = k.profiel_id
+ORDER BY k.id
+LIMIT 20;
+```
+
+Controlequery:
+
+```sql
+SELECT COUNT(*) AS aantal_rijen
+FROM kijkgeschiedenis AS k
+JOIN profielen AS p ON p.id = k.profiel_id;
+```
+
+### Opdracht 2 - Basis (`LEFT JOIN`)
+
+Vraag: "Welke gebruikers hebben géén abonnement?"
+
+```sql
+SELECT u.id, u.email
+FROM gebruikers AS u
+LEFT JOIN abonnementen AS a ON a.gebruiker_id = u.id
+WHERE a.id IS NULL;
+```
+
+Controlequery:
+
+```sql
+SELECT COUNT(*) AS aantal_zonder_abonnement
+FROM gebruikers AS u
+LEFT JOIN abonnementen AS a ON a.gebruiker_id = u.id
+WHERE a.id IS NULL;
+```
+
+### Opdracht 3 - Verdieping (`COUNT(DISTINCT ...)`)
+
+Vraag: "Hoeveel verschillende profielen hebben minimaal één beoordeling gegeven?"
+
+```sql
+SELECT COUNT(DISTINCT profiel_id) AS aantal_profielen
+FROM beoordelingen;
+```
+
+Controlevraag: waarom is dit getal lager dan het totaal aantal profielen?
+
+### Opdracht 4 - Verdieping (`HAVING`)
+
+Vraag: "Welke gebruikers hebben precies 3 profielen?"
+
+```sql
+SELECT p.gebruiker_id, COUNT(*) AS aantal_profielen
+FROM profielen AS p
+GROUP BY p.gebruiker_id
+HAVING COUNT(*) = 3
+ORDER BY p.gebruiker_id;
+```
+
+Controlequery:
+
+```sql
+SELECT COUNT(*) AS aantal_gebruikers_met_3_profielen
+FROM (
+  SELECT p.gebruiker_id
+  FROM profielen AS p
+  GROUP BY p.gebruiker_id
+  HAVING COUNT(*) = 3
+) AS t;
+```
+
+### Opdracht 5 - Debuggen
+
+Foute query:
+
+```sql
+SELECT u.email, p.voornaam
 FROM gebruikers u
-JOIN profielen p ON u.id = p.gebruiker_id;
+JOIN profielen p
+WHERE u.id = p.gebruiker_id;
 ```
 
-**Stap 2: Voordat je de query uitvoert, denk vooruit:**
+1. Waarom is dit fout?
+2. Zet de `ON` op de juiste plaats.
+3. Controleer met een `COUNT(*)`.
 
-"Hoeveel rijen verwacht ik?"
+### Opdracht 6 - Open casus (uitdaging)
 
-Kijk in je hoofd na welke gebruiker hoeveel profielen hebben:
+**Melding van collega:**  
+"Ik vermoed dat sommige beoordelingen niet te koppelen zijn aan een kijkmoment. Kun jij dat uitzoeken?"
 
-- Gebruiker 1 (Jan) → 2 profielen
-- Gebruiker 2 (Peter) → 1 profiel
-- Gebruiker 3 (Roos) → 3 profielen
-- → Totaal verwacht: 2+1+3 = **6 rijen**
+Werk in deze volgorde:
 
-**Stap 3: Voer de query uit**
+1. Wat weet ik al?
+2. Wat moet ik uitzoeken?
+3. In welke tabellen zit dat?
+4. Schrijf de query:
 
-Resultaat:
-
+```sql
+SELECT b.id, b.profiel_id, b.aflevering_id, b.beoordeling
+FROM beoordelingen AS b
+LEFT JOIN kijkgeschiedenis AS k
+  ON k.profiel_id = b.profiel_id
+ AND k.aflevering_id = b.aflevering_id
+WHERE k.id IS NULL
+ORDER BY b.id;
 ```
-voornaam | profielnaam
----------|------------
-Jan      | Kinderprofiel
-Jan      | Volwassenen
-Peter    | Favorieten
-Roos     | Profiel1
-Roos     | Profiel2
-Roos     | Profiel3
+
+5. Controleer je antwoord:
+
+```sql
+SELECT COUNT(*) AS aantal_beoordelingen_zonder_kijkmoment
+FROM beoordelingen AS b
+LEFT JOIN kijkgeschiedenis AS k
+  ON k.profiel_id = b.profiel_id
+ AND k.aflevering_id = b.aflevering_id
+WHERE k.id IS NULL;
 ```
 
-**Stap 4: Controleer kritisch**
-
-- ✅ Aantal rijen klopt (6 verwacht, 6 gekregen)
-- ✅ Dezelfde voornaam verschijnt meermaals (logisch: 1 gebruiker met meerdere profielen)
-- ✅ Koppeling klopt (Jan's profielen zijn werkelijk van Jan)
-
-**Mogelijke problemen die je zo opspoort:**
-
-- ❌ Aantal rijen veel hoger (10+)? Misschien fout in ON-voorwaarde
-- ❌ Lege tabel? Misschien geen data in ene tabel, of ON-voorwaarde kan niets matchen
-- ❌ Rij van Jan en Peter gemixed? ON-voorwaarde waarschijnlijk fout
-
-Voer deze controlestappen uit bij elk van deze queries en noteer je verwachting versus werkelijke uitkomst.
-
-### Opdracht 5 - Challenge
-
-Schrijf een query met `JOIN` die laat zien:
-
-1. profielnaam;
-2. afleveringstitel;
-3. gegeven beoordeling.
+Leg uit waarom dit een datakwaliteitsprobleem kan zijn.
 
 ---
 
 ## Check je begrip
 
-1. Waarom heb je bij een `JOIN` altijd een `ON`-voorwaarde nodig?
-2. Waarom zijn foreign keys belangrijk?
-3. Wanneer kan een JOIN dubbele rijen geven?
-4. Hoe controleer je of een JOIN-resultaat klopt?
+1. Wanneer kies je `LEFT JOIN` in plaats van `JOIN`?
+2. Waarom is `COUNT(DISTINCT ...)` soms beter dan `COUNT(*)`?
+3. Wat doet `HAVING` dat `WHERE` niet kan?
+4. Hoe controleer je of je koppeling logisch is?
+
+---
+
+## Reflectie
+
+Bij welke JOIN-vraag moest je het langst nadenken over de `ON`-voorwaarde?
 
 ---
 
 ## Samenvatting
 
-- Relaties maken het mogelijk om data netjes te verdelen.
-- Met JOINs combineer je die data weer tot bruikbare informatie.
-- Met meerdere `JOIN`-stappen kun je rijke informatie uit verschillende tabellen opbouwen.
+- Met `JOIN` combineer je tabellen via sleutelkolommen.
+- Met `LEFT JOIN` kun je ook "zonder match" vinden.
+- Met `GROUP BY` en `HAVING` analyseer je groepen.
+- Met `COUNT(DISTINCT ...)` voorkom je dubbeltellingen.
