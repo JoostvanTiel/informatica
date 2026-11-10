@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Hoofdstuk 4: UPDATE, DELETE, subqueries en GROUP BY &#8212; Informatica</title>
+    <title>Hoofdstuk 4: Data aanpassen en onderzoekswerk &#8212; Informatica</title>
   
   
   
@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=6a604523" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -55,7 +55,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="../_static/design-tabs.js?v=fcb327ea"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -65,7 +65,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Hoofdstuk 5: PHP + MySQL - gegevens tonen" href="hoofdstuk5.html" />
-    <link rel="prev" title="Hoofdstuk 3: Relaties en JOINs" href="hoofdstuk3.html" />
+    <link rel="prev" title="Hoofdstuk 3: Tabellen koppelen met JOIN" href="hoofdstuk3.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -259,10 +259,10 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">4ha blok 5</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="hoofdstuk1.html">Hoofdstuk 1: Oriëntatie op SQL met SQL Island</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hoofdstuk2.html">Hoofdstuk 2: SELECT, WHERE en ORDER BY</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hoofdstuk3.html">Hoofdstuk 3: Relaties en JOINs</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Hoofdstuk 4: UPDATE, DELETE, subqueries en GROUP BY</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hoofdstuk1.html">Hoofdstuk 1: Starten als Nimmastream-medewerker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hoofdstuk2.html">Hoofdstuk 2: Filteren met WHERE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hoofdstuk3.html">Hoofdstuk 3: Tabellen koppelen met JOIN</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Hoofdstuk 4: Data aanpassen en onderzoekswerk</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk5.html">Hoofdstuk 5: PHP + MySQL - gegevens tonen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk6.html">Hoofdstuk 6: PHP + MySQL - UPDATE en DELETE via formulieren</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk7.html">Hoofdstuk 7: Webshopproject - basisopzet en CRUD</a></li>
@@ -461,7 +461,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Hoofdstuk 4: UPDATE, DELETE, subqueries en GROUP BY</h1>
+    <h1>Hoofdstuk 4: Data aanpassen en onderzoekswerk</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -472,37 +472,26 @@
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veilig-werken-eerst-select-dan-pas-wijzigen">1. Veilig werken: eerst SELECT, dan pas wijzigen</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#denk-als-een-veiligheidsofficier">Denk als een veiligheidsofficier</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update">2. UPDATE</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goed-voorbeeld-van-een-veilige-workflow">Goed voorbeeld van een veilige workflow</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delete">3. DELETE</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-is-delete-riskant">Waarom is DELETE riskant?</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subqueries">4. Subqueries</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-gebeurt-hier">Wat gebeurt hier?</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#group-by-en-aggregatie">5. GROUP BY en aggregatie</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gemiddelde-beoordeling">Gemiddelde beoordeling</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handige-functies">Handige functies</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wanneer-gebruik-je-group-by">Wanneer gebruik je <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veiligheidsroutine-verplicht">Veiligheidsroutine (verplicht)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kader-wachtwoorden-en-avg">Kader: wachtwoorden en AVG</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voordoen-en-nadoen">Voordoen en nadoen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voordoen-nieuw-concept-insert">Voordoen (nieuw concept: <code class="docutils literal notranslate"><span class="pre">INSERT</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nadoen-een-verandering">Nadoen (één verandering)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-veilige-update">Opdracht 1 - Veilige UPDATE</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-veilige-delete">Opdracht 2 - Veilige DELETE</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-subqueries">Opdracht 3 - Subqueries</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-statistiek">Opdracht 4 - Statistiek</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-challenge">Opdracht 5 - Challenge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-basis-update">Opdracht 1 - Basis (<code class="docutils literal notranslate"><span class="pre">UPDATE</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-basis-delete">Opdracht 2 - Basis (<code class="docutils literal notranslate"><span class="pre">DELETE</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-verdieping-subquery">Opdracht 3 - Verdieping (subquery)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-debuggen">Opdracht 4 - Debuggen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-onderzoek-zonder-foreign-keys-wees-records">Opdracht 5 - Onderzoek zonder foreign keys (wees-records)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-6-open-casus-1-uitdaging">Opdracht 6 - Open casus 1 (uitdaging)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-7-open-casus-2-uitdaging">Opdracht 7 - Open casus 2 (uitdaging)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-8-open-casus-3-uitdaging">Opdracht 8 - Open casus 3 (uitdaging)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reflectie">Reflectie</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
 </ul>
             </nav>
@@ -515,209 +504,297 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="hoofdstuk-4-update-delete-subqueries-en-group-by">
-<h1>Hoofdstuk 4: UPDATE, DELETE, subqueries en GROUP BY<a class="headerlink" href="#hoofdstuk-4-update-delete-subqueries-en-group-by" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="hoofdstuk-4-data-aanpassen-en-onderzoekswerk">
+<h1>Hoofdstuk 4: Data aanpassen en onderzoekswerk<a class="headerlink" href="#hoofdstuk-4-data-aanpassen-en-onderzoekswerk" title="Link to this heading">#</a></h1>
 <section id="leerdoelen">
 <h2>Leerdoelen<a class="headerlink" href="#leerdoelen" title="Link to this heading">#</a></h2>
-<p>In dit hoofdstuk ga je van “data lezen” naar “data beheren”.</p>
-<p>Je leert:</p>
+<p>In dit hoofdstuk leer je:</p>
 <ul class="simple">
-<li><p>veilig gegevens wijzigen met <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code>;</p></li>
-<li><p>veilig gegevens verwijderen met <code class="docutils literal notranslate"><span class="pre">DELETE</span></code>;</p></li>
-<li><p>vragen in vragen gebruiken met subqueries;</p></li>
-<li><p>overzichten maken met <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> en aggregatiefuncties.</p></li>
+<li><p>veilig data toevoegen met <code class="docutils literal notranslate"><span class="pre">INSERT</span></code>;</p></li>
+<li><p>veilig wijzigen met <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code>;</p></li>
+<li><p>gericht verwijderen met <code class="docutils literal notranslate"><span class="pre">DELETE</span></code>;</p></li>
+<li><p>subqueries gebruiken;</p></li>
+<li><p>onderzoeken wat er gebeurt zonder foreign keys.</p></li>
 </ul>
-<p>Aan het einde van dit hoofdstuk kun je gerichte wijzigingen doen zonder je database per ongeluk kapot te maken.</p>
-<hr class="docutils" />
-<p>Let op: voer deze opdrachten alleen uit in jouw database:</p>
-<p><code class="docutils literal notranslate"><span class="pre">nimmastream_&lt;gebruikersnaam&gt;</span></code></p>
+<p>Je werkt als klantenservice-medewerker die echte meldingen oplost.</p>
 </section>
 <hr class="docutils" />
-<section id="veilig-werken-eerst-select-dan-pas-wijzigen">
-<h2>1. Veilig werken: eerst SELECT, dan pas wijzigen<a class="headerlink" href="#veilig-werken-eerst-select-dan-pas-wijzigen" title="Link to this heading">#</a></h2>
-<p>Bij <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> en <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> verander je data blijvend. Daarom geldt deze regel:</p>
+<section id="veiligheidsroutine-verplicht">
+<h2>Veiligheidsroutine (verplicht)<a class="headerlink" href="#veiligheidsroutine-verplicht" title="Link to this heading">#</a></h2>
+<p>Voor <strong>elke</strong> wijziging:</p>
 <ol class="arabic simple">
+<li><p>exporteer eerst je database;</p></li>
 <li><p>schrijf eerst een <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> met dezelfde <code class="docutils literal notranslate"><span class="pre">WHERE</span></code>;</p></li>
-<li><p>controleer of dit precies de rijen zijn die je bedoelt;</p></li>
-<li><p>voer pas daarna <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> of <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> uit.</p></li>
+<li><p>voer dan pas <code class="docutils literal notranslate"><span class="pre">INSERT</span></code>/<code class="docutils literal notranslate"><span class="pre">UPDATE</span></code>/<code class="docutils literal notranslate"><span class="pre">DELETE</span></code> uit;</p></li>
+<li><p>controleer direct met een tweede <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>;</p></li>
+<li><p>fout gemaakt? importeer je export opnieuw.</p></li>
 </ol>
-<p>Deze stap is cruciaal. Een database is geen papierboekje: je verwijdert of wijzigt echt data, en dat kun je niet zomaar terughalen als je per ongeluk te veel records raakt.</p>
-<section id="denk-als-een-veiligheidsofficier">
-<h3>Denk als een veiligheidsofficier<a class="headerlink" href="#denk-als-een-veiligheidsofficier" title="Link to this heading">#</a></h3>
-<p>Voordat je een wijziging doorvoert, stel je jezelf de volgende vragen:</p>
+</section>
+<hr class="docutils" />
+<section id="kader-wachtwoorden-en-avg">
+<h2>Kader: wachtwoorden en AVG<a class="headerlink" href="#kader-wachtwoorden-en-avg" title="Link to this heading">#</a></h2>
+<p>In <code class="docutils literal notranslate"><span class="pre">gebruikers.wachtwoord</span></code> staan leesbare wachtwoorden. Dat is onveilig.</p>
+<p>In echte systemen:</p>
 <ul class="simple">
-<li><p>Welke records passen bij mijn opdracht?</p></li>
-<li><p>Zijn er misschien meer records dan ik verwacht?</p></li>
-<li><p>Is de <code class="docutils literal notranslate"><span class="pre">WHERE</span></code>-voorwaarde precies goed?</p></li>
-<li><p>Als dit fout gaat, wat is dan het risico?</p></li>
+<li><p>sla je nooit platte wachtwoorden op;</p></li>
+<li><p>gebruik je hashing (bijv. bcrypt/Argon2);</p></li>
+<li><p>beperk je wie die data mag zien (AVG-principe: dataminimalisatie).</p></li>
 </ul>
-<p>Bij SQL is het vaak beter om één keer extra te controleren dan één keer een opdracht terug te draaien.</p>
-</section>
-</section>
-<hr class="docutils" />
-<section id="update">
-<h2>2. UPDATE<a class="headerlink" href="#update" title="Link to this heading">#</a></h2>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span><span class="w"> </span><span class="n">profielen</span>
-<span class="k">SET</span><span class="w"> </span><span class="n">leeftijd_profiel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">15</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>Zonder <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> verander je <strong>alle</strong> rijen. Dat is de meest voorkomende fout bij beginners.</p>
-<section id="goed-voorbeeld-van-een-veilige-workflow">
-<h3>Goed voorbeeld van een veilige workflow<a class="headerlink" href="#goed-voorbeeld-van-een-veilige-workflow" title="Link to this heading">#</a></h3>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">profielen</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>Als je ziet dat deze rij klopt, dan pas je de wijziging aan:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span><span class="w"> </span><span class="n">profielen</span>
-<span class="k">SET</span><span class="w"> </span><span class="n">leeftijd_profiel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">15</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>Na afloop controleer je opnieuw met <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>.</p>
-</section>
+<p>Voor deze les mag je <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span></code> gebruiken om het probleem te zien, maar noteer altijd waarom dit in productie niet mag.</p>
 </section>
 <hr class="docutils" />
-<section id="delete">
-<h2>3. DELETE<a class="headerlink" href="#delete" title="Link to this heading">#</a></h2>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">kijkgeschiedenis</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">profiel_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>Ook hier: zonder <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> verwijder je alles uit de tabel.</p>
-<section id="waarom-is-delete-riskant">
-<h3>Waarom is DELETE riskant?<a class="headerlink" href="#waarom-is-delete-riskant" title="Link to this heading">#</a></h3>
-<p>Verwijderen is vaak moeilijker te herstellen dan aanpassen. Daarom moet je altijd eerst controleren welke rijen je precies verwijdert. De <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> is niet zomaar een extra toevoeging: het is de beveiliging tegen onbedoelde dataverlies.</p>
-</section>
-</section>
-<hr class="docutils" />
-<section id="subqueries">
-<h2>4. Subqueries<a class="headerlink" href="#subqueries" title="Link to this heading">#</a></h2>
-<p>Een subquery is een query binnen een query. Je gebruikt het wanneer je eerst een tussenresultaat wilt bepalen, en daarna pas een hoofdquery uitvoert.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<section id="voordoen-en-nadoen">
+<h2>Voordoen en nadoen<a class="headerlink" href="#voordoen-en-nadoen" title="Link to this heading">#</a></h2>
+<section id="voordoen-nieuw-concept-insert">
+<h3>Voordoen (nieuw concept: <code class="docutils literal notranslate"><span class="pre">INSERT</span></code>)<a class="headerlink" href="#voordoen-nieuw-concept-insert" title="Link to this heading">#</a></h3>
+<p>Vraag: “Hoe voeg ik veilig een testabonnement toe?”</p>
+<p>Eerst controleren:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">email</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span>
-<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="n">gebruiker_id</span>
-<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">profielen</span>
-<span class="p">);</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">abonnementen</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">gebruiker_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
 </pre></div>
 </div>
-<section id="wat-gebeurt-hier">
-<h3>Wat gebeurt hier?<a class="headerlink" href="#wat-gebeurt-hier" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>De subquery zoekt alle <code class="docutils literal notranslate"><span class="pre">gebruiker_id</span></code>-waarden uit <code class="docutils literal notranslate"><span class="pre">profielen</span></code>.</p></li>
-<li><p>De hoofdquery kiest alle gebruikers waarvan de <code class="docutils literal notranslate"><span class="pre">id</span></code> in die lijst voorkomt.</p></li>
-</ol>
-<p>Subqueries helpen dus bij complexere vragen, bijvoorbeeld:</p>
-<ul class="simple">
-<li><p>gebruikers die een profiel hebben;</p></li>
-<li><p>producten die nog in voorraad zijn;</p></li>
-<li><p>series waarvan een aflevering is bekeken.</p></li>
-</ul>
-</section>
-</section>
-<hr class="docutils" />
-<section id="group-by-en-aggregatie">
-<h2>5. GROUP BY en aggregatie<a class="headerlink" href="#group-by-en-aggregatie" title="Link to this heading">#</a></h2>
-<p>Met <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> maak je samenvattingen. In plaats van alle rijen apart te zien, groepeer je ze op basis van een eigenschap.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">regio</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_gebruikers</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
-<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">regio</span><span class="p">;</span>
+<p>Daarna toevoegen:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">abonnementen</span><span class="w"> </span><span class="p">(</span><span class="n">gebruiker_id</span><span class="p">,</span><span class="w"> </span><span class="k">type</span><span class="p">,</span><span class="w"> </span><span class="n">status</span><span class="p">,</span><span class="w"> </span><span class="n">gestart_op</span><span class="p">,</span><span class="w"> </span><span class="n">beëindigd_op</span><span class="p">)</span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">'edu'</span><span class="p">,</span><span class="w"> </span><span class="s1">'gepauzeerd'</span><span class="p">,</span><span class="w"> </span><span class="s1">'2099-01-01'</span><span class="p">,</span><span class="w"> </span><span class="k">NULL</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Dit geeft per regio het aantal gebruikers.</p>
-<section id="gemiddelde-beoordeling">
-<h3>Gemiddelde beoordeling<a class="headerlink" href="#gemiddelde-beoordeling" title="Link to this heading">#</a></h3>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">aflevering_id</span><span class="p">,</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">beoordeling</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">gemiddelde</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">beoordelingen</span>
-<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">aflevering_id</span><span class="p">;</span>
+<p>Controle:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">abonnementen</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">gebruiker_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="k">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'edu'</span>
+<span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">gestart_op</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'2099-01-01'</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Je krijgt nu per aflevering het gemiddelde van de beoordelingen.</p>
 </section>
-<section id="handige-functies">
-<h3>Handige functies<a class="headerlink" href="#handige-functies" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">COUNT()</span></code> telt het aantal resultaten</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">AVG()</span></code> berekent het gemiddelde van de resultaten</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">MIN()</span></code> geeft de laagste waarde van de resultaten</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">MAX()</span></code> geeft de hoogste waarde van de resultaten</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">SUM()</span></code> geeft de optelsom van alle resultaten</p></li>
-</ul>
-</section>
-<section id="wanneer-gebruik-je-group-by">
-<h3>Wanneer gebruik je <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code>?<a class="headerlink" href="#wanneer-gebruik-je-group-by" title="Link to this heading">#</a></h3>
-<p>Als je niet wilt weten wat elk individueel record doet, maar geïnteresseerd bent in een samenvatting. Denk aan vragen als:</p>
-<ul class="simple">
-<li><p>hoeveel gebruikers wonen in elke regio?</p></li>
-<li><p>wat is de gemiddelde score per aflevering?</p></li>
-<li><p>hoeveel producten zijn er per categorie?</p></li>
-</ul>
-<p>Dat is precies het moment waarop groeperen zinvol wordt.</p>
+<section id="nadoen-een-verandering">
+<h3>Nadoen (één verandering)<a class="headerlink" href="#nadoen-een-verandering" title="Link to this heading">#</a></h3>
+<p>Voeg nu een testabonnement toe voor gebruiker <code class="docutils literal notranslate"><span class="pre">2</span></code> met type <code class="docutils literal notranslate"><span class="pre">basis</span></code> en dezelfde testdatum <code class="docutils literal notranslate"><span class="pre">2099-01-01</span></code>.</p>
+<p>Controleer vooraf en achteraf op dezelfde manier.</p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="opdrachten">
 <h2>Opdrachten<a class="headerlink" href="#opdrachten" title="Link to this heading">#</a></h2>
-<p>Voer alle opdrachten uit in jouw database: <code class="docutils literal notranslate"><span class="pre">nimmastream_&lt;gebruikersnaam&gt;</span></code>.</p>
-<section id="opdracht-1-veilige-update">
-<h3>Opdracht 1 - Veilige UPDATE<a class="headerlink" href="#opdracht-1-veilige-update" title="Link to this heading">#</a></h3>
+<section id="opdracht-1-basis-update">
+<h3>Opdracht 1 - Basis (<code class="docutils literal notranslate"><span class="pre">UPDATE</span></code>)<a class="headerlink" href="#opdracht-1-basis-update" title="Link to this heading">#</a></h3>
+<p>Vraag: “Pauzeer abonnement 2.”</p>
+<p>Stap 1 (controle):</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">gebruiker_id</span><span class="p">,</span><span class="w"> </span><span class="n">status</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">abonnementen</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Stap 2 (wijzigen):</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span><span class="w"> </span><span class="n">abonnementen</span>
+<span class="k">SET</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'gepauzeerd'</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Stap 3 (controle):</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">gebruiker_id</span><span class="p">,</span><span class="w"> </span><span class="n">status</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">abonnementen</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Hoe weet je dat je alleen deze rij hebt aangepast?</p>
+</section>
+<section id="opdracht-2-basis-delete">
+<h3>Opdracht 2 - Basis (<code class="docutils literal notranslate"><span class="pre">DELETE</span></code>)<a class="headerlink" href="#opdracht-2-basis-delete" title="Link to this heading">#</a></h3>
+<p>Vraag: “Verwijder testabonnementen van de testdatum weer.”</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">abonnementen</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">gestart_op</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'2099-01-01'</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">abonnementen</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">gestart_op</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'2099-01-01'</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">abonnementen</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">gestart_op</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'2099-01-01'</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="opdracht-3-verdieping-subquery">
+<h3>Opdracht 3 - Verdieping (subquery)<a class="headerlink" href="#opdracht-3-verdieping-subquery" title="Link to this heading">#</a></h3>
+<p>Vraag: “Welke gebruikers hebben géén abonnement?”</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">email</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="n">gebruiker_id</span>
+<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">abonnementen</span>
+<span class="p">)</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Controlequery:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="n">gebruiker_id</span>
+<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">abonnementen</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="opdracht-4-debuggen">
+<h3>Opdracht 4 - Debuggen<a class="headerlink" href="#opdracht-4-debuggen" title="Link to this heading">#</a></h3>
+<p>Foute query:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">abonnementen</span><span class="p">;</span>
+</pre></div>
+</div>
 <ol class="arabic simple">
-<li><p>Pas de leeftijd van één profiel aan.</p></li>
-<li><p>Laat eerst met <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> zien welke rij je aanpast.</p></li>
-<li><p>Controleer na afloop opnieuw met <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>.</p></li>
+<li><p>Waarom is dit gevaarlijk?</p></li>
+<li><p>Schrijf een veilige versie die alleen abonnement <code class="docutils literal notranslate"><span class="pre">id</span> <span class="pre">=</span> <span class="pre">999999</span></code> zou verwijderen.</p></li>
+<li><p>Leg uit waarom die veilige versie nu 0 rijen verandert.</p></li>
 </ol>
 </section>
-<section id="opdracht-2-veilige-delete">
-<h3>Opdracht 2 - Veilige DELETE<a class="headerlink" href="#opdracht-2-veilige-delete" title="Link to this heading">#</a></h3>
+<section id="opdracht-5-onderzoek-zonder-foreign-keys-wees-records">
+<h3>Opdracht 5 - Onderzoek zonder foreign keys (wees-records)<a class="headerlink" href="#opdracht-5-onderzoek-zonder-foreign-keys-wees-records" title="Link to this heading">#</a></h3>
+<p>We maken bewust een wees-record.</p>
 <ol class="arabic simple">
-<li><p>Verwijder kijkgeschiedenis van één profiel.</p></li>
-<li><p>Controleer vooraf en achteraf met <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>.</p></li>
-<li><p>Leg uit waarom dit veilig is uitgevoerd.</p></li>
+<li><p>Voeg een testgebruiker toe:</p></li>
 </ol>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">gebruikers</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="n">wachtwoord</span><span class="p">,</span><span class="w"> </span><span class="n">land</span><span class="p">)</span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">9001</span><span class="p">,</span><span class="w"> </span><span class="s1">'test.wees@nimmastream.com'</span><span class="p">,</span><span class="w"> </span><span class="s1">'tijdelijk'</span><span class="p">,</span><span class="w"> </span><span class="s1">'NL'</span><span class="p">);</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Voeg een profiel toe dat bij deze gebruiker hoort:</p></li>
+</ol>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">profielen</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">gebruiker_id</span><span class="p">,</span><span class="w"> </span><span class="n">voornaam</span><span class="p">,</span><span class="w"> </span><span class="n">tussenvoegsel</span><span class="p">,</span><span class="w"> </span><span class="n">achternaam</span><span class="p">,</span><span class="w"> </span><span class="n">leeftijd_profiel</span><span class="p">,</span><span class="w"> </span><span class="n">regio</span><span class="p">)</span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">9001</span><span class="p">,</span><span class="w"> </span><span class="mi">9001</span><span class="p">,</span><span class="w"> </span><span class="s1">'Test'</span><span class="p">,</span><span class="w"> </span><span class="s1">''</span><span class="p">,</span><span class="w"> </span><span class="s1">'Wees'</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="s1">'NH'</span><span class="p">);</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Verwijder daarna de gebruiker:</p></li>
+</ol>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9001</span><span class="p">;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Controleer of het profiel nog bestaat:</p></li>
+</ol>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">profielen</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9001</span><span class="p">;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Leg uit waarom dit kan zonder foreign keys.</p></li>
+<li><p>Ruim op:</p></li>
+</ol>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">profielen</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9001</span><span class="p">;</span>
+</pre></div>
+</div>
 </section>
-<section id="opdracht-3-subqueries">
-<h3>Opdracht 3 - Subqueries<a class="headerlink" href="#opdracht-3-subqueries" title="Link to this heading">#</a></h3>
+<section id="opdracht-6-open-casus-1-uitdaging">
+<h3>Opdracht 6 - Open casus 1 (uitdaging)<a class="headerlink" href="#opdracht-6-open-casus-1-uitdaging" title="Link to this heading">#</a></h3>
+<p><strong>Klantmelding:</strong><br />
+“Ik ben Harry Styles en ik zie geen abonnementsgegevens in mijn account.”</p>
+<p>Werk in deze volgorde:</p>
 <ol class="arabic simple">
-<li><p>Zoek gebruikers die minstens één profiel hebben.</p></li>
-<li><p>Zoek profielen zonder beoordelingen.</p></li>
-<li><p>Zoek series waarvan minstens één aflevering beoordeeld is.</p></li>
+<li><p>Wat weet ik al?</p></li>
+<li><p>Wat moet ik uitzoeken?</p></li>
+<li><p>In welke tabellen zit dat?</p></li>
+<li><p>Schrijf de query’s.</p></li>
+<li><p>Controleer en leg uit.</p></li>
 </ol>
+<p>Startqueries:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">email</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'harry.styles@nimmastream.com'</span><span class="p">;</span>
+
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">abonnementen</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">gebruiker_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">140</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Los op met een <code class="docutils literal notranslate"><span class="pre">INSERT</span></code> en controleer met een nieuwe <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>.</p>
 </section>
-<section id="opdracht-4-statistiek">
-<h3>Opdracht 4 - Statistiek<a class="headerlink" href="#opdracht-4-statistiek" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Tel gebruikers per regio.</p></li>
-<li><p>Tel profielen per gebruiker.</p></li>
-<li><p>Bereken gemiddelde beoordeling per aflevering.</p></li>
-<li><p>Toon top 3 meest beoordeelde afleveringen.</p></li>
-</ol>
+<section id="opdracht-7-open-casus-2-uitdaging">
+<h3>Opdracht 7 - Open casus 2 (uitdaging)<a class="headerlink" href="#opdracht-7-open-casus-2-uitdaging" title="Link to this heading">#</a></h3>
+<p><strong>Oudermelding:</strong><br />
+“Mijn kindprofiel heeft series gekeken die niet bij de leeftijd passen.”</p>
+<p>Werk weer in 5 stappen.</p>
+<p>Gebruik als kernquery:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span><span class="p">,</span>
+<span class="w">       </span><span class="n">p</span><span class="p">.</span><span class="n">voornaam</span><span class="p">,</span>
+<span class="w">       </span><span class="n">p</span><span class="p">.</span><span class="n">achternaam</span><span class="p">,</span>
+<span class="w">       </span><span class="n">p</span><span class="p">.</span><span class="n">leeftijd_profiel</span><span class="p">,</span>
+<span class="w">       </span><span class="n">s</span><span class="p">.</span><span class="n">titel</span><span class="p">,</span>
+<span class="w">       </span><span class="n">s</span><span class="p">.</span><span class="n">kijkwijzer</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">kijkgeschiedenis</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">k</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">profielen</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">profiel_id</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">afleveringen</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">aflevering_id</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">series</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">serie_id</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">kijkwijzer</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">'6'</span><span class="p">,</span><span class="w"> </span><span class="s1">'9'</span><span class="p">,</span><span class="w"> </span><span class="s1">'12'</span><span class="p">,</span><span class="w"> </span><span class="s1">'16'</span><span class="p">,</span><span class="w"> </span><span class="s1">'18'</span><span class="p">)</span>
+<span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="k">CAST</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">kijkwijzer</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">UNSIGNED</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">leeftijd_profiel</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">gekeken_op</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Controlequery:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_profielen</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">kijkgeschiedenis</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">k</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">profielen</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">profiel_id</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">afleveringen</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">aflevering_id</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">series</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">serie_id</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">kijkwijzer</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">'6'</span><span class="p">,</span><span class="w"> </span><span class="s1">'9'</span><span class="p">,</span><span class="w"> </span><span class="s1">'12'</span><span class="p">,</span><span class="w"> </span><span class="s1">'16'</span><span class="p">,</span><span class="w"> </span><span class="s1">'18'</span><span class="p">)</span>
+<span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="k">CAST</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">kijkwijzer</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">UNSIGNED</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">leeftijd_profiel</span><span class="p">;</span>
+</pre></div>
+</div>
 </section>
-<section id="opdracht-5-challenge">
-<h3>Opdracht 5 - Challenge<a class="headerlink" href="#opdracht-5-challenge" title="Link to this heading">#</a></h3>
-<p>Schrijf één foutgevoelige query opzettelijk verkeerd (bijv. zonder <code class="docutils literal notranslate"><span class="pre">WHERE</span></code>) en leg uit wat het risico is.</p>
+<section id="opdracht-8-open-casus-3-uitdaging">
+<h3>Opdracht 8 - Open casus 3 (uitdaging)<a class="headerlink" href="#opdracht-8-open-casus-3-uitdaging" title="Link to this heading">#</a></h3>
+<p><strong>Interne melding:</strong><br />
+“Er is kijkgeschiedenis ná een beëindigd abonnement. Hoeveel profielen zijn dat?”</p>
+<p>Werk in 5 stappen.</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_profielen</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">profielen</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">p</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">abonnementen</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">ab</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">ab</span><span class="p">.</span><span class="n">gebruiker_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">gebruiker_id</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">kijkgeschiedenis</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">profiel_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">ab</span><span class="p">.</span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'beëindigd'</span>
+<span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">ab</span><span class="p">.</span><span class="n">beëindigd_op</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span>
+<span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="nb">DATE</span><span class="p">(</span><span class="n">k</span><span class="p">.</span><span class="n">gekeken_op</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">ab</span><span class="p">.</span><span class="n">beëindigd_op</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Leg uit of dit een datakwaliteitsprobleem is of een businessregel-probleem.</p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="check-je-begrip">
 <h2>Check je begrip<a class="headerlink" href="#check-je-begrip" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Waarom is <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> bij <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> en <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> cruciaal?</p></li>
-<li><p>Wanneer gebruik je een subquery?</p></li>
-<li><p>Wat is het verschil tussen detaildata en gegroepeerde data?</p></li>
-<li><p>Hoe controleer je of een statistiekquery logisch is?</p></li>
+<li><p>Waarom doe je vóór elke wijziging eerst een <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>?</p></li>
+<li><p>Wanneer is <code class="docutils literal notranslate"><span class="pre">INSERT</span></code> nodig in plaats van <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code>?</p></li>
+<li><p>Waarom zijn wees-records gevaarlijk?</p></li>
+<li><p>Wat is het nut van subqueries in onderzoekswerk?</p></li>
 </ol>
+</section>
+<hr class="docutils" />
+<section id="reflectie">
+<h2>Reflectie<a class="headerlink" href="#reflectie" title="Link to this heading">#</a></h2>
+<p>Welke veiligheidsstap heeft jou deze les het meest geholpen om fouten te voorkomen?</p>
 </section>
 <hr class="docutils" />
 <section id="samenvatting">
 <h2>Samenvatting<a class="headerlink" href="#samenvatting" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> wijzigt data.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">DELETE</span></code> verwijdert data.</p></li>
-<li><p>Subqueries helpen bij complexere voorwaarden.</p></li>
-<li><p>Met <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> maak je overzicht en statistiek.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">INSERT</span></code> voegt data toe, <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> past aan, <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> verwijdert.</p></li>
+<li><p>Veilig werken = eerst selecteren, dan pas wijzigen.</p></li>
+<li><p>Zonder foreign keys kun je wees-records maken.</p></li>
+<li><p>Met onderzoeksqueries kun je echte klantmeldingen onderbouwen.</p></li>
 </ul>
 </section>
 </section>
@@ -758,7 +835,7 @@
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Hoofdstuk 3: Relaties en JOINs</p>
+        <p class="prev-next-title">Hoofdstuk 3: Tabellen koppelen met JOIN</p>
       </div>
     </a>
     <a class="right-next"
@@ -789,37 +866,26 @@
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veilig-werken-eerst-select-dan-pas-wijzigen">1. Veilig werken: eerst SELECT, dan pas wijzigen</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#denk-als-een-veiligheidsofficier">Denk als een veiligheidsofficier</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update">2. UPDATE</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goed-voorbeeld-van-een-veilige-workflow">Goed voorbeeld van een veilige workflow</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delete">3. DELETE</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-is-delete-riskant">Waarom is DELETE riskant?</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subqueries">4. Subqueries</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-gebeurt-hier">Wat gebeurt hier?</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#group-by-en-aggregatie">5. GROUP BY en aggregatie</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gemiddelde-beoordeling">Gemiddelde beoordeling</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handige-functies">Handige functies</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wanneer-gebruik-je-group-by">Wanneer gebruik je <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veiligheidsroutine-verplicht">Veiligheidsroutine (verplicht)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kader-wachtwoorden-en-avg">Kader: wachtwoorden en AVG</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voordoen-en-nadoen">Voordoen en nadoen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voordoen-nieuw-concept-insert">Voordoen (nieuw concept: <code class="docutils literal notranslate"><span class="pre">INSERT</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nadoen-een-verandering">Nadoen (één verandering)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-veilige-update">Opdracht 1 - Veilige UPDATE</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-veilige-delete">Opdracht 2 - Veilige DELETE</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-subqueries">Opdracht 3 - Subqueries</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-statistiek">Opdracht 4 - Statistiek</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-challenge">Opdracht 5 - Challenge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-basis-update">Opdracht 1 - Basis (<code class="docutils literal notranslate"><span class="pre">UPDATE</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-basis-delete">Opdracht 2 - Basis (<code class="docutils literal notranslate"><span class="pre">DELETE</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-verdieping-subquery">Opdracht 3 - Verdieping (subquery)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-debuggen">Opdracht 4 - Debuggen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-onderzoek-zonder-foreign-keys-wees-records">Opdracht 5 - Onderzoek zonder foreign keys (wees-records)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-6-open-casus-1-uitdaging">Opdracht 6 - Open casus 1 (uitdaging)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-7-open-casus-2-uitdaging">Opdracht 7 - Open casus 2 (uitdaging)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-8-open-casus-3-uitdaging">Opdracht 8 - Open casus 3 (uitdaging)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reflectie">Reflectie</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
 </ul>
   </nav></div>

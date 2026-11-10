@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Hoofdstuk 3: Relaties en JOINs &#8212; Informatica</title>
+    <title>Hoofdstuk 3: Tabellen koppelen met JOIN &#8212; Informatica</title>
   
   
   
@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=6a604523" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -55,7 +55,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="../_static/design-tabs.js?v=fcb327ea"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -64,8 +64,8 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Hoofdstuk 4: UPDATE, DELETE, subqueries en GROUP BY" href="hoofdstuk4.html" />
-    <link rel="prev" title="Hoofdstuk 2: SELECT, WHERE en ORDER BY" href="hoofdstuk2.html" />
+    <link rel="next" title="Hoofdstuk 4: Data aanpassen en onderzoekswerk" href="hoofdstuk4.html" />
+    <link rel="prev" title="Hoofdstuk 2: Filteren met WHERE" href="hoofdstuk2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -259,10 +259,10 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">4ha blok 5</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="hoofdstuk1.html">Hoofdstuk 1: Oriëntatie op SQL met SQL Island</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hoofdstuk2.html">Hoofdstuk 2: SELECT, WHERE en ORDER BY</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Hoofdstuk 3: Relaties en JOINs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hoofdstuk4.html">Hoofdstuk 4: UPDATE, DELETE, subqueries en GROUP BY</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hoofdstuk1.html">Hoofdstuk 1: Starten als Nimmastream-medewerker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hoofdstuk2.html">Hoofdstuk 2: Filteren met WHERE</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Hoofdstuk 3: Tabellen koppelen met JOIN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hoofdstuk4.html">Hoofdstuk 4: Data aanpassen en onderzoekswerk</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk5.html">Hoofdstuk 5: PHP + MySQL - gegevens tonen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk6.html">Hoofdstuk 6: PHP + MySQL - UPDATE en DELETE via formulieren</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk7.html">Hoofdstuk 7: Webshopproject - basisopzet en CRUD</a></li>
@@ -461,7 +461,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Hoofdstuk 3: Relaties en JOINs</h1>
+    <h1>Hoofdstuk 3: Tabellen koppelen met JOIN</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -472,38 +472,28 @@
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-meerdere-tabellen">1. Waarom meerdere tabellen?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-is-dat-slim">Waarom is dat slim?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voordoen-en-nadoen">Voordoen en nadoen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voordoen-nieuw-concept-join-aliassen">Voordoen (nieuw concept: <code class="docutils literal notranslate"><span class="pre">JOIN</span></code> + aliassen)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nadoen-een-verandering">Nadoen (één verandering)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sleutels-keys">2. Sleutels (keys)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld">Voorbeeld</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-zijn-sleutels-zo-belangrijk">Waarom zijn sleutels zo belangrijk?</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#join">3. JOIN</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-gebeurt-hier">Wat gebeurt hier?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-is-on-zo-belangrijk">Waarom is <code class="docutils literal notranslate"><span class="pre">ON</span></code> zo belangrijk?</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#join-met-meerdere-tabellen">4. JOIN met meerdere tabellen</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#denk-in-stappen">Denk in stappen</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veelgemaakte-fouten">5. Veelgemaakte fouten</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-aandachtspunt-dubbele-rijen">Extra aandachtspunt: dubbele rijen</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#praktische-vuistregel">Praktische vuistregel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nieuwe-stap-left-join">Nieuwe stap: <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nieuwe-stap-groeperen-en-filteren-op-groepen">Nieuwe stap: groeperen en filteren op groepen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#count-distinct"><code class="docutils literal notranslate"><span class="pre">COUNT(DISTINCT</span> <span class="pre">...)</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#group-by-having"><code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> + <code class="docutils literal notranslate"><span class="pre">HAVING</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-basis-joins">Opdracht 1 - Basis JOINs</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-gericht-koppelen-met-join">Opdracht 2 - Gericht koppelen met JOIN</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-drie-tabellen-koppelen">Opdracht 3 - Drie tabellen koppelen</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-controleren-of-je-join-klopt">Opdracht 4 - Controleren of je JOIN klopt</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-challenge">Opdracht 5 - Challenge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-basis-join">Opdracht 1 - Basis (<code class="docutils literal notranslate"><span class="pre">JOIN</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-basis-left-join">Opdracht 2 - Basis (<code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-verdieping-count-distinct">Opdracht 3 - Verdieping (<code class="docutils literal notranslate"><span class="pre">COUNT(DISTINCT</span> <span class="pre">...)</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-verdieping-having">Opdracht 4 - Verdieping (<code class="docutils literal notranslate"><span class="pre">HAVING</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-debuggen">Opdracht 5 - Debuggen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-6-open-casus-uitdaging">Opdracht 6 - Open casus (uitdaging)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reflectie">Reflectie</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
 </ul>
             </nav>
@@ -516,223 +506,238 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="hoofdstuk-3-relaties-en-joins">
-<h1>Hoofdstuk 3: Relaties en JOINs<a class="headerlink" href="#hoofdstuk-3-relaties-en-joins" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="hoofdstuk-3-tabellen-koppelen-met-join">
+<h1>Hoofdstuk 3: Tabellen koppelen met JOIN<a class="headerlink" href="#hoofdstuk-3-tabellen-koppelen-met-join" title="Link to this heading">#</a></h1>
 <section id="leerdoelen">
 <h2>Leerdoelen<a class="headerlink" href="#leerdoelen" title="Link to this heading">#</a></h2>
-<p>In dit hoofdstuk leer je hoe je gegevens uit meerdere tabellen combineert.</p>
-<p>Je leert:</p>
+<p>In dit hoofdstuk leer je:</p>
 <ul class="simple">
-<li><p>waarom databases gegevens spreiden over meerdere tabellen;</p></li>
-<li><p>wat een primary key en foreign key is;</p></li>
-<li><p>hoe je <code class="docutils literal notranslate"><span class="pre">JOIN</span></code> gebruikt om tabellen te koppelen;</p></li>
-<li><p>hoe je JOIN-query’s logisch controleert.</p></li>
+<li><p>tabellen koppelen met <code class="docutils literal notranslate"><span class="pre">JOIN</span></code>;</p></li>
+<li><p>aliassen gebruiken (<code class="docutils literal notranslate"><span class="pre">u</span></code>, <code class="docutils literal notranslate"><span class="pre">p</span></code>, <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">k</span></code>);</p></li>
+<li><p>werken met <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code>;</p></li>
+<li><p>samenvatten met <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code>, <code class="docutils literal notranslate"><span class="pre">COUNT(DISTINCT</span> <span class="pre">...)</span></code> en <code class="docutils literal notranslate"><span class="pre">HAVING</span></code>.</p></li>
 </ul>
-<p>Aan het einde van dit hoofdstuk kun je queries schrijven die informatie uit meerdere tabellen koppelen.</p>
+<p>Aan het einde kun je klantvragen beantwoorden waarvoor je meerdere tabellen nodig hebt.</p>
 <hr class="docutils" />
-<p>Gebruik in alle opdrachten jouw database:</p>
+<p>Werk in:</p>
 <p><code class="docutils literal notranslate"><span class="pre">nimmastream_&lt;gebruikersnaam&gt;</span></code></p>
 </section>
 <hr class="docutils" />
-<section id="waarom-meerdere-tabellen">
-<h2>1. Waarom meerdere tabellen?<a class="headerlink" href="#waarom-meerdere-tabellen" title="Link to this heading">#</a></h2>
-<p>In een goede database staat niet alles in één grote tabel. Dat is onoverzichtelijk en vaak onnodig dupliceren van gegevens. In een relationele database splitst men informatie logisch op in verschillende tabellen.</p>
-<p>Voorbeeld:</p>
-<ul class="simple">
-<li><p>gebruikersgegevens in <code class="docutils literal notranslate"><span class="pre">gebruikers</span></code></p></li>
-<li><p>profielgegevens in <code class="docutils literal notranslate"><span class="pre">profielen</span></code></p></li>
-<li><p>abonnementen in <code class="docutils literal notranslate"><span class="pre">abonnementen</span></code></p></li>
-</ul>
-<p>Zo voorkom je dubbele data en houd je de structuur overzichtelijk. Als een gebruiker bijvoorbeeld meerdere profielen kan hebben, dan hoort dat niet in één grote tabel te staan. Het is veel beter om elke groep informatie op een logische plek te bewaren.</p>
-<section id="waarom-is-dat-slim">
-<h3>Waarom is dat slim?<a class="headerlink" href="#waarom-is-dat-slim" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>je hoeft gegevens niet meerdere keren op te slaan;</p></li>
-<li><p>je kunt dezelfde informatie op verschillende manieren gebruiken;</p></li>
-<li><p>je kunt grote datasets beter beheren;</p></li>
-<li><p>je kunt tabellen aan elkaar koppelen met relaties.</p></li>
-</ul>
-<p>De kern van relationele databases is: gegevens opsplitsen, maar later weer samenbrengen wanneer je er iets mee wilt doen.</p>
-</section>
-</section>
-<hr class="docutils" />
-<section id="sleutels-keys">
-<h2>2. Sleutels (keys)<a class="headerlink" href="#sleutels-keys" title="Link to this heading">#</a></h2>
-<p>Een sleutel is een veld of combinatie van velden die een tabel uniek maakt of laat koppelen.</p>
-<ul class="simple">
-<li><p><strong>Primary key</strong>: unieke sleutel van een tabel (bijv. <code class="docutils literal notranslate"><span class="pre">gebruikers.id</span></code>).</p></li>
-<li><p><strong>Foreign key</strong>: verwijzing naar een sleutel in een andere tabel (bijv. <code class="docutils literal notranslate"><span class="pre">profielen.gebruiker_id</span></code>).</p></li>
-</ul>
-<p>Hierdoor weet de database welke records bij elkaar horen.</p>
-<section id="voorbeeld">
-<h3>Voorbeeld<a class="headerlink" href="#voorbeeld" title="Link to this heading">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">gebruikers.id</span></code> is bijvoorbeeld <code class="docutils literal notranslate"><span class="pre">12</span></code>. In <code class="docutils literal notranslate"><span class="pre">profielen</span></code> staat dan vaak <code class="docutils literal notranslate"><span class="pre">gebruiker_id</span> <span class="pre">=</span> <span class="pre">12</span></code>. Dat betekent: “Dit profiel hoort bij gebruiker 12”. Zonder deze koppeling weet de database niet welke gegevens bij elkaar horen.</p>
-</section>
-<section id="waarom-zijn-sleutels-zo-belangrijk">
-<h3>Waarom zijn sleutels zo belangrijk?<a class="headerlink" href="#waarom-zijn-sleutels-zo-belangrijk" title="Link to this heading">#</a></h3>
-<p>Zonder primaire en vreemde sleutels kun je geen betrouwbare relaties opbouwen. Dan ontstaat snel chaos: je ziet wel data, maar je weet niet welke regels erbij horen.</p>
-</section>
-</section>
-<hr class="docutils" />
-<section id="join">
-<h2>3. JOIN<a class="headerlink" href="#join" title="Link to this heading">#</a></h2>
-<p>Met een <code class="docutils literal notranslate"><span class="pre">JOIN</span></code> combineer je gegevens uit meerdere tabellen. Je koppelt de tabellen aan elkaar op basis van een gemeenschappelijk veld.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">voornaam</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">profielnaam</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span><span class="w"> </span><span class="n">u</span>
-<span class="k">JOIN</span><span class="w"> </span><span class="n">profielen</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">gebruiker_id</span><span class="p">;</span>
+<section id="voordoen-en-nadoen">
+<h2>Voordoen en nadoen<a class="headerlink" href="#voordoen-en-nadoen" title="Link to this heading">#</a></h2>
+<section id="voordoen-nieuw-concept-join-aliassen">
+<h3>Voordoen (nieuw concept: <code class="docutils literal notranslate"><span class="pre">JOIN</span></code> + aliassen)<a class="headerlink" href="#voordoen-nieuw-concept-join-aliassen" title="Link to this heading">#</a></h3>
+<p>Vraag: “Welke profielen horen bij welke gebruiker?”</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">profiel_id</span><span class="p">,</span>
+<span class="w">       </span><span class="n">p</span><span class="p">.</span><span class="n">voornaam</span><span class="p">,</span>
+<span class="w">       </span><span class="n">p</span><span class="p">.</span><span class="n">achternaam</span><span class="p">,</span>
+<span class="w">       </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">gebruiker_id</span><span class="p">,</span>
+<span class="w">       </span><span class="n">u</span><span class="p">.</span><span class="n">email</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">profielen</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">p</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">gebruikers</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">gebruiker_id</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
 </pre></div>
 </div>
-<section id="wat-gebeurt-hier">
-<h3>Wat gebeurt hier?<a class="headerlink" href="#wat-gebeurt-hier" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">gebruikers</span> <span class="pre">u</span></code> = tabel gebruikers, met alias <code class="docutils literal notranslate"><span class="pre">u</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">profielen</span> <span class="pre">p</span></code> = tabel profielen, met alias <code class="docutils literal notranslate"><span class="pre">p</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ON</span> <span class="pre">u.id</span> <span class="pre">=</span> <span class="pre">p.gebruiker_id</span></code> = koppeling tussen gebruiker en profiel</p></li>
-</ul>
-<p>Het resultaat is een lijst met de voornaam van de gebruiker en de naam van zijn profiel.</p>
-</section>
-<section id="waarom-is-on-zo-belangrijk">
-<h3>Waarom is <code class="docutils literal notranslate"><span class="pre">ON</span></code> zo belangrijk?<a class="headerlink" href="#waarom-is-on-zo-belangrijk" title="Link to this heading">#</a></h3>
-<p>De <code class="docutils literal notranslate"><span class="pre">ON</span></code>-voorwaarde vertelt SQL precies welke rijen met elkaar moeten worden gekoppeld. Als je die mist, weet SQL niet hoe de tabellen samenhangen.</p>
-</section>
-</section>
-<hr class="docutils" />
-<section id="join-met-meerdere-tabellen">
-<h2>4. JOIN met meerdere tabellen<a class="headerlink" href="#join-met-meerdere-tabellen" title="Link to this heading">#</a></h2>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">titel</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aflevering</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">titel</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">serie</span><span class="p">,</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">naam</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">genre</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">afleveringen</span><span class="w"> </span><span class="n">a</span>
-<span class="k">JOIN</span><span class="w"> </span><span class="n">series</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">serie_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">id</span>
-<span class="k">JOIN</span><span class="w"> </span><span class="n">genres</span><span class="w"> </span><span class="k">g</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">genre_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
+<p>Controlequery:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_koppelingen</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">profielen</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">p</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">gebruikers</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">gebruiker_id</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Met extra <code class="docutils literal notranslate"><span class="pre">JOIN</span></code>-regels kun je stap voor stap meer tabellen koppelen. Je kunt dit zien als een keten: aflevering hoort bij serie, en serie hoort bij genre.</p>
-<section id="denk-in-stappen">
-<h3>Denk in stappen<a class="headerlink" href="#denk-in-stappen" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Koppel aflevering aan serie.</p></li>
-<li><p>Koppel serie aan genre.</p></li>
-<li><p>Toon de relevante informatie uit alle drie de tabellen.</p></li>
-</ol>
-<p>Dat is precies hoe een relationele database werkt: informatie wordt in kleine stukjes opgeslagen, maar bij een vraag weer samengevoegd.</p>
+<p>Voorspel eerst: verwacht je evenveel rijen als in <code class="docutils literal notranslate"><span class="pre">profielen</span></code>? Waarom?</p>
+</section>
+<section id="nadoen-een-verandering">
+<h3>Nadoen (één verandering)<a class="headerlink" href="#nadoen-een-verandering" title="Link to this heading">#</a></h3>
+<p>Koppel nu <code class="docutils literal notranslate"><span class="pre">series</span></code> met <code class="docutils literal notranslate"><span class="pre">genres</span></code>:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">titel</span><span class="p">,</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">naam</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">genre</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">kijkwijzer</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">series</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">s</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">genres</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="k">g</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">genre_id</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Controlequery:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_series_met_genre</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">series</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">s</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">genres</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="k">g</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">genre_id</span><span class="p">;</span>
+</pre></div>
+</div>
 </section>
 </section>
 <hr class="docutils" />
-<section id="veelgemaakte-fouten">
-<h2>5. Veelgemaakte fouten<a class="headerlink" href="#veelgemaakte-fouten" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Join-voorwaarde vergeten (<code class="docutils literal notranslate"><span class="pre">ON</span> <span class="pre">...</span></code>).</p></li>
-<li><p>Verkeerde kolommen aan elkaar koppelen.</p></li>
-<li><p>Niet controleren op dubbele rijen door 1-op-veel-relaties.</p></li>
-<li><p>Kolomnamen niet verduidelijken met aliassen (<code class="docutils literal notranslate"><span class="pre">u</span></code>, <code class="docutils literal notranslate"><span class="pre">p</span></code>, <code class="docutils literal notranslate"><span class="pre">a</span></code>).</p></li>
-</ol>
-<section id="extra-aandachtspunt-dubbele-rijen">
-<h3>Extra aandachtspunt: dubbele rijen<a class="headerlink" href="#extra-aandachtspunt-dubbele-rijen" title="Link to this heading">#</a></h3>
-<p>Bij een <code class="docutils literal notranslate"><span class="pre">JOIN</span></code> kunnen dubbele resultaten ontstaan als een tabel meerdere passende records heeft. Bijvoorbeeld: één gebruiker kan meerdere profielen hebben. Als je dan niet goed nadenkt over je koppeling, kun je dezelfde gebruiker meerdere keren zien.</p>
+<section id="nieuwe-stap-left-join">
+<h2>Nieuwe stap: <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code><a class="headerlink" href="#nieuwe-stap-left-join" title="Link to this heading">#</a></h2>
+<p>Met <code class="docutils literal notranslate"><span class="pre">JOIN</span></code> krijg je alleen matches.<br />
+Met <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code> krijg je ook rijen zonder match.</p>
+<p>Voorbeeldvraag: “Welke gebruikers hebben geen abonnement?”</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">email</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">u</span>
+<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">abonnementen</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">gebruiker_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span>
+</pre></div>
+</div>
 </section>
-<section id="praktische-vuistregel">
-<h3>Praktische vuistregel<a class="headerlink" href="#praktische-vuistregel" title="Link to this heading">#</a></h3>
-<p>Controleer altijd of je op de juiste sleutel koppelt. Het antwoord moet logisch zijn: “Is dit echt dezelfde record die ik bedoel?”</p>
+<hr class="docutils" />
+<section id="nieuwe-stap-groeperen-en-filteren-op-groepen">
+<h2>Nieuwe stap: groeperen en filteren op groepen<a class="headerlink" href="#nieuwe-stap-groeperen-en-filteren-op-groepen" title="Link to this heading">#</a></h2>
+<section id="count-distinct">
+<h3><code class="docutils literal notranslate"><span class="pre">COUNT(DISTINCT</span> <span class="pre">...)</span></code><a class="headerlink" href="#count-distinct" title="Link to this heading">#</a></h3>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">profiel_id</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">unieke_profielen_met_beoordeling</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">beoordelingen</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="group-by-having">
+<h3><code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> + <code class="docutils literal notranslate"><span class="pre">HAVING</span></code><a class="headerlink" href="#group-by-having" title="Link to this heading">#</a></h3>
+<p>Vraag: “Welke gebruikers hebben 3 profielen?”</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">gebruiker_id</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_profielen</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">profielen</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">p</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">gebruiker_id</span>
+<span class="k">HAVING</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">gebruiker_id</span><span class="p">;</span>
+</pre></div>
+</div>
 </section>
 </section>
 <hr class="docutils" />
 <section id="opdrachten">
 <h2>Opdrachten<a class="headerlink" href="#opdrachten" title="Link to this heading">#</a></h2>
-<p>Voer alle opdrachten uit in jouw database: <code class="docutils literal notranslate"><span class="pre">nimmastream_&lt;gebruikersnaam&gt;</span></code>.</p>
-<section id="opdracht-1-basis-joins">
-<h3>Opdracht 1 - Basis JOINs<a class="headerlink" href="#opdracht-1-basis-joins" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Toon profielnaam met voornaam van de gebruiker.</p></li>
-<li><p>Toon gebruikersnaam met abonnementstype.</p></li>
-<li><p>Toon afleveringtitel met serietitel.</p></li>
-</ol>
+<section id="opdracht-1-basis-join">
+<h3>Opdracht 1 - Basis (<code class="docutils literal notranslate"><span class="pre">JOIN</span></code>)<a class="headerlink" href="#opdracht-1-basis-join" title="Link to this heading">#</a></h3>
+<p>Vraag: “Toon kijkgeschiedenis met profielnaam.”</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">voornaam</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">achternaam</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">aflevering_id</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">gekeken_op</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">kijkgeschiedenis</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">k</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">profielen</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">profiel_id</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">id</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Controlequery:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_rijen</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">kijkgeschiedenis</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">k</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">profielen</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">profiel_id</span><span class="p">;</span>
+</pre></div>
+</div>
 </section>
-<section id="opdracht-2-gericht-koppelen-met-join">
-<h3>Opdracht 2 - Gericht koppelen met JOIN<a class="headerlink" href="#opdracht-2-gericht-koppelen-met-join" title="Link to this heading">#</a></h3>
-<p>Schrijf een query met <code class="docutils literal notranslate"><span class="pre">JOIN</span></code> voor:</p>
-<ol class="arabic simple">
-<li><p>gebruikers en hun profielen;</p></li>
-<li><p>series en hun genres;</p></li>
-<li><p>afleveringen en hun serie.</p></li>
-</ol>
+<section id="opdracht-2-basis-left-join">
+<h3>Opdracht 2 - Basis (<code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code>)<a class="headerlink" href="#opdracht-2-basis-left-join" title="Link to this heading">#</a></h3>
+<p>Vraag: “Welke gebruikers hebben géén abonnement?”</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">email</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">u</span>
+<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">abonnementen</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">gebruiker_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Controlequery:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_zonder_abonnement</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">u</span>
+<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">abonnementen</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">gebruiker_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span>
+</pre></div>
+</div>
 </section>
-<section id="opdracht-3-drie-tabellen-koppelen">
-<h3>Opdracht 3 - Drie tabellen koppelen<a class="headerlink" href="#opdracht-3-drie-tabellen-koppelen" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Toon serietitel, genre en kijkwijzer.</p></li>
-<li><p>Toon profielnaam, gebruiker en aantal kijkmomenten.</p></li>
-</ol>
+<section id="opdracht-3-verdieping-count-distinct">
+<h3>Opdracht 3 - Verdieping (<code class="docutils literal notranslate"><span class="pre">COUNT(DISTINCT</span> <span class="pre">...)</span></code>)<a class="headerlink" href="#opdracht-3-verdieping-count-distinct" title="Link to this heading">#</a></h3>
+<p>Vraag: “Hoeveel verschillende profielen hebben minimaal één beoordeling gegeven?”</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">profiel_id</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_profielen</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">beoordelingen</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Controlevraag: waarom is dit getal lager dan het totaal aantal profielen?</p>
 </section>
-<section id="opdracht-4-controleren-of-je-join-klopt">
-<h3>Opdracht 4 - Controleren of je JOIN klopt<a class="headerlink" href="#opdracht-4-controleren-of-je-join-klopt" title="Link to this heading">#</a></h3>
-<p>Dit is de meest lastige opdrachttype. Volg deze aanpak:</p>
-<p><strong>Stap 1: Schrijf de query</strong></p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">voornaam</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">profielnaam</span>
+<section id="opdracht-4-verdieping-having">
+<h3>Opdracht 4 - Verdieping (<code class="docutils literal notranslate"><span class="pre">HAVING</span></code>)<a class="headerlink" href="#opdracht-4-verdieping-having" title="Link to this heading">#</a></h3>
+<p>Vraag: “Welke gebruikers hebben precies 3 profielen?”</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">gebruiker_id</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_profielen</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">profielen</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">p</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">gebruiker_id</span>
+<span class="k">HAVING</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">gebruiker_id</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Controlequery:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_gebruikers_met_3_profielen</span>
+<span class="k">FROM</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">gebruiker_id</span>
+<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">profielen</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">p</span>
+<span class="w">  </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">gebruiker_id</span>
+<span class="w">  </span><span class="k">HAVING</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span>
+<span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">t</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="opdracht-5-debuggen">
+<h3>Opdracht 5 - Debuggen<a class="headerlink" href="#opdracht-5-debuggen" title="Link to this heading">#</a></h3>
+<p>Foute query:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">voornaam</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span><span class="w"> </span><span class="n">u</span>
-<span class="k">JOIN</span><span class="w"> </span><span class="n">profielen</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">gebruiker_id</span><span class="p">;</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">profielen</span><span class="w"> </span><span class="n">p</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">gebruiker_id</span><span class="p">;</span>
 </pre></div>
 </div>
-<p><strong>Stap 2: Voordat je de query uitvoert, denk vooruit:</strong></p>
-<p>“Hoeveel rijen verwacht ik?”</p>
-<p>Kijk in je hoofd na welke gebruiker hoeveel profielen hebben:</p>
-<ul class="simple">
-<li><p>Gebruiker 1 (Jan) → 2 profielen</p></li>
-<li><p>Gebruiker 2 (Peter) → 1 profiel</p></li>
-<li><p>Gebruiker 3 (Roos) → 3 profielen</p></li>
-<li><p>→ Totaal verwacht: 2+1+3 = <strong>6 rijen</strong></p></li>
-</ul>
-<p><strong>Stap 3: Voer de query uit</strong></p>
-<p>Resultaat:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">voornaam</span> <span class="o">|</span> <span class="n">profielnaam</span>
-<span class="o">---------|------------</span>
-<span class="n">Jan</span>      <span class="o">|</span> <span class="n">Kinderprofiel</span>
-<span class="n">Jan</span>      <span class="o">|</span> <span class="n">Volwassenen</span>
-<span class="n">Peter</span>    <span class="o">|</span> <span class="n">Favorieten</span>
-<span class="n">Roos</span>     <span class="o">|</span> <span class="n">Profiel1</span>
-<span class="n">Roos</span>     <span class="o">|</span> <span class="n">Profiel2</span>
-<span class="n">Roos</span>     <span class="o">|</span> <span class="n">Profiel3</span>
-</pre></div>
-</div>
-<p><strong>Stap 4: Controleer kritisch</strong></p>
-<ul class="simple">
-<li><p>✅ Aantal rijen klopt (6 verwacht, 6 gekregen)</p></li>
-<li><p>✅ Dezelfde voornaam verschijnt meermaals (logisch: 1 gebruiker met meerdere profielen)</p></li>
-<li><p>✅ Koppeling klopt (Jan’s profielen zijn werkelijk van Jan)</p></li>
-</ul>
-<p><strong>Mogelijke problemen die je zo opspoort:</strong></p>
-<ul class="simple">
-<li><p>❌ Aantal rijen veel hoger (10+)? Misschien fout in ON-voorwaarde</p></li>
-<li><p>❌ Lege tabel? Misschien geen data in ene tabel, of ON-voorwaarde kan niets matchen</p></li>
-<li><p>❌ Rij van Jan en Peter gemixed? ON-voorwaarde waarschijnlijk fout</p></li>
-</ul>
-<p>Voer deze controlestappen uit bij elk van deze queries en noteer je verwachting versus werkelijke uitkomst.</p>
-</section>
-<section id="opdracht-5-challenge">
-<h3>Opdracht 5 - Challenge<a class="headerlink" href="#opdracht-5-challenge" title="Link to this heading">#</a></h3>
-<p>Schrijf een query met <code class="docutils literal notranslate"><span class="pre">JOIN</span></code> die laat zien:</p>
 <ol class="arabic simple">
-<li><p>profielnaam;</p></li>
-<li><p>afleveringstitel;</p></li>
-<li><p>gegeven beoordeling.</p></li>
+<li><p>Waarom is dit fout?</p></li>
+<li><p>Zet de <code class="docutils literal notranslate"><span class="pre">ON</span></code> op de juiste plaats.</p></li>
+<li><p>Controleer met een <code class="docutils literal notranslate"><span class="pre">COUNT(*)</span></code>.</p></li>
 </ol>
+</section>
+<section id="opdracht-6-open-casus-uitdaging">
+<h3>Opdracht 6 - Open casus (uitdaging)<a class="headerlink" href="#opdracht-6-open-casus-uitdaging" title="Link to this heading">#</a></h3>
+<p><strong>Melding van collega:</strong><br />
+“Ik vermoed dat sommige beoordelingen niet te koppelen zijn aan een kijkmoment. Kun jij dat uitzoeken?”</p>
+<p>Werk in deze volgorde:</p>
+<ol class="arabic simple">
+<li><p>Wat weet ik al?</p></li>
+<li><p>Wat moet ik uitzoeken?</p></li>
+<li><p>In welke tabellen zit dat?</p></li>
+<li><p>Schrijf de query:</p></li>
+</ol>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">profiel_id</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">aflevering_id</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">beoordeling</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">beoordelingen</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">b</span>
+<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">kijkgeschiedenis</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">k</span>
+<span class="w">  </span><span class="k">ON</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">profiel_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">profiel_id</span>
+<span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">aflevering_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">aflevering_id</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Controleer je antwoord:</p></li>
+</ol>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_beoordelingen_zonder_kijkmoment</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">beoordelingen</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">b</span>
+<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">kijkgeschiedenis</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">k</span>
+<span class="w">  </span><span class="k">ON</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">profiel_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">profiel_id</span>
+<span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">aflevering_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">aflevering_id</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Leg uit waarom dit een datakwaliteitsprobleem kan zijn.</p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="check-je-begrip">
 <h2>Check je begrip<a class="headerlink" href="#check-je-begrip" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Waarom heb je bij een <code class="docutils literal notranslate"><span class="pre">JOIN</span></code> altijd een <code class="docutils literal notranslate"><span class="pre">ON</span></code>-voorwaarde nodig?</p></li>
-<li><p>Waarom zijn foreign keys belangrijk?</p></li>
-<li><p>Wanneer kan een JOIN dubbele rijen geven?</p></li>
-<li><p>Hoe controleer je of een JOIN-resultaat klopt?</p></li>
+<li><p>Wanneer kies je <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code> in plaats van <code class="docutils literal notranslate"><span class="pre">JOIN</span></code>?</p></li>
+<li><p>Waarom is <code class="docutils literal notranslate"><span class="pre">COUNT(DISTINCT</span> <span class="pre">...)</span></code> soms beter dan <code class="docutils literal notranslate"><span class="pre">COUNT(*)</span></code>?</p></li>
+<li><p>Wat doet <code class="docutils literal notranslate"><span class="pre">HAVING</span></code> dat <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> niet kan?</p></li>
+<li><p>Hoe controleer je of je koppeling logisch is?</p></li>
 </ol>
+</section>
+<hr class="docutils" />
+<section id="reflectie">
+<h2>Reflectie<a class="headerlink" href="#reflectie" title="Link to this heading">#</a></h2>
+<p>Bij welke JOIN-vraag moest je het langst nadenken over de <code class="docutils literal notranslate"><span class="pre">ON</span></code>-voorwaarde?</p>
 </section>
 <hr class="docutils" />
 <section id="samenvatting">
 <h2>Samenvatting<a class="headerlink" href="#samenvatting" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Relaties maken het mogelijk om data netjes te verdelen.</p></li>
-<li><p>Met JOINs combineer je die data weer tot bruikbare informatie.</p></li>
-<li><p>Met meerdere <code class="docutils literal notranslate"><span class="pre">JOIN</span></code>-stappen kun je rijke informatie uit verschillende tabellen opbouwen.</p></li>
+<li><p>Met <code class="docutils literal notranslate"><span class="pre">JOIN</span></code> combineer je tabellen via sleutelkolommen.</p></li>
+<li><p>Met <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code> kun je ook “zonder match” vinden.</p></li>
+<li><p>Met <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> en <code class="docutils literal notranslate"><span class="pre">HAVING</span></code> analyseer je groepen.</p></li>
+<li><p>Met <code class="docutils literal notranslate"><span class="pre">COUNT(DISTINCT</span> <span class="pre">...)</span></code> voorkom je dubbeltellingen.</p></li>
 </ul>
 </section>
 </section>
@@ -773,7 +778,7 @@
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Hoofdstuk 2: SELECT, WHERE en ORDER BY</p>
+        <p class="prev-next-title">Hoofdstuk 2: Filteren met WHERE</p>
       </div>
     </a>
     <a class="right-next"
@@ -781,7 +786,7 @@
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Hoofdstuk 4: UPDATE, DELETE, subqueries en GROUP BY</p>
+        <p class="prev-next-title">Hoofdstuk 4: Data aanpassen en onderzoekswerk</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -804,38 +809,28 @@
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-meerdere-tabellen">1. Waarom meerdere tabellen?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-is-dat-slim">Waarom is dat slim?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voordoen-en-nadoen">Voordoen en nadoen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voordoen-nieuw-concept-join-aliassen">Voordoen (nieuw concept: <code class="docutils literal notranslate"><span class="pre">JOIN</span></code> + aliassen)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nadoen-een-verandering">Nadoen (één verandering)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sleutels-keys">2. Sleutels (keys)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld">Voorbeeld</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-zijn-sleutels-zo-belangrijk">Waarom zijn sleutels zo belangrijk?</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#join">3. JOIN</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-gebeurt-hier">Wat gebeurt hier?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-is-on-zo-belangrijk">Waarom is <code class="docutils literal notranslate"><span class="pre">ON</span></code> zo belangrijk?</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#join-met-meerdere-tabellen">4. JOIN met meerdere tabellen</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#denk-in-stappen">Denk in stappen</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veelgemaakte-fouten">5. Veelgemaakte fouten</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-aandachtspunt-dubbele-rijen">Extra aandachtspunt: dubbele rijen</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#praktische-vuistregel">Praktische vuistregel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nieuwe-stap-left-join">Nieuwe stap: <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nieuwe-stap-groeperen-en-filteren-op-groepen">Nieuwe stap: groeperen en filteren op groepen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#count-distinct"><code class="docutils literal notranslate"><span class="pre">COUNT(DISTINCT</span> <span class="pre">...)</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#group-by-having"><code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> + <code class="docutils literal notranslate"><span class="pre">HAVING</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-basis-joins">Opdracht 1 - Basis JOINs</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-gericht-koppelen-met-join">Opdracht 2 - Gericht koppelen met JOIN</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-drie-tabellen-koppelen">Opdracht 3 - Drie tabellen koppelen</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-controleren-of-je-join-klopt">Opdracht 4 - Controleren of je JOIN klopt</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-challenge">Opdracht 5 - Challenge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-basis-join">Opdracht 1 - Basis (<code class="docutils literal notranslate"><span class="pre">JOIN</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-basis-left-join">Opdracht 2 - Basis (<code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-verdieping-count-distinct">Opdracht 3 - Verdieping (<code class="docutils literal notranslate"><span class="pre">COUNT(DISTINCT</span> <span class="pre">...)</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-verdieping-having">Opdracht 4 - Verdieping (<code class="docutils literal notranslate"><span class="pre">HAVING</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-debuggen">Opdracht 5 - Debuggen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-6-open-casus-uitdaging">Opdracht 6 - Open casus (uitdaging)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reflectie">Reflectie</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
 </ul>
   </nav></div>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Hoofdstuk 1: Oriëntatie op SQL met SQL Island &#8212; Informatica</title>
+    <title>Hoofdstuk 1: Starten als Nimmastream-medewerker &#8212; Informatica</title>
   
   
   
@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=6a604523" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -55,7 +55,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="../_static/design-tabs.js?v=fcb327ea"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -64,7 +64,7 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Hoofdstuk 2: SELECT, WHERE en ORDER BY" href="hoofdstuk2.html" />
+    <link rel="next" title="Hoofdstuk 2: Filteren met WHERE" href="hoofdstuk2.html" />
     <link rel="prev" title="Blok 5: SQL, PHP en webshop" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -259,10 +259,10 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">4ha blok 5</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Hoofdstuk 1: Oriëntatie op SQL met SQL Island</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hoofdstuk2.html">Hoofdstuk 2: SELECT, WHERE en ORDER BY</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hoofdstuk3.html">Hoofdstuk 3: Relaties en JOINs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hoofdstuk4.html">Hoofdstuk 4: UPDATE, DELETE, subqueries en GROUP BY</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Hoofdstuk 1: Starten als Nimmastream-medewerker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hoofdstuk2.html">Hoofdstuk 2: Filteren met WHERE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hoofdstuk3.html">Hoofdstuk 3: Tabellen koppelen met JOIN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hoofdstuk4.html">Hoofdstuk 4: Data aanpassen en onderzoekswerk</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk5.html">Hoofdstuk 5: PHP + MySQL - gegevens tonen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk6.html">Hoofdstuk 6: PHP + MySQL - UPDATE en DELETE via formulieren</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk7.html">Hoofdstuk 7: Webshopproject - basisopzet en CRUD</a></li>
@@ -461,7 +461,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Hoofdstuk 1: Oriëntatie op SQL met SQL Island</h1>
+    <h1>Hoofdstuk 1: Starten als Nimmastream-medewerker</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -472,23 +472,25 @@
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-starten-met-een-game">Waarom starten met een game?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-een-database-eigenlijk">Wat is een database eigenlijk?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-is-sql-belangrijk">Waarom is SQL belangrijk?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#korte-warming-up-sql-island-15-minuten">Korte warming-up: SQL Island (15 minuten)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#werkomgeving">Werkomgeving</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veilig-werken-altijd-doen">Veilig werken (altijd doen)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voordoen-en-nadoen">Voordoen en nadoen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voordoen-nieuw-concept-select-order-by-limit">Voordoen (nieuw concept: <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> + <code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code> + <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nadoen-zelfde-query-een-verandering">Nadoen (zelfde query, één verandering)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-sql-island">Opdracht: SQL Island</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-je-tijdens-sql-island-moet-proberen-te-zien">Wat je tijdens SQL Island moet proberen te zien</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#koppeling-met-jouw-database">Koppeling met jouw database</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#denk-als-een-informaticus">Denk als een informaticus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-basis">Opdracht 1 - Basis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-basis">Opdracht 2 - Basis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-verdieping">Opdracht 3 - Verdieping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-debuggen">Opdracht 4 - Debuggen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-uitdaging-onderzoek">Opdracht 5 - Uitdaging (onderzoek)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-opdrachten-als-je-eerder-klaar-bent">Extra opdrachten (als je eerder klaar bent)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reflectie">Reflectie</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huiswerk">Huiswerk</a></li>
 </ul>
             </nav>
         </div>
@@ -500,142 +502,193 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="hoofdstuk-1-orientatie-op-sql-met-sql-island">
-<h1>Hoofdstuk 1: Oriëntatie op SQL met SQL Island<a class="headerlink" href="#hoofdstuk-1-orientatie-op-sql-met-sql-island" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="hoofdstuk-1-starten-als-nimmastream-medewerker">
+<h1>Hoofdstuk 1: Starten als Nimmastream-medewerker<a class="headerlink" href="#hoofdstuk-1-starten-als-nimmastream-medewerker" title="Link to this heading">#</a></h1>
 <section id="leerdoelen">
 <h2>Leerdoelen<a class="headerlink" href="#leerdoelen" title="Link to this heading">#</a></h2>
-<p>In dit hoofdstuk maak je kennis met SQL door te oefenen in een game-omgeving.</p>
-<p>Je leert:</p>
+<p>In dit hoofdstuk leer je:</p>
 <ul class="simple">
 <li><p>wat een database, tabel, rij en kolom is;</p></li>
-<li><p>wat een query is;</p></li>
-<li><p>waarom SQL belangrijk is voor websites en apps;</p></li>
-<li><p>hoe je stap voor stap logische vragen aan data stelt.</p></li>
+<li><p>veilig werken in phpMyAdmin;</p></li>
+<li><p>je eerste SQL-query’s met <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>, <code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code> en <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code>;</p></li>
+<li><p>voorspellen wat een query teruggeeft.</p></li>
 </ul>
-<p>Aan het einde van dit hoofdstuk kun je in eigen woorden uitleggen wat SQL doet en kun je laten zien dat je al eerste query-denkstappen hebt gezet.</p>
+<p>Aan het einde kun je eenvoudige data ophalen uit de Nimmastream-database en uitleggen waarom je resultaat klopt.</p>
 </section>
 <hr class="docutils" />
-<section id="waarom-starten-met-een-game">
-<h2>Waarom starten met een game?<a class="headerlink" href="#waarom-starten-met-een-game" title="Link to this heading">#</a></h2>
-<p>Bij SQL moet je leren denken in:</p>
-<ul class="simple">
-<li><p>tabellen;</p></li>
-<li><p>voorwaarden;</p></li>
-<li><p>logische keuzes;</p></li>
-<li><p>relaties tussen gegevens.</p></li>
-</ul>
-<p>Dat is in het begin abstract. Een tabel lijkt op een spreadsheet, maar de echte kracht zit in het kunnen vragen stellen aan grote hoeveelheden data. SQL Island helpt je daar stap voor stap in te oefenen: je ziet direct wat een query doet en waarom een antwoord logisch is.</p>
-<p>Je oefent dus niet alleen syntax, maar vooral <strong>datadenken</strong>. De vraag is niet alleen: “Hoe schrijf ik een query?” Maar ook: “Welke informatie wil ik precies hebben?” En: “Welke gegevens moet ik daarvoor uit welke tabel halen?”</p>
-<section id="wat-is-een-database-eigenlijk">
-<h3>Wat is een database eigenlijk?<a class="headerlink" href="#wat-is-een-database-eigenlijk" title="Link to this heading">#</a></h3>
-<p>Een database is een georganiseerde verzameling gegevens. In een database staan verschillende tabellen, en elke tabel heeft kolommen en rijen.</p>
-<ul class="simple">
-<li><p>een <strong>tabel</strong> is een verzameling records over hetzelfde onderwerp;</p></li>
-<li><p>een <strong>rij</strong> is één record, bijvoorbeeld één gebruiker;</p></li>
-<li><p>een <strong>kolom</strong> is een eigenschap, bijvoorbeeld naam, leeftijd of regio.</p></li>
-</ul>
-<p>Als je iets wilt weten als: “Welke gebruikers zijn ouder dan 18?”, dan werk je met een query die precies die rijen uit de tabel haalt.</p>
-</section>
-<section id="waarom-is-sql-belangrijk">
-<h3>Waarom is SQL belangrijk?<a class="headerlink" href="#waarom-is-sql-belangrijk" title="Link to this heading">#</a></h3>
-<p>SQL is een taal die gebruikt wordt om gegevens op te vragen, te filteren, te vergelijken en te combineren. Denk aan een bibliothecaris die in een grote catalogus zoekt. SQL laat je precies die boeken of gegevens vinden die je nodig hebt, zonder alles in één keer te zien.</p>
-</section>
-</section>
-<hr class="docutils" />
-<section id="opdracht-sql-island">
-<h2>Opdracht: SQL Island<a class="headerlink" href="#opdracht-sql-island" title="Link to this heading">#</a></h2>
-<p>Ga naar:</p>
-<p><a class="reference external" href="https://sql-island.informatik.uni-kl.de/">https://sql-island.informatik.uni-kl.de/</a></p>
+<section id="korte-warming-up-sql-island-15-minuten">
+<h2>Korte warming-up: SQL Island (15 minuten)<a class="headerlink" href="#korte-warming-up-sql-island-15-minuten" title="Link to this heading">#</a></h2>
+<p>Ga naar <a class="reference external" href="https://sql-island.informatik.uni-kl.de/">https://sql-island.informatik.uni-kl.de/</a> en speel 15 minuten.</p>
+<p>Noteer tijdens het spelen:</p>
 <ol class="arabic simple">
-<li><p>Speel minimaal 30 minuten.</p></li>
-<li><p>Voltooi zoveel mogelijk levels.</p></li>
-<li><p>Noteer moeilijke woorden of opdrachten die je tegenkomt.</p></li>
+<li><p>één opdracht die je makkelijk vond;</p></li>
+<li><p>één opdracht die je lastig vond;</p></li>
+<li><p>één SQL-woord dat je nog niet kende.</p></li>
 </ol>
-<section id="wat-je-tijdens-sql-island-moet-proberen-te-zien">
-<h3>Wat je tijdens SQL Island moet proberen te zien<a class="headerlink" href="#wat-je-tijdens-sql-island-moet-proberen-te-zien" title="Link to this heading">#</a></h3>
-<p>Bij elke opdracht is de kernvraag:</p>
-<ul class="simple">
-<li><p>wat wil ik weten?</p></li>
-<li><p>welke tabel bevat die informatie?</p></li>
-<li><p>welke voorwaarde moet ik toepassen?</p></li>
-</ul>
-<p>Als je die drie vragen kunt beantwoorden, ben je al goed op weg naar echte SQL.</p>
-</section>
+<p>Daarna gaan we meteen naar de echte database.</p>
 </section>
 <hr class="docutils" />
-<section id="koppeling-met-jouw-database">
-<h2>Koppeling met jouw database<a class="headerlink" href="#koppeling-met-jouw-database" title="Link to this heading">#</a></h2>
-<p>In dit blok werk je in jouw database:</p>
+<section id="werkomgeving">
+<h2>Werkomgeving<a class="headerlink" href="#werkomgeving" title="Link to this heading">#</a></h2>
+<p>Werk in phpMyAdmin altijd in jouw eigen database:</p>
 <p><code class="docutils literal notranslate"><span class="pre">nimmastream_&lt;gebruikersnaam&gt;</span></code></p>
-<p>Voorbeeld:</p>
-<ul class="simple">
-<li><p>gebruikersnaam <code class="docutils literal notranslate"><span class="pre">leerling_007</span></code> -&gt; database <code class="docutils literal notranslate"><span class="pre">nimmastream_leerling_007</span></code></p></li>
-</ul>
-<p>Je gaat later query’s schrijven op tabellen zoals:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">gebruikers</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">series</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">genres</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">afleveringen</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">profielen</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">abonnementen</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">kijkgeschiedenis</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">beoordelingen</span></code></p></li>
-</ul>
-<p>Wat je nu in SQL Island leert, gebruik je straks op echte data. Het verschil is dat de game je de logica geeft, en je echte database laat zien hoe die logica in de praktijk werkt.</p>
-<section id="denk-als-een-informaticus">
-<h3>Denk als een informaticus<a class="headerlink" href="#denk-als-een-informaticus" title="Link to this heading">#</a></h3>
-<p>Bij elk SQL-probleem stel je jezelf vier vragen:</p>
+<p>Voorbeeld: <code class="docutils literal notranslate"><span class="pre">nimmastream_leerling_007</span></code></p>
+<p>Je werkt als beginnende medewerker bij Nimmastream. Je taak: snel en betrouwbaar klantgegevens opzoeken.</p>
+</section>
+<hr class="docutils" />
+<section id="veilig-werken-altijd-doen">
+<h2>Veilig werken (altijd doen)<a class="headerlink" href="#veilig-werken-altijd-doen" title="Link to this heading">#</a></h2>
+<p>Voor je begint:</p>
 <ol class="arabic simple">
-<li><p>Welke vraag wil ik beantwoorden?</p></li>
-<li><p>Welke tabel bevat de relevante informatie?</p></li>
-<li><p>Welke kolommen zijn nodig?</p></li>
-<li><p>Welke filter, sortering of combinatie past hierbij?</p></li>
+<li><p><strong>Maak een export</strong> van je database.</p></li>
+<li><p>Bij <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> of <code class="docutils literal notranslate"><span class="pre">DELETE</span></code>: voer <strong>eerst dezelfde <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> uit met <code class="docutils literal notranslate"><span class="pre">SELECT</span></code></strong>.</p></li>
+<li><p>Gaat er iets mis? <strong>Importeer je export opnieuw</strong>.</p></li>
 </ol>
-<p>Zo leer je niet alleen syntax, maar ook logisch nadenken.</p>
+<p>In hoofdstuk 1 doen we nog geen wijzigingen, maar deze routine geldt vanaf nu altijd.</p>
+</section>
+<hr class="docutils" />
+<section id="voordoen-en-nadoen">
+<h2>Voordoen en nadoen<a class="headerlink" href="#voordoen-en-nadoen" title="Link to this heading">#</a></h2>
+<section id="voordoen-nieuw-concept-select-order-by-limit">
+<h3>Voordoen (nieuw concept: <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> + <code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code> + <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code>)<a class="headerlink" href="#voordoen-nieuw-concept-select-order-by-limit" title="Link to this heading">#</a></h3>
+<p>Vraag in gewone taal: “Laat de eerste 5 gebruikers zien.”</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="n">land</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">id</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Resultaatcontrole:</p>
+<ul class="simple">
+<li><p>je krijgt <strong>5 rijen</strong>;</p></li>
+<li><p>de ids lopen van <strong>1 t/m 5</strong>.</p></li>
+</ul>
+<p><strong>Hoe weet je dat dit klopt?</strong><br />
+Omdat je op <code class="docutils literal notranslate"><span class="pre">id</span></code> oplopend sorteert en met <code class="docutils literal notranslate"><span class="pre">LIMIT</span> <span class="pre">5</span></code> precies 5 rijen vraagt.</p>
+</section>
+<section id="nadoen-zelfde-query-een-verandering">
+<h3>Nadoen (zelfde query, één verandering)<a class="headerlink" href="#nadoen-zelfde-query-een-verandering" title="Link to this heading">#</a></h3>
+<p>Nu jij: haal de eerste 5 profielen op.</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">gebruiker_id</span><span class="p">,</span><span class="w"> </span><span class="n">voornaam</span><span class="p">,</span><span class="w"> </span><span class="n">achternaam</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">profielen</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">id</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</pre></div>
+</div>
+<p><strong>Voorspel eerst:</strong> welke id’s verwacht je?<br />
+<strong>Controlequery:</strong> tel eerst alle profielen:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_profielen</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">profielen</span><span class="p">;</span>
+</pre></div>
+</div>
+<p><strong>Hoe weet je dat dit klopt?</strong></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="opdrachten">
+<h2>Opdrachten<a class="headerlink" href="#opdrachten" title="Link to this heading">#</a></h2>
+<p>Gebruik steeds deze vaste routine:</p>
+<ol class="arabic simple">
+<li><p>voorspel de uitkomst;</p></li>
+<li><p>voer de query uit;</p></li>
+<li><p>controleer met een extra query;</p></li>
+<li><p>beantwoord: <strong>Hoe weet je dat dit klopt?</strong></p></li>
+</ol>
+<section id="opdracht-1-basis">
+<h3>Opdracht 1 - Basis<a class="headerlink" href="#opdracht-1-basis" title="Link to this heading">#</a></h3>
+<p>Vraag: “Hoe groot is elke hoofdtabel?”</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_gebruikers</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span><span class="p">;</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_profielen</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">profielen</span><span class="p">;</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_abonnementen</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">abonnementen</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Controle: vergelijk met je klasgenoot. Zijn jullie aantallen gelijk?</p>
+</section>
+<section id="opdracht-2-basis">
+<h3>Opdracht 2 - Basis<a class="headerlink" href="#opdracht-2-basis" title="Link to this heading">#</a></h3>
+<p>Vraag: “Welke 5 profielen zijn het oudst?”</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">voornaam</span><span class="p">,</span><span class="w"> </span><span class="n">achternaam</span><span class="p">,</span><span class="w"> </span><span class="n">leeftijd_profiel</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">profielen</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">leeftijd_profiel</span><span class="w"> </span><span class="k">DESC</span><span class="p">,</span><span class="w"> </span><span class="n">id</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Controlequery:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">leeftijd_profiel</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">oudste_leeftijd</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">profielen</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="opdracht-3-verdieping">
+<h3>Opdracht 3 - Verdieping<a class="headerlink" href="#opdracht-3-verdieping" title="Link to this heading">#</a></h3>
+<p>Vraag: “Welke landen komen voor bij gebruikers?”</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">land</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">land</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Controlequery:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_uk</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">land</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'UK'</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="opdracht-4-debuggen">
+<h3>Opdracht 4 - Debuggen<a class="headerlink" href="#opdracht-4-debuggen" title="Link to this heading">#</a></h3>
+<p>Iemand schreef:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="n">land</span>
+<span class="n">gebruikers</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">id</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Wat gaat er fout?</p></li>
+<li><p>Verbeter de query.</p></li>
+<li><p>Hoe weet je dat je fix klopt?</p></li>
+</ol>
+</section>
+<section id="opdracht-5-uitdaging-onderzoek">
+<h3>Opdracht 5 - Uitdaging (onderzoek)<a class="headerlink" href="#opdracht-5-uitdaging-onderzoek" title="Link to this heading">#</a></h3>
+<p>Vraag: “Bestaat de klant <code class="docutils literal notranslate"><span class="pre">harry.styles&#64;nimmastream.com</span></code>?”</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="n">land</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'harry.styles@nimmastream.com'</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Controlequery:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'harry.styles@nimmastream.com'</span><span class="p">;</span>
+</pre></div>
+</div>
 </section>
 </section>
 <hr class="docutils" />
 <section id="check-je-begrip">
 <h2>Check je begrip<a class="headerlink" href="#check-je-begrip" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Wat is het verschil tussen een tabel en een rij?</p></li>
-<li><p>Waarom is SQL handig bij grote hoeveelheden data?</p></li>
-<li><p>Wat is volgens jou nu al het lastigste van SQL?</p></li>
-<li><p>Noem een voorbeeld van een vraag die je met SQL kunt beantwoorden.</p></li>
+<li><p>Waarom is <code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code> belangrijk als je <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code> gebruikt?</p></li>
+<li><p>Wat is het verschil tussen een rij en een kolom?</p></li>
+<li><p>Waarom is voorspellen vóór uitvoeren nuttig?</p></li>
+<li><p>Welke controlequery hielp jou vandaag het meest?</p></li>
 </ol>
 </section>
 <hr class="docutils" />
-<section id="extra-opdrachten-als-je-eerder-klaar-bent">
-<h2>Extra opdrachten (als je eerder klaar bent)<a class="headerlink" href="#extra-opdrachten-als-je-eerder-klaar-bent" title="Link to this heading">#</a></h2>
-<p>Gebruik bij opdracht 3 jouw database: <code class="docutils literal notranslate"><span class="pre">nimmastream_&lt;gebruikersnaam&gt;</span></code>.</p>
-<ol class="arabic simple">
-<li><p>Maak een woordenlijst met 8 SQL-begrippen uit SQL Island.</p></li>
-<li><p>Schrijf 5 databankvragen in gewone taal, bijvoorbeeld:</p>
-<ul class="simple">
-<li><p>“Welke gebruiker is het jongst?”</p></li>
-<li><p>“Welke series hebben kijkwijzer 12?”</p></li>
-</ul>
-</li>
-<li><p>Geef bij elke vraag aan in welke tabel je zou zoeken.</p></li>
-</ol>
+<section id="reflectie">
+<h2>Reflectie<a class="headerlink" href="#reflectie" title="Link to this heading">#</a></h2>
+<p>Welke fout maakte je vandaag (of bijna), en hoe vond je die terug?</p>
 </section>
 <hr class="docutils" />
 <section id="samenvatting">
 <h2>Samenvatting<a class="headerlink" href="#samenvatting" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>SQL gebruik je om vragen te stellen aan data.</p></li>
-<li><p>Een database bestaat uit tabellen met rijen en kolommen.</p></li>
-<li><p>SQL Island helpt je starten met de logica achter query’s.</p></li>
-<li><p>In de volgende hoofdstukken ga je dezelfde denkwijze toepassen op jouw database (<code class="docutils literal notranslate"><span class="pre">nimmastream_&lt;gebruikersnaam&gt;</span></code>).</p></li>
+<li><p>Je werkt in je eigen <code class="docutils literal notranslate"><span class="pre">nimmastream_&lt;gebruikersnaam&gt;</span></code>-database.</p></li>
+<li><p>Je gebruikt <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> om data op te vragen.</p></li>
+<li><p>Met <code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code> en <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code> maak je resultaatlijsten bruikbaar.</p></li>
+<li><p>Je controleert elke query met een onderbouwing.</p></li>
 </ul>
-</section>
-<section id="huiswerk">
-<h2>Huiswerk<a class="headerlink" href="#huiswerk" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Speel SQL Island door totdat je het eiland ontsnapt bent.</p></li>
-<li><p>Schrijf op welke vragen je lastig vond tijdens het spelen.</p></li>
-</ol>
 </section>
 </section>
 
@@ -683,7 +736,7 @@
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Hoofdstuk 2: SELECT, WHERE en ORDER BY</p>
+        <p class="prev-next-title">Hoofdstuk 2: Filteren met WHERE</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -706,23 +759,25 @@
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-starten-met-een-game">Waarom starten met een game?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-een-database-eigenlijk">Wat is een database eigenlijk?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-is-sql-belangrijk">Waarom is SQL belangrijk?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#korte-warming-up-sql-island-15-minuten">Korte warming-up: SQL Island (15 minuten)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#werkomgeving">Werkomgeving</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veilig-werken-altijd-doen">Veilig werken (altijd doen)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voordoen-en-nadoen">Voordoen en nadoen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voordoen-nieuw-concept-select-order-by-limit">Voordoen (nieuw concept: <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> + <code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code> + <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nadoen-zelfde-query-een-verandering">Nadoen (zelfde query, één verandering)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-sql-island">Opdracht: SQL Island</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-je-tijdens-sql-island-moet-proberen-te-zien">Wat je tijdens SQL Island moet proberen te zien</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#koppeling-met-jouw-database">Koppeling met jouw database</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#denk-als-een-informaticus">Denk als een informaticus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-basis">Opdracht 1 - Basis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-basis">Opdracht 2 - Basis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-verdieping">Opdracht 3 - Verdieping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-debuggen">Opdracht 4 - Debuggen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-uitdaging-onderzoek">Opdracht 5 - Uitdaging (onderzoek)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-opdrachten-als-je-eerder-klaar-bent">Extra opdrachten (als je eerder klaar bent)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reflectie">Reflectie</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huiswerk">Huiswerk</a></li>
 </ul>
   </nav></div>
 

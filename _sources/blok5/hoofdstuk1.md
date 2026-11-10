@@ -1,136 +1,210 @@
-# Hoofdstuk 1: Oriëntatie op SQL met SQL Island
+# Hoofdstuk 1: Starten als Nimmastream-medewerker
 
 ## Leerdoelen
 
-In dit hoofdstuk maak je kennis met SQL door te oefenen in een game-omgeving.
-
-Je leert:
+In dit hoofdstuk leer je:
 
 - wat een database, tabel, rij en kolom is;
-- wat een query is;
-- waarom SQL belangrijk is voor websites en apps;
-- hoe je stap voor stap logische vragen aan data stelt.
+- veilig werken in phpMyAdmin;
+- je eerste SQL-query's met `SELECT`, `ORDER BY` en `LIMIT`;
+- voorspellen wat een query teruggeeft.
 
-Aan het einde van dit hoofdstuk kun je in eigen woorden uitleggen wat SQL doet en kun je laten zien dat je al eerste query-denkstappen hebt gezet.
-
----
-
-## Waarom starten met een game?
-
-Bij SQL moet je leren denken in:
-
-- tabellen;
-- voorwaarden;
-- logische keuzes;
-- relaties tussen gegevens.
-
-Dat is in het begin abstract. Een tabel lijkt op een spreadsheet, maar de echte kracht zit in het kunnen vragen stellen aan grote hoeveelheden data. SQL Island helpt je daar stap voor stap in te oefenen: je ziet direct wat een query doet en waarom een antwoord logisch is.
-
-Je oefent dus niet alleen syntax, maar vooral **datadenken**. De vraag is niet alleen: "Hoe schrijf ik een query?" Maar ook: "Welke informatie wil ik precies hebben?" En: "Welke gegevens moet ik daarvoor uit welke tabel halen?"
-
-### Wat is een database eigenlijk?
-
-Een database is een georganiseerde verzameling gegevens. In een database staan verschillende tabellen, en elke tabel heeft kolommen en rijen.
-
-- een **tabel** is een verzameling records over hetzelfde onderwerp;
-- een **rij** is één record, bijvoorbeeld één gebruiker;
-- een **kolom** is een eigenschap, bijvoorbeeld naam, leeftijd of regio.
-
-Als je iets wilt weten als: "Welke gebruikers zijn ouder dan 18?", dan werk je met een query die precies die rijen uit de tabel haalt.
-
-### Waarom is SQL belangrijk?
-
-SQL is een taal die gebruikt wordt om gegevens op te vragen, te filteren, te vergelijken en te combineren. Denk aan een bibliothecaris die in een grote catalogus zoekt. SQL laat je precies die boeken of gegevens vinden die je nodig hebt, zonder alles in één keer te zien.
+Aan het einde kun je eenvoudige data ophalen uit de Nimmastream-database en uitleggen waarom je resultaat klopt.
 
 ---
 
-## Opdracht: SQL Island
+## Korte warming-up: SQL Island (15 minuten)
 
-Ga naar:
+Ga naar https://sql-island.informatik.uni-kl.de/ en speel 15 minuten.
 
-https://sql-island.informatik.uni-kl.de/
+Noteer tijdens het spelen:
 
-1. Speel minimaal 30 minuten.
-2. Voltooi zoveel mogelijk levels.
-3. Noteer moeilijke woorden of opdrachten die je tegenkomt.
+1. één opdracht die je makkelijk vond;
+2. één opdracht die je lastig vond;
+3. één SQL-woord dat je nog niet kende.
 
-### Wat je tijdens SQL Island moet proberen te zien
-
-Bij elke opdracht is de kernvraag:
-
-- wat wil ik weten?
-- welke tabel bevat die informatie?
-- welke voorwaarde moet ik toepassen?
-
-Als je die drie vragen kunt beantwoorden, ben je al goed op weg naar echte SQL.
+Daarna gaan we meteen naar de echte database.
 
 ---
 
-## Koppeling met jouw database
+## Werkomgeving
 
-In dit blok werk je in jouw database:
+Werk in phpMyAdmin altijd in jouw eigen database:
 
 `nimmastream_<gebruikersnaam>`
 
-Voorbeeld:
+Voorbeeld: `nimmastream_leerling_007`
 
-- gebruikersnaam `leerling_007` -> database `nimmastream_leerling_007`
+Je werkt als beginnende medewerker bij Nimmastream. Je taak: snel en betrouwbaar klantgegevens opzoeken.
 
-Je gaat later query's schrijven op tabellen zoals:
+---
 
-- `gebruikers`
-- `series`
-- `genres`
-- `afleveringen`
-- `profielen`
-- `abonnementen`
-- `kijkgeschiedenis`
-- `beoordelingen`
+## Veilig werken (altijd doen)
 
-Wat je nu in SQL Island leert, gebruik je straks op echte data. Het verschil is dat de game je de logica geeft, en je echte database laat zien hoe die logica in de praktijk werkt.
+Voor je begint:
 
-### Denk als een informaticus
+1. **Maak een export** van je database.
+2. Bij `UPDATE` of `DELETE`: voer **eerst dezelfde `WHERE` uit met `SELECT`**.
+3. Gaat er iets mis? **Importeer je export opnieuw**.
 
-Bij elk SQL-probleem stel je jezelf vier vragen:
+In hoofdstuk 1 doen we nog geen wijzigingen, maar deze routine geldt vanaf nu altijd.
 
-1. Welke vraag wil ik beantwoorden?
-2. Welke tabel bevat de relevante informatie?
-3. Welke kolommen zijn nodig?
-4. Welke filter, sortering of combinatie past hierbij?
+---
 
-Zo leer je niet alleen syntax, maar ook logisch nadenken.
+## Voordoen en nadoen
+
+### Voordoen (nieuw concept: `SELECT` + `ORDER BY` + `LIMIT`)
+
+Vraag in gewone taal: "Laat de eerste 5 gebruikers zien."
+
+```sql
+SELECT id, email, land
+FROM gebruikers
+ORDER BY id
+LIMIT 5;
+```
+
+Resultaatcontrole:
+
+- je krijgt **5 rijen**;
+- de ids lopen van **1 t/m 5**.
+
+**Hoe weet je dat dit klopt?**  
+Omdat je op `id` oplopend sorteert en met `LIMIT 5` precies 5 rijen vraagt.
+
+### Nadoen (zelfde query, één verandering)
+
+Nu jij: haal de eerste 5 profielen op.
+
+```sql
+SELECT id, gebruiker_id, voornaam, achternaam
+FROM profielen
+ORDER BY id
+LIMIT 5;
+```
+
+**Voorspel eerst:** welke id's verwacht je?  
+**Controlequery:** tel eerst alle profielen:
+
+```sql
+SELECT COUNT(*) AS aantal_profielen
+FROM profielen;
+```
+
+**Hoe weet je dat dit klopt?**
+
+---
+
+## Opdrachten
+
+Gebruik steeds deze vaste routine:
+
+1. voorspel de uitkomst;
+2. voer de query uit;
+3. controleer met een extra query;
+4. beantwoord: **Hoe weet je dat dit klopt?**
+
+### Opdracht 1 - Basis
+
+Vraag: "Hoe groot is elke hoofdtabel?"
+
+```sql
+SELECT COUNT(*) AS aantal_gebruikers FROM gebruikers;
+SELECT COUNT(*) AS aantal_profielen FROM profielen;
+SELECT COUNT(*) AS aantal_abonnementen FROM abonnementen;
+```
+
+Controle: vergelijk met je klasgenoot. Zijn jullie aantallen gelijk?
+
+### Opdracht 2 - Basis
+
+Vraag: "Welke 5 profielen zijn het oudst?"
+
+```sql
+SELECT id, voornaam, achternaam, leeftijd_profiel
+FROM profielen
+ORDER BY leeftijd_profiel DESC, id
+LIMIT 5;
+```
+
+Controlequery:
+
+```sql
+SELECT MAX(leeftijd_profiel) AS oudste_leeftijd
+FROM profielen;
+```
+
+### Opdracht 3 - Verdieping
+
+Vraag: "Welke landen komen voor bij gebruikers?"
+
+```sql
+SELECT land
+FROM gebruikers
+ORDER BY land;
+```
+
+Controlequery:
+
+```sql
+SELECT COUNT(*) AS aantal_uk
+FROM gebruikers
+WHERE land = 'UK';
+```
+
+### Opdracht 4 - Debuggen
+
+Iemand schreef:
+
+```sql
+SELECT id, email, land
+gebruikers
+ORDER BY id
+LIMIT 5;
+```
+
+1. Wat gaat er fout?
+2. Verbeter de query.
+3. Hoe weet je dat je fix klopt?
+
+### Opdracht 5 - Uitdaging (onderzoek)
+
+Vraag: "Bestaat de klant `harry.styles@nimmastream.com`?"
+
+```sql
+SELECT id, email, land
+FROM gebruikers
+WHERE email = 'harry.styles@nimmastream.com';
+```
+
+Controlequery:
+
+```sql
+SELECT COUNT(*) AS aantal
+FROM gebruikers
+WHERE email = 'harry.styles@nimmastream.com';
+```
 
 ---
 
 ## Check je begrip
 
-1. Wat is het verschil tussen een tabel en een rij?
-2. Waarom is SQL handig bij grote hoeveelheden data?
-3. Wat is volgens jou nu al het lastigste van SQL?
-4. Noem een voorbeeld van een vraag die je met SQL kunt beantwoorden.
+1. Waarom is `ORDER BY` belangrijk als je `LIMIT` gebruikt?
+2. Wat is het verschil tussen een rij en een kolom?
+3. Waarom is voorspellen vóór uitvoeren nuttig?
+4. Welke controlequery hielp jou vandaag het meest?
 
 ---
 
-## Extra opdrachten (als je eerder klaar bent)
+## Reflectie
 
-Gebruik bij opdracht 3 jouw database: `nimmastream_<gebruikersnaam>`.
-
-1. Maak een woordenlijst met 8 SQL-begrippen uit SQL Island.
-2. Schrijf 5 databankvragen in gewone taal, bijvoorbeeld:
-   - "Welke gebruiker is het jongst?"
-   - "Welke series hebben kijkwijzer 12?"
-3. Geef bij elke vraag aan in welke tabel je zou zoeken.
+Welke fout maakte je vandaag (of bijna), en hoe vond je die terug?
 
 ---
 
 ## Samenvatting
 
-- SQL gebruik je om vragen te stellen aan data.
-- Een database bestaat uit tabellen met rijen en kolommen.
-- SQL Island helpt je starten met de logica achter query's.
-- In de volgende hoofdstukken ga je dezelfde denkwijze toepassen op jouw database (`nimmastream_<gebruikersnaam>`).
-
-## Huiswerk
-
-1. Speel SQL Island door totdat je het eiland ontsnapt bent.
-2. Schrijf op welke vragen je lastig vond tijdens het spelen.
+- Je werkt in je eigen `nimmastream_<gebruikersnaam>`-database.
+- Je gebruikt `SELECT` om data op te vragen.
+- Met `ORDER BY` en `LIMIT` maak je resultaatlijsten bruikbaar.
+- Je controleert elke query met een onderbouwing.

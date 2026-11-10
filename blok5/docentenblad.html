@@ -1,0 +1,1117 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Docentenblad SQL-blok (Nimmastream) &#8212; Informatica</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=6a604523" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="../_static/design-tabs.js?v=fcb327ea"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'blok5/docentenblad';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Informatica</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welkom bij het Informatica Boek
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../blok1/index.html">4ha blok 1</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../blok1/hoofdstuk1.html">Hoofdstuk 1: Toestanden en automaten</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../blok1/hoofdstuk2.html">Hoofdstuk 2: Algoritmen en beslissingen</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../blok1/hoofdstuk3.html">Hoofdstuk 3: Datastructuren en operatoren</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../blok1/hoofdstuk4.html">Hoofdstuk 4: Lussen</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../blok1/hoofdstuk5.html">Hoofdstuk 5: Functies &amp; combineren</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../blok2/index.html">4ha blok 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../blok2/InfDig/index.html">Informatie Digitaal</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../blok2/InfDig/hoofdstuk1.html">Informatie Digitaal H1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../blok2/InfDig/hoofdstuk2.html">Informatie Digitaal H2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../blok2/InfDig/hoofdstuk3.html">Informatie Digitaal H3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../blok2/InfDig/hoofdstuk4.html">Informatie Digitaal H4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../blok2/InfDig/hoofdstuk5.html">Informatie Digitaal H5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../blok2/InfDig/hoofdstuk6.html">Informatie Digitaal H6</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../blok2/OOP/index.html">Objectgeoriënteerd Programmeren</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../blok2/OOP/hoofdstuk1.html">OOP H1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../blok2/OOP/hoofdstuk2.html">OOP H2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../blok2/OOP/hoofdstuk3.html">OOP H3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../blok2/OOP/hoofdstuk4.html">OOP H4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../blok2/OOP/hoofdstuk5.html">OOP H5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../blok2/OOP/hoofdstuk6.html">OOP H6</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../blok3/index.html">4ha blok 3</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../blok3/hoofdstuk1.html">Hoofdstuk 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blok3/hoofdstuk2.html">Hoofdstuk 2</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../blok4/index.html">4ha blok 4</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../blok4/hoofdstuk1.html">Hoofdstuk 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blok4/hoofdstuk2.html">Hoofdstuk 2</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="index.html">4ha blok 5</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="hoofdstuk1.html">Hoofdstuk 1: Starten als Nimmastream-medewerker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hoofdstuk2.html">Hoofdstuk 2: Filteren met WHERE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hoofdstuk3.html">Hoofdstuk 3: Tabellen koppelen met JOIN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hoofdstuk4.html">Hoofdstuk 4: Data aanpassen en onderzoekswerk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hoofdstuk5.html">Hoofdstuk 5: PHP + MySQL - gegevens tonen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hoofdstuk6.html">Hoofdstuk 6: PHP + MySQL - UPDATE en DELETE via formulieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hoofdstuk7.html">Hoofdstuk 7: Webshopproject - basisopzet en CRUD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hoofdstuk8.html">Hoofdstuk 8: Webshopproject - afronding en presentatie</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../blok6/index.html">4ha blok 6</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../blok6/hoofdstuk1.html">Hoofdstuk 1: PHP Basis - Variabelen en echo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blok6/hoofdstuk2.html">Hoofdstuk 2: HTML Formulieren met PHP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blok6/hoofdstuk3.html">Hoofdstuk 3: Afbeeldingen en Condities in PHP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blok6/hoofdstuk4.html">Hoofdstuk 4: Willekeurige Getallen en Raadspelletjes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blok6/hoofdstuk5.html">Hoofdstuk 5: Sessies en Cookies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blok6/hoofdstuk6.html">Hoofdstuk 6: Lussen in PHP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blok6/bonus_wiskunde.html">Bonus - Wiskundige Bewerkingen</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/JoostvanTiel/informatica" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/JoostvanTiel/informatica/issues/new?title=Issue%20on%20page%20%2Fblok5/docentenblad.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/blok5/docentenblad.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Docentenblad SQL-blok (Nimmastream)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schema-overzicht-nieuwe-database">1. Schema-overzicht (nieuwe database)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabellen-en-kolommen">Tabellen en kolommen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#impliciete-relaties-geen-foreign-keys-in-schema">Impliciete relaties (geen foreign keys in schema)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basis-aantallen-controle">Basis-aantallen (controle)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gevonden-anomalieen">2. Gevonden anomalieën</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bevestigd-uit-opdrachtomschrijving">Bevestigd uit opdrachtomschrijving</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-gevonden-bruikbaar-als-casus">Extra gevonden (bruikbaar als casus)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#niet-gevonden">Niet gevonden</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modeluitwerkingen-per-hoofdstuk">3. Modeluitwerkingen per hoofdstuk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hoofdstuk-1">Hoofdstuk 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-basis">Opdracht 1 - Basis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-basis">Opdracht 2 - Basis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-verdieping">Opdracht 3 - Verdieping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-debuggen">Opdracht 4 - Debuggen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-uitdaging">Opdracht 5 - Uitdaging</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hoofdstuk-2">Hoofdstuk 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Opdracht 1 - Basis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Opdracht 2 - Basis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Opdracht 3 - Verdieping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-verdieping">Opdracht 4 - Verdieping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-debuggen-1">Opdracht 5 - Debuggen 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-6-debuggen-2">Opdracht 6 - Debuggen 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-7-uitdaging">Opdracht 7 - Uitdaging</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hoofdstuk-3">Hoofdstuk 3</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Opdracht 1 - Basis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Opdracht 2 - Basis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Opdracht 3 - Verdieping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Opdracht 4 - Verdieping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-debuggen">Opdracht 5 - Debuggen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-6-open-casus">Opdracht 6 - Open casus</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hoofdstuk-4">Hoofdstuk 4</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Opdracht 1 - Basis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Opdracht 2 - Basis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-verdieping-subquery">Opdracht 3 - Verdieping (subquery)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Opdracht 4 - Debuggen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-wees-records">Opdracht 5 - Wees-records</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-6-open-casus-1">Opdracht 6 - Open casus 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-7-open-casus-2">Opdracht 7 - Open casus 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-8-open-casus-3">Opdracht 8 - Open casus 3</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aanbevolen-database-aanpassingen-optioneel">4. Aanbevolen database-aanpassingen (optioneel)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#technische-noot-bij-deze-herziening">5. Technische noot bij deze herziening</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="docentenblad-sql-blok-nimmastream">
+<h1>Docentenblad SQL-blok (Nimmastream)<a class="headerlink" href="#docentenblad-sql-blok-nimmastream" title="Link to this heading">#</a></h1>
+<section id="schema-overzicht-nieuwe-database">
+<h2>1. Schema-overzicht (nieuwe database)<a class="headerlink" href="#schema-overzicht-nieuwe-database" title="Link to this heading">#</a></h2>
+</section>
+<section id="tabellen-en-kolommen">
+<h2>Tabellen en kolommen<a class="headerlink" href="#tabellen-en-kolommen" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">gebruikers</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code> (PK)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">email</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wachtwoord</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aangemaakt_op</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">land</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">profielen</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code> (PK)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gebruiker_id</span></code> (index, impliciete relatie naar <code class="docutils literal notranslate"><span class="pre">gebruikers.id</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">voornaam</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tussenvoegsel</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">achternaam</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">leeftijd_profiel</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">regio</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">abonnementen</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code> (PK, AUTO_INCREMENT)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gebruiker_id</span></code> (index, impliciete relatie naar <code class="docutils literal notranslate"><span class="pre">gebruikers.id</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code> enum(<code class="docutils literal notranslate"><span class="pre">basis</span></code>,<code class="docutils literal notranslate"><span class="pre">standaard</span></code>,<code class="docutils literal notranslate"><span class="pre">premium</span></code>,<code class="docutils literal notranslate"><span class="pre">edu</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">status</span></code> enum(<code class="docutils literal notranslate"><span class="pre">actief</span></code>,<code class="docutils literal notranslate"><span class="pre">gepauzeerd</span></code>,<code class="docutils literal notranslate"><span class="pre">beëindigd</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gestart_op</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">beëindigd_op</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">genres</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code> (PK)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">naam</span></code> (UNIQUE)</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">series</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code> (PK)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">titel</span></code> (UNIQUE)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">genre_id</span></code> (index, impliciete relatie naar <code class="docutils literal notranslate"><span class="pre">genres.id</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kijkwijzer</span></code> enum(<code class="docutils literal notranslate"><span class="pre">AL</span></code>,<code class="docutils literal notranslate"><span class="pre">6</span></code>,<code class="docutils literal notranslate"><span class="pre">9</span></code>,<code class="docutils literal notranslate"><span class="pre">12</span></code>,<code class="docutils literal notranslate"><span class="pre">16</span></code>,<code class="docutils literal notranslate"><span class="pre">18</span></code>)</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">afleveringen</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code> (PK)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">serie_id</span></code> (index, impliciete relatie naar <code class="docutils literal notranslate"><span class="pre">series.id</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">seizoen</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aflevering_nummer</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">titel</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">duur_minuten</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">uitzend_datum</span></code></p></li>
+<li><p>UNIQUE(<code class="docutils literal notranslate"><span class="pre">serie_id</span></code>,<code class="docutils literal notranslate"><span class="pre">seizoen</span></code>,<code class="docutils literal notranslate"><span class="pre">aflevering_nummer</span></code>)</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kijkgeschiedenis</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code> (PK, AUTO_INCREMENT)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">profiel_id</span></code> (index, impliciete relatie naar <code class="docutils literal notranslate"><span class="pre">profielen.id</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aflevering_id</span></code> (index, impliciete relatie naar <code class="docutils literal notranslate"><span class="pre">afleveringen.id</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gekeken_op</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">voltooid</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">beoordelingen</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code> (PK, AUTO_INCREMENT)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">profiel_id</span></code> (index, impliciete relatie naar <code class="docutils literal notranslate"><span class="pre">profielen.id</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aflevering_id</span></code> (index, impliciete relatie naar <code class="docutils literal notranslate"><span class="pre">afleveringen.id</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">beoordeling</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">opmerking</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">datum</span></code></p></li>
+<li><p>UNIQUE(<code class="docutils literal notranslate"><span class="pre">profiel_id</span></code>,<code class="docutils literal notranslate"><span class="pre">aflevering_id</span></code>)</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="impliciete-relaties-geen-foreign-keys-in-schema">
+<h2>Impliciete relaties (geen foreign keys in schema)<a class="headerlink" href="#impliciete-relaties-geen-foreign-keys-in-schema" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">profielen.gebruiker_id</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">gebruikers.id</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">abonnementen.gebruiker_id</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">gebruikers.id</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">series.genre_id</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">genres.id</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">afleveringen.serie_id</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">series.id</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kijkgeschiedenis.profiel_id</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">profielen.id</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kijkgeschiedenis.aflevering_id</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">afleveringen.id</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">beoordelingen.profiel_id</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">profielen.id</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">beoordelingen.aflevering_id</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">afleveringen.id</span></code></p></li>
+</ul>
+</section>
+<section id="basis-aantallen-controle">
+<h2>Basis-aantallen (controle)<a class="headerlink" href="#basis-aantallen-controle" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>gebruikers: <strong>500</strong></p></li>
+<li><p>profielen: <strong>1100</strong></p></li>
+<li><p>abonnementen: <strong>499</strong></p></li>
+<li><p>genres: <strong>10</strong></p></li>
+<li><p>series: <strong>25</strong></p></li>
+<li><p>afleveringen: <strong>1770</strong></p></li>
+<li><p>kijkgeschiedenis: <strong>12923</strong></p></li>
+<li><p>beoordelingen: <strong>434</strong></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="gevonden-anomalieen">
+<h2>2. Gevonden anomalieën<a class="headerlink" href="#gevonden-anomalieen" title="Link to this heading">#</a></h2>
+</section>
+<section id="bevestigd-uit-opdrachtomschrijving">
+<h2>Bevestigd uit opdrachtomschrijving<a class="headerlink" href="#bevestigd-uit-opdrachtomschrijving" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">gebruikers</span></code> heeft geen <code class="docutils literal notranslate"><span class="pre">voornaam</span></code>, <code class="docutils literal notranslate"><span class="pre">leeftijd</span></code>, <code class="docutils literal notranslate"><span class="pre">regio</span></code>; die info staat in <code class="docutils literal notranslate"><span class="pre">profielen</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">profielnaam</span></code> bestaat niet.</p></li>
+<li><p>Genre <code class="docutils literal notranslate"><span class="pre">actie</span></code> bestaat niet.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">status='beëindigd'</span></code> bevat een trema (ë).</p></li>
+<li><p>Regiocodes/landcodes inconsistent (<code class="docutils literal notranslate"><span class="pre">profielen.regio</span></code> gebruikt <code class="docutils literal notranslate"><span class="pre">VK</span></code>, <code class="docutils literal notranslate"><span class="pre">gebruikers.land</span></code> gebruikt <code class="docutils literal notranslate"><span class="pre">UK</span></code>).</p></li>
+<li><p>Gebruiker 140 (<code class="docutils literal notranslate"><span class="pre">harry.styles&#64;nimmastream.com</span></code>) heeft geen abonnement.</p></li>
+<li><p>Abonnement 58 start en eindigt op dezelfde dag (<code class="docutils literal notranslate"><span class="pre">2025-10-23</span></code>).</p></li>
+<li><p><strong>15</strong> abonnementen eindigen op <code class="docutils literal notranslate"><span class="pre">2025-10-23</span></code>.</p></li>
+<li><p>Serie 4 (The Witcher), seizoen 4: alle 8 afleveringen hebben titel <code class="docutils literal notranslate"><span class="pre">TBA</span></code>.</p></li>
+<li><p>Profiel 971 heeft regio <code class="docutils literal notranslate"><span class="pre">BR</span></code>.</p></li>
+<li><p>Alleen <code class="docutils literal notranslate"><span class="pre">abonnementen</span></code>, <code class="docutils literal notranslate"><span class="pre">beoordelingen</span></code>, <code class="docutils literal notranslate"><span class="pre">kijkgeschiedenis</span></code> hebben AUTO_INCREMENT.</p></li>
+</ol>
+</section>
+<section id="extra-gevonden-bruikbaar-als-casus">
+<h2>Extra gevonden (bruikbaar als casus)<a class="headerlink" href="#extra-gevonden-bruikbaar-als-casus" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>125</strong> profielen hebben kijkgeschiedenis na einddatum van een beëindigd abonnement (1550 kijkregels).</p></li>
+<li><p><strong>202</strong> profielen keken content boven hun leeftijd (<code class="docutils literal notranslate"><span class="pre">kijkwijzer</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">leeftijd_profiel</span></code>).</p></li>
+<li><p><strong>53</strong> beoordelingen horen bij een profiel+aflevering-combinatie zonder kijkgeschiedenis.</p></li>
+<li><p><strong>24</strong> kijkmomenten liggen vóór de uitzenddatum van de aflevering.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gebruikers.wachtwoord</span></code> bevat leesbare wachtwoorden; veel zwakke patronen.</p></li>
+</ol>
+</section>
+<section id="niet-gevonden">
+<h2>Niet gevonden<a class="headerlink" href="#niet-gevonden" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Geen wees-records in de huidige dump (ondanks ontbreken van FK-constraints).</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="modeluitwerkingen-per-hoofdstuk">
+<h2>3. Modeluitwerkingen per hoofdstuk<a class="headerlink" href="#modeluitwerkingen-per-hoofdstuk" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>Let op: aantallen hieronder horen bij de startsituatie van de dump.<br />
+Na leerling-wijzigingen kunnen aantallen afwijken.</p>
+</div></blockquote>
+</section>
+<section id="hoofdstuk-1">
+<h2>Hoofdstuk 1<a class="headerlink" href="#hoofdstuk-1" title="Link to this heading">#</a></h2>
+<section id="opdracht-1-basis">
+<h3>Opdracht 1 - Basis<a class="headerlink" href="#opdracht-1-basis" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">COUNT(*)</span> <span class="pre">FROM</span> <span class="pre">gebruikers;</span></code> -&gt; <strong>500</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">COUNT(*)</span> <span class="pre">FROM</span> <span class="pre">profielen;</span></code> -&gt; <strong>1100</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">COUNT(*)</span> <span class="pre">FROM</span> <span class="pre">abonnementen;</span></code> -&gt; <strong>499</strong></p></li>
+<li><p>Veelgemaakte fout: verkeerde database geselecteerd.</p></li>
+</ul>
+</section>
+<section id="opdracht-2-basis">
+<h3>Opdracht 2 - Basis<a class="headerlink" href="#opdracht-2-basis" title="Link to this heading">#</a></h3>
+<p>Query:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">voornaam</span><span class="p">,</span><span class="w"> </span><span class="n">achternaam</span><span class="p">,</span><span class="w"> </span><span class="n">leeftijd_profiel</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">profielen</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">leeftijd_profiel</span><span class="w"> </span><span class="k">DESC</span><span class="p">,</span><span class="w"> </span><span class="n">id</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Verwachte top 5:</p>
+<ol class="arabic simple">
+<li><p>(978, Hugo Bakker, 66)</p></li>
+<li><p>(1073, Esmee Houtman, 66)</p></li>
+<li><p>(51, Fatima Mulder, 65)</p></li>
+<li><p>(83, Julia Kker, 65)</p></li>
+<li><p>(435, Jasper Kramer, 65)</p></li>
+</ol>
+<p>Controle: <code class="docutils literal notranslate"><span class="pre">MAX(leeftijd_profiel)</span></code> = <strong>66</strong>.</p>
+</section>
+<section id="opdracht-3-verdieping">
+<h3>Opdracht 3 - Verdieping<a class="headerlink" href="#opdracht-3-verdieping" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">DISTINCT</span> <span class="pre">land</span> <span class="pre">FROM</span> <span class="pre">gebruikers</span> <span class="pre">ORDER</span> <span class="pre">BY</span> <span class="pre">land;</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">BE,</span> <span class="pre">DE,</span> <span class="pre">FR,</span> <span class="pre">NL,</span> <span class="pre">UK</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">COUNT(*)</span> <span class="pre">WHERE</span> <span class="pre">land='UK'</span></code> -&gt; <strong>50</strong></p></li>
+</ul>
+</section>
+<section id="opdracht-4-debuggen">
+<h3>Opdracht 4 - Debuggen<a class="headerlink" href="#opdracht-4-debuggen" title="Link to this heading">#</a></h3>
+<p>Fout: <code class="docutils literal notranslate"><span class="pre">FROM</span></code> ontbreekt.<br />
+Herstel:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="n">land</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">id</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="opdracht-5-uitdaging">
+<h3>Opdracht 5 - Uitdaging<a class="headerlink" href="#opdracht-5-uitdaging" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">WHERE</span> <span class="pre">email='harry.styles&#64;nimmastream.com'</span></code> -&gt; <strong>1 rij</strong> (id 140)</p></li>
+<li><p>Veelgemaakte fout: <code class="docutils literal notranslate"><span class="pre">LIKE</span> <span class="pre">'harry'</span></code> zonder <code class="docutils literal notranslate"><span class="pre">%</span></code>.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="hoofdstuk-2">
+<h2>Hoofdstuk 2<a class="headerlink" href="#hoofdstuk-2" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3>Opdracht 1 - Basis<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">WHERE</span> <span class="pre">kijkwijzer='16'</span></code> -&gt; <strong>9 series</strong></p></li>
+<li><p>Veelgemaakte fout: aanhalingstekens vergeten.</p></li>
+</ul>
+</section>
+<section id="id2">
+<h3>Opdracht 2 - Basis<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">regio='NH'</span> <span class="pre">OR</span> <span class="pre">regio='ZH'</span></code> -&gt; <strong>119 profielen</strong></p></li>
+<li><p>Bij <code class="docutils literal notranslate"><span class="pre">AND</span></code> op dezelfde regio’s -&gt; <strong>0</strong> (logisch onmogelijk).</p></li>
+</ul>
+</section>
+<section id="id3">
+<h3>Opdracht 3 - Verdieping<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">email</span> <span class="pre">LIKE</span> <span class="pre">'%harry%'</span></code> -&gt; <strong>1 gebruiker</strong></p></li>
+</ul>
+</section>
+<section id="opdracht-4-verdieping">
+<h3>Opdracht 4 - Verdieping<a class="headerlink" href="#opdracht-4-verdieping" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">WHERE</span> <span class="pre">beëindigd_op</span> <span class="pre">IS</span> <span class="pre">NULL</span></code> -&gt; <strong>428 abonnementen</strong></p></li>
+<li><p>Veelgemaakte fout: <code class="docutils literal notranslate"><span class="pre">=</span> <span class="pre">NULL</span></code> gebruiken.</p></li>
+</ul>
+</section>
+<section id="opdracht-5-debuggen-1">
+<h3>Opdracht 5 - Debuggen 1<a class="headerlink" href="#opdracht-5-debuggen-1" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Risico-uitleg: enum/tekstwaarden altijd als tekst behandelen.</p></li>
+<li><p>Goed:</p></li>
+</ul>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">WHERE</span><span class="w"> </span><span class="n">kijkwijzer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'16'</span>
+</pre></div>
+</div>
+</section>
+<section id="opdracht-6-debuggen-2">
+<h3>Opdracht 6 - Debuggen 2<a class="headerlink" href="#opdracht-6-debuggen-2" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">status='beeindigd'</span></code> -&gt; <strong>0</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">status='beëindigd'</span></code> -&gt; <strong>71</strong></p></li>
+<li><p>Didactische kern: exacte spelling met trema.</p></li>
+</ul>
+</section>
+<section id="opdracht-7-uitdaging">
+<h3>Opdracht 7 - Uitdaging<a class="headerlink" href="#opdracht-7-uitdaging" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">gebruikers.land='UK'</span></code> -&gt; <strong>50</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">profielen.regio='VK'</span></code> -&gt; <strong>103</strong></p></li>
+<li><p>Conclusie: codering is inconsistent.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="hoofdstuk-3">
+<h2>Hoofdstuk 3<a class="headerlink" href="#hoofdstuk-3" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h3>Opdracht 1 - Basis<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">kijkgeschiedenis</span> <span class="pre">JOIN</span> <span class="pre">profielen</span></code> -&gt; <strong>12923 rijen</strong></p></li>
+<li><p>Veelgemaakte fout: <code class="docutils literal notranslate"><span class="pre">ON</span></code> vergeten.</p></li>
+</ul>
+</section>
+<section id="id5">
+<h3>Opdracht 2 - Basis<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span> <span class="pre">...</span> <span class="pre">WHERE</span> <span class="pre">a.id</span> <span class="pre">IS</span> <span class="pre">NULL</span></code> -&gt; <strong>1 gebruiker</strong> (id 140)</p></li>
+</ul>
+</section>
+<section id="id6">
+<h3>Opdracht 3 - Verdieping<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">COUNT(DISTINCT</span> <span class="pre">profiel_id)</span> <span class="pre">FROM</span> <span class="pre">beoordelingen</span></code> -&gt; <strong>252</strong></p></li>
+<li><p>Uitleg: 252 van de 1100 profielen heeft minimaal één beoordeling.</p></li>
+</ul>
+</section>
+<section id="id7">
+<h3>Opdracht 4 - Verdieping<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Gebruikers met exact 3 profielen -&gt; <strong>120</strong></p></li>
+</ul>
+</section>
+<section id="opdracht-5-debuggen">
+<h3>Opdracht 5 - Debuggen<a class="headerlink" href="#opdracht-5-debuggen" title="Link to this heading">#</a></h3>
+<p>Fout: <code class="docutils literal notranslate"><span class="pre">ON</span></code> ontbreekt direct na <code class="docutils literal notranslate"><span class="pre">JOIN</span></code>.<br />
+Correct:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">voornaam</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span><span class="w"> </span><span class="n">u</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">profielen</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">gebruiker_id</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="opdracht-6-open-casus">
+<h3>Opdracht 6 - Open casus<a class="headerlink" href="#opdracht-6-open-casus" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Beoordelingen zonder kijkmoment -&gt; <strong>53</strong></p></li>
+<li><p>Nakijkhulp: controleer of leerling echt op <strong>profiel_id + aflevering_id</strong> koppelt.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="hoofdstuk-4">
+<h2>Hoofdstuk 4<a class="headerlink" href="#hoofdstuk-4" title="Link to this heading">#</a></h2>
+<section id="id8">
+<h3>Opdracht 1 - Basis<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<p>Patroon goed als leerling:</p>
+<ol class="arabic simple">
+<li><p>eerst <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> op id;</p></li>
+<li><p>dan <code class="docutils literal notranslate"><span class="pre">UPDATE</span> <span class="pre">...</span> <span class="pre">WHERE</span> <span class="pre">id</span> <span class="pre">=</span> <span class="pre">...</span></code>;</p></li>
+<li><p>daarna controle-<code class="docutils literal notranslate"><span class="pre">SELECT</span></code>.</p></li>
+</ol>
+</section>
+<section id="id9">
+<h3>Opdracht 2 - Basis<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<p>Testdata verwijderen op:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">WHERE</span><span class="w"> </span><span class="n">gestart_op</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'2099-01-01'</span>
+</pre></div>
+</div>
+<p>Nakijkhulp: alleen testdata weg, geen reguliere data.</p>
+</section>
+<section id="opdracht-3-verdieping-subquery">
+<h3>Opdracht 3 - Verdieping (subquery)<a class="headerlink" href="#opdracht-3-verdieping-subquery" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Gebruikers zonder abonnement (<code class="docutils literal notranslate"><span class="pre">NOT</span> <span class="pre">IN</span></code>) -&gt; <strong>1</strong></p></li>
+</ul>
+</section>
+<section id="id10">
+<h3>Opdracht 4 - Debuggen<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<p>Kernantwoord: <code class="docutils literal notranslate"><span class="pre">DELETE</span> <span class="pre">FROM</span> <span class="pre">abonnementen;</span></code> wist alles.<br />
+Veilig alternatief met onmogelijke id toont 0 wijzigingen.</p>
+</section>
+<section id="opdracht-5-wees-records">
+<h3>Opdracht 5 - Wees-records<a class="headerlink" href="#opdracht-5-wees-records" title="Link to this heading">#</a></h3>
+<p>Verwacht resultaat:</p>
+<ul class="simple">
+<li><p>na verwijderen gebruiker 9001 blijft profiel 9001 bestaan;</p></li>
+<li><p>leerling kan uitleggen: geen FK =&gt; geen referentiële bescherming.</p></li>
+</ul>
+</section>
+<section id="opdracht-6-open-casus-1">
+<h3>Opdracht 6 - Open casus 1<a class="headerlink" href="#opdracht-6-open-casus-1" title="Link to this heading">#</a></h3>
+<p>Start:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">gebruiker_id=140</span></code> in abonnementen -&gt; <strong>0</strong></p></li>
+</ul>
+<p>Na correcte <code class="docutils literal notranslate"><span class="pre">INSERT</span></code>:</p>
+<ul class="simple">
+<li><p>minimaal 1 rij voor gebruiker 140 zichtbaar.</p></li>
+</ul>
+</section>
+<section id="opdracht-7-open-casus-2">
+<h3>Opdracht 7 - Open casus 2<a class="headerlink" href="#opdracht-7-open-casus-2" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Profielen die boven leeftijdsgrens keken -&gt; <strong>202</strong></p></li>
+</ul>
+</section>
+<section id="opdracht-8-open-casus-3">
+<h3>Opdracht 8 - Open casus 3<a class="headerlink" href="#opdracht-8-open-casus-3" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Profielen met kijkgeschiedenis na einddatum beëindigd abonnement -&gt; <strong>125</strong></p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="aanbevolen-database-aanpassingen-optioneel">
+<h2>4. Aanbevolen database-aanpassingen (optioneel)<a class="headerlink" href="#aanbevolen-database-aanpassingen-optioneel" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Foreign keys toevoegen</strong></p>
+<ul class="simple">
+<li><p>voorkomt wees-records;</p></li>
+<li><p>maakt datakwaliteit beter afdwingbaar.</p></li>
+</ul>
+</li>
+<li><p><strong>Unieke constraint op <code class="docutils literal notranslate"><span class="pre">abonnementen.gebruiker_id</span></code></strong> (als businessregel 1 abonnement per gebruiker is)</p>
+<ul class="simple">
+<li><p>voorkomt dubbele abonnementen per gebruiker.</p></li>
+</ul>
+</li>
+<li><p><strong>Normaliseer land/regio-codes</strong></p>
+<ul class="simple">
+<li><p>kies één standaard (<code class="docutils literal notranslate"><span class="pre">UK</span></code>/<code class="docutils literal notranslate"><span class="pre">VK</span></code>).</p></li>
+</ul>
+</li>
+<li><p><strong>Wachtwoorden hashen</strong></p>
+<ul class="simple">
+<li><p>vervang platte opslag door bcrypt/Argon2;</p></li>
+<li><p>essentieel voor AVG en security.</p></li>
+</ul>
+</li>
+<li><p><strong>CHECK-constraints op logische datums</strong></p>
+<ul class="simple">
+<li><p>bijv. <code class="docutils literal notranslate"><span class="pre">beëindigd_op</span> <span class="pre">&gt;=</span> <span class="pre">gestart_op</span></code>;</p></li>
+<li><p>helpt tegen onlogische records.</p></li>
+</ul>
+</li>
+<li><p><strong>CHECK op leeftijd/kijkwijzer-regels</strong> (of validatie in applicatielaag)</p>
+<ul class="simple">
+<li><p>voorkomt dat te jonge profielen te hoge kijkwijzer-content krijgen.</p></li>
+</ul>
+</li>
+<li><p><strong>Auditkolommen voor wijzigingen</strong></p>
+<ul class="simple">
+<li><p>bijv. <code class="docutils literal notranslate"><span class="pre">gewijzigd_op</span></code>, <code class="docutils literal notranslate"><span class="pre">gewijzigd_door</span></code>;</p></li>
+<li><p>nuttig voor onderwijs én beheer.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="technische-noot-bij-deze-herziening">
+<h2>5. Technische noot bij deze herziening<a class="headerlink" href="#technische-noot-bij-deze-herziening" title="Link to this heading">#</a></h2>
+<p>Deze herziening is inhoudelijk gevalideerd op een lokale SQLite-kopie van de dump (geen MySQL-client beschikbaar in deze omgeving).<br />
+Waar MySQL-specifieke syntax relevant is, is in de hoofdstukken MySQL 8-syntax aangehouden (<code class="docutils literal notranslate"><span class="pre">CURDATE()</span></code>, enum-waarden, <code class="docutils literal notranslate"><span class="pre">CAST(...</span> <span class="pre">AS</span> <span class="pre">UNSIGNED)</span></code>).</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./blok5"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schema-overzicht-nieuwe-database">1. Schema-overzicht (nieuwe database)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabellen-en-kolommen">Tabellen en kolommen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#impliciete-relaties-geen-foreign-keys-in-schema">Impliciete relaties (geen foreign keys in schema)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basis-aantallen-controle">Basis-aantallen (controle)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gevonden-anomalieen">2. Gevonden anomalieën</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bevestigd-uit-opdrachtomschrijving">Bevestigd uit opdrachtomschrijving</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-gevonden-bruikbaar-als-casus">Extra gevonden (bruikbaar als casus)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#niet-gevonden">Niet gevonden</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modeluitwerkingen-per-hoofdstuk">3. Modeluitwerkingen per hoofdstuk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hoofdstuk-1">Hoofdstuk 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-basis">Opdracht 1 - Basis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-basis">Opdracht 2 - Basis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-verdieping">Opdracht 3 - Verdieping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-debuggen">Opdracht 4 - Debuggen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-uitdaging">Opdracht 5 - Uitdaging</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hoofdstuk-2">Hoofdstuk 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Opdracht 1 - Basis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Opdracht 2 - Basis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Opdracht 3 - Verdieping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-verdieping">Opdracht 4 - Verdieping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-debuggen-1">Opdracht 5 - Debuggen 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-6-debuggen-2">Opdracht 6 - Debuggen 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-7-uitdaging">Opdracht 7 - Uitdaging</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hoofdstuk-3">Hoofdstuk 3</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Opdracht 1 - Basis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Opdracht 2 - Basis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Opdracht 3 - Verdieping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Opdracht 4 - Verdieping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-debuggen">Opdracht 5 - Debuggen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-6-open-casus">Opdracht 6 - Open casus</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hoofdstuk-4">Hoofdstuk 4</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Opdracht 1 - Basis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Opdracht 2 - Basis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-verdieping-subquery">Opdracht 3 - Verdieping (subquery)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Opdracht 4 - Debuggen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-wees-records">Opdracht 5 - Wees-records</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-6-open-casus-1">Opdracht 6 - Open casus 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-7-open-casus-2">Opdracht 7 - Open casus 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-8-open-casus-3">Opdracht 8 - Open casus 3</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aanbevolen-database-aanpassingen-optioneel">4. Aanbevolen database-aanpassingen (optioneel)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#technische-noot-bij-deze-herziening">5. Technische noot bij deze herziening</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By SSgN
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
