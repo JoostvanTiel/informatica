@@ -108,11 +108,11 @@ Gebruik steeds deze vaste routine:
 
 Vraag: "Hoe groot is elke hoofdtabel?"
 
-```sql
-SELECT COUNT(*) AS aantal_gebruikers FROM gebruikers;
-SELECT COUNT(*) AS aantal_profielen FROM profielen;
-SELECT COUNT(*) AS aantal_abonnementen FROM abonnementen;
-```
+Schrijf zelf drie query’s met `COUNT(*)` voor:
+
+- `gebruikers`
+- `profielen`
+- `abonnementen`
 
 Controle: vergelijk met je klasgenoot. Zijn jullie aantallen gelijk?
 
@@ -120,12 +120,12 @@ Controle: vergelijk met je klasgenoot. Zijn jullie aantallen gelijk?
 
 Vraag: "Welke 5 profielen zijn het oudst?"
 
-```sql
-SELECT id, voornaam, achternaam, leeftijd_profiel
-FROM profielen
-ORDER BY leeftijd_profiel DESC, id
-LIMIT 5;
-```
+Schrijf zelf een query met:
+
+- `SELECT` op `id, voornaam, achternaam, leeftijd_profiel`
+- `FROM profielen`
+- `ORDER BY` op leeftijd aflopend
+- `LIMIT 5`
 
 Controlequery:
 
@@ -138,11 +138,7 @@ FROM profielen;
 
 Vraag: "Welke landen komen voor bij gebruikers?"
 
-```sql
-SELECT land
-FROM gebruikers
-ORDER BY land;
-```
+Schrijf zelf een query die alle waarden uit `land` laat zien in alfabetische volgorde.
 
 Controlequery:
 
@@ -171,11 +167,7 @@ LIMIT 5;
 
 Vraag: "Bestaat de klant `harry.styles@nimmastream.com`?"
 
-```sql
-SELECT id, email, land
-FROM gebruikers
-WHERE email = 'harry.styles@nimmastream.com';
-```
+Schrijf zelf een query die de gegevens van deze klant opzoekt.
 
 Controlequery:
 
