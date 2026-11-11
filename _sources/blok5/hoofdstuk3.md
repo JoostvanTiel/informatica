@@ -37,14 +37,6 @@ ORDER BY p.id
 LIMIT 10;
 ```
 
-Controlequery:
-
-```sql
-SELECT COUNT(*) AS aantal_koppelingen
-FROM profielen AS p
-JOIN gebruikers AS u ON u.id = p.gebruiker_id;
-```
-
 Voorspel eerst: verwacht je evenveel rijen als in `profielen`? Waarom?
 
 ### Nadoen (één verandering)
@@ -103,6 +95,93 @@ FROM profielen AS p
 GROUP BY p.gebruiker_id
 HAVING COUNT(*) = 3
 ORDER BY p.gebruiker_id;
+```
+
+---
+
+## Nieuwe stap: andere aggregate functions
+
+Naast `COUNT()` bestaan er andere functies om getallen samen te vatten.
+
+### `MAX()` – grootste waarde
+
+```sql
+SELECT MAX(beoordeling) AS hoogste_beoordeling
+FROM beoordelingen;
+```
+
+Met `GROUP BY`:
+
+```sql
+SELECT profiel_id, MAX(beoordeling) AS hoogste_beoordeling
+FROM beoordelingen
+GROUP BY profiel_id
+ORDER BY profiel_id;
+```
+
+### `MIN()` – kleinste waarde
+
+```sql
+SELECT MIN(beoordeling) AS laagste_beoordeling
+FROM beoordelingen;
+```
+
+Met `GROUP BY`:
+
+```sql
+SELECT profiel_id, MIN(beoordeling) AS laagste_beoordeling
+FROM beoordelingen
+GROUP BY profiel_id
+ORDER BY profiel_id;
+```
+
+### `AVG()` – gemiddelde
+
+```sql
+SELECT AVG(beoordeling) AS gemiddelde_beoordeling
+FROM beoordelingen;
+```
+
+Met `GROUP BY`:
+
+```sql
+SELECT profiel_id, AVG(beoordeling) AS gemiddelde_beoordeling
+FROM beoordelingen
+GROUP BY profiel_id
+ORDER BY profiel_id;
+```
+
+### `SUM()` – totaal
+
+Vraag: "Hoeveel minuten kijken alle profielen samen?"
+
+```sql
+SELECT SUM(duur_minuten) AS totaal_gekeken_minuten
+FROM kijkgeschiedenis;
+```
+
+Met `GROUP BY`:
+
+```sql
+SELECT profiel_id, SUM(duur_minuten) AS totaal_gekeken_minuten
+FROM kijkgeschiedenis
+GROUP BY profiel_id
+ORDER BY profiel_id;
+```
+
+### Combineren van aggregate functions
+
+```sql
+SELECT 
+  profiel_id,
+  COUNT(*) AS aantal_beoordelingen,
+  MIN(beoordeling) AS laagste,
+  MAX(beoordeling) AS hoogste,
+  AVG(beoordeling) AS gemiddelde,
+  SUM(beoordeling) AS totaal
+FROM beoordelingen
+GROUP BY profiel_id
+ORDER BY profiel_id;
 ```
 
 ---
@@ -195,16 +274,16 @@ WHERE u.id = p.gebruiker_id;
 
 Werk in deze volgorde en lever precies dit in:
 
-1. **Wat weet ik al?**  
+1. **Wat weet ik al?**
    - Eén beoordeling hoort inhoudelijk bij een gekeken aflevering.
-2. **Wat moet ik uitzoeken?**  
+2. **Wat moet ik uitzoeken?**
    - Welke beoordelingen géén match hebben in `kijkgeschiedenis`.
-3. **Tabellen + koppeling**  
+3. **Tabellen + koppeling**
    - `beoordelingen` en `kijkgeschiedenis`, koppeling op `profiel_id` én `aflevering_id`.
-4. **Schrijf 2 query’s**  
-   - Query A: lijst met probleemregels (`beoordeling_id`, `profiel_id`, `aflevering_id`, `beoordeling`).  
+4. **Schrijf 2 query’s**
+   - Query A: lijst met probleemregels (`beoordeling_id`, `profiel_id`, `aflevering_id`, `beoordeling`).
    - Query B: alleen het totaal aantal probleemregels.
-5. **Controle en conclusie**  
+5. **Controle en conclusie**
    - Leg in 2-3 zinnen uit waarom dit een datakwaliteitsprobleem is.
 
 ---

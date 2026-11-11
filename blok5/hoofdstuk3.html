@@ -483,6 +483,14 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#group-by-having"><code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> + <code class="docutils literal notranslate"><span class="pre">HAVING</span></code></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nieuwe-stap-andere-aggregate-functions">Nieuwe stap: andere aggregate functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#max-grootste-waarde"><code class="docutils literal notranslate"><span class="pre">MAX()</span></code> – grootste waarde</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#min-kleinste-waarde"><code class="docutils literal notranslate"><span class="pre">MIN()</span></code> – kleinste waarde</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#avg-gemiddelde"><code class="docutils literal notranslate"><span class="pre">AVG()</span></code> – gemiddelde</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sum-totaal"><code class="docutils literal notranslate"><span class="pre">SUM()</span></code> – totaal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combineren-van-aggregate-functions">Combineren van aggregate functions</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-basis-join">Opdracht 1 - Basis (<code class="docutils literal notranslate"><span class="pre">JOIN</span></code>)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-basis-left-join">Opdracht 2 - Basis (<code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code>)</a></li>
@@ -539,12 +547,6 @@
 <span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Controlequery:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_koppelingen</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">profielen</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">p</span>
-<span class="k">JOIN</span><span class="w"> </span><span class="n">gebruikers</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">gebruiker_id</span><span class="p">;</span>
-</pre></div>
-</div>
 <p>Voorspel eerst: verwacht je evenveel rijen als in <code class="docutils literal notranslate"><span class="pre">profielen</span></code>? Waarom?</p>
 </section>
 <section id="nadoen-een-verandering">
@@ -595,6 +597,83 @@ Met <code class="docutils literal notranslate"><span class="pre">LEFT</span> <sp
 <span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">gebruiker_id</span>
 <span class="k">HAVING</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span>
 <span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">gebruiker_id</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="nieuwe-stap-andere-aggregate-functions">
+<h2>Nieuwe stap: andere aggregate functions<a class="headerlink" href="#nieuwe-stap-andere-aggregate-functions" title="Link to this heading">#</a></h2>
+<p>Naast <code class="docutils literal notranslate"><span class="pre">COUNT()</span></code> bestaan er andere functies om getallen samen te vatten.</p>
+<section id="max-grootste-waarde">
+<h3><code class="docutils literal notranslate"><span class="pre">MAX()</span></code> – grootste waarde<a class="headerlink" href="#max-grootste-waarde" title="Link to this heading">#</a></h3>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">beoordeling</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">hoogste_beoordeling</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">beoordelingen</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Met <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code>:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">profiel_id</span><span class="p">,</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">beoordeling</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">hoogste_beoordeling</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">beoordelingen</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">profiel_id</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">profiel_id</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="min-kleinste-waarde">
+<h3><code class="docutils literal notranslate"><span class="pre">MIN()</span></code> – kleinste waarde<a class="headerlink" href="#min-kleinste-waarde" title="Link to this heading">#</a></h3>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">MIN</span><span class="p">(</span><span class="n">beoordeling</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">laagste_beoordeling</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">beoordelingen</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Met <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code>:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">profiel_id</span><span class="p">,</span><span class="w"> </span><span class="k">MIN</span><span class="p">(</span><span class="n">beoordeling</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">laagste_beoordeling</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">beoordelingen</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">profiel_id</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">profiel_id</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="avg-gemiddelde">
+<h3><code class="docutils literal notranslate"><span class="pre">AVG()</span></code> – gemiddelde<a class="headerlink" href="#avg-gemiddelde" title="Link to this heading">#</a></h3>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">beoordeling</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">gemiddelde_beoordeling</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">beoordelingen</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Met <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code>:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">profiel_id</span><span class="p">,</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">beoordeling</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">gemiddelde_beoordeling</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">beoordelingen</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">profiel_id</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">profiel_id</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="sum-totaal">
+<h3><code class="docutils literal notranslate"><span class="pre">SUM()</span></code> – totaal<a class="headerlink" href="#sum-totaal" title="Link to this heading">#</a></h3>
+<p>Vraag: “Hoeveel minuten kijken alle profielen samen?”</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">duur_minuten</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">totaal_gekeken_minuten</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">kijkgeschiedenis</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Met <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code>:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">profiel_id</span><span class="p">,</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">duur_minuten</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">totaal_gekeken_minuten</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">kijkgeschiedenis</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">profiel_id</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">profiel_id</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="combineren-van-aggregate-functions">
+<h3>Combineren van aggregate functions<a class="headerlink" href="#combineren-van-aggregate-functions" title="Link to this heading">#</a></h3>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span>
+<span class="w">  </span><span class="n">profiel_id</span><span class="p">,</span>
+<span class="w">  </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_beoordelingen</span><span class="p">,</span>
+<span class="w">  </span><span class="k">MIN</span><span class="p">(</span><span class="n">beoordeling</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">laagste</span><span class="p">,</span>
+<span class="w">  </span><span class="k">MAX</span><span class="p">(</span><span class="n">beoordeling</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">hoogste</span><span class="p">,</span>
+<span class="w">  </span><span class="k">AVG</span><span class="p">(</span><span class="n">beoordeling</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">gemiddelde</span><span class="p">,</span>
+<span class="w">  </span><span class="k">SUM</span><span class="p">(</span><span class="n">beoordeling</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">totaal</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">beoordelingen</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">profiel_id</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">profiel_id</span><span class="p">;</span>
 </pre></div>
 </div>
 </section>
@@ -810,6 +889,14 @@ Met <code class="docutils literal notranslate"><span class="pre">LEFT</span> <sp
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nieuwe-stap-groeperen-en-filteren-op-groepen">Nieuwe stap: groeperen en filteren op groepen</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#count-distinct"><code class="docutils literal notranslate"><span class="pre">COUNT(DISTINCT</span> <span class="pre">...)</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#group-by-having"><code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> + <code class="docutils literal notranslate"><span class="pre">HAVING</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nieuwe-stap-andere-aggregate-functions">Nieuwe stap: andere aggregate functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#max-grootste-waarde"><code class="docutils literal notranslate"><span class="pre">MAX()</span></code> – grootste waarde</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#min-kleinste-waarde"><code class="docutils literal notranslate"><span class="pre">MIN()</span></code> – kleinste waarde</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#avg-gemiddelde"><code class="docutils literal notranslate"><span class="pre">AVG()</span></code> – gemiddelde</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sum-totaal"><code class="docutils literal notranslate"><span class="pre">SUM()</span></code> – totaal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combineren-van-aggregate-functions">Combineren van aggregate functions</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">

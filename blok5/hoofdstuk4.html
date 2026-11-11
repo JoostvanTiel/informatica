@@ -473,7 +473,7 @@
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veiligheidsroutine-verplicht">Veiligheidsroutine (verplicht)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kader-wachtwoorden-en-avg">Kader: wachtwoorden en AVG</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wachtwoorden-en-avg">Wachtwoorden en AVG</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voordoen-en-nadoen">Voordoen en nadoen</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voordoen-nieuw-concept-insert">Voordoen (nieuw concept: <code class="docutils literal notranslate"><span class="pre">INSERT</span></code>)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nadoen-een-verandering">Nadoen (één verandering)</a></li>
@@ -492,7 +492,6 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reflectie">Reflectie</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
 </ul>
             </nav>
@@ -532,8 +531,8 @@
 </ol>
 </section>
 <hr class="docutils" />
-<section id="kader-wachtwoorden-en-avg">
-<h2>Kader: wachtwoorden en AVG<a class="headerlink" href="#kader-wachtwoorden-en-avg" title="Link to this heading">#</a></h2>
+<section id="wachtwoorden-en-avg">
+<h2>Wachtwoorden en AVG<a class="headerlink" href="#wachtwoorden-en-avg" title="Link to this heading">#</a></h2>
 <p>In <code class="docutils literal notranslate"><span class="pre">gebruikers.wachtwoord</span></code> staan leesbare wachtwoorden. Dat is onveilig.</p>
 <p>In echte systemen:</p>
 <ul class="simple">
@@ -613,15 +612,6 @@
 <li><p>subquery: <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">gebruiker_id</span> <span class="pre">FROM</span> <span class="pre">abonnementen</span></code></p></li>
 <li><p>sortering op <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p></li>
 </ul>
-<p>Controlequery:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span>
-<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="n">gebruiker_id</span>
-<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">abonnementen</span>
-<span class="p">);</span>
-</pre></div>
-</div>
 </section>
 <section id="opdracht-4-debuggen">
 <h3>Opdracht 4 - Debuggen<a class="headerlink" href="#opdracht-4-debuggen" title="Link to this heading">#</a></h3>
@@ -647,7 +637,6 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">SELECT</span></code> die laat zien dat profiel 9001 nog bestaat;</p></li>
 <li><p>opruim-<code class="docutils literal notranslate"><span class="pre">DELETE</span></code> op profiel 9001.</p></li>
 </ol>
-<p>Lever ook één uitlegzin: waarom kan dit zonder foreign keys?</p>
 </section>
 <section id="opdracht-6-open-casus-1-uitdaging">
 <h3>Opdracht 6 - Open casus 1 (uitdaging)<a class="headerlink" href="#opdracht-6-open-casus-1-uitdaging" title="Link to this heading">#</a></h3>
@@ -709,12 +698,12 @@
 </section>
 <section id="opdracht-9-open-casus-4-uitdaging">
 <h3>Opdracht 9 - Open casus 4 (uitdaging)<a class="headerlink" href="#opdracht-9-open-casus-4-uitdaging" title="Link to this heading">#</a></h3>
-<p><strong>Melding van collega-redactie:</strong><br />
+<p><strong>Melding van collega:</strong><br />
 “Sommige kijkmomenten lijken geregistreerd vóór de officiële uitzenddatum. Kun jij controleren hoeveel dat er zijn?”</p>
 <p>Werk in 5 stappen.</p>
 <p>Schrijf zelf:</p>
 <ol class="arabic simple">
-<li><p>Query A (detail): toon minimaal <code class="docutils literal notranslate"><span class="pre">kijkgeschiedenis.id</span></code>, <code class="docutils literal notranslate"><span class="pre">profiel_id</span></code>, <code class="docutils literal notranslate"><span class="pre">aflevering_id</span></code>, kijkdatum, uitzenddatum.</p></li>
+<li><p>Query A (detail): toon minimaal <code class="docutils literal notranslate"><span class="pre">kijkgeschiedenis.id</span></code>, <code class="docutils literal notranslate"><span class="pre">profiel_id</span></code>, <code class="docutils literal notranslate"><span class="pre">aflevering_id</span></code>, <code class="docutils literal notranslate"><span class="pre">kijkdatum</span></code>, <code class="docutils literal notranslate"><span class="pre">uitzenddatum</span></code>.</p></li>
 <li><p>Query B (controle): tel het aantal probleemregels.</p></li>
 </ol>
 <p>Randvoorwaarde:</p>
@@ -733,11 +722,6 @@
 <li><p>Waarom zijn wees-records gevaarlijk?</p></li>
 <li><p>Wat is het nut van subqueries in onderzoekswerk?</p></li>
 </ol>
-</section>
-<hr class="docutils" />
-<section id="reflectie">
-<h2>Reflectie<a class="headerlink" href="#reflectie" title="Link to this heading">#</a></h2>
-<p>Welke veiligheidsstap heeft jou deze les het meest geholpen om fouten te voorkomen?</p>
 </section>
 <hr class="docutils" />
 <section id="samenvatting">
@@ -819,7 +803,7 @@
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veiligheidsroutine-verplicht">Veiligheidsroutine (verplicht)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kader-wachtwoorden-en-avg">Kader: wachtwoorden en AVG</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wachtwoorden-en-avg">Wachtwoorden en AVG</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voordoen-en-nadoen">Voordoen en nadoen</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voordoen-nieuw-concept-insert">Voordoen (nieuw concept: <code class="docutils literal notranslate"><span class="pre">INSERT</span></code>)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nadoen-een-verandering">Nadoen (één verandering)</a></li>
@@ -838,7 +822,6 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reflectie">Reflectie</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
 </ul>
   </nav></div>

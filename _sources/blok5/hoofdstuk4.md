@@ -26,7 +26,7 @@ Voor **elke** wijziging:
 
 ---
 
-## Kader: wachtwoorden en AVG
+## Wachtwoorden en AVG
 
 In `gebruikers.wachtwoord` staan leesbare wachtwoorden. Dat is onveilig.
 
@@ -118,17 +118,6 @@ Schrijf zelf een query met `NOT IN (subquery)` op:
 - subquery: `SELECT gebruiker_id FROM abonnementen`
 - sortering op `id`.
 
-Controlequery:
-
-```sql
-SELECT COUNT(*) AS aantal
-FROM gebruikers
-WHERE id NOT IN (
-  SELECT gebruiker_id
-  FROM abonnementen
-);
-```
-
 ### Opdracht 4 - Debuggen
 
 Foute query:
@@ -154,8 +143,6 @@ Schrijf zelf 5 query’s:
 3. `DELETE` van gebruiker 9001;
 4. `SELECT` die laat zien dat profiel 9001 nog bestaat;
 5. opruim-`DELETE` op profiel 9001.
-
-Lever ook één uitlegzin: waarom kan dit zonder foreign keys?
 
 ### Opdracht 6 - Open casus 1 (uitdaging)
 
@@ -220,14 +207,14 @@ Leg uit of dit een datakwaliteitsprobleem is of een businessregel-probleem.
 
 ### Opdracht 9 - Open casus 4 (uitdaging)
 
-**Melding van collega-redactie:**  
+**Melding van collega:**  
 "Sommige kijkmomenten lijken geregistreerd vóór de officiële uitzenddatum. Kun jij controleren hoeveel dat er zijn?"
 
 Werk in 5 stappen.
 
 Schrijf zelf:
 
-1. Query A (detail): toon minimaal `kijkgeschiedenis.id`, `profiel_id`, `aflevering_id`, kijkdatum, uitzenddatum.
+1. Query A (detail): toon minimaal `kijkgeschiedenis.id`, `profiel_id`, `aflevering_id`, `kijkdatum`, `uitzenddatum`.
 2. Query B (controle): tel het aantal probleemregels.
 
 Randvoorwaarde:
@@ -244,12 +231,6 @@ Leg uit: is dit waarschijnlijk invoerfout, timezone-issue, of testdata?
 2. Wanneer is `INSERT` nodig in plaats van `UPDATE`?
 3. Waarom zijn wees-records gevaarlijk?
 4. Wat is het nut van subqueries in onderzoekswerk?
-
----
-
-## Reflectie
-
-Welke veiligheidsstap heeft jou deze les het meest geholpen om fouten te voorkomen?
 
 ---
 
