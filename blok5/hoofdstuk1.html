@@ -478,14 +478,14 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voordoen-en-nadoen">Voordoen en nadoen</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voordoen-nieuw-concept-select-order-by-limit">Voordoen (nieuw concept: <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> + <code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code> + <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code>)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nadoen-zelfde-query-een-verandering">Nadoen (zelfde query, één verandering)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distinct-unieke-waarden-opvragen">DISTINCT: unieke waarden opvragen</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-basis">Opdracht 1 - Basis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-basis">Opdracht 2 - Basis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-verdieping">Opdracht 3 - Verdieping</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-debuggen">Opdracht 4 - Debuggen</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-uitdaging-onderzoek">Opdracht 5 - Uitdaging (onderzoek)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-verdieping">Opdracht 2 - Verdieping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-debuggen">Opdracht 3 - Debuggen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-uitdaging-onderzoek">Opdracht 4 - Uitdaging (onderzoek)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
@@ -510,7 +510,7 @@
 <ul class="simple">
 <li><p>wat een database, tabel, rij en kolom is;</p></li>
 <li><p>veilig werken in phpMyAdmin;</p></li>
-<li><p>je eerste SQL-query’s met <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>, <code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code> en <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code>;</p></li>
+<li><p>je eerste SQL-query’s met <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>, <code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code>, <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code> en <code class="docutils literal notranslate"><span class="pre">DISTINCT</span></code>;</p></li>
 <li><p>voorspellen wat een query teruggeeft.</p></li>
 </ul>
 <p>Aan het einde kun je eenvoudige data ophalen uit de Nimmastream-database en uitleggen waarom je resultaat klopt.</p>
@@ -532,7 +532,7 @@
 <h2>Werkomgeving<a class="headerlink" href="#werkomgeving" title="Link to this heading">#</a></h2>
 <p>Werk in phpMyAdmin altijd in jouw eigen database:</p>
 <p><code class="docutils literal notranslate"><span class="pre">nimmastream_&lt;gebruikersnaam&gt;</span></code></p>
-<p>Voorbeeld: <code class="docutils literal notranslate"><span class="pre">nimmastream_leerling_007</span></code></p>
+<p>Voorbeeld: <code class="docutils literal notranslate"><span class="pre">nimmastream_taylors</span></code></p>
 <p>Je werkt als beginnende medewerker bij Nimmastream. Je taak: snel en betrouwbaar klantgegevens opzoeken.</p>
 </section>
 <hr class="docutils" />
@@ -583,6 +583,29 @@ Omdat je op <code class="docutils literal notranslate"><span class="pre">id</spa
 </div>
 <p><strong>Hoe weet je dat dit klopt?</strong></p>
 </section>
+<section id="distinct-unieke-waarden-opvragen">
+<h3>DISTINCT: unieke waarden opvragen<a class="headerlink" href="#distinct-unieke-waarden-opvragen" title="Link to this heading">#</a></h3>
+<p>Soms wil je niet alle waarden zien, maar alleen de <strong>verschillende</strong> waarden eenmaal.</p>
+<p><strong>Voorbeeld:</strong> “Welke genres komen voor in de series?”</p>
+<p>Zonder <code class="docutils literal notranslate"><span class="pre">DISTINCT</span></code>:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">genre</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">series</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Dit geeft alle genres terug, ook als er meerdere series hetzelfde genre hebben. Veel dubbelen dus.</p>
+<p>Met <code class="docutils literal notranslate"><span class="pre">DISTINCT</span></code>:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">land</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Dit geeft elk genre maar <strong>één keer</strong>. Veel beter bruikbaar!</p>
+<p><strong>Waarom is dit handig?</strong></p>
+<ul class="simple">
+<li><p>Je ziet <strong>welke genres voorkomen</strong> zonder herhalingen.</p></li>
+<li><p>Je kunt snel checken: “Hoeveel verschillende genres?”</p></li>
+<li><p>Je vermijdt ruis in je resultaat.</p></li>
+</ul>
+</section>
 </section>
 <hr class="docutils" />
 <section id="opdrachten">
@@ -596,17 +619,6 @@ Omdat je op <code class="docutils literal notranslate"><span class="pre">id</spa
 </ol>
 <section id="opdracht-1-basis">
 <h3>Opdracht 1 - Basis<a class="headerlink" href="#opdracht-1-basis" title="Link to this heading">#</a></h3>
-<p>Vraag: “Hoe groot is elke hoofdtabel?”</p>
-<p>Schrijf zelf drie query’s met <code class="docutils literal notranslate"><span class="pre">COUNT(*)</span></code> voor:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">gebruikers</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">profielen</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">abonnementen</span></code></p></li>
-</ul>
-<p>Controle: vergelijk met je klasgenoot. Zijn jullie aantallen gelijk?</p>
-</section>
-<section id="opdracht-2-basis">
-<h3>Opdracht 2 - Basis<a class="headerlink" href="#opdracht-2-basis" title="Link to this heading">#</a></h3>
 <p>Vraag: “Welke 5 profielen zijn het oudst?”</p>
 <p>Schrijf zelf een query met:</p>
 <ul class="simple">
@@ -615,25 +627,19 @@ Omdat je op <code class="docutils literal notranslate"><span class="pre">id</spa
 <li><p><code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code> op leeftijd aflopend</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">LIMIT</span> <span class="pre">5</span></code></p></li>
 </ul>
-<p>Controlequery:</p>
+<p>Controleer je antwoord door de volgende query uit te voeren:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">leeftijd_profiel</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">oudste_leeftijd</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">profielen</span><span class="p">;</span>
 </pre></div>
 </div>
 </section>
-<section id="opdracht-3-verdieping">
-<h3>Opdracht 3 - Verdieping<a class="headerlink" href="#opdracht-3-verdieping" title="Link to this heading">#</a></h3>
+<section id="opdracht-2-verdieping">
+<h3>Opdracht 2 - Verdieping<a class="headerlink" href="#opdracht-2-verdieping" title="Link to this heading">#</a></h3>
 <p>Vraag: “Welke landen komen voor bij gebruikers?”</p>
-<p>Schrijf zelf een query die alle waarden uit <code class="docutils literal notranslate"><span class="pre">land</span></code> laat zien in alfabetische volgorde.</p>
-<p>Controlequery:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_uk</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">land</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'UK'</span><span class="p">;</span>
-</pre></div>
-</div>
+<p>Schrijf zelf een query met <code class="docutils literal notranslate"><span class="pre">DISTINCT</span></code> die alle verschillende waarden uit <code class="docutils literal notranslate"><span class="pre">land</span></code> laat zien in alfabetische volgorde.</p>
 </section>
-<section id="opdracht-4-debuggen">
-<h3>Opdracht 4 - Debuggen<a class="headerlink" href="#opdracht-4-debuggen" title="Link to this heading">#</a></h3>
+<section id="opdracht-3-debuggen">
+<h3>Opdracht 3 - Debuggen<a class="headerlink" href="#opdracht-3-debuggen" title="Link to this heading">#</a></h3>
 <p>Iemand schreef:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="n">land</span>
 <span class="n">gebruikers</span>
@@ -647,16 +653,10 @@ Omdat je op <code class="docutils literal notranslate"><span class="pre">id</spa
 <li><p>Hoe weet je dat je fix klopt?</p></li>
 </ol>
 </section>
-<section id="opdracht-5-uitdaging-onderzoek">
-<h3>Opdracht 5 - Uitdaging (onderzoek)<a class="headerlink" href="#opdracht-5-uitdaging-onderzoek" title="Link to this heading">#</a></h3>
-<p>Vraag: “Bestaat de klant <code class="docutils literal notranslate"><span class="pre">harry.styles&#64;nimmastream.com</span></code>?”</p>
+<section id="opdracht-4-uitdaging-onderzoek">
+<h3>Opdracht 4 - Uitdaging (onderzoek)<a class="headerlink" href="#opdracht-4-uitdaging-onderzoek" title="Link to this heading">#</a></h3>
+<p>Vraag: “Bestaat de klant <code class="docutils literal notranslate"><span class="pre">nina.bos&#64;nimmastream.com</span></code>?”</p>
 <p>Schrijf zelf een query die de gegevens van deze klant opzoekt.</p>
-<p>Controlequery:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'harry.styles@nimmastream.com'</span><span class="p">;</span>
-</pre></div>
-</div>
 </section>
 </section>
 <hr class="docutils" />
@@ -667,6 +667,8 @@ Omdat je op <code class="docutils literal notranslate"><span class="pre">id</spa
 <li><p>Wat is het verschil tussen een rij en een kolom?</p></li>
 <li><p>Waarom is voorspellen vóór uitvoeren nuttig?</p></li>
 <li><p>Welke controlequery hielp jou vandaag het meest?</p></li>
+<li><p>Wat is het verschil tussen <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">land</span></code> en <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">DISTINCT</span> <span class="pre">land</span></code>?</p></li>
+<li><p>Wanneer zou je <code class="docutils literal notranslate"><span class="pre">COUNT(DISTINCT</span> <span class="pre">kolom)</span></code> gebruiken?</p></li>
 </ol>
 </section>
 <hr class="docutils" />
@@ -681,6 +683,7 @@ Omdat je op <code class="docutils literal notranslate"><span class="pre">id</spa
 <li><p>Je werkt in je eigen <code class="docutils literal notranslate"><span class="pre">nimmastream_&lt;gebruikersnaam&gt;</span></code>-database.</p></li>
 <li><p>Je gebruikt <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> om data op te vragen.</p></li>
 <li><p>Met <code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code> en <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code> maak je resultaatlijsten bruikbaar.</p></li>
+<li><p>Met <code class="docutils literal notranslate"><span class="pre">DISTINCT</span></code> zie je alleen unieke waarden (geen dubbelen).</p></li>
 <li><p>Je controleert elke query met een onderbouwing.</p></li>
 </ul>
 </section>
@@ -759,14 +762,14 @@ Omdat je op <code class="docutils literal notranslate"><span class="pre">id</spa
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voordoen-en-nadoen">Voordoen en nadoen</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voordoen-nieuw-concept-select-order-by-limit">Voordoen (nieuw concept: <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> + <code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code> + <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code>)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nadoen-zelfde-query-een-verandering">Nadoen (zelfde query, één verandering)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distinct-unieke-waarden-opvragen">DISTINCT: unieke waarden opvragen</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-basis">Opdracht 1 - Basis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-basis">Opdracht 2 - Basis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-verdieping">Opdracht 3 - Verdieping</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-debuggen">Opdracht 4 - Debuggen</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-uitdaging-onderzoek">Opdracht 5 - Uitdaging (onderzoek)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-verdieping">Opdracht 2 - Verdieping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-debuggen">Opdracht 3 - Debuggen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-uitdaging-onderzoek">Opdracht 4 - Uitdaging (onderzoek)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>

@@ -6,7 +6,7 @@ In dit hoofdstuk leer je:
 
 - wat een database, tabel, rij en kolom is;
 - veilig werken in phpMyAdmin;
-- je eerste SQL-query's met `SELECT`, `ORDER BY` en `LIMIT`;
+- je eerste SQL-query's met `SELECT`, `ORDER BY`, `LIMIT` en `DISTINCT`;
 - voorspellen wat een query teruggeeft.
 
 Aan het einde kun je eenvoudige data ophalen uit de Nimmastream-database en uitleggen waarom je resultaat klopt.
@@ -33,7 +33,7 @@ Werk in phpMyAdmin altijd in jouw eigen database:
 
 `nimmastream_<gebruikersnaam>`
 
-Voorbeeld: `nimmastream_leerling_007`
+Voorbeeld: `nimmastream_taylors`
 
 Je werkt als beginnende medewerker bij Nimmastream. Je taak: snel en betrouwbaar klantgegevens opzoeken.
 
@@ -93,6 +93,36 @@ FROM profielen;
 
 **Hoe weet je dat dit klopt?**
 
+### DISTINCT: unieke waarden opvragen
+
+Soms wil je niet alle waarden zien, maar alleen de **verschillende** waarden eenmaal.
+
+**Voorbeeld:** "Welke genres komen voor in de series?"
+
+Zonder `DISTINCT`:
+
+```sql
+SELECT genre
+FROM series;
+```
+
+Dit geeft alle genres terug, ook als er meerdere series hetzelfde genre hebben. Veel dubbelen dus.
+
+Met `DISTINCT`:
+
+```sql
+SELECT DISTINCT land
+FROM gebruikers;
+```
+
+Dit geeft elk genre maar **één keer**. Veel beter bruikbaar!
+
+**Waarom is dit handig?**
+
+- Je ziet **welke genres voorkomen** zonder herhalingen.
+- Je kunt snel checken: "Hoeveel verschillende genres?"
+- Je vermijdt ruis in je resultaat.
+
 ---
 
 ## Opdrachten
@@ -106,18 +136,6 @@ Gebruik steeds deze vaste routine:
 
 ### Opdracht 1 - Basis
 
-Vraag: "Hoe groot is elke hoofdtabel?"
-
-Schrijf zelf drie query’s met `COUNT(*)` voor:
-
-- `gebruikers`
-- `profielen`
-- `abonnementen`
-
-Controle: vergelijk met je klasgenoot. Zijn jullie aantallen gelijk?
-
-### Opdracht 2 - Basis
-
 Vraag: "Welke 5 profielen zijn het oudst?"
 
 Schrijf zelf een query met:
@@ -127,28 +145,20 @@ Schrijf zelf een query met:
 - `ORDER BY` op leeftijd aflopend
 - `LIMIT 5`
 
-Controlequery:
+Controleer je antwoord door de volgende query uit te voeren:
 
 ```sql
 SELECT MAX(leeftijd_profiel) AS oudste_leeftijd
 FROM profielen;
 ```
 
-### Opdracht 3 - Verdieping
+### Opdracht 2 - Verdieping
 
 Vraag: "Welke landen komen voor bij gebruikers?"
 
-Schrijf zelf een query die alle waarden uit `land` laat zien in alfabetische volgorde.
+Schrijf zelf een query met `DISTINCT` die alle verschillende waarden uit `land` laat zien in alfabetische volgorde.
 
-Controlequery:
-
-```sql
-SELECT COUNT(*) AS aantal_uk
-FROM gebruikers
-WHERE land = 'UK';
-```
-
-### Opdracht 4 - Debuggen
+### Opdracht 3 - Debuggen
 
 Iemand schreef:
 
@@ -163,19 +173,11 @@ LIMIT 5;
 2. Verbeter de query.
 3. Hoe weet je dat je fix klopt?
 
-### Opdracht 5 - Uitdaging (onderzoek)
+### Opdracht 4 - Uitdaging (onderzoek)
 
-Vraag: "Bestaat de klant `harry.styles@nimmastream.com`?"
+Vraag: "Bestaat de klant `nina.bos@nimmastream.com`?"
 
 Schrijf zelf een query die de gegevens van deze klant opzoekt.
-
-Controlequery:
-
-```sql
-SELECT COUNT(*) AS aantal
-FROM gebruikers
-WHERE email = 'harry.styles@nimmastream.com';
-```
 
 ---
 
@@ -185,6 +187,8 @@ WHERE email = 'harry.styles@nimmastream.com';
 2. Wat is het verschil tussen een rij en een kolom?
 3. Waarom is voorspellen vóór uitvoeren nuttig?
 4. Welke controlequery hielp jou vandaag het meest?
+5. Wat is het verschil tussen `SELECT land` en `SELECT DISTINCT land`?
+6. Wanneer zou je `COUNT(DISTINCT kolom)` gebruiken?
 
 ---
 
@@ -199,4 +203,5 @@ Welke fout maakte je vandaag (of bijna), en hoe vond je die terug?
 - Je werkt in je eigen `nimmastream_<gebruikersnaam>`-database.
 - Je gebruikt `SELECT` om data op te vragen.
 - Met `ORDER BY` en `LIMIT` maak je resultaatlijsten bruikbaar.
+- Met `DISTINCT` zie je alleen unieke waarden (geen dubbelen).
 - Je controleert elke query met een onderbouwing.
