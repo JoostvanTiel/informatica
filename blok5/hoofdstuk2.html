@@ -475,17 +475,20 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voordoen-en-nadoen">Voordoen en nadoen</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voordoen-nieuw-concept-where">Voordoen (nieuw concept: <code class="docutils literal notranslate"><span class="pre">WHERE</span></code>)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nadoen-een-verandering">Nadoen (één verandering)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voordoen-nieuw-concept-or">Voordoen (nieuw concept: <code class="docutils literal notranslate"><span class="pre">OR</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voordoen-and-en-or-combineren">Voordoen (AND en OR combineren)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voordoen-nieuw-concept-like">Voordoen (nieuw concept: <code class="docutils literal notranslate"><span class="pre">LIKE</span></code>)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nieuwe-stap-is-null">Nieuwe stap: <code class="docutils literal notranslate"><span class="pre">IS</span> <span class="pre">NULL</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-basis-where">Opdracht 1 - Basis (<code class="docutils literal notranslate"><span class="pre">WHERE</span></code>)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-basis-and-or">Opdracht 2 - Basis (<code class="docutils literal notranslate"><span class="pre">AND</span></code>/<code class="docutils literal notranslate"><span class="pre">OR</span></code>)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-verdieping-like">Opdracht 3 - Verdieping (<code class="docutils literal notranslate"><span class="pre">LIKE</span></code>)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-verdieping-is-null">Opdracht 4 - Verdieping (<code class="docutils literal notranslate"><span class="pre">IS</span> <span class="pre">NULL</span></code>)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-debuggen-1-aanhalingstekens">Opdracht 5 - Debuggen 1 (aanhalingstekens)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-6-debuggen-2-e-in-status">Opdracht 6 - Debuggen 2 (ë in status)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-7-uitdaging-onderzoek">Opdracht 7 - Uitdaging (onderzoek)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-basis-or">Opdracht 2 - Basis (<code class="docutils literal notranslate"><span class="pre">OR</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-verdieping">Opdracht 3 - Verdieping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-verdieping-like">Opdracht 4 - Verdieping (<code class="docutils literal notranslate"><span class="pre">LIKE</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-verdieping-is-null">Opdracht 5 - Verdieping (<code class="docutils literal notranslate"><span class="pre">IS</span> <span class="pre">NULL</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-6-debuggen-1-aanhalingstekens">Opdracht 6 - Debuggen 1 (aanhalingstekens)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-7-debuggen-2-e-in-status">Opdracht 7 - Debuggen 2 (ë in status)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
@@ -530,14 +533,7 @@
 <span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">leeftijd_profiel</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Controlequery:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_kindprofielen</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">profielen</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">leeftijd_profiel</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span>
-</pre></div>
-</div>
-<p><strong>Voorspel eerst</strong> hoeveel rijen je ongeveer verwacht.<br />
-<strong>Hoe weet je dat dit klopt?</strong></p>
+<p>Hier worden de resultaten gefilterd met <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> met daarachter een voorwaarde. Alle records die niet voldoen aan de voorwaarde komen zo niet terug.</p>
 </section>
 <section id="nadoen-een-verandering">
 <h3>Nadoen (één verandering)<a class="headerlink" href="#nadoen-een-verandering" title="Link to this heading">#</a></h3>
@@ -549,13 +545,51 @@
 <span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">leeftijd_profiel</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Controlequery:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_kindprofielen_nh</span>
+<p>Er worden dus twee voorwaarden gecombineerd met <code class="docutils literal notranslate"><span class="pre">AND</span></code>.</p>
+</section>
+<section id="voordoen-nieuw-concept-or">
+<h3>Voordoen (nieuw concept: <code class="docutils literal notranslate"><span class="pre">OR</span></code>)<a class="headerlink" href="#voordoen-nieuw-concept-or" title="Link to this heading">#</a></h3>
+<p>Vraag: “Welke profielen wonen in regio NH of ZH?”</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">voornaam</span><span class="p">,</span><span class="w"> </span><span class="n">achternaam</span><span class="p">,</span><span class="w"> </span><span class="n">regio</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">profielen</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">leeftijd_profiel</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">12</span>
-<span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">regio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'NH'</span><span class="p">;</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">regio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'NH'</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">regio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'ZH'</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">regio</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
 </pre></div>
 </div>
+<p>Hier werkt <code class="docutils literal notranslate"><span class="pre">OR</span></code> als een “alles-of” operator: records die aan <strong>minstens één</strong> voorwaarde voldoen, komen terug. Dit geeft je veel meer rijen dan met <code class="docutils literal notranslate"><span class="pre">AND</span></code>.</p>
+</section>
+<section id="voordoen-and-en-or-combineren">
+<h3>Voordoen (AND en OR combineren)<a class="headerlink" href="#voordoen-and-en-or-combineren" title="Link to this heading">#</a></h3>
+<p>Vraag: “Welke profielen zijn in NH of ZH <strong>en</strong> jonger dan 13?”</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">voornaam</span><span class="p">,</span><span class="w"> </span><span class="n">achternaam</span><span class="p">,</span><span class="w"> </span><span class="n">regio</span><span class="p">,</span><span class="w"> </span><span class="n">leeftijd_profiel</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">profielen</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="p">(</span><span class="n">regio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'NH'</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">regio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'ZH'</span><span class="p">)</span>
+<span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">leeftijd_profiel</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">13</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">regio</span><span class="p">,</span><span class="w"> </span><span class="n">leeftijd_profiel</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Let op: haakjes bepalen de <strong>volgorde</strong>. <code class="docutils literal notranslate"><span class="pre">AND</span></code> bindt sterker dan <code class="docutils literal notranslate"><span class="pre">OR</span></code>, dus de haakjes zijn hier essentieel:</p>
+<ul class="simple">
+<li><p><strong>Met haakjes</strong> (goed): eerst alle NH en ZH, daarna filteren op leeftijd.</p></li>
+<li><p><strong>Zonder haakjes</strong> (fout): SQL interpreteert het anders en geeft verkeerde resultaten.</p></li>
+</ul>
+</section>
+<section id="voordoen-nieuw-concept-like">
+<h3>Voordoen (nieuw concept: <code class="docutils literal notranslate"><span class="pre">LIKE</span></code>)<a class="headerlink" href="#voordoen-nieuw-concept-like" title="Link to this heading">#</a></h3>
+<p>Vraag: “Welke gebruikers hebben <code class="docutils literal notranslate"><span class="pre">harry</span></code> in hun e-mailadres?”</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="n">voornaam</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'%harry%'</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">email</span><span class="p">;</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">LIKE</span></code> zoekt op <strong>patroon</strong>, niet op exacte match:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">%harry%</span></code> = “harry” ergens in de waarde (voor- en/of achter)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">harry%</span></code> = begint met “harry”</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%harry</span></code> = eindigt met “harry”</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_</span></code> = precies één teken (bijv. <code class="docutils literal notranslate"><span class="pre">b_t</span></code> matcht “bat”, “bit”, “bot”, etc.)</p></li>
+</ul>
 </section>
 </section>
 <hr class="docutils" />
@@ -596,42 +630,34 @@
 </div>
 <p>Hoe weet je dat dit klopt?</p>
 </section>
-<section id="opdracht-2-basis-and-or">
-<h3>Opdracht 2 - Basis (<code class="docutils literal notranslate"><span class="pre">AND</span></code>/<code class="docutils literal notranslate"><span class="pre">OR</span></code>)<a class="headerlink" href="#opdracht-2-basis-and-or" title="Link to this heading">#</a></h3>
-<p>Vraag: “Welke profielen wonen in NH of ZH?”</p>
-<p>Schrijf zelf een query met <code class="docutils literal notranslate"><span class="pre">OR</span></code> voor regio <code class="docutils literal notranslate"><span class="pre">NH</span></code> of <code class="docutils literal notranslate"><span class="pre">ZH</span></code>.</p>
-<p>Controlequery:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_nh_of_zh</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">profielen</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">regio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'NH'</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">regio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'ZH'</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>Schrijf daarna ook een versie met <code class="docutils literal notranslate"><span class="pre">AND</span></code> en leg uit waarom die veel minder rijen geeft.</p>
+<section id="opdracht-2-basis-or">
+<h3>Opdracht 2 - Basis (<code class="docutils literal notranslate"><span class="pre">OR</span></code>)<a class="headerlink" href="#opdracht-2-basis-or" title="Link to this heading">#</a></h3>
+<p>Vraag: “Welke profielen wonen in Gelderland of Zeeland?”</p>
+<p>Schrijf zelf een query met <code class="docutils literal notranslate"><span class="pre">OR</span></code> voor deze regios.</p>
+<p><strong>Vervolgvraag:</strong> Schrijf nu een query die profielen uit Gelderland <strong>en</strong> Zeeland opeist, maar <strong>niet</strong> de anderen:
+Hoeveel rijen verwacht je dat deze query oplevert? Probeer het en leg uit.</p>
 </section>
-<section id="opdracht-3-verdieping-like">
-<h3>Opdracht 3 - Verdieping (<code class="docutils literal notranslate"><span class="pre">LIKE</span></code>)<a class="headerlink" href="#opdracht-3-verdieping-like" title="Link to this heading">#</a></h3>
-<p>Vraag: “Welke gebruikers hebben ‘harry’ in hun e-mail?”</p>
-<p>Schrijf zelf een query met <code class="docutils literal notranslate"><span class="pre">LIKE</span></code>.</p>
-<p>Controlequery:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_harry</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">gebruikers</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'%harry%'</span><span class="p">;</span>
-</pre></div>
-</div>
+<section id="opdracht-3-verdieping">
+<h3>Opdracht 3 - Verdieping<a class="headerlink" href="#opdracht-3-verdieping" title="Link to this heading">#</a></h3>
+<p>Vraag: “Welke profielen zijn in Friesland of Brabant <strong>en</strong> jonger dan 13?”</p>
+<p>Schrijf zelf een query en denk aan de haakjes!</p>
+<p><strong>Probeer:</strong> Laat de haakjes weg en kijk wat er gebeurt. Welke resultaten verschillen?</p>
 </section>
-<section id="opdracht-4-verdieping-is-null">
-<h3>Opdracht 4 - Verdieping (<code class="docutils literal notranslate"><span class="pre">IS</span> <span class="pre">NULL</span></code>)<a class="headerlink" href="#opdracht-4-verdieping-is-null" title="Link to this heading">#</a></h3>
+<section id="opdracht-4-verdieping-like">
+<h3>Opdracht 4 - Verdieping (<code class="docutils literal notranslate"><span class="pre">LIKE</span></code>)<a class="headerlink" href="#opdracht-4-verdieping-like" title="Link to this heading">#</a></h3>
+<p>Vraag a: “Bij welke gebruikers begint hun e-mail adres met de letter ‘a’?”</p>
+<p>Vraag b: “Bij welke gebruiker zit de naam ‘ivo’ in het e-mail adres?”</p>
+<p>Vraag c: “Bij welke gebruikers eindigt hun e-mail adres voor het ‘&#64;’ teken met de letter ‘t’?”</p>
+<p>Schrijf zelf queries met <code class="docutils literal notranslate"><span class="pre">LIKE</span></code>.</p>
+<p><strong>Vervolgvraag:</strong> Schrijf een query die e-mails vindt die eindigen op <code class="docutils literal notranslate"><span class="pre">&#64;nimmastream.com</span></code>.</p>
+</section>
+<section id="opdracht-5-verdieping-is-null">
+<h3>Opdracht 5 - Verdieping (<code class="docutils literal notranslate"><span class="pre">IS</span> <span class="pre">NULL</span></code>)<a class="headerlink" href="#opdracht-5-verdieping-is-null" title="Link to this heading">#</a></h3>
 <p>Vraag: “Welke abonnementen zijn nog niet beëindigd?”</p>
 <p>Schrijf zelf een query met <code class="docutils literal notranslate"><span class="pre">IS</span> <span class="pre">NULL</span></code> op <code class="docutils literal notranslate"><span class="pre">beëindigd_op</span></code>.</p>
-<p>Controlequery:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal_lopend</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">abonnementen</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">beëindigd_op</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span>
-</pre></div>
-</div>
 </section>
-<section id="opdracht-5-debuggen-1-aanhalingstekens">
-<h3>Opdracht 5 - Debuggen 1 (aanhalingstekens)<a class="headerlink" href="#opdracht-5-debuggen-1-aanhalingstekens" title="Link to this heading">#</a></h3>
+<section id="opdracht-6-debuggen-1-aanhalingstekens">
+<h3>Opdracht 6 - Debuggen 1 (aanhalingstekens)<a class="headerlink" href="#opdracht-6-debuggen-1-aanhalingstekens" title="Link to this heading">#</a></h3>
 <p>Foute query:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">titel</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">series</span>
@@ -640,40 +666,21 @@
 </div>
 <ol class="arabic simple">
 <li><p>Waarom is dit riskant in een tabel met enum-tekstwaarden?</p></li>
-<li><p>Herstel de query.</p></li>
-<li><p>Controleer met een <code class="docutils literal notranslate"><span class="pre">COUNT(*)</span></code>.</p></li>
+<li><p>Verbeter de query.</p></li>
 </ol>
 </section>
-<section id="opdracht-6-debuggen-2-e-in-status">
-<h3>Opdracht 6 - Debuggen 2 (ë in status)<a class="headerlink" href="#opdracht-6-debuggen-2-e-in-status" title="Link to this heading">#</a></h3>
+<section id="opdracht-7-debuggen-2-e-in-status">
+<h3>Opdracht 7 - Debuggen 2 (ë in status)<a class="headerlink" href="#opdracht-7-debuggen-2-e-in-status" title="Link to this heading">#</a></h3>
 <p>Foute query:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">abonnementen</span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'beeindigd'</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Herstel met de echte enum-waarde:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aantal</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">abonnementen</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'beëindigd'</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>Waarom geeft de eerste query 0 rijen terug?</p>
-</section>
-<section id="opdracht-7-uitdaging-onderzoek">
-<h3>Opdracht 7 - Uitdaging (onderzoek)<a class="headerlink" href="#opdracht-7-uitdaging-onderzoek" title="Link to this heading">#</a></h3>
-<p>Vraag in gewone taal:<br />
-“In profielen staat regio <code class="docutils literal notranslate"><span class="pre">VK</span></code>, maar in gebruikers staat land <code class="docutils literal notranslate"><span class="pre">UK</span></code>. Hoe vaak komt dat voor?”</p>
-<p>Maak zelf twee queries:</p>
 <ol class="arabic simple">
-<li><p>tel gebruikers met <code class="docutils literal notranslate"><span class="pre">land</span> <span class="pre">=</span> <span class="pre">'UK'</span></code>;</p></li>
-<li><p>tel profielen met <code class="docutils literal notranslate"><span class="pre">regio</span> <span class="pre">=</span> <span class="pre">'VK'</span></code>.</p></li>
+<li><p>Waarom geeft de eerste query 0 rijen terug?</p></li>
+<li><p>Herstel met de echte enum-waarde:</p></li>
 </ol>
-<p>Sluit af met:</p>
-<ul class="simple">
-<li><p>is de codering consistent of niet?</p></li>
-<li><p>welke keuze zou jij als databouwer maken (<code class="docutils literal notranslate"><span class="pre">UK</span></code> of <code class="docutils literal notranslate"><span class="pre">VK</span></code>) en waarom?</p></li>
-</ul>
 </section>
 </section>
 <hr class="docutils" />
@@ -682,8 +689,16 @@
 <ol class="arabic simple">
 <li><p>Wanneer gebruik je <code class="docutils literal notranslate"><span class="pre">IS</span> <span class="pre">NULL</span></code>?</p></li>
 <li><p>Wat is het verschil tussen <code class="docutils literal notranslate"><span class="pre">AND</span></code> en <code class="docutils literal notranslate"><span class="pre">OR</span></code>?</p></li>
+<li><p>Waarom zijn haakjes belangrijk bij combinaties van <code class="docutils literal notranslate"><span class="pre">AND</span></code> en <code class="docutils literal notranslate"><span class="pre">OR</span></code>?</p></li>
 <li><p>Wanneer kies je <code class="docutils literal notranslate"><span class="pre">LIKE</span></code> in plaats van <code class="docutils literal notranslate"><span class="pre">=</span></code>?</p></li>
-<li><p>Waarom moet je exact de waarde <code class="docutils literal notranslate"><span class="pre">'beëindigd'</span></code> typen?</p></li>
+<li><p>Welke <code class="docutils literal notranslate"><span class="pre">LIKE</span></code>-patronen zijn dit?</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">%&#64;outlook.com</span></code> (wat zoek je?)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2023-%</span></code> (wat zoek je?)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_izz_</span></code> (welke woorden passen?)</p></li>
+</ul>
+</li>
+<li><p>Waarom moet je exact de waarde <code class="docutils literal notranslate"><span class="pre">'beëindigd'</span></code> typen i.p.v. <code class="docutils literal notranslate"><span class="pre">beeindigd</span></code>?</p></li>
 </ol>
 </section>
 <hr class="docutils" />
@@ -773,17 +788,20 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voordoen-en-nadoen">Voordoen en nadoen</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voordoen-nieuw-concept-where">Voordoen (nieuw concept: <code class="docutils literal notranslate"><span class="pre">WHERE</span></code>)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nadoen-een-verandering">Nadoen (één verandering)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voordoen-nieuw-concept-or">Voordoen (nieuw concept: <code class="docutils literal notranslate"><span class="pre">OR</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voordoen-and-en-or-combineren">Voordoen (AND en OR combineren)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voordoen-nieuw-concept-like">Voordoen (nieuw concept: <code class="docutils literal notranslate"><span class="pre">LIKE</span></code>)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nieuwe-stap-is-null">Nieuwe stap: <code class="docutils literal notranslate"><span class="pre">IS</span> <span class="pre">NULL</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-basis-where">Opdracht 1 - Basis (<code class="docutils literal notranslate"><span class="pre">WHERE</span></code>)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-basis-and-or">Opdracht 2 - Basis (<code class="docutils literal notranslate"><span class="pre">AND</span></code>/<code class="docutils literal notranslate"><span class="pre">OR</span></code>)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-verdieping-like">Opdracht 3 - Verdieping (<code class="docutils literal notranslate"><span class="pre">LIKE</span></code>)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-verdieping-is-null">Opdracht 4 - Verdieping (<code class="docutils literal notranslate"><span class="pre">IS</span> <span class="pre">NULL</span></code>)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-debuggen-1-aanhalingstekens">Opdracht 5 - Debuggen 1 (aanhalingstekens)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-6-debuggen-2-e-in-status">Opdracht 6 - Debuggen 2 (ë in status)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-7-uitdaging-onderzoek">Opdracht 7 - Uitdaging (onderzoek)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-basis-or">Opdracht 2 - Basis (<code class="docutils literal notranslate"><span class="pre">OR</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-verdieping">Opdracht 3 - Verdieping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-verdieping-like">Opdracht 4 - Verdieping (<code class="docutils literal notranslate"><span class="pre">LIKE</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-verdieping-is-null">Opdracht 5 - Verdieping (<code class="docutils literal notranslate"><span class="pre">IS</span> <span class="pre">NULL</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-6-debuggen-1-aanhalingstekens">Opdracht 6 - Debuggen 1 (aanhalingstekens)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-7-debuggen-2-e-in-status">Opdracht 7 - Debuggen 2 (ë in status)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
