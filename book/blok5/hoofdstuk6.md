@@ -7,6 +7,7 @@ In dit hoofdstuk bouw je van "alleen lezen" naar "gegevens beheren via een webin
 Je leert:
 
 - records wijzigen met een formulier (`UPDATE`);
+- records toe te voegen met een formulier (`INSERT INTO`);
 - records verwijderen met bevestiging (`DELETE`);
 - invoer controleren voordat je query's uitvoert;
 - prepared statements gebruiken voor veiligere code.
@@ -19,7 +20,14 @@ Ook in dit hoofdstuk gebruik je jouw database:
 
 `nimmastream_<gebruikersnaam>`
 
+Zorg dat je verbindingsblok van het vorige hoofdstuk weer bovenaan je script staat.
+
 ---
+
+## 1. Informatie uit een formulier veilig verwerken
+
+In het vorige hoofdstuk kon je een waarschuwing lezen over (**SQL-injectie**)[https://nl.wikipedia.org/wiki/SQL-injectie]. Dit is een gevaarlijk beveiligingsrisico waar we ons tegen moeten beschermen. Eén manier om dat te doen is door gebruik te maken van **prepared statements**.
+Bij een prepared statement wordt
 
 ## 1. UPDATE vanuit een formulier
 
@@ -34,7 +42,7 @@ Bij een webformulier werkt het meestal als volgt: de gebruiker opent een pagina,
 
 ### Belangrijk: eerst tonen, dan aanpassen
 
-Je wilt niet dat een gebruiker per ongeluk verkeerde data wijzigz. Daarom is het logisch om eerst de huidige gegevens te tonen en pas daarna een wijziging door te laten voeren. Zodoende kun je de gebruiker begeleiden en voorkom je fouten.
+Je wilt niet dat een gebruiker per ongeluk verkeerde data wijzigt. Daarom is het logisch om eerst de huidige gegevens te tonen en pas daarna een wijziging door te laten voeren. Zodoende kun je de gebruiker begeleiden en voorkom je fouten.
 
 Voorbeeld:
 
@@ -92,9 +100,13 @@ Bij prepared statements worden invoerwaarden gescheiden van de SQL-opdracht zelf
 
 ```html
 <form method="POST" action="bewerkprofiel.php">
-  <input type="hidden" name="id" value="<?php echo $id; ?>">
+  <input type="hidden" name="id" value="<?php echo $id; ?>" />
   <label>Leeftijd:</label>
-  <input type="number" name="leeftijd" value="<?php echo $huidigeleeftijd; ?>">
+  <input
+    type="number"
+    name="leeftijd"
+    value="<?php echo $huidigeleeftijd; ?>"
+  />
   <button type="submit">Opslaan</button>
 </form>
 ```
@@ -105,7 +117,7 @@ Bij prepared statements worden invoerwaarden gescheiden van de SQL-opdracht zelf
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = $_POST['id'];           // Welk profiel wijzigen?
     $leeftijd = $_POST['leeftijd']; // Naar welke leeftijd?
-    
+
     // Validatie: is leeftijd ingevuld en logisch?
     if (empty($leeftijd) || $leeftijd < 0 || $leeftijd > 120) {
         echo "Fout: leeftijd moet tussen 0 en 120 zijn.";
@@ -113,13 +125,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Stap 3: Prepared statement
         $sql = "UPDATE profielen SET leeftijd_profiel = ? WHERE id = ?";
         $stmt = $conn->prepare($sql);
-        
+
         // Stap 4: Types en waarden koppelen
         $stmt->bind_param("ii", $leeftijd, $id);
         // "ii" = twee integers
         // eerste ? = $leeftijd
         // tweede ? = $id
-        
+
         // Stap 5: Uitvoeren
         if ($stmt->execute()) {
             echo "Profiel bijgewerkt!";
@@ -133,6 +145,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 **Waarom is dit veilig?**
 
 `bind_param()` scheidt de SQL-code van de invoerdata:
+
 - SQL-code: `UPDATE profielen SET leeftijd_profiel = ? WHERE id = ?`
 - Data: `[15, 1]`
 

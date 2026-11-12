@@ -20,20 +20,40 @@ Aan het einde van dit hoofdstuk kun je een werkende uitleespagina bouwen die dat
 ```php
 <?php
 $database = "nimmastream_<gebruikersnaam>";
-$conn = new mysqli("localhost", "root", "", $database);
+$conn = new mysqli("localhost", "<gebruikersnaam>", "<wachtwoord>", $database);
 if ($conn->connect_error) {
     die("Verbinding mislukt: " . $conn->connect_error);
 }
 ?>
 ```
 
-Vervang `<gebruikersnaam>` door je eigen gebruikersnaam.
+Vervang `<gebruikersnaam>` door je eigen gebruikersnaam en `<wachtwoord>` door je eigen wachtwoord. **In de rest van dit blok gaan we ervan uit dat je dit verbindingsblok bovenaan je script hebt staan!**
 
-Zonder verbinding kun je geen query's uitvoeren. In PHP is dit het beginpunt van bijna elke database-applicatie: eerst maak je verbinding, daarna voert je SQL uit, en daarna toon je de resultaten op de pagina.
+### Wat doet dit script stap voor stap?
+
+1. We zetten de databasenaam in $database.
+2. We maken een verbinding met MySQL en bewaren die in $conn.
+3. We controleren of verbinden is gelukt.
+4. Bij een fout stopt het script met die(...) en tonen we de foutmelding.
+
+### Waarom is $conn belangrijk?
+
+`$conn` is je verbinding-object.
+Vanaf nu gebruik je dat object om met de database te praten, bijvoorbeeld met:
+
+`$conn->query(...)` om SQL uit te voeren.
+
+In PHP gebruik je -> om iets van een object te gebruiken:
+
+- een eigenschap (property), zoals `$conn->connect_error`
+- een methode (functie van een object), zoals `$conn->query(...)`
+
+Zonder verbinding kun je geen query’s uitvoeren.
+Bijna elke PHP-databasepagina werkt in deze volgorde: verbinden → query uitvoeren → resultaat tonen.
 
 ### Waarom is een verbinding nodig?
 
-PHP draait als een server-side taal. Het kan dus niet zomaar met de database praten zonder een connectie. De `mysqli`-verbinding is als een brug tussen je webpagina en de database. Je kunt zonder deze verbinding geen data ophalen of aanpassen.
+PHP is een taal die uitgevoerd wordt op de server (het is een server-side taal). Het kan dus niet zomaar met de database praten zonder een connectie. De `mysqli`-verbinding is als een brug tussen je webpagina en de database. Je kunt zonder deze verbinding geen data ophalen of aanpassen.
 
 ---
 
@@ -48,34 +68,49 @@ while ($row = $result->fetch_assoc()) {
 ?>
 ```
 
-Een nettere variant is data tonen in een tabel (`<table>`).
+Hier zie je twee nieuwe methoden: `query()` en `fetch_assoc()`.
 
-### Wat gebeurt hier?
+### Wat doet dit script stap voor stap?
 
 1. `query()` voert de SQL-opdracht uit.
-2. `fetch_assoc()` haalt per rij een associatief array op.
-3. `echo` zet de waarden om in HTML.
+2. De uitkomst van de query bewaren we in `$result`.
+3. Met `fetch_assoc()` halen we steeds één rij op.
+4. Met `echo` tonen we die rij als HTML.
 
-Je kunt dit vergelijken met: "haal de data op, zet elk record om in een begrijpelijk stukje HTML en laat het aan de gebruiker zien".
+### Wat is `$result`?
 
-### Belangrijk verschil
+`$result` is het resultaat-object van de query.  
+Je kunt dit zien als een stapel rijen die uit de database komt.
 
-- SQL bepaalt welke gegevens je ophaalt;
-- PHP verwerkt die gegevens;
-- HTML bepaalt hoe deze gegevens worden getoond.
+### Wat doet `fetch_assoc()` precies?
 
-Dat is een kernidee in webapplicaties: de data is niet zichtbaar zonder een opmaaklaag.
+`fetch_assoc()` haalt één rij op en geeft die terug als een associatieve array.  
+Dat betekent: waarden met namen als sleutel, bijvoorbeeld:
+
+```php
+["voornaam" => "Joost", "leeftijd" => 36]
+```
+
+Daarom kun je schrijven:
+
+- `$row["voornaam"]`
+- `$row["leeftijd"]`
+
+### Waarom een `while`-lus?
+
+De `while`-lus blijft doorgaan zolang er nog een volgende rij is.  
+Zo verwerk je automatisch alle rijen uit je query, niet alleen de eerste.
 
 ---
 
 ## 3. Formulier gebruiken als filter
 
-Gebruik bijvoorbeeld een regiofilter via `GET`.
+Gebruik bijvoorbeeld een regiofilter via `POST`.
 
 Stappen:
 
 1. formulier maken;
-2. waarde uitlezen uit `$_GET`;
+2. waarde uitlezen uit `$_POST_`;
 3. query uitvoeren;
 4. resultaat tonen.
 
@@ -90,12 +125,12 @@ Je krijgt een vragenlijst van een gebruiker:
 
 Dat maakt een webpagina dynamisch: je kunt niet alleen static data tonen, maar ook op basis van een keuze van de gebruiker nieuwe resultaten ophalen.
 
-### WAARSCHUWING: Invoer is onveilig zonder voorzorgen!
+### **WAARSCHUWING: Invoer is onveilig zonder voorzorgen!**
 
 Dit voorbeeld is **ONVEILIG**:
 
 ```php
-$regio = $_GET['regio'];
+$regio = $_POST['regio'];
 $result = $conn->query("SELECT * FROM gebruikers WHERE regio = '$regio'");
 ```
 
@@ -153,19 +188,18 @@ Maak een pagina met:
 
 ### Opdracht 2 - Tabelweergave
 
-Toon minimaal 3 kolommen in een HTML-tabel, bijvoorbeeld:
-
-- voornaam;
-- leeftijd;
-- regio.
+1. Bedenk een query die het volgende toont: alle serietitels, seizoennummer, afleveringnummer en afleveringtitel
+2. Zoek op internet hoe je een tabel maakt in HTML. Schrijf dan een php script dat het resultaat van de query van opdracht 1 in een HTML-tabel toont.
 
 ### Opdracht 3 - Filterformulier
 
-Maak een formulier waarmee je op regio filtert.
+1. Maak een formulier waarin een gebruiker de regio kan invullen.
+2. Schrijf een query die alle gebruikers uit een bepaalde regio ophaalt.
+3. Schrijf een php script dat de input van de gebruiker gebruikt om alle gebruikers uit de ingevoerde regio op het scherm te tonen.
 
 ### Opdracht 4 - Uitbreiding
 
-Voeg een tweede filter toe, bijvoorbeeld op minimale leeftijd.
+Voeg aan de vorige opdracht een tweede filter toe, bijvoorbeeld minimale leeftijd.
 
 ### Opdracht 5 - Reflectie
 
