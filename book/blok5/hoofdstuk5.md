@@ -199,7 +199,7 @@ Maak een pagina met:
 
 ### Opdracht 4 - Uitbreiding
 
-Voeg aan de vorige opdracht een tweede filter toe, bijvoorbeeld minimale leeftijd.
+Voeg aan de vorige opdracht een minimale leeftijd als een tweede filter toe.
 
 ### Opdracht 5 - Reflectie
 
