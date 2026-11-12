@@ -472,6 +472,7 @@
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#informatie-uit-een-formulier-veilig-verwerken">1. Informatie uit een formulier veilig verwerken</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-vanuit-een-formulier">1. UPDATE vanuit een formulier</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#belangrijk-eerst-tonen-dan-aanpassen">Belangrijk: eerst tonen, dan aanpassen</a></li>
 </ul>
@@ -519,6 +520,7 @@
 <p>Je leert:</p>
 <ul class="simple">
 <li><p>records wijzigen met een formulier (<code class="docutils literal notranslate"><span class="pre">UPDATE</span></code>);</p></li>
+<li><p>records toe te voegen met een formulier (<code class="docutils literal notranslate"><span class="pre">INSERT</span> <span class="pre">INTO</span></code>);</p></li>
 <li><p>records verwijderen met bevestiging (<code class="docutils literal notranslate"><span class="pre">DELETE</span></code>);</p></li>
 <li><p>invoer controleren voordat je query’s uitvoert;</p></li>
 <li><p>prepared statements gebruiken voor veiligere code.</p></li>
@@ -527,8 +529,14 @@
 <hr class="docutils" />
 <p>Ook in dit hoofdstuk gebruik je jouw database:</p>
 <p><code class="docutils literal notranslate"><span class="pre">nimmastream_&lt;gebruikersnaam&gt;</span></code></p>
+<p>Zorg dat je verbindingsblok van het vorige hoofdstuk weer bovenaan je script staat.</p>
 </section>
 <hr class="docutils" />
+<section id="informatie-uit-een-formulier-veilig-verwerken">
+<h2>1. Informatie uit een formulier veilig verwerken<a class="headerlink" href="#informatie-uit-een-formulier-veilig-verwerken" title="Link to this heading">#</a></h2>
+<p>In het vorige hoofdstuk kon je een waarschuwing lezen over (<strong>SQL-injectie</strong>)[<a class="reference external" href="https://nl.wikipedia.org/wiki/SQL-injectie">https://nl.wikipedia.org/wiki/SQL-injectie</a>]. Dit is een gevaarlijk beveiligingsrisico waar we ons tegen moeten beschermen. Eén manier om dat te doen is door gebruik te maken van <strong>prepared statements</strong>.
+Bij een prepared statement wordt</p>
+</section>
 <section id="update-vanuit-een-formulier">
 <h2>1. UPDATE vanuit een formulier<a class="headerlink" href="#update-vanuit-een-formulier" title="Link to this heading">#</a></h2>
 <p>Stap voor stap:</p>
@@ -541,7 +549,7 @@
 <p>Bij een webformulier werkt het meestal als volgt: de gebruiker opent een pagina, ziet de huidige gegevens, past die aan en klikt op “opslaan”. Daarna stuurt de browser die nieuwe waarden terug naar PHP. PHP controleert de invoer en voert vervolgens een SQL-<code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> uit.</p>
 <section id="belangrijk-eerst-tonen-dan-aanpassen">
 <h3>Belangrijk: eerst tonen, dan aanpassen<a class="headerlink" href="#belangrijk-eerst-tonen-dan-aanpassen" title="Link to this heading">#</a></h3>
-<p>Je wilt niet dat een gebruiker per ongeluk verkeerde data wijzigz. Daarom is het logisch om eerst de huidige gegevens te tonen en pas daarna een wijziging door te laten voeren. Zodoende kun je de gebruiker begeleiden en voorkom je fouten.</p>
+<p>Je wilt niet dat een gebruiker per ongeluk verkeerde data wijzigt. Daarom is het logisch om eerst de huidige gegevens te tonen en pas daarna een wijziging door te laten voeren. Zodoende kun je de gebruiker begeleiden en voorkom je fouten.</p>
 <p>Voorbeeld:</p>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$sql = "UPDATE profielen SET leeftijd_profiel = ? WHERE id = ?";</span>
 <span class="x">$stmt = $conn-&gt;prepare($sql);</span>
@@ -593,9 +601,13 @@
 <h3>Praktisch voorbeeld: Volledige UPDATE workflow<a class="headerlink" href="#praktisch-voorbeeld-volledige-update-workflow" title="Link to this heading">#</a></h3>
 <p><strong>Stap 1: HTML-formulier</strong></p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">"POST"</span> <span class="na">action</span><span class="o">=</span><span class="s">"bewerkprofiel.php"</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"hidden"</span> <span class="na">name</span><span class="o">=</span><span class="s">"id"</span> <span class="na">value</span><span class="o">=</span><span class="s">"&lt;?php echo $id; ?&gt;"</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"hidden"</span> <span class="na">name</span><span class="o">=</span><span class="s">"id"</span> <span class="na">value</span><span class="o">=</span><span class="s">"&lt;?php echo $id; ?&gt;"</span> <span class="p">/&gt;</span>
   <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Leeftijd:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"number"</span> <span class="na">name</span><span class="o">=</span><span class="s">"leeftijd"</span> <span class="na">value</span><span class="o">=</span><span class="s">"&lt;?php echo $huidigeleeftijd; ?&gt;"</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span>
+    <span class="na">type</span><span class="o">=</span><span class="s">"number"</span>
+    <span class="na">name</span><span class="o">=</span><span class="s">"leeftijd"</span>
+    <span class="na">value</span><span class="o">=</span><span class="s">"&lt;?php echo $huidigeleeftijd; ?&gt;"</span>
+  <span class="p">/&gt;</span>
   <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">"submit"</span><span class="p">&gt;</span>Opslaan<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 </pre></div>
@@ -604,7 +616,7 @@
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">if ($_SERVER['REQUEST_METHOD'] == 'POST') {</span>
 <span class="x">    $id = $_POST['id'];           // Welk profiel wijzigen?</span>
 <span class="x">    $leeftijd = $_POST['leeftijd']; // Naar welke leeftijd?</span>
-<span class="x">    </span>
+
 <span class="x">    // Validatie: is leeftijd ingevuld en logisch?</span>
 <span class="x">    if (empty($leeftijd) || $leeftijd &lt; 0 || $leeftijd &gt; 120) {</span>
 <span class="x">        echo "Fout: leeftijd moet tussen 0 en 120 zijn.";</span>
@@ -612,13 +624,13 @@
 <span class="x">        // Stap 3: Prepared statement</span>
 <span class="x">        $sql = "UPDATE profielen SET leeftijd_profiel = ? WHERE id = ?";</span>
 <span class="x">        $stmt = $conn-&gt;prepare($sql);</span>
-<span class="x">        </span>
+
 <span class="x">        // Stap 4: Types en waarden koppelen</span>
 <span class="x">        $stmt-&gt;bind_param("ii", $leeftijd, $id);</span>
 <span class="x">        // "ii" = twee integers</span>
 <span class="x">        // eerste ? = $leeftijd</span>
 <span class="x">        // tweede ? = $id</span>
-<span class="x">        </span>
+
 <span class="x">        // Stap 5: Uitvoeren</span>
 <span class="x">        if ($stmt-&gt;execute()) {</span>
 <span class="x">            echo "Profiel bijgewerkt!";</span>
@@ -788,6 +800,7 @@
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#informatie-uit-een-formulier-veilig-verwerken">1. Informatie uit een formulier veilig verwerken</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-vanuit-een-formulier">1. UPDATE vanuit een formulier</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#belangrijk-eerst-tonen-dan-aanpassen">Belangrijk: eerst tonen, dan aanpassen</a></li>
 </ul>

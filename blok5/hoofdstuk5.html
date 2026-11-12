@@ -473,17 +473,21 @@
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verbinding-maken-met-de-database">1. Verbinding maken met de database</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-doet-dit-script-stap-voor-stap">Wat doet dit script stap voor stap?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-is-conn-belangrijk">Waarom is $conn belangrijk?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-is-een-verbinding-nodig">Waarom is een verbinding nodig?</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resultaten-tonen-in-html">2. Resultaten tonen in HTML</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-gebeurt-hier">Wat gebeurt hier?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#belangrijk-verschil">Belangrijk verschil</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Wat doet dit script stap voor stap?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-result">Wat is <code class="docutils literal notranslate"><span class="pre">$result</span></code>?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-doet-fetch-assoc-precies">Wat doet <code class="docutils literal notranslate"><span class="pre">fetch_assoc()</span></code> precies?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-een-while-lus">Waarom een <code class="docutils literal notranslate"><span class="pre">while</span></code>-lus?</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formulier-gebruiken-als-filter">3. Formulier gebruiken als filter</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-van-de-logica">Voorbeeld van de logica</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarschuwing-invoer-is-onveilig-zonder-voorzorgen">WAARSCHUWING: Invoer is onveilig zonder voorzorgen!</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarschuwing-invoer-is-onveilig-zonder-voorzorgen"><strong>WAARSCHUWING: Invoer is onveilig zonder voorzorgen!</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oplossing-prepared-statements">Oplossing: Prepared statements</a></li>
 </ul>
 </li>
@@ -533,18 +537,39 @@
 <h2>1. Verbinding maken met de database<a class="headerlink" href="#verbinding-maken-met-de-database" title="Link to this heading">#</a></h2>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
 <span class="nv">$database</span> <span class="o">=</span> <span class="s2">"nimmastream_&lt;gebruikersnaam&gt;"</span><span class="p">;</span>
-<span class="nv">$conn</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">mysqli</span><span class="p">(</span><span class="s2">"localhost"</span><span class="p">,</span> <span class="s2">"root"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="nv">$database</span><span class="p">);</span>
+<span class="nv">$conn</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">mysqli</span><span class="p">(</span><span class="s2">"localhost"</span><span class="p">,</span> <span class="s2">"&lt;gebruikersnaam&gt;"</span><span class="p">,</span> <span class="s2">"&lt;wachtwoord&gt;"</span><span class="p">,</span> <span class="nv">$database</span><span class="p">);</span>
 <span class="k">if</span> <span class="p">(</span><span class="nv">$conn</span><span class="o">-&gt;</span><span class="na">connect_error</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">die</span><span class="p">(</span><span class="s2">"Verbinding mislukt: "</span> <span class="o">.</span> <span class="nv">$conn</span><span class="o">-&gt;</span><span class="na">connect_error</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="cp">?&gt;</span>
 </pre></div>
 </div>
-<p>Vervang <code class="docutils literal notranslate"><span class="pre">&lt;gebruikersnaam&gt;</span></code> door je eigen gebruikersnaam.</p>
-<p>Zonder verbinding kun je geen query’s uitvoeren. In PHP is dit het beginpunt van bijna elke database-applicatie: eerst maak je verbinding, daarna voert je SQL uit, en daarna toon je de resultaten op de pagina.</p>
+<p>Vervang <code class="docutils literal notranslate"><span class="pre">&lt;gebruikersnaam&gt;</span></code> door je eigen gebruikersnaam en <code class="docutils literal notranslate"><span class="pre">&lt;wachtwoord&gt;</span></code> door je eigen wachtwoord. <strong>In de rest van dit blok gaan we ervan uit dat je dit verbindingsblok bovenaan je script hebt staan!</strong></p>
+<section id="wat-doet-dit-script-stap-voor-stap">
+<h3>Wat doet dit script stap voor stap?<a class="headerlink" href="#wat-doet-dit-script-stap-voor-stap" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>We zetten de databasenaam in $database.</p></li>
+<li><p>We maken een verbinding met MySQL en bewaren die in $conn.</p></li>
+<li><p>We controleren of verbinden is gelukt.</p></li>
+<li><p>Bij een fout stopt het script met die(…) en tonen we de foutmelding.</p></li>
+</ol>
+</section>
+<section id="waarom-is-conn-belangrijk">
+<h3>Waarom is $conn belangrijk?<a class="headerlink" href="#waarom-is-conn-belangrijk" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">$conn</span></code> is je verbinding-object.
+Vanaf nu gebruik je dat object om met de database te praten, bijvoorbeeld met:</p>
+<p><code class="docutils literal notranslate"><span class="pre">$conn-&gt;query(...)</span></code> om SQL uit te voeren.</p>
+<p>In PHP gebruik je -&gt; om iets van een object te gebruiken:</p>
+<ul class="simple">
+<li><p>een eigenschap (property), zoals <code class="docutils literal notranslate"><span class="pre">$conn-&gt;connect_error</span></code></p></li>
+<li><p>een methode (functie van een object), zoals <code class="docutils literal notranslate"><span class="pre">$conn-&gt;query(...)</span></code></p></li>
+</ul>
+<p>Zonder verbinding kun je geen query’s uitvoeren.
+Bijna elke PHP-databasepagina werkt in deze volgorde: verbinden → query uitvoeren → resultaat tonen.</p>
+</section>
 <section id="waarom-is-een-verbinding-nodig">
 <h3>Waarom is een verbinding nodig?<a class="headerlink" href="#waarom-is-een-verbinding-nodig" title="Link to this heading">#</a></h3>
-<p>PHP draait als een server-side taal. Het kan dus niet zomaar met de database praten zonder een connectie. De <code class="docutils literal notranslate"><span class="pre">mysqli</span></code>-verbinding is als een brug tussen je webpagina en de database. Je kunt zonder deze verbinding geen data ophalen of aanpassen.</p>
+<p>PHP is een taal die uitgevoerd wordt op de server (het is een server-side taal). Het kan dus niet zomaar met de database praten zonder een connectie. De <code class="docutils literal notranslate"><span class="pre">mysqli</span></code>-verbinding is als een brug tussen je webpagina en de database. Je kunt zonder deze verbinding geen data ophalen of aanpassen.</p>
 </section>
 </section>
 <hr class="docutils" />
@@ -558,34 +583,48 @@
 <span class="cp">?&gt;</span>
 </pre></div>
 </div>
-<p>Een nettere variant is data tonen in een tabel (<code class="docutils literal notranslate"><span class="pre">&lt;table&gt;</span></code>).</p>
-<section id="wat-gebeurt-hier">
-<h3>Wat gebeurt hier?<a class="headerlink" href="#wat-gebeurt-hier" title="Link to this heading">#</a></h3>
+<p>Hier zie je twee nieuwe methoden: <code class="docutils literal notranslate"><span class="pre">query()</span></code> en <code class="docutils literal notranslate"><span class="pre">fetch_assoc()</span></code>.</p>
+<section id="id1">
+<h3>Wat doet dit script stap voor stap?<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">query()</span></code> voert de SQL-opdracht uit.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">fetch_assoc()</span></code> haalt per rij een associatief array op.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">echo</span></code> zet de waarden om in HTML.</p></li>
+<li><p>De uitkomst van de query bewaren we in <code class="docutils literal notranslate"><span class="pre">$result</span></code>.</p></li>
+<li><p>Met <code class="docutils literal notranslate"><span class="pre">fetch_assoc()</span></code> halen we steeds één rij op.</p></li>
+<li><p>Met <code class="docutils literal notranslate"><span class="pre">echo</span></code> tonen we die rij als HTML.</p></li>
 </ol>
-<p>Je kunt dit vergelijken met: “haal de data op, zet elk record om in een begrijpelijk stukje HTML en laat het aan de gebruiker zien”.</p>
 </section>
-<section id="belangrijk-verschil">
-<h3>Belangrijk verschil<a class="headerlink" href="#belangrijk-verschil" title="Link to this heading">#</a></h3>
+<section id="wat-is-result">
+<h3>Wat is <code class="docutils literal notranslate"><span class="pre">$result</span></code>?<a class="headerlink" href="#wat-is-result" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">$result</span></code> is het resultaat-object van de query.<br />
+Je kunt dit zien als een stapel rijen die uit de database komt.</p>
+</section>
+<section id="wat-doet-fetch-assoc-precies">
+<h3>Wat doet <code class="docutils literal notranslate"><span class="pre">fetch_assoc()</span></code> precies?<a class="headerlink" href="#wat-doet-fetch-assoc-precies" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">fetch_assoc()</span></code> haalt één rij op en geeft die terug als een associatieve array.<br />
+Dat betekent: waarden met namen als sleutel, bijvoorbeeld:</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">["voornaam" =&gt; "Joost", "leeftijd" =&gt; 36]</span>
+</pre></div>
+</div>
+<p>Daarom kun je schrijven:</p>
 <ul class="simple">
-<li><p>SQL bepaalt welke gegevens je ophaalt;</p></li>
-<li><p>PHP verwerkt die gegevens;</p></li>
-<li><p>HTML bepaalt hoe deze gegevens worden getoond.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$row[&quot;voornaam&quot;]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$row[&quot;leeftijd&quot;]</span></code></p></li>
 </ul>
-<p>Dat is een kernidee in webapplicaties: de data is niet zichtbaar zonder een opmaaklaag.</p>
+</section>
+<section id="waarom-een-while-lus">
+<h3>Waarom een <code class="docutils literal notranslate"><span class="pre">while</span></code>-lus?<a class="headerlink" href="#waarom-een-while-lus" title="Link to this heading">#</a></h3>
+<p>De <code class="docutils literal notranslate"><span class="pre">while</span></code>-lus blijft doorgaan zolang er nog een volgende rij is.<br />
+Zo verwerk je automatisch alle rijen uit je query, niet alleen de eerste.</p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="formulier-gebruiken-als-filter">
 <h2>3. Formulier gebruiken als filter<a class="headerlink" href="#formulier-gebruiken-als-filter" title="Link to this heading">#</a></h2>
-<p>Gebruik bijvoorbeeld een regiofilter via <code class="docutils literal notranslate"><span class="pre">GET</span></code>.</p>
+<p>Gebruik bijvoorbeeld een regiofilter via <code class="docutils literal notranslate"><span class="pre">POST</span></code>.</p>
 <p>Stappen:</p>
 <ol class="arabic simple">
 <li><p>formulier maken;</p></li>
-<li><p>waarde uitlezen uit <code class="docutils literal notranslate"><span class="pre">$_GET</span></code>;</p></li>
+<li><p>waarde uitlezen uit <code class="docutils literal notranslate"><span class="pre">$_POST_</span></code>;</p></li>
 <li><p>query uitvoeren;</p></li>
 <li><p>resultaat tonen.</p></li>
 </ol>
@@ -601,9 +640,9 @@
 <p>Dat maakt een webpagina dynamisch: je kunt niet alleen static data tonen, maar ook op basis van een keuze van de gebruiker nieuwe resultaten ophalen.</p>
 </section>
 <section id="waarschuwing-invoer-is-onveilig-zonder-voorzorgen">
-<h3>WAARSCHUWING: Invoer is onveilig zonder voorzorgen!<a class="headerlink" href="#waarschuwing-invoer-is-onveilig-zonder-voorzorgen" title="Link to this heading">#</a></h3>
+<h3><strong>WAARSCHUWING: Invoer is onveilig zonder voorzorgen!</strong><a class="headerlink" href="#waarschuwing-invoer-is-onveilig-zonder-voorzorgen" title="Link to this heading">#</a></h3>
 <p>Dit voorbeeld is <strong>ONVEILIG</strong>:</p>
-<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$regio = $_GET['regio'];</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$regio = $_POST['regio'];</span>
 <span class="x">$result = $conn-&gt;query("SELECT * FROM gebruikers WHERE regio = '$regio'");</span>
 </pre></div>
 </div>
@@ -659,20 +698,22 @@
 </section>
 <section id="opdracht-2-tabelweergave">
 <h3>Opdracht 2 - Tabelweergave<a class="headerlink" href="#opdracht-2-tabelweergave" title="Link to this heading">#</a></h3>
-<p>Toon minimaal 3 kolommen in een HTML-tabel, bijvoorbeeld:</p>
-<ul class="simple">
-<li><p>voornaam;</p></li>
-<li><p>leeftijd;</p></li>
-<li><p>regio.</p></li>
-</ul>
+<ol class="arabic simple">
+<li><p>Bedenk een query die het volgende toont: alle serietitels, seizoennummer, afleveringnummer en afleveringtitel</p></li>
+<li><p>Zoek op internet hoe je een tabel maakt in HTML. Schrijf dan een php script dat het resultaat van de query van opdracht 1 in een HTML-tabel toont.</p></li>
+</ol>
 </section>
 <section id="opdracht-3-filterformulier">
 <h3>Opdracht 3 - Filterformulier<a class="headerlink" href="#opdracht-3-filterformulier" title="Link to this heading">#</a></h3>
-<p>Maak een formulier waarmee je op regio filtert.</p>
+<ol class="arabic simple">
+<li><p>Maak een formulier waarin een gebruiker de regio kan invullen.</p></li>
+<li><p>Schrijf een query die alle gebruikers uit een bepaalde regio ophaalt.</p></li>
+<li><p>Schrijf een php script dat de input van de gebruiker gebruikt om alle gebruikers uit de ingevoerde regio op het scherm te tonen.</p></li>
+</ol>
 </section>
 <section id="opdracht-4-uitbreiding">
 <h3>Opdracht 4 - Uitbreiding<a class="headerlink" href="#opdracht-4-uitbreiding" title="Link to this heading">#</a></h3>
-<p>Voeg een tweede filter toe, bijvoorbeeld op minimale leeftijd.</p>
+<p>Voeg aan de vorige opdracht een tweede filter toe, bijvoorbeeld minimale leeftijd.</p>
 </section>
 <section id="opdracht-5-reflectie">
 <h3>Opdracht 5 - Reflectie<a class="headerlink" href="#opdracht-5-reflectie" title="Link to this heading">#</a></h3>
@@ -782,17 +823,21 @@
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verbinding-maken-met-de-database">1. Verbinding maken met de database</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-doet-dit-script-stap-voor-stap">Wat doet dit script stap voor stap?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-is-conn-belangrijk">Waarom is $conn belangrijk?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-is-een-verbinding-nodig">Waarom is een verbinding nodig?</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resultaten-tonen-in-html">2. Resultaten tonen in HTML</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-gebeurt-hier">Wat gebeurt hier?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#belangrijk-verschil">Belangrijk verschil</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Wat doet dit script stap voor stap?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-is-result">Wat is <code class="docutils literal notranslate"><span class="pre">$result</span></code>?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wat-doet-fetch-assoc-precies">Wat doet <code class="docutils literal notranslate"><span class="pre">fetch_assoc()</span></code> precies?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-een-while-lus">Waarom een <code class="docutils literal notranslate"><span class="pre">while</span></code>-lus?</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formulier-gebruiken-als-filter">3. Formulier gebruiken als filter</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-van-de-logica">Voorbeeld van de logica</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarschuwing-invoer-is-onveilig-zonder-voorzorgen">WAARSCHUWING: Invoer is onveilig zonder voorzorgen!</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarschuwing-invoer-is-onveilig-zonder-voorzorgen"><strong>WAARSCHUWING: Invoer is onveilig zonder voorzorgen!</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oplossing-prepared-statements">Oplossing: Prepared statements</a></li>
 </ul>
 </li>
