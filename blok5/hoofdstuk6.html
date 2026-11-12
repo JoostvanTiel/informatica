@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Hoofdstuk 6: PHP + MySQL - UPDATE en DELETE via formulieren &#8212; Informatica</title>
+    <title>Hoofdstuk 6: PHP + MySQL - INSERT, UPDATE en DELETE via formulieren &#8212; Informatica</title>
   
   
   
@@ -264,7 +264,7 @@
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk3.html">Hoofdstuk 3: Tabellen koppelen met JOIN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk4.html">Hoofdstuk 4: Data aanpassen en onderzoekswerk</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk5.html">Hoofdstuk 5: PHP + MySQL - gegevens tonen</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Hoofdstuk 6: PHP + MySQL - UPDATE en DELETE via formulieren</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Hoofdstuk 6: PHP + MySQL - INSERT, UPDATE en DELETE via formulieren</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk7.html">Hoofdstuk 7: Webshopproject - basisopzet en CRUD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hoofdstuk8.html">Hoofdstuk 8: Webshopproject - afronding en presentatie</a></li>
 </ul>
@@ -461,7 +461,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Hoofdstuk 6: PHP + MySQL - UPDATE en DELETE via formulieren</h1>
+    <h1>Hoofdstuk 6: PHP + MySQL - INSERT, UPDATE en DELETE via formulieren</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -473,19 +473,22 @@
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#informatie-uit-een-formulier-veilig-verwerken">1. Informatie uit een formulier veilig verwerken</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-vanuit-een-formulier">1. UPDATE vanuit een formulier</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-vanuit-een-formulier">2. UPDATE vanuit een formulier</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#belangrijk-eerst-tonen-dan-aanpassen">Belangrijk: eerst tonen, dan aanpassen</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delete-met-bevestiging">2. DELETE met bevestiging</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#insert-into-vanuit-een-formulier">3. INSERT INTO vanuit een formulier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delete-met-bevestiging">4. DELETE met bevestiging</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-een-bevestiging">Waarom een bevestiging?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bevestigen-zonder-javascript-confirm-php">Bevestigen zonder JavaScript: <code class="docutils literal notranslate"><span class="pre">confirm.php</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-3-verwijder-php-met-prepared-statement">Stap 3 - <code class="docutils literal notranslate"><span class="pre">verwijder.php</span></code> met prepared statement</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basisvalidatie">3. Basisvalidatie</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basisvalidatie">5. Basisvalidatie</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-van-logische-controle">Voorbeeld van logische controle</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veilig-programmeren">4. Veilig programmeren</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veilig-programmeren">6. Veilig programmeren</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-is-dit-veilig">Waarom is dit veilig?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#praktisch-voorbeeld-volledige-update-workflow">Praktisch voorbeeld: Volledige UPDATE workflow</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#belangrijk-verschil-tussen-validatie-en-beveiliging">Belangrijk verschil tussen validatie en beveiliging</a></li>
@@ -493,9 +496,10 @@
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-bewerkfunctie">Opdracht 1 - Bewerkfunctie</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-verwijderfunctie">Opdracht 2 - Verwijderfunctie</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-inputcontrole">Opdracht 3 - Inputcontrole</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-testmatrix">Opdracht 4 - Testmatrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-invoegfunctie">Opdracht 2 - Invoegfunctie</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-verwijderfunctie">Opdracht 3 - Verwijderfunctie</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-inputcontrole">Opdracht 4 - Inputcontrole</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-testmatrix">Opdracht 5 - Testmatrix</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
@@ -512,15 +516,15 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="hoofdstuk-6-php-mysql-update-en-delete-via-formulieren">
-<h1>Hoofdstuk 6: PHP + MySQL - UPDATE en DELETE via formulieren<a class="headerlink" href="#hoofdstuk-6-php-mysql-update-en-delete-via-formulieren" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="hoofdstuk-6-php-mysql-insert-update-en-delete-via-formulieren">
+<h1>Hoofdstuk 6: PHP + MySQL - INSERT, UPDATE en DELETE via formulieren<a class="headerlink" href="#hoofdstuk-6-php-mysql-insert-update-en-delete-via-formulieren" title="Link to this heading">#</a></h1>
 <section id="leerdoelen">
 <h2>Leerdoelen<a class="headerlink" href="#leerdoelen" title="Link to this heading">#</a></h2>
 <p>In dit hoofdstuk bouw je van “alleen lezen” naar “gegevens beheren via een webinterface”.</p>
 <p>Je leert:</p>
 <ul class="simple">
 <li><p>records wijzigen met een formulier (<code class="docutils literal notranslate"><span class="pre">UPDATE</span></code>);</p></li>
-<li><p>records toe te voegen met een formulier (<code class="docutils literal notranslate"><span class="pre">INSERT</span> <span class="pre">INTO</span></code>);</p></li>
+<li><p>records toevoegen met een formulier (<code class="docutils literal notranslate"><span class="pre">INSERT</span> <span class="pre">INTO</span></code>);</p></li>
 <li><p>records verwijderen met bevestiging (<code class="docutils literal notranslate"><span class="pre">DELETE</span></code>);</p></li>
 <li><p>invoer controleren voordat je query’s uitvoert;</p></li>
 <li><p>prepared statements gebruiken voor veiligere code.</p></li>
@@ -534,11 +538,43 @@
 <hr class="docutils" />
 <section id="informatie-uit-een-formulier-veilig-verwerken">
 <h2>1. Informatie uit een formulier veilig verwerken<a class="headerlink" href="#informatie-uit-een-formulier-veilig-verwerken" title="Link to this heading">#</a></h2>
-<p>In het vorige hoofdstuk kon je een waarschuwing lezen over (<strong>SQL-injectie</strong>)[<a class="reference external" href="https://nl.wikipedia.org/wiki/SQL-injectie">https://nl.wikipedia.org/wiki/SQL-injectie</a>]. Dit is een gevaarlijk beveiligingsrisico waar we ons tegen moeten beschermen. Eén manier om dat te doen is door gebruik te maken van <strong>prepared statements</strong>.
-Bij een prepared statement wordt</p>
+<p>In het vorige hoofdstuk zag je een waarschuwing over <a class="reference external" href="https://nl.wikipedia.org/wiki/SQL-injectie"><strong>SQL-injectie</strong></a>.<br />
+Dat is een beveiligingsprobleem waarbij invoer van een gebruiker per ongeluk als SQL-code wordt uitgevoerd.</p>
+<p>Daarom gebruiken we <strong>prepared statements</strong>.<br />
+Het idee is steeds hetzelfde:</p>
+<ol class="arabic simple">
+<li><p>je schrijft de SQL met placeholders (<code class="docutils literal notranslate"><span class="pre">?</span></code>);</p></li>
+<li><p>je koppelt daar waarden aan;</p></li>
+<li><p>de database voert de query uit met die waarden als data.</p></li>
+</ol>
+<p>Zo blijft de structuur van de query vast en kan invoer die structuur niet veranderen.</p>
+<p>Voorbeeld:</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$regio = $_POST['regio'];</span>
+<span class="x">$minimale_leeftijd = $_POST['leeftijd'];</span>
+<span class="x">$stmt = $conn-&gt;prepare("SELECT * FROM gebruikers WHERE regio = ? AND leeftijd &gt; ?");</span>
+<span class="x">$stmt-&gt;bind_param('si', $regio, $minimale_leeftijd);</span>
+<span class="x">$stmt-&gt;execute();</span>
+</pre></div>
+</div>
+<p>Wat gebeurt hier stap voor stap?</p>
+<ol class="arabic simple">
+<li><p>In <code class="docutils literal notranslate"><span class="pre">$stmt</span></code> staat het voorbereid statement.</p></li>
+<li><p>Met <code class="docutils literal notranslate"><span class="pre">bind_param()</span></code> koppel je waarden aan de vraagtekens.</p></li>
+<li><p>Met <code class="docutils literal notranslate"><span class="pre">execute()</span></code> voer je de query uit.</p></li>
+</ol>
+<p>Bij <code class="docutils literal notranslate"><span class="pre">bind_param()</span></code> is de eerste parameter een type-string.<br />
+Die letters moeten in dezelfde volgorde staan als de vraagtekens in je query.</p>
+<p>Daarna geef je de waarden door, ook in diezelfde volgorde.</p>
+<p>Er zijn vier typeletters:</p>
+<ul class="simple">
+<li><p>‘s’ - string</p></li>
+<li><p>‘i’ - integer</p></li>
+<li><p>‘d’ - float (of double)</p></li>
+<li><p>‘b’ - blob (binary large object), gebruiken wij niet.</p></li>
+</ul>
 </section>
 <section id="update-vanuit-een-formulier">
-<h2>1. UPDATE vanuit een formulier<a class="headerlink" href="#update-vanuit-een-formulier" title="Link to this heading">#</a></h2>
+<h2>2. UPDATE vanuit een formulier<a class="headerlink" href="#update-vanuit-een-formulier" title="Link to this heading">#</a></h2>
 <p>Stap voor stap:</p>
 <ol class="arabic simple">
 <li><p>toon huidige gegevens;</p></li>
@@ -551,32 +587,132 @@ Bij een prepared statement wordt</p>
 <h3>Belangrijk: eerst tonen, dan aanpassen<a class="headerlink" href="#belangrijk-eerst-tonen-dan-aanpassen" title="Link to this heading">#</a></h3>
 <p>Je wilt niet dat een gebruiker per ongeluk verkeerde data wijzigt. Daarom is het logisch om eerst de huidige gegevens te tonen en pas daarna een wijziging door te laten voeren. Zodoende kun je de gebruiker begeleiden en voorkom je fouten.</p>
 <p>Voorbeeld:</p>
-<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$sql = "UPDATE profielen SET leeftijd_profiel = ? WHERE id = ?";</span>
-<span class="x">$stmt = $conn-&gt;prepare($sql);</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$query = "UPDATE profielen SET leeftijd_profiel = ? WHERE id = ?";</span>
+<span class="x">$stmt = $conn-&gt;prepare($query);</span>
 <span class="x">$stmt-&gt;bind_param("ii", $leeftijd, $id);</span>
 <span class="x">$stmt-&gt;execute();</span>
 </pre></div>
 </div>
 <p>Hier wordt niet direct een SQL-string met waarden ingevuld. De waarden worden veilig doorgegeven via placeholders.</p>
+<p>Wat doet dit statement stap voor stap?</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">prepare()</span></code> zet de SQL met placeholders klaar.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bind_param(&quot;ii&quot;,</span> <span class="pre">$leeftijd,</span> <span class="pre">$id)</span></code> koppelt twee integers aan de vraagtekens.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">execute()</span></code> voert de wijziging uit in de database.</p></li>
+</ol>
 </section>
 </section>
 <hr class="docutils" />
+<section id="insert-into-vanuit-een-formulier">
+<h2>3. INSERT INTO vanuit een formulier<a class="headerlink" href="#insert-into-vanuit-een-formulier" title="Link to this heading">#</a></h2>
+<p>Nieuwe gegevens toevoegen werkt bijna hetzelfde als updaten:</p>
+<ol class="arabic simple">
+<li><p>gebruiker vult een formulier in;</p></li>
+<li><p>PHP leest de invoer;</p></li>
+<li><p>PHP controleert de invoer;</p></li>
+<li><p>PHP voert <code class="docutils literal notranslate"><span class="pre">INSERT</span> <span class="pre">INTO</span></code> uit met een prepared statement.</p></li>
+</ol>
+<p>Voorbeeld:</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$naam = $_POST['naam'];</span>
+<span class="x">$leeftijd = $_POST['leeftijd'];</span>
+
+<span class="x">$sql = "INSERT INTO profielen (naam, leeftijd_profiel) VALUES (?, ?)";</span>
+<span class="x">$stmt = $conn-&gt;prepare($sql);</span>
+<span class="x">$stmt-&gt;bind_param("si", $naam, $leeftijd);</span>
+<span class="x">$stmt-&gt;execute();</span>
+</pre></div>
+</div>
+<p>Wat gebeurt hier stap voor stap?</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">prepare()</span></code> zet de SQL-opdracht met placeholders klaar.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bind_param(&quot;si&quot;,</span> <span class="pre">$naam,</span> <span class="pre">$leeftijd)</span></code> koppelt een string en een integer.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">execute()</span></code> voegt het nieuwe record toe aan de tabel.</p></li>
+</ol>
+<p>Ook hier geldt: waarden worden niet direct in de SQL-string geplakt, maar veilig als data doorgestuurd.</p>
+</section>
+<hr class="docutils" />
 <section id="delete-met-bevestiging">
-<h2>2. DELETE met bevestiging<a class="headerlink" href="#delete-met-bevestiging" title="Link to this heading">#</a></h2>
+<h2>4. DELETE met bevestiging<a class="headerlink" href="#delete-met-bevestiging" title="Link to this heading">#</a></h2>
 <p>Verwijderen is onomkeerbaar in deze context, dus:</p>
 <ul class="simple">
-<li><p>vraag bevestiging in de interface;</p></li>
+<li><p>vraag bevestiging via een aparte pagina;</p></li>
 <li><p>controleer op de server of een geldig <code class="docutils literal notranslate"><span class="pre">id</span></code> is ontvangen;</p></li>
 <li><p>geef feedback na verwijderen.</p></li>
 </ul>
 <section id="waarom-een-bevestiging">
 <h3>Waarom een bevestiging?<a class="headerlink" href="#waarom-een-bevestiging" title="Link to this heading">#</a></h3>
-<p>Een delete-knop is op een website heel gemakkelijk te klikken. Als het verwijderen meteen gebeurt zonder controle, kan een gebruiker per ongeluk iets wegslaan. Een bevestiging voorkomt onbedoeld dataverlies en maakt het interface betrouwbaarder.</p>
+<p>Een delete-knop is op een website heel gemakkelijk te klikken. Als het verwijderen meteen gebeurt zonder controle, kan een gebruiker per ongeluk iets wegslaan. Een bevestiging voorkomt onbedoeld dataverlies en maakt de interface betrouwbaarder.</p>
+</section>
+<section id="bevestigen-zonder-javascript-confirm-php">
+<h3>Bevestigen zonder JavaScript: <code class="docutils literal notranslate"><span class="pre">confirm.php</span></code><a class="headerlink" href="#bevestigen-zonder-javascript-confirm-php" title="Link to this heading">#</a></h3>
+<p>Omdat we nog geen JavaScript gebruiken, werken we met twee pagina’s:</p>
+<ol class="arabic simple">
+<li><p>Op de overzichtspagina klik je op “Verwijderen”.</p></li>
+<li><p>Je stuurt het <code class="docutils literal notranslate"><span class="pre">id</span></code> met <code class="docutils literal notranslate"><span class="pre">POST</span></code> naar <code class="docutils literal notranslate"><span class="pre">confirm.php</span></code> en toont daar de vraag: “Weet je het zeker?”</p></li>
+<li><p>Pas na klik op “Ja, verwijderen” sturen we een <code class="docutils literal notranslate"><span class="pre">POST</span></code> en voeren we de <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> uit.</p></li>
+</ol>
+<p><strong>Stap 1 - Formulier op je overzichtspagina (POST naar <code class="docutils literal notranslate"><span class="pre">confirm.php</span></code>)</strong></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">echo "&lt;form method='POST' action='confirm.php'&gt;";</span>
+<span class="x">echo "  &lt;input type='hidden' name='id' value='" . $row['id'] . "'&gt;";</span>
+<span class="x">echo "  &lt;button type='submit'&gt;Verwijderen&lt;/button&gt;";</span>
+<span class="x">echo "&lt;/form&gt;";</span>
+</pre></div>
+</div>
+<p><strong>Stap 2 - <code class="docutils literal notranslate"><span class="pre">confirm.php</span></code> met bevestigingsformulier</strong></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$id</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'id'</span><span class="p">];</span>
+<span class="cp">?&gt;</span>
+
+<span class="x">&lt;h2&gt;Weet je zeker dat je dit profiel wilt verwijderen?&lt;/h2&gt;</span>
+
+<span class="x">&lt;form method="POST" action="verwijder.php"&gt;</span>
+<span class="x">    &lt;input type="hidden" name="id" value="</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$id</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x">"&gt;</span>
+<span class="x">    &lt;button type="submit" name="bevestig" value="ja"&gt;Ja, verwijderen&lt;/button&gt;</span>
+<span class="x">&lt;/form&gt;</span>
+
+<span class="x">&lt;p&gt;&lt;a href="overzicht.php"&gt;Nee, terug naar overzicht&lt;/a&gt;&lt;/p&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="stap-3-verwijder-php-met-prepared-statement">
+<h3>Stap 3 - <code class="docutils literal notranslate"><span class="pre">verwijder.php</span></code> met prepared statement<a class="headerlink" href="#stap-3-verwijder-php-met-prepared-statement" title="Link to this heading">#</a></h3>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$id = $_POST['id'];</span>
+
+<span class="x">if (!isset($_POST['bevestig']) || $_POST['bevestig'] !== 'ja') {</span>
+<span class="x">    echo "Verwijderen geannuleerd.";</span>
+<span class="x">} else {</span>
+<span class="x">    $sql = "DELETE FROM profielen WHERE id = ?";</span>
+<span class="x">    $stmt = $conn-&gt;prepare($sql);</span>
+<span class="x">    $stmt-&gt;bind_param("i", $id);</span>
+
+<span class="x">    if ($stmt-&gt;execute()) {</span>
+<span class="x">        if ($stmt-&gt;affected_rows &gt; 0) {</span>
+<span class="x">            echo "Profiel verwijderd.";</span>
+<span class="x">        } else {</span>
+<span class="x">            echo "Geen profiel gevonden met dit id.";</span>
+<span class="x">        }</span>
+<span class="x">    } else {</span>
+<span class="x">        echo "Verwijderen mislukt: " . $stmt-&gt;error;</span>
+<span class="x">    }</span>
+<span class="x">}</span>
+</pre></div>
+</div>
+<p>Wat doet dit statement stap voor stap?</p>
+<ol class="arabic simple">
+<li><p>We controleren of de gebruiker echt op “Ja, verwijderen” heeft geklikt.</p></li>
+<li><p>We controleren of <code class="docutils literal notranslate"><span class="pre">id</span></code> een geldig getal is.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">prepare()</span></code> zet de delete-query klaar.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bind_param(&quot;i&quot;,</span> <span class="pre">$id)</span></code> koppelt het id aan het vraagteken.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">execute()</span></code> probeert de verwijdering uit te voeren.</p></li>
+<li><p>Met <code class="docutils literal notranslate"><span class="pre">affected_rows</span></code> controleer je of er echt een record is verwijderd.</p></li>
+<li><p>Als er een error optreedt, wordt die getoond met <code class="docutils literal notranslate"><span class="pre">$stmt-&gt;error</span></code>.</p></li>
+</ol>
+<p>Verwijder alleen op basis van een geldig id en geef daarna duidelijke feedback (gelukt of mislukt).</p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="basisvalidatie">
-<h2>3. Basisvalidatie<a class="headerlink" href="#basisvalidatie" title="Link to this heading">#</a></h2>
+<h2>5. Basisvalidatie<a class="headerlink" href="#basisvalidatie" title="Link to this heading">#</a></h2>
 <p>Controleer minimaal:</p>
 <ul class="simple">
 <li><p>is het veld ingevuld;</p></li>
@@ -591,11 +727,11 @@ Bij een prepared statement wordt</p>
 </section>
 <hr class="docutils" />
 <section id="veilig-programmeren">
-<h2>4. Veilig programmeren<a class="headerlink" href="#veilig-programmeren" title="Link to this heading">#</a></h2>
+<h2>6. Veilig programmeren<a class="headerlink" href="#veilig-programmeren" title="Link to this heading">#</a></h2>
 <p>Gebruik bij invoer uit formulieren geen direct ingeplakte SQL-strings. Gebruik prepared statements met placeholders (<code class="docutils literal notranslate"><span class="pre">?</span></code>).</p>
 <section id="waarom-is-dit-veilig">
 <h3>Waarom is dit veilig?<a class="headerlink" href="#waarom-is-dit-veilig" title="Link to this heading">#</a></h3>
-<p>Bij prepared statements worden invoerwaarden gescheiden van de SQL-opdracht zelf. De database behandelt die waarden als data in plaats van als onderdeel van de query. Daardoor worden veel veelvoorkomende beveiligingsproblemen voorkomen, zoals SQL-injectie.</p>
+<p>Bij prepared statements worden invoerwaarden gescheiden van de SQL-opdracht zelf. De database behandelt die waarden als data in plaats van als onderdeel van de query. Daardoor worden veel voorkomende beveiligingsproblemen voorkomen, zoals SQL-injectie.</p>
 </section>
 <section id="praktisch-voorbeeld-volledige-update-workflow">
 <h3>Praktisch voorbeeld: Volledige UPDATE workflow<a class="headerlink" href="#praktisch-voorbeeld-volledige-update-workflow" title="Link to this heading">#</a></h3>
@@ -641,13 +777,13 @@ Bij een prepared statement wordt</p>
 <span class="x">}</span>
 </pre></div>
 </div>
-<p><strong>Waarom is dit veilig?</strong></p>
+<p><strong>Waarom is dit veiliger?</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">bind_param()</span></code> scheidt de SQL-code van de invoerdata:</p>
 <ul class="simple">
 <li><p>SQL-code: <code class="docutils literal notranslate"><span class="pre">UPDATE</span> <span class="pre">profielen</span> <span class="pre">SET</span> <span class="pre">leeftijd_profiel</span> <span class="pre">=</span> <span class="pre">?</span> <span class="pre">WHERE</span> <span class="pre">id</span> <span class="pre">=</span> <span class="pre">?</span></code></p></li>
 <li><p>Data: <code class="docutils literal notranslate"><span class="pre">[15,</span> <span class="pre">1]</span></code></p></li>
 </ul>
-<p>Zelfs als iemand typt <code class="docutils literal notranslate"><span class="pre">';</span> <span class="pre">DROP</span> <span class="pre">TABLE</span> <span class="pre">gebruikers;</span> <span class="pre">--</span></code>, wordt het behandeld als GETAL, niet als SQL-code!</p>
+<p>Zelfs als iemand typt <code class="docutils literal notranslate"><span class="pre">';</span> <span class="pre">DROP</span> <span class="pre">TABLE</span> <span class="pre">gebruikers;</span> <span class="pre">--</span></code>, wordt dit als invoerwaarde behandeld en niet als extra SQL-code.</p>
 </section>
 <section id="belangrijk-verschil-tussen-validatie-en-beveiliging">
 <h3>Belangrijk verschil tussen validatie en beveiliging<a class="headerlink" href="#belangrijk-verschil-tussen-validatie-en-beveiliging" title="Link to this heading">#</a></h3>
@@ -672,8 +808,18 @@ Bij een prepared statement wordt</p>
 <li><p>opslaan en bevestiging tonen.</p></li>
 </ol>
 </section>
-<section id="opdracht-2-verwijderfunctie">
-<h3>Opdracht 2 - Verwijderfunctie<a class="headerlink" href="#opdracht-2-verwijderfunctie" title="Link to this heading">#</a></h3>
+<section id="opdracht-2-invoegfunctie">
+<h3>Opdracht 2 - Invoegfunctie<a class="headerlink" href="#opdracht-2-invoegfunctie" title="Link to this heading">#</a></h3>
+<p>Maak een formulier om een nieuw profiel toe te voegen:</p>
+<ol class="arabic simple">
+<li><p>naam en leeftijd invoeren;</p></li>
+<li><p>invoer valideren;</p></li>
+<li><p>met <code class="docutils literal notranslate"><span class="pre">INSERT</span> <span class="pre">INTO</span></code> en prepared statement opslaan;</p></li>
+<li><p>succes- of foutmelding tonen.</p></li>
+</ol>
+</section>
+<section id="opdracht-3-verwijderfunctie">
+<h3>Opdracht 3 - Verwijderfunctie<a class="headerlink" href="#opdracht-3-verwijderfunctie" title="Link to this heading">#</a></h3>
 <p>Maak een verwijderknop met:</p>
 <ol class="arabic simple">
 <li><p>confirm-vraag;</p></li>
@@ -681,8 +827,8 @@ Bij een prepared statement wordt</p>
 <li><p>succes- of foutmelding.</p></li>
 </ol>
 </section>
-<section id="opdracht-3-inputcontrole">
-<h3>Opdracht 3 - Inputcontrole<a class="headerlink" href="#opdracht-3-inputcontrole" title="Link to this heading">#</a></h3>
+<section id="opdracht-4-inputcontrole">
+<h3>Opdracht 4 - Inputcontrole<a class="headerlink" href="#opdracht-4-inputcontrole" title="Link to this heading">#</a></h3>
 <p>Voeg validatie toe:</p>
 <ol class="arabic simple">
 <li><p>lege velden blokkeren;</p></li>
@@ -690,10 +836,12 @@ Bij een prepared statement wordt</p>
 <li><p>foutmelding bij ongeldige invoer.</p></li>
 </ol>
 </section>
-<section id="opdracht-4-testmatrix">
-<h3>Opdracht 4 - Testmatrix<a class="headerlink" href="#opdracht-4-testmatrix" title="Link to this heading">#</a></h3>
+<section id="opdracht-5-testmatrix">
+<h3>Opdracht 5 - Testmatrix<a class="headerlink" href="#opdracht-5-testmatrix" title="Link to this heading">#</a></h3>
 <p>Test ten minste deze situaties:</p>
 <ol class="arabic simple">
+<li><p>geldige insert;</p></li>
+<li><p>insert met ongeldig veld;</p></li>
 <li><p>geldige update;</p></li>
 <li><p>update met leeg veld;</p></li>
 <li><p>delete met bestaand id;</p></li>
@@ -706,7 +854,7 @@ Bij een prepared statement wordt</p>
 <section id="check-je-begrip">
 <h2>Check je begrip<a class="headerlink" href="#check-je-begrip" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Waarom gebruik je prepared statements?</p></li>
+<li><p>Waarom gebruik je prepared statements bij INSERT, UPDATE en DELETE?</p></li>
 <li><p>Wat is het verschil tussen validatie in de browser en op de server?</p></li>
 <li><p>Waarom moet je na een update altijd teruglezen?</p></li>
 <li><p>Welke fout heeft de meeste impact: foute update of foute delete? Leg uit.</p></li>
@@ -717,7 +865,7 @@ Bij een prepared statement wordt</p>
 <h2>Samenvatting<a class="headerlink" href="#samenvatting" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Met formulieren kun je data beheren.</p></li>
-<li><p>UPDATE en DELETE vragen om controle en voorzichtigheid.</p></li>
+<li><p>INSERT, UPDATE en DELETE vragen om controle en voorzichtigheid.</p></li>
 <li><p>Validatie en prepared statements maken je code betrouwbaarder en veiliger.</p></li>
 </ul>
 </section>
@@ -801,19 +949,22 @@ Bij een prepared statement wordt</p>
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leerdoelen">Leerdoelen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#informatie-uit-een-formulier-veilig-verwerken">1. Informatie uit een formulier veilig verwerken</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-vanuit-een-formulier">1. UPDATE vanuit een formulier</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-vanuit-een-formulier">2. UPDATE vanuit een formulier</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#belangrijk-eerst-tonen-dan-aanpassen">Belangrijk: eerst tonen, dan aanpassen</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delete-met-bevestiging">2. DELETE met bevestiging</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#insert-into-vanuit-een-formulier">3. INSERT INTO vanuit een formulier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delete-met-bevestiging">4. DELETE met bevestiging</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-een-bevestiging">Waarom een bevestiging?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bevestigen-zonder-javascript-confirm-php">Bevestigen zonder JavaScript: <code class="docutils literal notranslate"><span class="pre">confirm.php</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-3-verwijder-php-met-prepared-statement">Stap 3 - <code class="docutils literal notranslate"><span class="pre">verwijder.php</span></code> met prepared statement</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basisvalidatie">3. Basisvalidatie</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basisvalidatie">5. Basisvalidatie</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voorbeeld-van-logische-controle">Voorbeeld van logische controle</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veilig-programmeren">4. Veilig programmeren</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veilig-programmeren">6. Veilig programmeren</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-is-dit-veilig">Waarom is dit veilig?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#praktisch-voorbeeld-volledige-update-workflow">Praktisch voorbeeld: Volledige UPDATE workflow</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#belangrijk-verschil-tussen-validatie-en-beveiliging">Belangrijk verschil tussen validatie en beveiliging</a></li>
@@ -821,9 +972,10 @@ Bij een prepared statement wordt</p>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-1-bewerkfunctie">Opdracht 1 - Bewerkfunctie</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-verwijderfunctie">Opdracht 2 - Verwijderfunctie</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-inputcontrole">Opdracht 3 - Inputcontrole</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-testmatrix">Opdracht 4 - Testmatrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-2-invoegfunctie">Opdracht 2 - Invoegfunctie</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-3-verwijderfunctie">Opdracht 3 - Verwijderfunctie</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-4-inputcontrole">Opdracht 4 - Inputcontrole</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opdracht-5-testmatrix">Opdracht 5 - Testmatrix</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
