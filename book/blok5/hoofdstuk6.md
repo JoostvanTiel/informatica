@@ -143,15 +143,15 @@ Verwijderen is onomkeerbaar in deze context, dus:
 
 Een delete-knop is op een website heel gemakkelijk te klikken. Als het verwijderen meteen gebeurt zonder controle, kan een gebruiker per ongeluk iets wegslaan. Een bevestiging voorkomt onbedoeld dataverlies en maakt de interface betrouwbaarder.
 
-### Bevestigen zonder JavaScript: `confirm.php`
+### Bevestigen: `confirm.php`
 
-Omdat we nog geen JavaScript gebruiken, werken we met twee pagina's:
+We kunnen een gebruiker om bevestiging vragen door hen door te sturen naar een bevestigingspagina `confirm.php`. De stappen zijn als volgt:
 
 1. Op de overzichtspagina klik je op "Verwijderen".
 2. Je stuurt het `id` met `POST` naar `confirm.php` en toont daar de vraag: "Weet je het zeker?"
 3. Pas na klik op "Ja, verwijderen" sturen we een `POST` en voeren we de `DELETE` uit.
 
-**Stap 1 - Formulier op je overzichtspagina (POST naar `confirm.php`)**
+**Stap 1 - Formulier op je overzichtspagina (POST met method naar `confirm.php`)**
 
 ```php
 echo "<form method='POST' action='confirm.php'>";
