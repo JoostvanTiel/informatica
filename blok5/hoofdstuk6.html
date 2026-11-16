@@ -480,7 +480,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#insert-into-vanuit-een-formulier">3. INSERT INTO vanuit een formulier</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delete-met-bevestiging">4. DELETE met bevestiging</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-een-bevestiging">Waarom een bevestiging?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bevestigen-zonder-javascript-confirm-php">Bevestigen zonder JavaScript: <code class="docutils literal notranslate"><span class="pre">confirm.php</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bevestigen-confirm-php">Bevestigen: <code class="docutils literal notranslate"><span class="pre">confirm.php</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-3-verwijder-php-met-prepared-statement">Stap 3 - <code class="docutils literal notranslate"><span class="pre">verwijder.php</span></code> met prepared statement</a></li>
 </ul>
 </li>
@@ -643,15 +643,15 @@ Die letters moeten in dezelfde volgorde staan als de vraagtekens in je query.</p
 <h3>Waarom een bevestiging?<a class="headerlink" href="#waarom-een-bevestiging" title="Link to this heading">#</a></h3>
 <p>Een delete-knop is op een website heel gemakkelijk te klikken. Als het verwijderen meteen gebeurt zonder controle, kan een gebruiker per ongeluk iets wegslaan. Een bevestiging voorkomt onbedoeld dataverlies en maakt de interface betrouwbaarder.</p>
 </section>
-<section id="bevestigen-zonder-javascript-confirm-php">
-<h3>Bevestigen zonder JavaScript: <code class="docutils literal notranslate"><span class="pre">confirm.php</span></code><a class="headerlink" href="#bevestigen-zonder-javascript-confirm-php" title="Link to this heading">#</a></h3>
-<p>Omdat we nog geen JavaScript gebruiken, werken we met twee pagina’s:</p>
+<section id="bevestigen-confirm-php">
+<h3>Bevestigen: <code class="docutils literal notranslate"><span class="pre">confirm.php</span></code><a class="headerlink" href="#bevestigen-confirm-php" title="Link to this heading">#</a></h3>
+<p>We kunnen een gebruiker om bevestiging vragen door hen door te sturen naar een bevestigingspagina <code class="docutils literal notranslate"><span class="pre">confirm.php</span></code>. De stappen zijn als volgt:</p>
 <ol class="arabic simple">
 <li><p>Op de overzichtspagina klik je op “Verwijderen”.</p></li>
 <li><p>Je stuurt het <code class="docutils literal notranslate"><span class="pre">id</span></code> met <code class="docutils literal notranslate"><span class="pre">POST</span></code> naar <code class="docutils literal notranslate"><span class="pre">confirm.php</span></code> en toont daar de vraag: “Weet je het zeker?”</p></li>
 <li><p>Pas na klik op “Ja, verwijderen” sturen we een <code class="docutils literal notranslate"><span class="pre">POST</span></code> en voeren we de <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> uit.</p></li>
 </ol>
-<p><strong>Stap 1 - Formulier op je overzichtspagina (POST naar <code class="docutils literal notranslate"><span class="pre">confirm.php</span></code>)</strong></p>
+<p><strong>Stap 1 - Formulier op je overzichtspagina (POST met method naar <code class="docutils literal notranslate"><span class="pre">confirm.php</span></code>)</strong></p>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">echo "&lt;form method='POST' action='confirm.php'&gt;";</span>
 <span class="x">echo "  &lt;input type='hidden' name='id' value='" . $row['id'] . "'&gt;";</span>
 <span class="x">echo "  &lt;button type='submit'&gt;Verwijderen&lt;/button&gt;";</span>
@@ -956,7 +956,7 @@ Die letters moeten in dezelfde volgorde staan als de vraagtekens in je query.</p
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#insert-into-vanuit-een-formulier">3. INSERT INTO vanuit een formulier</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delete-met-bevestiging">4. DELETE met bevestiging</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waarom-een-bevestiging">Waarom een bevestiging?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bevestigen-zonder-javascript-confirm-php">Bevestigen zonder JavaScript: <code class="docutils literal notranslate"><span class="pre">confirm.php</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bevestigen-confirm-php">Bevestigen: <code class="docutils literal notranslate"><span class="pre">confirm.php</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stap-3-verwijder-php-met-prepared-statement">Stap 3 - <code class="docutils literal notranslate"><span class="pre">verwijder.php</span></code> met prepared statement</a></li>
 </ul>
 </li>
