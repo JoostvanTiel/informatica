@@ -72,12 +72,12 @@ Video combineert dus:
 
 ## Compressie
 
-Veel bestanden worden gecomprimeerd om kleiner te maken.
+Veel bestanden worden gecomprimeerd om kleiner te maken. De techniek zoekt patronen en verwijdert of vereenvoudigt informatie die minder belangrijk is.
 
 Er zijn twee belangrijke soorten:
 
-- verliesvrij: alle informatie blijft behouden;
-- verlies: een deel van de informatie wordt weggelaten.
+- **Verliesvrij**: alle oorspronkelijke gegevens kunnen weer worden hersteld.
+- **Verliesgevoelig**: een deel van de gegevens gaat verloren. De verkleining is meestal groter.
 
 Voorbeelden:
 
@@ -86,17 +86,103 @@ Voorbeelden:
 - MP3: compressie van audio;
 - MP4: compressie van video.
 
-Compressie is handig, omdat grote bestanden anders veel te veel ruimte zouden innemen.
+Compressie is handig, omdat grote bestanden anders veel te veel ruimte zouden innemen. Soms is een klein kwaliteitsverlies merkbaar, maar soms is het verschil nauwelijks te zien of horen.
 
 ---
 
-## Een praktisch voorbeeld
+## Hoe werkt compressie bij een afbeelding?
 
-Stel je een 10 seconden lang filmpje voor.
+Een verliesvrije afbeelding zoekt herhalende gegevens. Stel dat een rij van twaalf pixels allemaal blauw is:
 
-Dat bestaat uit honderden beelden. Elk beeld kan meerdere megabytes aan data bevatten. Samen wordt het dus groot.
+```text
+blauw blauw blauw blauw blauw blauw blauw blauw blauw blauw blauw blauw
+```
 
-Daarom gebruikt een computer compressietechnieken om het filmpje kleiner te maken zonder dat het beeld veel slechter wordt.
+Dat kan in een vereenvoudigde notatie worden opgeslagen als:
+
+```text
+12 x blauw
+```
+
+Er is geen informatie kwijt: alle twaalf pixels kunnen later precies hetzelfde worden gemaakt. PNG gebruikt hiervoor onder andere filters en patrooncompressie.
+
+Bij een JPG kan met verlies worden gecomprimeerd. Kleine verschillen in kleuren kunnen worden samengevoegd. Een rij met:
+
+```text
+lichtblauw - lichtblauw - bijna lichtblauw - lichtblauw
+```
+
+kan daardoor bijna overal als dezelfde blauwe tint worden opgeslagen. Het oog ziet de kleine kleurverschillen nauwelijks. Sla je het bestand opnieuw op en weer met compressie, dan kan er nog meer informatie verloren gaan.
+
+---
+
+## Hoe werkt compressie bij audio?
+
+Digitale audio bestaat uit veel meetwaarden. Zonder compressie bevat een mono-opname met een bemonsteringsfrequentie van 44.100 Hz en 16 bits per sample:
+
+```text
+44.100 samples per seconde x 16 bits x 10 seconden
+= 7.056.000 bits
+= 882.000 bytes
+= ongeveer 861 KB
+```
+
+Bij MP3 met een bitrate van 128 kilobit per seconde bevat dezelfde tien seconden:
+
+```text
+128.000 bits per seconde x 10 seconden
+= 1.280.000 bits
+= 160.000 bytes
+= ongeveer 156 KB
+```
+
+De MP3 is in dit vereenvoudigde voorbeeld ongeveer vijf keer kleiner.
+
+MP3 laat vooral informatie weg die mensen moeilijk kunnen horen, bijvoorbeeld heel zachte geluiden vlak naast een veel harder geluid. Hierdoor kan het kwaliteitsverschil merkbaar zijn bij audioliefhebbers, maar is het geluid voor de meeste luisteraars goed genoeg.
+
+---
+
+## Hoe werkt compressie bij video?
+
+Een frame van 1920 x 1080 pixels met 24 bits per pixel gebruikt onbewerkt:
+
+```text
+1920 x 1080 x 24 bits
+= 49.766.400 bits
+= ongeveer 6,22 MB per frame
+```
+
+Bij 30 fps duurt één seconde dus 30 x 6,22 MB = ongeveer 186,6 MB. Tien seconden onbewerkte video zou dus ongeveer 1,87 GB gebruiken.
+
+Een MP4-bestand comprimeert die beelden op twee manieren:
+
+1. **Binnen één frame:** kleine kleurverschillen en details worden vereenvoudigd.
+2. **Tussen verschillende frames:** de achtergrond die hetzelfde blijft hoeft niet steeds opnieuw te worden opgeslagen.
+
+Bijvoorbeeld: in een game verandert alleen de spelerpositie, terwijl de rest van de achtergrond gelijk blijft. In plaats van elke hele frame opnieuw op te slaan, bewaart de compressor de verandering en de positie van de speler.
+
+Bij een bitrate van 5 megabit per seconde duurt tien seconden video ongeveer:
+
+```text
+5.000.000 bits per seconde x 10 seconden
+= 50.000.000 bits
+= 6,25 MB
+```
+
+Dat is veel kleiner dan de berekende onbewerkte versie.
+
+Een snelle bewegende actie, veel details en 60 fps geven meer veranderingen per seconde. Dan is meer informatie nodig en wordt het gecomprimeerde bestand groter dan bij een stilstaande achtergrond met 24 fps.
+
+---
+
+## Vergelijking
+
+| Soort bestand | Compressiemethode | Wat gebeurt er?                                                            | Voorbeeld                                                      |
+| ------------- | ----------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------- |
+| PNG           | Vaak verliesvrij  | Patronen worden compact opgeslagen                                         | Twaalf blauwe pixels: `12 x blauw`                             |
+| JPG           | Verliesgevoelig   | Kleine details en kleurverschillen worden samengevoegd                     | Een tekstlogo kan waziger worden                               |
+| MP3           | Verliesgevoelig   | Moeilijk hoorbare geluiden worden weggelaten                               | Een liedje wordt enkele megabytes kleiner                      |
+| MP4           | Verliesgevoelig   | Gelijkaardige beelden en bewegingen worden niet telkens opnieuw opgeslagen | Een onveranderde gameachtergrond wordt maar eenmaal opgeslagen |
 
 ---
 

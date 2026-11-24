@@ -476,7 +476,10 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#audio-geluid-als-getallen">Audio: geluid als getallen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-een-reeks-afbeeldingen">Video: een reeks afbeeldingen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compressie">Compressie</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#een-praktisch-voorbeeld">Een praktisch voorbeeld</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hoe-werkt-compressie-bij-een-afbeelding">Hoe werkt compressie bij een afbeelding?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hoe-werkt-compressie-bij-audio">Hoe werkt compressie bij audio?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hoe-werkt-compressie-bij-video">Hoe werkt compressie bij video?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vergelijking">Vergelijking</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
@@ -555,11 +558,11 @@
 <hr class="docutils" />
 <section id="compressie">
 <h2>Compressie<a class="headerlink" href="#compressie" title="Link to this heading">#</a></h2>
-<p>Veel bestanden worden gecomprimeerd om kleiner te maken.</p>
+<p>Veel bestanden worden gecomprimeerd om kleiner te maken. De techniek zoekt patronen en verwijdert of vereenvoudigt informatie die minder belangrijk is.</p>
 <p>Er zijn twee belangrijke soorten:</p>
 <ul class="simple">
-<li><p>verliesvrij: alle informatie blijft behouden;</p></li>
-<li><p>verlies: een deel van de informatie wordt weggelaten.</p></li>
+<li><p><strong>Verliesvrij</strong>: alle oorspronkelijke gegevens kunnen weer worden hersteld.</p></li>
+<li><p><strong>Verliesgevoelig</strong>: een deel van de gegevens gaat verloren. De verkleining is meestal groter.</p></li>
 </ul>
 <p>Voorbeelden:</p>
 <ul class="simple">
@@ -568,14 +571,106 @@
 <li><p>MP3: compressie van audio;</p></li>
 <li><p>MP4: compressie van video.</p></li>
 </ul>
-<p>Compressie is handig, omdat grote bestanden anders veel te veel ruimte zouden innemen.</p>
+<p>Compressie is handig, omdat grote bestanden anders veel te veel ruimte zouden innemen. Soms is een klein kwaliteitsverlies merkbaar, maar soms is het verschil nauwelijks te zien of horen.</p>
 </section>
 <hr class="docutils" />
-<section id="een-praktisch-voorbeeld">
-<h2>Een praktisch voorbeeld<a class="headerlink" href="#een-praktisch-voorbeeld" title="Link to this heading">#</a></h2>
-<p>Stel je een 10 seconden lang filmpje voor.</p>
-<p>Dat bestaat uit honderden beelden. Elk beeld kan meerdere megabytes aan data bevatten. Samen wordt het dus groot.</p>
-<p>Daarom gebruikt een computer compressietechnieken om het filmpje kleiner te maken zonder dat het beeld veel slechter wordt.</p>
+<section id="hoe-werkt-compressie-bij-een-afbeelding">
+<h2>Hoe werkt compressie bij een afbeelding?<a class="headerlink" href="#hoe-werkt-compressie-bij-een-afbeelding" title="Link to this heading">#</a></h2>
+<p>Een verliesvrije afbeelding zoekt herhalende gegevens. Stel dat een rij van twaalf pixels allemaal blauw is:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>blauw blauw blauw blauw blauw blauw blauw blauw blauw blauw blauw blauw
+</pre></div>
+</div>
+<p>Dat kan in een vereenvoudigde notatie worden opgeslagen als:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>12 x blauw
+</pre></div>
+</div>
+<p>Er is geen informatie kwijt: alle twaalf pixels kunnen later precies hetzelfde worden gemaakt. PNG gebruikt hiervoor onder andere filters en patrooncompressie.</p>
+<p>Bij een JPG kan met verlies worden gecomprimeerd. Kleine verschillen in kleuren kunnen worden samengevoegd. Een rij met:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>lichtblauw - lichtblauw - bijna lichtblauw - lichtblauw
+</pre></div>
+</div>
+<p>kan daardoor bijna overal als dezelfde blauwe tint worden opgeslagen. Het oog ziet de kleine kleurverschillen nauwelijks. Sla je het bestand opnieuw op en weer met compressie, dan kan er nog meer informatie verloren gaan.</p>
+</section>
+<hr class="docutils" />
+<section id="hoe-werkt-compressie-bij-audio">
+<h2>Hoe werkt compressie bij audio?<a class="headerlink" href="#hoe-werkt-compressie-bij-audio" title="Link to this heading">#</a></h2>
+<p>Digitale audio bestaat uit veel meetwaarden. Zonder compressie bevat een mono-opname met een bemonsteringsfrequentie van 44.100 Hz en 16 bits per sample:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>44.100 samples per seconde x 16 bits x 10 seconden
+= 7.056.000 bits
+= 882.000 bytes
+= ongeveer 861 KB
+</pre></div>
+</div>
+<p>Bij MP3 met een bitrate van 128 kilobit per seconde bevat dezelfde tien seconden:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>128.000 bits per seconde x 10 seconden
+= 1.280.000 bits
+= 160.000 bytes
+= ongeveer 156 KB
+</pre></div>
+</div>
+<p>De MP3 is in dit vereenvoudigde voorbeeld ongeveer vijf keer kleiner.</p>
+<p>MP3 laat vooral informatie weg die mensen moeilijk kunnen horen, bijvoorbeeld heel zachte geluiden vlak naast een veel harder geluid. Hierdoor kan het kwaliteitsverschil merkbaar zijn bij audioliefhebbers, maar is het geluid voor de meeste luisteraars goed genoeg.</p>
+</section>
+<hr class="docutils" />
+<section id="hoe-werkt-compressie-bij-video">
+<h2>Hoe werkt compressie bij video?<a class="headerlink" href="#hoe-werkt-compressie-bij-video" title="Link to this heading">#</a></h2>
+<p>Een frame van 1920 x 1080 pixels met 24 bits per pixel gebruikt onbewerkt:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>1920 x 1080 x 24 bits
+= 49.766.400 bits
+= ongeveer 6,22 MB per frame
+</pre></div>
+</div>
+<p>Bij 30 fps duurt één seconde dus 30 x 6,22 MB = ongeveer 186,6 MB. Tien seconden onbewerkte video zou dus ongeveer 1,87 GB gebruiken.</p>
+<p>Een MP4-bestand comprimeert die beelden op twee manieren:</p>
+<ol class="arabic simple">
+<li><p><strong>Binnen één frame:</strong> kleine kleurverschillen en details worden vereenvoudigd.</p></li>
+<li><p><strong>Tussen verschillende frames:</strong> de achtergrond die hetzelfde blijft hoeft niet steeds opnieuw te worden opgeslagen.</p></li>
+</ol>
+<p>Bijvoorbeeld: in een game verandert alleen de spelerpositie, terwijl de rest van de achtergrond gelijk blijft. In plaats van elke hele frame opnieuw op te slaan, bewaart de compressor de verandering en de positie van de speler.</p>
+<p>Bij een bitrate van 5 megabit per seconde duurt tien seconden video ongeveer:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>5.000.000 bits per seconde x 10 seconden
+= 50.000.000 bits
+= 6,25 MB
+</pre></div>
+</div>
+<p>Dat is veel kleiner dan de berekende onbewerkte versie.</p>
+<p>Een snelle bewegende actie, veel details en 60 fps geven meer veranderingen per seconde. Dan is meer informatie nodig en wordt het gecomprimeerde bestand groter dan bij een stilstaande achtergrond met 24 fps.</p>
+</section>
+<hr class="docutils" />
+<section id="vergelijking">
+<h2>Vergelijking<a class="headerlink" href="#vergelijking" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Soort bestand</p></th>
+<th class="head"><p>Compressiemethode</p></th>
+<th class="head"><p>Wat gebeurt er?</p></th>
+<th class="head"><p>Voorbeeld</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>PNG</p></td>
+<td><p>Vaak verliesvrij</p></td>
+<td><p>Patronen worden compact opgeslagen</p></td>
+<td><p>Twaalf blauwe pixels: <code class="docutils literal notranslate"><span class="pre">12</span> <span class="pre">x</span> <span class="pre">blauw</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>JPG</p></td>
+<td><p>Verliesgevoelig</p></td>
+<td><p>Kleine details en kleurverschillen worden samengevoegd</p></td>
+<td><p>Een tekstlogo kan waziger worden</p></td>
+</tr>
+<tr class="row-even"><td><p>MP3</p></td>
+<td><p>Verliesgevoelig</p></td>
+<td><p>Moeilijk hoorbare geluiden worden weggelaten</p></td>
+<td><p>Een liedje wordt enkele megabytes kleiner</p></td>
+</tr>
+<tr class="row-odd"><td><p>MP4</p></td>
+<td><p>Verliesgevoelig</p></td>
+<td><p>Gelijkaardige beelden en bewegingen worden niet telkens opnieuw opgeslagen</p></td>
+<td><p>Een onveranderde gameachtergrond wordt maar eenmaal opgeslagen</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 <hr class="docutils" />
 <section id="samenvatting">
@@ -717,7 +812,10 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#audio-geluid-als-getallen">Audio: geluid als getallen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-een-reeks-afbeeldingen">Video: een reeks afbeeldingen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compressie">Compressie</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#een-praktisch-voorbeeld">Een praktisch voorbeeld</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hoe-werkt-compressie-bij-een-afbeelding">Hoe werkt compressie bij een afbeelding?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hoe-werkt-compressie-bij-audio">Hoe werkt compressie bij audio?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hoe-werkt-compressie-bij-video">Hoe werkt compressie bij video?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vergelijking">Vergelijking</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#samenvatting">Samenvatting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-je-begrip">Check je begrip</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opdrachten">Opdrachten</a><ul class="nav section-nav flex-column">
