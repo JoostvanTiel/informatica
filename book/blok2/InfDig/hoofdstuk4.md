@@ -167,13 +167,6 @@ Het scherm kan die codes weer omzetten naar letters.
 3. Hoe kun je een letter in de computer opslaan?
 4. Hoe komt een emoji op het scherm?
 
-## Afbeeldingen en bronnen
-
-- Zelf maken: zet je eigen naam om in ASCII of maak een kleine tabel met een paar letters en hun code.
-- Online zoeken: [ASCII tabel](https://www.asciitable.com/)
-- Online zoeken: [Unicode tabel](https://home.unicode.org/)
-- Online zoeken: [Wikipedia: Unicode](https://nl.wikipedia.org/wiki/Unicode)
-
 ## Opdrachten
 
 1. Tekst in codes
@@ -183,6 +176,7 @@ Het scherm kan die codes weer omzetten naar letters.
    <li>Wat is het verschil tussen ASCII en Unicode?</li>
    <li>Leg uit waarom een computer een letter als getal opslaat.</li>
    </ol>
+
 2. Codeer een boodschap
 
    <ol type='a'>
@@ -190,6 +184,7 @@ Het scherm kan die codes weer omzetten naar letters.
    <li>Schrijf uit hoe die tekst in bits kan worden opgeslagen.</li>
    <li>Waarom is een emoji niet hetzelfde als een gewone letter?</li>
    </ol>
+
 3. Toepassingsvraag
 
    Je opent een verhaal in een app en ziet vreemde tekens in plaats van de juiste letters.
@@ -199,6 +194,7 @@ Het scherm kan die codes weer omzetten naar letters.
    <li>Waarom is Unicode een belangrijke verbetering ten opzichte van ASCII?</li>
    <li>Noem één voorbeeld van een teken dat alleen met Unicode goed werkt.</li>
    </ol>
+
 4. Schrijf je eigen naam in codes
 
    <ol type='a'>
@@ -206,8 +202,15 @@ Het scherm kan die codes weer omzetten naar letters.
    <li>Leg uit waarom een app voor verschillende talen tekst anders moet coderen.</li>
    <li>Noem een teken dat je niet in ASCII goed kunt opslaan.</li>
    </ol>
+
 ### Inzichtsvragen
 
 1. Wat betekent het woord `coderen` in deze context?
 2. Waarom kan een tekstbestand niet zomaar uit losse letters bestaan voor een computer?
 3. Wat is het voordeel van Unicode voor mensen over de hele wereld?
+
+[//]: # ## Afbeeldingen en bronnen
+[//]: # - Zelf maken: zet je eigen naam om in ASCII of maak een kleine tabel met een paar letters en hun code.
+[//]: # - Online zoeken: [ASCII tabel](https://www.asciitable.com/)
+[//]: # - Online zoeken: [Unicode tabel](https://home.unicode.org/)
+[//]: # - Online zoeken: [Wikipedia: Unicode](https://nl.wikipedia.org/wiki/Unicode)
