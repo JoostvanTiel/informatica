@@ -210,13 +210,6 @@ Die hex-code is veel overzichtelijker.
 3. Waarom is hexadecimaal handig voor computers?
 4. Wat betekent het getal 2^4?
 
-## Afbeeldingen en bronnen
-
-- Zelf maken: maak een tabel met decimale, binaire en hexadecimale waarden van 0 tot 15.
-- Online zoeken: [Talstelsels uitleg](https://www.youtube.com/results?search_query=talstelsels+binair+hexadecimaal)
-- Online zoeken: [Wikipedia: binair talstelsel](https://nl.wikipedia.org/wiki/Binair_talstelsel)
-- Online zoeken: [Wikipedia: hexadecimaal talstelsel](https://nl.wikipedia.org/wiki/Hexadecimaal_talstelsel)
-
 ## Opdrachten
 
 1. Decimaal en binair
@@ -226,6 +219,7 @@ Die hex-code is veel overzichtelijker.
    <li>Zet het binaire getal `1011` om naar decimaal.</li>
    <li>Leg uit waarom je bij het omrekenen van binair naar decimaal steeds met machten van 2 werkt.</li>
    </ol>
+
 2. Hexadecimaal
 
    <ol type='a'>
@@ -233,6 +227,7 @@ Die hex-code is veel overzichtelijker.
    <li>Welke hexadecimale code hoort bij het binaire getal `1010`?</li>
    <li>Waarom is hexadecimaal handiger dan binair voor mensen?</li>
    </ol>
+
 3. Toepassingsvraag
 
    In een game worden kleuren vaak in hexadecimale codes opgeslagen.
@@ -242,6 +237,7 @@ Die hex-code is veel overzichtelijker.
    <li>Hoe zou jij een kleur als `#FF0000` uitleggen aan een klasgenoot?</li>
    <li>Noem een situatie waarin een computer liever werkt met hexadecimaal dan met decimaal.</li>
    </ol>
+
 4. Kijk naar een kleurcode
 
    <ol type='a'>
@@ -249,8 +245,15 @@ Die hex-code is veel overzichtelijker.
    <li>De code `#0000FF` is blauw. Hoe zou je deze code in binair kunnen uitleggen?</li>
    <li>Waarom is hexadecimaal handig bij het programmeren van kleurcodes?</li>
    </ol>
+
 ### Inzichtsvragen
 
 1. Wat is het verschil tussen basis 10 en basis 2?
 2. Waarom kun je een binair getal ook als een reeks van bits zien?
 3. Waarom is het logisch dat computers vaak in hexadecimaal werken?
+
+[//]: # ## Afbeeldingen en bronnen
+[//]: # - Zelf maken: maak een tabel met decimale, binaire en hexadecimale waarden van 0 tot 15.
+[//]: # - Online zoeken: [Talstelsels uitleg](https://www.youtube.com/results?search_query=talstelsels+binair+hexadecimaal)
+[//]: # - Online zoeken: [Wikipedia: binair talstelsel](https://nl.wikipedia.org/wiki/Binair_talstelsel)
+[//]: # - Online zoeken: [Wikipedia: hexadecimaal talstelsel](https://nl.wikipedia.org/wiki/Hexadecimaal_talstelsel)

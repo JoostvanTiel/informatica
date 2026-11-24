@@ -140,13 +140,6 @@ De gamecode kan bijvoorbeeld de achtergrondafbeelding openen en de muziek afspel
 3. Hoe weet je computer welke app een bestand moet openen?
 4. Waarom is maporganisatie belangrijk?
 
-## Afbeeldingen en bronnen
-
-- Zelf maken: maak een map met verschillende soorten bestanden en benoem ze netjes.
-- Online zoeken: [Bestandsformaten uitleg](https://www.youtube.com/results?search_query=bestandsextensie+uitleg)
-- Online zoeken: [Wikipedia: bestand](<https://nl.wikipedia.org/wiki/Bestand_(computer)>)
-- Online zoeken: [Wikipedia: bestandsextensie](https://nl.wikipedia.org/wiki/Bestandsextensie)
-
 ## Opdrachten
 
 1. Bestanden herkennen
@@ -156,6 +149,7 @@ De gamecode kan bijvoorbeeld de achtergrondafbeelding openen en de muziek afspel
    <li>Doe een voorbeeld van een bestandnaam met extensie en leg uit wat de extensie betekent.</li>
    <li>Waarom kan een bestand met de verkeerde extensie soms niet goed openen?</li>
    </ol>
+
 2. Mappen en structuur
 
    <ol type='a'>
@@ -163,6 +157,7 @@ De gamecode kan bijvoorbeeld de achtergrondafbeelding openen en de muziek afspel
    <li>Leg uit waarom een nette mapstructuur handig is.</li>
    <li>Wat is het risico als je alle bestanden door elkaar in één map stopt?</li>
    </ol>
+
 3. Toepassingsvraag
 
    Je hebt een Python-bestand, een foto en een geluidsbestand in één map staan.
@@ -172,6 +167,7 @@ De gamecode kan bijvoorbeeld de achtergrondafbeelding openen en de muziek afspel
    <li>Waarom is een juiste bestandsnaam belangrijk?</li>
    <li>Noem één reden waarom je bestanden beter organisatorisch opslaat.</li>
    </ol>
+
 4. Eigen projectmap plannen
 
    <ol type='a'>
@@ -179,8 +175,15 @@ De gamecode kan bijvoorbeeld de achtergrondafbeelding openen en de muziek afspel
    <li>Leg uit welke bestanden je in elk mapje zou stoppen.</li>
    <li>Waarom is het nuttig om bestanden logisch te ordenen?</li>
    </ol>
+
 ### Inzichtsvragen
 
 1. Wat is een extensie precies?
 2. Waarom is een bestandstype belangrijk voor de computer?
 3. Hoe helpt een nette mapstructuur bij samenwerken?
+
+[//]: # ## Afbeeldingen en bronnen
+[//]: # - Zelf maken: maak een map met verschillende soorten bestanden en benoem ze netjes.
+[//]: # - Online zoeken: [Bestandsformaten uitleg](https://www.youtube.com/results?search_query=bestandsextensie+uitleg)
+[//]: # - Online zoeken: [Wikipedia: bestand](<https://nl.wikipedia.org/wiki/Bestand_(computer)>)
+[//]: # - Online zoeken: [Wikipedia: bestandsextensie](https://nl.wikipedia.org/wiki/Bestandsextensie)

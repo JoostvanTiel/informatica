@@ -115,13 +115,6 @@ Daarom gebruikt een computer compressietechnieken om het filmpje kleiner te make
 3. Waarom is een video vaak veel groter dan een foto?
 4. Waarin verschillen JPG en PNG?
 
-## Afbeeldingen en bronnen
-
-- Zelf maken: maak een korte reeks van 5 verschillende plaatjes die een simpele beweging laten zien.
-- Online zoeken: [Video compressie uitleg](https://www.youtube.com/results?search_query=video+compressie+uitleg)
-- Online zoeken: [Wikipedia: digitale audio](https://nl.wikipedia.org/wiki/Digitale_audio)
-- Online zoeken: [Wikipedia: MPEG-4](https://nl.wikipedia.org/wiki/MPEG-4)
-
 ## Opdrachten
 
 1. Afbeelding, geluid en video vergelijken
@@ -131,6 +124,7 @@ Daarom gebruikt een computer compressietechnieken om het filmpje kleiner te make
    <li>Leg uit waarom een video vaak veel meer ruimte inneemt dan een foto.</li>
    <li>Welke combinatie van factoren maakt een video meestal groot?</li>
    </ol>
+
 2. Compressie
 
    <ol type='a'>
@@ -138,6 +132,7 @@ Daarom gebruikt een computer compressietechnieken om het filmpje kleiner te make
    <li>Geef een voorbeeld van een bestandstype dat vaak verliesvrij wordt gecomprimeerd.</li>
    <li>Geef een voorbeeld van een bestandstype dat vaak met verlies wordt gecomprimeerd.</li>
    </ol>
+
 3. Toepassingsvraag
 
    Je wilt een korte gamevideo met muziek uploaden, maar de app geeft aan dat het bestand te groot is.
@@ -147,6 +142,7 @@ Daarom gebruikt een computer compressietechnieken om het filmpje kleiner te make
    <li>Welke informatie mag eventueel verloren gaan zonder dat het filmpje onbruikbaar wordt?</li>
    <li>Waarom is compressie nodig bij digitale media?</li>
    </ol>
+
 4. Denk na over een filmpje
 
    <ol type='a'>
@@ -154,8 +150,15 @@ Daarom gebruikt een computer compressietechnieken om het filmpje kleiner te make
    <li>Waarom kunnen beelden per seconde (fps) invloed hebben op het bestand?</li>
    <li>Kies een bestandstype en leg uit waarom je dat type bij een gamevideo zou gebruiken.</li>
    </ol>
+
 ### Inzichtsvragen
 
 1. Wat is een frame in een video?
 2. Waarom is een foto niet hetzelfde als een video?
 3. Hoe kun je het begrip `compressie` in één zin uitleggen?
+
+[//]: # ## Afbeeldingen en bronnen
+[//]: # - Zelf maken: maak een korte reeks van 5 verschillende plaatjes die een simpele beweging laten zien.
+[//]: # - Online zoeken: [Video compressie uitleg](https://www.youtube.com/results?search_query=video+compressie+uitleg)
+[//]: # - Online zoeken: [Wikipedia: digitale audio](https://nl.wikipedia.org/wiki/Digitale_audio)
+[//]: # - Online zoeken: [Wikipedia: MPEG-4](https://nl.wikipedia.org/wiki/MPEG-4)
